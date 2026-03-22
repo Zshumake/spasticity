@@ -1,0 +1,365 @@
+[
+  {
+    "id": "pec-major",
+    "name": "Pectoralis Major",
+    "group": "Upper Extremity / Trunk",
+    "pattern": "Shoulder adduction, internal rotation",
+    "landmarks": "Lateral third of Clavicle, Coracoid process, Sternal border",
+    "placement": "Locate the lateral third of the clavicle. Insert the needle 2–3 cm inferior to this bony landmark, targeting the clavicular head. For the sternal head, target the bulk of the muscle mid-chest, lateral to the sternal border. Avoid the rib interspaces.",
+    "setup": "Ultrasound (USG) highly recommended. Visualize the Pectoralis Major overlying the Pectoralis Minor. Injection is into the superficial muscle belly.",
+    "marker": {
+      "body": "torso_anterior",
+      "x": 68,
+      "y": 28
+    },
+    "dosage": "100-200 units"
+  },
+  {
+    "id": "lat-dorsi",
+    "name": "Latissimus Dorsi",
+    "group": "Upper Extremity / Trunk",
+    "pattern": "Shoulder adduction, internal rotation, extension",
+    "landmarks": "Inferior angle of Scapula, Posterior Axillary Fold, Iliac Crest",
+    "placement": "Grasp the posterior axillary fold. Identify the bulk of the Latissimus Dorsi (lateral and superficial to Teres Major). Insert the needle perpendicular to the skin into the mid-belly of the muscle, approx 4-5 cm inferior to the axilla.",
+    "setup": "USG helpful to distinguish from Teres Major and Serratus Anterior. Patient in lateral decubitus position.",
+    "marker": {
+      "body": "torso_posterior",
+      "x": 72,
+      "y": 42
+    }
+  },
+  {
+    "id": "biceps-brachii",
+    "name": "Biceps Brachii",
+    "group": "Upper Extremity",
+    "pattern": "Elbow flexion, Forearm supination",
+    "landmarks": "Coracoid Process, Acromion, Cubital Fossa",
+    "placement": "Identify the mid-point of the humerus anteriorly. Palpate the muscle belly. Insert the needle into the bulk of the muscle (long and short heads). Stay superficial to the Brachialis muscle.",
+    "setup": "Surface anatomy is usually sufficient. USG confirms depth to avoid neurovascular bundle medially.",
+    "marker": {
+      "body": "arm_anterior",
+      "x": 45,
+      "y": 42
+    }
+  },
+  {
+    "id": "brachialis",
+    "name": "Brachialis",
+    "group": "Upper Extremity",
+    "pattern": "Pure elbow flexion",
+    "landmarks": "Distal Humerus, Biceps tendon, Lateral Epicondyle",
+    "placement": "Approach from the lateral aspect of the distal humerus. Palpate the Biceps, then move laterally and deep. Insert needle 2-3 cm proximal to the lateral epicondyle, directed medially towards the humerus but stopping in the muscle against the bone.",
+    "setup": "USG is essential. The Radial Nerve runs nearby laterally; ensure needle is in the muscular plane deep to Biceps.",
+    "marker": {
+      "body": "arm_anterior",
+      "x": 35,
+      "y": 58
+    }
+  },
+  {
+    "id": "quadratus-lumborum",
+    "name": "Quadratus Lumborum",
+    "group": "Lower Extremity / Trunk",
+    "pattern": "Pelvic hiking, trunk lateral flexion",
+    "landmarks": "Iliac Crest, 12th Rib, L3-L4 Transverse Processes",
+    "placement": "Posterior approach: Locate the iliac crest and the 12th rib. Insert the needle just superior to the iliac crest and lateral to the erector spinae muscle mass. Angle slightly medially towards the transverse processes of L3/L4.",
+    "setup": "USG mandatory. Danger zone: Retroperitoneal organs (kidneys) are deep to this muscle. Ensure needle tip is visualized.",
+    "marker": {
+      "body": "torso_posterior",
+      "x": 65,
+      "y": 75
+    }
+  },
+  {
+    "id": "gluteus-maximus",
+    "name": "Gluteus Maximus",
+    "group": "Lower Extremity",
+    "pattern": "Hip extension, external rotation",
+    "landmarks": "PSIS, Greater Trochanter, Ischial Tuberosity",
+    "placement": "Draw a line from the Posterior Superior Iliac Spine (PSIS) to the Greater Trochanter. Injection is in the upper-outer quadrant to avoid the Sciatic Nerve. Insert perpendicular to the skin into the large muscle bulk.",
+    "setup": "USG placement ensures depth and avoids intrafascial infection. Sciatic nerve runs deep to this muscle in the lower quadrants.",
+    "marker": {
+      "body": "leg_posterior",
+      "x": 58,
+      "y": 18
+    },
+    "dosage": "100 units"
+  },
+  {
+    "id": "piriformis",
+    "name": "Piriformis",
+    "group": "Lower Extremity",
+    "pattern": "Hip external rotation, abduction",
+    "landmarks": "PSIS, Greater Trochanter, Sacral Hiatus",
+    "placement": "Draw a line from the PSIS to the Greater Trochanter. The Piriformis lies deep along this line. Insert needle at the intersection of the midpoint of this line, directing deep and slightly medial.",
+    "setup": "USG Guidance Essential. The Sciatic Nerve exits the pelvis immediately inferior to the Piriformis belly.",
+    "marker": {
+      "body": "leg_posterior",
+      "x": 54,
+      "y": 25
+    },
+    "dosage": "150 units"
+  },
+  {
+    "id": "tfl",
+    "name": "Tensor Fasciae Latae (TFL)",
+    "group": "Lower Extremity",
+    "pattern": "Hip flexion, abduction, internal rotation",
+    "landmarks": "ASIS, Greater Trochanter",
+    "placement": "Locate the ASIS. Move 2-3 cm distal and slightly lateral. The muscle belly is palpable here before it becomes the IT band. Insert needle perpendicular to the skin.",
+    "setup": "Muscle is superficial. Ensure needle does not penetrate too deep into Gluteus Minimus.",
+    "marker": {
+      "body": "leg_anterior",
+      "x": 32,
+      "y": 22
+    }
+  },
+  {
+    "id": "rectus-femoris",
+    "name": "Rectus Femoris",
+    "group": "Lower Extremity",
+    "pattern": "Stiff knee gait, Knee extension",
+    "landmarks": "AIIS, Superior pole of Patella",
+    "placement": "Mid-thigh approach: Identification of the muscle belly is easy on the anterior thigh. Insert into the bulk of the muscle, superficial to the Vastus Intermedius.",
+    "setup": "USG recommended to distinguish the septum between Rectus Femoris and Vastus Laterais/Medialis.",
+    "marker": {
+      "body": "leg_anterior",
+      "x": 50,
+      "y": 42
+    }
+  },
+  {
+    "id": "vastus-medialis",
+    "name": "Vastus Medialis",
+    "group": "Lower Extremity",
+    "pattern": "Knee extension (distal stabilization)",
+    "landmarks": "Adductor Tubercle, Patella, Sartorius",
+    "placement": "Distal 1/3 of the medial thigh. Palpate the 'teardrop' shape of the VMO just proximal and medial to the patella. Insert needle perpendicular to skin.",
+    "setup": "USG optional but helpful to avoid the Adductor Canal neurovascular bundle deep to Sartorius.",
+    "marker": {
+      "body": "leg_anterior",
+      "x": 62,
+      "y": 62
+    }
+  },
+  {
+    "id": "vastus-lateralis",
+    "name": "Vastus Lateralis",
+    "group": "Lower Extremity",
+    "pattern": "Knee extension",
+    "landmarks": "Greater Trochanter, Lateral Condyle of Femur, IT Band",
+    "placement": "Mid-to-distal lateral thigh. Palpate the IT Band; injection is deep/anterior to the IT Band into the muscle belly against the femur. Avoid injecting into the IT Band itself.",
+    "setup": "Multiple injection sites often needed along the length of the femur.",
+    "marker": {
+      "body": "leg_anterior",
+      "x": 35,
+      "y": 50
+    },
+    "dosage": "100 units"
+  },
+  {
+    "id": "vastus-intermedius",
+    "name": "Vastus Intermedius",
+    "group": "Lower Extremity",
+    "pattern": "Knee extension",
+    "landmarks": "Anterior Femur, deep to Rectus Femoris",
+    "placement": "Proximal 1/3 to Mid-thigh anteriorly. The needle must pass through the Rectus Femoris to reach the Intermedius, which sits directly on the femoral shaft.",
+    "setup": "USG mandatory to effectively distinguish the fascial plane between Rectus Femoris and Vastus Intermedius.",
+    "marker": {
+      "body": "leg_anterior",
+      "x": 50,
+      "y": 38
+    },
+    "dosage": "100 units"
+  },
+  {
+    "id": "semimembranosus",
+    "name": "Semimembranosus",
+    "group": "Lower Extremity",
+    "pattern": "Knee flexion",
+    "landmarks": "Ischial Tuberosity, Medial Tibial Condyle",
+    "placement": "Mid-thigh to distal thigh posterior-medially. The muscle lies deep to the Semitendinosus. Approach from the medial side to access the belly.",
+    "setup": "USG helpful to distinguish from the more superficial Semitendinosus.",
+    "marker": {
+      "body": "leg_posterior",
+      "x": 62,
+      "y": 55
+    },
+    "dosage": "100 units"
+  },
+  {
+    "id": "semitendinosus",
+    "name": "Semitendinosus",
+    "group": "Lower Extremity",
+    "pattern": "Knee flexion",
+    "landmarks": "Ischial Tuberosity, Medial Tibial Condyle",
+    "placement": "Mid-thigh, directly posterior. This is the superficial muscle of the medial hamstrings, often forming a distinct raphe.",
+    "setup": "Easily palpable; confirm with knee flexion against resistance.",
+    "marker": {
+      "body": "leg_posterior",
+      "x": 55,
+      "y": 50
+    },
+    "dosage": "100 units"
+  },
+  {
+    "id": "gastrocnemius-medial",
+    "name": "Gastrocnemius (Medial)",
+    "group": "Lower Extremity",
+    "pattern": "Equinus deformity, Plantarflexion",
+    "landmarks": "Medial Femoral Condyle, Popliteal Fossa",
+    "placement": "Proximal 1/3 of the posterior calf. Identify the large medial muscle belly. Insert 2-3 cm distal to the popliteal crease.",
+    "setup": "Avoid the midline to protect the Sural Nerve and small saphenous vein.",
+    "marker": {
+      "body": "leg_posterior",
+      "x": 60,
+      "y": 70
+    },
+    "dosage": "100 units"
+  },
+  {
+    "id": "gastrocnemius-lateral",
+    "name": "Gastrocnemius (Lateral)",
+    "group": "Lower Extremity",
+    "pattern": "Equinus deformity, Plantarflexion",
+    "landmarks": "Lateral Femoral Condyle, Fibular Head",
+    "placement": "Proximal 1/3 of the posterior calf. Identify the lateral belly just medial to the fibular head.",
+    "setup": "Usually smaller bulk than the medial head. Avoid the Common Peroneal Nerve near the fibular head.",
+    "marker": {
+      "body": "leg_posterior",
+      "x": 40,
+      "y": 70
+    }
+  },
+  {
+    "id": "soleus-medial",
+    "name": "Soleus (Medial)",
+    "group": "Lower Extremity",
+    "pattern": "Plantarflexion",
+    "landmarks": "Medial border of Tibia, Deep to Gastrocnemius",
+    "placement": "Medial approach: Identify the medial border of the tibia. Move 1-2 cm posterior to the border, distal to the bulk of the medial Gastrocnemius belly. Insert deep to the Gastrocnemius.",
+    "setup": "USG highly recommended to distinguish the plane between Gastrocnemius (superficial) and Soleus (deep).",
+    "marker": {
+      "body": "leg_posterior",
+      "x": 62,
+      "y": 78
+    }
+  },
+  {
+    "id": "soleus-lateral",
+    "name": "Soleus (Lateral)",
+    "group": "Lower Extremity",
+    "pattern": "Plantarflexion",
+    "landmarks": "Fibula, Lateral border of Gastrocnemius",
+    "placement": "Lateral approach: Identify the lateral bulge of the Soleus, just lateral/anterior to the Lateral Gastrocnemius belly in the mid-calf. Insert perpendicular to the skin.",
+    "setup": "Multiple distal sites may be used to address spasticity throughout the muscle.",
+    "marker": {
+      "body": "leg_posterior",
+      "x": 38,
+      "y": 78
+    },
+    "dosage": "200 units"
+  },
+  {
+    "id": "fdl",
+    "name": "Flexor Digitorum Longus (FDL)",
+    "group": "Lower Extremity",
+    "pattern": "Claw toes, toe flexion",
+    "landmarks": "Medial Tibial Border, Posterior Tibial Artery (Pulse)",
+    "placement": "Distal 1/3 of the medial leg. Palpate the medial border of the tibia. Attempt to palpate the posterior tibial pulse. Insert the needle just posterior to the tibia, directing it towards the posterior aspect of the fibula.",
+    "setup": "USG MANDATORY. The neurovascular bundle (Post. Tibial Artery & Tibial Nerve) runs immediately adjacent to this muscle.",
+    "marker": {
+      "body": "leg_posterior",
+      "x": 55,
+      "y": 85
+    },
+    "dosage": "200 units"
+  },
+  {
+    "id": "fdb",
+    "name": "Flexor Digitorum Brevis (FDB)",
+    "group": "Lower Extremity",
+    "pattern": "Toe flexion (plantar)",
+    "landmarks": "Calcaneus, Plantar Fascia",
+    "placement": "Mid-plantar foot. 3-5 cm distal to the calcaneal tuberosity in the midline of the foot. Injection is deep to the thick plantar fascia.",
+    "setup": "USG guidance recommended to ensure injection is deep to plantar fascia but superficial to deeper foot intrinsics.",
+    "marker": {
+      "body": "foot_plantar",
+      "x": 50,
+      "y": 50
+    }
+  },
+  {
+    "id": "tibialis-anterior",
+    "name": "Tibialis Anterior",
+    "group": "Lower Extremity",
+    "pattern": "Foot clearance (Dorsiflexion)",
+    "landmarks": "Tibial Crest, Lateral Condyle of Tibia",
+    "placement": "Proximal 1/3 of the leg. Palpate the sharp anterior crest of the tibia. Move 2 cm lateral into the largest muscle bulk. Insert needle perpendicular to skin.",
+    "setup": "Avoid the anterior tibial artery deep to the muscle near the interosseous membrane.",
+    "marker": {
+      "body": "leg_anterior",
+      "x": 58,
+      "y": 68
+    }
+  },
+  {
+    "id": "tibialis-posterior",
+    "name": "Tibialis Posterior",
+    "group": "Lower Extremity",
+    "pattern": "Equinovarus (Plantarflexion + Inversion)",
+    "landmarks": "Medial Tibial Border, Fibular Head, Intermalleolar Line",
+    "placement": "Deep Posterior Compartment. Identify the midpoint between the fibular head and the intermalleolar line. Approach from the medial side, sliding the needle along the posterior aspect of the tibia.",
+    "setup": "USG MANDATORY. High risk of neurovascular injury (Posterior Tibial Artery/Nerve). The muscle is the deepest in this compartment.",
+    "marker": {
+      "body": "leg_posterior",
+      "x": 52,
+      "y": 60
+    },
+    "dosage": "200 units"
+  },
+  {
+    "id": "fhl",
+    "name": "Flexor Hallucis Longus (FHL)",
+    "group": "Lower Extremity",
+    "pattern": "Claw hallux, Equinovarus support",
+    "landmarks": "Fibula (distal shaft), Achilles Tendon",
+    "placement": "Distal 1/3 of the posterior leg, lateral aspect. Deep to the Soleus and Lateral Gastrocnemius. The muscle belly is located posteromedial to the fibula.",
+    "setup": "USG Mandatory. Often approached from the lateral side to avoid the neurovascular bundle medially.",
+    "marker": {
+      "body": "leg_posterior",
+      "x": 42,
+      "y": 88
+    },
+    "dosage": "50 units"
+  },
+  {
+    "id": "ehl",
+    "name": "Extensor Hallucis Longus (EHL)",
+    "group": "Lower Extremity",
+    "pattern": "Hallux extension, hitchhiking thumb sign",
+    "landmarks": "Anterior Tibia, Distal Fibula",
+    "placement": "Distal 1/3 of the anterior leg. The muscle belly lies between the Tibialis Anterior and Extensor Digitorum Longus. Locate the gap between these tendons ~10cm proximal to the ankle.",
+    "setup": "Palpate the tendon on hallux extension to trace proximal to the belly.",
+    "marker": {
+      "body": "leg_anterior",
+      "x": 52,
+      "y": 82
+    },
+    "dosage": "50 units"
+  },
+  {
+    "id": "add-hallucis",
+    "name": "Adductor Hallucis",
+    "group": "Lower Extremity",
+    "pattern": "Hallux adduction, transverse arch collapse",
+    "landmarks": "1st and 2nd Metatarsal heads (Plantar)",
+    "placement": "Plantar or Dorsal approach. Located in the web space between the 1st and 2nd metatarsals (Oblique head) and across the MTP joints (Transverse head).",
+    "setup": "Advanced injection. USG guidance recommended to navigate the small intrinsic space.",
+    "marker": {
+      "body": "foot_dorsal",
+      "x": 45,
+      "y": 40
+    }
+  }
+]

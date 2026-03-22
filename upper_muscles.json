@@ -1,0 +1,660 @@
+[
+  {
+    "id": "triceps",
+    "name": "Triceps",
+    "group": "Upper Extremity",
+    "pattern": "Elbow extension",
+    "landmarks": [
+      "Acromion (palpate the bony shelf at the tip of the shoulder — follow the spine of the scapula laterally to its most lateral point)",
+      "Olecranon (palpate the prominent bony point at the posterior elbow — this is the insertion of the triceps tendon)",
+      "Posterior Midline of Humerus (draw an imaginary line from the acromion to the olecranon along the posterior arm — the muscle belly is centered here)"
+    ],
+    "placement": [
+      "Position the patient seated or prone with the arm resting on a support, elbow flexed to approximately 90 degrees.",
+      "Identify the posterior midpoint of the humerus (halfway between the acromion and the olecranon).",
+      "Palpate the triceps muscle belly — ask the patient to extend the elbow against resistance to confirm the bulk of the long and lateral heads.",
+      "For the long head: insert the needle into the medial portion of the posterior arm at mid-humeral level, perpendicular to the skin.",
+      "For the lateral head: insert the needle into the lateral portion of the posterior arm, slightly more proximal, perpendicular to the skin.",
+      "Advance 1.5-2 cm into the muscle belly — the triceps is a large, superficial muscle on the posterior arm.",
+      "Avoid the medial aspect of the distal arm where the ulnar nerve courses in the ulnar groove behind the medial epicondyle.",
+      "Aspirate before injecting. Distribute injections across both heads if needed, spacing sites 3-4 cm apart."
+    ],
+    "setup": [
+      "Surface anatomy is usually adequate given the large, easily palpable muscle belly.",
+      "USG can help distinguish the long head from the lateral head and confirm depth.",
+      "Have the patient extend the elbow against resistance to identify and mark the muscle belly before injection.",
+      "The radial nerve courses in the spiral groove of the humerus on the posterolateral aspect — stay in the central or medial muscle belly at the mid-humeral level to avoid it."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz)",
+      "orientation": "Transverse across the posterior mid-humerus",
+      "viewSteps": [
+        "Identify the subcutaneous fat and superficial fascia as the most superficial layers.",
+        "The lateral head of the triceps appears as a large hypoechoic muscle compartment superficially on the lateral side, bounded by a bright hyperechoic fascial border.",
+        "The long head lies medial and slightly deeper, separated from the lateral head by a hyperechoic intermuscular septum.",
+        "The medial head is the deepest, lying directly against the hyperechoic cortex of the humerus.",
+        "Identify the hyperechoic cortex of the humerus as the deepest identifiable structure — it produces a bright reflective line with posterior acoustic shadowing.",
+        "On the posterolateral aspect at mid-humeral level, use color Doppler to identify the profunda brachii artery accompanying the radial nerve in the spiral groove."
+      ],
+      "safetyNotes": [
+        "The radial nerve runs in the spiral groove on the posterolateral humerus at mid-shaft level — avoid the lateral intermuscular septum and the space between the lateral and medial heads at this level.",
+        "The ulnar nerve courses posterior to the medial epicondyle distally — avoid injections near the distal medial arm.",
+        "The profunda brachii artery accompanies the radial nerve — use color Doppler to identify and avoid it."
+      ],
+      "probeDiagram": {
+        "cx": 50,
+        "cy": 42,
+        "angle": 0,
+        "length": 22
+      }
+    },
+    "marker": {
+      "body": "arm_posterior",
+      "x": 50,
+      "y": 42
+    }
+  },
+  {
+    "id": "brachioradialis",
+    "name": "Brachioradialis",
+    "group": "Upper Extremity",
+    "pattern": "Elbow flexion (forearm in neutral), Forearm pronation/supination to neutral",
+    "landmarks": [
+      "Lateral Epicondyle (palpate the bony prominence on the lateral distal humerus — it is the origin landmark for the mobile wad of muscles)",
+      "Radial Styloid (palpate the bony prominence at the distal lateral wrist — the brachioradialis inserts at the base of the styloid process)",
+      "Lateral Supracondylar Ridge (palpate the bony ridge running proximally from the lateral epicondyle along the lateral humerus — the muscle originates from its distal two-thirds)"
+    ],
+    "placement": [
+      "Position the patient seated with the forearm resting on a table in neutral position (thumb pointing upward).",
+      "Identify the proximal third of the forearm on the lateral (radial) side.",
+      "Palpate the brachioradialis muscle belly — ask the patient to flex the elbow against resistance with the forearm in neutral to confirm its contraction.",
+      "The muscle belly is the most superficial and lateral muscle of the forearm, forming the lateral border of the cubital fossa.",
+      "Insert the needle into the bulk of the muscle belly at the junction of the proximal and middle thirds of the forearm, perpendicular to the skin.",
+      "Advance 1-1.5 cm — the muscle is superficial.",
+      "Stay lateral and superficial to avoid the radial nerve/posterior interosseous nerve, which courses deep to the brachioradialis.",
+      "Aspirate before injecting. A single injection into the mid-belly is usually sufficient."
+    ],
+    "setup": [
+      "Surface anatomy is usually sufficient — the muscle belly is easily palpable when the patient flexes the elbow with the forearm in neutral.",
+      "USG can confirm the needle is in brachioradialis and not in the deeper supinator or extensor muscles.",
+      "Mark the muscle belly with the forearm in neutral and the elbow flexed against resistance.",
+      "The radial nerve bifurcates into the superficial (sensory) branch and the posterior interosseous nerve (motor) deep to this muscle at the level of the radial head — stay proximal in the muscle belly and superficial."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz)",
+      "orientation": "Transverse across the proximal lateral forearm",
+      "viewSteps": [
+        "Identify the subcutaneous fat and superficial fascia overlying the lateral forearm.",
+        "The brachioradialis appears as the most superficial hypoechoic muscle on the lateral (radial) side of the forearm, enclosed in a hyperechoic fascial sheath.",
+        "Deep to the brachioradialis, identify the supinator muscle wrapping around the proximal radius — it appears as a thinner hypoechoic layer.",
+        "The radius appears as a bright hyperechoic curved cortical line deep to the supinator.",
+        "Identify the radial artery medial to the muscle in the mid-forearm using color Doppler.",
+        "The posterior interosseous nerve may be seen as a small hyperechoic oval structure between the two heads of the supinator, deep to the brachioradialis."
+      ],
+      "safetyNotes": [
+        "The posterior interosseous nerve (deep branch of radial nerve) passes deep to the brachioradialis through the supinator — do not advance the needle through the full thickness of the muscle.",
+        "The radial artery runs medial to the brachioradialis in the mid-forearm — stay within the lateral muscle bulk.",
+        "The superficial branch of the radial nerve runs under the brachioradialis in the distal forearm — avoid distal injections."
+      ],
+      "probeDiagram": {
+        "cx": 30,
+        "cy": 65,
+        "angle": 0,
+        "length": 18
+      }
+    },
+    "marker": {
+      "body": "arm_anterior",
+      "x": 30,
+      "y": 65
+    }
+  },
+  {
+    "id": "pronator-teres",
+    "name": "Pronator Teres",
+    "group": "Upper Extremity",
+    "pattern": "Forearm pronation",
+    "landmarks": [
+      "Medial Epicondyle (palpate the prominent bony point on the medial distal humerus — the humeral head of pronator teres originates here along with the common flexor tendon)",
+      "Cubital Fossa (palpate the triangular depression on the anterior elbow — the pronator teres forms the medial border of this fossa)",
+      "Radial Tuberosity (not directly palpable, but located on the medial proximal radius approximately 3-4 cm distal to the elbow crease — the muscle crosses obliquely to insert on the mid-lateral radius)"
+    ],
+    "placement": [
+      "Position the patient seated with the forearm supinated and the elbow extended, resting on a support surface.",
+      "Identify the medial epicondyle and the proximal medial forearm.",
+      "Palpate the pronator teres — ask the patient to pronate the forearm against resistance while you feel the muscle belly contract just distal to the medial epicondyle.",
+      "The muscle belly runs obliquely from the medial epicondyle toward the mid-lateral radius.",
+      "Insert the needle 2-3 cm distal to the medial epicondyle, into the bulk of the muscle belly on the medial-to-anterior proximal forearm.",
+      "Advance the needle 1-1.5 cm perpendicular to the skin.",
+      "The median nerve passes between the two heads of pronator teres — stay superficial in the muscle bulk and do not advance deep toward the ulna.",
+      "Aspirate before injecting."
+    ],
+    "setup": [
+      "USG is recommended to identify the median nerve, which passes between the humeral and ulnar heads of the pronator teres.",
+      "Have the patient pronate and supinate the forearm against resistance to confirm the muscle belly location.",
+      "Mark the injection site 2-3 cm distal and slightly lateral to the medial epicondyle.",
+      "The median nerve and brachial/ulnar arteries are in close proximity — ultrasound guidance significantly improves safety."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz)",
+      "orientation": "Transverse across the proximal medial forearm, 2-3 cm distal to the medial epicondyle",
+      "viewSteps": [
+        "Identify the subcutaneous fat and superficial fascia as the most superficial layers.",
+        "The pronator teres appears as an oval hypoechoic muscle belly on the medial-anterior aspect of the proximal forearm.",
+        "Deep to the pronator teres, identify the flexor digitorum superficialis as a broader, flatter hypoechoic muscle.",
+        "The median nerve appears as a hyperechoic honeycomb-patterned oval structure, often located between the two heads of the pronator teres or just deep to the muscle.",
+        "The ulnar artery branches from the brachial artery deep to the pronator teres — use color Doppler to confirm its location.",
+        "The radius and ulna appear as bright hyperechoic cortical lines at the deepest level."
+      ],
+      "safetyNotes": [
+        "The median nerve passes between the humeral and ulnar heads of the pronator teres — identify it with ultrasound before injecting and stay superficial to the nerve.",
+        "The ulnar artery passes deep to the pronator teres — do not inject too deeply.",
+        "The anterior interosseous nerve branches from the median nerve in this region — avoid the deep fascial plane between the pronator teres and flexor digitorum superficialis."
+      ],
+      "probeDiagram": {
+        "cx": 55,
+        "cy": 62,
+        "angle": 0,
+        "length": 18
+      }
+    },
+    "marker": {
+      "body": "arm_anterior",
+      "x": 55,
+      "y": 62
+    }
+  },
+  {
+    "id": "fcr",
+    "name": "Flexor Carpi Radialis",
+    "group": "Upper Extremity",
+    "pattern": "Wrist flexion, Radial deviation",
+    "landmarks": [
+      "Medial Epicondyle (palpate the bony prominence on the medial distal humerus — the FCR originates from the common flexor tendon here)",
+      "FCR Tendon at Wrist (palpate the prominent tendon on the anterior wrist just radial to midline — ask the patient to flex the wrist against resistance; the FCR tendon is the most radial of the two prominent wrist flexor tendons)",
+      "Palmaris Longus Tendon (palpate the most prominent midline tendon at the anterior wrist with wrist flexion — the FCR lies immediately radial to it; if palmaris longus is absent, the FCR is the single prominent tendon)"
+    ],
+    "placement": [
+      "Position the patient seated with the forearm supinated and resting on a flat surface.",
+      "Identify the proximal to mid-forearm on the anterior (volar) surface.",
+      "Palpate the FCR muscle belly — ask the patient to flex the wrist against resistance while palpating the proximal forearm, 4-5 cm distal to the medial epicondyle and slightly radial to midline.",
+      "The muscle belly is located radial to the palmaris longus and superficial to the flexor digitorum superficialis.",
+      "Insert the needle into the bulk of the muscle belly at the junction of the proximal and middle thirds of the forearm, perpendicular to the skin.",
+      "Advance 1-1.5 cm — the FCR is a relatively superficial muscle.",
+      "Stay superficial and radial to avoid the median nerve, which lies deep between the FCR and the flexor digitorum superficialis.",
+      "Aspirate before injecting."
+    ],
+    "setup": [
+      "USG is recommended to distinguish FCR from adjacent flexor muscles and to identify the median nerve.",
+      "Have the patient flex the wrist against resistance and palpate the FCR tendon at the wrist, then trace it proximally to the muscle belly.",
+      "Mark the injection site before proceeding.",
+      "The radial artery runs lateral to the FCR tendon in the distal forearm — stay in the proximal muscle belly to avoid this vessel."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz)",
+      "orientation": "Transverse across the anterior mid-forearm",
+      "viewSteps": [
+        "Identify the subcutaneous fat and superficial fascia as the most superficial layers.",
+        "The FCR appears as a distinct oval hypoechoic muscle belly on the radial side of the superficial flexor group, wrapped in a hyperechoic fascial sheath.",
+        "Immediately ulnar to the FCR, the palmaris longus (if present) appears as a smaller hypoechoic muscle belly.",
+        "Deep to the FCR, the flexor digitorum superficialis appears as a broader, flatter hypoechoic muscle layer.",
+        "The median nerve appears as a hyperechoic oval with a honeycomb pattern, located between the FDS and the FCR or deep to the FDS.",
+        "The radial artery can be seen with color Doppler on the radial (lateral) side of the FCR."
+      ],
+      "safetyNotes": [
+        "The median nerve runs deep to the FCR and superficial to the FDS in the proximal forearm — do not advance the needle through the full thickness of the FCR.",
+        "The radial artery courses lateral to the FCR tendon — avoid lateral deviation of the needle.",
+        "The anterior interosseous nerve runs deep in the forearm between the FDP and FPL — staying superficial avoids this structure."
+      ],
+      "probeDiagram": {
+        "cx": 45,
+        "cy": 70,
+        "angle": 0,
+        "length": 20
+      }
+    },
+    "marker": {
+      "body": "arm_anterior",
+      "x": 45,
+      "y": 70
+    }
+  },
+  {
+    "id": "fcu",
+    "name": "Flexor Carpi Ulnaris",
+    "group": "Upper Extremity",
+    "pattern": "Wrist flexion, Ulnar deviation",
+    "landmarks": [
+      "Medial Epicondyle (palpate the prominent bony point on the medial distal humerus — the humeral head of FCU originates from the common flexor tendon here)",
+      "Olecranon (palpate the bony prominence at the posterior elbow — the ulnar head of FCU originates from the medial border of the olecranon and proximal ulna)",
+      "Pisiform Bone (palpate the small round bony prominence at the base of the hypothenar eminence on the ulnar-volar wrist — the FCU tendon inserts here; it is easily felt with the wrist in slight flexion and ulnar deviation)"
+    ],
+    "placement": [
+      "Position the patient seated with the forearm supinated or in neutral, resting on a support.",
+      "Identify the muscle belly on the ulnar (medial) aspect of the proximal to mid-forearm.",
+      "Palpate the FCU — ask the patient to flex and ulnarly deviate the wrist against resistance; the FCU belly contracts on the medial forearm.",
+      "The FCU is the most medial (ulnar) of the superficial forearm flexors.",
+      "Insert the needle into the bulk of the muscle belly at the junction of the proximal and middle thirds of the forearm, on the medial (ulnar) aspect.",
+      "Advance 1-1.5 cm perpendicular to the skin — the muscle is superficial.",
+      "The ulnar nerve travels between the two heads of the FCU proximally and then runs deep to the muscle along its ulnar border — stay in the central muscle belly.",
+      "Aspirate before injecting."
+    ],
+    "setup": [
+      "USG is recommended to identify the ulnar nerve, which runs deep to and along the ulnar border of the FCU.",
+      "Have the patient flex the wrist with ulnar deviation against resistance to identify the muscle belly.",
+      "Trace the FCU tendon from the pisiform bone proximally to locate the muscle belly.",
+      "The ulnar artery runs alongside the ulnar nerve deep to the FCU — ultrasound guidance helps avoid both structures."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz)",
+      "orientation": "Transverse across the medial (ulnar) mid-forearm",
+      "viewSteps": [
+        "Identify the subcutaneous fat and superficial fascia on the medial forearm.",
+        "The FCU appears as a large oval hypoechoic muscle belly on the most ulnar (medial) aspect of the superficial flexor group.",
+        "Deep to the FCU, identify the flexor digitorum profundus as a broader hypoechoic muscle layer.",
+        "The ulnar nerve appears as a hyperechoic oval with a fascicular (honeycomb) pattern, located between the FCU and the FDP or along the ulnar border of the FCU.",
+        "The ulnar artery runs alongside the ulnar nerve — use color Doppler to confirm its position.",
+        "The ulna appears as a bright hyperechoic cortical line at the deepest level on the medial side."
+      ],
+      "safetyNotes": [
+        "The ulnar nerve passes between the two heads of the FCU at the cubital tunnel and then runs along the deep surface of the muscle — identify it with ultrasound and avoid it.",
+        "The ulnar artery accompanies the ulnar nerve deep to the FCU — use color Doppler to locate it before injecting.",
+        "Do not inject too deeply or you will enter the flexor digitorum profundus, which is a separate target."
+      ],
+      "probeDiagram": {
+        "cx": 60,
+        "cy": 70,
+        "angle": 0,
+        "length": 18
+      }
+    },
+    "marker": {
+      "body": "arm_medial",
+      "x": 60,
+      "y": 70
+    }
+  },
+  {
+    "id": "fds",
+    "name": "Flexor Digitorum Superficialis",
+    "group": "Upper Extremity",
+    "pattern": "Finger flexion at PIP joints, Wrist flexion",
+    "landmarks": [
+      "Medial Epicondyle (palpate the bony prominence on the medial distal humerus — the humeroulnar head of FDS originates from the common flexor tendon here)",
+      "Coronoid Process of Ulna (not directly palpable, but located approximately 2 cm distal to the elbow crease on the medial side — the ulnar head of FDS originates here)",
+      "Proximal Radius (palpate the radial head by pronating and supinating the forearm while pressing just distal to the lateral epicondyle — the radial head of FDS originates from the proximal radial shaft)"
+    ],
+    "placement": [
+      "Position the patient seated with the forearm supinated and resting on a flat surface.",
+      "Identify the mid-forearm on the anterior (volar) surface.",
+      "Palpate the FDS — ask the patient to flex the fingers at the PIP joints while the DIP joints remain extended (isolates FDS from FDP). Feel the contraction in the mid-anterior forearm.",
+      "The FDS lies deep to the FCR, palmaris longus, and FCU, but superficial to the FDP.",
+      "Insert the needle at the mid-forearm level, between the FCR and FCU, slightly deeper than the superficial flexor layer.",
+      "Advance 1.5-2 cm perpendicular to the skin to pass through the superficial flexor layer and into the FDS.",
+      "The median nerve runs on the superficial surface of the FDS (between the FDS and the superficial flexors) — approach from the ulnar side to minimize risk.",
+      "Aspirate before injecting. Multiple injection sites along the forearm may be needed given the broad muscle belly."
+    ],
+    "setup": [
+      "USG is highly recommended — the FDS lies in the intermediate layer and is difficult to distinguish from surrounding muscles by palpation alone.",
+      "Have the patient flex the PIP joints with the DIP joints extended to confirm FDS activation.",
+      "The FDS has four separate muscle bellies for digits 2-5; target the belly corresponding to the affected digits.",
+      "The median nerve travels on the superficial surface of the FDS — always identify it with ultrasound before injecting."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz)",
+      "orientation": "Transverse across the anterior mid-forearm",
+      "viewSteps": [
+        "Identify the subcutaneous fat and superficial fascia as the most superficial layers.",
+        "The superficial flexor muscles (FCR, palmaris longus, FCU) appear as distinct hypoechoic muscle bellies in the most superficial muscular layer.",
+        "Deep to the superficial flexors, identify a hyperechoic fascial plane separating them from the FDS.",
+        "The FDS appears as a broad, somewhat flattened hypoechoic muscle layer with multiple fascicles — it is the intermediate layer of the forearm flexors.",
+        "The median nerve appears as a bright hyperechoic oval on the superficial surface of the FDS, often between the FCR and FDS.",
+        "Deep to the FDS, another hyperechoic fascial plane separates it from the FDP, which lies directly on the interosseous membrane and the radius/ulna."
+      ],
+      "safetyNotes": [
+        "The median nerve runs on the superficial surface of the FDS — identify it with ultrasound and ensure the needle passes ulnar to it.",
+        "The ulnar artery and nerve are located on the ulnar side of the FDS — use color Doppler and stay within the muscle belly.",
+        "The anterior interosseous nerve (branch of the median nerve) runs on the deep surface of the FDS on the interosseous membrane — do not advance the needle through the FDS into deeper structures."
+      ],
+      "probeDiagram": {
+        "cx": 48,
+        "cy": 72,
+        "angle": 0,
+        "length": 22
+      }
+    },
+    "marker": {
+      "body": "arm_anterior",
+      "x": 48,
+      "y": 72
+    }
+  },
+  {
+    "id": "fdp",
+    "name": "Flexor Digitorum Profundus",
+    "group": "Upper Extremity",
+    "pattern": "Finger flexion at DIP joints, Wrist flexion",
+    "landmarks": [
+      "Medial Epicondyle and Proximal Ulna (palpate the medial epicondyle and run your finger distally along the subcutaneous medial border of the ulna — the FDP originates from the proximal three-quarters of the ulna and the interosseous membrane)",
+      "Subcutaneous Ulnar Border (palpate the sharp posterior border of the ulna along the entire medial forearm — the FDP lies just anterior and lateral to this border)",
+      "DIP Joints of Fingers (ask the patient to flex the DIP joints while you stabilize the middle phalanx — this isolates FDP contraction and you can feel the tendon on the volar finger)"
+    ],
+    "placement": [
+      "Position the patient seated with the forearm supinated and resting on a flat surface.",
+      "Identify the proximal to mid-forearm on the anterior-ulnar (medial) surface.",
+      "Palpate the FDP — ask the patient to flex the DIP joints against resistance while you palpate deep in the proximal ulnar forearm, anterior to the subcutaneous ulnar border.",
+      "The FDP is the deepest of the forearm flexors, lying directly on the interosseous membrane and the anterior surface of the ulna.",
+      "Insert the needle from the medial (ulnar) side of the forearm, just anterior to the palpable subcutaneous ulnar border, at the junction of the proximal and middle thirds of the forearm.",
+      "Advance the needle 2-2.5 cm, directing it anterolaterally toward the interosseous membrane to reach the deep compartment.",
+      "Use ultrasound to confirm needle tip position in the FDP and not in the FDS (superficial) or the interosseous membrane (too deep).",
+      "Aspirate before injecting. Multiple injection sites may be needed to target individual muscle bellies for specific digits."
+    ],
+    "setup": [
+      "USG is strongly recommended — the FDP is a deep muscle that is difficult to access accurately by surface anatomy alone.",
+      "The medial (ulnar) approach is preferred as the subcutaneous ulnar border provides a reliable bony landmark.",
+      "Have the patient flex the DIP joints to confirm FDP activation before marking the site.",
+      "The anterior interosseous nerve and artery run on the anterior surface of the interosseous membrane within the FDP — identify these with ultrasound."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz) or medium-frequency linear (7-12 MHz) for larger forearms",
+      "orientation": "Transverse across the proximal to mid-forearm from the medial (ulnar) approach",
+      "viewSteps": [
+        "Start with the probe on the medial forearm, just anterior to the subcutaneous ulnar border.",
+        "Identify the subcutaneous fat and the sharp hyperechoic cortex of the ulna as your starting reference.",
+        "Anterior to the ulna, the FDP appears as a large hypoechoic muscle mass lying directly on the interosseous membrane.",
+        "Superficial to the FDP, identify the hyperechoic fascial septum separating it from the FDS layer above.",
+        "The interosseous membrane appears as a thin hyperechoic line connecting the radius and ulna at the deepest level.",
+        "Use color Doppler to identify the anterior interosseous artery, which runs on the anterior surface of the interosseous membrane within the FDP."
+      ],
+      "safetyNotes": [
+        "The anterior interosseous nerve and artery run on the interosseous membrane within the FDP — stay within the superficial portion of the muscle belly.",
+        "The ulnar nerve and artery run between the FDS and FCU on the ulnar side — approaching from the subcutaneous ulnar border and directing anterolaterally helps avoid them.",
+        "Do not advance the needle to the interosseous membrane or you risk perforating it into the posterior compartment."
+      ],
+      "probeDiagram": {
+        "cx": 52,
+        "cy": 70,
+        "angle": 0,
+        "length": 20
+      }
+    },
+    "marker": {
+      "body": "arm_anterior",
+      "x": 52,
+      "y": 70
+    }
+  },
+  {
+    "id": "fpl",
+    "name": "Flexor Pollicis Longus",
+    "group": "Upper Extremity",
+    "pattern": "Thumb flexion at IP joint",
+    "landmarks": [
+      "Anterior Radial Shaft (palpate the anterior surface of the radius in the mid-forearm — the FPL originates from the middle third of the anterior radial surface; the radius is palpable lateral to the flexor muscle mass)",
+      "Thenar Eminence (palpate the fleshy mound at the base of the thumb on the palmar surface — the FPL tendon courses deep here to insert on the distal phalanx of the thumb)",
+      "Radial Artery at the Wrist (palpate the radial pulse at the radial-volar wrist, just lateral to the FCR tendon — the FPL tendon lies deep and slightly ulnar to the radial artery at this level)"
+    ],
+    "placement": [
+      "Position the patient seated with the forearm supinated and resting flat on a support surface.",
+      "Identify the mid-forearm on the anterior (volar) and slightly radial surface.",
+      "Palpate the FPL — ask the patient to flex the thumb at the interphalangeal (IP) joint against resistance; the FPL is the only muscle that flexes the thumb IP joint. Feel for contraction in the mid-radial forearm.",
+      "The FPL lies deep in the forearm, lateral to the FDP, directly on the anterior surface of the radius and the interosseous membrane.",
+      "Insert the needle at the mid-forearm level, on the radial side, between the brachioradialis (laterally) and the FCR (medially).",
+      "Advance the needle 2-2.5 cm, directing it posteriorly toward the radius to reach the deep compartment where the FPL lies.",
+      "Use ultrasound to confirm the needle tip is in the FPL and not in the superficial flexor muscles (FCR, FDS) or the pronator teres.",
+      "Aspirate before injecting."
+    ],
+    "setup": [
+      "USG is strongly recommended — the FPL is a deep muscle that requires passing through superficial flexor layers.",
+      "Have the patient repeatedly flex the thumb IP joint while you confirm the muscle belly location with ultrasound.",
+      "Approach from the radial side between the brachioradialis and FCR to minimize traversal of other muscle layers.",
+      "The anterior interosseous nerve provides motor innervation to the FPL and runs along the interosseous membrane — identify it and avoid injecting near it."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz)",
+      "orientation": "Transverse across the mid-forearm at the radial side",
+      "viewSteps": [
+        "Identify the subcutaneous fat and superficial fascia as the most superficial layers.",
+        "The brachioradialis appears as a superficial hypoechoic muscle on the radial (lateral) side.",
+        "Medial to the brachioradialis, the FCR and FDS form the intermediate hypoechoic muscle layer.",
+        "Deep to these superficial muscles, the FPL appears as a distinct oval hypoechoic muscle belly lying directly on the hyperechoic cortex of the radius.",
+        "The radius appears as a bright hyperechoic curved cortical line at the deepest level on the radial side.",
+        "Use color Doppler to identify the radial artery, which courses superficial and lateral to the FPL in the forearm."
+      ],
+      "safetyNotes": [
+        "The anterior interosseous nerve runs on the interosseous membrane adjacent to the FPL — stay within the muscle belly and do not advance to the interosseous membrane.",
+        "The radial artery runs superficial and lateral to the FPL — use Doppler to identify it and ensure the needle path avoids it.",
+        "The median nerve lies superficial and medial to the FPL — avoid medial deviation of the needle."
+      ],
+      "probeDiagram": {
+        "cx": 38,
+        "cy": 72,
+        "angle": 0,
+        "length": 18
+      }
+    },
+    "marker": {
+      "body": "arm_anterior",
+      "x": 38,
+      "y": 72
+    }
+  },
+  {
+    "id": "adductor-pollicis",
+    "name": "Adductor Pollicis",
+    "group": "Upper Extremity",
+    "pattern": "Thumb adduction (thumb-in-palm deformity)",
+    "landmarks": [
+      "First Web Space (palpate the fleshy area between the thumb and index finger metacarpals on the dorsal hand — the adductor pollicis fills this web space; squeeze the web space between your thumb and index finger to feel the muscle bulk)",
+      "Third Metacarpal (palpate the long bone of the middle finger on the dorsal hand — the oblique head of the adductor pollicis originates from the base of the second and third metacarpals and the capitate)",
+      "Proximal Phalanx of the Thumb, Ulnar Side (palpate the base of the thumb proximal phalanx on the ulnar side — the adductor pollicis inserts here via the ulnar sesamoid bone)"
+    ],
+    "placement": [
+      "Position the patient with the hand resting on a flat surface, palm down (pronated), with the thumb abducted away from the palm.",
+      "Identify the first web space between the thumb and index finger metacarpals.",
+      "Palpate the adductor pollicis — ask the patient to adduct the thumb firmly against the index finger; feel the muscle contract and bulk in the web space.",
+      "The muscle has two heads: the oblique head (deeper, originating from the carpals and metacarpals) and the transverse head (more superficial, originating from the third metacarpal shaft).",
+      "Insert the needle from the dorsal aspect of the first web space, perpendicular to the plane of the hand.",
+      "Advance 0.5-1 cm — this is a thin muscle in a confined space.",
+      "Stay within the web space and do not advance toward the palmar surface where the digital neurovascular bundles run.",
+      "Aspirate before injecting. A single injection into the bulk of the web space is usually sufficient. Use a small-gauge needle (25-27G)."
+    ],
+    "setup": [
+      "USG is helpful but the muscle can be injected reliably using surface anatomy in the first web space.",
+      "Use a dorsal approach to avoid the palmar digital nerves and arteries.",
+      "Have the patient adduct the thumb to confirm the muscle belly before marking.",
+      "Differentiate from the first dorsal interosseous, which lies dorsal and lateral in the web space — the adductor pollicis is deeper and more palmar."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (12-18 MHz) or hockey-stick probe",
+      "orientation": "Transverse across the first web space from the dorsal approach",
+      "viewSteps": [
+        "Identify the subcutaneous fat and thin dorsal skin as the most superficial layers.",
+        "The first dorsal interosseous appears as a superficial hypoechoic muscle on the dorsal-radial aspect of the web space.",
+        "Deep to the first dorsal interosseous, the adductor pollicis appears as a hypoechoic muscle filling the space between the first and second metacarpals on the palmar side.",
+        "The first and second metacarpals appear as two bright hyperechoic cortical lines on either side of the web space.",
+        "The deep palmar arch and digital arteries may be seen with color Doppler on the palmar surface of the adductor pollicis."
+      ],
+      "safetyNotes": [
+        "The deep branch of the ulnar nerve passes through the adductor pollicis (between the two heads) — use a superficial injection into the transverse head when possible.",
+        "The radialis indicis artery and princeps pollicis artery run along the borders of the web space — stay in the central bulk of the muscle.",
+        "The palmar digital nerves run on the palmar aspect — use a dorsal approach and do not advance through the full depth of the web space."
+      ],
+      "probeDiagram": {
+        "cx": 35,
+        "cy": 88,
+        "angle": 45,
+        "length": 15
+      }
+    },
+    "marker": {
+      "body": "arm_anterior",
+      "x": 35,
+      "y": 88
+    }
+  },
+  {
+    "id": "subscapularis",
+    "name": "Subscapularis",
+    "group": "Upper Extremity / Trunk",
+    "pattern": "Shoulder internal rotation, Adduction",
+    "landmarks": [
+      "Coracoid Process (palpate below the lateral clavicle, approximately 2 cm inferior and medial to the anterolateral acromion — feel for a bony prominence deep to the anterior deltoid; the subscapularis tendon passes just lateral to the coracoid)",
+      "Anterior Axillary Fold (grasp the fold of skin and muscle at the front of the axilla — the subscapularis forms the posterior wall of the axilla and its tendon contributes to the anterior fold deep to the pectoralis major)",
+      "Lesser Tuberosity of the Humerus (with the arm externally rotated, palpate the anterior shoulder just lateral to the coracoid and medial to the bicipital groove — the lesser tuberosity is where the subscapularis tendon inserts)"
+    ],
+    "placement": [
+      "Position the patient supine or seated with the arm abducted to 45-60 degrees and externally rotated, resting on a support.",
+      "Identify the anterior axillary fold and the coracoid process.",
+      "The subscapularis lies on the anterior (costal) surface of the scapula, deep to the serratus anterior and chest wall musculature.",
+      "Approach from the anterior axillary fold: palpate the lateral border of the scapula through the axilla.",
+      "Insert the needle through the posterior axillary fold, directing it toward the anterior scapular surface.",
+      "Advance under ultrasound guidance until the needle tip is within the subscapularis muscle belly on the costal (anterior) surface of the scapula.",
+      "This is a deep injection — typically 3-4 cm depending on body habitus.",
+      "Aspirate before injecting. Multiple injection sites along the muscle belly may be needed for adequate distribution."
+    ],
+    "setup": [
+      "USG is MANDATORY — the subscapularis is deep and bordered by critical neurovascular structures.",
+      "Position the patient to maximize access to the axilla and the anterior scapular surface.",
+      "Externally rotate the arm to bring the subscapularis into a more accessible position.",
+      "The axillary neurovascular bundle (axillary artery, vein, and brachial plexus cords) runs through the axilla — always identify these with Doppler before injecting."
+    ],
+    "ultrasound": {
+      "probe": "Low-to-medium frequency curvilinear (5-8 MHz) or high-frequency linear (10-15 MHz) in thin patients",
+      "orientation": "Parasagittal in the anterior axilla, with the probe face directed toward the costal surface of the scapula",
+      "viewSteps": [
+        "Identify the subcutaneous fat and the pectoralis major as the most superficial muscular layer on the anterior chest.",
+        "Deep to the pectoralis major, the pectoralis minor appears as a smaller triangular hypoechoic muscle.",
+        "In the axillary approach, identify the hyperechoic cortex of the scapula as your deep landmark — the subscapularis lies directly on its anterior (costal) surface.",
+        "The subscapularis appears as a large multipennate hypoechoic muscle with prominent intramuscular tendons (giving it a striated appearance) on the anterior scapular surface.",
+        "Use color Doppler to identify the axillary artery and vein, which lie superficial and lateral to the subscapularis in the axilla.",
+        "The thoracodorsal and subscapular arteries may branch near the lateral scapular border — identify them with Doppler."
+      ],
+      "safetyNotes": [
+        "The axillary artery, vein, and brachial plexus cords are immediately anterior and lateral to the subscapularis in the axilla — always identify them with Doppler and ensure the needle path avoids them.",
+        "The subscapular nerve (upper and lower) innervates the subscapularis and runs on its posterior surface — stay within the muscle belly.",
+        "Do not advance the needle past the scapula, as the pleura and lung lie on the deep (costal) side of the scapula medially."
+      ],
+      "probeDiagram": {
+        "cx": 72,
+        "cy": 30,
+        "angle": 90,
+        "length": 20
+      }
+    },
+    "marker": {
+      "body": "torso_anterior",
+      "x": 72,
+      "y": 30
+    }
+  },
+  {
+    "id": "infraspinatus",
+    "name": "Infraspinatus",
+    "group": "Upper Extremity / Trunk",
+    "pattern": "Shoulder external rotation (when spastic, contributes to abnormal posturing)",
+    "landmarks": [
+      "Spine of the Scapula (palpate the prominent bony ridge running horizontally across the posterior scapula — run your fingers from the medial scapular border laterally to the acromion; the infraspinatus fossa lies below this ridge)",
+      "Medial Border of the Scapula (palpate the vertical bony edge of the scapula medially — ask the patient to retract the scapula to make it more prominent; the infraspinatus fills the fossa between this border and the lateral border)",
+      "Greater Tuberosity of the Humerus (palpate the lateral shoulder just below the acromion with the arm in neutral rotation — the infraspinatus tendon inserts on the middle facet of the greater tuberosity)"
+    ],
+    "placement": [
+      "Position the patient seated, leaning forward, or in a prone position with the arms at the sides.",
+      "Identify the infraspinous fossa — the large triangular area on the posterior scapula below the spine of the scapula.",
+      "Palpate the infraspinatus muscle belly — ask the patient to externally rotate the arm against resistance while you feel for contraction in the infraspinous fossa.",
+      "The bulk of the muscle belly is located in the center of the infraspinous fossa, approximately 2-3 cm below the spine of the scapula.",
+      "Insert the needle perpendicular to the skin into the center of the infraspinous fossa, targeting the thickest part of the muscle belly.",
+      "Advance 1.5-2 cm — the muscle lies directly on the scapular bone, so you will feel resistance when the needle contacts the scapula.",
+      "The scapula acts as a protective backstop — you cannot advance past it.",
+      "Aspirate before injecting. Distribute injections across the muscle belly if treating a large area of spasticity."
+    ],
+    "setup": [
+      "Surface anatomy is often sufficient given the well-defined bony borders of the infraspinous fossa.",
+      "USG can confirm needle placement within the infraspinatus and not the overlying trapezius or deltoid.",
+      "Have the patient externally rotate the shoulder against resistance to confirm the muscle belly.",
+      "The suprascapular nerve and artery pass through the spinoglenoid notch at the lateral base of the spine of the scapula — avoid injecting near this area."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz)",
+      "orientation": "Transverse across the infraspinous fossa, parallel to the spine of the scapula",
+      "viewSteps": [
+        "Identify the subcutaneous fat and the thin trapezius muscle as the most superficial layers (the trapezius overlies the infraspinatus medially and superiorly).",
+        "The infraspinatus appears as a large hypoechoic muscle with a multipennate architecture, filling the infraspinous fossa.",
+        "The scapular bone appears as a bright hyperechoic line deep to the muscle, with posterior acoustic shadowing — this is your depth limit.",
+        "The deltoid muscle overlies the infraspinatus laterally — identify the fascial plane separating them.",
+        "At the lateral edge of the scapula near the spinoglenoid notch, use color Doppler to identify the suprascapular artery."
+      ],
+      "safetyNotes": [
+        "The suprascapular nerve passes through the spinoglenoid notch at the lateral base of the scapular spine — avoid injecting within 2 cm of this landmark.",
+        "The suprascapular artery accompanies the nerve — use Doppler to identify it laterally.",
+        "The scapula provides a bony backstop, but be aware that the scapula is thin medially — in cachectic patients, use ultrasound to confirm adequate bone thickness."
+      ],
+      "probeDiagram": {
+        "cx": 35,
+        "cy": 32,
+        "angle": 0,
+        "length": 22
+      }
+    },
+    "marker": {
+      "body": "torso_posterior",
+      "x": 35,
+      "y": 32
+    }
+  },
+  {
+    "id": "teres-major",
+    "name": "Teres Major",
+    "group": "Upper Extremity / Trunk",
+    "pattern": "Shoulder adduction, Internal rotation, Extension",
+    "landmarks": [
+      "Inferior Angle of the Scapula (palpate the lowest point of the scapula posteriorly — ask the patient to retract the scapula to make it prominent; the teres major originates from the posterior surface near the inferior angle and the lower lateral border)",
+      "Posterior Axillary Fold (grasp the fold of tissue at the back of the axilla — the teres major and latissimus dorsi form this fold; the teres major is the more superior and lateral of the two muscles in this fold)",
+      "Intertubercular (Bicipital) Groove of the Humerus (palpate the anterior shoulder between the greater and lesser tuberosities — the teres major inserts on the medial lip of the bicipital groove, along with the latissimus dorsi)"
+    ],
+    "placement": [
+      "Position the patient seated or prone with the arm adducted at the side.",
+      "Identify the posterior axillary fold and the inferior angle of the scapula.",
+      "Palpate the teres major — ask the patient to internally rotate and adduct the arm against resistance; the teres major contracts in the posterior axillary fold, superior and lateral to the latissimus dorsi.",
+      "The teres major lies along the lateral border of the scapula, running from the inferior angle to the humerus.",
+      "Insert the needle into the bulk of the muscle belly at the level of the inferior scapular angle, approximately 2-3 cm lateral to the lateral border of the scapula.",
+      "Advance 1.5-2 cm perpendicular to the skin.",
+      "Distinguish from the latissimus dorsi, which wraps around the teres major inferiorly — the teres major has a rounder, shorter belly.",
+      "Aspirate before injecting."
+    ],
+    "setup": [
+      "USG is recommended to distinguish teres major from the latissimus dorsi and teres minor, which are in close proximity.",
+      "Have the patient internally rotate the arm against resistance to identify the muscle belly in the posterior axillary fold.",
+      "The latissimus dorsi wraps around and lies superficial to the teres major at the posterior axillary fold — ultrasound helps separate the two.",
+      "The circumflex scapular artery passes through the triangular space (bordered by teres minor, teres major, and long head of triceps) — identify this with Doppler."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz)",
+      "orientation": "Transverse across the posterior axillary fold at the level of the inferior scapular angle",
+      "viewSteps": [
+        "Identify the subcutaneous fat and superficial fascia as the most superficial layers.",
+        "The latissimus dorsi appears as a thin, broad hypoechoic muscle in the most superficial muscular layer of the posterior axillary fold.",
+        "Deep to the latissimus dorsi, the teres major appears as a rounder, thicker hypoechoic muscle belly originating from the lateral border and inferior angle of the scapula.",
+        "The scapular bone (lateral border) appears as a hyperechoic cortical line deep to the teres major.",
+        "Superior to the teres major, the teres minor can be identified as a smaller hypoechoic muscle belly — a fascial plane separates the two.",
+        "Use color Doppler to identify the circumflex scapular artery in the triangular space between the teres major, teres minor, and long head of the triceps."
+      ],
+      "safetyNotes": [
+        "The circumflex scapular artery runs through the triangular space immediately adjacent to the teres major — use Doppler to identify and avoid it.",
+        "The axillary nerve and posterior circumflex humeral artery course through the quadrangular space (bordered by teres minor superiorly, teres major inferiorly, long head of triceps medially, and surgical neck of humerus laterally) — avoid injecting near this space.",
+        "The thoracodorsal nerve and artery run on the deep surface of the latissimus dorsi, close to the teres major — stay within the teres major muscle belly."
+      ],
+      "probeDiagram": {
+        "cx": 30,
+        "cy": 38,
+        "angle": 15,
+        "length": 20
+      }
+    },
+    "marker": {
+      "body": "torso_posterior",
+      "x": 30,
+      "y": 38
+    }
+  }
+]
