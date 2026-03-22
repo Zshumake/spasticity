@@ -1,0 +1,146 @@
+[
+    {
+        "id": "biceps",
+        "name": "Biceps Brachii",
+        "group": "Upper Extremity",
+        "pattern": "Elbow flexion, Forearm supination",
+        "landmarks": "Coracoid process, Acromion, Bicipital groove",
+        "placement": "Mid-humeral level, anterior compartment. Long head and medial heads targeted separately.",
+        "setup": "Surface anatomy sufficient, but USG avoids Brachialis if targeted alone.",
+        "usgInstructions": "Probe transverse over mid-humerus. Identify Biceps as the superficial layer. Deep to Biceps is the Brachialis muscle, separated by the musculocutaneous nerve.",
+        "dosage": "50-100 Units",
+        "marker": {
+            "body": "arm_anterior_modern",
+            "x": 48.0,
+            "y": 42.0
+        }
+    },
+    {
+        "id": "brachialis",
+        "name": "Brachialis",
+        "group": "Upper Extremity",
+        "pattern": "Pure elbow flexion",
+        "landmarks": "Lateral/Medial epicondyles (deep)",
+        "placement": "Distal 1/3 of humerus, deep to Biceps Brachii.",
+        "setup": "USG critical to avoid Biceps and musculocutaneous nerve.",
+        "usgInstructions": "Probe transverse over distal 1/3 of humerus. Identify the musculoskeletal unit deep to the Biceps. Entry often lateral or medial to the Biceps belly.",
+        "dosage": "30-60 Units",
+        "marker": {
+            "body": "arm_anterior_modern",
+            "x": 48.0,
+            "y": 65.0
+        }
+    },
+    {
+        "id": "triceps",
+        "name": "Triceps Brachii",
+        "group": "Upper Extremity",
+        "pattern": "Elbow extension",
+        "landmarks": "Olecranon process, posterior humerus.",
+        "placement": "Posterior compartment of humerus. Long head, lateral head, and medial head targeted.",
+        "setup": "Surface anatomy or EMG usually sufficient.",
+        "usgInstructions": "Probe transverse over posterior arm. Identify three distinct muscle heads. Use Doppler to avoid the Radial artery/nerve in the spiral groove.",
+        "dosage": "50-150 Units",
+        "marker": {
+            "body": "posterior_arm_modern",
+            "x": 45.0,
+            "y": 40.0
+        }
+    },
+    {
+        "id": "fcr",
+        "name": "Flexor Carpi Radialis",
+        "group": "Upper Forearm",
+        "pattern": "Wrist flexion and radial deviation",
+        "landmarks": "Medial epicondyle, Radial styleoid.",
+        "placement": "Proximal 1/3 of forearm, radial side of the midline.",
+        "setup": "USG recommended to avoid Radial artery.",
+        "usgInstructions": "Identify target at proximal 1/3 of forearm. FCR is superficial and lateral to the FDS. Locate Radial Artery laterally.",
+        "dosage": "25-50 Units",
+        "marker": {
+            "body": "anterior_forearm_modern",
+            "x": 35.0,
+            "y": 30.0
+        }
+    },
+    {
+        "id": "fcu",
+        "name": "Flexor Carpi Ulnaris",
+        "group": "Upper Forearm",
+        "pattern": "Wrist flexion and ulnar deviation",
+        "landmarks": "Medial epicondyle, Pisiform.",
+        "placement": "Proximal 2/5 of forearm on ulnar border.",
+        "setup": "USG critical to avoid Ulnar nerve/artery.",
+        "usgInstructions": "Identify target at proximal forearm, ulnar border. FCU sits superficial to FDP. The Ulnar neurovascular bundle lies deep/lateral to FCU.",
+        "dosage": "25-50 Units",
+        "marker": {
+            "body": "anterior_forearm_modern",
+            "x": 65.0,
+            "y": 35.0
+        }
+    },
+    {
+        "id": "gastroc",
+        "name": "Gastrocnemius",
+        "group": "Lower Extremity",
+        "pattern": "Plantar flexion, Knee flexion",
+        "landmarks": "Medial/Lateral condyles of femur, Achilles tendon.",
+        "placement": "Medial and Lateral heads targeted in the proximal 1/3 of the lower leg.",
+        "setup": "Surface anatomy sufficient, but USG avoids Soleus if targeted separately.",
+        "usgInstructions": "Probe transverse over proximal calf. Identify Medial and Lateral heads as the superficial layers.",
+        "dosage": "50-150 Units",
+        "marker": {
+            "body": "posterior_lower_leg_modern",
+            "x": 50.0,
+            "y": 45.0
+        }
+    },
+    {
+        "id": "soleus",
+        "name": "Soleus",
+        "group": "Lower Extremity",
+        "pattern": "Plantar flexion",
+        "landmarks": "Deep to Gastrocnemius, Medial/Lateral calf borders.",
+        "placement": "Mid-distal calf, targeted deep to or below the Gastrocnemius bellies.",
+        "setup": "USG critical to avoid Gastrocnemius if injecting Soleus only.",
+        "usgInstructions": "Identify target deep to the Gastrocnemius. Best viewed laterally or medially where Soleus extends beyond Gastroc bellies.",
+        "dosage": "50-100 Units",
+        "marker": {
+            "body": "posterior_lower_leg_modern",
+            "x": 50.0,
+            "y": 70.0
+        }
+    },
+    {
+        "id": "tib_ant",
+        "name": "Tibialis Anterior",
+        "group": "Lower Extremity",
+        "pattern": "Dorsiflexion and Inversion",
+        "landmarks": "Tibial tuberosity, Lateral tibial border.",
+        "placement": "Proximal 1/3 of anterior leg, just lateral to the tibia.",
+        "setup": "Surface anatomy usually sufficient.",
+        "usgInstructions": "Probe transverse over proximal anterior leg. Identify Tib Ant lateral to the tibial bone shadow.",
+        "dosage": "50-100 Units",
+        "marker": {
+            "body": "anterior_lower_leg_modern",
+            "x": 45.0,
+            "y": 40.0
+        }
+    },
+    {
+        "id": "rectus_femoris",
+        "name": "Rectus Femoris",
+        "group": "Lower Extremity",
+        "pattern": "Knee extension, Hip flexion",
+        "landmarks": "ASIS, Patella.",
+        "placement": "Anterior mid-thigh, most superficial of the quadriceps.",
+        "setup": "Surface anatomy or USG. USG allows separation from Vastus Intermedius.",
+        "usgInstructions": "Probe transverse over mid-thigh. Rectus Femoris is the most superficial 'bullseye' muscle.",
+        "dosage": "50-100 Units",
+        "marker": {
+            "body": "anterior_thigh_modern",
+            "x": 45.0,
+            "y": 45.0
+        }
+    }
+]

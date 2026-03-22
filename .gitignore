@@ -1,1 +1,20 @@
-NeuroInject/
+# macOS
+.DS_Store
+
+# Video frames (large, generated)
+video_frames/
+
+# Flutter build artifacts
+NeuroInject/build/
+NeuroInject/.dart_tool/
+NeuroInject/.packages
+NeuroInject/.flutter-plugins
+NeuroInject/.flutter-plugins-dependencies
+NeuroInject/macos/Flutter/ephemeral/
+NeuroInject/macos/Pods/
+NeuroInject/.pub-cache/
+
+# IDE
+.idea/
+*.iml
+.vscode/
