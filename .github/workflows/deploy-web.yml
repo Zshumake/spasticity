@@ -1,0 +1,52 @@
+name: Deploy Flutter Web to gh-pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'NeuroInject/**'
+      - '.github/workflows/deploy-web.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: "pages-deploy"
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.41.2'
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        working-directory: NeuroInject
+        run: flutter pub get
+
+      - name: Build web
+        working-directory: NeuroInject
+        run: flutter build web --release --base-href /spasticity/
+
+      - name: Add .nojekyll
+        run: touch NeuroInject/build/web/.nojekyll
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./NeuroInject/build/web
+          publish_branch: gh-pages
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'Deploy: ${{ github.event.head_commit.message }}'
