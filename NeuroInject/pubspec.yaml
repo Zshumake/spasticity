@@ -39,6 +39,7 @@ dependencies:
   shared_preferences: ^2.5.2
   google_fonts: ^6.2.1
   url_launcher: ^6.3.1
+  webview_flutter: ^4.10.0
   printing: ^5.13.4
   pdf: ^3.11.3
 
@@ -66,6 +67,7 @@ flutter:
 
   assets:
     - assets/data/muscles.json
+    - assets/data/patterns.json
     - assets/images/us_reference/
     - assets/images/probe_placement/
 

@@ -40,7 +40,7 @@ Future<void> printCheatSheet(BuildContext context, Muscle muscle) async {
                   if (muscle.dosage != null)
                     pw.Padding(
                       padding: const pw.EdgeInsets.only(top: 4),
-                      child: pw.Text('Dosage: ${muscle.dosage}',
+                      child: pw.Text('Dosage: ${muscle.dosage!.displayFull}',
                           style: pw.TextStyle(
                               fontSize: 11,
                               fontWeight: pw.FontWeight.bold,

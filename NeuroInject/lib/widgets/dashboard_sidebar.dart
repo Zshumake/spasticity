@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import '../models/spasticity_pattern.dart';
 import '../theme/app_theme.dart';
 import '../theme/theme_manager.dart';
 
 class DashboardSidebar extends StatelessWidget {
   final String selectedCategory;
   final List<String> categories;
+  final List<SpasticityPattern> patterns;
   final Function(String) onCategorySelected;
   final bool isMobile;
 
@@ -15,6 +18,7 @@ class DashboardSidebar extends StatelessWidget {
     required this.selectedCategory,
     required this.categories,
     required this.onCategorySelected,
+    this.patterns = const [],
     this.isMobile = false,
   });
 
@@ -36,6 +40,14 @@ class DashboardSidebar extends StatelessWidget {
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             _sectionLabel('CATEGORIES', isDark),
             ...categories.map((c) => _buildItem(context, c, isDark)),
+            if (patterns.isNotEmpty) ...[
+              const SizedBox(height: 16),
+              _sectionLabel('SPASTICITY PATTERNS', isDark),
+              ...patterns.map((p) => _buildPatternItem(context, p, isDark)),
+            ],
+            const SizedBox(height: 16),
+            _sectionLabel('TOOLS', isDark),
+            _buildToolItem(context, 'Dose Calculator', Icons.calculate_outlined, isDark),
           ]),
         )),
         _buildFooter(context, isDark),
@@ -121,6 +133,79 @@ class DashboardSidebar extends StatelessWidget {
     );
   }
 
+  Widget _buildToolItem(BuildContext context, String title, IconData icon, bool isDark) {
+    return InkWell(
+      onTap: () {
+        context.push('/calculator');
+        if (isMobile) Navigator.pop(context);
+      },
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 150),
+        margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 1),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(AppTheme.radiusSm),
+          border: Border.all(color: Colors.transparent, width: 1),
+        ),
+        child: Row(children: [
+          const SizedBox(width: 15),
+          Icon(icon, size: 16, color: isDark ? AppTheme.textSecondary : AppTheme.textSecondaryLight),
+          const SizedBox(width: 12),
+          Expanded(child: Text(title, style: GoogleFonts.sourceSans3(
+            fontSize: 13, color: isDark ? AppTheme.textSecondary : AppTheme.textSecondaryLight))),
+        ]),
+      ),
+    );
+  }
+
+  Widget _buildPatternItem(BuildContext context, SpasticityPattern pattern, bool isDark) {
+    final isSelected = selectedCategory == pattern.id;
+    final color = AppTheme.patternColor;
+    return InkWell(
+      onTap: () {
+        onCategorySelected(pattern.id);
+        if (isMobile) Navigator.pop(context);
+      },
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 150),
+        margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 1),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        decoration: BoxDecoration(
+          color: isSelected ? color.withAlpha(isDark ? 20 : 15) : Colors.transparent,
+          borderRadius: BorderRadius.circular(AppTheme.radiusSm),
+          border: isSelected
+              ? Border.all(color: color.withAlpha(50), width: 1)
+              : Border.all(color: Colors.transparent, width: 1),
+        ),
+        child: Row(children: [
+          AnimatedContainer(
+            duration: const Duration(milliseconds: 200),
+            width: 3, height: 16,
+            decoration: BoxDecoration(
+              color: isSelected ? color : Colors.transparent,
+              borderRadius: BorderRadius.circular(2)),
+          ),
+          const SizedBox(width: 12),
+          Icon(Icons.gesture_rounded, size: 14,
+            color: isSelected ? color : (isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight)),
+          const SizedBox(width: 10),
+          Expanded(child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(pattern.shortName, style: GoogleFonts.sourceSans3(
+                fontSize: 12,
+                fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
+                color: isSelected ? color : (isDark ? AppTheme.textSecondary : AppTheme.textSecondaryLight)),
+                overflow: TextOverflow.ellipsis),
+              Text('${pattern.muscles.length} muscles', style: GoogleFonts.ibmPlexMono(
+                fontSize: 9, color: AppTheme.textTertiary)),
+            ],
+          )),
+        ]),
+      ),
+    );
+  }
+
   Widget _buildFooter(BuildContext context, bool isDark) {
     final tm = context.read<ThemeManager>();
     return Container(
@@ -170,7 +255,7 @@ class DashboardSidebar extends StatelessWidget {
     switch (cat.toLowerCase()) {
       case 'all': return AppTheme.primary;
       case 'favorites': return AppTheme.amber;
-      case 'recent': return const Color(0xFFD980FA);
+      case 'recent': return AppTheme.orchid;
       default: return AppTheme.groupColor(cat);
     }
   }

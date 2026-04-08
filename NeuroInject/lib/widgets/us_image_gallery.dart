@@ -82,12 +82,17 @@ class _USImageGalleryState extends State<USImageGallery> {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                Image.asset(
-                  widget.imagePaths[_selectedIndex],
-                  fit: BoxFit.contain,
-                  errorBuilder: (_, __, ___) => Center(
-                    child: Icon(Icons.broken_image_outlined,
-                        color: AppTheme.textTertiary, size: 48),
+                AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 250),
+                  child: Image.asset(
+                    widget.imagePaths[_selectedIndex],
+                    key: ValueKey<int>(_selectedIndex),
+                    fit: BoxFit.contain,
+                    gaplessPlayback: true,
+                    errorBuilder: (_, __, ___) => Center(
+                      child: Icon(Icons.broken_image_outlined,
+                          color: AppTheme.textTertiary, size: 48),
+                    ),
                   ),
                 ),
                 // Label overlay
@@ -160,7 +165,8 @@ class _USImageGalleryState extends State<USImageGallery> {
                 final isActive = index == _selectedIndex;
                 return GestureDetector(
                   onTap: () => setState(() => _selectedIndex = index),
-                  child: Container(
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 200),
                     width: 72,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6),

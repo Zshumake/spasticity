@@ -11,6 +11,7 @@ class AppTheme {
   static const Color amber = Color(0xFFF9CA24);        // warm gold
   static const Color danger = Color(0xFFEB4D4B);       // arterial red
   static const Color success = Color(0xFF00B894);      // surgical teal
+  static const Color patternColor = Color(0xFF6C5CE7); // clinical purple (spasticity patterns)
 
   // ── Dark mode (default) ───────────────────────────────────────
   static const Color bgDark = Color(0xFF12100E);           // warm charcoal
@@ -28,10 +29,21 @@ class AppTheme {
   static const Color textPrimaryLight = Color(0xFF1A1512);
   static const Color textSecondaryLight = Color(0xFF7A6E64);
 
+  // ── Light-mode amber (darker for WCAG AA contrast on light bg) ─
+  static const Color amberDark = Color(0xFFD4A017);
+  static Color amberText(bool isDark) => isDark ? amber : amberDark;
+
+  // ── Orchid (Recent category) ──────────────────────────────────
+  static const Color orchid = Color(0xFFD980FA);
+
+  // ── Tertiary text (fixed for light-mode WCAG AA 4.5:1) ────────
+  static const Color textTertiaryLight = Color(0xFF6B5F55);
+
   // ── Radii ─────────────────────────────────────────────────────
   static const double radiusSm = 4;
   static const double radiusMd = 8;
   static const double radiusLg = 12;
+  static const double radiusXl = 16;
 
   // ── Shared text styles ────────────────────────────────────────
   static TextStyle get monoLabel => GoogleFonts.ibmPlexMono(

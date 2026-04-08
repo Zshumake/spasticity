@@ -22,15 +22,16 @@ class _MuscleCardState extends State<MuscleCard> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final favs = context.watch<FavoritesManager>();
-    final isFav = favs.isFavorite(widget.muscle.id);
+    final isFav = context.select<FavoritesManager, bool>(
+      (favs) => favs.isFavorite(widget.muscle.id),
+    );
     final catColor = AppTheme.groupColor(widget.muscle.group);
 
     return MouseRegion(
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
       child: GestureDetector(
-        onTap: () => context.go('/muscle/${widget.muscle.id}'),
+        onTap: () => context.push('/muscle/${widget.muscle.id}'),
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
           curve: Curves.easeOut,
@@ -76,7 +77,7 @@ class _MuscleCardState extends State<MuscleCard> {
                             letterSpacing: 1.5, color: catColor)),
                         const Spacer(),
                         GestureDetector(
-                          onTap: () => favs.toggleFavorite(widget.muscle.id),
+                          onTap: () => context.read<FavoritesManager>().toggleFavorite(widget.muscle.id),
                           child: AnimatedSwitcher(
                             duration: const Duration(milliseconds: 200),
                             child: Icon(
@@ -104,7 +105,7 @@ class _MuscleCardState extends State<MuscleCard> {
                       // Tags: dosage + probe type
                       Wrap(spacing: 4, runSpacing: 4, children: [
                         if (widget.muscle.dosage != null)
-                          _tag(widget.muscle.dosage!, catColor, isDark),
+                          _tag(widget.muscle.dosage!.displayShort, catColor, isDark),
                         if (widget.muscle.ultrasound != null)
                           _tag(widget.muscle.ultrasound!.probe, catColor, isDark),
                       ]),

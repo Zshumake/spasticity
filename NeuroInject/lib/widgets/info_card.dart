@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 
@@ -20,45 +19,47 @@ class InfoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(16),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-        child: Container(
-          decoration: BoxDecoration(
-            color: highlighted
-                ? AppColors.accentBlue.withAlpha(25)
-                : AppColors.bgCard,
-            borderRadius: BorderRadius.circular(16),
-            border: Border.all(
-              color: highlighted
-                  ? AppColors.accentBlue.withAlpha(77)
-                  : AppColors.borderColor,
-            ),
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return Container(
+      decoration: BoxDecoration(
+        color: highlighted
+            ? AppColors.accentBlue.withAlpha(25)
+            : (isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight),
+        borderRadius: BorderRadius.circular(AppTheme.radiusLg),
+        border: Border.all(
+          color: highlighted
+              ? AppColors.accentBlue.withAlpha(77)
+              : (isDark ? AppTheme.borderDark : AppTheme.borderLight),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withAlpha(isDark ? 51 : 13),
+            blurRadius: 24,
+            offset: const Offset(0, 8),
           ),
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+        ],
+      ),
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
             children: [
-              Row(
-                children: [
-                  Icon(icon, size: 20, color: iconColor),
-                  const SizedBox(width: 8),
-                  Text(
-                    title,
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: iconColor,
-                    ),
-                  ),
-                ],
+              Icon(icon, size: 20, color: iconColor),
+              const SizedBox(width: 8),
+              Text(
+                title,
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: iconColor,
+                ),
               ),
-              const SizedBox(height: 12),
-              child,
             ],
           ),
-        ),
+          const SizedBox(height: 12),
+          child,
+        ],
       ),
     );
   }

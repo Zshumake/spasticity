@@ -3,8 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import '../data/muscle_data.dart';
 import '../data/muscle_provider.dart';
 import '../models/muscle.dart';
+import '../models/spasticity_pattern.dart';
 import '../theme/app_theme.dart';
 import '../theme/favorites_manager.dart';
 import '../theme/recently_viewed_manager.dart';
@@ -26,6 +28,7 @@ class _DashboardPageState extends State<DashboardPage> {
     'All', 'Favorites', 'Recent',
     'Upper Extremity', 'Lower Extremity', 'Trunk', 'Neck',
   ];
+  List<SpasticityPattern> _patterns = [];
 
   final _pageFocusNode = FocusNode();
   final _searchFocusNode = FocusNode();
@@ -36,7 +39,21 @@ class _DashboardPageState extends State<DashboardPage> {
   void initState() {
     super.initState();
     _selectedCategory = widget.initialCategory ?? 'All';
+    _loadPatterns();
+    _searchFocusNode.addListener(() { if (mounted) setState(() {}); });
   }
+
+  Future<void> _loadPatterns() async {
+    final patterns = await MuscleData.loadPatterns();
+    if (mounted) setState(() => _patterns = patterns);
+  }
+
+  /// Check if the selected category is a pattern ID
+  bool get _isPatternCategory =>
+      _patterns.any((p) => p.id == _selectedCategory);
+
+  SpasticityPattern? get _selectedPattern =>
+      _patterns.where((p) => p.id == _selectedCategory).firstOrNull;
 
   @override
   void dispose() {
@@ -47,9 +64,9 @@ class _DashboardPageState extends State<DashboardPage> {
   }
 
   List<Muscle> _getFiltered(BuildContext context) {
-    final data = context.watch<MuscleDataProvider>();
-    final favs = context.watch<FavoritesManager>();
-    final recent = context.watch<RecentlyViewedManager>();
+    final data = context.read<MuscleDataProvider>();
+    final favs = context.read<FavoritesManager>();
+    final recent = context.read<RecentlyViewedManager>();
     if (!data.isLoaded) return [];
 
     if (_selectedCategory == 'Recent') {
@@ -57,21 +74,16 @@ class _DashboardPageState extends State<DashboardPage> {
           .map((id) => data.findById(id))
           .where((m) => m != null)
           .cast<Muscle>()
-          .where((m) => _matchesSearch(m))
+          .where(_matchesSearch)
           .toList();
     }
 
     return data.muscles.where((m) {
-      final matchSearch = _matchesSearch(m);
-      final bool matchCat;
-      if (_selectedCategory == 'All') {
-        matchCat = true;
-      } else if (_selectedCategory == 'Favorites') {
-        matchCat = favs.isFavorite(m.id);
-      } else {
-        matchCat = m.group == _selectedCategory;
-      }
-      return matchSearch && matchCat;
+      if (!_matchesSearch(m)) return false;
+      if (_selectedCategory == 'All') return true;
+      if (_selectedCategory == 'Favorites') return favs.isFavorite(m.id);
+      if (_isPatternCategory) return m.spasticityPatterns.contains(_selectedCategory);
+      return m.group == _selectedCategory;
     }).toList();
   }
 
@@ -99,7 +111,7 @@ class _DashboardPageState extends State<DashboardPage> {
       return;
     }
     if (_searchFocusNode.hasFocus) return;
-    final list = _getFilteredSync();
+    final list = _getFiltered(context);
     if (list.isEmpty) return;
     if (event.logicalKey == LogicalKeyboardKey.arrowDown ||
         event.logicalKey == LogicalKeyboardKey.arrowRight) {
@@ -108,32 +120,18 @@ class _DashboardPageState extends State<DashboardPage> {
         event.logicalKey == LogicalKeyboardKey.arrowLeft) {
       setState(() => _selectedIndex = (_selectedIndex - 1).clamp(0, list.length - 1));
     } else if (event.logicalKey == LogicalKeyboardKey.enter && _selectedIndex >= 0) {
-      context.go('/muscle/${list[_selectedIndex].id}');
+      context.push('/muscle/${list[_selectedIndex].id}');
     }
-  }
-
-  List<Muscle> _getFilteredSync() {
-    final data = context.read<MuscleDataProvider>();
-    final favs = context.read<FavoritesManager>();
-    final recent = context.read<RecentlyViewedManager>();
-    if (!data.isLoaded) return [];
-    if (_selectedCategory == 'Recent') {
-      return recent.recentIds.map((id) => data.findById(id)).where((m) => m != null).cast<Muscle>().where(_matchesSearch).toList();
-    }
-    return data.muscles.where((m) {
-      if (!_matchesSearch(m)) return false;
-      if (_selectedCategory == 'All') return true;
-      if (_selectedCategory == 'Favorites') return favs.isFavorite(m.id);
-      return m.group == _selectedCategory;
-    }).toList();
   }
 
   Color get _catColor {
     switch (_selectedCategory.toLowerCase()) {
       case 'all': return AppTheme.primary;
       case 'favorites': return AppTheme.amber;
-      case 'recent': return const Color(0xFFD980FA);
-      default: return AppTheme.groupColor(_selectedCategory);
+      case 'recent': return AppTheme.orchid;
+      default:
+        if (_isPatternCategory) return AppTheme.patternColor;
+        return AppTheme.groupColor(_selectedCategory);
     }
   }
 
@@ -141,6 +139,11 @@ class _DashboardPageState extends State<DashboardPage> {
   Widget build(BuildContext context) {
     final isMobile = MediaQuery.of(context).size.width < 900;
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    // Watch data provider for initial load; watch favs/recent only when
+    // viewing those categories to avoid unnecessary full-page rebuilds
+    context.watch<MuscleDataProvider>();
+    if (_selectedCategory == 'Favorites') context.watch<FavoritesManager>();
+    if (_selectedCategory == 'Recent') context.watch<RecentlyViewedManager>();
     final filtered = _getFiltered(context);
     final data = context.watch<MuscleDataProvider>();
 
@@ -159,10 +162,13 @@ class _DashboardPageState extends State<DashboardPage> {
       );
     }
 
-    return KeyboardListener(
+    return Focus(
       focusNode: _pageFocusNode,
       autofocus: true,
-      onKeyEvent: _handleKey,
+      onKeyEvent: (node, event) {
+        _handleKey(event);
+        return KeyEventResult.ignored;
+      },
       child: Scaffold(
         backgroundColor: isDark ? AppTheme.bgDark : AppTheme.bgLight,
         appBar: isMobile ? AppBar(
@@ -180,12 +186,14 @@ class _DashboardPageState extends State<DashboardPage> {
           backgroundColor: isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight,
           child: DashboardSidebar(
             selectedCategory: _selectedCategory, categories: _categories,
+            patterns: _patterns,
             onCategorySelected: (c) => setState(() { _selectedCategory = c; _selectedIndex = -1; }),
             isMobile: true),
         ) : null,
         body: Row(children: [
           if (!isMobile) DashboardSidebar(
             selectedCategory: _selectedCategory, categories: _categories,
+            patterns: _patterns,
             onCategorySelected: (c) => setState(() { _selectedCategory = c; _selectedIndex = -1; })),
           Expanded(child: _buildMain(filtered, isMobile, isDark)),
         ]),
@@ -194,54 +202,85 @@ class _DashboardPageState extends State<DashboardPage> {
   }
 
   Widget _buildMain(List<Muscle> muscles, bool isMobile, bool isDark) {
-    return Column(children: [
-      _buildSearchBar(isMobile, isDark),
-      Expanded(child: ListView(
-        padding: EdgeInsets.fromLTRB(isMobile ? 16 : 24, 0, isMobile ? 16 : 24, 24),
-        children: [
-          // Category header
-          Padding(padding: const EdgeInsets.only(bottom: 20), child: Row(children: [
-            Container(width: 4, height: 20, decoration: BoxDecoration(
-              color: _catColor, borderRadius: BorderRadius.circular(2))),
-            const SizedBox(width: 12),
-            Text(_selectedCategory.toUpperCase(), style: GoogleFonts.ibmPlexMono(
-              fontWeight: FontWeight.w800, fontSize: 16, letterSpacing: 1.5, color: _catColor)),
-            const SizedBox(width: 10),
-            Text('${muscles.length} muscles', style: GoogleFonts.ibmPlexMono(
-              fontSize: 10, color: AppTheme.textTertiary, letterSpacing: 0.5)),
-          ])),
-          // Grid
-          GridView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: MediaQuery.of(context).size.width > 1400 ? 4
-                  : (MediaQuery.of(context).size.width > 900 ? 3
-                  : (MediaQuery.of(context).size.width > 600 ? 2 : 1)),
-              childAspectRatio: MediaQuery.of(context).size.width < 600 ? 3.2
-                  : (MediaQuery.of(context).size.width < 900 ? 1.8 : 1.6),
-              crossAxisSpacing: 10, mainAxisSpacing: 10,
+    final width = MediaQuery.of(context).size.width;
+    final crossAxisCount = width > 1400 ? 4 : (width > 900 ? 3 : (width > 600 ? 2 : 1));
+    final childAspectRatio = width < 600 ? 3.2 : (width < 900 ? 1.8 : 1.6);
+    final sidePad = isMobile ? 16.0 : 24.0;
+
+    return CustomScrollView(
+      slivers: [
+        // Search bar
+        SliverToBoxAdapter(child: _buildSearchBar(isMobile, isDark)),
+        // Category header
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(sidePad, 0, sidePad, 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(children: [
+                  Container(width: 4, height: 20, decoration: BoxDecoration(
+                    color: _catColor, borderRadius: BorderRadius.circular(2))),
+                  const SizedBox(width: 12),
+                  Expanded(child: Text(
+                    _selectedPattern?.name.toUpperCase() ?? _selectedCategory.toUpperCase(),
+                    style: GoogleFonts.ibmPlexMono(
+                      fontWeight: FontWeight.w800, fontSize: 16, letterSpacing: 1.5, color: _catColor))),
+                  const SizedBox(width: 10),
+                  Text('${muscles.length} muscles', style: GoogleFonts.ibmPlexMono(
+                    fontSize: 10, color: AppTheme.textTertiary, letterSpacing: 0.5)),
+                ]),
+                if (_selectedPattern != null) ...[
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16, top: 6),
+                    child: Text(_selectedPattern!.description,
+                      style: GoogleFonts.sourceSans3(fontSize: 13, color: AppTheme.textSecondary)),
+                  ),
+                ],
+              ],
             ),
-            itemCount: muscles.length,
-            itemBuilder: (ctx, i) => MuscleCard(
-              muscle: muscles[i], isSelected: i == _selectedIndex),
           ),
-          if (muscles.isEmpty) Padding(
-            padding: const EdgeInsets.only(top: 60),
-            child: Center(child: Column(children: [
-              Icon(Icons.search_off_rounded, size: 40, color: AppTheme.textTertiary),
-              const SizedBox(height: 12),
-              Text('No muscles found', style: GoogleFonts.sourceSans3(fontSize: 14, color: AppTheme.textSecondary)),
-            ]))),
-        ],
-      )),
-    ]);
+        ),
+        // Grid — lazy, only builds visible cards
+        if (muscles.isNotEmpty)
+          SliverPadding(
+            padding: EdgeInsets.fromLTRB(sidePad, 0, sidePad, 24),
+            sliver: SliverGrid(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: crossAxisCount,
+                childAspectRatio: childAspectRatio,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+              ),
+              delegate: SliverChildBuilderDelegate(
+                (ctx, i) => MuscleCard(
+                  muscle: muscles[i], isSelected: i == _selectedIndex),
+                childCount: muscles.length,
+              ),
+            ),
+          ),
+        // Empty state
+        if (muscles.isEmpty)
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Center(child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(Icons.search_off_rounded, size: 40, color: AppTheme.textTertiary),
+                const SizedBox(height: 12),
+                Text('No muscles found', style: GoogleFonts.sourceSans3(fontSize: 14, color: AppTheme.textSecondary)),
+              ],
+            )),
+          ),
+      ],
+    );
   }
 
   Widget _buildSearchBar(bool isMobile, bool isDark) {
     return Padding(
       padding: EdgeInsets.fromLTRB(isMobile ? 16 : 24, isMobile ? 12 : 32, isMobile ? 16 : 24, 16),
-      child: Container(
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 2),
         decoration: BoxDecoration(
           color: isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight,

@@ -103,8 +103,18 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
-      appBar: AppBar(title: const Text('Toxin Calculator')),
+      backgroundColor: isDark ? AppTheme.bgDark : AppTheme.bgLight,
+      appBar: AppBar(
+        backgroundColor: isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_rounded),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: const Text('Toxin Calculator'),
+      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(

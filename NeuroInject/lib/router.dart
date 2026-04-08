@@ -21,16 +21,40 @@ final router = GoRouter(
     ),
     GoRoute(
       path: '/muscle/:id',
-      builder: (context, state) {
+      pageBuilder: (context, state) {
         final id = state.pathParameters['id'] ?? '';
         final provider = context.read<MuscleDataProvider>();
         final muscle = provider.findById(id);
         if (muscle == null) {
-          return const Scaffold(
-            body: Center(child: Text('Muscle not found')),
+          return CustomTransitionPage<void>(
+            key: state.pageKey,
+            child: const Scaffold(body: Center(child: Text('Muscle not found'))),
+            transitionsBuilder: (_, a, __, child) => FadeTransition(opacity: a, child: child),
           );
         }
-        return MuscleDetailScreen(muscle: muscle);
+        return CustomTransitionPage<void>(
+          key: state.pageKey,
+          child: MuscleDetailScreen(muscle: muscle),
+          transitionDuration: const Duration(milliseconds: 300),
+          reverseTransitionDuration: const Duration(milliseconds: 250),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            final curved = CurvedAnimation(
+              parent: animation,
+              curve: Curves.easeOutCubic,
+              reverseCurve: Curves.easeInCubic,
+            );
+            return FadeTransition(
+              opacity: curved,
+              child: SlideTransition(
+                position: Tween<Offset>(
+                  begin: const Offset(0.05, 0),
+                  end: Offset.zero,
+                ).animate(curved),
+                child: child,
+              ),
+            );
+          },
+        );
       },
     ),
     GoRoute(

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import '../../data/muscle_provider.dart';
 import '../../models/muscle.dart';
 import '../../theme/app_theme.dart';
 import '../../theme/favorites_manager.dart';
@@ -48,6 +50,10 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
       backgroundColor: isDark ? AppTheme.bgDark : AppTheme.bgLight,
       appBar: AppBar(
         backgroundColor: isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_rounded, color: isDark ? AppTheme.primary : AppTheme.primaryDim),
+          onPressed: () => context.pop(),
+        ),
         title: Text(muscle.name, style: GoogleFonts.sora(
           fontWeight: FontWeight.w700, fontSize: 16)),
         actions: [
@@ -80,14 +86,21 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         tooltip: _procedureMode ? 'Switch to Study Mode' : 'Switch to Procedure Mode',
         child: Icon(_procedureMode ? Icons.menu_book_rounded : Icons.bolt_rounded, size: 20),
       ),
-      body: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 800),
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.all(16),
-            child: _procedureMode ? _buildProcedureView(isDark) : _buildStudyView(isDark),
-          ),
-        ),
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          final wide = constraints.maxWidth >= 1100;
+          return Center(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(maxWidth: wide ? 1280 : 820),
+              child: SingleChildScrollView(
+                padding: EdgeInsets.symmetric(horizontal: wide ? 32 : 16, vertical: 16),
+                child: _procedureMode
+                    ? _buildProcedureView(isDark)
+                    : _buildStudyView(isDark, wide),
+              ),
+            ),
+          );
+        },
       ),
     );
   }
@@ -95,50 +108,86 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
   // ═══════════════════════════════════════════════════════════════
   //  STUDY MODE — full educational content
   // ═══════════════════════════════════════════════════════════════
-  Widget _buildStudyView(bool isDark) {
+  Widget _buildStudyView(bool isDark, bool wide) {
+    final left = <Widget>[
+      _section('BONY LANDMARKS', Icons.location_on_outlined, null,
+        LandmarkList(landmarks: muscle.landmarks)),
+      const SizedBox(height: 16),
+      _section('NEEDLE PLACEMENT', Icons.my_location, AppTheme.amber,
+        StepList(steps: muscle.placement)),
+      const SizedBox(height: 16),
+      _buildProbePlacement(),
+      const SizedBox(height: 16),
+      _section('SETUP & TIPS', Icons.lightbulb_outline, AppTheme.success,
+        LandmarkList(landmarks: muscle.setup)),
+      if (muscle.pearls.isNotEmpty) ...[
+        const SizedBox(height: 16),
+        _buildPearlsCard(isDark),
+      ],
+    ];
+
+    final right = <Widget>[
+      _buildAnatomyDiagram(),
+      const SizedBox(height: 16),
+      if (muscle.referenceImages.isNotEmpty)
+        _buildUSGallery()
+      else
+        _buildImagePlaceholder(),
+      if (muscle.ultrasound != null) ...[
+        const SizedBox(height: 16),
+        _buildUltrasoundCard(isDark),
+      ],
+      if (muscle.videoUrl != null) ...[
+        const SizedBox(height: 16),
+        VideoLinkCard(
+          videoUrl: muscle.videoUrl!,
+          muscleTitle: muscle.name,
+          accentColor: _groupColor,
+        ),
+      ],
+      if (muscle.supplies.isNotEmpty) ...[
+        const SizedBox(height: 16),
+        _buildSuppliesChecklist(isDark),
+      ],
+    ];
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _buildHeader(isDark),
-        const SizedBox(height: 20),
-        _buildProbePlacement(),
-        const SizedBox(height: 12),
-        _section('BONY LANDMARKS', Icons.location_on_outlined, null,
-          LandmarkList(landmarks: muscle.landmarks)),
-        const SizedBox(height: 12),
-        _section('NEEDLE PLACEMENT', Icons.my_location, AppTheme.amber,
-          StepList(steps: muscle.placement)),
-        const SizedBox(height: 12),
-        // Anatomy diagram: probe position + expected US view side-by-side
-        _buildAnatomyDiagram(),
-        const SizedBox(height: 12),
-        // US image gallery (upgraded with thumbnails)
-        if (muscle.referenceImages.isNotEmpty) ...[
-          _buildUSGallery(), const SizedBox(height: 12),
-        ] else ...[
-          _buildImagePlaceholder(), const SizedBox(height: 12),
+        _buildHeroHeader(isDark),
+        const SizedBox(height: 24),
+        if (wide)
+          IntrinsicHeight(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  flex: 5,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: left,
+                  ),
+                ),
+                const SizedBox(width: 24),
+                Expanded(
+                  flex: 6,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: right,
+                  ),
+                ),
+              ],
+            ),
+          )
+        else ...[
+          ...left,
+          const SizedBox(height: 16),
+          ...right,
         ],
-        if (muscle.ultrasound != null) ...[
-          _buildUltrasoundCard(isDark), const SizedBox(height: 12),
-        ],
-        _section('SETUP & TIPS', Icons.lightbulb_outline, AppTheme.success,
-          LandmarkList(landmarks: muscle.setup)),
-        if (muscle.pearls.isNotEmpty) ...[
-          const SizedBox(height: 12),
-          _buildPearlsCard(isDark),
-        ],
-        if (muscle.supplies.isNotEmpty) ...[
-          const SizedBox(height: 12),
-          _buildSuppliesChecklist(isDark),
-        ],
-        // Video link
-        if (muscle.videoUrl != null) ...[
-          const SizedBox(height: 12),
-          VideoLinkCard(
-            videoUrl: muscle.videoUrl!,
-            muscleTitle: muscle.name,
-            accentColor: _groupColor,
-          ),
+        // Related muscles full-width
+        if (muscle.relatedMuscles.isNotEmpty) ...[
+          const SizedBox(height: 24),
+          _buildRelatedMuscles(isDark),
         ],
         const SizedBox(height: 32),
       ],
@@ -175,7 +224,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
               fontWeight: FontWeight.w800, fontSize: 20, color: isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight)),
             if (muscle.dosage != null) ...[
               const SizedBox(height: 6),
-              Text('Dosage: ${muscle.dosage}', style: GoogleFonts.ibmPlexMono(
+              Text('Dosage: ${muscle.dosage!.displayFull}', style: GoogleFonts.ibmPlexMono(
                 fontSize: 12, fontWeight: FontWeight.w700, color: AppTheme.amber)),
             ],
           ]),
@@ -389,33 +438,117 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     );
   }
 
-  Widget _buildHeader(bool isDark) {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      // Group badge
-      Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-        decoration: BoxDecoration(
-          color: _groupColor.withAlpha(30),
-          borderRadius: BorderRadius.circular(4),
-          border: Border.all(color: _groupColor.withAlpha(38))),
-        child: Text(muscle.group.toUpperCase(), style: GoogleFonts.ibmPlexMono(
-          fontSize: 9, fontWeight: FontWeight.w700, letterSpacing: 1.5, color: _groupColor)),
-      ),
-      const SizedBox(height: 8),
-      Text(muscle.pattern, style: GoogleFonts.sourceSans3(fontSize: 14, color: AppTheme.textSecondary)),
-      if (muscle.dosage != null) ...[
-        const SizedBox(height: 8),
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-          decoration: BoxDecoration(
-            color: AppTheme.amber.withAlpha(25),
-            borderRadius: BorderRadius.circular(AppTheme.radiusSm),
-            border: Border.all(color: AppTheme.amber.withAlpha(60))),
-          child: Text('Dosage: ${muscle.dosage}', style: GoogleFonts.ibmPlexMono(
-            fontSize: 12, fontWeight: FontWeight.w700, color: AppTheme.amber)),
+  Widget _buildHeroHeader(bool isDark) {
+    final us = muscle.ultrasound;
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            _groupColor.withAlpha(isDark ? 38 : 25),
+            _groupColor.withAlpha(isDark ? 12 : 8),
+            (isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight),
+          ],
         ),
-      ],
-    ]);
+        borderRadius: BorderRadius.circular(AppTheme.radiusXl),
+        border: Border.all(color: _groupColor.withAlpha(60)),
+        boxShadow: [
+          BoxShadow(
+            color: _groupColor.withAlpha(isDark ? 38 : 20),
+            blurRadius: 32,
+            offset: const Offset(0, 12),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Top row: group badge + accent line
+          Row(children: [
+            Container(width: 24, height: 2, color: _groupColor),
+            const SizedBox(width: 10),
+            Text(muscle.group.toUpperCase(), style: GoogleFonts.ibmPlexMono(
+              fontSize: 10, fontWeight: FontWeight.w700, letterSpacing: 2.0, color: _groupColor)),
+          ]),
+          const SizedBox(height: 14),
+          // Big title
+          Text(muscle.name, style: GoogleFonts.sora(
+            fontSize: 32, fontWeight: FontWeight.w800, letterSpacing: -0.5,
+            height: 1.1,
+            color: isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight)),
+          const SizedBox(height: 10),
+          // Pattern
+          Text(muscle.pattern, style: GoogleFonts.sourceSans3(
+            fontSize: 15, height: 1.5,
+            color: isDark ? AppTheme.textSecondary : AppTheme.textSecondaryLight)),
+          const SizedBox(height: 18),
+          // Stat chips row
+          Wrap(spacing: 10, runSpacing: 10, children: [
+            if (muscle.dosage != null)
+              _heroChip(Icons.medication_outlined, 'DOSAGE', muscle.dosage!.displayShort,
+                AppTheme.amberText(isDark), isDark),
+            if (us != null)
+              _heroChip(Icons.sensors, 'PROBE', _shortProbe(us.probe), _groupColor, isDark),
+            if (us != null)
+              _heroChip(Icons.swap_horiz, 'ORIENTATION', _shortOrient(us.orientation), _groupColor, isDark),
+            if (us?.depth != null)
+              _heroChip(Icons.straighten, 'DEPTH', us!.depth!, _groupColor, isDark),
+          ]),
+          // Dosage note (italic small text under the chips)
+          if (muscle.dosageNote != null) ...[
+            const SizedBox(height: 10),
+            Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Icon(Icons.info_outline_rounded, size: 12, color: AppTheme.amberText(isDark)),
+              const SizedBox(width: 6),
+              Expanded(child: Text(muscle.dosageNote!,
+                style: GoogleFonts.sourceSans3(
+                  fontSize: 11, fontStyle: FontStyle.italic,
+                  height: 1.4, color: AppTheme.amberText(isDark)))),
+            ]),
+          ],
+        ],
+      ),
+    );
+  }
+
+  String _shortProbe(String s) {
+    if (s.toLowerCase().contains('linear')) return 'Linear';
+    if (s.toLowerCase().contains('curvilinear')) return 'Curvilinear';
+    if (s.toLowerCase().contains('hockey')) return 'Hockey-stick';
+    return s.length > 24 ? '${s.substring(0, 24)}…' : s;
+  }
+
+  String _shortOrient(String s) {
+    if (s.toLowerCase().startsWith('transverse')) return 'Transverse';
+    if (s.toLowerCase().startsWith('longitudinal')) return 'Longitudinal';
+    if (s.toLowerCase().startsWith('parasagittal')) return 'Parasagittal';
+    return s.length > 28 ? '${s.substring(0, 28)}…' : s;
+  }
+
+  Widget _heroChip(IconData icon, String label, String value, Color accent, bool isDark) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      decoration: BoxDecoration(
+        color: (isDark ? AppTheme.bgDark : AppTheme.bgLight).withAlpha(178),
+        borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+        border: Border.all(color: accent.withAlpha(60)),
+      ),
+      child: Row(mainAxisSize: MainAxisSize.min, children: [
+        Icon(icon, size: 14, color: accent),
+        const SizedBox(width: 8),
+        Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: [
+          Text(label, style: GoogleFonts.ibmPlexMono(
+            fontSize: 8, fontWeight: FontWeight.w700, letterSpacing: 1.5,
+            color: accent.withAlpha(200))),
+          Text(value, style: GoogleFonts.sourceSans3(
+            fontSize: 13, fontWeight: FontWeight.w700,
+            color: isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight)),
+        ]),
+      ]),
+    );
   }
 
   Widget _section(String title, IconData icon, Color? color, Widget child) {
@@ -619,6 +752,69 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
           errorBuilder: (_, __, ___) => const Center(
             child: Text('Image not found', style: TextStyle(color: Colors.white54)))))),
     )));
+  }
+
+  Widget _buildRelatedMuscles(bool isDark) {
+    final data = context.read<MuscleDataProvider>();
+    final relatedMuscles = muscle.relatedMuscles
+        .map((id) => data.findById(id))
+        .where((m) => m != null)
+        .cast<Muscle>()
+        .toList();
+
+    if (relatedMuscles.isEmpty) return const SizedBox.shrink();
+
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight,
+        borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+        border: Border.all(color: isDark ? AppTheme.borderDark : AppTheme.borderLight),
+      ),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Row(children: [
+          Container(
+            padding: const EdgeInsets.all(6),
+            decoration: BoxDecoration(
+              color: AppTheme.patternColor.withAlpha(20),
+              borderRadius: BorderRadius.circular(AppTheme.radiusSm)),
+            child: const Icon(Icons.hub_rounded, color: AppTheme.patternColor, size: 16)),
+          const SizedBox(width: 10),
+          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text('RELATED MUSCLES', style: GoogleFonts.ibmPlexMono(
+              fontSize: 10, fontWeight: FontWeight.w700, letterSpacing: 2.0,
+              color: AppTheme.patternColor)),
+            Text('Often co-injected in the same pattern', style: GoogleFonts.sourceSans3(
+              fontSize: 11, color: AppTheme.textSecondary)),
+          ]),
+        ]),
+        const SizedBox(height: 12),
+        Wrap(
+          spacing: 8,
+          runSpacing: 8,
+          children: relatedMuscles.map((rm) => InkWell(
+            borderRadius: BorderRadius.circular(AppTheme.radiusSm),
+            onTap: () => context.push('/muscle/${rm.id}'),
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              decoration: BoxDecoration(
+                color: AppTheme.patternColor.withAlpha(isDark ? 15 : 10),
+                borderRadius: BorderRadius.circular(AppTheme.radiusSm),
+                border: Border.all(color: AppTheme.patternColor.withAlpha(40)),
+              ),
+              child: Row(mainAxisSize: MainAxisSize.min, children: [
+                Icon(Icons.arrow_forward_rounded,
+                  size: 12, color: AppTheme.patternColor.withAlpha(150)),
+                const SizedBox(width: 6),
+                Text(rm.name, style: GoogleFonts.sourceSans3(
+                  fontSize: 12, fontWeight: FontWeight.w600,
+                  color: isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight)),
+              ]),
+            ),
+          )).toList(),
+        ),
+      ]),
+    );
   }
 
   void _copyProcedureNote(BuildContext context) {
