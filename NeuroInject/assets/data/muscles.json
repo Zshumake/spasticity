@@ -150,8 +150,8 @@
       "y": 32
     },
     "referenceImages": [
-      "assets/images/us_reference/latissimus-dorsi.jpg",
-      "assets/images/us_reference/latissimus-dorsi_landmarks.jpg"
+      "latissimus-dorsi.jpg",
+      "latissimus-dorsi_landmarks.jpg"
     ],
     "hasReferenceImage": true,
     "probePlacementHint": "Patient lateral decubitus or prone. Place probe transversely across posterior axillary fold. Photo from behind showing probe on lateral back/axilla.",
@@ -579,7 +579,7 @@
       "dysport": "450"
     },
     "referenceImages": [
-      "assets/images/us_reference/piriformis.jpg"
+      "piriformis.jpg"
     ],
     "hasReferenceImage": true,
     "probePlacementHint": "Patient prone, pillow under pelvis. Place curvilinear probe transversely along PSIS-to-greater-trochanter line, at midpoint. Photo showing probe between PSIS and GT.",
@@ -1267,7 +1267,7 @@
       "dysport": "300"
     },
     "referenceImages": [
-      "assets/images/us_reference/gastrocnemius-medial.jpg"
+      "gastrocnemius-medial.jpg"
     ],
     "hasReferenceImage": true,
     "probePlacementHint": "Patient prone, feet off bed edge. Place probe transversely on proximal medial calf, 2-3 cm below popliteal crease. Photo from behind showing probe on medial proximal calf.",
@@ -1356,7 +1356,7 @@
       "y": 14
     },
     "referenceImages": [
-      "assets/images/us_reference/gastrocnemius-lateral.jpg"
+      "gastrocnemius-lateral.jpg"
     ],
     "hasReferenceImage": true,
     "probePlacementHint": "Patient prone, feet off bed edge. Place probe transversely on proximal lateral calf, 2-3 cm below popliteal crease. Photo from behind showing probe on lateral proximal calf.",
@@ -3056,8 +3056,8 @@
       "y": 20
     },
     "referenceImages": [
-      "assets/images/us_reference/subscapularis.jpg",
-      "assets/images/us_reference/subscapularis_landmarks.jpg"
+      "subscapularis.jpg",
+      "subscapularis_landmarks.jpg"
     ],
     "hasReferenceImage": true,
     "probePlacementHint": "Patient supine, arm abducted 45-60° and externally rotated. Place probe parasagitally in anterior axilla. Photo from front showing probe in axillary fold aimed toward scapula.",
@@ -3851,7 +3851,7 @@
       "dysport": "75-300"
     },
     "referenceImages": [
-      "assets/images/us_reference/sternocleidomastoid.jpg"
+      "sternocleidomastoid.jpg"
     ],
     "hasReferenceImage": true,
     "probePlacementHint": "Patient supine, head turned slightly contralateral. Place probe transversely on lateral neck at thyroid cartilage level. Photo from front/lateral showing probe across SCM muscle belly on neck.",
@@ -3943,7 +3943,7 @@
       "dysport": "75-300"
     },
     "referenceImages": [
-      "assets/images/us_reference/upper-trapezius.jpg"
+      "upper-trapezius.jpg"
     ],
     "hasReferenceImage": true,
     "probePlacementHint": "Patient seated, arms relaxed. Place probe transversely on upper trapezius ridge, midway between cervical spine and acromion. Photo from behind showing probe on upper trap between neck and shoulder.",
@@ -4035,7 +4035,7 @@
       "dysport": "75-225"
     },
     "referenceImages": [
-      "assets/images/us_reference/levator-scapulae.jpg"
+      "levator-scapulae.jpg"
     ],
     "hasReferenceImage": true,
     "probePlacementHint": "Patient seated, arms relaxed. Place probe transversely over superior angle of scapula, 2-3 cm lateral to C7-T2 spinous processes. Photo from behind showing probe on posterolateral neck/upper back.",
