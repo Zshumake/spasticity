@@ -1,17 +1,12 @@
-import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import '../theme/app_theme.dart';
 
-/// Embedded YouTube player.
-///
-/// - Native (macOS/iOS/Android): uses WebView for an inline embedded player.
-/// - Web: webview_flutter has no web support, so we render a bounded-height
-///   YouTube thumbnail card with a play-button overlay that opens the video
-///   in a new browser tab. Prevents the "huge unbounded gray placeholder"
-///   that an unsupported WebView produces in a flex column on web.
+/// Embedded YouTube player — works on all platforms (macOS via WKWebView,
+/// iOS/Android via native WebView, web via an iframe backed by the
+/// webview_flutter_web federated implementation).
 class VideoLinkCard extends StatefulWidget {
   final String videoUrl;
   final String muscleTitle;
@@ -60,8 +55,7 @@ class _VideoLinkCardState extends State<VideoLinkCard> {
   @override
   void initState() {
     super.initState();
-    // webview_flutter has no web support — skip controller init on web.
-    if (_isYouTube && !kIsWeb) {
+    if (_isYouTube) {
       _initWebView();
     }
   }
@@ -131,113 +125,12 @@ class _VideoLinkCardState extends State<VideoLinkCard> {
         ]),
         const SizedBox(height: 12),
 
-        // Embedded player (native) / thumbnail (web) / fallback
-        if (_isYouTube && kIsWeb)
-          _buildWebThumbnail(isDark)
-        else if (_isYouTube && _controller != null)
+        // Embedded player — works on macOS, iOS, Android, and web (via iframe).
+        if (_isYouTube && _controller != null)
           _buildEmbeddedPlayer(isDark)
         else
           _buildExternalLink(isDark),
       ],
-    );
-  }
-
-  /// Web fallback: bounded-height card with YouTube thumbnail + play overlay.
-  /// Click opens the video in a new browser tab. No WebView required.
-  Widget _buildWebThumbnail(bool isDark) {
-    final vid = _videoId!;
-    final thumbUrl = 'https://img.youtube.com/vi/$vid/hqdefault.jpg';
-    return InkWell(
-      borderRadius: BorderRadius.circular(AppTheme.radiusMd),
-      onTap: () async {
-        final uri = Uri.parse(widget.videoUrl);
-        if (await canLaunchUrl(uri)) {
-          await launchUrl(uri, mode: LaunchMode.externalApplication);
-        }
-      },
-      child: Container(
-        width: double.infinity,
-        height: 220,
-        decoration: BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.circular(AppTheme.radiusMd),
-          border: Border.all(color: widget.accentColor.withAlpha(40)),
-        ),
-        clipBehavior: Clip.antiAlias,
-        child: Stack(
-          fit: StackFit.expand,
-          children: [
-            // Thumbnail
-            Image.network(
-              thumbUrl,
-              fit: BoxFit.cover,
-              errorBuilder: (_, __, ___) => Container(
-                color: isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight,
-                alignment: Alignment.center,
-                child: Icon(Icons.videocam_outlined,
-                    size: 48, color: widget.accentColor.withAlpha(120)),
-              ),
-              loadingBuilder: (ctx, child, progress) {
-                if (progress == null) return child;
-                return Container(
-                  color: Colors.black,
-                  alignment: Alignment.center,
-                  child: SizedBox(
-                    width: 24, height: 24,
-                    child: CircularProgressIndicator(
-                        strokeWidth: 2, color: widget.accentColor),
-                  ),
-                );
-              },
-            ),
-            // Dark gradient overlay
-            Positioned.fill(
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter, end: Alignment.bottomCenter,
-                    colors: [Colors.black.withAlpha(40), Colors.black.withAlpha(140)],
-                  ),
-                ),
-              ),
-            ),
-            // Play button
-            Center(
-              child: Container(
-                width: 64, height: 64,
-                decoration: BoxDecoration(
-                  color: widget.accentColor.withAlpha(220),
-                  shape: BoxShape.circle,
-                  boxShadow: [BoxShadow(
-                      color: Colors.black.withAlpha(100),
-                      blurRadius: 16, offset: const Offset(0, 4))],
-                ),
-                child: const Icon(Icons.play_arrow_rounded,
-                    color: Colors.white, size: 38),
-              ),
-            ),
-            // "Opens in new tab" hint
-            Positioned(
-              bottom: 10, right: 10,
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                decoration: BoxDecoration(
-                  color: Colors.black.withAlpha(170),
-                  borderRadius: BorderRadius.circular(4),
-                ),
-                child: Row(mainAxisSize: MainAxisSize.min, children: [
-                  const Icon(Icons.open_in_new_rounded,
-                      size: 11, color: Colors.white70),
-                  const SizedBox(width: 4),
-                  Text('Opens in new tab',
-                      style: GoogleFonts.ibmPlexMono(
-                          fontSize: 9, color: Colors.white70)),
-                ]),
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 
