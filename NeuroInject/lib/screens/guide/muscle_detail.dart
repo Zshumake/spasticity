@@ -485,11 +485,21 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
             fontSize: 15, height: 1.5,
             color: isDark ? AppTheme.textSecondary : AppTheme.textSecondaryLight)),
           const SizedBox(height: 18),
-          // Stat chips row
+          // Stat chips row — per-muscle dose shown per brand (Botox,
+          // Xeomin, Dysport are NOT interchangeable 1:1; Dysport ≈ 3× Botox).
           Wrap(spacing: 10, runSpacing: 10, children: [
-            if (muscle.dosage != null)
-              _heroChip(Icons.medication_outlined, 'DOSAGE', muscle.dosage!.displayShort,
-                AppTheme.amberText(isDark), isDark),
+            if (muscle.dosage?.botox != null)
+              _heroChip(Icons.medication_outlined, 'BOTOX',
+                  '${muscle.dosage!.botox!} U',
+                  const Color(0xFF3D8BFF), isDark),
+            if (muscle.dosage?.xeomin != null)
+              _heroChip(Icons.medication_outlined, 'XEOMIN',
+                  '${muscle.dosage!.xeomin!} U',
+                  const Color(0xFF9C27B0), isDark),
+            if (muscle.dosage?.dysport != null)
+              _heroChip(Icons.medication_outlined, 'DYSPORT',
+                  '${muscle.dosage!.dysport!} U',
+                  const Color(0xFFFF9800), isDark),
             if (us != null)
               _heroChip(Icons.sensors, 'PROBE', _shortProbe(us.probe), _groupColor, isDark),
             if (us != null)
