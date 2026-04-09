@@ -109,14 +109,22 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
   //  STUDY MODE — full educational content
   // ═══════════════════════════════════════════════════════════════
   Widget _buildStudyView(bool isDark, bool wide) {
+    // Order mirrors the clinical workflow:
+    //   1. Landmarks (palpate) → 2. Ultrasound guide (scan) →
+    //   3. Probe placement (position) → 4. Needle placement (inject) →
+    //   5. Setup & tips → 6. Pearls
     final left = <Widget>[
       _section('BONY LANDMARKS', Icons.location_on_outlined, null,
         LandmarkList(landmarks: muscle.landmarks)),
+      if (muscle.ultrasound != null) ...[
+        const SizedBox(height: 16),
+        _buildUltrasoundCard(isDark),
+      ],
+      const SizedBox(height: 16),
+      _buildProbePlacement(),
       const SizedBox(height: 16),
       _section('NEEDLE PLACEMENT', Icons.my_location, AppTheme.amber,
         StepList(steps: muscle.placement)),
-      const SizedBox(height: 16),
-      _buildProbePlacement(),
       const SizedBox(height: 16),
       _section('SETUP & TIPS', Icons.lightbulb_outline, AppTheme.success,
         LandmarkList(landmarks: muscle.setup)),
@@ -133,10 +141,6 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         _buildUSGallery()
       else
         _buildImagePlaceholder(),
-      if (muscle.ultrasound != null) ...[
-        const SizedBox(height: 16),
-        _buildUltrasoundCard(isDark),
-      ],
       if (muscle.videoUrl != null) ...[
         const SizedBox(height: 16),
         VideoLinkCard(
