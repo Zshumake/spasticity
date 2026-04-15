@@ -128,8 +128,7 @@
       "gastrocnemius-medial",
       "gastrocnemius-lateral",
       "soleus-medial",
-      "soleus-lateral",
-      "peroneus-longus"
+      "soleus-lateral"
     ],
     "region": "Lower Extremity"
   },

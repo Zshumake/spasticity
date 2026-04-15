@@ -33,7 +33,7 @@
         "The Pectoralis Major appears as the broad, flat superficial muscle layer directly under the subcutaneous fat — it spans most of the anterior chest.",
         "Deep to the Pectoralis Major, a thin hyperechoic fascial plane separates it from the Pectoralis Minor.",
         "The Pectoralis Minor appears as a smaller triangular muscle deep to the fascial plane.",
-        "CRITICAL: The Lateral Pectoral Nerve (and associated vessel) runs in the fascial plane between Pectoralis Major and Minor — look for a small hyperechoic dot with an adjacent vessel.",
+        "CRITICAL: The Medial Pectoral Nerve (from the medial cord — confusingly named) passes through or between Pectoralis Major and Minor in the inter-fascial plane. The Lateral Pectoral Nerve (from the lateral cord) pierces the clavipectoral fascia to reach Pec Major directly. Both may be visible as hyperechoic dots with adjacent vessels.",
         "Deep to Pectoralis Minor, the hyperechoic pleural line and ribs are visible — the lung appears as a bright sliding line with comet-tail artifacts.",
         "Confirm by having the patient adduct the arm against resistance — Pec Major will contract."
       ],
@@ -59,15 +59,15 @@
       "y": 21
     },
     "dosage": {
-      "botox": "75-150",
-      "xeomin": "75-150",
-      "dysport": "225-450"
+      "botox": "50-100",
+      "xeomin": "50-100",
+      "dysport": "150-300"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
     "probePlacementHint": "Patient supine, arm abducted 30°. Place probe transversely on anterior chest, lateral to sternum at 3rd-4th rib. Photo from patient's right side showing probe on chest wall.",
     "pearls": [
-      "Start with low doses (25-50U Botox per site) — the pec major is a large muscle and easy to over-inject",
+      "Use 25-50U Botox per injection site, distributed across 2-3 sites per head, for a total session dose as listed in the dosage field.",
       "Avoid injecting too medially near the sternum to prevent spread to intercostals",
       "A spastic pec major is the #1 cause of shoulder internal rotation/adduction posture"
     ],
@@ -92,7 +92,7 @@
       "subscapularis",
       "teres-major"
     ],
-    "dosageNote": "Total across both heads. Split dose between clavicular and sternal heads (e.g. 50-75U each). 200U upper bound exceeds typical consensus."
+    "dosageNote": "Total across both heads. Split dose between clavicular and sternal heads (e.g. 25-50U each)."
   },
   {
     "id": "lat-dorsi",
@@ -174,7 +174,13 @@
       "pec-major",
       "subscapularis",
       "teres-major"
-    ]
+    ],
+    "dosage": {
+      "botox": "100-150",
+      "xeomin": "100-150",
+      "dysport": "300-450"
+    },
+    "dosageNote": "Large muscle — distribute across 2-3 sites along the posterior axillary fold."
   },
   {
     "id": "biceps-brachii",
@@ -302,7 +308,7 @@
       ],
       "safetyNotes": [
         "The radial nerve courses along the lateral and posterior humerus in the spiral groove — always identify it before needle insertion.",
-        "The brachial artery and median nerve lie medially — a lateral approach minimizes risk to these structures.",
+        "The brachial artery and median nerve lie medially — the ANTERIOR approach through the biceps (as described in placement) keeps the needle medial to the radial nerve and lateral to the brachial vessels, providing the safest corridor.",
         "Avoid contacting the periosteum of the humerus, which can cause significant pain."
       ],
       "probeDiagram": {
@@ -319,7 +325,7 @@
     },
     "referenceImages": [],
     "hasReferenceImage": false,
-    "probePlacementHint": "Patient supine, elbow slightly flexed. Place probe transversely on lateral distal arm, 2-3 cm above lateral epicondyle. Photo showing probe on anterolateral distal arm.",
+    "probePlacementHint": "Patient supine, elbow slightly flexed. Place probe transversely on anterior distal arm, 4-6 cm above elbow crease. Photo showing probe on anterior distal arm.",
     "pearls": [
       "Often the primary elbow flexor in spasticity — don't skip it just because biceps is more famous",
       "Lies deep to the biceps — must see both muscles on US to inject the correct one",
@@ -447,13 +453,13 @@
     ],
     "setup": [
       "USG placement ensures proper depth and avoids intrafascial injection.",
-      "The sciatic nerve runs deep to this muscle in the lower quadrants — always inject in the upper-outer quadrant.",
+      "The sciatic nerve runs deep to this muscle inferiorly and medially — target the thick mid-belly of gluteus maximus between the sacrum/coccyx and greater trochanter (NOT the upper-outer quadrant, which targets gluteus medius). Stay lateral to a line from the PSIS to the ischial tuberosity.",
       "This is a large, thick muscle — consider distributing the dose across 3-4 sites.",
       "Have the patient contract the gluteus (squeeze buttocks together) to confirm the correct muscle before marking."
     ],
     "ultrasound": {
       "probe": "Curvilinear (5-8 MHz)",
-      "orientation": "Transverse across the upper-outer quadrant of the buttock",
+      "orientation": "Transverse across the mid-buttock, centered on the gluteus maximus belly between the sacrum and the greater trochanter",
       "viewSteps": [
         "Identify the thick subcutaneous fat layer, which can be substantial in this region.",
         "The Gluteus Maximus appears as a large, thick hypoechoic muscle with characteristic coarse fiber texture and bright fascial borders.",
@@ -479,9 +485,9 @@
       "y": 44
     },
     "dosage": {
-      "botox": "100",
-      "xeomin": "100",
-      "dysport": "300"
+      "botox": "100-200",
+      "xeomin": "100-200",
+      "dysport": "300-600"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -505,7 +511,8 @@
       "Sharps container"
     ],
     "spasticityPatterns": [],
-    "relatedMuscles": []
+    "relatedMuscles": [],
+    "dosageNote": "One of the largest muscles in the body — distribute across 3-4 sites."
   },
   {
     "id": "piriformis",
@@ -571,7 +578,7 @@
     "probePlacementHint": "Patient prone, pillow under pelvis. Place curvilinear probe transversely along PSIS-to-greater-trochanter line, at midpoint. Photo showing probe between PSIS and GT.",
     "pearls": [
       "Notoriously difficult to isolate on US — confirm with EMG if available",
-      "Sciatic nerve runs immediately deep or through this muscle — use EMG guidance strongly recommended",
+      "Sciatic nerve runs immediately inferior to (or through) this muscle — USG is essential, and EMG can be a useful adjunct to confirm you are in piriformis rather than adjacent muscles.",
       "Often co-injected with other hip external rotators for combined pattern"
     ],
     "supplies": [
@@ -895,9 +902,9 @@
       "y": 30
     },
     "dosage": {
-      "botox": "100",
-      "xeomin": "100",
-      "dysport": "300"
+      "botox": "50-100",
+      "xeomin": "50-100",
+      "dysport": "150-300"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -980,9 +987,9 @@
       "y": 28
     },
     "dosage": {
-      "botox": "100",
-      "xeomin": "100",
-      "dysport": "300"
+      "botox": "50-100",
+      "xeomin": "50-100",
+      "dysport": "150-300"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -1065,15 +1072,15 @@
       "y": 38
     },
     "dosage": {
-      "botox": "100",
-      "xeomin": "100",
-      "dysport": "300"
+      "botox": "50-100",
+      "xeomin": "50-100",
+      "dysport": "150-300"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
     "probePlacementHint": "Patient prone, knee slightly flexed. Place probe transversely on posterior medial thigh at mid-to-distal level. Photo from behind showing probe on posteromedial thigh.",
     "pearls": [
-      "Broader, flatter muscle — differentiate from semitendinosus by its more lateral position distally",
+      "Broader, flatter muscle — differentiate from semitendinosus by its deeper position and membranous aponeurosis on ultrasound.",
       "Key hamstring for medial knee flexion contracture patterns",
       "Sciatic nerve runs in the posterior thigh — always identify it before injecting"
     ],
@@ -1150,9 +1157,9 @@
       "y": 32
     },
     "dosage": {
-      "botox": "100",
-      "xeomin": "100",
-      "dysport": "300"
+      "botox": "50-100",
+      "xeomin": "50-100",
+      "dysport": "150-300"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -1287,7 +1294,7 @@
       "Position the patient prone with the feet hanging off the edge of the bed.",
       "Identify the proximal third of the posterior calf on the lateral side.",
       "Palpate the lateral gastrocnemius belly — it is smaller than the medial head.",
-      "The injection site is just medial to the fibular head, 2-3 cm distal to the popliteal crease.",
+      "The injection site is in the center of the lateral gastrocnemius belly, 2-3 cm distal to the popliteal crease, well medial to the fibular head. Maintain at least 2 cm of clearance from the fibular head to avoid the common peroneal nerve.",
       "Insert the needle perpendicular to the skin into the lateral muscle belly.",
       "Advance 1-1.5 cm into the muscle substance.",
       "Aspirate before injecting."
@@ -1451,9 +1458,9 @@
       "tibialis-posterior"
     ],
     "dosage": {
-      "botox": "100-200",
-      "xeomin": "100-200",
-      "dysport": "300-600"
+      "botox": "50-100",
+      "xeomin": "50-100",
+      "dysport": "150-300"
     }
   },
   {
@@ -1506,9 +1513,9 @@
       "y": 32
     },
     "dosage": {
-      "botox": "200",
-      "xeomin": "200",
-      "dysport": "600"
+      "botox": "50-75",
+      "xeomin": "50-75",
+      "dysport": "150-225"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -1597,9 +1604,9 @@
       "y": 42
     },
     "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
+      "botox": "25-50",
+      "xeomin": "25-50",
+      "dysport": "75-150"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -1844,9 +1851,9 @@
       "y": 38
     },
     "dosage": {
-      "botox": "200",
-      "xeomin": "200",
-      "dysport": "600"
+      "botox": "50-100",
+      "xeomin": "50-100",
+      "dysport": "150-300"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -1942,7 +1949,7 @@
     "hasReferenceImage": false,
     "probePlacementHint": "Patient prone, feet off edge. Place probe transversely on distal posterolateral calf, adjacent to fibula. Photo from behind showing probe on distal lateral calf near fibula.",
     "pearls": [
-      "Key target for great toe hyperflexion/hitchhiker's toe pattern",
+      "Key target for great toe hyperflexion (claw hallux) pattern — do NOT confuse with hitchhiker's toe (striatal toe), which is caused by EHL spasticity.",
       "Located lateral to FDL in the deep posterior compartment",
       "Small muscle, conservative dosing — over-injection causes toe weakness during push-off"
     ],
@@ -2027,9 +2034,9 @@
       "y": 40
     },
     "dosage": {
-      "botox": "50",
-      "xeomin": "50",
-      "dysport": "150"
+      "botox": "25-50",
+      "xeomin": "25-50",
+      "dysport": "75-150"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -3004,9 +3011,9 @@
       "teres-major"
     ],
     "dosage": {
-      "botox": "75-150",
-      "xeomin": "75-150",
-      "dysport": "225-450"
+      "botox": "50-100",
+      "xeomin": "50-100",
+      "dysport": "150-300"
     },
     "dosageNote": "Distribute across multiple sites along the muscle belly. Deep injection — confirm tip placement before each."
   },
@@ -3236,7 +3243,7 @@
     "pearls": [
       "Most superficial adductor — the 'go-to' for adductor spasticity injection",
       "Palpable as the prominent tendon in the proximal medial thigh with hip abduction",
-      "Femoral vessels are nearby medially — identify on US before injecting"
+      "Femoral vessels lie LATERAL to the adductor longus in the femoral triangle — identify them with color Doppler and keep the needle medial to these structures."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -3312,9 +3319,9 @@
       "y": 28
     },
     "dosage": {
-      "botox": "75-200",
-      "xeomin": "75-200",
-      "dysport": "225-600"
+      "botox": "75-150",
+      "xeomin": "75-150",
+      "dysport": "225-450"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -3398,9 +3405,9 @@
       "y": 35
     },
     "dosage": {
-      "botox": "100-200",
-      "xeomin": "100-200",
-      "dysport": "300-600"
+      "botox": "50-150",
+      "xeomin": "50-150",
+      "dysport": "150-450"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -3485,9 +3492,9 @@
       "y": 44
     },
     "dosage": {
-      "botox": "50-150",
-      "xeomin": "50-150",
-      "dysport": "150-450"
+      "botox": "50-100",
+      "xeomin": "50-100",
+      "dysport": "150-300"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -3581,6 +3588,7 @@
     "hasReferenceImage": false,
     "probePlacementHint": "Patient supine, leg internally rotated. Place probe transversely on lateral proximal leg, 5-8 cm below fibular head. Photo from lateral view showing probe on lateral upper calf.",
     "pearls": [
+      "⚠️ This muscle is an EVERTOR — injecting it in equinovarus (the most common spastic foot pattern) will WORSEN the varus deformity. Only inject peroneus longus when clinical exam confirms spastic EVERSION contributing to the deformity (equinovalgus or equinus with eversion component).",
       "Key target for foot eversion if spastic (less common than invertors)",
       "Common peroneal nerve wraps around the fibular neck just proximal — stay distal",
       "Superficial position makes it easy to inject once correctly identified"
@@ -3598,9 +3606,7 @@
       "Band-aids",
       "Sharps container"
     ],
-    "spasticityPatterns": [
-      "equinus"
-    ],
+    "spasticityPatterns": [],
     "relatedMuscles": [
       "gastrocnemius-medial",
       "gastrocnemius-lateral",
@@ -3662,9 +3668,9 @@
       "y": 28
     },
     "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
+      "botox": "25-50",
+      "xeomin": "25-50",
+      "dysport": "75-150"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -3714,7 +3720,8 @@
       "Ultrasound (USG) guidance is strongly recommended for SCM injection to avoid the carotid sheath.",
       "Visualize the SCM as the superficial strap-like muscle overlying the carotid sheath and scalene muscles.",
       "Use a high-frequency linear probe placed transversely across the neck at the mid-cervical level.",
-      "WARNING: Bilateral SCM injections carry a significant risk of dysphagia and neck weakness — use the minimum effective dose and consider staggering bilateral injections by 2 weeks."
+      "WARNING: Bilateral SCM injections carry a significant risk of dysphagia and neck weakness — use the minimum effective dose and consider staggering bilateral injections by 2 weeks.",
+      "When bilateral injection is necessary, preferentially dose the clavicular head over the sternal head — the sternal head is deeper and closer to pharyngeal muscles, carrying higher dysphagia risk."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
