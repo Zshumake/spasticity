@@ -266,7 +266,13 @@
       "brachioradialis",
       "pronator-teres",
       "fcr"
-    ]
+    ],
+    "dosage": {
+      "botox": "50-200",
+      "xeomin": "50-200",
+      "dysport": "150-600"
+    },
+    "dosageNote": "Large muscle with 2 heads. Split across short and long heads. FDA PI allows up to 200 U."
   },
   {
     "id": "brachialis",
@@ -350,7 +356,13 @@
     "relatedMuscles": [
       "biceps-brachii",
       "brachioradialis"
-    ]
+    ],
+    "dosage": {
+      "botox": "25-75",
+      "xeomin": "25-75",
+      "dysport": "75-225"
+    },
+    "dosageNote": "Deep to biceps — often underdosed. Confirm placement on US before injecting."
   },
   {
     "id": "quadratus-lumborum",
@@ -433,7 +445,13 @@
       "rectus-abdominis",
       "obliques",
       "paraspinals"
-    ]
+    ],
+    "dosage": {
+      "botox": "50-100",
+      "xeomin": "50-100",
+      "dysport": "150-300"
+    },
+    "dosageNote": "Deep muscle requiring curvilinear probe. Distribute across 2-3 sites."
   },
   {
     "id": "rectus-abdominis",
@@ -802,8 +820,15 @@
       "Band-aids",
       "Sharps container"
     ],
-    "spasticityPatterns": [],
-    "relatedMuscles": [],
+    "spasticityPatterns": [
+      "hip-extension",
+      "hip-external-rotation"
+    ],
+    "relatedMuscles": [
+      "piriformis",
+      "iliopsoas",
+      "rectus-femoris"
+    ],
     "dosageNote": "One of the largest muscles in the body — distribute across 3-4 sites."
   },
   {
@@ -886,7 +911,9 @@
       "Band-aids",
       "Sharps container"
     ],
-    "spasticityPatterns": [],
+    "spasticityPatterns": [
+      "hip-external-rotation"
+    ],
     "relatedMuscles": [
       "gluteus-maximus"
     ]
@@ -969,7 +996,13 @@
     "relatedMuscles": [
       "iliopsoas",
       "rectus-femoris"
-    ]
+    ],
+    "dosage": {
+      "botox": "50-100",
+      "xeomin": "50-100",
+      "dysport": "150-300"
+    },
+    "dosageNote": "Compact muscle at ASIS. 1-2 sites."
   },
   {
     "id": "rectus-femoris",
@@ -1134,12 +1167,20 @@
       "Band-aids",
       "Sharps container"
     ],
-    "spasticityPatterns": [],
+    "spasticityPatterns": [
+      "stiff-knee"
+    ],
     "relatedMuscles": [
       "rectus-femoris",
       "vastus-intermedius",
       "vastus-lateralis"
-    ]
+    ],
+    "dosage": {
+      "botox": "50-100",
+      "xeomin": "50-100",
+      "dysport": "150-300"
+    },
+    "dosageNote": "Use cautiously — weakening VMO can destabilize the patella."
   },
   {
     "id": "vastus-lateralis",
@@ -1219,7 +1260,9 @@
       "Band-aids",
       "Sharps container"
     ],
-    "spasticityPatterns": [],
+    "spasticityPatterns": [
+      "stiff-knee"
+    ],
     "relatedMuscles": [
       "rectus-femoris",
       "vastus-intermedius",
@@ -1304,7 +1347,9 @@
       "Band-aids",
       "Sharps container"
     ],
-    "spasticityPatterns": [],
+    "spasticityPatterns": [
+      "stiff-knee"
+    ],
     "relatedMuscles": [
       "rectus-femoris",
       "vastus-lateralis",
@@ -2011,7 +2056,13 @@
       "add-hallucis",
       "fdl",
       "fhl"
-    ]
+    ],
+    "dosage": {
+      "botox": "25-50",
+      "xeomin": "25-50",
+      "dysport": "75-150"
+    },
+    "dosageNote": "Plantar injection — painful. Consider topical anesthetic."
   },
   {
     "id": "tibialis-anterior",
@@ -2087,7 +2138,11 @@
       "Sharps container"
     ],
     "spasticityPatterns": [],
-    "relatedMuscles": []
+    "relatedMuscles": [
+      "tibialis-posterior",
+      "peroneus-longus",
+      "edl"
+    ]
   },
   {
     "id": "tibialis-posterior",
@@ -2352,9 +2407,14 @@
       "Sharps container"
     ],
     "spasticityPatterns": [
-      "striatal-toe"
+      "striatal-toe",
+      "toe-extension"
     ],
-    "relatedMuscles": []
+    "relatedMuscles": [
+      "edl",
+      "fhl",
+      "tibialis-anterior"
+    ]
   },
   {
     "id": "add-hallucis",
@@ -2430,7 +2490,13 @@
       "fdb",
       "fdl",
       "fhl"
-    ]
+    ],
+    "dosage": {
+      "botox": "10-25",
+      "xeomin": "10-25",
+      "dysport": "30-75"
+    },
+    "dosageNote": "Very small intrinsic foot muscle. Low doses only."
   },
   {
     "id": "triceps",
@@ -2510,11 +2576,19 @@
       "Band-aids",
       "Sharps container"
     ],
-    "spasticityPatterns": [],
+    "spasticityPatterns": [
+      "elbow-extension"
+    ],
     "relatedMuscles": [
       "biceps-brachii",
       "brachialis"
-    ]
+    ],
+    "dosage": {
+      "botox": "50-100",
+      "xeomin": "50-100",
+      "dysport": "150-300"
+    },
+    "dosageNote": "Rarely injected for spasticity. Confirm genuine spasticity before treating."
   },
   {
     "id": "brachioradialis",
@@ -2600,7 +2674,13 @@
       "biceps-brachii",
       "brachialis",
       "pronator-teres"
-    ]
+    ],
+    "dosage": {
+      "botox": "25-75",
+      "xeomin": "25-75",
+      "dysport": "75-225"
+    },
+    "dosageNote": "Superficial forearm muscle. Stay lateral and superficial to avoid radial nerve."
   },
   {
     "id": "pronator-teres",
@@ -2687,7 +2767,13 @@
       "pronator-quadratus",
       "fcr",
       "fcu"
-    ]
+    ],
+    "dosage": {
+      "botox": "25-75",
+      "xeomin": "25-75",
+      "dysport": "75-225"
+    },
+    "dosageNote": "Compact muscle. 1-2 sites in proximal belly."
   },
   {
     "id": "fcr",
@@ -2773,7 +2859,12 @@
       "fcu",
       "fdp",
       "fds"
-    ]
+    ],
+    "dosage": {
+      "botox": "25-50",
+      "xeomin": "25-50",
+      "dysport": "75-150"
+    }
   },
   {
     "id": "fcu",
@@ -2862,7 +2953,13 @@
       "fcr",
       "fdp",
       "fds"
-    ]
+    ],
+    "dosage": {
+      "botox": "20-50",
+      "xeomin": "20-50",
+      "dysport": "60-150"
+    },
+    "dosageNote": "Inject proximal third only — ulnar nerve becomes superficial distally."
   },
   {
     "id": "fds",
@@ -2951,7 +3048,13 @@
       "fcu",
       "fdp",
       "fpl"
-    ]
+    ],
+    "dosage": {
+      "botox": "25-50",
+      "xeomin": "25-50",
+      "dysport": "75-150"
+    },
+    "dosageNote": "Dose per head if targeting individual fingers."
   },
   {
     "id": "fdp",
@@ -3041,7 +3144,13 @@
       "fcu",
       "fds",
       "fpl"
-    ]
+    ],
+    "dosage": {
+      "botox": "25-50",
+      "xeomin": "25-50",
+      "dysport": "75-150"
+    },
+    "dosageNote": "Deep muscle — confirm placement on US."
   },
   {
     "id": "fpl",
@@ -3216,7 +3325,13 @@
     ],
     "relatedMuscles": [
       "fpl"
-    ]
+    ],
+    "dosage": {
+      "botox": "10-20",
+      "xeomin": "10-20",
+      "dysport": "30-60"
+    },
+    "dosageNote": "Very small muscle — low doses only. Dorsal approach preferred."
   },
   {
     "id": "subscapularis",
@@ -3384,7 +3499,10 @@
       "Sharps container"
     ],
     "spasticityPatterns": [],
-    "relatedMuscles": []
+    "relatedMuscles": [
+      "subscapularis",
+      "teres-major"
+    ]
   },
   {
     "id": "teres-major",
@@ -3470,7 +3588,13 @@
       "lat-dorsi",
       "pec-major",
       "subscapularis"
-    ]
+    ],
+    "dosage": {
+      "botox": "50-100",
+      "xeomin": "50-100",
+      "dysport": "150-300"
+    },
+    "dosageNote": "Large rotator. Distribute across 1-2 sites."
   },
   {
     "id": "adductor-longus",
@@ -3989,8 +4113,14 @@
       "Band-aids",
       "Sharps container"
     ],
-    "spasticityPatterns": [],
-    "relatedMuscles": []
+    "spasticityPatterns": [
+      "toe-extension"
+    ],
+    "relatedMuscles": [
+      "ehl",
+      "tibialis-anterior",
+      "peroneus-longus"
+    ]
   },
   {
     "id": "scm",

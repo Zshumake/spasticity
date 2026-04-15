@@ -105,7 +105,9 @@
     "description": "Knee held in extension during swing phase, difficulty with clearance. Rectus femoris is the primary target (it's biarticular and active in swing-phase knee flexion). Vastus intermedius may contribute as a secondary target. Avoid the other vasti — they stabilize the knee in stance phase and weakening them collapses weight-bearing.",
     "muscles": [
       "rectus-femoris",
-      "vastus-intermedius"
+      "vastus-intermedius",
+      "vastus-medialis",
+      "vastus-lateralis"
     ],
     "region": "Lower Extremity"
   },
@@ -305,5 +307,47 @@
       "paraspinals"
     ],
     "region": "Trunk"
+  },
+  {
+    "id": "hip-extension",
+    "name": "Hip Extension Spasticity",
+    "shortName": "Hip Extension",
+    "description": "Hip held in extension, difficulty with sitting posture and hip flexion for transfers. Gluteus maximus is the primary target.",
+    "muscles": [
+      "gluteus-maximus"
+    ],
+    "region": "Lower Extremity"
+  },
+  {
+    "id": "hip-external-rotation",
+    "name": "Hip External Rotation",
+    "shortName": "Hip ER",
+    "description": "Hip held in external rotation. Piriformis and gluteus maximus are the primary targets.",
+    "muscles": [
+      "piriformis",
+      "gluteus-maximus"
+    ],
+    "region": "Lower Extremity"
+  },
+  {
+    "id": "toe-extension",
+    "name": "Toe Extension / Dorsiflexion Assist",
+    "shortName": "Toe Extension",
+    "description": "Spastic toe extension or extensor recruitment during gait. EDL and EHL may contribute. Uncommon — confirm with EMG before injecting.",
+    "muscles": [
+      "edl",
+      "ehl"
+    ],
+    "region": "Lower Extremity"
+  },
+  {
+    "id": "elbow-extension",
+    "name": "Elbow Extension Spasticity",
+    "shortName": "Elbow Extension",
+    "description": "Elbow held in extension, difficulty with flexion. Uncommon in stroke (more common in TBI/MS). Triceps is the primary target.",
+    "muscles": [
+      "triceps"
+    ],
+    "region": "Upper Extremity"
   }
 ]
