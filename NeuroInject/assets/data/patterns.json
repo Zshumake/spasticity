@@ -89,10 +89,12 @@
     "id": "adducted-hip",
     "name": "Adducted Hip (Scissoring)",
     "shortName": "Scissoring Gait",
-    "description": "Hips adducted with scissoring gait pattern, legs crossing midline. Note: gracilis and adductor brevis are also standard adductor injection targets (not yet in this dataset).",
+    "description": "Hips adducted with scissoring gait pattern, legs crossing midline",
     "muscles": [
       "adductor-longus",
-      "adductor-magnus"
+      "adductor-magnus",
+      "adductor-brevis",
+      "gracilis"
     ],
     "region": "Lower Extremity"
   },

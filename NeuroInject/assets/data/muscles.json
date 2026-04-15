@@ -3554,7 +3554,9 @@
       "adducted-hip"
     ],
     "relatedMuscles": [
-      "adductor-magnus"
+      "adductor-magnus",
+      "adductor-brevis",
+      "gracilis"
     ]
   },
   {
@@ -3640,7 +3642,9 @@
       "adducted-hip"
     ],
     "relatedMuscles": [
-      "adductor-longus"
+      "adductor-longus",
+      "adductor-brevis",
+      "gracilis"
     ]
   },
   {
@@ -5448,6 +5452,176 @@
     "relatedMuscles": [
       "orbicularis-oculi",
       "platysma"
+    ]
+  },
+  {
+    "id": "adductor-brevis",
+    "name": "Adductor Brevis",
+    "group": "Lower Extremity",
+    "pattern": "Hip adduction (deep, short adductor)",
+    "landmarks": [
+      "Pubic Tubercle (palpate the bony prominence on the superior pubic ramus medially — the adductor brevis originates from the body and inferior ramus of the pubis, just lateral to gracilis)",
+      "Adductor Longus Tendon (palpate the prominent cord in the proximal medial thigh with the hip slightly abducted — the adductor brevis lies immediately deep to adductor longus)"
+    ],
+    "placement": [
+      "Position the patient supine with the hip abducted 30-45 degrees, knee flexed, and the leg externally rotated (frog-leg position).",
+      "Identify the adductor longus tendon at its pubic origin — palpate the firm cord at the medial groin crease.",
+      "The adductor brevis lies DEEP to the adductor longus. It cannot be reliably distinguished by palpation alone.",
+      "USG is strongly recommended — insert the needle through the adductor longus to reach the adductor brevis layer deep to it.",
+      "Under ultrasound, advance the needle through the adductor longus until the tip crosses the fascial plane into the deeper adductor brevis muscle belly.",
+      "Confirm depth — adductor brevis lies between adductor longus (superficial) and adductor magnus/obturator externus (deep).",
+      "Aspirate before injecting. A single injection into the mid-belly is usually sufficient.",
+      "Avoid advancing too deeply past adductor brevis into the obturator externus or adductor magnus unless those are also targets."
+    ],
+    "setup": [
+      "USG guidance is strongly recommended — adductor brevis is deep to adductor longus and cannot be reliably injected by landmark alone.",
+      "The obturator nerve (anterior branch) runs on the superficial surface of adductor brevis between it and adductor longus — identify it and avoid direct injection into the nerve.",
+      "The posterior branch of the obturator nerve runs between adductor brevis and adductor magnus — it may be visible deep to the target on US.",
+      "The profunda femoris artery and its branches run in this plane — use color Doppler to identify vessels before needle insertion."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz)",
+      "orientation": "Transverse across the proximal medial thigh, at the level of the adductor longus origin, perpendicular to the muscle fibers",
+      "viewSteps": [
+        "Place the probe transversely on the proximal medial thigh with the hip abducted.",
+        "Identify the adductor longus as the most superficial adductor — a large hypoechoic muscle belly with a prominent proximal tendon originating from the pubic tubercle.",
+        "Deep to adductor longus, identify a thin fascial plane — the adductor brevis lies immediately deep to this fascia as a smaller hypoechoic muscle.",
+        "The anterior branch of the obturator nerve may be visible as a small hyperechoic structure in the fascial plane between adductor longus and brevis.",
+        "Deep to adductor brevis, the adductor magnus fills the deepest compartment.",
+        "Use color Doppler to identify the profunda femoris artery and its perforating branches, which run in the inter-muscular planes."
+      ],
+      "safetyNotes": [
+        "The anterior branch of the obturator nerve runs between adductor longus and brevis — identify it and keep the needle tip within the muscle belly, not in the inter-fascial plane.",
+        "The profunda femoris artery and perforating branches course through the adductor compartment — use Doppler before each needle insertion.",
+        "Do not advance past adductor brevis into the deeper compartment unless targeting adductor magnus."
+      ],
+      "probeDiagram": {
+        "cx": 48,
+        "cy": 42,
+        "angle": 0,
+        "length": 8
+      }
+    },
+    "dosage": {
+      "botox": "50-100",
+      "xeomin": "50-100",
+      "dysport": "150-300"
+    },
+    "dosageNote": "Often co-injected with adductor longus and magnus for refractory scissoring.",
+    "marker": null,
+    "referenceImages": [],
+    "hasReferenceImage": false,
+    "probePlacementImages": [],
+    "probePlacementHint": "Patient supine, frog-leg position. Place probe transversely on proximal medial thigh at the adductor longus origin. Photo from medial view showing probe on inner thigh.",
+    "pearls": [
+      "The 'hidden' adductor — lies deep to adductor longus and is often missed when only the superficial adductor longus is injected",
+      "If scissoring persists after treating adductor longus alone, add adductor brevis (and magnus) to the injection set",
+      "Anterior branch of obturator nerve sits right on top of this muscle — always identify it on US before injecting"
+    ],
+    "supplies": [
+      "Ultrasound machine with linear probe",
+      "Sterile ultrasound gel",
+      "Tegaderm or probe cover",
+      "Alcohol swabs / ChloraPrep",
+      "Reconstituted botulinum toxin (drawn up)",
+      "25-27G needle (1.5 inch for superficial, 2-3 inch for deep)",
+      "1-3 mL syringe(s)",
+      "Gloves (non-sterile)",
+      "Gauze pads",
+      "Band-aids",
+      "Sharps container"
+    ],
+    "spasticityPatterns": [
+      "adducted-hip"
+    ],
+    "relatedMuscles": [
+      "adductor-longus",
+      "adductor-magnus",
+      "gracilis"
+    ]
+  },
+  {
+    "id": "gracilis",
+    "name": "Gracilis",
+    "group": "Lower Extremity",
+    "pattern": "Hip adduction + knee flexion (crosses both joints)",
+    "landmarks": [
+      "Pubic Symphysis (palpate the midline bony prominence — gracilis originates from the inferior pubic ramus near the symphysis, the most medial of the adductor origins)",
+      "Pes Anserinus (palpate the medial tibial flare below the knee — gracilis inserts here along with semitendinosus and sartorius; it is the middle tendon of the three)"
+    ],
+    "placement": [
+      "Position the patient supine with the hip abducted 30-45 degrees and knee slightly flexed.",
+      "Identify the gracilis as the most superficial and medial muscle of the adductor group — it forms a thin strap running the full length of the medial thigh.",
+      "Palpate the thin muscle belly on the medial thigh — ask the patient to adduct the hip against resistance while you feel for contraction medially.",
+      "The injection site is the proximal third of the medial thigh, where the muscle belly is thickest.",
+      "Insert the needle perpendicular to the skin on the medial thigh into the superficial muscle belly.",
+      "Advance only 1-1.5 cm — gracilis is thin and superficial.",
+      "Aspirate before injecting. A single injection into the proximal belly is usually sufficient.",
+      "Stay superficial — the adductor longus and brevis lie deep to gracilis."
+    ],
+    "setup": [
+      "Gracilis is superficial and thin — landmark-guided injection is often adequate, but USG can confirm you are in gracilis and not the deeper adductor longus.",
+      "The muscle is a thin strap — use low volume to avoid diffusion into adjacent adductors.",
+      "The saphenous nerve and great saphenous vein run in the medial thigh — they are anterior to gracilis but should be identified if using US."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz)",
+      "orientation": "Transverse across the proximal medial thigh",
+      "viewSteps": [
+        "Place the probe transversely on the proximal medial thigh with the hip abducted.",
+        "Gracilis appears as a thin, flat hypoechoic muscle strap on the most medial and superficial aspect of the thigh, directly under the subcutaneous tissue.",
+        "Deep to gracilis, the adductor longus is visible as a larger, thicker hypoechoic muscle.",
+        "The sartorius is visible anterolaterally — do not confuse the two (sartorius is more lateral and anterior).",
+        "To confirm: ask the patient to adduct the hip — gracilis will contract and thicken on real-time US."
+      ],
+      "safetyNotes": [
+        "The saphenous nerve and great saphenous vein run in the subsartorial canal anterior to gracilis — identify them if visible and avoid.",
+        "Stay within the thin gracilis belly — deep penetration enters adductor longus.",
+        "The obturator nerve branches are deep to gracilis in the adductor compartment."
+      ],
+      "probeDiagram": {
+        "cx": 48,
+        "cy": 38,
+        "angle": 0,
+        "length": 8
+      }
+    },
+    "dosage": {
+      "botox": "50-75",
+      "xeomin": "50-75",
+      "dysport": "150-225"
+    },
+    "dosageNote": "Thin muscle — conservative dosing to avoid spread to adjacent adductors.",
+    "marker": null,
+    "referenceImages": [],
+    "hasReferenceImage": false,
+    "probePlacementImages": [],
+    "probePlacementHint": "Patient supine, frog-leg position. Place probe transversely on proximal medial thigh. Photo from medial view showing probe on inner thigh.",
+    "pearls": [
+      "The only adductor that crosses both hip and knee — contributes to both scissoring AND knee flexion",
+      "Standard target in adductor injection sets alongside longus and magnus — don't forget it",
+      "Very thin and superficial — easy to over-penetrate into deeper adductors; use short needle and minimal depth"
+    ],
+    "supplies": [
+      "Ultrasound machine with linear probe",
+      "Sterile ultrasound gel",
+      "Tegaderm or probe cover",
+      "Alcohol swabs / ChloraPrep",
+      "Reconstituted botulinum toxin (drawn up)",
+      "25-27G needle (1.5 inch for superficial, 2-3 inch for deep)",
+      "1-3 mL syringe(s)",
+      "Gloves (non-sterile)",
+      "Gauze pads",
+      "Band-aids",
+      "Sharps container"
+    ],
+    "spasticityPatterns": [
+      "adducted-hip"
+    ],
+    "relatedMuscles": [
+      "adductor-longus",
+      "adductor-brevis",
+      "adductor-magnus"
     ]
   }
 ]
