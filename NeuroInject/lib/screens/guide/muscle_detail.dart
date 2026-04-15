@@ -12,8 +12,6 @@ import '../../widgets/info_card.dart';
 import '../../widgets/step_list.dart';
 import '../../widgets/landmark_list.dart';
 import '../../widgets/safety_callout.dart';
-import '../../widgets/anatomy_diagram.dart';
-import '../../widgets/us_image_gallery.dart';
 import '../../widgets/video_link_card.dart';
 import '../../widgets/print_cheat_sheet.dart';
 
@@ -109,10 +107,11 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
   //  STUDY MODE — full educational content
   // ═══════════════════════════════════════════════════════════════
   Widget _buildStudyView(bool isDark, bool wide) {
-    // Order mirrors the clinical workflow:
-    //   1. Landmarks (palpate) → 2. Ultrasound guide (scan) →
-    //   3. Probe placement (position) → 4. Needle placement (inject) →
-    //   5. Setup & tips → 6. Pearls
+    // Two-column layout balanced by content weight.
+    // Left:  Landmarks → Ultrasound Guide → Probe Placement
+    // Right: Needle Placement → Setup & Tips → Pearls → Supplies
+    // Clinical flow still intact (scan before inject) because
+    // users read left-then-right as a natural top-down sequence.
     final left = <Widget>[
       _section('BONY LANDMARKS', Icons.location_on_outlined, null,
         LandmarkList(landmarks: muscle.landmarks)),
@@ -122,7 +121,17 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
       ],
       const SizedBox(height: 16),
       _buildProbePlacement(),
-      const SizedBox(height: 16),
+      if (muscle.videoUrl != null) ...[
+        const SizedBox(height: 16),
+        VideoLinkCard(
+          videoUrl: muscle.videoUrl!,
+          muscleTitle: muscle.name,
+          accentColor: _groupColor,
+        ),
+      ],
+    ];
+
+    final right = <Widget>[
       _section('NEEDLE PLACEMENT', Icons.my_location, AppTheme.amber,
         StepList(steps: muscle.placement)),
       const SizedBox(height: 16),
@@ -131,23 +140,6 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
       if (muscle.pearls.isNotEmpty) ...[
         const SizedBox(height: 16),
         _buildPearlsCard(isDark),
-      ],
-    ];
-
-    final right = <Widget>[
-      _buildAnatomyDiagram(),
-      const SizedBox(height: 16),
-      if (muscle.referenceImages.isNotEmpty)
-        _buildUSGallery()
-      else
-        _buildImagePlaceholder(),
-      if (muscle.videoUrl != null) ...[
-        const SizedBox(height: 16),
-        VideoLinkCard(
-          videoUrl: muscle.videoUrl!,
-          muscleTitle: muscle.name,
-          accentColor: _groupColor,
-        ),
       ],
       if (muscle.supplies.isNotEmpty) ...[
         const SizedBox(height: 16),
@@ -687,72 +679,6 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         border: Border.all(color: AppTheme.primary.withAlpha(40))),
       child: Text(text, style: GoogleFonts.ibmPlexMono(
         fontSize: 11, fontWeight: FontWeight.w600, color: AppTheme.primary)),
-    );
-  }
-
-  Widget _buildAnatomyDiagram() {
-    // Use first probe placement image and first reference image for split view
-    final probeImg = muscle.probePlacementImages.isNotEmpty
-        ? 'assets/images/probe_placement/${muscle.probePlacementImages.first}'
-        : null;
-    final usImg = muscle.referenceImages.isNotEmpty
-        ? 'assets/images/us_reference/${muscle.referenceImages.first}'
-        : null;
-
-    return AnatomyDiagram(
-      probePositionImg: probeImg,
-      expectedUsImg: usImg,
-      accentColor: _groupColor,
-      muscleTitle: muscle.name,
-      onTapProbe: probeImg != null
-          ? () => _showFullImage(context, probeImg, 'Probe Position')
-          : null,
-      onTapUs: usImg != null
-          ? () => _showFullImage(context, usImg, 'Expected US View')
-          : null,
-    );
-  }
-
-  Widget _buildUSGallery() {
-    final paths = muscle.referenceImages
-        .map((name) => 'assets/images/us_reference/$name')
-        .toList();
-    // Use filenames (without extension) as labels
-    final labels = muscle.referenceImages
-        .map((name) => name.replaceAll(RegExp(r'\.[^.]+$'), '').replaceAll('-', ' ').replaceAll('_', ' '))
-        .toList();
-
-    return USImageGallery(
-      imagePaths: paths,
-      imageLabels: labels,
-      accentColor: _groupColor,
-      muscleTitle: muscle.name,
-    );
-  }
-
-  Widget _buildImagePlaceholder() {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight,
-        borderRadius: BorderRadius.circular(AppTheme.radiusMd),
-        border: Border.all(color: isDark ? AppTheme.borderDark : AppTheme.borderLight)),
-      child: Row(children: [
-        Container(width: 48, height: 48,
-          decoration: BoxDecoration(color: AppTheme.amber.withAlpha(25),
-            borderRadius: BorderRadius.circular(AppTheme.radiusMd)),
-          child: Icon(Icons.add_photo_alternate_outlined, color: AppTheme.amber.withAlpha(180), size: 24)),
-        const SizedBox(width: 12),
-        Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text('US Reference Image Needed', style: GoogleFonts.sourceSans3(
-            fontSize: 14, fontWeight: FontWeight.w600,
-            color: isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight)),
-          const SizedBox(height: 2),
-          Text('Add your own annotated ultrasound screenshot for ${muscle.name}',
-            style: GoogleFonts.sourceSans3(fontSize: 12, color: AppTheme.textSecondary)),
-        ])),
-      ]),
     );
   }
 

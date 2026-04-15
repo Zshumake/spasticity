@@ -63,10 +63,8 @@
       "xeomin": "75-150",
       "dysport": "225-450"
     },
-    "referenceImages": [
-      "pec-major.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient supine, arm abducted 30°. Place probe transversely on anterior chest, lateral to sternum at 3rd-4th rib. Photo from patient's right side showing probe on chest wall.",
     "pearls": [
       "Start with low doses (25-50U Botox per site) — the pec major is a large muscle and easy to over-inject",
@@ -148,11 +146,8 @@
       "x": 44,
       "y": 32
     },
-    "referenceImages": [
-      "latissimus-dorsi.jpg",
-      "latissimus-dorsi_landmarks.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient lateral decubitus or prone. Place probe transversely across posterior axillary fold. Photo from behind showing probe on lateral back/axilla.",
     "pearls": [
       "Often co-injected with pec major and teres major for shoulder adduction/IR pattern",
@@ -236,11 +231,8 @@
       "x": 48,
       "y": 28
     },
-    "referenceImages": [
-      "biceps-brachii.jpg",
-      "biceps-brachii_radial.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient supine, arm supinated. Place probe transversely on anterior mid-upper arm. Photo from lateral view showing probe across biceps belly.",
     "pearls": [
       "One of the most commonly injected muscles in upper limb spasticity",
@@ -574,10 +566,8 @@
       "xeomin": "150",
       "dysport": "450"
     },
-    "referenceImages": [
-      "piriformis.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient prone, pillow under pelvis. Place curvilinear probe transversely along PSIS-to-greater-trochanter line, at midpoint. Photo showing probe between PSIS and GT.",
     "pearls": [
       "Notoriously difficult to isolate on US — confirm with EMG if available",
@@ -733,10 +723,8 @@
       "x": 50,
       "y": 30
     },
-    "referenceImages": [
-      "rectus-femoris.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient supine, knee extended. Place probe transversely on anterior mid-thigh. Photo from lateral view showing probe across anterior thigh.",
     "pearls": [
       "The only quad that crosses the hip — contributes to both stiff knee gait AND hip flexion",
@@ -996,10 +984,8 @@
       "xeomin": "100",
       "dysport": "300"
     },
-    "referenceImages": [
-      "vastus-intermedius.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient supine, knee extended. Place probe transversely on anterior proximal thigh (same region as rectus femoris but deeper target). Photo from front showing probe on anterior thigh.",
     "pearls": [
       "Deepest of the quadriceps — requires longer needle and confident US identification",
@@ -1083,10 +1069,8 @@
       "xeomin": "100",
       "dysport": "300"
     },
-    "referenceImages": [
-      "semimembranosus.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient prone, knee slightly flexed. Place probe transversely on posterior medial thigh at mid-to-distal level. Photo from behind showing probe on posteromedial thigh.",
     "pearls": [
       "Broader, flatter muscle — differentiate from semitendinosus by its more lateral position distally",
@@ -1170,10 +1154,8 @@
       "xeomin": "100",
       "dysport": "300"
     },
-    "referenceImages": [
-      "semitendinosus.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient prone, knee slightly flexed. Place probe transversely on posterior mid-thigh. Photo from behind showing probe on posterior thigh, medial side.",
     "pearls": [
       "Round tendon easily palpated posteromedially — the muscle belly is proximal",
@@ -1258,10 +1240,8 @@
       "xeomin": "100",
       "dysport": "300"
     },
-    "referenceImages": [
-      "gastrocnemius-medial.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient prone, feet off bed edge. Place probe transversely on proximal medial calf, 2-3 cm below popliteal crease. Photo from behind showing probe on medial proximal calf.",
     "pearls": [
       "Most commonly injected muscle for equinovarus foot — start here",
@@ -1346,10 +1326,8 @@
       "x": 55,
       "y": 14
     },
-    "referenceImages": [
-      "gastrocnemius-lateral.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient prone, feet off bed edge. Place probe transversely on proximal lateral calf, 2-3 cm below popliteal crease. Photo from behind showing probe on lateral proximal calf.",
     "pearls": [
       "Smaller than medial head — use lower doses",
@@ -1439,11 +1417,8 @@
       "x": 40,
       "y": 32
     },
-    "referenceImages": [
-      "soleus.jpg",
-      "soleus_medial.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient prone, feet off edge. Place probe transversely on medial mid-calf, just posterior to tibial border. Photo from behind/medial showing probe on mid-calf.",
     "pearls": [
       "Deep to gastrocnemius — must angle the needle past gastroc on US",
@@ -1535,10 +1510,8 @@
       "xeomin": "200",
       "dysport": "600"
     },
-    "referenceImages": [
-      "soleus.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient prone, feet off edge. Place probe transversely on lateral mid-calf. Photo from behind showing probe on lateral mid-calf.",
     "pearls": [
       "Less commonly injected than medial soleus but important for varus component",
@@ -1628,10 +1601,8 @@
       "xeomin": "50-100",
       "dysport": "150-300"
     },
-    "referenceImages": [
-      "fdl.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient prone or supine with leg externally rotated. Place probe transversely on medial distal leg, just behind tibial border. Photo showing probe on posteromedial distal leg.",
     "pearls": [
       "Key target for toe curling/clawing in combination with FDB",
@@ -1713,10 +1684,8 @@
       }
     },
     "marker": null,
-    "referenceImages": [
-      "fdb.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient prone, foot hanging off bed. Place probe longitudinally on plantar midfoot from calcaneus toward toes. Photo from plantar view showing probe on sole of foot.",
     "pearls": [
       "Plantar injection — painful for patient, consider local anesthetic or ice first",
@@ -1797,10 +1766,8 @@
       "x": 52,
       "y": 22
     },
-    "referenceImages": [
-      "tibialis-anterior.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient supine, leg extended. Place probe transversely on proximal anterolateral leg, 2 cm lateral to tibial crest. Photo from front showing probe on anterior shin.",
     "pearls": [
       "⚠️ DO NOT INJECT in typical UMN spasticity — this muscle is almost always weak, not spastic. Injecting it causes foot drop.",
@@ -1881,10 +1848,8 @@
       "xeomin": "200",
       "dysport": "600"
     },
-    "referenceImages": [
-      "tibialis-posterior.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient prone or supine with leg externally rotated. Place probe transversely on medial mid-leg, just behind tibia. Photo from medial side showing probe behind tibial border.",
     "pearls": [
       "The #1 cause of varus foot in spasticity — always assess this muscle",
@@ -1973,10 +1938,8 @@
       "xeomin": "25-75",
       "dysport": "75-225"
     },
-    "referenceImages": [
-      "fhl.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient prone, feet off edge. Place probe transversely on distal posterolateral calf, adjacent to fibula. Photo from behind showing probe on distal lateral calf near fibula.",
     "pearls": [
       "Key target for great toe hyperflexion/hitchhiker's toe pattern",
@@ -2068,10 +2031,8 @@
       "xeomin": "50",
       "dysport": "150"
     },
-    "referenceImages": [
-      "ehl.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient supine, leg extended. Place probe transversely on distal anterolateral leg, ~10 cm above ankle. Photo from front showing probe on anterior distal leg.",
     "pearls": [
       "Causes great toe hyperextension (hitchhiker's toe/striatal toe)",
@@ -2229,10 +2190,8 @@
       "x": 45,
       "y": 38
     },
-    "referenceImages": [
-      "triceps.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient seated or prone. Place probe transversely on posterior mid-upper arm. Photo from behind showing probe across triceps belly.",
     "pearls": [
       "Rarely injected in spasticity — extended elbow is uncommon. Confirm the pattern",
@@ -2314,11 +2273,8 @@
       "x": 45,
       "y": 55
     },
-    "referenceImages": [
-      "brachioradialis.jpg",
-      "brachioradialis_distal.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient seated, forearm neutral on table. Place probe transversely on lateral proximal forearm, 4-6 cm below lateral epicondyle. Photo from lateral view showing probe on lateral forearm.",
     "pearls": [
       "Key contributor to elbow flexion often missed — it's a forearm muscle that flexes the elbow",
@@ -2403,11 +2359,8 @@
       "x": 38,
       "y": 30
     },
-    "referenceImages": [
-      "pronator-teres.jpg",
-      "pronator-teres_nerves.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient seated, forearm supinated. Place probe transversely on medial proximal forearm, 3-5 cm below medial epicondyle. Photo showing probe on medial proximal forearm near elbow.",
     "pearls": [
       "Primary target for forearm pronation spasticity",
@@ -2493,10 +2446,8 @@
       "x": 40,
       "y": 45
     },
-    "referenceImages": [
-      "fcr.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient seated, forearm supinated on table. Place probe transversely on central volar forearm at proximal-to-mid third. Photo from above showing probe on volar mid-forearm.",
     "pearls": [
       "Main contributor to wrist flexion and radial deviation",
@@ -2584,10 +2535,8 @@
       "x": 30,
       "y": 45
     },
-    "referenceImages": [
-      "fcu.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient seated, forearm supinated. Place probe transversely on medial forearm. Photo showing probe on ulnar/medial side of mid-forearm.",
     "pearls": [
       "Main contributor to wrist flexion and ulnar deviation",
@@ -2673,11 +2622,8 @@
       "x": 38,
       "y": 42
     },
-    "referenceImages": [
-      "fds.jpg",
-      "fds_annotated.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient seated, forearm supinated on table. Place probe transversely on volar forearm, 5-8 cm below medial epicondyle. Photo showing probe on central volar forearm.",
     "pearls": [
       "Target for finger flexion at PIP joints",
@@ -2766,11 +2712,8 @@
       "x": 40,
       "y": 48
     },
-    "referenceImages": [
-      "fdp.jpg",
-      "fdp_distal.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient seated, forearm supinated. Place probe transversely on medial-volar mid-forearm. Photo showing probe on deep volar forearm, slightly ulnar.",
     "pearls": [
       "Target for finger flexion at DIP joints — the deeper layer",
@@ -2858,10 +2801,8 @@
       "x": 35,
       "y": 50
     },
-    "referenceImages": [
-      "fpl.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient seated, forearm supinated flat. Place probe transversely on mid-volar forearm at junction of middle and distal thirds. Photo showing probe on distal volar forearm, radial side.",
     "pearls": [
       "Target for thumb-in-palm deformity (thumb flexion component)",
@@ -3033,11 +2974,8 @@
       "x": 55,
       "y": 20
     },
-    "referenceImages": [
-      "subscapularis.jpg",
-      "subscapularis_landmarks.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient supine, arm abducted 45-60° and externally rotated. Place probe parasagitally in anterior axilla. Photo from front showing probe in axillary fold aimed toward scapula.",
     "pearls": [
       "Most important muscle for internal rotation spasticity at the shoulder",
@@ -3205,10 +3143,8 @@
       "x": 43,
       "y": 28
     },
-    "referenceImages": [
-      "teres-major.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient seated or prone, arm at side. Place probe transversely over posterior axillary fold. Photo from behind showing probe on posterior axilla/inferior scapular angle.",
     "pearls": [
       "Works synergistically with lat dorsi and subscapularis for shoulder IR/adduction",
@@ -3294,10 +3230,8 @@
       "xeomin": "50-100",
       "dysport": "150-300"
     },
-    "referenceImages": [
-      "adductor-longus.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient supine, hip slightly abducted and externally rotated. Place probe transversely on proximal medial thigh, 3-5 cm below pubic tubercle. Photo showing probe on inner proximal thigh.",
     "pearls": [
       "Most superficial adductor — the 'go-to' for adductor spasticity injection",
@@ -3382,10 +3316,8 @@
       "xeomin": "75-200",
       "dysport": "225-600"
     },
-    "referenceImages": [
-      "adductor-magnus.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient prone, legs slightly apart. Place probe transversely on posteromedial thigh at junction of middle and distal thirds. Photo from behind showing probe on posteromedial distal thigh.",
     "pearls": [
       "Largest adductor — requires higher doses and multiple injection sites",
@@ -3470,10 +3402,8 @@
       "xeomin": "100-200",
       "dysport": "300-600"
     },
-    "referenceImages": [
-      "biceps-femoris.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient prone, knee flexed over pillow. Place probe transversely on lateral posterior thigh at junction of proximal and middle thirds. Photo from behind showing probe on posterolateral thigh.",
     "pearls": [
       "Lateral hamstring — key target for lateral knee flexion patterns",
@@ -3736,10 +3666,8 @@
       "xeomin": "50-100",
       "dysport": "150-300"
     },
-    "referenceImages": [
-      "edl.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient supine, leg neutral. Place probe transversely on anterolateral proximal leg at proximal-middle third junction. Photo from anterolateral view showing probe on outer upper shin.",
     "pearls": [
       "Target for toe extension (toe dorsiflexion) if spastic",
@@ -3822,10 +3750,8 @@
       "xeomin": "25-100",
       "dysport": "75-300"
     },
-    "referenceImages": [
-      "sternocleidomastoid.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient supine, head turned slightly contralateral. Place probe transversely on lateral neck at thyroid cartilage level. Photo from front/lateral showing probe across SCM muscle belly on neck.",
     "pearls": [
       "Most commonly injected neck muscle for torticollis and laterocollis",
@@ -3913,10 +3839,8 @@
       "xeomin": "25-100",
       "dysport": "75-300"
     },
-    "referenceImages": [
-      "upper-trapezius.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient seated, arms relaxed. Place probe transversely on upper trapezius ridge, midway between cervical spine and acromion. Photo from behind showing probe on upper trap between neck and shoulder.",
     "pearls": [
       "Very commonly injected for cervical dystonia and shoulder elevation",
@@ -4004,10 +3928,8 @@
       "xeomin": "25-75",
       "dysport": "75-225"
     },
-    "referenceImages": [
-      "levator-scapulae.jpg"
-    ],
-    "hasReferenceImage": true,
+    "referenceImages": [],
+    "hasReferenceImage": false,
     "probePlacementHint": "Patient seated, arms relaxed. Place probe transversely over superior angle of scapula, 2-3 cm lateral to C7-T2 spinous processes. Photo from behind showing probe on posterolateral neck/upper back.",
     "pearls": [
       "Deep to upper trapezius — must visualize past the trap on US",
