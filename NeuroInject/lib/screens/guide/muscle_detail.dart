@@ -120,7 +120,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         _buildUltrasoundCard(isDark),
       ],
       const SizedBox(height: 16),
-      _buildProbePlacement(),
+      _buildProbeAndNeedlePhotos(isDark),
       if (muscle.videoUrl != null) ...[
         const SizedBox(height: 16),
         VideoLinkCard(
@@ -562,83 +562,184 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     return InfoCard(title: title, icon: icon, iconColor: c, child: child);
   }
 
-  Widget _buildProbePlacement() {
-    final images = muscle.probePlacementImages;
-    if (images.isNotEmpty) {
-      return _section('PROBE PLACEMENT', Icons.sensors, AppTheme.primary,
-        Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text('Where to place the ultrasound probe — tap to enlarge',
-            style: GoogleFonts.sourceSans3(fontSize: 12, color: AppTheme.textSecondary.withAlpha(150))),
-          const SizedBox(height: 12),
-          SizedBox(height: 240, child: ListView.separated(
-            scrollDirection: Axis.horizontal,
-            itemCount: images.length,
-            separatorBuilder: (_, __) => const SizedBox(width: 10),
-            itemBuilder: (ctx, i) {
-              final path = 'assets/images/probe_placement/${images[i]}';
-              return GestureDetector(
-                onTap: () => _showFullImage(ctx, path, '${muscle.name} — Probe'),
-                child: ClipRRect(borderRadius: BorderRadius.circular(AppTheme.radiusMd),
-                  child: Container(width: 320,
-                    decoration: BoxDecoration(color: AppTheme.bgDark,
-                      borderRadius: BorderRadius.circular(AppTheme.radiusMd),
-                      border: Border.all(color: AppTheme.primary.withAlpha(60))),
-                    child: Image.asset(path, fit: BoxFit.cover,
-                      errorBuilder: (_, __, ___) => Center(child: Icon(
-                        Icons.broken_image_outlined, size: 40, color: AppTheme.textTertiary))))),
-              );
-            },
-          )),
-        ]),
-      );
-    }
+  /// Two side-by-side image slots:
+  ///   1. Probe placement + needle insertion site (surface photo)
+  ///   2. Ultrasound image with needle visible in muscle
+  /// Shows real images when available, otherwise a styled placeholder
+  /// prompting the user to add their own.
+  Widget _buildProbeAndNeedlePhotos(bool isDark) {
+    final probeImg = muscle.probePlacementImages.isNotEmpty
+        ? 'assets/images/probe_placement/${muscle.probePlacementImages.first}'
+        : null;
+    final usImg = muscle.referenceImages.isNotEmpty
+        ? 'assets/images/us_reference/${muscle.referenceImages.first}'
+        : null;
 
-    // Placeholder with photo hint
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final hint = muscle.probePlacementHint;
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight,
-        borderRadius: BorderRadius.circular(AppTheme.radiusMd),
-        border: Border.all(color: isDark ? AppTheme.borderDark : AppTheme.borderLight)),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Section header
         Row(children: [
-          Container(width: 48, height: 48,
-            decoration: BoxDecoration(color: AppTheme.primary.withAlpha(25),
-              borderRadius: BorderRadius.circular(AppTheme.radiusMd)),
-            child: Icon(Icons.sensors, color: AppTheme.primary.withAlpha(180), size: 24)),
-          const SizedBox(width: 12),
-          Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text('Probe Placement Photo Needed', style: GoogleFonts.sourceSans3(
-              fontSize: 14, fontWeight: FontWeight.w600,
-              color: isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight)),
-            const SizedBox(height: 2),
-            Text('Add a photo showing probe position for ${muscle.name}',
-              style: GoogleFonts.sourceSans3(fontSize: 12, color: AppTheme.textSecondary)),
-          ])),
+          Container(width: 24, height: 2, color: AppTheme.primary),
+          const SizedBox(width: 10),
+          Text('CLINICAL IMAGES', style: GoogleFonts.ibmPlexMono(
+            fontSize: 10, fontWeight: FontWeight.w700,
+            letterSpacing: 2.0, color: AppTheme.primary)),
         ]),
-        if (hint != null) ...[
-          const SizedBox(height: 12),
+        const SizedBox(height: 14),
+
+        // Two cards side by side
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(child: _imageSlot(
+              isDark: isDark,
+              title: 'Probe Placement\n& Needle Site',
+              subtitle: 'Surface photo showing probe position and needle insertion point',
+              icon: Icons.sensors,
+              accentColor: AppTheme.primary,
+              imagePath: probeImg,
+              imageLabel: '${muscle.name} — Probe & Needle',
+            )),
+            const SizedBox(width: 12),
+            Expanded(child: _imageSlot(
+              isDark: isDark,
+              title: 'US Image with\nNeedle in Muscle',
+              subtitle: 'Ultrasound screenshot showing needle tip in target muscle',
+              icon: Icons.monitor_heart_outlined,
+              accentColor: AppTheme.amber,
+              imagePath: usImg,
+              imageLabel: '${muscle.name} — US + Needle',
+            )),
+          ],
+        ),
+
+        // Photo hint (if available)
+        if (muscle.probePlacementHint != null) ...[
+          const SizedBox(height: 10),
           Container(
-            width: double.infinity, padding: const EdgeInsets.all(12),
+            width: double.infinity, padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: AppTheme.primary.withAlpha(12),
               borderRadius: BorderRadius.circular(AppTheme.radiusSm),
-              border: Border.all(color: AppTheme.primary.withAlpha(40))),
-            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Row(children: [
-                Icon(Icons.camera_alt_outlined, size: 14, color: AppTheme.primary.withAlpha(180)),
-                const SizedBox(width: 6),
-                Text('PHOTO GUIDE', style: GoogleFonts.ibmPlexMono(
-                  fontSize: 10, fontWeight: FontWeight.w700, color: AppTheme.primary.withAlpha(180), letterSpacing: 1.2)),
-              ]),
-              const SizedBox(height: 8),
-              Text(hint, style: GoogleFonts.sourceSans3(fontSize: 13, height: 1.5, color: AppTheme.textSecondary)),
+              border: Border.all(color: AppTheme.primary.withAlpha(30))),
+            child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Icon(Icons.camera_alt_outlined, size: 12,
+                  color: AppTheme.primary.withAlpha(160)),
+              const SizedBox(width: 8),
+              Expanded(child: Text(muscle.probePlacementHint!,
+                style: GoogleFonts.sourceSans3(fontSize: 11, height: 1.4,
+                  color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight))),
             ]),
           ),
         ],
-      ]),
+      ],
+    );
+  }
+
+  /// Single image slot: shows the image if [imagePath] is set, otherwise
+  /// a placeholder card with an icon + description.
+  Widget _imageSlot({
+    required bool isDark,
+    required String title,
+    required String subtitle,
+    required IconData icon,
+    required Color accentColor,
+    required String? imagePath,
+    required String imageLabel,
+  }) {
+    final hasImage = imagePath != null;
+    return GestureDetector(
+      onTap: hasImage ? () => _showFullImage(context, imagePath, imageLabel) : null,
+      child: Container(
+        height: 180,
+        decoration: BoxDecoration(
+          color: isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight,
+          borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+          border: Border.all(
+            color: hasImage
+                ? accentColor.withAlpha(60)
+                : (isDark ? AppTheme.borderDark : AppTheme.borderLight),
+          ),
+        ),
+        clipBehavior: Clip.antiAlias,
+        child: hasImage
+            ? Stack(children: [
+                Positioned.fill(
+                  child: Image.asset(imagePath, fit: BoxFit.cover,
+                    errorBuilder: (_, __, ___) => _placeholderContent(
+                        isDark, title, subtitle, icon, accentColor)),
+                ),
+                // Gradient overlay at bottom with label
+                Positioned(left: 0, right: 0, bottom: 0,
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [Colors.transparent, Colors.black.withAlpha(180)],
+                      ),
+                    ),
+                    child: Text(title.replaceAll('\n', ' '),
+                      style: GoogleFonts.ibmPlexMono(
+                        fontSize: 9, fontWeight: FontWeight.w600,
+                        color: Colors.white.withAlpha(220), letterSpacing: 0.8)),
+                  ),
+                ),
+                // Tap-to-enlarge hint
+                Positioned(top: 8, right: 8,
+                  child: Container(
+                    padding: const EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      color: Colors.black.withAlpha(120),
+                      borderRadius: BorderRadius.circular(4)),
+                    child: const Icon(Icons.zoom_in, size: 14, color: Colors.white70),
+                  ),
+                ),
+              ])
+            : _placeholderContent(isDark, title, subtitle, icon, accentColor),
+      ),
+    );
+  }
+
+  Widget _placeholderContent(bool isDark, String title, String subtitle,
+      IconData icon, Color accentColor) {
+    return Padding(
+      padding: const EdgeInsets.all(14),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: 44, height: 44,
+            decoration: BoxDecoration(
+              color: accentColor.withAlpha(20),
+              borderRadius: BorderRadius.circular(AppTheme.radiusMd)),
+            child: Icon(icon, color: accentColor.withAlpha(140), size: 22),
+          ),
+          const SizedBox(height: 10),
+          Text(title, textAlign: TextAlign.center,
+            style: GoogleFonts.sourceSans3(
+              fontSize: 12, fontWeight: FontWeight.w700, height: 1.3,
+              color: isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight)),
+          const SizedBox(height: 4),
+          Text(subtitle, textAlign: TextAlign.center,
+            style: GoogleFonts.sourceSans3(
+              fontSize: 10, height: 1.3,
+              color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight)),
+          const SizedBox(height: 8),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+            decoration: BoxDecoration(
+              color: accentColor.withAlpha(15),
+              borderRadius: BorderRadius.circular(4),
+              border: Border.all(color: accentColor.withAlpha(40))),
+            child: Text('ADD PHOTO', style: GoogleFonts.ibmPlexMono(
+              fontSize: 8, fontWeight: FontWeight.w700,
+              letterSpacing: 1.5, color: accentColor.withAlpha(180))),
+          ),
+        ],
+      ),
     );
   }
 
