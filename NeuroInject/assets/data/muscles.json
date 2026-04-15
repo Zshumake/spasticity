@@ -429,7 +429,299 @@
     "spasticityPatterns": [
       "trunk-lateral-flexion"
     ],
-    "relatedMuscles": []
+    "relatedMuscles": [
+      "rectus-abdominis",
+      "obliques",
+      "paraspinals"
+    ]
+  },
+  {
+    "id": "rectus-abdominis",
+    "name": "Rectus Abdominis",
+    "group": "Lower Extremity / Trunk",
+    "pattern": "Trunk flexion (camptocormia / forward-flexed posture)",
+    "landmarks": [
+      "Xiphoid Process (palpate the inferior tip of the sternum in the midline — the rectus abdominis attaches here superiorly)",
+      "Pubic Symphysis (palpate the bony prominence in the midline of the lower abdomen — the rectus abdominis inserts here inferiorly)",
+      "Linea Alba (the midline fibrous raphe between the two rectus bellies — it is a palpable vertical groove when the patient performs a partial sit-up)",
+      "Tendinous Inscriptions (palpable as transverse fibrous bands across the muscle belly, typically at the umbilicus, midway between umbilicus and xiphoid, and at the xiphoid level)"
+    ],
+    "placement": [
+      "Position the patient supine with the knees slightly bent to relax the abdominal wall.",
+      "Identify the rectus abdominis as the paired longitudinal muscle mass flanking the midline, from the pubis to the costal margin.",
+      "Target the muscle belly lateral to the linea alba and medial to the linea semilunaris (lateral border of the rectus sheath).",
+      "Inject at 2-4 sites distributed along the length of the muscle — typically at the supra-umbilical and infra-umbilical levels bilaterally.",
+      "Insert the needle at a shallow oblique angle (30-45 degrees to the skin) under real-time ultrasound guidance.",
+      "CRITICAL: Advance only into the rectus abdominis muscle belly. Do NOT penetrate the posterior rectus sheath or the peritoneum deep to it — bowel lies immediately beneath.",
+      "The posterior rectus sheath is visible on ultrasound as a bright hyperechoic line deep to the muscle. The needle tip must remain superficial to this line at all times.",
+      "Aspirate before injecting. Distribute the total dose across 2-4 sites (25-50 U Botox per site)."
+    ],
+    "setup": [
+      "USG guidance is strongly recommended — the peritoneal cavity lies directly deep to the posterior rectus sheath, and bowel injury is a serious risk if the needle is advanced too far.",
+      "Use a high-frequency linear probe for thin patients; a curvilinear probe may be needed in patients with larger body habitus.",
+      "Maintain real-time visualization of the needle tip at all times — never advance blindly.",
+      "Use an in-plane approach for continuous needle visualization."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz); curvilinear (5-8 MHz) for larger body habitus",
+      "orientation": "Transverse across the anterior abdominal wall, centered over the rectus abdominis, lateral to the midline",
+      "viewSteps": [
+        "Place the probe transversely on the anterior abdominal wall, just lateral to the midline at the level of the umbilicus.",
+        "The subcutaneous fat appears as a superficial hypoechoic layer of variable thickness.",
+        "The Anterior Rectus Sheath appears as a bright hyperechoic fascial line superficial to the muscle.",
+        "The Rectus Abdominis appears as a hypoechoic muscle with a characteristic striated pattern between the anterior and posterior rectus sheaths.",
+        "The Posterior Rectus Sheath (above the arcuate line) appears as a second bright hyperechoic line deep to the muscle — this is your safety boundary. Do NOT advance the needle past this line.",
+        "Deep to the posterior rectus sheath, the peritoneal cavity may show mobile bowel loops with peristalsis — confirming the danger zone.",
+        "Tendinous inscriptions appear as hyperechoic bands crossing the muscle transversely — inject between these, not through them.",
+        "Confirm muscle identity by asking the patient to perform a gentle partial sit-up — the rectus will contract visibly on ultrasound."
+      ],
+      "safetyNotes": [
+        "PERITONEAL PENETRATION RISK: The peritoneum and bowel lie immediately deep to the posterior rectus sheath. Never advance the needle past the posterior fascial boundary. Use a shallow needle angle and continuous US visualization.",
+        "The inferior epigastric artery runs on the deep surface of the rectus abdominis within the rectus sheath — use color Doppler to identify it before injection, especially in the infra-umbilical region.",
+        "Below the arcuate line (approximately midway between umbilicus and pubis), there is no posterior rectus sheath — only transversalis fascia separates the muscle from the peritoneum. Exercise extreme caution with injections in this zone.",
+        "Use conservative doses — excessive weakening of the rectus abdominis can impair cough effectiveness and respiratory function in patients with marginal respiratory reserve."
+      ],
+      "probeDiagram": {
+        "cx": 48,
+        "cy": 28,
+        "angle": 0,
+        "length": 8
+      }
+    },
+    "dosage": {
+      "botox": "50-100",
+      "xeomin": "50-100",
+      "dysport": "150-300"
+    },
+    "marker": {
+      "body": "torso_anterior",
+      "x": 48,
+      "y": 28
+    },
+    "referenceImages": [],
+    "hasReferenceImage": false,
+    "probePlacementHint": "Patient supine, knees bent. Place linear probe transversely on the anterior abdomen, just lateral to midline at the umbilical level. Photo from the patient's side showing probe on the abdomen.",
+    "pearls": [
+      "Superficial muscle — easily identified on US, but the danger is going too deep into the peritoneum",
+      "Key target for camptocormia (forward-flexed trunk posture) in stroke, TBI, and Parkinson disease",
+      "Start with conservative doses (50 U Botox total) — excessive weakening can impair cough and respiratory function",
+      "Distribute dose across 2-4 sites; inject bilaterally if the flexion pattern is symmetric"
+    ],
+    "supplies": [
+      "Ultrasound machine with linear probe (or curvilinear for larger habitus)",
+      "Sterile ultrasound gel",
+      "Tegaderm or probe cover",
+      "Alcohol swabs / ChloraPrep",
+      "Reconstituted botulinum toxin (drawn up)",
+      "25-27G needle (1.5 inch)",
+      "1-3 mL syringe(s)",
+      "Gloves (non-sterile)",
+      "Gauze pads",
+      "Band-aids",
+      "Sharps container"
+    ],
+    "spasticityPatterns": [
+      "trunk-flexion"
+    ],
+    "relatedMuscles": [
+      "obliques",
+      "paraspinals",
+      "quadratus-lumborum"
+    ],
+    "dosageNote": "Total across all sites bilaterally. Use conservative dosing — respiratory compromise is a risk with excessive abdominal wall weakness."
+  },
+  {
+    "id": "obliques",
+    "name": "Obliques (External & Internal)",
+    "group": "Lower Extremity / Trunk",
+    "pattern": "Trunk rotation, lateral flexion",
+    "landmarks": [
+      "Iliac Crest (palpate the anterolateral bony rim of the pelvis — the external oblique originates from the lower ribs and inserts onto the anterior iliac crest and inguinal ligament)",
+      "Lower Ribs (ribs 5-12 laterally — the external oblique originates from the external surfaces of ribs 5-12 as interdigitating slips with serratus anterior)",
+      "Linea Semilunaris (palpable as the lateral border of the rectus abdominis — the oblique aponeuroses contribute to the rectus sheath at this line)",
+      "Mid-Axillary Line (an imaginary vertical line from the axilla — the muscular (fleshy) portions of the obliques are thickest along the lateral abdominal wall posterior to this line)"
+    ],
+    "placement": [
+      "Position the patient supine or in the lateral decubitus position with the target side up.",
+      "Identify the lateral abdominal wall between the costal margin and the iliac crest, along the mid-axillary line.",
+      "Under ultrasound, identify the three muscle layers: external oblique (most superficial), internal oblique (middle), and transversus abdominis (deepest).",
+      "Target the external oblique and/or internal oblique depending on the clinical pattern — typically inject the internal oblique as it is the primary trunk rotator.",
+      "Insert the needle in-plane under real-time ultrasound guidance, advancing into the target muscle layer.",
+      "For external oblique: the needle tip should remain in the most superficial muscle layer, deep to the subcutaneous fat.",
+      "For internal oblique: advance through the external oblique and stop in the middle muscle layer, between the inter-fascial planes.",
+      "CRITICAL: Do NOT advance past the internal oblique into the transversus abdominis or the peritoneal cavity deep to it.",
+      "Aspirate before injecting. Distribute the dose across 2-3 sites along the lateral abdominal wall."
+    ],
+    "setup": [
+      "USG guidance is strongly recommended — the three-layer abdominal wall anatomy requires image guidance to target the correct muscle.",
+      "Use a high-frequency linear probe to clearly resolve the three muscle layers and inter-fascial planes.",
+      "An in-plane needle approach is preferred for continuous visualization of the needle tip as it traverses through the layers.",
+      "Avoid the intercostal neurovascular bundles that run between the internal oblique and transversus abdominis — use color Doppler in the intercostal plane."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz)",
+      "orientation": "Transverse across the lateral abdominal wall, between the costal margin and iliac crest, along or posterior to the mid-axillary line",
+      "viewSteps": [
+        "Place the probe transversely on the lateral abdominal wall at the level of the umbilicus, along the mid-axillary line.",
+        "Identify the three distinct hypoechoic muscle layers separated by bright hyperechoic fascial planes — this is the classic 'three-layer sandwich' view.",
+        "The External Oblique is the most superficial muscle layer — its fibers run inferomedially (hands-in-pockets direction). It tapers anteriorly into a thin aponeurosis.",
+        "The Internal Oblique is the middle layer and typically the thickest of the three — its fibers run superomedially (perpendicular to the external oblique).",
+        "The Transversus Abdominis is the deepest muscle layer — it is thin and its fibers run horizontally. Do NOT inject this layer.",
+        "Deep to the transversus abdominis, identify the transversalis fascia and peritoneum as a bright hyperechoic line, with mobile bowel loops visible deep to it.",
+        "The intercostal nerves (T7-T12) run in the plane between the internal oblique and transversus abdominis (the TAP plane) — they appear as small hyperechoic dots with anechoic companion vessels.",
+        "Confirm muscle identity by asking the patient to rotate the trunk — the obliques will contract visibly."
+      ],
+      "safetyNotes": [
+        "INTERCOSTAL NERVE INJURY RISK: The thoracoabdominal nerves (T7-T12) travel in the fascial plane between the internal oblique and transversus abdominis. Avoid injecting directly into this inter-fascial plane. Target the muscle belly, not the fascial interfaces.",
+        "PERITONEAL PENETRATION RISK: The peritoneum and bowel lie deep to the transversus abdominis. Do not advance the needle past the internal oblique layer. Maintain real-time US visualization of the needle tip.",
+        "The deep circumflex iliac artery runs near the iliac crest deep to the transversus — use color Doppler when injecting near the iliac crest.",
+        "Laterally, the kidney and liver (right side) or spleen (left side) may be close to the deep abdominal wall — identify these structures on initial scan."
+      ],
+      "probeDiagram": {
+        "cx": 35,
+        "cy": 28,
+        "angle": 0,
+        "length": 7
+      }
+    },
+    "dosage": {
+      "botox": "50-100",
+      "xeomin": "50-100",
+      "dysport": "150-300"
+    },
+    "marker": {
+      "body": "torso_anterior",
+      "x": 35,
+      "y": 28
+    },
+    "referenceImages": [],
+    "hasReferenceImage": false,
+    "probePlacementHint": "Patient supine or lateral decubitus. Place linear probe transversely on the lateral abdominal wall between the costal margin and iliac crest, along the mid-axillary line. Photo from the side showing probe on the flank.",
+    "pearls": [
+      "The classic US 'three-layer sandwich' — external oblique, internal oblique, transversus abdominis — is the key view",
+      "The internal oblique is usually the thickest layer and the primary trunk rotator — target it for rotational spasticity",
+      "Intercostal nerves run in the TAP plane (between internal oblique and transversus) — stay in the muscle belly, not the fascial interface",
+      "Dose is per side — inject bilaterally only if the pattern is bilateral, and monitor for excessive abdominal wall weakness"
+    ],
+    "supplies": [
+      "Ultrasound machine with linear probe",
+      "Sterile ultrasound gel",
+      "Tegaderm or probe cover",
+      "Alcohol swabs / ChloraPrep",
+      "Reconstituted botulinum toxin (drawn up)",
+      "25-27G needle (1.5-2 inch)",
+      "1-3 mL syringe(s)",
+      "Gloves (non-sterile)",
+      "Gauze pads",
+      "Band-aids",
+      "Sharps container"
+    ],
+    "spasticityPatterns": [
+      "trunk-rotation",
+      "trunk-lateral-flexion"
+    ],
+    "relatedMuscles": [
+      "rectus-abdominis",
+      "paraspinals",
+      "quadratus-lumborum"
+    ],
+    "dosageNote": "Dose is per side. Combines external and internal oblique as a single injection target. Inject bilaterally only if clinically indicated — monitor for trunk weakness."
+  },
+  {
+    "id": "paraspinals",
+    "name": "Paraspinals (Erector Spinae Group)",
+    "group": "Lower Extremity / Trunk",
+    "pattern": "Trunk extension spasticity, axial dystonia, camptocormia treatment",
+    "landmarks": [
+      "Spinous Processes (palpate the midline bony prominences of the thoracic and lumbar vertebrae — the paraspinal muscles lie immediately lateral to these)",
+      "Transverse Processes (deep bony landmarks approximately 2-3 cm lateral to the spinous processes — the erector spinae muscles attach here and the needle should not pass medial to the lamina)",
+      "Iliac Crest (palpate the posterior iliac crest — the erector spinae group originates from the sacrum and posterior iliac crest via the erector spinae aponeurosis)",
+      "12th Rib (palpate posterolaterally — this marks the transition from thoracic to lumbar paraspinals and the superior boundary for lumbar-level injections)"
+    ],
+    "placement": [
+      "Position the patient prone with a pillow under the abdomen to reduce lumbar lordosis and open the interlaminar spaces.",
+      "Identify the spinous processes of the target levels (typically T10-L4 for trunk extension spasticity).",
+      "The injection sites are 2-3 cm lateral to the midline spinous processes, directly over the paraspinal muscle mass.",
+      "Under ultrasound guidance, identify the erector spinae muscle group as the large hypoechoic mass between the skin and the transverse processes/laminae.",
+      "Insert the needle perpendicular to the skin or at a slight lateral-to-medial angle, advancing into the muscle belly.",
+      "CRITICAL: The needle must stay within the paraspinal muscle mass LATERAL to the spinous processes. NEVER direct the needle medially past the lamina — the spinal canal lies immediately deep to the lamina.",
+      "Target depth is typically 2-4 cm depending on the level and body habitus. The needle tip should remain superficial to the transverse processes and laminae.",
+      "Inject at 2-3 spinal levels, with 1-2 sites per level (one on each side for bilateral patterns). Aspirate before each injection."
+    ],
+    "setup": [
+      "USG guidance is strongly recommended — it allows identification of bony landmarks (laminae, transverse processes) and prevents inadvertent spinal canal entry.",
+      "Use a curvilinear probe (5-8 MHz) for adequate penetration of these thick posterior muscles, particularly in the lumbar region.",
+      "An in-plane parasagittal or out-of-plane axial approach may be used — in either case, confirm the needle tip is within the muscle and lateral to the lamina.",
+      "Consider EMG guidance as an adjunct to confirm placement in the target sub-compartment (iliocostalis vs. longissimus)."
+    ],
+    "ultrasound": {
+      "probe": "Curvilinear (5-8 MHz); high-frequency linear (10-15 MHz) may suffice in thin patients at thoracic levels",
+      "orientation": "Parasagittal along the paraspinal muscle mass, 2-3 cm lateral to the midline; or transverse (axial) across the spine at each target level",
+      "viewSteps": [
+        "PARASAGITTAL VIEW: Place the probe longitudinally (parasagittal), 2-3 cm lateral to the midline spinous processes. The transverse processes appear as a series of hyperechoic humps with acoustic shadows — the classic 'trident sign.'",
+        "The Erector Spinae muscles (iliocostalis laterally, longissimus medially, spinalis most medially) appear as a large hypoechoic muscle mass superficial to the transverse processes.",
+        "The thoracolumbar fascia appears as a bright hyperechoic layer superficial to the erector spinae.",
+        "TRANSVERSE (AXIAL) VIEW: Place the probe transversely at the target spinal level. Identify the spinous process as a hyperechoic midline structure with posterior shadowing.",
+        "Lateral to the spinous process, the lamina appears as a flat hyperechoic bony surface — this is your deep safety boundary. The spinal canal lies deep to the lamina.",
+        "The erector spinae muscle mass lies superficial to the lamina and transverse processes. The needle must remain within this muscle mass.",
+        "Between the transverse processes, the posterior elements create acoustic windows where deeper structures (psoas, quadratus lumborum) may be visible — do NOT advance the needle through these windows."
+      ],
+      "safetyNotes": [
+        "SPINAL CANAL PENETRATION RISK: The spinal canal lies immediately deep to the laminae. NEVER advance the needle medially past the lamina or between the laminae into the interlaminar space. Always confirm the needle tip is within the paraspinal muscle mass, superficial to bone.",
+        "The medial branch of the dorsal ramus runs along the junction of the transverse process and superior articular process — avoid direct injection here if possible to preserve motor innervation of non-target segments.",
+        "Lumbar arteries and their dorsal branches travel near the transverse processes — use color Doppler before injection at each level.",
+        "For bilateral injections, use conservative dosing at each level to avoid excessive trunk extensor weakness, which can worsen sitting balance and functional mobility."
+      ],
+      "probeDiagram": {
+        "cx": 50,
+        "cy": 32,
+        "angle": 90,
+        "length": 8
+      }
+    },
+    "dosage": {
+      "botox": "50-100",
+      "xeomin": "50-100",
+      "dysport": "150-300"
+    },
+    "marker": {
+      "body": "torso_posterior",
+      "x": 50,
+      "y": 32
+    },
+    "referenceImages": [],
+    "hasReferenceImage": false,
+    "probePlacementHint": "Patient prone, pillow under abdomen. Place curvilinear probe parasagittally 2-3 cm lateral to midline spinous processes, or transversely across the spine at the target level. Photo from behind showing probe on the paraspinal region.",
+    "pearls": [
+      "The erector spinae group (iliocostalis, longissimus, spinalis) is treated as a single injection target — sub-compartment targeting is rarely needed clinically",
+      "Use curvilinear probe — these muscles are thick and deep, especially in the lumbar region",
+      "Inject at 2-3 vertebral levels per session; dose listed is per level — total session dose may be 100-300 U Botox across all levels",
+      "Key target for axial dystonia and for camptocormia in Parkinson disease (injected to reduce extensor co-contraction or dystonic extension)",
+      "NEVER direct needle medially past the lamina — the spinal canal is immediately deep"
+    ],
+    "supplies": [
+      "Ultrasound machine with curvilinear probe (5-8 MHz, for deep muscles)",
+      "Sterile ultrasound gel",
+      "Tegaderm or probe cover",
+      "Alcohol swabs / ChloraPrep",
+      "Reconstituted botulinum toxin (drawn up)",
+      "22-25G spinal needle (2-3.5 inch depending on body habitus)",
+      "1-3 mL syringe(s)",
+      "Gloves (non-sterile)",
+      "Gauze pads",
+      "Band-aids",
+      "Sharps container"
+    ],
+    "spasticityPatterns": [
+      "trunk-extension",
+      "axial-dystonia"
+    ],
+    "relatedMuscles": [
+      "rectus-abdominis",
+      "obliques",
+      "quadratus-lumborum"
+    ],
+    "dosageNote": "Dose is per spinal level. Typically inject 2-3 levels per session for a total of 100-300 U Botox. Use conservative initial dosing to avoid excessive trunk extensor weakness."
   },
   {
     "id": "gluteus-maximus",
@@ -3783,7 +4075,11 @@
     ],
     "relatedMuscles": [
       "levator-scapulae",
-      "upper-trapezius"
+      "upper-trapezius",
+      "splenius-capitis",
+      "semispinalis-capitis",
+      "scalenes",
+      "longissimus-capitis"
     ]
   },
   {
@@ -3872,7 +4168,11 @@
     ],
     "relatedMuscles": [
       "levator-scapulae",
-      "scm"
+      "scm",
+      "splenius-capitis",
+      "semispinalis-capitis",
+      "scalenes",
+      "longissimus-capitis"
     ]
   },
   {
@@ -3961,7 +4261,11 @@
     ],
     "relatedMuscles": [
       "scm",
-      "upper-trapezius"
+      "upper-trapezius",
+      "splenius-capitis",
+      "semispinalis-capitis",
+      "scalenes",
+      "longissimus-capitis"
     ]
   },
   {
@@ -4051,6 +4355,1099 @@
       "pronator-teres",
       "fcr",
       "fcu"
+    ]
+  },
+  {
+    "id": "splenius-capitis",
+    "name": "Splenius Capitis",
+    "group": "Cervical",
+    "pattern": "Ipsilateral head rotation and extension",
+    "landmarks": [
+      "Spinous Processes of C3-T3 (palpate the posterior midline of the neck and upper thoracic spine — press firmly on each spinous process from C3 downward to T3; the splenius capitis originates from the lower half of the nuchal ligament and the spinous processes of C7 through T3)",
+      "Mastoid Process (palpate behind the ear — feel for the prominent bony bump at the base of the skull; the splenius capitis inserts onto the lateral surface of the mastoid process, just deep and posterior to the SCM attachment)",
+      "Superior Nuchal Line (palpate from the mastoid process medially along the occiput — the splenius capitis also inserts along the lateral portion of the superior nuchal line, just deep to the upper trapezius attachment)"
+    ],
+    "placement": [
+      "Position the patient seated upright with the neck slightly flexed to open the posterior cervical space, or prone with the forehead resting on hands.",
+      "Identify the posterior cervical triangle between the upper trapezius and the SCM — the splenius capitis lies deep to the upper trapezius in this region.",
+      "Palpate the posterolateral neck approximately 2-3 cm lateral to the cervical midline at the C2-C4 level — the splenius capitis forms a thick muscular band running obliquely from the lower cervical/upper thoracic spinous processes to the mastoid process.",
+      "Ask the patient to rotate the head ipsilaterally against resistance — the splenius capitis will contract and become more palpable beneath the trapezius.",
+      "The primary injection target is at the C2-C4 level, approximately 2-3 cm lateral to the midline, where the muscle belly is thickest and most accessible beneath the trapezius.",
+      "Insert the needle perpendicular to the skin, advancing through the trapezius (1-1.5 cm) and into the splenius capitis beneath it (an additional 0.5-1.5 cm). Total depth is typically 2-3.5 cm depending on body habitus.",
+      "Aspirate before injecting to confirm you are not intravascular — the vertebral artery lies deep and medial, and the occipital artery may cross the superficial surface.",
+      "Distribute the total dose across 2-3 sites along the muscle belly, spacing injections approximately 2-3 cm apart along its course from the upper cervical spine toward the mastoid."
+    ],
+    "setup": [
+      "Ultrasound (USG) guidance is strongly recommended — splenius capitis lies deep to the trapezius and cannot be reliably distinguished from the underlying semispinalis capitis by palpation alone.",
+      "Visualize the splenius capitis as the intermediate muscle layer between the superficial trapezius and the deep semispinalis capitis.",
+      "Use a high-frequency linear probe placed transversely across the posterolateral neck at the C2-C4 level, 2-3 cm lateral to the spinous processes.",
+      "EMG confirmation is a useful adjunct — ask the patient to rotate the head to the ipsilateral side to selectively activate splenius capitis and confirm needle placement within the correct muscle layer."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz)",
+      "orientation": "Transverse across the posterolateral neck at the C2-C4 level, approximately 2-3 cm lateral to the midline spinous processes",
+      "viewSteps": [
+        "Identify the skin and subcutaneous fat as the most superficial hyperechoic layer.",
+        "Deep to the fat, the upper trapezius appears as the first hypoechoic muscular layer with a bright fascial envelope — it is relatively thin in this region (0.5-1 cm).",
+        "Beneath the trapezius, a hyperechoic fascial plane separates it from the splenius capitis, which appears as a thicker hypoechoic muscle layer (1-2 cm) with obliquely oriented fibers running from the midline inferiorly toward the mastoid superolaterally.",
+        "Deep to the splenius capitis, another fascial plane separates it from the semispinalis capitis, which is the deepest and thickest posterior cervical muscle layer appearing as a broad hypoechoic band directly overlying the cervical laminae.",
+        "Deep to the semispinalis capitis, identify the hyperechoic bony cortex of the cervical laminae and spinous processes with posterior acoustic shadowing.",
+        "Use color Doppler to identify the vertebral artery medially (within the transverse foramen) and any branches of the occipital artery superficially."
+      ],
+      "safetyNotes": [
+        "The vertebral artery runs through the transverse foramina of C1-C6 — it lies deep and medial to the splenius capitis. Never direct the needle medially toward the transverse processes without continuous ultrasound visualization.",
+        "The greater occipital nerve (dorsal ramus of C2) pierces the semispinalis capitis and may traverse the splenius capitis near the superior nuchal line — avoid injecting within 2 cm of the occipital insertion to minimize risk of occipital neuralgia.",
+        "The occipital artery courses superficially over the splenius capitis near its mastoid insertion — use color Doppler to identify and avoid it when injecting the upper portion of the muscle.",
+        "The spinal accessory nerve crosses the posterior triangle superficial to the splenius capitis — it is generally protected by the overlying trapezius, but awareness of its course is important when injecting the lateral muscle belly."
+      ],
+      "probeDiagram": {
+        "cx": 38,
+        "cy": 35,
+        "angle": 0,
+        "length": 14
+      },
+      "videoSource": "Prof. Murat Karkucak - US guided BTX injection (Splenius capitis, Semispinalis capitis and Levator scapula)"
+    },
+    "marker": {
+      "body": "neck_posterior",
+      "x": 38,
+      "y": 35
+    },
+    "dosage": {
+      "botox": "50-100",
+      "xeomin": "50-100",
+      "dysport": "150-300"
+    },
+    "referenceImages": [],
+    "hasReferenceImage": false,
+    "probePlacementHint": "Patient seated, neck slightly flexed. Place probe transversely on posterolateral neck at C2-C4 level, 2-3 cm lateral to midline. Photo from behind showing probe on posterolateral neck between midline and mastoid.",
+    "pearls": [
+      "The #1 target in rotational cervical dystonia — ipsilateral head rotation is its primary action",
+      "Lies deep to trapezius but superficial to semispinalis capitis — US is critical to distinguish the correct layer",
+      "Often the highest-dose muscle in cervical dystonia treatment — 50-100 U Botox per side",
+      "Combined splenius capitis + contralateral SCM injection is the classic rotational torticollis pair"
+    ],
+    "supplies": [
+      "Ultrasound machine with linear probe",
+      "Sterile ultrasound gel",
+      "Tegaderm or probe cover",
+      "Alcohol swabs / ChloraPrep",
+      "Reconstituted botulinum toxin (drawn up)",
+      "25-27G needle (1.5 inch for superficial, 2-3 inch for deep)",
+      "1-3 mL syringe(s)",
+      "Gloves (non-sterile)",
+      "Gauze pads",
+      "Band-aids",
+      "Sharps container"
+    ],
+    "spasticityPatterns": [
+      "cervical-dystonia"
+    ],
+    "relatedMuscles": [
+      "semispinalis-capitis",
+      "scm",
+      "upper-trapezius",
+      "levator-scapulae",
+      "longissimus-capitis"
+    ]
+  },
+  {
+    "id": "semispinalis-capitis",
+    "name": "Semispinalis Capitis",
+    "group": "Cervical",
+    "pattern": "Bilateral head and neck extension (retrocollis)",
+    "landmarks": [
+      "Transverse Processes of C4-T6 (palpate the posterolateral neck and upper thoracic spine — the semispinalis capitis originates from the articular processes of C4-C6 and the transverse processes of C7 through T6; these are deep and not individually palpable but define the muscle's course)",
+      "Between the Superior and Inferior Nuchal Lines (palpate the occiput — the semispinalis capitis inserts onto the occipital bone in the depression between the superior and inferior nuchal lines, medial to the splenius capitis insertion)",
+      "External Occipital Protuberance (palpate the midline of the occiput — the semispinalis capitis inserts just lateral to this bony prominence, occupying the broad area between the nuchal lines)"
+    ],
+    "placement": [
+      "Position the patient seated with the neck slightly flexed to open the posterior cervical space, or prone with the forehead resting on hands.",
+      "Identify the posterior midline of the neck — the semispinalis capitis is a bilateral paramedian muscle lying on either side of the midline, deep to both the trapezius and splenius capitis.",
+      "The primary injection target is at the C2-C5 level, approximately 1-2 cm lateral to the midline, where the muscle belly is thickest.",
+      "This is a DEEP muscle — the needle must traverse the trapezius and splenius capitis to reach it. USG guidance is essential to confirm correct depth and avoid injecting into the more superficial splenius capitis.",
+      "Insert the needle perpendicular to the skin, advancing through the trapezius, then the splenius capitis, and into the semispinalis capitis beneath. Total depth is typically 3-5 cm depending on body habitus.",
+      "Aspirate before injecting to confirm you are not intravascular — the vertebral artery lies anterior to this muscle, separated by the cervical laminae.",
+      "Use CONSERVATIVE doses — the semispinalis capitis is a deep bilateral extensor, and excessive weakening can cause debilitating anterocollis (dropped head syndrome).",
+      "Distribute the dose across 1-2 sites per side, staying close to the midline at the C2-C5 level."
+    ],
+    "setup": [
+      "Ultrasound (USG) guidance is essential — the semispinalis capitis is the deepest of the posterior cervical muscle layers and cannot be isolated by palpation.",
+      "Visualize the semispinalis capitis as the deepest muscular layer directly overlying the cervical laminae, beneath the splenius capitis and trapezius.",
+      "Use a high-frequency linear probe placed transversely across the posterior neck at the C2-C5 level, 1-2 cm lateral to the midline.",
+      "Use a longer needle (2-3 inch, 22-25G) to reach this deep muscle — confirm the needle tip position on ultrasound before injecting.",
+      "EMG confirmation is recommended — ask the patient to extend the neck against resistance to activate the semispinalis capitis."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz)",
+      "orientation": "Transverse across the posterior midline neck at the C2-C5 level, centered 1-2 cm lateral to the spinous processes",
+      "viewSteps": [
+        "Identify the skin and subcutaneous fat as the most superficial hyperechoic layer.",
+        "Deep to the fat, the trapezius appears as the first thin hypoechoic muscular layer at this paramedian location.",
+        "Beneath the trapezius, the splenius capitis appears as an intermediate hypoechoic muscle layer with obliquely oriented fibers — this is the muscle you must traverse to reach the semispinalis capitis.",
+        "Deep to the splenius capitis, a fascial plane leads to the semispinalis capitis — the thickest and deepest of the three muscle layers. It appears as a broad, hypoechoic muscle directly overlying the hyperechoic cervical laminae.",
+        "Deep to the semispinalis capitis, identify the bright hyperechoic cortex of the cervical laminae and spinous processes with posterior acoustic shadowing — this is your deep limit. Do not advance the needle beyond the muscle into the lamina.",
+        "Near the midline, the nuchal ligament appears as a hyperechoic band between the bilateral semispinalis capitis muscles."
+      ],
+      "safetyNotes": [
+        "The vertebral artery lies anterior to the cervical laminae within the transverse foramina — the laminae serve as a protective bony barrier, but lateral needle angulation toward the transverse processes could risk vertebral artery injury. Always keep the needle directed perpendicular to the skin and stop at the laminar cortex.",
+        "The greater occipital nerve (dorsal ramus of C2) pierces the semispinalis capitis near the C1-C2 level — injection at this level may cause temporary occipital numbness or neuralgia.",
+        "Excessive dosing or bilateral injection can cause severe neck extensor weakness and anterocollis (dropped head syndrome) — use the minimum effective dose (25-50 U Botox per side) and monitor for neck weakness at follow-up.",
+        "The deep cervical artery (branch of the costocervical trunk) runs on the deep surface of the semispinalis capitis — use color Doppler to identify and avoid vascular structures before injecting."
+      ],
+      "probeDiagram": {
+        "cx": 50,
+        "cy": 30,
+        "angle": 0,
+        "length": 14
+      },
+      "videoSource": "Prof. Murat Karkucak - US guided BTX injection (Splenius capitis, Semispinalis capitis and Levator scapula)"
+    },
+    "marker": {
+      "body": "neck_posterior",
+      "x": 50,
+      "y": 30
+    },
+    "dosage": {
+      "botox": "25-50",
+      "xeomin": "25-50",
+      "dysport": "75-150"
+    },
+    "referenceImages": [],
+    "hasReferenceImage": false,
+    "probePlacementHint": "Patient seated, neck flexed. Place probe transversely on posterior neck at C2-C5 level, 1-2 cm lateral to midline. Photo from behind showing probe on posterior midline neck just below the occiput.",
+    "pearls": [
+      "The primary target for retrocollis — bilateral neck extension is its chief action",
+      "Deepest of the three posterior cervical layers (trapezius > splenius capitis > semispinalis capitis) — USG is essential to reach the correct layer",
+      "Use conservative doses (25-50 U per side) — excessive weakening causes dropped head syndrome (anterocollis)",
+      "The greater occipital nerve pierces this muscle — patients may report temporary occipital numbness after injection"
+    ],
+    "supplies": [
+      "Ultrasound machine with linear probe",
+      "Sterile ultrasound gel",
+      "Tegaderm or probe cover",
+      "Alcohol swabs / ChloraPrep",
+      "Reconstituted botulinum toxin (drawn up)",
+      "22-25G needle (2-3 inch for deep access)",
+      "1-3 mL syringe(s)",
+      "Gloves (non-sterile)",
+      "Gauze pads",
+      "Band-aids",
+      "Sharps container"
+    ],
+    "spasticityPatterns": [
+      "cervical-dystonia"
+    ],
+    "relatedMuscles": [
+      "splenius-capitis",
+      "longissimus-capitis",
+      "upper-trapezius",
+      "levator-scapulae",
+      "scm"
+    ]
+  },
+  {
+    "id": "scalenes",
+    "name": "Scalenes (Anterior, Middle, Posterior)",
+    "group": "Cervical",
+    "pattern": "Ipsilateral lateral neck flexion (laterocollis), accessory inspiration",
+    "landmarks": [
+      "Posterior Border of the SCM (palpate the lateral neck — follow the posterior edge of the sternocleidomastoid from the mastoid downward; the scalenes lie immediately posterior and deep to the SCM in the lateral neck)",
+      "Transverse Processes of C2-C7 (palpate deeply in the lateral neck posterior to the SCM — the anterior scalene originates from the anterior tubercles of the transverse processes of C3-C6, the middle scalene from the posterior tubercles of C2-C7, and the posterior scalene from C5-C7)",
+      "First and Second Ribs (palpate above the clavicle in the supraclavicular fossa — the anterior scalene inserts onto the scalene tubercle of the first rib, the middle scalene onto the superior surface of the first rib posterior to the subclavian groove, and the posterior scalene onto the external surface of the second rib)"
+    ],
+    "placement": [
+      "Position the patient supine with the head in neutral position or turned slightly to the contralateral side to expose the lateral neck.",
+      "Identify the posterior border of the SCM — the scalenes lie in the posterolateral neck between the SCM anteriorly and the upper trapezius posteriorly.",
+      "CRITICAL: Ultrasound guidance is MANDATORY for scalene injection — the brachial plexus roots pass between the anterior and middle scalenes (interscalene groove), and the subclavian artery passes anterior to the anterior scalene. The phrenic nerve runs on the anterior surface of the anterior scalene.",
+      "Under ultrasound, identify the target scalene muscle and confirm the location of the brachial plexus, subclavian/vertebral vessels, and phrenic nerve before inserting the needle.",
+      "Insert the needle using an in-plane technique under continuous ultrasound visualization, directing it laterally to medially into the muscle belly while avoiding the interscalene groove and its neurovascular contents.",
+      "Aspirate before injecting to confirm you are not intravascular.",
+      "Use LOW doses — the scalenes are small muscles adjacent to critical neurovascular structures. Start at the low end of the dosing range.",
+      "Distribute the dose across 1-2 sites within the targeted scalene muscle belly. Avoid injecting near the interscalene groove or the muscle origins/insertions where nerves are concentrated."
+    ],
+    "setup": [
+      "Ultrasound (USG) guidance is MANDATORY — the brachial plexus, phrenic nerve, subclavian artery, and vertebral artery are all intimately related to the scalenes.",
+      "Visualize the scalene muscles as the lateral neck muscles between the SCM and the levator scapulae/upper trapezius, with the brachial plexus roots visible as a cluster of round hypoechoic structures in the interscalene groove.",
+      "Use a high-frequency linear probe placed transversely across the lateral neck at the C5-C7 level.",
+      "Color Doppler is essential — map the vertebral artery, transverse cervical artery, and subclavian artery before needle insertion.",
+      "EMG confirmation is strongly recommended as an adjunct — ask the patient to laterally flex the neck ipsilaterally to selectively activate the scalenes."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz)",
+      "orientation": "Transverse across the lateral neck at the C5-C7 level, posterior to the SCM and anterior to the upper trapezius",
+      "viewSteps": [
+        "Identify the SCM as the most superficial anterolateral muscle — use it as your anterior landmark.",
+        "Posterior and deep to the SCM, the anterior scalene appears as a triangular or trapezoidal hypoechoic muscle lying directly anterior to the brachial plexus roots.",
+        "The brachial plexus nerve roots appear as a cluster of small, round, hypoechoic structures (with hyperechoic rims) in the interscalene groove between the anterior and middle scalenes — this is your critical landmark. The roots typically appear as a 'traffic light' or 'bunch of grapes' pattern at the C5-C7 level.",
+        "Posterior to the brachial plexus, the middle scalene appears as a larger hypoechoic muscle — it is typically the thickest of the three scalenes at this level.",
+        "The posterior scalene lies posterior and slightly inferior to the middle scalene, often best visualized at the C7-T1 level just above the first rib.",
+        "Deep to the scalenes, identify the hyperechoic transverse processes of the cervical vertebrae with posterior acoustic shadowing. The vertebral artery may be visible within the transverse foramina.",
+        "Use color Doppler to identify the vertebral artery (within the transverse foramen), the subclavian artery (inferior, deep to the anterior scalene), and the transverse cervical artery."
+      ],
+      "safetyNotes": [
+        "The brachial plexus roots (C5-T1) pass through the interscalene groove between the anterior and middle scalenes — injection into or near the interscalene groove can cause brachial plexopathy with arm weakness and numbness. ALWAYS identify the plexus before injecting and keep the needle tip within the muscle belly, away from the groove.",
+        "The phrenic nerve (C3-C5) runs on the ANTERIOR surface of the anterior scalene — injection of the anterior scalene carries the highest risk of phrenic nerve paralysis and hemidiaphragm weakness. Use the minimum effective dose and NEVER inject the anterior scalene bilaterally in the same session.",
+        "The subclavian artery passes anterior to the anterior scalene at its inferior extent, and the vertebral artery lies within the transverse foramina deep to the scalenes — always use color Doppler to identify these vessels before injecting.",
+        "The lung apex lies immediately inferior to the scalenes behind the first rib — keep the needle directed medially to laterally (not inferiorly) to avoid pneumothorax, and always visualize the pleural line."
+      ],
+      "probeDiagram": {
+        "cx": 25,
+        "cy": 55,
+        "angle": 10,
+        "length": 14
+      },
+      "videoSource": "Prof. Murat Karkucak - US guided scalene BTX injection for cervical dystonia"
+    },
+    "marker": {
+      "body": "neck_lateral",
+      "x": 25,
+      "y": 55
+    },
+    "dosage": {
+      "botox": "15-50",
+      "xeomin": "15-50",
+      "dysport": "45-150"
+    },
+    "referenceImages": [],
+    "hasReferenceImage": false,
+    "probePlacementHint": "Patient supine, head neutral or slightly turned contralateral. Place probe transversely on lateral neck at C5-C7 level, posterior to SCM. Photo from front/lateral showing probe on lateral neck behind the SCM.",
+    "pearls": [
+      "The primary target for laterocollis — ipsilateral lateral flexion is the chief action",
+      "USG is MANDATORY — the brachial plexus and subclavian vessels are millimeters away",
+      "The phrenic nerve runs on the anterior scalene surface — NEVER inject anterior scalenes bilaterally in the same session",
+      "Start with low doses (15-25 U Botox per muscle) and titrate up — overcorrection or nerve spread can be disabling",
+      "The middle scalene is often the safest and largest target for injection"
+    ],
+    "supplies": [
+      "Ultrasound machine with linear probe",
+      "Sterile ultrasound gel",
+      "Tegaderm or probe cover",
+      "Alcohol swabs / ChloraPrep",
+      "Reconstituted botulinum toxin (drawn up)",
+      "25-27G needle (1.5 inch)",
+      "1-3 mL syringe(s)",
+      "Gloves (non-sterile)",
+      "Gauze pads",
+      "Band-aids",
+      "Sharps container"
+    ],
+    "spasticityPatterns": [
+      "cervical-dystonia"
+    ],
+    "relatedMuscles": [
+      "scm",
+      "levator-scapulae",
+      "splenius-capitis",
+      "upper-trapezius",
+      "longissimus-capitis"
+    ]
+  },
+  {
+    "id": "longissimus-capitis",
+    "name": "Longissimus Capitis",
+    "group": "Cervical",
+    "pattern": "Head and neck extension (retrocollis), ipsilateral lateral flexion and rotation",
+    "landmarks": [
+      "Transverse Processes of T1-T5 (palpate the upper thoracic paraspinal region — the longissimus capitis originates from the transverse processes of the upper five thoracic vertebrae; these are deep and serve as a conceptual origin rather than a palpable landmark)",
+      "Articular Processes of C4-C7 (the muscle also receives slips from the articular processes of the lower cervical vertebrae as it courses superiorly — these are deep and not individually palpable)",
+      "Mastoid Process — Posterior Surface (palpate behind the ear and feel for the bony prominence — the longissimus capitis inserts onto the posterior margin of the mastoid process, deep to the splenius capitis and between the splenius capitis laterally and the semispinalis capitis medially)"
+    ],
+    "placement": [
+      "Position the patient seated with the neck slightly flexed to open the posterior cervical space, or prone with the forehead resting on hands.",
+      "Identify the posterior neck approximately 2-4 cm lateral to the midline at the C4-C7 level — the longissimus capitis lies deep in the posterior cervical musculature, between the semispinalis capitis medially and the levator scapulae laterally.",
+      "This is a DEEP muscle in the erector spinae group — the needle must traverse the trapezius and splenius capitis to reach it. USG guidance is essential.",
+      "Under ultrasound, identify the longissimus capitis as the slender muscle column lying lateral to the semispinalis capitis and medial to the levator scapulae, directly overlying the cervical articular pillars.",
+      "Insert the needle perpendicular to the skin at the C4-C7 level, approximately 2-4 cm lateral to the midline, advancing through the superficial muscle layers to reach the longissimus capitis. Total depth is typically 3-5 cm depending on body habitus.",
+      "Aspirate before injecting to confirm you are not intravascular — the vertebral artery and deep cervical vessels are in proximity.",
+      "Use CONSERVATIVE doses — the longissimus capitis is a relatively small deep muscle, and excessive dosing risks spread to adjacent semispinalis capitis and other deep extensors, worsening anterocollis.",
+      "A single injection site per side is usually sufficient given the small muscle volume."
+    ],
+    "setup": [
+      "Ultrasound (USG) guidance is essential — the longissimus capitis is a deep, slender muscle that cannot be isolated by palpation and is surrounded by other deep cervical muscles.",
+      "Visualize the longissimus capitis as a small muscle column between the broader semispinalis capitis medially and the levator scapulae laterally, overlying the cervical articular pillars.",
+      "Use a high-frequency linear probe placed transversely across the posterior neck at the C4-C7 level, 2-4 cm lateral to the midline.",
+      "EMG confirmation is strongly recommended — ask the patient to extend the neck against resistance while palpating laterally to confirm activation of the longissimus capitis rather than the larger semispinalis capitis."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz)",
+      "orientation": "Transverse across the posterolateral neck at the C4-C7 level, approximately 2-4 cm lateral to the midline spinous processes",
+      "viewSteps": [
+        "Identify the skin and subcutaneous fat as the most superficial hyperechoic layer.",
+        "Deep to the fat, the trapezius appears as a thin hypoechoic muscular layer in this region.",
+        "Beneath the trapezius, the splenius capitis appears as an intermediate hypoechoic muscle layer — traverse this layer to reach the deep compartment.",
+        "In the deep compartment, the semispinalis capitis appears as the large medial muscle mass directly overlying the laminae. Lateral to the semispinalis capitis, the longissimus capitis appears as a smaller, distinct muscle column overlying the articular pillars (facet joints) of the cervical vertebrae.",
+        "The articular pillars appear as a series of hyperechoic bony prominences with posterior acoustic shadowing — these are your key deep landmark, lying directly beneath the longissimus capitis and lateral to the laminae.",
+        "Lateral to the longissimus capitis, the levator scapulae may be visible as a separate muscle running toward the scapula."
+      ],
+      "safetyNotes": [
+        "The vertebral artery lies within the transverse foramina anterior to the articular pillars — never advance the needle beyond the bony cortex of the articular pillar. The bone serves as a natural stop.",
+        "The deep cervical artery and vein run in the deep posterior cervical musculature — use color Doppler to identify and avoid vascular structures before injecting.",
+        "The dorsal rami of the cervical spinal nerves pass through or near the longissimus capitis — injection may cause temporary local paresthesias or numbness in the posterior neck.",
+        "Excessive dosing risks weakening adjacent deep extensors (semispinalis capitis, multifidus) due to toxin spread, potentially causing or worsening anterocollis — use the minimum effective dose (25-50 U Botox per side)."
+      ],
+      "probeDiagram": {
+        "cx": 60,
+        "cy": 35,
+        "angle": 0,
+        "length": 12
+      },
+      "videoSource": "Prof. Murat Karkucak - US guided deep posterior cervical BTX injection for cervical dystonia"
+    },
+    "marker": {
+      "body": "neck_posterior",
+      "x": 60,
+      "y": 35
+    },
+    "dosage": {
+      "botox": "25-50",
+      "xeomin": "25-50",
+      "dysport": "75-150"
+    },
+    "referenceImages": [],
+    "hasReferenceImage": false,
+    "probePlacementHint": "Patient seated, neck slightly flexed. Place probe transversely on posterolateral neck at C4-C7 level, 2-4 cm lateral to midline. Photo from behind showing probe on posterolateral neck over the articular pillars.",
+    "pearls": [
+      "Part of the erector spinae group in the neck — contributes to retrocollis and ipsilateral rotation",
+      "Deep and slender — lies between the larger semispinalis capitis medially and levator scapulae laterally",
+      "The articular pillars (facet joints) serve as the key US landmark directly beneath this muscle",
+      "Conservative dosing (25-50 U per side) — toxin spread to adjacent deep extensors can cause dropped head",
+      "Often targeted in combination with semispinalis capitis for refractory retrocollis patterns"
+    ],
+    "supplies": [
+      "Ultrasound machine with linear probe",
+      "Sterile ultrasound gel",
+      "Tegaderm or probe cover",
+      "Alcohol swabs / ChloraPrep",
+      "Reconstituted botulinum toxin (drawn up)",
+      "22-25G needle (2-3 inch for deep access)",
+      "1-3 mL syringe(s)",
+      "Gloves (non-sterile)",
+      "Gauze pads",
+      "Band-aids",
+      "Sharps container"
+    ],
+    "spasticityPatterns": [
+      "cervical-dystonia"
+    ],
+    "relatedMuscles": [
+      "semispinalis-capitis",
+      "splenius-capitis",
+      "upper-trapezius",
+      "levator-scapulae",
+      "scm"
+    ]
+  },
+  {
+    "id": "masseter",
+    "name": "Masseter",
+    "group": "Face",
+    "pattern": "Jaw clenching, bruxism, oromandibular dystonia (jaw closing type)",
+    "landmarks": [
+      "Zygomatic Arch (palpate the bony ridge extending from just anterior to the tragus of the ear forward toward the cheekbone — the superficial masseter originates from the inferior border of the zygomatic arch and its anterior two-thirds)",
+      "Angle of the Mandible (palpate the prominent bony angle at the posteroinferior corner of the jaw — the masseter inserts onto the lateral surface of the mandibular ramus and angle; ask the patient to clench their teeth to make the muscle bulk prominent)",
+      "Mandibular Ramus (palpate the flat bony surface between the zygomatic arch and the angle of the mandible — this is the lateral surface of the ramus, entirely covered by the masseter)"
+    ],
+    "placement": [
+      "Position the patient seated upright or supine with the jaw relaxed and slightly open.",
+      "Ask the patient to clench their teeth forcefully — the masseter will bulge prominently as a thick rectangular mass over the mandibular ramus between the zygomatic arch and the angle of the mandible.",
+      "Identify the thickest bulk of the muscle, typically at the mid-ramus level, approximately 1-2 cm anterior to the tragus and 1-2 cm superior to the mandibular angle.",
+      "Pinch the muscle belly between thumb (laterally) and fingers (intraorally or medially) to confirm its thickness and separate it from the overlying parotid gland tissue.",
+      "Insert the needle perpendicular to the skin surface directly into the center of the palpated muscle bulk. Advance 1-1.5 cm into the muscle belly.",
+      "CAUTION: Stay in the posterior half of the muscle to avoid the parotid duct (Stensen's duct), which crosses the mid-masseter anteriorly at approximately the level of the tragus. The duct runs from the parotid gland anteriorly to pierce the buccinator at the second upper molar.",
+      "Aspirate before injecting to confirm you are not intravascular — the facial artery and transverse facial artery run in this region.",
+      "Distribute the total dose across 3 sites in the lower two-thirds of the muscle belly, spacing injections approximately 1 cm apart. Avoid the upper third near the zygomatic arch to minimize risk to the zygomatic branch of the facial nerve."
+    ],
+    "setup": [
+      "Ultrasound guidance is increasingly recommended to confirm needle placement within the masseter and to visualize the parotid gland and facial vessels.",
+      "The parotid gland overlies the posterior portion of the masseter — identify it on ultrasound as a homogeneous, hyperechoic structure superficial to or overlapping the muscle.",
+      "Use color Doppler to identify the transverse facial artery (runs between the zygomatic arch and the parotid duct) and the facial artery (crosses the mandible anteriorly).",
+      "For cosmetic jaw slimming, concentrate the dose in the inferior masseter bulk (angle of mandible region). For dystonia, distribute more broadly across the muscle."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz)",
+      "orientation": "Transverse across the lateral face overlying the mandibular ramus, with the probe parallel to the zygomatic arch",
+      "viewSteps": [
+        "Place the probe transversely on the lateral face over the mandibular ramus, midway between the zygomatic arch and the angle of the mandible.",
+        "The masseter appears as a thick, rectangular hypoechoic muscle with internal hyperechoic septa (reflecting its multipennate architecture) directly superficial to the hyperechoic mandibular ramus cortex.",
+        "The mandibular ramus cortex is the deep landmark — a bright, continuous hyperechoic line with posterior acoustic shadowing. The needle target is the muscle belly superficial to this cortex.",
+        "Superficial to the masseter, identify subcutaneous fat and, posteriorly, the parotid gland as a more homogeneous, moderately hyperechoic structure with a different echotexture than the striated muscle.",
+        "Sliding the probe anteriorly, Stensen's duct may be visible as a thin hypoechoic tubular structure exiting the anterior parotid — avoid this region.",
+        "Ask the patient to clench and relax — the masseter will visibly thicken and thin, confirming identification."
+      ],
+      "safetyNotes": [
+        "The parotid gland overlies the posterior masseter — deep injections in this area may inadvertently inject the parotid, causing sialadenitis or pain.",
+        "The transverse facial artery runs between the zygomatic arch and the parotid duct — use color Doppler to map it before injection.",
+        "The buccal branch of the facial nerve crosses the masseter superficially — staying deep within the muscle belly (not subcutaneous) reduces risk of facial nerve palsy.",
+        "Stensen's duct (parotid duct) crosses the mid-masseter anteriorly — keep injections in the posterior two-thirds of the muscle to avoid duct injury."
+      ],
+      "probeDiagram": {
+        "cx": 50,
+        "cy": 50,
+        "angle": 0,
+        "length": 5
+      },
+      "depth": "2.0-3.0 cm"
+    },
+    "dosage": {
+      "botox": "25-50",
+      "xeomin": "25-50",
+      "dysport": "75-150"
+    },
+    "dosageNote": "Per side. For bilateral bruxism, inject both sides. Reduce dose in smaller or elderly patients. Total bilateral session dose 50-100 U Botox.",
+    "marker": null,
+    "referenceImages": [],
+    "hasReferenceImage": false,
+    "probePlacementHint": "Patient seated upright with jaw relaxed. Place probe transversely on lateral face over the mandibular ramus midway between zygomatic arch and mandibular angle. Photo from lateral view showing probe on cheek.",
+    "pearls": [
+      "Ask the patient to clench — the masseter is the most powerful jaw closer and will bulge prominently, making landmark identification trivial",
+      "Stay in the lower two-thirds of the muscle and the posterior half to avoid Stensen's duct anteriorly and the zygomatic branch of CN VII superiorly",
+      "For oromandibular dystonia (jaw closing type), the masseter and medial pterygoid work synergistically — consider injecting both for refractory cases",
+      "Onset of effect for bruxism is typically 3-7 days; warn patients that jaw may feel weak when chewing tough food"
+    ],
+    "supplies": [
+      "Ultrasound machine with linear probe (optional but recommended)",
+      "Sterile ultrasound gel",
+      "Tegaderm or probe cover",
+      "Alcohol swabs / ChloraPrep",
+      "Reconstituted botulinum toxin (drawn up)",
+      "27-30G needle (0.5-1 inch)",
+      "1 mL syringe(s)",
+      "Gloves (non-sterile)",
+      "Gauze pads",
+      "Band-aids",
+      "Sharps container"
+    ],
+    "spasticityPatterns": [
+      "oromandibular-dystonia",
+      "bruxism"
+    ],
+    "relatedMuscles": [
+      "temporalis",
+      "medial-pterygoid",
+      "lateral-pterygoid"
+    ]
+  },
+  {
+    "id": "temporalis",
+    "name": "Temporalis",
+    "group": "Face",
+    "pattern": "Jaw clenching, bruxism, oromandibular dystonia (jaw closing type), temporal headache",
+    "landmarks": [
+      "Temporal Fossa (palpate the flat concavity on the lateral skull above the zygomatic arch and anterior to the ear — the temporalis fills this entire fossa as a broad, fan-shaped muscle; ask the patient to clench their teeth and feel the muscle contract under your fingers)",
+      "Zygomatic Arch (palpate the bony ridge from the tragus anteriorly toward the cheekbone — the temporalis passes deep to the zygomatic arch to insert on the coronoid process of the mandible; the arch is the inferior boundary of the accessible muscle)",
+      "Superior Temporal Line (palpate the faint curved ridge on the lateral skull approximately 4-5 cm above the zygomatic arch — this marks the superior extent of the temporalis origin)"
+    ],
+    "placement": [
+      "Position the patient seated upright or supine with the jaw relaxed.",
+      "Ask the patient to clench their teeth — the temporalis will contract visibly in the temporal fossa, particularly the anterior fibers above and anterior to the ear.",
+      "Identify 2-3 injection sites distributed across the anterior, middle, and posterior portions of the muscle fan within the temporal fossa.",
+      "The anterior fibers (above the lateral orbital rim) are the most powerful jaw elevators and are the primary target for bruxism and jaw-closing dystonia.",
+      "Insert the needle perpendicular to the skull surface into the muscle belly at each site. Advance only 0.5-1 cm — the temporalis is thin (5-10 mm) overlying the temporal bone, and the needle will contact bone quickly.",
+      "CAUTION: The superficial temporal artery runs vertically in the subcutaneous tissue of the temple, anterior to the tragus. Palpate for its pulse and avoid it. Use color Doppler if using ultrasound.",
+      "Aspirate before each injection. Distribute the total dose across 2-3 sites."
+    ],
+    "setup": [
+      "Ultrasound guidance can be helpful to confirm muscle thickness and identify the superficial temporal artery.",
+      "The temporalis is a broad, flat muscle — it is thin over most of the temporal fossa (5-10 mm thick), thickening inferiorly as it converges toward the coronoid process.",
+      "Palpate for the superficial temporal artery pulse anterior to the tragus — this vessel is the primary vascular risk in this injection.",
+      "In patients with temporal wasting (e.g., elderly, myopathic), the muscle may be very thin — reduce the injection depth and consider US to confirm adequate muscle bulk."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz)",
+      "orientation": "Transverse across the temporal fossa, perpendicular to the fibers, above the zygomatic arch",
+      "viewSteps": [
+        "Place the probe transversely on the temporal fossa above the zygomatic arch. Apply minimal pressure — the temporalis is thin and compresses easily.",
+        "The temporalis appears as a thin, flat hypoechoic muscle directly overlying the hyperechoic temporal bone cortex. Its fibers run in a fan-shaped pattern converging inferiorly.",
+        "The temporal bone cortex appears as a bright, continuous hyperechoic line with posterior acoustic shadowing — this is the deep safety boundary.",
+        "Superficial to the muscle, identify the subcutaneous fat and the temporalis fascia (a bright hyperechoic line).",
+        "Use color Doppler to identify the superficial temporal artery in the subcutaneous layer — it appears as a pulsatile vessel with red/blue flow, typically located anterior to the tragus and running superiorly.",
+        "Confirm by asking the patient to clench — the muscle will thicken slightly."
+      ],
+      "safetyNotes": [
+        "The superficial temporal artery runs in the subcutaneous tissue — always palpate and/or use Doppler to map it before injecting. Intravascular injection may cause localized hematoma or, rarely, ischemic complications.",
+        "The deep temporal nerves (branches of V3) innervate the temporalis from its deep surface — staying within the superficial and mid-muscle belly avoids these nerves.",
+        "The middle meningeal artery runs inside the skull deep to the temporal bone — do not use excessive force or long needles that could penetrate the thin temporal bone, particularly in elderly patients.",
+        "The temporalis is thin — 5-10 mm in most patients. Use short needles and control depth carefully."
+      ],
+      "probeDiagram": {
+        "cx": 50,
+        "cy": 40,
+        "angle": 0,
+        "length": 5
+      },
+      "depth": "1.0-1.5 cm"
+    },
+    "dosage": {
+      "botox": "25-50",
+      "xeomin": "25-50",
+      "dysport": "75-150"
+    },
+    "dosageNote": "Per side. Distribute across 2-3 sites within the temporal fossa. Prioritize the anterior fibers for jaw-closing dystonia.",
+    "marker": null,
+    "referenceImages": [],
+    "hasReferenceImage": false,
+    "probePlacementHint": "Patient seated upright with jaw relaxed. Place probe transversely in the temporal fossa above the zygomatic arch. Photo from lateral view showing probe on temple.",
+    "pearls": [
+      "The temporalis and masseter are the two primary jaw closers — for refractory bruxism or jaw-closing dystonia, inject both muscles bilaterally",
+      "Always palpate for the superficial temporal artery pulse before injecting — it is the major vascular risk in this region",
+      "The anterior fibers are the strongest jaw elevators and the primary target; posterior fibers primarily retract the mandible",
+      "In migraine patients, temporalis injection sites overlap with PREEMPT protocol sites — 20 U per side (5 U x 4 sites) per the Allergan PREEMPT paradigm"
+    ],
+    "supplies": [
+      "Ultrasound machine with linear probe (optional but recommended)",
+      "Sterile ultrasound gel",
+      "Tegaderm or probe cover",
+      "Alcohol swabs / ChloraPrep",
+      "Reconstituted botulinum toxin (drawn up)",
+      "27-30G needle (0.5-1 inch)",
+      "1 mL syringe(s)",
+      "Gloves (non-sterile)",
+      "Gauze pads",
+      "Band-aids",
+      "Sharps container"
+    ],
+    "spasticityPatterns": [
+      "oromandibular-dystonia",
+      "bruxism"
+    ],
+    "relatedMuscles": [
+      "masseter",
+      "medial-pterygoid",
+      "lateral-pterygoid"
+    ]
+  },
+  {
+    "id": "lateral-pterygoid",
+    "name": "Lateral Pterygoid",
+    "group": "Face",
+    "pattern": "Jaw opening dystonia, jaw protrusion, oromandibular dystonia (jaw opening type), jaw deviation to contralateral side",
+    "landmarks": [
+      "Coronoid Notch of the Mandible (palpate just anterior to the tragus of the ear and inferior to the zygomatic arch — ask the patient to open and close the jaw; the coronoid notch is the depression felt between the condylar process posteriorly and the coronoid process anteriorly when the jaw is partially open; this is the transcutaneous access point to the infratemporal fossa)",
+      "Zygomatic Arch (palpate the bony ridge running from the tragus anteriorly — the lateral pterygoid lies deep to the zygomatic arch and the mandibular ramus in the infratemporal fossa)",
+      "Mandibular Condyle (palpate the condyle just anterior to the tragus — ask the patient to open and close the mouth; the condyle translates anteriorly during opening; the superior head of the lateral pterygoid inserts onto the TMJ disc and condylar neck)"
+    ],
+    "placement": [
+      "Position the patient seated upright or supine with the jaw slightly open (to translate the condyle forward and open the coronoid notch).",
+      "EMG guidance is STRONGLY RECOMMENDED for this deep injection — the lateral pterygoid is not directly palpable and lies in the infratemporal fossa deep to the mandibular ramus.",
+      "TRANSCUTANEOUS APPROACH (preferred): Identify the coronoid notch by palpating the depression between the condyle and coronoid process just anterior to the tragus, below the zygomatic arch.",
+      "Insert a 25-27G, 1.5-2 inch needle through the coronoid notch, directing it medially and slightly anteriorly toward the infratemporal fossa. Advance approximately 2-3 cm until EMG activity confirms placement in the lateral pterygoid.",
+      "Ask the patient to open the jaw against resistance while monitoring EMG — the lateral pterygoid fires during jaw opening, jaw protrusion, and contralateral jaw deviation. This confirms correct placement.",
+      "INTRAORAL APPROACH (alternative): Open the jaw maximally to expose the pterygomandibular raphe region. Insert the needle lateral to the pterygomandibular fold, directing it posterolaterally toward the lateral pterygoid plate. This approach requires a cooperative patient and adequate oral opening.",
+      "Aspirate carefully before injecting — the maxillary artery and pterygoid venous plexus are in close proximity.",
+      "Inject the dose at a single site once EMG confirmation is achieved."
+    ],
+    "setup": [
+      "EMG guidance is the STANDARD OF CARE for lateral pterygoid injection — this is a deep muscle that cannot be directly palpated or reliably targeted by landmarks alone.",
+      "A hollow EMG needle (Teflon-coated monopolar needle, 37 mm or longer) is preferred — it allows simultaneous EMG recording and toxin injection through a single needle.",
+      "The maxillary artery runs through or adjacent to the lateral pterygoid — aspiration is critical. The pterygoid venous plexus surrounds the muscle.",
+      "Differentiate from medial pterygoid: the lateral pterygoid fires on jaw OPENING and protrusion; the medial pterygoid fires on jaw CLOSING. Test jaw opening against resistance to confirm lateral pterygoid recruitment on EMG.",
+      "Warn the patient that temporary jaw weakness and difficulty with chewing may occur for 2-4 weeks after injection."
+    ],
+    "ultrasound": null,
+    "dosage": {
+      "botox": "15-30",
+      "xeomin": "15-30",
+      "dysport": "45-90"
+    },
+    "dosageNote": "Per side. Lower doses are used due to the small muscle volume and proximity to the medial pterygoid. Always use EMG guidance.",
+    "marker": null,
+    "referenceImages": [],
+    "hasReferenceImage": false,
+    "probePlacementHint": "EMG-guided injection — no ultrasound probe placement. Patient seated with jaw slightly open. Needle inserted through coronoid notch anterior to tragus, directed medially into infratemporal fossa.",
+    "pearls": [
+      "The lateral pterygoid is the PRIMARY jaw opener and protruder — it is the key target for jaw-opening oromandibular dystonia and involuntary jaw protrusion",
+      "EMG confirmation is essential: the lateral pterygoid fires on jaw OPENING (distinguishing it from the medial pterygoid which fires on jaw CLOSING)",
+      "The maxillary artery and pterygoid venous plexus surround this muscle — aspiration is mandatory; be prepared for minor bleeding or hematoma",
+      "Unilateral lateral pterygoid injection can cause jaw deviation to the injected side — in unilateral jaw deviation dystonia, inject the contralateral lateral pterygoid"
+    ],
+    "supplies": [
+      "EMG machine with audio and visual display",
+      "Teflon-coated monopolar EMG needle (37 mm, 27G)",
+      "Ground electrode and reference electrode",
+      "Alcohol swabs / ChloraPrep",
+      "Reconstituted botulinum toxin (drawn up)",
+      "1 mL syringe",
+      "Gloves (non-sterile)",
+      "Gauze pads",
+      "Band-aids",
+      "Sharps container"
+    ],
+    "spasticityPatterns": [
+      "oromandibular-dystonia"
+    ],
+    "relatedMuscles": [
+      "medial-pterygoid",
+      "masseter",
+      "temporalis"
+    ]
+  },
+  {
+    "id": "medial-pterygoid",
+    "name": "Medial Pterygoid",
+    "group": "Face",
+    "pattern": "Jaw clenching, oromandibular dystonia (jaw closing type), synergist with masseter for jaw elevation",
+    "landmarks": [
+      "Angle of the Mandible — Medial Surface (palpate the mandibular angle from the submandibular region — the medial pterygoid inserts onto the medial surface of the mandibular angle and ramus, forming a muscular sling with the masseter on the lateral surface)",
+      "Pterygoid Fossa (the medial pterygoid originates from the medial surface of the lateral pterygoid plate and the pyramidal process of the palatine bone — these landmarks are deep and not directly palpable but define the superior attachment in the infratemporal fossa)",
+      "Submandibular Region (palpate the soft tissue medial and inferior to the angle of the mandible — the medial pterygoid bulk can sometimes be felt as a firm mass in this region when the patient clenches)"
+    ],
+    "placement": [
+      "Position the patient seated upright or supine with the jaw slightly open.",
+      "EMG guidance or ultrasound guidance is STRONGLY RECOMMENDED — the medial pterygoid is deep and not directly palpable from the skin surface.",
+      "SUBMANDIBULAR (EXTRAORAL) APPROACH (preferred for US guidance): Palpate the medial surface of the mandibular angle from the submandibular region. Place the ultrasound probe submandibularly to visualize the medial pterygoid on the deep (medial) surface of the mandibular ramus.",
+      "Insert a 25-27G, 1.5-2 inch needle from the submandibular region, directing it superiorly and laterally toward the medial surface of the mandibular ramus. Under ultrasound or EMG, advance into the medial pterygoid muscle belly.",
+      "TRANSCUTANEOUS LATERAL APPROACH (EMG guided): Insert through the coronoid notch (same entry as lateral pterygoid) but direct the needle more medially and inferiorly. EMG will show jaw-CLOSING activity (as opposed to jaw-opening activity from the lateral pterygoid). Ask the patient to clench to confirm.",
+      "INTRAORAL APPROACH (alternative): Insert the needle medial to the mandibular ramus, posterior to the last molar, directing laterally toward the medial surface of the ramus. This requires EMG confirmation.",
+      "Aspirate before injecting — the inferior alveolar artery and maxillary artery branches are nearby.",
+      "Inject at a single site once proper placement is confirmed."
+    ],
+    "setup": [
+      "EMG guidance or ultrasound guidance is strongly recommended for medial pterygoid injection due to its deep location on the medial surface of the mandibular ramus.",
+      "The medial pterygoid is a jaw CLOSER — differentiate from the lateral pterygoid (jaw OPENER) by asking the patient to clench. The medial pterygoid fires vigorously during jaw clenching, not during jaw opening.",
+      "From the submandibular approach, the submandibular gland and facial artery are superficial structures to avoid — identify them with ultrasound before needle insertion.",
+      "The inferior alveolar nerve enters the mandibular foramen on the medial ramus surface — deep injections near the foramen risk temporary inferior alveolar nerve block causing lip and chin numbness.",
+      "The lingual nerve runs medial to the mandibular ramus — avoid directing the needle too far medially."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz) or curvilinear (5-8 MHz) for deeper imaging",
+      "orientation": "Coronal oblique from the submandibular region, angled superiorly toward the medial surface of the mandibular ramus",
+      "viewSteps": [
+        "Place the probe in the submandibular region below and medial to the angle of the mandible, angled superiorly.",
+        "Identify the mandibular ramus cortex as a hyperechoic line with posterior acoustic shadowing — this is the key deep landmark.",
+        "The medial pterygoid appears as a hypoechoic muscle mass on the medial surface of the mandibular ramus, deep to the submandibular gland.",
+        "The submandibular gland appears as a homogeneous, moderately echogenic structure superficial to the medial pterygoid in this view.",
+        "Use color Doppler to identify the facial artery, which loops through or under the submandibular gland, and branches of the inferior alveolar artery.",
+        "Ask the patient to clench — the medial pterygoid will contract, confirming identification."
+      ],
+      "safetyNotes": [
+        "The facial artery loops through the submandibular region — always use color Doppler to map it before needle insertion.",
+        "The inferior alveolar nerve and artery enter the mandibular foramen on the medial ramus — injection near this foramen risks temporary nerve block and arterial puncture.",
+        "The lingual nerve runs medial to the mandibular ramus — avoid directing the needle too far medially.",
+        "The submandibular gland lies superficial to the muscle in the submandibular approach — pass through or around it to reach the medial pterygoid."
+      ],
+      "probeDiagram": {
+        "cx": 50,
+        "cy": 60,
+        "angle": 45,
+        "length": 5
+      },
+      "depth": "2.5-4.0 cm"
+    },
+    "dosage": {
+      "botox": "15-30",
+      "xeomin": "15-30",
+      "dysport": "45-90"
+    },
+    "dosageNote": "Per side. The medial pterygoid is smaller than the masseter — use lower doses. Consider co-injection with the masseter for refractory jaw-closing dystonia.",
+    "marker": null,
+    "referenceImages": [],
+    "hasReferenceImage": false,
+    "probePlacementHint": "Patient seated with jaw slightly open. For US guidance: place probe in submandibular region below mandibular angle, angled superiorly. For EMG: needle through coronoid notch directed medially. Photo from submandibular view showing probe below jaw angle.",
+    "pearls": [
+      "The medial pterygoid and masseter form a 'pterygo-masseteric sling' around the mandibular angle — together they are the primary jaw closers",
+      "For refractory jaw-closing dystonia, inject both the masseter AND medial pterygoid — the medial pterygoid is often the overlooked synergist",
+      "Differentiate from lateral pterygoid on EMG: medial pterygoid fires on jaw CLENCHING, lateral pterygoid fires on jaw OPENING",
+      "Temporary numbness of the lower lip (inferior alveolar nerve block) is a known risk — warn patients before injection"
+    ],
+    "supplies": [
+      "Ultrasound machine with linear probe (for submandibular approach)",
+      "EMG machine with audio/visual display (for transcutaneous approach)",
+      "Teflon-coated monopolar EMG needle (37 mm, 27G) or standard 27G needle (1.5-2 inch)",
+      "Sterile ultrasound gel",
+      "Tegaderm or probe cover",
+      "Alcohol swabs / ChloraPrep",
+      "Reconstituted botulinum toxin (drawn up)",
+      "1 mL syringe",
+      "Gloves (non-sterile)",
+      "Gauze pads",
+      "Band-aids",
+      "Sharps container"
+    ],
+    "spasticityPatterns": [
+      "oromandibular-dystonia"
+    ],
+    "relatedMuscles": [
+      "masseter",
+      "temporalis",
+      "lateral-pterygoid"
+    ]
+  },
+  {
+    "id": "orbicularis-oculi",
+    "name": "Orbicularis Oculi",
+    "group": "Face",
+    "pattern": "Blepharospasm (involuntary forceful eye closure), hemifacial spasm",
+    "landmarks": [
+      "Orbital Rim (palpate the bony rim surrounding the eye — the orbicularis oculi is a thin, flat sphincteric muscle that encircles the entire orbital aperture, with fibers originating from the medial orbital margin near the medial canthal tendon and the frontal bone)",
+      "Lateral Canthus (palpate the lateral angle where the upper and lower eyelids meet — the preseptal and pretarsal fibers converge here; the lateral orbital rim is a key injection landmark for the lateral canthal sites)",
+      "Medial Canthal Tendon (palpate a firm cord-like structure at the medial angle of the eye, just lateral to the bridge of the nose — this is the origin of the pretarsal orbicularis; avoid injecting directly on this tendon to prevent disruption of the lacrimal pump mechanism)"
+    ],
+    "placement": [
+      "Position the patient seated upright in a well-lit room. The patient should be relaxed with eyes gently closed or in their resting blepharospasm position.",
+      "The orbicularis oculi has three functional parts: PRETARSAL (over the tarsal plates, closest to the eyelid margin), PRESEPTAL (over the orbital septum), and ORBITAL (over the orbital rim and beyond). For blepharospasm, the PRESEPTAL and ORBITAL portions are the primary targets.",
+      "Standard blepharospasm injection sites (6 sites per eye, per Allergan PI): (1) Medial upper preseptal — 1 cm above the medial upper eyelid crease, (2) Central upper preseptal — 1 cm above the central upper eyelid crease, (3) Lateral upper preseptal/orbital junction — at the lateral orbital rim above the lateral canthus, (4) Lateral lower orbital — at the lateral orbital rim just below the lateral canthus, (5) Central lower preseptal — midway along the lower orbital rim, (6) Medial lower preseptal — near the medial lower orbital rim (USE CAUTION — lacrimal punctum is nearby).",
+      "Insert the needle subcutaneously (bevel up) at each site, directed AWAY from the globe. The muscle is extremely thin (1-2 mm) and lies just beneath the skin with no significant subcutaneous fat over the eyelids.",
+      "Inject 1.25-2.5 U Botox (or equivalent) per site. Use a tuberculin syringe for precise dosing at these low volumes.",
+      "At the medial lower site (site 6), inject at least 5 mm lateral to the lacrimal punctum to avoid weakening the lacrimal pump (pretarsal orbicularis), which can cause epiphora (tearing).",
+      "CRITICAL: Keep all injections superficial and OUTSIDE the orbital septum. Do NOT inject into the pretarsal portion of the upper lid — this risks ptosis from diffusion to the levator palpebrae superioris.",
+      "Apply gentle pressure with gauze at each injection site for 30 seconds to minimize bruising and reduce diffusion to adjacent muscles."
+    ],
+    "setup": [
+      "This is a LANDMARK-GUIDED injection — ultrasound is NOT used for orbicularis oculi injections. The muscle is too thin and superficial for meaningful ultrasound guidance.",
+      "Use a 30G, 0.5-inch needle on a tuberculin (1 mL) syringe for precise volume control and minimal patient discomfort.",
+      "Reconstitute Botox at a concentration that allows injection of small volumes per site (e.g., 2.5 U per 0.1 mL = 100 U / 4 mL dilution, or 5 U per 0.1 mL = 100 U / 2 mL dilution). The Allergan PI recommends 1.25-2.5 U per site.",
+      "Avoid wearing contact lenses during the procedure — have the patient remove them before injection.",
+      "If treating hemifacial spasm (unilateral), inject only the affected side. If treating blepharospasm (bilateral), inject both eyes symmetrically."
+    ],
+    "ultrasound": null,
+    "dosage": {
+      "botox": "1.25-2.5 per site (7.5-15 total per eye)",
+      "xeomin": "1.25-2.5 per site (7.5-15 total per eye)",
+      "dysport": "4-8 per site (24-48 total per eye)"
+    },
+    "dosageNote": "Dosage is per SITE (6 sites per eye). Total dose per eye: 7.5-15 U Botox. Bilateral total: 15-30 U. Per the Allergan PI for blepharospasm, the initial recommended dose is 1.25-2.5 U per site. Do not exceed 5 U per site or 200 U total over 30 days.",
+    "marker": null,
+    "referenceImages": [],
+    "hasReferenceImage": false,
+    "probePlacementHint": "Landmark-guided injection — no ultrasound used. Patient seated upright in well-lit room. Six injection sites distributed around the orbital rim: 3 upper (medial, central, lateral) and 3 lower (lateral, central, medial).",
+    "pearls": [
+      "Inject into the PRESEPTAL and ORBITAL portions only — avoid the PRETARSAL upper lid to prevent ptosis from diffusion to the levator palpebrae superioris",
+      "Stay lateral at the medial lower site to avoid the lacrimal pump mechanism — weakening the pretarsal orbicularis medially causes epiphora (excessive tearing)",
+      "Apply digital pressure for 30 seconds after each injection to minimize ecchymosis and reduce diffusion — the periorbital skin is extremely thin and vascular",
+      "For hemifacial spasm, the orbicularis oculi is almost always the first and most prominently affected muscle — start here and add lower face muscles only if needed"
+    ],
+    "supplies": [
+      "Alcohol swabs / ChloraPrep",
+      "Reconstituted botulinum toxin (drawn up)",
+      "30G needle (0.5 inch)",
+      "1 mL tuberculin syringe",
+      "Gloves (non-sterile)",
+      "Gauze pads",
+      "Band-aids",
+      "Sharps container",
+      "Ice pack (optional, for patient comfort)"
+    ],
+    "spasticityPatterns": [
+      "blepharospasm",
+      "hemifacial-spasm"
+    ],
+    "relatedMuscles": [
+      "corrugator-supercilii",
+      "procerus",
+      "frontalis"
+    ]
+  },
+  {
+    "id": "corrugator-supercilii",
+    "name": "Corrugator Supercilii",
+    "group": "Face",
+    "pattern": "Blepharospasm (glabellar component), brow furrowing, glabellar dystonia",
+    "landmarks": [
+      "Superomedial Orbital Rim (palpate the bony rim at the medial upper corner of the orbit — the corrugator supercilii originates from the medial end of the superciliary arch on the frontal bone, deep to the frontalis and orbicularis oculi)",
+      "Medial Eyebrow (palpate the medial third of the eyebrow — the corrugator runs laterally and superiorly from its origin to interdigitate with the frontalis and orbicularis oculi in the skin of the mid-eyebrow; ask the patient to frown forcefully to feel the muscle contract as a firm oblique band)",
+      "Glabella (palpate the smooth bony area between the eyebrows above the nasal root — the corrugator supercilii lies deep on both sides of the glabella, and its contraction produces vertical furrows between the brows)"
+    ],
+    "placement": [
+      "Position the patient seated upright. Ask them to frown forcefully — the corrugator creates the vertical (11 lines) furrows between the brows.",
+      "Identify the muscle by palpating a firm oblique band running from the medial orbital rim superolaterally toward the mid-eyebrow.",
+      "The standard injection site is at the medial eyebrow, approximately 1 cm above the superomedial orbital rim, at the junction of the medial and central thirds of the eyebrow.",
+      "Insert a 30G needle at a shallow angle (20-30 degrees from the skin surface) directed laterally along the corrugator muscle belly. Advance approximately 0.5 cm into the muscle.",
+      "Inject 5-10 U Botox per side (per the Allergan PI). A single site per side is typically sufficient, though some practitioners split across 2 sites for broader coverage.",
+      "CRITICAL: Stay above the orbital rim at all times — do NOT angle the needle inferiorly into the orbit. Diffusion to the levator palpebrae superioris can cause ptosis.",
+      "The corrugator lies deep to the frontalis — ensure the needle penetrates through the frontalis to reach the corrugator. Too-superficial injection will weaken only the frontalis.",
+      "Apply gentle digital pressure to the injection site for 30 seconds."
+    ],
+    "setup": [
+      "This is a LANDMARK-GUIDED injection — ultrasound is NOT used. The corrugator is a small, superficial muscle easily identified by palpation during active frowning.",
+      "Use a 30G, 0.5-inch needle on a tuberculin (1 mL) syringe.",
+      "The corrugator lies DEEP to the frontalis and orbicularis oculi — it is the deepest muscle layer in the glabellar region. The injection must penetrate through the overlying muscles to reach it.",
+      "In blepharospasm treatment, the corrugator and procerus are often injected together with the orbicularis oculi as part of a comprehensive periorbital injection session (Allergan PI)."
+    ],
+    "ultrasound": null,
+    "dosage": {
+      "botox": "5-10",
+      "xeomin": "5-10",
+      "dysport": "15-30"
+    },
+    "dosageNote": "Per side. Per the Allergan PI for blepharospasm, inject 5 U at each corrugator site. For cosmetic use (glabellar lines), the standard FDA-approved dose is 4 U Botox per corrugator (bilateral total 20 U including procerus).",
+    "marker": null,
+    "referenceImages": [],
+    "hasReferenceImage": false,
+    "probePlacementHint": "Landmark-guided injection — no ultrasound used. Patient seated upright, frowning to activate the corrugator. Injection at the medial eyebrow approximately 1 cm above the superomedial orbital rim.",
+    "pearls": [
+      "Ask the patient to frown hard — the corrugator produces the vertical '11 lines' between the brows and becomes palpable as an oblique cord at the medial eyebrow",
+      "The corrugator is DEEP to the frontalis — ensure the needle penetrates through the frontalis to reach it; superficial injection only weakens the frontalis and misses the target",
+      "In blepharospasm, the corrugator and procerus should be injected together with the orbicularis oculi for comprehensive glabellar control",
+      "Ptosis risk: keep the needle directed laterally and superiorly, NEVER inferiorly into the orbit — diffusion to the levator palpebrae is the most feared complication"
+    ],
+    "supplies": [
+      "Alcohol swabs / ChloraPrep",
+      "Reconstituted botulinum toxin (drawn up)",
+      "30G needle (0.5 inch)",
+      "1 mL tuberculin syringe",
+      "Gloves (non-sterile)",
+      "Gauze pads",
+      "Band-aids",
+      "Sharps container"
+    ],
+    "spasticityPatterns": [
+      "blepharospasm"
+    ],
+    "relatedMuscles": [
+      "procerus",
+      "orbicularis-oculi",
+      "frontalis"
+    ]
+  },
+  {
+    "id": "procerus",
+    "name": "Procerus",
+    "group": "Face",
+    "pattern": "Blepharospasm (glabellar component), horizontal nasal root furrows, glabellar dystonia",
+    "landmarks": [
+      "Nasal Bridge / Nasal Root (palpate the bony bridge of the nose between the eyes — the procerus is a small, thin, midline muscle that originates from the nasal bone and lateral nasal cartilage and inserts into the skin of the glabella between the eyebrows)",
+      "Glabella (palpate the smooth area between the eyebrows — the procerus inserts here, interdigitating with the frontalis and corrugator supercilii fibers; contraction produces horizontal wrinkles across the nasal root)",
+      "Nasion (palpate the depressed area at the junction of the nasal bones and the frontal bone — this approximates the center of the procerus muscle origin)"
+    ],
+    "placement": [
+      "Position the patient seated upright. Ask them to 'scrunch' their nose or pull their brows down toward the nose — the procerus creates horizontal wrinkles at the nasal root.",
+      "Identify the midline of the nasal root between the medial eyebrows. The procerus is a midline structure — a single midline injection is sufficient.",
+      "Insert a 30G needle perpendicular to the skin or at a shallow angle into the midline nasal root/glabella junction, advancing only 2-4 mm into the thin muscle belly.",
+      "Inject 5-10 U Botox as a single midline injection.",
+      "The procerus is extremely thin (1-3 mm) — deep insertion is not necessary and risks penetrating to the periosteum.",
+      "Apply gentle digital pressure for 30 seconds to minimize bruising and diffusion."
+    ],
+    "setup": [
+      "This is a LANDMARK-GUIDED injection — ultrasound is NOT used. The procerus is a small, thin, midline muscle easily targeted by landmarks.",
+      "Use a 30G, 0.5-inch needle on a tuberculin (1 mL) syringe.",
+      "The procerus is the most superficial muscle in the glabellar region — it lies superficial to the corrugator supercilii.",
+      "In blepharospasm treatment, the procerus is typically injected as part of the glabellar complex along with the corrugator supercilii and orbicularis oculi.",
+      "Over-injection or diffusion can cause a 'flat' or 'frozen' appearance of the nasal root — start with lower doses in cosmetically conscious patients."
+    ],
+    "ultrasound": null,
+    "dosage": {
+      "botox": "5-10",
+      "xeomin": "5-10",
+      "dysport": "15-30"
+    },
+    "dosageNote": "Single midline injection. Per the Allergan PI for blepharospasm, 5 U at the procerus is standard. For cosmetic use (glabellar lines), 4 U Botox at the procerus is standard (part of the 20 U glabellar complex with corrugators).",
+    "marker": null,
+    "referenceImages": [],
+    "hasReferenceImage": false,
+    "probePlacementHint": "Landmark-guided injection — no ultrasound used. Patient seated upright, actively scrunching the nose to identify the procerus. Single midline injection at the nasal root/glabella junction.",
+    "pearls": [
+      "The procerus is a MIDLINE muscle — a single midline injection is sufficient; bilateral injections are not needed",
+      "Ask the patient to scrunch the nose downward — horizontal wrinkles at the nasal root confirm procerus activation",
+      "The procerus is the most superficial glabellar muscle (superficial to the corrugators) — only 2-4 mm of needle depth is needed",
+      "In blepharospasm, always inject the procerus along with the corrugators and orbicularis oculi for comprehensive glabellar dystonia control"
+    ],
+    "supplies": [
+      "Alcohol swabs / ChloraPrep",
+      "Reconstituted botulinum toxin (drawn up)",
+      "30G needle (0.5 inch)",
+      "1 mL tuberculin syringe",
+      "Gloves (non-sterile)",
+      "Gauze pads",
+      "Band-aids",
+      "Sharps container"
+    ],
+    "spasticityPatterns": [
+      "blepharospasm"
+    ],
+    "relatedMuscles": [
+      "corrugator-supercilii",
+      "orbicularis-oculi",
+      "frontalis"
+    ]
+  },
+  {
+    "id": "frontalis",
+    "name": "Frontalis",
+    "group": "Face",
+    "pattern": "Brow elevation dystonia, forehead spasm, involuntary brow raising; NOTE: this is primarily a cosmetic target (horizontal forehead lines) and is NOT a typical spasticity target",
+    "landmarks": [
+      "Frontal Belly of the Occipitofrontalis (palpate the forehead — the frontalis is a broad, flat muscle covering the entire forehead from the eyebrows to the anterior hairline; ask the patient to raise their eyebrows to feel it contract and see horizontal forehead lines form)",
+      "Eyebrow (palpate the eyebrow ridge — the frontalis inserts into the skin and subcutaneous tissue of the eyebrow, interdigitating with the orbicularis oculi and corrugator supercilii inferiorly)",
+      "Anterior Hairline (palpate the hairline on the forehead — the frontalis has no bony insertion superiorly; it transitions into the galea aponeurotica at approximately the anterior hairline)"
+    ],
+    "placement": [
+      "Position the patient seated upright. Ask them to raise their eyebrows forcefully — the frontalis will contract, creating horizontal forehead lines.",
+      "NOTE: The frontalis is NOT a typical spasticity target. It is injected for (1) brow dystonia (rare), (2) cosmetic forehead lines, or (3) as an adjunct in blepharospasm when frontalis overactivity compensates for orbicularis oculi weakness post-injection.",
+      "For brow dystonia or cosmetic treatment, identify 4-5 injection sites distributed evenly across the forehead, at least 2 cm above the eyebrow to minimize risk of brow ptosis.",
+      "Standard cosmetic approach: inject at 4-5 sites across the mid-forehead, each approximately 1.5-2 cm above the brow and spaced 1.5-2 cm apart.",
+      "Insert the needle intradermally or into the very superficial subcutaneous plane (the frontalis is only 2-4 mm thick). Direct the bevel up and advance 2-3 mm.",
+      "Inject 2-5 U Botox per site. The total dose is typically 10-20 U distributed across all sites.",
+      "CRITICAL: Do not inject within 2 cm of the brow — this causes brow ptosis (the frontalis is the ONLY brow elevator). Loss of frontalis function drops the brow and may worsen pre-existing dermatochalasis or upper lid heaviness.",
+      "In blepharospasm patients, injecting the frontalis after orbicularis oculi treatment can worsen brow ptosis — use extreme caution and low doses."
+    ],
+    "setup": [
+      "This is a LANDMARK-GUIDED injection — ultrasound is NOT used. The frontalis is immediately subcutaneous across the entire forehead.",
+      "Use a 30G, 0.5-inch needle on a tuberculin (1 mL) syringe.",
+      "⚠️ IMPORTANT CLINICAL NOTE: The frontalis is the ONLY muscle that elevates the brow. Excessive weakening causes brow ptosis, which can be functionally and cosmetically significant. Always warn the patient about this risk.",
+      "In patients with heavy brows, low-set brows, or significant dermatochalasis, frontalis injection may cause the brow to drop into the visual axis — assess baseline brow position before injection.",
+      "The frontalis has no bony insertion — it inserts into the skin of the brow and the galea aponeurotica. Injections are necessarily into soft tissue only."
+    ],
+    "ultrasound": null,
+    "dosage": {
+      "botox": "10-20",
+      "xeomin": "10-20",
+      "dysport": "30-60"
+    },
+    "dosageNote": "Total across all forehead sites (4-5 sites at 2-5 U each). For brow dystonia, use the minimum effective dose. For cosmetic treatment, 10-20 U total is standard. This is NOT a typical spasticity target.",
+    "marker": null,
+    "referenceImages": [],
+    "hasReferenceImage": false,
+    "probePlacementHint": "Landmark-guided injection — no ultrasound used. Patient seated upright, raising eyebrows to activate frontalis. Four to five injection sites distributed across the mid-forehead at least 2 cm above the brow.",
+    "pearls": [
+      "The frontalis is the ONLY brow elevator — over-injection causes brow ptosis, which is the #1 complication; always stay at least 2 cm above the brow",
+      "NOT a spasticity target — it is injected for cosmetic forehead lines, rare brow dystonia, or as part of migraine PREEMPT protocol (20 U total, 5 U per site x 4 sites)",
+      "In blepharospasm patients already receiving orbicularis oculi injections, adding frontalis can worsen brow ptosis — assess carefully before treating",
+      "Asymmetric injection or uneven dosing causes a 'Spock brow' (asymmetric lateral brow elevation) — distribute the dose symmetrically and include lateral sites"
+    ],
+    "supplies": [
+      "Alcohol swabs / ChloraPrep",
+      "Reconstituted botulinum toxin (drawn up)",
+      "30G needle (0.5 inch)",
+      "1 mL tuberculin syringe",
+      "Gloves (non-sterile)",
+      "Gauze pads",
+      "Band-aids",
+      "Sharps container"
+    ],
+    "spasticityPatterns": [
+      "brow-dystonia"
+    ],
+    "relatedMuscles": [
+      "corrugator-supercilii",
+      "procerus",
+      "orbicularis-oculi"
+    ]
+  },
+  {
+    "id": "platysma",
+    "name": "Platysma",
+    "group": "Face / Neck",
+    "pattern": "Anterocollis (forward head flexion), neck banding, platysmal dystonia, involuntary neck tightening",
+    "landmarks": [
+      "Mandibular Border (palpate the inferior border of the mandible — the platysma originates from the subcutaneous tissue and fascia overlying the upper pectoralis major and deltoid, and inserts onto the lower mandible, the skin and subcutaneous tissue of the lower face, and the modiolus at the oral commissure)",
+      "Anterior Neck Bands (ask the patient to grimace or forcefully depress the lower lip — the platysma contracts and its medial borders become visible as vertical bands or cords running from the clavicle to the chin in the anterior neck)",
+      "Clavicle (palpate the medial third of the clavicle — the platysma is a broad, thin, sheet-like muscle that originates from the fascia overlying the upper chest and drapes over the anterior neck; its inferior border is at or just below the clavicular line)"
+    ],
+    "placement": [
+      "Position the patient seated upright or supine. Ask them to grimace or depress the mandible with lips retracted to make the platysmal bands prominent.",
+      "For ANTEROCOLLIS: Identify the prominent platysmal bands in the anterior neck. These are typically most visible as vertical cords running from the clavicle to the chin.",
+      "Pinch the platysmal band between thumb and index finger to isolate it from the underlying strap muscles (sternohyoid, sternothyroid). The platysma is extremely thin (1-3 mm) and lies directly in the subcutaneous tissue.",
+      "Insert a 30G needle subcutaneously into each platysmal band, directing it along the length of the band. Advance only 2-3 mm — the muscle is immediately beneath the skin.",
+      "For anterocollis, inject 2-3 sites per band, with 2-4 prominent bands typically identified, for a total of 6-10 injection sites.",
+      "For NECK BANDING (cosmetic): Inject along the visible platysmal bands with smaller doses per site (2-5 U Botox per site).",
+      "CAUTION: The platysma overlies the external jugular vein, the anterior jugular veins, and the strap muscles. Do NOT inject deeply — stay strictly subcutaneous.",
+      "Aspirate before injecting — the external jugular vein is superficial and crosses the lateral neck under the platysma.",
+      "After injection, apply gentle pressure and have the patient remain upright for 5 minutes to minimize diffusion to the deeper neck musculature."
+    ],
+    "setup": [
+      "This is predominantly a LANDMARK-GUIDED injection — the platysmal bands are visible and palpable in most patients.",
+      "Ultrasound can be used as an adjunct to differentiate the platysma from the underlying strap muscles if the bands are not clearly visible.",
+      "The platysma is extremely thin (1-3 mm) — use a short, fine-gauge needle and stay subcutaneous.",
+      "WARNING: Excessive dosing or diffusion to the deeper neck flexors (longus colli, longus capitis) or strap muscles (sternohyoid, sternothyroid) can cause dysphagia, neck flexion weakness, and aspiration risk. Use the minimum effective dose.",
+      "In anterocollis, the platysma is rarely the sole cause — it is typically injected as an adjunct to the deep neck flexors (longus colli/capitis). Consider whether the platysma or the deep flexors are the primary driver before treating.",
+      "For bilateral injections, use reduced doses per side to minimize the risk of dysphagia."
+    ],
+    "ultrasound": null,
+    "dosage": {
+      "botox": "15-50",
+      "xeomin": "15-50",
+      "dysport": "45-150"
+    },
+    "dosageNote": "Total dose across all sites per side. For anterocollis, 25-50 U Botox per side distributed across 2-4 platysmal bands. For cosmetic neck banding, 2-5 U per site along each band (lower total dose). Use the minimum effective dose to avoid dysphagia.",
+    "marker": null,
+    "referenceImages": [],
+    "hasReferenceImage": false,
+    "probePlacementHint": "Landmark-guided injection — platysmal bands are identified visually by asking the patient to grimace. Patient seated upright, grimacing to display anterior neck bands. Inject subcutaneously into each visible band.",
+    "pearls": [
+      "Ask the patient to grimace or forcefully depress the lower lip — the platysmal bands will become visible as vertical cords in the anterior neck",
+      "The platysma is paper-thin (1-3 mm) and lies in the subcutaneous tissue — use short needles, stay superficial, and NEVER inject deeply to avoid the underlying strap muscles and swallowing musculature",
+      "For anterocollis, the platysma is usually an ADJUNCT target — the deep neck flexors (longus colli/capitis) are typically the primary drivers of forward head flexion",
+      "Dysphagia is the most feared complication — minimize dose, avoid bilateral high-dose treatment, and warn patients about potential swallowing difficulty for 2-4 weeks"
+    ],
+    "supplies": [
+      "Alcohol swabs / ChloraPrep",
+      "Reconstituted botulinum toxin (drawn up)",
+      "30G needle (0.5 inch)",
+      "1 mL tuberculin syringe",
+      "Gloves (non-sterile)",
+      "Gauze pads",
+      "Band-aids",
+      "Sharps container"
+    ],
+    "spasticityPatterns": [
+      "anterocollis",
+      "cervical-dystonia"
+    ],
+    "relatedMuscles": [
+      "scm",
+      "mentalis"
+    ]
+  },
+  {
+    "id": "mentalis",
+    "name": "Mentalis",
+    "group": "Face",
+    "pattern": "Chin dimpling dystonia, involuntary chin puckering, mental crease deepening, lower lip protrusion",
+    "landmarks": [
+      "Mental Protuberance (palpate the bony prominence at the center of the chin — the mentalis originates from the incisive fossa on the anterior mandible, just below the lower incisor roots, and inserts into the skin of the chin)",
+      "Chin Pad (palpate the soft tissue pad of the chin below the lower lip — the mentalis is a small, conical, paired midline muscle that lies within this chin pad; when it contracts, it dimples, puckers, or elevates the chin skin)",
+      "Labiomental Crease (identify the horizontal crease between the lower lip and the chin prominence — the mentalis lies deep to this crease; ask the patient to protrude the lower lip or 'pout' to see the chin dimple and wrinkle, confirming mentalis contraction)"
+    ],
+    "placement": [
+      "Position the patient seated upright. Ask them to 'pout' or push the lower lip forward — the mentalis will contract, producing the characteristic 'chin dimpling' or 'orange peel' appearance on the chin pad.",
+      "Identify the chin pad below the labiomental crease. The mentalis lies in the midline, one muscle on each side of the midline, converging at the chin.",
+      "For unilateral dystonia or dimpling, inject the affected side only. For bilateral chin dimpling, inject both sides.",
+      "Insert a 30G needle at the center of the chin pad, approximately 1 cm below the labiomental crease, directed toward the mandible. Advance 3-5 mm into the muscle belly.",
+      "Inject 2.5-5 U Botox per side as a single midline injection per side (2 injection sites total for bilateral treatment).",
+      "CAUTION: The mental nerve exits the mental foramen approximately at the level of the second premolar, below and lateral to the mentalis — avoid lateral injections near the premolar region to prevent mental nerve block (lower lip and chin numbness).",
+      "The depressor labii inferioris lies lateral and deep to the mentalis — excessive lateral or deep injection can weaken lower lip depression and impair oral competence.",
+      "Apply gentle pressure to the injection site for 30 seconds."
+    ],
+    "setup": [
+      "This is a LANDMARK-GUIDED injection — ultrasound is NOT used. The mentalis is a small, superficial chin muscle easily identified by its characteristic 'dimpling' contraction.",
+      "Use a 30G, 0.5-inch needle on a tuberculin (1 mL) syringe.",
+      "The mentalis is small — use low doses to avoid diffusion to the orbicularis oris (causing oral incompetence) or the depressor labii inferioris (causing asymmetric lower lip).",
+      "In patients with mentalis dystonia, the chin dimpling and puckering is typically involuntary and socially distressing — even small doses of botulinum toxin can provide significant relief."
+    ],
+    "ultrasound": null,
+    "dosage": {
+      "botox": "2.5-5",
+      "xeomin": "2.5-5",
+      "dysport": "7.5-15"
+    },
+    "dosageNote": "Per side. Bilateral total: 5-10 U Botox. Start at the lower end of the dosing range to minimize risk of oral incompetence. The mentalis is a small muscle — small doses are effective.",
+    "marker": null,
+    "referenceImages": [],
+    "hasReferenceImage": false,
+    "probePlacementHint": "Landmark-guided injection — no ultrasound used. Patient seated upright, pouting to activate the mentalis and display chin dimpling. Inject at the center of the chin pad approximately 1 cm below the labiomental crease.",
+    "pearls": [
+      "Ask the patient to 'pout' or push the lower lip out — the mentalis produces the classic 'orange peel' or dimpled chin appearance when it contracts",
+      "The mental nerve exits the mental foramen below the second premolar — stay in the midline and avoid lateral injections to prevent chin and lip numbness",
+      "Very low doses are effective for this small muscle — start with 2.5 U Botox per side and titrate up only if needed",
+      "Diffusion to the adjacent orbicularis oris can impair lip seal (oral incompetence, drooling) — stay within the chin pad and avoid directing the needle superiorly toward the lip"
+    ],
+    "supplies": [
+      "Alcohol swabs / ChloraPrep",
+      "Reconstituted botulinum toxin (drawn up)",
+      "30G needle (0.5 inch)",
+      "1 mL tuberculin syringe",
+      "Gloves (non-sterile)",
+      "Gauze pads",
+      "Band-aids",
+      "Sharps container"
+    ],
+    "spasticityPatterns": [
+      "oromandibular-dystonia"
+    ],
+    "relatedMuscles": [
+      "orbicularis-oculi",
+      "platysma"
     ]
   }
 ]

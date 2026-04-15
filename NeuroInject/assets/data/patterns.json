@@ -175,11 +175,15 @@
     "id": "cervical-dystonia",
     "name": "Cervical Dystonia / Torticollis",
     "shortName": "Torticollis",
-    "description": "Abnormal head/neck positioning — rotation, lateral flexion, or extension. ⚠️ This dataset covers a subset of cervical muscles; splenius capitis (the most common rotational torticollis target), semispinalis capitis, and scalenes are not yet included.",
+    "description": "Abnormal head/neck positioning — rotation (torticollis), lateral flexion (laterocollis), extension (retrocollis), or flexion (anterocollis). Includes the major cervical dystonia targets: SCM, splenius capitis, semispinalis capitis, scalenes, longissimus capitis, upper trapezius, and levator scapulae.",
     "muscles": [
       "scm",
       "upper-trapezius",
-      "levator-scapulae"
+      "levator-scapulae",
+      "splenius-capitis",
+      "semispinalis-capitis",
+      "scalenes",
+      "longissimus-capitis"
     ],
     "region": "Neck"
   },
@@ -189,7 +193,114 @@
     "shortName": "Trunk Lean",
     "description": "Lateral trunk lean, pelvic hiking",
     "muscles": [
-      "quadratus-lumborum"
+      "quadratus-lumborum",
+      "obliques"
+    ],
+    "region": "Trunk"
+  },
+  {
+    "id": "blepharospasm",
+    "name": "Blepharospasm",
+    "shortName": "Blepharospasm",
+    "description": "Involuntary forceful eyelid closure. Injection targets the orbicularis oculi (pretarsal > preseptal), corrugator supercilii, and procerus.",
+    "muscles": [
+      "orbicularis-oculi",
+      "corrugator-supercilii",
+      "procerus"
+    ],
+    "region": "Face"
+  },
+  {
+    "id": "oromandibular-dystonia",
+    "name": "Oromandibular Dystonia",
+    "shortName": "Jaw Dystonia",
+    "description": "Involuntary jaw movements — jaw closing (masseter, temporalis, medial pterygoid) or jaw opening (lateral pterygoid). Assess opening vs closing pattern before selecting targets.",
+    "muscles": [
+      "masseter",
+      "temporalis",
+      "lateral-pterygoid",
+      "medial-pterygoid"
+    ],
+    "region": "Face"
+  },
+  {
+    "id": "bruxism",
+    "name": "Bruxism / Jaw Clenching",
+    "shortName": "Bruxism",
+    "description": "Involuntary or habitual jaw clenching and teeth grinding. Masseter is the primary target; temporalis is secondary.",
+    "muscles": [
+      "masseter",
+      "temporalis"
+    ],
+    "region": "Face"
+  },
+  {
+    "id": "anterocollis",
+    "name": "Anterocollis (Forward Head)",
+    "shortName": "Anterocollis",
+    "description": "Head/neck flexed forward. Targets include SCM (bilateral), scalenes, and platysma. Caution: bilateral SCM injection carries high dysphagia risk.",
+    "muscles": [
+      "scm",
+      "scalenes",
+      "platysma"
+    ],
+    "region": "Neck"
+  },
+  {
+    "id": "retrocollis",
+    "name": "Retrocollis (Head Extension)",
+    "shortName": "Retrocollis",
+    "description": "Head/neck extended backward. Primary targets: splenius capitis, semispinalis capitis, longissimus capitis, upper trapezius.",
+    "muscles": [
+      "splenius-capitis",
+      "semispinalis-capitis",
+      "longissimus-capitis",
+      "upper-trapezius"
+    ],
+    "region": "Neck"
+  },
+  {
+    "id": "laterocollis",
+    "name": "Laterocollis (Head Tilt)",
+    "shortName": "Laterocollis",
+    "description": "Head tilted laterally toward the shoulder. Ipsilateral scalenes, levator scapulae, splenius capitis, and SCM (clavicular head) are common targets.",
+    "muscles": [
+      "scalenes",
+      "levator-scapulae",
+      "splenius-capitis",
+      "scm"
+    ],
+    "region": "Neck"
+  },
+  {
+    "id": "trunk-flexion",
+    "name": "Trunk Flexion (Camptocormia)",
+    "shortName": "Camptocormia",
+    "description": "Involuntary trunk flexion when standing/walking. Rectus abdominis and obliques are the primary targets. Note: some cases are treated by injecting the paraspinals if they are the dystonic muscles pulling the trunk forward via co-contraction.",
+    "muscles": [
+      "rectus-abdominis",
+      "obliques"
+    ],
+    "region": "Trunk"
+  },
+  {
+    "id": "trunk-rotation",
+    "name": "Trunk Rotation",
+    "shortName": "Trunk Rotation",
+    "description": "Involuntary trunk rotation / twisting. Obliques (contralateral external + ipsilateral internal) are the primary targets.",
+    "muscles": [
+      "obliques",
+      "paraspinals"
+    ],
+    "region": "Trunk"
+  },
+  {
+    "id": "trunk-extension",
+    "name": "Trunk Extension (Axial Dystonia)",
+    "shortName": "Trunk Extension",
+    "description": "Involuntary trunk extension / backward arching. Paraspinal muscles (erector spinae group) are the primary targets. Inject at 2-3 vertebral levels.",
+    "muscles": [
+      "paraspinals"
     ],
     "region": "Trunk"
   }
