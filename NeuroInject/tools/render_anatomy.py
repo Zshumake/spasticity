@@ -111,15 +111,28 @@ if cam_obj is None:
 cam_obj.data.lens = 50  # normal lens
 scene.camera = cam_obj
 
-# Add a sun light for illumination
-sun_obj = bpy.data.objects.get("RenderSun")
-if sun_obj is None:
-    sun_data = bpy.data.lights.new(name="RenderSun", type="SUN")
-    sun_data.energy = 4.0
-    sun_obj = bpy.data.objects.new("RenderSun", sun_data)
-    scene.collection.objects.link(sun_obj)
-sun_obj.location = (2, -3, 4)
-sun_obj.rotation_euler = (math.radians(45), math.radians(30), 0)
+# Brighten the world background itself — this gives omnidirectional
+# ambient light that fills in all sides of the muscle regardless of
+# camera angle, so posterior/lateral views don't come out silhouetted.
+world_local = scene.world or bpy.data.worlds.new("RenderWorld")
+scene.world = world_local
+world_local.use_nodes = True
+bg_node = world_local.node_tree.nodes.get("Background")
+if bg_node:
+    bg_node.inputs["Color"].default_value = (1.0, 1.0, 1.0, 1.0)
+    bg_node.inputs["Strength"].default_value = 0.8
+
+# Plus a top-down sun for directional shading so the model doesn't
+# look flat. World light handles the rest, so all view angles come
+# out with reasonable illumination.
+sun_data = bpy.data.lights.new(name="SunKey", type="SUN")
+sun_data.energy = 2.5
+sun_obj = bpy.data.objects.new("SunKey", sun_data)
+scene.collection.objects.link(sun_obj)
+sun_obj.location = (0, 0, 5)
+sun_obj.rotation_euler = (math.radians(20), math.radians(15), 0)
+# Keep placeholder names so the visibility loop doesn't break
+sun_front = sun_back = sun_side = sun_top = sun_obj
 
 # -----------------------------------------------------------------
 # Scene collection lookups (in the original Startup scene)
@@ -227,13 +240,7 @@ scene.render.use_freestyle = False
 for vl in scene.view_layers:
     vl.use_freestyle = False
 
-# World background
-world = scene.world or bpy.data.worlds.new("World")
-scene.world = world
-if world.use_nodes:
-    bg = world.node_tree.nodes.get("Background")
-    if bg:
-        bg.inputs["Strength"].default_value = 0.6
+# World background already configured at top of script — leave as-is
 
 # -----------------------------------------------------------------
 # Helper: compute combined bounding box of a list of objects
@@ -324,8 +331,9 @@ def render_muscle(muscle_id: str, config) -> bool:
     # Make sure lights + camera are visible
     cam_obj.hide_render = False
     cam_obj.hide_viewport = False
-    sun_obj.hide_render = False
-    sun_obj.hide_viewport = False
+    for sun in (sun_front, sun_back, sun_side, sun_top):
+        sun.hide_render = False
+        sun.hide_viewport = False
 
     # Camera: frame the muscle with some surrounding bone context
     center = target_center
@@ -336,37 +344,40 @@ def render_muscle(muscle_id: str, config) -> bool:
     span = max(size.x, size.y, size.z)
     cam_distance = max(span * 3.5, 0.6)
 
-    # Default viewing angle: anterior with slight elevation, rotating
-    # around Z for appropriate body region
-    lname = mesh_names[0].lower() if mesh_names else ""
-    is_back = any(kw in lname for kw in ["trapezius", "splenius", "longissimus", "semispinalis", "erector", "latissimus", "teres", "piriformis", "gluteus"])
-
-    # Build camera position: primarily from the -Y direction (anterior),
-    # but swing around for posterior structures
-    if is_back or region == "back":
-        # Camera behind subject looking forward
-        cam_pos = center + Vector((0.15 * span, cam_distance * 0.9, 0.1 * span))
-    else:
-        # Default anterior view
-        cam_pos = center + Vector((0.15 * span, -cam_distance * 0.9, 0.1 * span))
-
-    point_camera_at(cam_obj, center, cam_pos)
-
     # Tighten the lens to fit the muscle
-    # (orthographic-ish feel — good for diagrams)
     cam_obj.data.lens = 50
 
     # Force depsgraph update to apply visibility changes
     bpy.context.view_layer.update()
 
+    # ----------------------------------------------------------------
+    # Render from 3 camera angles per muscle:
+    #   anterior: looking from -Y toward the subject (front view)
+    #   posterior: looking from +Y toward the subject (back view)
+    #   lateral:  looking from +X toward the subject (right-side view)
+    #
+    # The offsets are proportional to the muscle's own bounding-box span,
+    # so each muscle is framed appropriately regardless of size.
+    # ----------------------------------------------------------------
+    # cam_pos for each view is relative to the muscle's center
+    d = cam_distance * 0.9  # pull-back distance along the primary axis
+    e = cam_distance * 0.15  # slight elevation for all views
+    angles = {
+        "anterior":  center + Vector(( 0.0, -d,   e)),
+        "posterior": center + Vector(( 0.0,  d,   e)),
+        "lateral":   center + Vector(( d,    0.0, e)),
+    }
 
-    # Render
-    out_path = OUT_DIR / f"{muscle_id}.png"
-    scene.render.filepath = str(out_path)
-    bpy.ops.render.render(write_still=True)
-    size_kb = out_path.stat().st_size / 1024 if out_path.exists() else 0
-    print(f"  ↓ {muscle_id:28s} {size_kb:6.1f} KB  ({len(targets)} mesh{'es' if len(targets) > 1 else ''})")
-    return True
+    rendered_any = False
+    for view_name, cam_pos in angles.items():
+        point_camera_at(cam_obj, center, cam_pos)
+        out_path = OUT_DIR / f"{muscle_id}_{view_name}.png"
+        scene.render.filepath = str(out_path)
+        bpy.ops.render.render(write_still=True)
+        size_kb = out_path.stat().st_size / 1024 if out_path.exists() else 0
+        print(f"  ↓ {muscle_id:28s} {view_name:10s} {size_kb:6.1f} KB")
+        rendered_any = True
+    return rendered_any
 
 
 # -----------------------------------------------------------------
@@ -388,9 +399,10 @@ if only_id:
         sys.exit(1)
 
 for mid, config in todo:
-    if only_id is None and mid in already_covered:
-        skipped += 1
-        continue
+    # Note: Wikimedia muscles are also re-rendered in 3 views for
+    # consistency — they can supply their own single-angle image as
+    # a separate slot, but the primary anatomy viewer uses Z-Anatomy
+    # renders for uniform look + multi-angle support.
     try:
         ok = render_muscle(mid, config)
         if ok:

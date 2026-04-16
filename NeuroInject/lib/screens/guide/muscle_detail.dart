@@ -27,6 +27,9 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
   Muscle get muscle => widget.muscle;
   bool _procedureMode = false;
   final Set<int> _checkedSupplies = {};
+  /// Currently-selected anatomy view ('anterior', 'posterior', 'lateral').
+  /// Defaults to anterior; falls back to whichever view exists if anterior missing.
+  String _anatomyView = 'anterior';
 
   @override
   void initState() {
@@ -572,11 +575,22 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
   /// Guide — this is the "understand the target" block before the
   /// "execute the injection" block (probe placement + US needle shot).
   Widget _buildAnatomyReference(bool isDark) {
-    final hasImage = muscle.anatomyImages.isNotEmpty;
-    final imagePath = hasImage
-        ? 'assets/images/anatomy/${muscle.anatomyImages.first}'
+    final views = muscle.anatomyImages; // Map<String, String>
+    final hasImages = views.isNotEmpty;
+
+    // Resolve the currently-selected view (fall back to any available view
+    // if anterior isn't set)
+    String? activeView = _anatomyView;
+    if (hasImages && !views.containsKey(activeView)) {
+      activeView = views.keys.first;
+    }
+    final imagePath = hasImages
+        ? 'assets/images/anatomy/${views[activeView]}'
         : null;
-    final caption = muscle.anatomyCaption ?? '${muscle.name} — Anatomy';
+
+    // Auto-generate a per-view caption if none is provided in JSON
+    final caption = muscle.anatomyCaption
+        ?? '${_viewLabel(activeView)} view · ${muscle.name} highlighted';
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -589,12 +603,26 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
             fontSize: 10, fontWeight: FontWeight.w700,
             letterSpacing: 2.0, color: _groupColor)),
         ]),
-        const SizedBox(height: 12),
+        const SizedBox(height: 10),
+
+        // View-switcher chips (only shown if multiple views available)
+        if (views.length > 1) ...[
+          Row(children: [
+            for (final view in ['anterior', 'lateral', 'posterior'])
+              if (views.containsKey(view))
+                Padding(
+                  padding: const EdgeInsets.only(right: 8),
+                  child: _viewChip(view, isDark),
+                ),
+          ]),
+          const SizedBox(height: 10),
+        ],
 
         // The card itself — full-width, 220px tall, 16:10 intrinsic
         GestureDetector(
-          onTap: hasImage
-              ? () => _showFullImage(context, imagePath!, '${muscle.name} — Anatomy')
+          onTap: hasImages
+              ? () => _showFullImage(context, imagePath!,
+                  '${muscle.name} — ${_viewLabel(activeView!)}')
               : null,
           child: Container(
             width: double.infinity,
@@ -605,12 +633,19 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
               border: Border.all(color: _groupColor.withAlpha(60)),
             ),
             clipBehavior: Clip.antiAlias,
-            child: hasImage
+            child: hasImages
                 ? Stack(fit: StackFit.expand, children: [
                     // Letterbox tint to avoid harsh borders with BoxFit.contain
                     Container(color: _groupColor.withAlpha(8)),
-                    Image.asset(imagePath!, fit: BoxFit.contain,
-                        errorBuilder: (_, __, ___) => _anatomyPlaceholder(isDark)),
+                    AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 220),
+                      child: Image.asset(
+                        imagePath!,
+                        key: ValueKey(activeView),
+                        fit: BoxFit.contain,
+                        errorBuilder: (_, __, ___) => _anatomyPlaceholder(isDark),
+                      ),
+                    ),
                     // Caption overlay
                     Positioned(left: 0, right: 0, bottom: 0,
                       child: Container(
@@ -645,6 +680,42 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
           ),
         ),
       ],
+    );
+  }
+
+  String _viewLabel(String view) {
+    switch (view) {
+      case 'anterior': return 'Anterior';
+      case 'posterior': return 'Posterior';
+      case 'lateral': return 'Lateral';
+      case 'medial': return 'Medial';
+      default: return view[0].toUpperCase() + view.substring(1);
+    }
+  }
+
+  Widget _viewChip(String view, bool isDark) {
+    final active = _anatomyView == view ||
+        (!muscle.anatomyImages.containsKey(_anatomyView) &&
+         view == muscle.anatomyImages.keys.first);
+    return GestureDetector(
+      onTap: () => setState(() => _anatomyView = view),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 160),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        decoration: BoxDecoration(
+          color: active ? _groupColor.withAlpha(30) : Colors.transparent,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(
+            color: active
+                ? _groupColor.withAlpha(140)
+                : (isDark ? AppTheme.borderDark : AppTheme.borderLight),
+          ),
+        ),
+        child: Text(_viewLabel(view).toUpperCase(),
+          style: GoogleFonts.ibmPlexMono(
+            fontSize: 10, fontWeight: FontWeight.w700, letterSpacing: 1.4,
+            color: active ? _groupColor : AppTheme.textTertiary)),
+      ),
     );
   }
 

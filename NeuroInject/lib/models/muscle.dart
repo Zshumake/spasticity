@@ -13,9 +13,10 @@ class Muscle {
   final List<String> referenceImages;
   final List<String> probePlacementImages;
   final String? probePlacementHint;
-  /// Rendered anatomy reference images (bones + highlighted muscle).
-  /// Filename only; the app prepends 'assets/images/anatomy/' on render.
-  final List<String> anatomyImages;
+  /// Rendered anatomy reference images keyed by view name
+  /// ('anterior', 'posterior', 'lateral'). Filename only; the app
+  /// prepends 'assets/images/anatomy/' on render.
+  final Map<String, String> anatomyImages;
   /// Short caption shown as an overlay on the anatomy card.
   /// Example: "Anterior forearm · FCR highlighted"
   final String? anatomyCaption;
@@ -41,7 +42,7 @@ class Muscle {
     this.referenceImages = const [],
     this.probePlacementImages = const [],
     this.probePlacementHint,
-    this.anatomyImages = const [],
+    this.anatomyImages = const {},
     this.anatomyCaption,
     this.pearls = const [],
     this.supplies = const [],
@@ -75,9 +76,7 @@ class Muscle {
           ? (json['probePlacementImages'] as List).cast<String>()
           : const [],
       probePlacementHint: json['probePlacementHint'] as String?,
-      anatomyImages: json['anatomyImages'] != null
-          ? (json['anatomyImages'] as List).cast<String>()
-          : const [],
+      anatomyImages: _parseAnatomyImages(json['anatomyImages']),
       anatomyCaption: json['anatomyCaption'] as String?,
       pearls: json['pearls'] != null
           ? (json['pearls'] as List).cast<String>()
@@ -94,6 +93,20 @@ class Muscle {
           : const [],
       hasReferenceImage: json['hasReferenceImage'] as bool? ?? false,
     );
+  }
+
+  /// Parse anatomyImages: supports new Map<String,String> schema (keyed
+  /// by view name: 'anterior', 'posterior', 'lateral') and legacy
+  /// List<String> schema (treated as {'anterior': filename}).
+  static Map<String, String> _parseAnatomyImages(dynamic value) {
+    if (value == null) return const {};
+    if (value is Map) {
+      return Map<String, String>.from(value.cast<String, String>());
+    }
+    if (value is List && value.isNotEmpty) {
+      return {'anterior': value.first.toString()};
+    }
+    return const {};
   }
 
   /// Handles both legacy string format and new array format
