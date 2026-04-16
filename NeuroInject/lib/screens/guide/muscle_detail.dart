@@ -115,6 +115,8 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     final left = <Widget>[
       _section('BONY LANDMARKS', Icons.location_on_outlined, null,
         LandmarkList(landmarks: muscle.landmarks)),
+      const SizedBox(height: 16),
+      _buildAnatomyReference(isDark),
       if (muscle.ultrasound != null) ...[
         const SizedBox(height: 16),
         _buildUltrasoundCard(isDark),
@@ -562,6 +564,120 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     return InfoCard(title: title, icon: icon, iconColor: c, child: child);
   }
 
+  /// Full-width anatomy reference: rendered image showing the bones with
+  /// the target muscle highlighted. Sourced from Z-Anatomy (CC-BY-SA 4.0)
+  /// and Wikimedia Commons Anatomography (CC-BY-SA 2.1 JP).
+  ///
+  /// Placement in the study view: between Bony Landmarks and Ultrasound
+  /// Guide — this is the "understand the target" block before the
+  /// "execute the injection" block (probe placement + US needle shot).
+  Widget _buildAnatomyReference(bool isDark) {
+    final hasImage = muscle.anatomyImages.isNotEmpty;
+    final imagePath = hasImage
+        ? 'assets/images/anatomy/${muscle.anatomyImages.first}'
+        : null;
+    final caption = muscle.anatomyCaption ?? '${muscle.name} — Anatomy';
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Section header (group-colored for regional continuity)
+        Row(children: [
+          Container(width: 24, height: 2, color: _groupColor),
+          const SizedBox(width: 10),
+          Text('ANATOMY REFERENCE', style: GoogleFonts.ibmPlexMono(
+            fontSize: 10, fontWeight: FontWeight.w700,
+            letterSpacing: 2.0, color: _groupColor)),
+        ]),
+        const SizedBox(height: 12),
+
+        // The card itself — full-width, 220px tall, 16:10 intrinsic
+        GestureDetector(
+          onTap: hasImage
+              ? () => _showFullImage(context, imagePath!, '${muscle.name} — Anatomy')
+              : null,
+          child: Container(
+            width: double.infinity,
+            height: 220,
+            decoration: BoxDecoration(
+              color: isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight,
+              borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+              border: Border.all(color: _groupColor.withAlpha(60)),
+            ),
+            clipBehavior: Clip.antiAlias,
+            child: hasImage
+                ? Stack(fit: StackFit.expand, children: [
+                    // Letterbox tint to avoid harsh borders with BoxFit.contain
+                    Container(color: _groupColor.withAlpha(8)),
+                    Image.asset(imagePath!, fit: BoxFit.contain,
+                        errorBuilder: (_, __, ___) => _anatomyPlaceholder(isDark)),
+                    // Caption overlay
+                    Positioned(left: 0, right: 0, bottom: 0,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 12, vertical: 8),
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter, end: Alignment.bottomCenter,
+                            colors: [Colors.transparent, Colors.black.withAlpha(170)],
+                          ),
+                        ),
+                        child: Text(caption.toUpperCase(),
+                          style: GoogleFonts.ibmPlexMono(
+                            fontSize: 10, fontWeight: FontWeight.w600,
+                            color: Colors.white.withAlpha(220),
+                            letterSpacing: 0.8)),
+                      ),
+                    ),
+                    // Tap-to-enlarge hint
+                    Positioned(top: 8, right: 8,
+                      child: Container(
+                        padding: const EdgeInsets.all(4),
+                        decoration: BoxDecoration(
+                          color: Colors.black.withAlpha(120),
+                          borderRadius: BorderRadius.circular(4)),
+                        child: const Icon(Icons.zoom_in,
+                            size: 14, color: Colors.white70),
+                      ),
+                    ),
+                  ])
+                : _anatomyPlaceholder(isDark),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _anatomyPlaceholder(bool isDark) {
+    return Padding(
+      padding: const EdgeInsets.all(14),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            width: 56, height: 56,
+            decoration: BoxDecoration(
+              color: _groupColor.withAlpha(20),
+              borderRadius: BorderRadius.circular(AppTheme.radiusMd)),
+            child: Icon(Icons.view_in_ar_outlined,
+                color: _groupColor.withAlpha(140), size: 28),
+          ),
+          const SizedBox(height: 12),
+          Text('ANATOMY COMING SOON', style: GoogleFonts.ibmPlexMono(
+            fontSize: 10, fontWeight: FontWeight.w700,
+            letterSpacing: 2.0, color: _groupColor.withAlpha(200))),
+          const SizedBox(height: 6),
+          Text('3D anatomy reference from Z-Anatomy',
+            textAlign: TextAlign.center,
+            style: GoogleFonts.sourceSans3(
+              fontSize: 11, height: 1.4,
+              color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight)),
+        ],
+      ),
+    );
+  }
+
   /// Two side-by-side image slots:
   ///   1. Probe placement + needle insertion site (surface photo)
   ///   2. Ultrasound image with needle visible in muscle
@@ -787,7 +903,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     Navigator.of(context).push(MaterialPageRoute(builder: (_) => Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(backgroundColor: Colors.black,
-        title: Text('${muscle.name} — US View', style: const TextStyle(fontSize: 16))),
+        title: Text(title, style: const TextStyle(fontSize: 16))),
       body: InteractiveViewer(minScale: 0.5, maxScale: 5.0,
         child: Center(child: Image.asset(path, fit: BoxFit.contain,
           errorBuilder: (_, __, ___) => const Center(

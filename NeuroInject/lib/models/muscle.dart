@@ -13,6 +13,12 @@ class Muscle {
   final List<String> referenceImages;
   final List<String> probePlacementImages;
   final String? probePlacementHint;
+  /// Rendered anatomy reference images (bones + highlighted muscle).
+  /// Filename only; the app prepends 'assets/images/anatomy/' on render.
+  final List<String> anatomyImages;
+  /// Short caption shown as an overlay on the anatomy card.
+  /// Example: "Anterior forearm · FCR highlighted"
+  final String? anatomyCaption;
   final List<String> pearls;
   final List<String> supplies;
   final String? videoUrl;
@@ -35,6 +41,8 @@ class Muscle {
     this.referenceImages = const [],
     this.probePlacementImages = const [],
     this.probePlacementHint,
+    this.anatomyImages = const [],
+    this.anatomyCaption,
     this.pearls = const [],
     this.supplies = const [],
     this.videoUrl,
@@ -67,6 +75,10 @@ class Muscle {
           ? (json['probePlacementImages'] as List).cast<String>()
           : const [],
       probePlacementHint: json['probePlacementHint'] as String?,
+      anatomyImages: json['anatomyImages'] != null
+          ? (json['anatomyImages'] as List).cast<String>()
+          : const [],
+      anatomyCaption: json['anatomyCaption'] as String?,
       pearls: json['pearls'] != null
           ? (json['pearls'] as List).cast<String>()
           : const [],

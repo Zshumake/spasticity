@@ -71,6 +71,7 @@ flutter:
     - assets/data/patterns.json
     - assets/images/us_reference/
     - assets/images/probe_placement/
+    - assets/images/anatomy/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
