@@ -1,0 +1,1244 @@
+(Canal for vertebral artery).j
+(External occipital crest).j
+(Internal occipital crest).j
+(Mandibular symphysis).j
+(Middle clinoid process).j
+(Posterior obturator tubercle).i
+(Posterior obturator tubercle).j
+(Supra-orbital notch).j
+(Third trochanter).i
+(Third trochanter).j
+(Vermian fossa).j
+Acetabular fossa.i
+Acetabular fossa.j
+Acetabular margin.i
+Acetabular margin.j
+Acetabular notch.i
+Acetabular notch.j
+Acetabulum.i
+Acetabulum.j
+Acromial angle.i
+Acromial angle.j
+Acromial end.i
+Acromial end.j
+Acromial facet.i
+Acromial facet.j
+Acromion.i
+Acromion.j
+Adductor tubercle.i
+Adductor tubercle.j
+Ala of ilium.i
+Ala of ilium.j
+Ala of sacrum.j
+Anatomical neck of humerus.i
+Anatomical neck of humerus.j
+Angle of rib.i
+Angle of rib.j
+Annular epiphysis.j
+Anterior arch of atlas.j
+Anterior articular facet of dens axis.j
+Anterior border of fibula.i
+Anterior border of fibula.j
+Anterior border of humerus.i
+Anterior border of humerus.j
+Anterior border of radius.i
+Anterior border of radius.j
+Anterior border of tibia.i
+Anterior border of tibia.j
+Anterior border of ulna.i
+Anterior border of ulna.j
+Anterior cells of ethmoid bone.l
+Anterior cells of ethmoid bone.r
+Anterior clinoid process.j
+Anterior gluteal line.i
+Anterior gluteal line.j
+Anterior inferior iliac spine.i
+Anterior inferior iliac spine.j
+Anterior intercondylar area.i
+Anterior intercondylar area.j
+Anterior limb of stapes.i
+Anterior limb of stapes.j
+Anterior obturator tubercle.i
+Anterior obturator tubercle.j
+Anterior process of calcaneus.i
+Anterior process of calcaneus.j
+Anterior process of malleus.i
+Anterior process of malleus.j
+Anterior sacral foramina.j
+Anterior superior iliac spine.i
+Anterior superior iliac spine.j
+Anterior surface of petrous part.i
+Anterior surface of petrous part.j
+Anterior surface of radius.i
+Anterior surface of radius.j
+Anterior tubercle of atlas.j
+Anterior tubercle of transverse process.j
+Anterolateral surface of arytenoid cartilage.i
+Anterolateral surface of arytenoid cartilage.j
+Anterolateral surface of humerus.i
+Anterolateral surface of humerus.j
+Anteromedial surface of fibula.i
+Anteromedial surface of fibula.j
+Anteromedial surface of humerus.i
+Anteromedial surface of humerus.j
+Apex of arytenoid cartilage.i
+Apex of arytenoid cartilage.j
+Apex of coccyx.j
+Apex of dens axis.j
+Apex of head of fibula.i
+Apex of head of fibula.j
+Apex of petrous part.i
+Apex of petrous part.j
+Apex of sacrum.j
+Appendicular skeleton.j
+Arch of cricoid cartilage.j
+Arcuate crest.i
+Arcuate crest.j
+Arcuate eminence.i
+Arcuate eminence.j
+Arcuate line of ilium.i
+Arcuate line of ilium.j
+Articular circumference of head of radius.i
+Articular circumference of head of radius.j
+Articular circumference of head of ulna.i
+Articular circumference of head of ulna.j
+Articular facet for malleus.i
+Articular facet for malleus.j
+Articular facet for stapes.i
+Articular facet for stapes.j
+Articular facet of head of fibula.i
+Articular facet of head of fibula.j
+Articular facet of head of malleus.i
+Articular facet of head of malleus.j
+Articular facet of head of radius.i
+Articular facet of head of radius.j
+Articular facet of head of stapes.i
+Articular facet of head of stapes.j
+Articular facet of lateral malleolus.i
+Articular facet of lateral malleolus.j
+Articular facet of medial malleolus.i
+Articular facet of medial malleolus.j
+Articular facet of tubercle of rib.i
+Articular facet of tubercle of rib.j
+Articular facets of head of rib.i
+Articular facets of head of rib.j
+Articular surface for cuboid.i
+Articular surface for cuboid.j
+Articular surface of arytenoid cartilage.i
+Articular surface of arytenoid cartilage.j
+Articular surface of medial condyle.i
+Articular surface of medial condyle.j
+Arytenoid articular surface.j
+Arytenoid cartilage.l
+Arytenoid cartilage.r
+Atlas (C1)
+Atlas.j
+Auditory ossicles.j
+Auricular surface of ilium.i
+Auricular surface of ilium.j
+Auricular surface of sacrum.j
+Axial skeleton.j
+Axis (C2)
+Axis (C2).j
+Base of arytenoid cartilage.i
+Base of arytenoid cartilage.j
+Base of coccyx.j
+Base of mandible.j
+Base of metatarsal bone.i
+Base of metatarsal bone.j
+Base of phalanx of foot.i
+Base of phalanx of foot.j
+Base of phalanx of hand.i
+Base of phalanx of hand.j
+Base of sacrum.j
+Base of stapes.i
+Base of stapes.j
+Basilar part of occipital bone.j
+Body of clavicle.i
+Body of clavicle.j
+Body of femur.i
+Body of femur.j
+Body of fibula.i
+Body of fibula.j
+Body of humerus.i
+Body of humerus.j
+Body of hyoid bone.j
+Body of ilium.i
+Body of ilium.j
+Body of incus.i
+Body of incus.j
+Body of ischium.i
+Body of ischium.j
+Body of mandible.j
+Body of metacarpal bone.i
+Body of metacarpal bone.j
+Body of metatarsal bone.i
+Body of metatarsal bone.j
+Body of phalanx of foot.i
+Body of phalanx of foot.j
+Body of phalanx of hand.i
+Body of phalanx of hand.j
+Body of pubis.i
+Body of pubis.j
+Body of radius.i
+Body of radius.j
+Body of rib.i
+Body of rib.j
+Body of sphenoid bone.j
+Body of sternum
+Body of talus.i
+Body of talus.j
+Body of tibia.i
+Body of tibia.j
+Body of ulna.i
+Body of ulna.j
+Bones of cranium.j
+Bones of foot.j
+Bones of free part of lower limb.j
+Bones of free part of upper limb.j
+Bones of hand.j
+Bones of lower limb.j
+Bones of pectoral girdle.j
+Bones of pelvic girdle.j
+Bones of thorax.j
+Bones of upper limb.j
+Bones of vertebral column.j
+Bony pelvis.j
+Calcaneal sulcus.i
+Calcaneal sulcus.j
+Calcaneal tubercle.i
+Calcaneal tubercle.j
+Calcaneal tuberosity.i
+Calcaneal tuberosity.j
+Calcaneus.l
+Calcaneus.r
+Capitate bone.l
+Capitate bone.r
+Capitulum of humerus.i
+Capitulum of humerus.j
+Carotid sulcus.j
+Carpal articular surface.i
+Carpal articular surface.j
+Carpal bones.j
+Cartilages of ear.j
+Cerebellar fossa.j
+Cerebral fossa.j
+Cerebral surface of greater wing.j
+Cervical vertebra.j
+Cervical vertebrae.j
+Chiasmatic sulcus.j
+Clavicle.l
+Clavicle.r
+Clavicular facet.i
+Clavicular facet.j
+Clavicular notch.j
+Coccygeal horn.j
+Coccyx
+Coccyx.j
+Colliculus of arytenoid cartilage.i
+Colliculus of arytenoid cartilage.j
+Condylar canal.j
+Condylar fossa.j
+Condyle of humerus.i
+Condyle of humerus.j
+Conoid tubercle.i
+Conoid tubercle.j
+Coracoid process.i
+Coracoid process.j
+Corniculate cartilage.l
+Corniculate cartilage.r
+Coronoid fossa.i
+Coronoid fossa.j
+Coronoid process of ulna.i
+Coronoid process of ulna.j
+Costal arch.j
+Costal cartilage of eighth rib.l
+Costal cartilage of eighth rib.r
+Costal cartilage of fifth rib.l
+Costal cartilage of fifth rib.r
+Costal cartilage of first rib.l
+Costal cartilage of first rib.r
+Costal cartilage of fourth rib.l
+Costal cartilage of fourth rib.r
+Costal cartilage of ninth rib.l
+Costal cartilage of ninth rib.r
+Costal cartilage of second rib.l
+Costal cartilage of second rib.r
+Costal cartilage of seventh rib.l
+Costal cartilage of seventh rib.r
+Costal cartilage of sixth rib.l
+Costal cartilage of sixth rib.r
+Costal cartilage of tenth rib.l
+Costal cartilage of tenth rib.r
+Costal cartilage of third rib.l
+Costal cartilage of third rib.r
+Costal cartilages.j
+Costal groove.i
+Costal groove.j
+Costal notches.j
+Costal part of transverse process.j
+Costal surface of scapula.i
+Costal surface of scapula.j
+Cranium.j
+Crest of greater tubercle.i
+Crest of greater tubercle.j
+Crest of head of rib.i
+Crest of head of rib.j
+Crest of lesser tubercle.i
+Crest of lesser tubercle.j
+Crest of neck of rib.i
+Crest of neck of rib.j
+Cricoid cartilage
+Crown of tooth.i
+Crown of tooth.j
+Cruciform eminence.j
+Cuboid bone.l
+Cuboid bone.r
+Cusp of tooth.i
+Cusp of tooth.j
+Deltoid tubercle.i
+Deltoid tubercle.j
+Deltoid tuberosity.i
+Deltoid tuberosity.j
+Dens axis.j
+Digastric fossa.j
+Distal phalanx of fifth finger of foot.l
+Distal phalanx of fifth finger of foot.r
+Distal phalanx of fifth finger of hand.l
+Distal phalanx of fifth finger of hand.r
+Distal phalanx of first finger of foot.l
+Distal phalanx of first finger of foot.r
+Distal phalanx of first finger of hand.l
+Distal phalanx of first finger of hand.r
+Distal phalanx of fourth finger of foot.l
+Distal phalanx of fourth finger of foot.r
+Distal phalanx of fourth finger of hand.l
+Distal phalanx of fourth finger of hand.r
+Distal phalanx of second finger of foot.l
+Distal phalanx of second finger of foot.r
+Distal phalanx of second finger of hand.l
+Distal phalanx of second finger of hand.r
+Distal phalanx of third finger of foot.l
+Distal phalanx of third finger of foot.r
+Distal phalanx of third finger of hand.l
+Distal phalanx of third finger of hand.r
+Distal surface of tooth.i
+Distal surface of tooth.j
+Dorsal radial tubercle.i
+Dorsal radial tubercle.j
+Dorsal surface of sacrum.j
+Dorsum sellae.j
+Eighth rib.l
+Eighth rib.r
+Eleventh rib.l
+Eleventh rib.r
+Ethmoid bone
+Ethmoidal notch.j
+External occipital protuberance.j
+External surface of frontal bone.j
+External surface of parietal bone.j
+Extracranial bones of head.j
+Facet for calcaneonavicular part of bifurcate ligament.i
+Facet for calcaneonavicular part of bifurcate ligament.j
+Facet for dens.j
+Facet for plantar calcaneonavicular ligament.i
+Facet for plantar calcaneonavicular ligament.j
+Facial bones.j
+False ribs.j
+Femur.i
+Femur.j
+Femur.l
+Femur.r
+Fibula.i
+Fibula.j
+Fibula.l
+Fibula.r
+Fibular articular facet.i
+Fibular articular facet.j
+Fibular notch.i
+Fibular notch.j
+Fifth metacarpal bone.l
+Fifth metacarpal bone.r
+Fifth metatarsal bone.i
+Fifth metatarsal bone.j
+Fifth metatarsal bone.l
+Fifth metatarsal bone.r
+Fifth rib.l
+Fifth rib.r
+First metacarpal bone.l
+First metacarpal bone.r
+First metatarsal bone.i
+First metatarsal bone.j
+First metatarsal bone.l
+First metatarsal bone.r
+First rib.l
+First rib.r
+Floating ribs.j
+Foramen caecum of frontal bone.j
+Foramen magnum.j
+Foramen ovale.j
+Foramen rotundum.j
+Foramen spinosum.j
+Foramen transversarium.j
+Fossa for lacrimal gland.j
+Fourth metacarpal bone.l
+Fourth metacarpal bone.r
+Fourth metatarsal bone.l
+Fourth metatarsal bone.r
+Fourth rib.l
+Fourth rib.r
+Fovea for ligament of head of femur.i
+Fovea for ligament of head of femur.j
+Frontal angle of parietal bone.j
+Frontal bone
+Frontal border of parietal bone.j
+Frontal crest.j
+Frontal eminence.j
+Frontal margin of greater wing.j
+Frontal part of orbital margin.j
+Genion.j
+Glabella.j
+Glenoid fossa.i
+Glenoid fossa.j
+Glenoid process of scapula.i
+Glenoid process of scapula.j
+Gluteal surface of ilium.i
+Gluteal surface of ilium.j
+Gluteal tuberosity.i
+Gluteal tuberosity.j
+Gnathion.j
+Greater horn of hyoid bone.j
+Greater sciatic foramen.i
+Greater sciatic foramen.j
+Greater sciatic notch.i
+Greater sciatic notch.j
+Greater trochanter.i
+Greater trochanter.j
+Greater tubercle.i
+Greater tubercle.j
+Greater wing.j
+Groove for marginal sinus.j
+Groove for middle meningeal artery.j
+Groove for occipital sinus.j
+Groove for popliteus muscle.i
+Groove for popliteus muscle.j
+Groove for spinal nerve.j
+Groove for subclavius muscle.i
+Groove for subclavius muscle.j
+Groove for tendon of fibularis longus muscle of cuboid bone.i
+Groove for tendon of fibularis longus muscle of cuboid bone.j
+Groove for tendon of flexor hallucis longus of calcaneus.i
+Groove for tendon of flexor hallucis longus of calcaneus.j
+Groove for tendon of flexor hallucis longus of talus.i
+Groove for tendon of flexor hallucis longus of talus.j
+Groove for transverse sinus.j
+Groove for ulnar nerve.i
+Groove for ulnar nerve.j
+Groove for vertebral artery.j
+Groove of pterygoid hamulus.j
+Grooves for extensor tendons.i
+Grooves for extensor tendons.j
+Hamate bone.l
+Hamate bone.r
+Handle of malleus.i
+Handle of malleus.j
+Head of femur.i
+Head of femur.j
+Head of fibula.i
+Head of fibula.j
+Head of humerus.i
+Head of humerus.j
+Head of malleus.i
+Head of malleus.j
+Head of metacarpal bone.i
+Head of metacarpal bone.j
+Head of metatarsal bone.i
+Head of metatarsal bone.j
+Head of phalanx of foot.i
+Head of phalanx of foot.j
+Head of phalanx of hand.i
+Head of phalanx of hand.j
+Head of radius.i
+Head of radius.j
+Head of rib.i
+Head of rib.j
+Head of talus.i
+Head of talus.j
+Head of ulna.i
+Head of ulna.j
+Hip bone.i
+Hip bone.j
+Hip bone.l
+Hip bone.r
+Hook of hamate bone.i
+Hook of hamate bone.j
+Humerus.i
+Humerus.j
+Humerus.l
+Humerus.r
+Hyoid bone
+Hypoglossal canal.j
+Hypophysial fossa.j
+Iliac crest.i
+Iliac crest.j
+Iliac fossa.i
+Iliac fossa.j
+Iliac tubercle.i
+Iliac tubercle.j
+Iliac tuberosity.i
+Iliac tuberosity.j
+Iliopubic eminence.i
+Iliopubic eminence.j
+Ilium.i
+Ilium.j
+Impression for costoclavicular ligament.i
+Impression for costoclavicular ligament.j
+Incus.l
+Incus.r
+Inferior angle of scapula.i
+Inferior angle of scapula.j
+Inferior articular facet of vertebra.j
+Inferior articular surface of atlas.j
+Inferior articular surface of tibia.i
+Inferior articular surface of tibia.j
+Inferior costal facet.j
+Inferior gluteal line.i
+Inferior gluteal line.j
+Inferior horn of thyroid cartilage.j
+Inferior mental spine.j
+Inferior nasal concha bone.l
+Inferior nasal concha bone.r
+Inferior nuchal line.j
+Inferior pubic ramus.i
+Inferior pubic ramus.j
+Inferior temporal line.j
+Inferior thoracic aperture.j
+Inferior thyroid notch.j
+Inferior thyroid tubercle.j
+Inferior vertebral notch.j
+Infraglenoid tubercle.i
+Infraglenoid tubercle.j
+Infraspinous fossa.i
+Infraspinous fossa.j
+Infrasternal angle.j
+Infratemporal surface of greater wing.j
+Inner lip of iliac crest.i
+Inner lip of iliac crest.j
+Intercondylar area.i
+Intercondylar area.j
+Intercondylar eminence.i
+Intercondylar eminence.j
+Intercondylar fossa.i
+Intercondylar fossa.j
+Intercondylar line.i
+Intercondylar line.j
+Intercostal space.j
+Intermediate cuneiform bone.l
+Intermediate cuneiform bone.r
+Intermediate sacral crest.j
+Intermediate zone.i
+Intermediate zone.j
+Internal occipital protuberance.j
+Internal surface of parietal bone.j
+Internal surface of squamous part of frontal bone.j
+Interosseous border of radius.i
+Interosseous border of radius.j
+Interosseous border of tibia.i
+Interosseous border of tibia.j
+Interosseous border of ulna.i
+Interosseous border of ulna.j
+Interosseous crest of fibula.i
+Interosseous crest of fibula.j
+Intertrochanteric crest.i
+Intertrochanteric crest.j
+Intertrochanteric line.i
+Intertrochanteric line.j
+Intertubercular sulcus.i
+Intertubercular sulcus.j
+Intervertebral foramen.j
+Intervertebral foramina.j
+Intervertebral surface.j
+Intrajugular process of occipital bone.j
+Ischial spine.i
+Ischial spine.j
+Ischial tuberosity.i
+Ischial tuberosity.j
+Ischiopubic ramus.i
+Ischiopubic ramus.j
+Ischium.i
+Ischium.j
+Jugular notch of occipital bone.j
+Jugular process.j
+Lacrimal bone.l
+Lacrimal bone.r
+Lamina of cricoid cartilage.j
+Lamina of thyroid cartilage.j
+Lamina of vertebral arch.j
+Laryngeal cartilages.j
+Laryngeal prominence.j
+Lateral angle of scapula.i
+Lateral angle of scapula.j
+Lateral border of humerus.i
+Lateral border of humerus.j
+Lateral border of scapula.i
+Lateral border of scapula.j
+Lateral condyle of femur.i
+Lateral condyle of femur.j
+Lateral condyle of tibia.i
+Lateral condyle of tibia.j
+Lateral cuneiform bone.l
+Lateral cuneiform bone.r
+Lateral epicondyle of femur.i
+Lateral epicondyle of femur.j
+Lateral epicondyle of humerus.i
+Lateral epicondyle of humerus.j
+Lateral intercondylar tubercle.i
+Lateral intercondylar tubercle.j
+Lateral lip of linea apera.i
+Lateral lip of linea apera.j
+Lateral malleolar facet.i
+Lateral malleolar facet.j
+Lateral malleolus.i
+Lateral malleolus.j
+Lateral mass.j
+Lateral part of occipital bone.j
+Lateral part of sacrum.j
+Lateral part of transverse process.j
+Lateral process of calcaneal tuberosity.i
+Lateral process of calcaneal tuberosity.j
+Lateral process of malleus.i
+Lateral process of malleus.j
+Lateral process of nasal septal cartilage.l
+Lateral process of nasal septal cartilage.r
+Lateral process of talus.i
+Lateral process of talus.j
+Lateral pterygoid plate.j
+Lateral sacral crest.j
+Lateral supracondylar line.i
+Lateral supracondylar line.j
+Lateral supracondylar ridge.i
+Lateral supracondylar ridge.j
+Lateral surface of fibula.i
+Lateral surface of fibula.j
+Lateral surface of radius.i
+Lateral surface of radius.j
+Lateral surface of tibia.i
+Lateral surface of tibia.j
+Lateral tubercle.i
+Lateral tubercle.j
+Lenticular process of incus.i
+Lenticular process of incus.j
+Lesser horn of hyoid bone.j
+Lesser sciatic foramen.i
+Lesser sciatic foramen.j
+Lesser sciatic notch.i
+Lesser sciatic notch.j
+Lesser trochanter.i
+Lesser trochanter.j
+Lesser tubercle.i
+Lesser tubercle.j
+Lesser wing.j
+Limbus of sphenoid.j
+Linea aspera.i
+Linea aspera.j
+Linea terminalis.j
+Lingual surface of tooth.i
+Lingual surface of tooth.j
+Long limb of incus.i
+Long limb of incus.j
+Lower canine.l
+Lower canine.r
+Lower first molar tooth.l
+Lower first molar tooth.r
+Lower first premolar.l
+Lower first premolar.r
+Lower lateral incisor.l
+Lower lateral incisor.r
+Lower medial incisor.l
+Lower medial incisor.r
+Lower second molar tooth.l
+Lower second molar tooth.r
+Lower second premolar.l
+Lower second premolar.r
+Lumbar vertebrae.j
+Lunate bone.l
+Lunate bone.r
+Lunate surface.i
+Lunate surface.j
+Major alar cartilage.l
+Major alar cartilage.r
+Malleolar fossa.i
+Malleolar fossa.j
+Malleolar groove of fibula.i
+Malleolar groove of fibula.j
+Malleolar groove of tibia.i
+Malleolar groove of tibia.j
+Malleus.l
+Malleus.r
+Mandible
+Mandibular dental arch.j
+Manubrium of sternum
+Manubrium of sternum.j
+Mastoid angle of parietal bone.j
+Mastoid border of occipital bone.j
+Mastoid notch.i
+Mastoid notch.j
+Mastoid process.i
+Mastoid process.j
+Maxilla.l
+Maxilla.r
+Maxillary dental arch.i
+Maxillary dental arch.j
+Maxillary surface of greater wing.j
+Medial border of fibula.i
+Medial border of fibula.j
+Medial border of humerus.i
+Medial border of humerus.j
+Medial border of scapula.i
+Medial border of scapula.j
+Medial border of tibia.i
+Medial border of tibia.j
+Medial condyle of femur.i
+Medial condyle of femur.j
+Medial condyle of tibia.i
+Medial condyle of tibia.j
+Medial cuneiform bone.l
+Medial cuneiform bone.r
+Medial epicondyle of femur.i
+Medial epicondyle of femur.j
+Medial epicondyle of humerus.i
+Medial epicondyle of humerus.j
+Medial intercondylar tubercle.i
+Medial intercondylar tubercle.j
+Medial lip of linea apera.i
+Medial lip of linea apera.j
+Medial malleolar facet.i
+Medial malleolar facet.j
+Medial malleolus.i
+Medial malleolus.j
+Medial process of calcaneal tuberosity.i
+Medial process of calcaneal tuberosity.j
+Medial pterygoid plate.j
+Medial supracondylar line.i
+Medial supracondylar line.j
+Medial supracondylar ridge.i
+Medial supracondylar ridge.j
+Medial surface of arytenoid cartilage.i
+Medial surface of arytenoid cartilage.j
+Medial surface of fibula.i
+Medial surface of fibula.j
+Medial surface of tibia.i
+Medial surface of tibia.j
+Medial surface of ulna.i
+Medial surface of ulna.j
+Medial tubercle.i
+Medial tubercle.j
+Median sacral crest.j
+Mental foramen.j
+Mental protuberance.j
+Mental tubercle.j
+Mesial surface of tooth.i
+Mesial surface of tooth.j
+Metacarpal base.i
+Metacarpal base.j
+Metacarpal bones.j
+Metatarsal bones.j
+Middle cells of ethmoid bone.l
+Middle cells of ethmoid bone.r
+Middle facet for calcaneus.i
+Middle facet for calcaneus.j
+Middle phalanx of fifth finger of foot.l
+Middle phalanx of fifth finger of foot.r
+Middle phalanx of fifth finger of hand.l
+Middle phalanx of fifth finger of hand.r
+Middle phalanx of fourth finger of foot.l
+Middle phalanx of fourth finger of foot.r
+Middle phalanx of fourth finger of hand.l
+Middle phalanx of fourth finger of hand.r
+Middle phalanx of second finger of foot.l
+Middle phalanx of second finger of foot.r
+Middle phalanx of second finger of hand.l
+Middle phalanx of second finger of hand.r
+Middle phalanx of third finger of foot.l
+Middle phalanx of third finger of foot.r
+Middle phalanx of third finger of hand.l
+Middle phalanx of third finger of hand.r
+Muscular process.i
+Muscular process.j
+Mylohyoid line.j
+Nasal bone.l
+Nasal bone.r
+Nasal cartilages.j
+Nasal margin of frontal bone.j
+Nasal part of frontal bone.j
+Nasal septal cartilage
+Nasal spine of frontal bone.j
+Navicular articular surface.i
+Navicular articular surface.j
+Navicular bone.l
+Navicular bone.r
+Neck of femur.i
+Neck of femur.j
+Neck of fibula.i
+Neck of fibula.j
+Neck of malleus.i
+Neck of malleus.j
+Neck of radius.i
+Neck of radius.j
+Neck of rib.i
+Neck of rib.j
+Neck of scapula.i
+Neck of scapula.j
+Neck of talus.i
+Neck of talus.j
+Neck of tooth.i
+Neck of tooth.j
+Neurocranium.j
+Ninth rib.l
+Ninth rib.r
+Oblique line of mandible.j
+Oblique line of thyroid cartilage.j
+Oblong fovea.i
+Oblong fovea.j
+Obturator crest.i
+Obturator crest.j
+Obturator foramen.i
+Obturator foramen.j
+Obturator groove.i
+Obturator groove.j
+Occipital angle of parietal bone.j
+Occipital bone
+Occipital border of parietal bone.j
+Occipital condyle.j
+Occipital margin of temporal bone.i
+Occipital margin of temporal bone.j
+Occipital plane.j
+Occlusal surface of tooth.i
+Occlusal surface of tooth.j
+Olecranon fossa.i
+Olecranon fossa.j
+Olecranon.i
+Olecranon.j
+Opening of frontal sinus.j
+Optic canal.j
+Orbital part of frontal bone.j
+Orbital plate of frontal bone.j
+Orbital surface of frontal bone.j
+Orbital surface of greater wing.j
+Outer lip of iliac crest.i
+Outer lip of iliac crest.j
+Palatine bone.l
+Palatine bone.r
+Parietal bone.l
+Parietal bone.r
+Parietal eminence.j
+Parietal foramen.j
+Parietal margin of frontal bone.j
+Parietal margin of greater wing.j
+Pars interarticularis of vertebral arch.j
+Patella.l
+Patella.r
+Patellar surface of femur.i
+Patellar surface of femur.j
+Pecten pubis.i
+Pecten pubis.j
+Pectineal line of femur.i
+Pectineal line of femur.j
+Pectoral girdle.j
+Pedicle of vertebral arch.j
+Pelvic girdle.j
+Pelvic inlet.j
+Pelvic outlet.j
+Pelvic surface of sacrum.j
+Petrous part of temporal bone.i
+Petrous part of temporal bone.j
+Phalanges of foot.j
+Phalanges of hand.j
+Pharyngeal tubercle.j
+Pisiform bone.l
+Pisiform bone.r
+Popliteal surface of femur.i
+Popliteal surface of femur.j
+Posterior arch of atlas.j
+Posterior articular facet of dens axis.j
+Posterior border of fibula.i
+Posterior border of fibula.j
+Posterior border of radius.i
+Posterior border of radius.j
+Posterior border of ulna.i
+Posterior border of ulna.j
+Posterior calcaneal articular facet.i
+Posterior calcaneal articular facet.j
+Posterior cells of ethmoid bone.l
+Posterior cells of ethmoid bone.r
+Posterior clinoid process.j
+Posterior gluteal line.i
+Posterior gluteal line.j
+Posterior inferior iliac spine.i
+Posterior inferior iliac spine.j
+Posterior intercondylar area.i
+Posterior intercondylar area.j
+Posterior limb of stapes.i
+Posterior limb of stapes.j
+Posterior malleolus.i
+Posterior malleolus.j
+Posterior process of talus.i
+Posterior process of talus.j
+Posterior sacral foramina.j
+Posterior superior iliac spine.i
+Posterior superior iliac spine.j
+Posterior surface of arytenoid cartilage.i
+Posterior surface of arytenoid cartilage.j
+Posterior surface of fibula.i
+Posterior surface of fibula.j
+Posterior surface of humerus.i
+Posterior surface of humerus.j
+Posterior surface of petrous part.i
+Posterior surface of petrous part.j
+Posterior surface of radius.i
+Posterior surface of radius.j
+Posterior surface of scapula.i
+Posterior surface of scapula.j
+Posterior surface of tibia.i
+Posterior surface of tibia.j
+Posterior surface of ulna.i
+Posterior surface of ulna.j
+Posterior tubercle of atlas.j
+Posterior tubercle of transverse process.j
+Posteromedial surface of fibula.i
+Posteromedial surface of fibula.j
+Promontory.j
+Pronator tuberosity.i
+Pronator tuberosity.j
+Proximal phalanx of fifth finger of foot.l
+Proximal phalanx of fifth finger of foot.r
+Proximal phalanx of fifth finger of hand.l
+Proximal phalanx of fifth finger of hand.r
+Proximal phalanx of first finger of foot.l
+Proximal phalanx of first finger of foot.r
+Proximal phalanx of first finger of hand.l
+Proximal phalanx of first finger of hand.r
+Proximal phalanx of fourth finger of foot.l
+Proximal phalanx of fourth finger of foot.r
+Proximal phalanx of fourth finger of hand.l
+Proximal phalanx of fourth finger of hand.r
+Proximal phalanx of second finger of foot.l
+Proximal phalanx of second finger of foot.r
+Proximal phalanx of second finger of hand.l
+Proximal phalanx of second finger of hand.r
+Proximal phalanx of third finger of foot.l
+Proximal phalanx of third finger of foot.r
+Proximal phalanx of third finger of hand.l
+Proximal phalanx of third finger of hand.r
+Pterygoid canal.j
+Pterygoid fossa.j
+Pterygoid hamulus.j
+Pterygoid notch.j
+Pterygoid process .j
+Pterygospinous process.j
+Pubic crest.i
+Pubic crest.j
+Pubic tubercle.i
+Pubic tubercle.j
+Pubis.i
+Pubis.j
+Quadrate tubercle.i
+Quadrate tubercle.j
+Radial fossa.i
+Radial fossa.j
+Radial groove.i
+Radial groove.j
+Radial notch.i
+Radial notch.j
+Radial styloid process.i
+Radial styloid process.j
+Radial tuberosity.i
+Radial tuberosity.j
+Radius.i
+Radius.j
+Radius.l
+Radius.r
+Ramus of ischium.i
+Ramus of ischium.j
+Rib.i
+Rib.j
+Ribs.j
+Root apex.i
+Root apex.j
+Root of tooth.i
+Root of tooth.j
+Sacral canal.j
+Sacral hiatus.j
+Sacral horn.j
+Sacral tuberosity.j
+Sacropelvic surface of ilium.i
+Sacropelvic surface of ilium.j
+Sacrum
+Sacrum.j
+Sagittal border of parietal bone.j
+Scaphoid bone.l
+Scaphoid bone.r
+Scaphoid fossa.j
+Scapula.i
+Scapula.j
+Scapula.l
+Scapula.r
+Scapular notch.i
+Scapular notch.j
+Second metacarpal bone.l
+Second metacarpal bone.r
+Second metatarsal bone.l
+Second metatarsal bone.r
+Second rib.l
+Second rib.r
+Sella turcica.j
+Septum of frontal sinuses.j
+Septum of sphenoidal sinuses.j
+Sesamoid bones of foot.l
+Sesamoid bones of foot.r
+Seventh rib.l
+Seventh rib.r
+Sinus of frontal bone
+Sinus of sphenoid bone
+Sixth rib.l
+Sixth rib.r
+Skeletal system.g
+Skeleton of free lower limb.j
+Skeleton of free upper limb.j
+Skeleton of lower limbs.j
+Skeleton of upper limbs.j
+Soleal line.i
+Soleal line.j
+Sphenoid bone
+Sphenoidal angle of parietal bone.j
+Sphenoidal crest.j
+Sphenoidal lingula.j
+Sphenoidal margin of frontal bone.j
+Sphenoidal yoke.j
+Spine of scapula.i
+Spine of scapula.j
+Spine of sphenoid bone.j
+Spinoglenoid notch.i
+Spinoglenoid notch.j
+Spinous process.j
+Squamosal border of parietal bone.j
+Squamosal margin of greater wing.j
+Squamous part of frontal bone.j
+Squamous part of occipital bone.j
+Squamous part of temporal bone.i
+Squamous part of temporal bone.j
+Stapes.i
+Stapes.j
+Stapes.l
+Stapes.r
+Sternal angle.j
+Sternal articular surface.i
+Sternal articular surface.j
+Sternal end.i
+Sternal end.j
+Sternum.j
+Styloid process of temporal bone.i
+Styloid process of temporal bone.j
+Styloid process of third metacarpal bone.i
+Styloid process of third metacarpal bone.j
+Sublime tubercle.i
+Sublime tubercle.j
+Sublingual fossa.j
+Subscapular fossa.i
+Subscapular fossa.j
+Sulcus of auditory tube.j
+Supercilliary arch.j
+Superior angle of scapula.i
+Superior angle of scapula.j
+Superior articular facet of vertebra.j
+Superior articular process of sacrum.j
+Superior articular process of vertebra.j
+Superior articular surface of atlas.j
+Superior articular surface of lateral condyle.i
+Superior articular surface of lateral condyle.j
+Superior articular surfaces of tibia.i
+Superior articular surfaces of tibia.j
+Superior border of scapula.i
+Superior border of scapula.j
+Superior costal facet.j
+Superior facet of talus.i
+Superior facet of talus.j
+Superior horn of thyroid cartilage.j
+Superior mental spine.j
+Superior nuchal line.j
+Superior pubic ramus.i
+Superior pubic ramus.j
+Superior temporal line.j
+Superior thoracic aperture.j
+Superior thyroid notch.j
+Superior thyroid tubercle.j
+Superior vertebral notch.j
+Supinator crest.i
+Supinator crest.j
+Supra-acetabular groove.i
+Supra-acetabular groove.j
+Supraglenoid tubercle.i
+Supraglenoid tubercle.j
+Supraspinous fossa.i
+Supraspinous fossa.j
+Suprastyloid crest.i
+Suprastyloid crest.j
+Supreme nuchal line.j
+Surgical neck of humerus.i
+Surgical neck of humerus.j
+Sustentaculum tali.i
+Sustentaculum tali.j
+Symphysial surface of pubis.i
+Symphysial surface of pubis.j
+Talar sulcus.i
+Talar sulcus.j
+Talus.l
+Talus.r
+Tarsal bones.j
+Tarsal sinus.i
+Tarsal sinus.j
+Teeth.j
+Tegmen tympani.i
+Tegmen tympani.j
+Temporal bone.l
+Temporal bone.r
+Temporal line.j
+Temporal surface of frontal bone.j
+Temporal surface of greater wing.j
+Tenth rib.l
+Tenth rib.r
+Third metacarpal bone.l
+Third metacarpal bone.r
+Third metatarsal bone.l
+Third metatarsal bone.r
+Third rib.l
+Third rib.r
+Thoracic skeleton.j
+Thoracic vertebra.j
+Thoracic vertebrae.j
+Thyroid articular surface.j
+Thyroid cartilage
+Tibia.i
+Tibia.j
+Tibia.l
+Tibia.r
+Tibial plateau.i
+Tibial plateau.j
+Tibial tuberosity.i
+Tibial tuberosity.j
+Transverse costal facet.j
+Transverse ligament tubercle.j
+Transverse process.j
+Transverse ridges.j
+Trapezium bone.l
+Trapezium bone.r
+Trapezoid bone.l
+Trapezoid bone.r
+Trapezoid line.i
+Trapezoid line.j
+Triangular fovea.i
+Triangular fovea.j
+Triquetrum bone.l
+Triquetrum bone.r
+Trochanteric fossa.i
+Trochanteric fossa.j
+Trochlea of humerus.i
+Trochlea of humerus.j
+Trochlea of phalanx of foot.i
+Trochlea of phalanx of foot.j
+Trochlea of phalanx of hand.i
+Trochlea of phalanx of hand.j
+Trochlea of talus.i
+Trochlea of talus.j
+Trochlear fovea.j
+Trochlear notch.i
+Trochlear notch.j
+True ribs.j
+Tubercle of iliotibial tract.i
+Tubercle of iliotibial tract.j
+Tubercle of rib.i
+Tubercle of rib.j
+Tubercle of scaphoid bone.i
+Tubercle of scaphoid bone.j
+Tubercle of trapezium bone.j
+Tuberculum sellae.j
+Tuberosity for coracoclavicular ligament.i
+Tuberosity for coracoclavicular ligament.j
+Tuberosity of cuboid bone.i
+Tuberosity of cuboid bone.j
+Tuberosity of distal phalanx of foot.i
+Tuberosity of distal phalanx of foot.j
+Tuberosity of distal phalanx of hand.i
+Tuberosity of distal phalanx of hand.j
+Tuberosity of navicular bone.i
+Tuberosity of navicular bone.j
+Tuberosity of ulna.i
+Tuberosity of ulna.j
+Twelfth rib.l
+Twelfth rib.r
+Tympanic part of temporal bone.i
+Tympanic part of temporal bone.j
+Ulna.i
+Ulna.j
+Ulna.l
+Ulna.r
+Ulnar notch.i
+Ulnar notch.j
+Ulnar styloid process.i
+Ulnar styloid process.j
+Uncinate process of first thoracic vertebra.j
+Uncinate process of vertebra.j
+Upper canine.l
+Upper canine.r
+Upper first molar tooth.l
+Upper first molar tooth.r
+Upper first premolar.l
+Upper first premolar.r
+Upper lateral incisor.l
+Upper lateral incisor.r
+Upper medial incisor.l
+Upper medial incisor.r
+Upper second molar tooth.l
+Upper second molar tooth.r
+Upper second premolar.l
+Upper second premolar.r
+Vaginal process of sphenoid bone.j
+Vertebra C3
+Vertebra C4
+Vertebra C5
+Vertebra C6
+Vertebra C7
+Vertebra L1
+Vertebra L2
+Vertebra L3
+Vertebra L4
+Vertebra L5
+Vertebra T1
+Vertebra T10
+Vertebra T11
+Vertebra T12
+Vertebra T2
+Vertebra T3
+Vertebra T4
+Vertebra T5
+Vertebra T6
+Vertebra T7
+Vertebra T8
+Vertebra T9
+Vertebra.j
+Vertebral arch.j
+Vertebral body.j
+Vertebral column.j
+Vertebral foramen.j
+Vestibular surface of tooth.i
+Vestibular surface of tooth.j
+Viscerocranium.j
+Vocal process.j
+Vomer
+Xiphoid process
+Xiphoid process.j
+Zygomatic bone.l
+Zygomatic bone.r
+Zygomatic margin of greater wing.j
+Zygomatic process of frontal bone.j
+[Trochlear spine].j

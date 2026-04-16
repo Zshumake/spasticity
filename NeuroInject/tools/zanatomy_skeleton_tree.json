@@ -1,0 +1,15 @@
+{
+  "1: Skeletal system": {
+    "depth": 0,
+    "direct_mesh_count": 1244,
+    "total_mesh_count": 1244,
+    "children": [],
+    "direct_meshes_sample": [
+      "Skeletal system.g",
+      "Axial skeleton.j",
+      "Facial bones.j",
+      "Neurocranium.j",
+      "Viscerocranium.j"
+    ]
+  }
+}

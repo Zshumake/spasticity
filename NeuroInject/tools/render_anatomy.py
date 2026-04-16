@@ -157,6 +157,44 @@ all_skeleton = collect_meshes(skeleton_coll)
 all_muscles = collect_meshes(muscle_coll)
 print(f"[render] skeleton meshes: {len(all_skeleton)}, muscle meshes: {len(all_muscles)}")
 
+# Build per-region skeleton subsets by looking up specific Z-Anatomy sub-collections.
+# Rather than showing all 804 skeleton meshes filtered by spatial radius, we
+# explicitly pick which skeleton subsets belong to each muscle. This produces
+# much cleaner "just the arm" / "just the leg" renders.
+SKELETON_REGION_COLLS = {
+    "upper_limb":      ["Bones of upper limb", "Bones of pectoral girdle"],
+    "lower_limb":      ["Bones of lower limb"],
+    "forearm_hand":    ["Bones of upper limb"],
+    "leg_foot":        ["Bones of lower limb"],
+    "head":            ["Bones of cranium"],
+    "face":            ["Bones of cranium"],
+    "neck":            ["Bones of cranium", "Bones of vertebral column"],
+    "cervical":        ["Bones of cranium", "Bones of vertebral column", "Bones of pectoral girdle"],
+    "shoulder":        ["Bones of upper limb", "Bones of pectoral girdle", "Bones of thorax"],
+    "chest":           ["Bones of thorax", "Bones of pectoral girdle"],
+    "back":            ["Bones of thorax", "Bones of vertebral column", "Bones of pectoral girdle"],
+    "trunk":           ["Bones of thorax", "Bones of vertebral column", "Bony pelvis"],
+    "lumbar":          ["Bones of vertebral column", "Bony pelvis"],
+    "hip":             ["Bones of lower limb", "Bony pelvis"],
+    "thigh":           ["Bones of lower limb", "Bony pelvis"],
+    "foot":            ["Bones of foot", "Bones of lower limb"],
+}
+
+region_meshes = {}
+for region, coll_names in SKELETON_REGION_COLLS.items():
+    meshes = []
+    seen = set()
+    for cname in coll_names:
+        c = bpy.data.collections.get(cname)
+        if not c:
+            continue
+        for o in c.all_objects:
+            if o.type == 'MESH' and o.name not in seen:
+                meshes.append(o)
+                seen.add(o.name)
+    region_meshes[region] = meshes
+    print(f"[render] region '{region}': {len(meshes)} skeleton meshes")
+
 # LINK all skeleton + muscle objects into the new RenderScene's master
 # collection so they render. Source-scene collection tree and its
 # hide/exclude settings no longer affect our render.
@@ -227,7 +265,16 @@ def point_camera_at(cam, target_point, from_point):
 # -----------------------------------------------------------------
 # Render a single muscle
 # -----------------------------------------------------------------
-def render_muscle(muscle_id: str, mesh_names: list) -> bool:
+def render_muscle(muscle_id: str, config) -> bool:
+    # config is either the new dict schema {"meshes": [...], "region": "..."}
+    # or the old list schema [mesh_name, ...]
+    if isinstance(config, list):
+        mesh_names = config
+        region = None
+    else:
+        mesh_names = config.get("meshes", [])
+        region = config.get("region")
+
     # Find the target meshes
     targets = [muscle_by_name.get(n) for n in mesh_names]
     targets = [t for t in targets if t is not None]
@@ -251,20 +298,28 @@ def render_muscle(muscle_id: str, mesh_names: list) -> bool:
     target_center, target_size = bbox_of_objects(targets)
     target_span = max(target_size.x, target_size.y, target_size.z) if target_size else 0.5
 
-    # Show skeleton bones only within a regional radius of the target muscle.
-    # This avoids cluttering the view with bones from unrelated regions
-    # (e.g. we don't want the femur in a forearm shot).
-    radius = max(target_span * 3.0, 0.3)  # adaptive radius
+    # Show skeleton bones for the muscle's anatomical region only.
+    # Falls back to a spatial radius filter if no region is defined.
     shown_bones = 0
-    for o in all_skeleton:
-        bc, _ = bbox_of_objects([o])
-        if bc is None:
-            continue
-        if (bc - target_center).length < radius:
+    if region and region in region_meshes:
+        # Region-based: show exactly the bones that belong to this region
+        for o in region_meshes[region]:
             o.hide_render = False
             o.hide_viewport = False
             apply_material(o, GREY_MAT)
             shown_bones += 1
+    else:
+        # Fallback: spatial radius around the target muscle
+        radius = max(target_span * 3.0, 0.3)
+        for o in all_skeleton:
+            bc, _ = bbox_of_objects([o])
+            if bc is None:
+                continue
+            if (bc - target_center).length < radius:
+                o.hide_render = False
+                o.hide_viewport = False
+                apply_material(o, GREY_MAT)
+                shown_bones += 1
 
     # Make sure lights + camera are visible
     cam_obj.hide_render = False
@@ -284,12 +339,11 @@ def render_muscle(muscle_id: str, mesh_names: list) -> bool:
     # Default viewing angle: anterior with slight elevation, rotating
     # around Z for appropriate body region
     lname = mesh_names[0].lower() if mesh_names else ""
-    is_back = any(kw in lname for kw in ["trapezius", "splenius", "longissimus", "semispinalis", "erector", "latissimus", "teres"])
-    is_medial = any(kw in muscle_id for kw in ["medial", "adductor", "gracilis", "obliques"])
+    is_back = any(kw in lname for kw in ["trapezius", "splenius", "longissimus", "semispinalis", "erector", "latissimus", "teres", "piriformis", "gluteus"])
 
     # Build camera position: primarily from the -Y direction (anterior),
     # but swing around for posterior structures
-    if is_back:
+    if is_back or region == "back":
         # Camera behind subject looking forward
         cam_pos = center + Vector((0.15 * span, cam_distance * 0.9, 0.1 * span))
     else:
@@ -326,19 +380,19 @@ rendered = 0
 skipped = 0
 failed = 0
 
-todo = [(mid, meshes) for mid, meshes in render_map.items()]
+todo = [(mid, config) for mid, config in render_map.items()]
 if only_id:
-    todo = [(mid, meshes) for mid, meshes in todo if mid == only_id]
+    todo = [(mid, config) for mid, config in todo if mid == only_id]
     if not todo:
         print(f"[render] --only {only_id}: no match in render_map")
         sys.exit(1)
 
-for mid, meshes in todo:
+for mid, config in todo:
     if only_id is None and mid in already_covered:
         skipped += 1
         continue
     try:
-        ok = render_muscle(mid, meshes)
+        ok = render_muscle(mid, config)
         if ok:
             rendered += 1
         else:
