@@ -1,0 +1,110 @@
+{
+  "source": "Wikimedia Commons \u2014 Category:Images_of_human_muscles_from_Anatomography",
+  "upstream_source": "BodyParts3D, The Database Center for Life Science (DBCLS)",
+  "license": "CC-BY-SA 2.1 JP",
+  "attribution": "BodyParts3D, \u00a9 The Database Center for Life Science, licensed under Creative Commons Attribution-Share Alike 2.1 Japan",
+  "images": [
+    {
+      "id": "gastrocnemius-medial",
+      "file": "gastrocnemius-medial.png",
+      "caption": "Posterior leg \u00b7 gastrocnemius highlighted",
+      "source": "Posterior compartment of leg - gastrocnemius.png"
+    },
+    {
+      "id": "gastrocnemius-lateral",
+      "file": "gastrocnemius-lateral.png",
+      "caption": "Posterior leg \u00b7 gastrocnemius highlighted",
+      "source": "Gastrocnemius muscle - posterior view.png"
+    },
+    {
+      "id": "soleus-medial",
+      "file": "soleus-medial.png",
+      "caption": "Posterior leg \u00b7 soleus highlighted",
+      "source": "Posterior compartment of leg - soleus.png"
+    },
+    {
+      "id": "soleus-lateral",
+      "file": "soleus-lateral.png",
+      "caption": "Posterior leg \u00b7 soleus highlighted",
+      "source": "Soleus muscle - posterior view.png"
+    },
+    {
+      "id": "fdl",
+      "file": "fdl.png",
+      "caption": "Deep posterior leg \u00b7 FDL highlighted",
+      "source": "Posterior compartment of leg - flexor digitorum longus.png"
+    },
+    {
+      "id": "fhl",
+      "file": "fhl.png",
+      "caption": "Deep posterior leg \u00b7 FHL highlighted",
+      "source": "Posterior compartment of leg - flexor hallucis longus.png"
+    },
+    {
+      "id": "tibialis-posterior",
+      "file": "tibialis-posterior.png",
+      "caption": "Deep posterior leg \u00b7 tibialis posterior",
+      "source": "Posterior compartment of leg - tibialis posterior.png"
+    },
+    {
+      "id": "tibialis-anterior",
+      "file": "tibialis-anterior.png",
+      "caption": "Anterior leg \u00b7 tibialis anterior",
+      "source": "Anterior compartment of leg - Tibialis anterior.png"
+    },
+    {
+      "id": "edl",
+      "file": "edl.png",
+      "caption": "Anterior leg \u00b7 EDL highlighted",
+      "source": "Anterior compartment of leg - Extensor digitorum longus.png"
+    },
+    {
+      "id": "ehl",
+      "file": "ehl.png",
+      "caption": "Anterior leg \u00b7 EHL highlighted",
+      "source": "Anterior compartment of leg - Extensor hallucis longus.png"
+    },
+    {
+      "id": "peroneus-longus",
+      "file": "peroneus-longus.png",
+      "caption": "Lateral leg \u00b7 fibularis/peroneus longus",
+      "source": "Lateral compartment of leg - Fibularis longus.png"
+    },
+    {
+      "id": "masseter",
+      "file": "masseter.png",
+      "caption": "Lateral face \u00b7 masseter highlighted",
+      "source": "Masseter muscle - lateral view.png"
+    },
+    {
+      "id": "temporalis",
+      "file": "temporalis.png",
+      "caption": "Lateral face \u00b7 temporalis highlighted",
+      "source": "Temporal muscle - lateral view.png"
+    },
+    {
+      "id": "corrugator-supercilii",
+      "file": "corrugator-supercilii.png",
+      "caption": "Frontal face \u00b7 corrugator supercilii",
+      "source": "Corrugator supercilii muscle frontal.png"
+    },
+    {
+      "id": "procerus",
+      "file": "procerus.png",
+      "caption": "Frontal face \u00b7 procerus highlighted",
+      "source": "Procerus muscle frontal.png"
+    },
+    {
+      "id": "mentalis",
+      "file": "mentalis.png",
+      "caption": "Frontal face \u00b7 mentalis highlighted",
+      "source": "Mentalis frontal.png"
+    },
+    {
+      "id": "scm",
+      "file": "scm.png",
+      "caption": "Lateral neck \u00b7 SCM highlighted",
+      "source": "Sternomastoid muscle lateral.png"
+    }
+  ]
+}

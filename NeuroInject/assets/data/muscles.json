@@ -1618,7 +1618,11 @@
       "soleus-lateral",
       "soleus-medial",
       "tibialis-posterior"
-    ]
+    ],
+    "anatomyImages": [
+      "gastrocnemius-medial.png"
+    ],
+    "anatomyCaption": "Posterior leg · gastrocnemius highlighted"
   },
   {
     "id": "gastrocnemius-lateral",
@@ -1709,7 +1713,11 @@
       "botox": "50-75",
       "xeomin": "50-75",
       "dysport": "150-225"
-    }
+    },
+    "anatomyImages": [
+      "gastrocnemius-lateral.png"
+    ],
+    "anatomyCaption": "Posterior leg · gastrocnemius highlighted"
   },
   {
     "id": "soleus-medial",
@@ -1800,7 +1808,11 @@
       "botox": "50-100",
       "xeomin": "50-100",
       "dysport": "150-300"
-    }
+    },
+    "anatomyImages": [
+      "soleus-medial.png"
+    ],
+    "anatomyCaption": "Posterior leg · soleus highlighted"
   },
   {
     "id": "soleus-lateral",
@@ -1888,7 +1900,11 @@
       "gastrocnemius-medial",
       "soleus-medial",
       "tibialis-posterior"
-    ]
+    ],
+    "anatomyImages": [
+      "soleus-lateral.png"
+    ],
+    "anatomyCaption": "Posterior leg · soleus highlighted"
   },
   {
     "id": "fdl",
@@ -1982,7 +1998,11 @@
       "soleus-medial",
       "tibialis-posterior",
       "foot-lumbricals"
-    ]
+    ],
+    "anatomyImages": [
+      "fdl.png"
+    ],
+    "anatomyCaption": "Deep posterior leg · FDL highlighted"
   },
   {
     "id": "fdb",
@@ -2146,7 +2166,11 @@
       "tibialis-posterior",
       "peroneus-longus",
       "edl"
-    ]
+    ],
+    "anatomyImages": [
+      "tibialis-anterior.png"
+    ],
+    "anatomyCaption": "Anterior leg · tibialis anterior"
   },
   {
     "id": "tibialis-posterior",
@@ -2237,7 +2261,11 @@
       "gastrocnemius-medial",
       "soleus-lateral",
       "soleus-medial"
-    ]
+    ],
+    "anatomyImages": [
+      "tibialis-posterior.png"
+    ],
+    "anatomyCaption": "Deep posterior leg · tibialis posterior"
   },
   {
     "id": "fhl",
@@ -2330,7 +2358,11 @@
       "soleus-lateral",
       "soleus-medial",
       "tibialis-posterior"
-    ]
+    ],
+    "anatomyImages": [
+      "fhl.png"
+    ],
+    "anatomyCaption": "Deep posterior leg · FHL highlighted"
   },
   {
     "id": "ehl",
@@ -2418,7 +2450,11 @@
       "edl",
       "fhl",
       "tibialis-anterior"
-    ]
+    ],
+    "anatomyImages": [
+      "ehl.png"
+    ],
+    "anatomyCaption": "Anterior leg · EHL highlighted"
   },
   {
     "id": "add-hallucis",
@@ -4040,7 +4076,11 @@
       "gastrocnemius-lateral",
       "soleus-medial",
       "soleus-lateral"
-    ]
+    ],
+    "anatomyImages": [
+      "peroneus-longus.png"
+    ],
+    "anatomyCaption": "Lateral leg · fibularis/peroneus longus"
   },
   {
     "id": "edl",
@@ -4128,7 +4168,11 @@
       "ehl",
       "tibialis-anterior",
       "peroneus-longus"
-    ]
+    ],
+    "anatomyImages": [
+      "edl.png"
+    ],
+    "anatomyCaption": "Anterior leg · EDL highlighted"
   },
   {
     "id": "scm",
@@ -4224,7 +4268,11 @@
       "semispinalis-capitis",
       "scalenes",
       "longissimus-capitis"
-    ]
+    ],
+    "anatomyImages": [
+      "scm.png"
+    ],
+    "anatomyCaption": "Lateral neck · SCM highlighted"
   },
   {
     "id": "upper-trapezius",
@@ -4978,7 +5026,11 @@
       "temporalis",
       "medial-pterygoid",
       "lateral-pterygoid"
-    ]
+    ],
+    "anatomyImages": [
+      "masseter.png"
+    ],
+    "anatomyCaption": "Lateral face · masseter highlighted"
   },
   {
     "id": "temporalis",
@@ -5067,7 +5119,11 @@
       "masseter",
       "medial-pterygoid",
       "lateral-pterygoid"
-    ]
+    ],
+    "anatomyImages": [
+      "temporalis.png"
+    ],
+    "anatomyCaption": "Lateral face · temporalis highlighted"
   },
   {
     "id": "lateral-pterygoid",
@@ -5350,7 +5406,11 @@
       "procerus",
       "orbicularis-oculi",
       "frontalis"
-    ]
+    ],
+    "anatomyImages": [
+      "corrugator-supercilii.png"
+    ],
+    "anatomyCaption": "Frontal face · corrugator supercilii"
   },
   {
     "id": "procerus",
@@ -5411,7 +5471,11 @@
       "corrugator-supercilii",
       "orbicularis-oculi",
       "frontalis"
-    ]
+    ],
+    "anatomyImages": [
+      "procerus.png"
+    ],
+    "anatomyCaption": "Frontal face · procerus highlighted"
   },
   {
     "id": "frontalis",
@@ -5600,7 +5664,11 @@
     "relatedMuscles": [
       "orbicularis-oculi",
       "platysma"
-    ]
+    ],
+    "anatomyImages": [
+      "mentalis.png"
+    ],
+    "anatomyCaption": "Frontal face · mentalis highlighted"
   },
   {
     "id": "adductor-brevis",
