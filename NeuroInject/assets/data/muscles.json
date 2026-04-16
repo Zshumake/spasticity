@@ -636,7 +636,8 @@
     ],
     "spasticityPatterns": [
       "trunk-rotation",
-      "trunk-lateral-flexion"
+      "trunk-lateral-flexion",
+      "trunk-flexion"
     ],
     "relatedMuscles": [
       "rectus-abdominis",
@@ -732,7 +733,8 @@
     ],
     "spasticityPatterns": [
       "trunk-extension",
-      "axial-dystonia"
+      "axial-dystonia",
+      "trunk-rotation"
     ],
     "relatedMuscles": [
       "rectus-abdominis",
@@ -2762,7 +2764,8 @@
       "Sharps container"
     ],
     "spasticityPatterns": [
-      "pronated-forearm"
+      "pronated-forearm",
+      "flexed-elbow"
     ],
     "relatedMuscles": [
       "brachioradialis",
@@ -3679,7 +3682,8 @@
       "Sharps container"
     ],
     "spasticityPatterns": [
-      "adducted-hip"
+      "adducted-hip",
+      "flexed-hip"
     ],
     "relatedMuscles": [
       "adductor-magnus",
@@ -4209,7 +4213,9 @@
       "Sharps container"
     ],
     "spasticityPatterns": [
-      "cervical-dystonia"
+      "cervical-dystonia",
+      "anterocollis",
+      "laterocollis"
     ],
     "relatedMuscles": [
       "levator-scapulae",
@@ -4302,7 +4308,8 @@
       "Sharps container"
     ],
     "spasticityPatterns": [
-      "cervical-dystonia"
+      "cervical-dystonia",
+      "retrocollis"
     ],
     "relatedMuscles": [
       "levator-scapulae",
@@ -4395,7 +4402,8 @@
       "Sharps container"
     ],
     "spasticityPatterns": [
-      "cervical-dystonia"
+      "cervical-dystonia",
+      "laterocollis"
     ],
     "relatedMuscles": [
       "scm",
@@ -4579,7 +4587,9 @@
       "Sharps container"
     ],
     "spasticityPatterns": [
-      "cervical-dystonia"
+      "cervical-dystonia",
+      "retrocollis",
+      "laterocollis"
     ],
     "relatedMuscles": [
       "semispinalis-capitis",
@@ -4674,7 +4684,8 @@
       "Sharps container"
     ],
     "spasticityPatterns": [
-      "cervical-dystonia"
+      "cervical-dystonia",
+      "retrocollis"
     ],
     "relatedMuscles": [
       "splenius-capitis",
@@ -4771,7 +4782,9 @@
       "Sharps container"
     ],
     "spasticityPatterns": [
-      "cervical-dystonia"
+      "cervical-dystonia",
+      "anterocollis",
+      "laterocollis"
     ],
     "relatedMuscles": [
       "scm",
@@ -4866,7 +4879,8 @@
       "Sharps container"
     ],
     "spasticityPatterns": [
-      "cervical-dystonia"
+      "cervical-dystonia",
+      "retrocollis"
     ],
     "relatedMuscles": [
       "semispinalis-capitis",
