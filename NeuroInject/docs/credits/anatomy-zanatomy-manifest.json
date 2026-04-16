@@ -1,0 +1,264 @@
+{
+  "source": "Z-Anatomy (Gauthier Kervyn, Llu\u00eds Vinent, Marcin Zielinski)",
+  "url": "https://www.z-anatomy.com/",
+  "upstream_source": "BodyParts3D, The Database Center for Life Science (DBCLS)",
+  "license": "CC-BY-SA 4.0",
+  "attribution": "Z-Anatomy (https://www.z-anatomy.com/), CC-BY-SA 4.0; derivative works rendered with muscle highlighting in Blender",
+  "images": [
+    {
+      "id": "pec-major",
+      "file": "pec-major.png",
+      "caption": "Anterior chest \u00b7 pectoralis major highlighted"
+    },
+    {
+      "id": "lat-dorsi",
+      "file": "lat-dorsi.png",
+      "caption": "Posterior trunk \u00b7 latissimus dorsi highlighted"
+    },
+    {
+      "id": "biceps-brachii",
+      "file": "biceps-brachii.png",
+      "caption": "Anterior arm \u00b7 biceps brachii highlighted"
+    },
+    {
+      "id": "brachialis",
+      "file": "brachialis.png",
+      "caption": "Anterior arm \u00b7 brachialis highlighted (deep to biceps)"
+    },
+    {
+      "id": "quadratus-lumborum",
+      "file": "quadratus-lumborum.png",
+      "caption": "Posterior trunk \u00b7 quadratus lumborum highlighted"
+    },
+    {
+      "id": "rectus-abdominis",
+      "file": "rectus-abdominis.png",
+      "caption": "Anterior abdomen \u00b7 rectus abdominis highlighted"
+    },
+    {
+      "id": "obliques",
+      "file": "obliques.png",
+      "caption": "Lateral abdomen \u00b7 internal + external obliques highlighted"
+    },
+    {
+      "id": "paraspinals",
+      "file": "paraspinals.png",
+      "caption": "Posterior trunk \u00b7 erector spinae group highlighted"
+    },
+    {
+      "id": "gluteus-maximus",
+      "file": "gluteus-maximus.png",
+      "caption": "Posterior hip \u00b7 gluteus maximus highlighted"
+    },
+    {
+      "id": "piriformis",
+      "file": "piriformis.png",
+      "caption": "Posterior hip \u00b7 piriformis highlighted"
+    },
+    {
+      "id": "tfl",
+      "file": "tfl.png",
+      "caption": "Lateral hip \u00b7 tensor fasciae latae highlighted"
+    },
+    {
+      "id": "rectus-femoris",
+      "file": "rectus-femoris.png",
+      "caption": "Anterior thigh \u00b7 rectus femoris highlighted"
+    },
+    {
+      "id": "vastus-medialis",
+      "file": "vastus-medialis.png",
+      "caption": "Anterior thigh \u00b7 vastus medialis highlighted"
+    },
+    {
+      "id": "vastus-lateralis",
+      "file": "vastus-lateralis.png",
+      "caption": "Anterior thigh \u00b7 vastus lateralis highlighted"
+    },
+    {
+      "id": "vastus-intermedius",
+      "file": "vastus-intermedius.png",
+      "caption": "Anterior thigh \u00b7 vastus intermedius highlighted (deep)"
+    },
+    {
+      "id": "semimembranosus",
+      "file": "semimembranosus.png",
+      "caption": "Posterior thigh \u00b7 semimembranosus highlighted"
+    },
+    {
+      "id": "semitendinosus",
+      "file": "semitendinosus.png",
+      "caption": "Posterior thigh \u00b7 semitendinosus highlighted"
+    },
+    {
+      "id": "fdb",
+      "file": "fdb.png",
+      "caption": "Plantar foot \u00b7 flexor digitorum brevis highlighted"
+    },
+    {
+      "id": "add-hallucis",
+      "file": "add-hallucis.png",
+      "caption": "Plantar foot \u00b7 adductor hallucis highlighted"
+    },
+    {
+      "id": "triceps",
+      "file": "triceps.png",
+      "caption": "Posterior arm \u00b7 triceps brachii highlighted"
+    },
+    {
+      "id": "brachioradialis",
+      "file": "brachioradialis.png",
+      "caption": "Lateral forearm \u00b7 brachioradialis highlighted"
+    },
+    {
+      "id": "pronator-teres",
+      "file": "pronator-teres.png",
+      "caption": "Anterior forearm \u00b7 pronator teres highlighted"
+    },
+    {
+      "id": "fcr",
+      "file": "fcr.png",
+      "caption": "Anterior forearm \u00b7 FCR highlighted"
+    },
+    {
+      "id": "fcu",
+      "file": "fcu.png",
+      "caption": "Anterior forearm \u00b7 FCU highlighted"
+    },
+    {
+      "id": "fds",
+      "file": "fds.png",
+      "caption": "Anterior forearm \u00b7 FDS highlighted"
+    },
+    {
+      "id": "fdp",
+      "file": "fdp.png",
+      "caption": "Anterior forearm \u00b7 FDP highlighted (deep)"
+    },
+    {
+      "id": "fpl",
+      "file": "fpl.png",
+      "caption": "Anterior forearm \u00b7 FPL highlighted (deep)"
+    },
+    {
+      "id": "adductor-pollicis",
+      "file": "adductor-pollicis.png",
+      "caption": "Palmar hand \u00b7 adductor pollicis highlighted"
+    },
+    {
+      "id": "subscapularis",
+      "file": "subscapularis.png",
+      "caption": "Anterior scapula \u00b7 subscapularis highlighted"
+    },
+    {
+      "id": "infraspinatus",
+      "file": "infraspinatus.png",
+      "caption": "Posterior scapula \u00b7 infraspinatus highlighted"
+    },
+    {
+      "id": "teres-major",
+      "file": "teres-major.png",
+      "caption": "Posterior scapula \u00b7 teres major highlighted"
+    },
+    {
+      "id": "adductor-longus",
+      "file": "adductor-longus.png",
+      "caption": "Medial thigh \u00b7 adductor longus highlighted"
+    },
+    {
+      "id": "adductor-magnus",
+      "file": "adductor-magnus.png",
+      "caption": "Medial thigh \u00b7 adductor magnus highlighted"
+    },
+    {
+      "id": "adductor-brevis",
+      "file": "adductor-brevis.png",
+      "caption": "Medial thigh \u00b7 adductor brevis highlighted (deep)"
+    },
+    {
+      "id": "gracilis",
+      "file": "gracilis.png",
+      "caption": "Medial thigh \u00b7 gracilis highlighted"
+    },
+    {
+      "id": "biceps-femoris",
+      "file": "biceps-femoris.png",
+      "caption": "Posterior thigh \u00b7 biceps femoris highlighted"
+    },
+    {
+      "id": "iliopsoas",
+      "file": "iliopsoas.png",
+      "caption": "Anterior hip \u00b7 iliopsoas highlighted"
+    },
+    {
+      "id": "upper-trapezius",
+      "file": "upper-trapezius.png",
+      "caption": "Posterior neck \u00b7 upper trapezius highlighted"
+    },
+    {
+      "id": "levator-scapulae",
+      "file": "levator-scapulae.png",
+      "caption": "Posterior neck \u00b7 levator scapulae highlighted"
+    },
+    {
+      "id": "pronator-quadratus",
+      "file": "pronator-quadratus.png",
+      "caption": "Anterior forearm \u00b7 pronator quadratus highlighted (distal, deep)"
+    },
+    {
+      "id": "splenius-capitis",
+      "file": "splenius-capitis.png",
+      "caption": "Posterior neck \u00b7 splenius capitis highlighted"
+    },
+    {
+      "id": "semispinalis-capitis",
+      "file": "semispinalis-capitis.png",
+      "caption": "Posterior neck \u00b7 semispinalis highlighted"
+    },
+    {
+      "id": "scalenes",
+      "file": "scalenes.png",
+      "caption": "Lateral neck \u00b7 scalenes highlighted"
+    },
+    {
+      "id": "longissimus-capitis",
+      "file": "longissimus-capitis.png",
+      "caption": "Posterior neck \u00b7 longissimus capitis highlighted"
+    },
+    {
+      "id": "lateral-pterygoid",
+      "file": "lateral-pterygoid.png",
+      "caption": "Lateral face \u00b7 lateral pterygoid highlighted (deep)"
+    },
+    {
+      "id": "medial-pterygoid",
+      "file": "medial-pterygoid.png",
+      "caption": "Lateral face \u00b7 medial pterygoid highlighted (deep)"
+    },
+    {
+      "id": "orbicularis-oculi",
+      "file": "orbicularis-oculi.png",
+      "caption": "Anterior face \u00b7 orbicularis oculi highlighted"
+    },
+    {
+      "id": "frontalis",
+      "file": "frontalis.png",
+      "caption": "Anterior face \u00b7 frontalis highlighted"
+    },
+    {
+      "id": "platysma",
+      "file": "platysma.png",
+      "caption": "Anterior neck \u00b7 platysma highlighted"
+    },
+    {
+      "id": "hand-lumbricals",
+      "file": "hand-lumbricals.png",
+      "caption": "Palmar hand \u00b7 hand lumbricals highlighted"
+    },
+    {
+      "id": "foot-lumbricals",
+      "file": "foot-lumbricals.png",
+      "caption": "Plantar foot \u00b7 foot lumbricals highlighted"
+    }
+  ]
+}

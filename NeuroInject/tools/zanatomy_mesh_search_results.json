@@ -1,0 +1,346 @@
+{
+  "found": {
+    "pec-major": [
+      "(Abdominal part of pectoralis major muscle).l",
+      "(Abdominal part of pectoralis major muscle).r",
+      "Clavicular head of pectoralis major muscle.l",
+      "Clavicular head of pectoralis major muscle.r",
+      "Pectoralis major muscle.j",
+      "Sternocostal head of pectoralis major muscle.l",
+      "Sternocostal head of pectoralis major muscle.r"
+    ],
+    "lat-dorsi": [
+      "Latissimus dorsi muscle.l",
+      "Latissimus dorsi muscle.r"
+    ],
+    "biceps-brachii": [
+      "Biceps brachii muscle.j",
+      "Long head of biceps brachii.l",
+      "Long head of biceps brachii.r",
+      "Short head of biceps brachii.l",
+      "Short head of biceps brachii.r"
+    ],
+    "brachialis": [
+      "Brachialis muscle.l",
+      "Brachialis muscle.r",
+      "Coracobrachialis muscle.l",
+      "Coracobrachialis muscle.r"
+    ],
+    "quadratus-lumborum": [
+      "Quadratus lumborum muscle.l",
+      "Quadratus lumborum muscle.r"
+    ],
+    "rectus-abdominis": [
+      "Rectus abdominis muscle.l",
+      "Rectus abdominis muscle.r"
+    ],
+    "paraspinals": [
+      "Erector spinae.j",
+      "Longissimus capitis muscle.l",
+      "Longissimus capitis muscle.r",
+      "Longissimus colli muscle.l",
+      "Longissimus colli muscle.r",
+      "Longissimus muscles.j",
+      "Longissimus thoracis muscle.l",
+      "Longissimus thoracis muscle.r",
+      "Iliocostalis colli muscle",
+      "Iliocostalis colli muscle.r",
+      "Iliocostalis lumborum muscle.l",
+      "Iliocostalis lumborum muscle.r",
+      "Iliocostalis muscles.j",
+      "Iliocostalis thoracis muscle.l",
+      "Iliocostalis thoracis muscle.r",
+      "Semispinalis colli muscle.l",
+      "Semispinalis colli muscle.r",
+      "Semispinalis muscles.j",
+      "Semispinalis thoracis muscle.l",
+      "Semispinalis thoracis muscle.r",
+      "Spinalis capitis muscle.l",
+      "Spinalis capitis muscle.r",
+      "Spinalis colli muscle.l",
+      "Spinalis colli muscle.r",
+      "Spinalis muscles.j",
+      "Spinalis thoracis muscle.l",
+      "Spinalis thoracis muscle.r"
+    ],
+    "gluteus-maximus": [
+      "Gluteus maximus muscle.l",
+      "Gluteus maximus muscle.r"
+    ],
+    "piriformis": [
+      "Piriformis muscle.l",
+      "Piriformis muscle.r"
+    ],
+    "rectus-femoris": [
+      "Rectus femoris muscle.l",
+      "Rectus femoris muscle.r"
+    ],
+    "vastus-medialis": [
+      "Vastus medialis muscle.l",
+      "Vastus medialis muscle.r"
+    ],
+    "vastus-lateralis": [
+      "Vastus lateralis muscle.l",
+      "Vastus lateralis muscle.r"
+    ],
+    "vastus-intermedius": [
+      "Vastus intermedius muscle.l",
+      "Vastus intermedius muscle.r"
+    ],
+    "semimembranosus": [
+      "Semimembranosus muscle.l",
+      "Semimembranosus muscle.r"
+    ],
+    "semitendinosus": [
+      "Semitendinosus muscle.l",
+      "Semitendinosus muscle.r"
+    ],
+    "gastrocnemius-medial": [
+      "Medial head of gastrocnemius.l",
+      "Medial head of gastrocnemius.r",
+      "Lateral head of gastrocnemius.l",
+      "Lateral head of gastrocnemius.r"
+    ],
+    "gastrocnemius-lateral": [
+      "Lateral head of gastrocnemius.l",
+      "Lateral head of gastrocnemius.r",
+      "Medial head of gastrocnemius.l",
+      "Medial head of gastrocnemius.r"
+    ],
+    "soleus-medial": [
+      "Soleus muscle.l",
+      "Soleus muscle.r"
+    ],
+    "soleus-lateral": [
+      "Soleus muscle.l",
+      "Soleus muscle.r"
+    ],
+    "fdl": [
+      "Flexor digitorum longus.l",
+      "Flexor digitorum longus.r"
+    ],
+    "fdb": [
+      "Flexor digitorum brevis.l",
+      "Flexor digitorum brevis.r"
+    ],
+    "tibialis-anterior": [
+      "Tibialis anterior muscle.l",
+      "Tibialis anterior muscle.r"
+    ],
+    "tibialis-posterior": [
+      "Tibialis posterior muscle.l",
+      "Tibialis posterior muscle.r"
+    ],
+    "fhl": [
+      "Flexor hallucis longus.l",
+      "Flexor hallucis longus.r"
+    ],
+    "ehl": [
+      "Extensor hallucis longus.l",
+      "Extensor hallucis longus.r"
+    ],
+    "add-hallucis": [
+      "Adductor hallucis.j",
+      "Oblique head of adductor hallucis.l",
+      "Oblique head of adductor hallucis.r",
+      "Transverse head of adductor hallucis.l",
+      "Transverse head of adductor hallucis.r"
+    ],
+    "triceps": [
+      "Lateral head of triceps brachii.l",
+      "Lateral head of triceps brachii.r",
+      "Long head of triceps brachii.l",
+      "Long head of triceps brachii.r",
+      "Medial head of triceps brachii.l",
+      "Medial head of triceps brachii.r",
+      "Triceps brachii muscle.j"
+    ],
+    "brachioradialis": [
+      "Brachioradialis muscle.l",
+      "Brachioradialis muscle.r"
+    ],
+    "pronator-teres": [
+      "Deep head of pronator teres.l",
+      "Deep head of pronator teres.r",
+      "Superficial head of pronator teres.l",
+      "Superficial head of pronator teres.r"
+    ],
+    "fcr": [
+      "Flexor carpi radialis.l",
+      "Flexor carpi radialis.r"
+    ],
+    "fcu": [
+      "Humeral head of flexor carpi ulnaris.l",
+      "Humeral head of flexor carpi ulnaris.r",
+      "Ulnar head of flexor carpi ulnaris.l",
+      "Ulnar head of flexor carpi ulnaris.r"
+    ],
+    "fds": [
+      "Humero-ulnar head of flexor digitorum superficialis.l",
+      "Humero-ulnar head of flexor digitorum superficialis.r",
+      "Radial head of flexor digitorum superficialis.l",
+      "Radial head of flexor digitorum superficialis.r"
+    ],
+    "fdp": [
+      "Flexor digitorum profundus.l",
+      "Flexor digitorum profundus.r"
+    ],
+    "fpl": [
+      "Flexor pollicis longus.l",
+      "Flexor pollicis longus.r"
+    ],
+    "adductor-pollicis": [
+      "Oblique head of adductor pollicis.l",
+      "Oblique head of adductor pollicis.r",
+      "Transverse head of adductor pollicis.l",
+      "Transverse head of adductor pollicis.r"
+    ],
+    "subscapularis": [
+      "Subscapularis muscle.l",
+      "Subscapularis muscle.r"
+    ],
+    "infraspinatus": [
+      "Infraspinatus muscle.l",
+      "Infraspinatus muscle.r"
+    ],
+    "teres-major": [
+      "Teres major muscle.l",
+      "Teres major muscle.r"
+    ],
+    "adductor-longus": [
+      "Adductor longus.l",
+      "Adductor longus.r"
+    ],
+    "adductor-magnus": [
+      "Adductor magnus.l",
+      "Adductor magnus.r"
+    ],
+    "biceps-femoris": [
+      "Long head of biceps femoris.l",
+      "Long head of biceps femoris.r",
+      "Short head of biceps femoris.l",
+      "Short head of biceps femoris.r"
+    ],
+    "iliopsoas": [
+      "Iliopsoas muscle.j",
+      "Iliacus muscle.l",
+      "Iliacus muscle.r",
+      "Psoas major.l",
+      "Psoas major.r"
+    ],
+    "peroneus-longus": [
+      "Fibularis longus muscle.l",
+      "Fibularis longus muscle.r"
+    ],
+    "edl": [
+      "Extensor digitorum longus.l",
+      "Extensor digitorum longus.r",
+      "Tendon of extensor digitorum longus.l",
+      "Tendon of extensor digitorum longus.r"
+    ],
+    "scm": [
+      "Sternocleidomastoid muscle.l",
+      "Sternocleidomastoid muscle.r"
+    ],
+    "upper-trapezius": [
+      "Ascending part of trapezius muscle.l",
+      "Ascending part of trapezius muscle.r",
+      "Descending part of trapezius muscle.l",
+      "Descending part of trapezius muscle.r",
+      "Transverse part of trapezius muscle.l",
+      "Transverse part of trapezius muscle.r",
+      "Trapezius muscle.j"
+    ],
+    "levator-scapulae": [
+      "Levator scapulae.l",
+      "Levator scapulae.r"
+    ],
+    "pronator-quadratus": [
+      "Pronator quadratus.l",
+      "Pronator quadratus.r"
+    ],
+    "splenius-capitis": [
+      "Splenius capitis muscle.l",
+      "Splenius capitis muscle.r"
+    ],
+    "scalenes": [
+      "Scalenus anterior muscle.l",
+      "Scalenus anterior muscle.r",
+      "Scalenus medius muscle.l",
+      "Scalenus medius muscle.r",
+      "Scalenus posterior muscle.l",
+      "Scalenus posterior muscle.r"
+    ],
+    "longissimus-capitis": [
+      "Longissimus capitis muscle.l",
+      "Longissimus capitis muscle.r"
+    ],
+    "masseter": [
+      "Deep part of masseter.l",
+      "Deep part of masseter.r",
+      "Superficial part of masseter.l",
+      "Superficial part of masseter.r"
+    ],
+    "temporalis": [
+      "Temporalis muscle.l",
+      "Temporalis muscle.r"
+    ],
+    "lateral-pterygoid": [
+      "Inferior head of lateral pterygoid muscle.l",
+      "Inferior head of lateral pterygoid muscle.r",
+      "Superior head of lateral pterygoid muscle.l",
+      "Superior head of lateral pterygoid muscle.r"
+    ],
+    "medial-pterygoid": [
+      "Medial pterygoid muscle.l",
+      "Medial pterygoid muscle.r"
+    ],
+    "orbicularis-oculi": [
+      "Orbital part of orbicularis oculi.l",
+      "Orbital part of orbicularis oculi.r",
+      "Palpebral part of orbicularis oculi.l",
+      "Palpebral part of orbicularis oculi.r"
+    ],
+    "corrugator-supercilii": [
+      "Corrugator supercilii.l",
+      "Corrugator supercilii.r"
+    ],
+    "procerus": [
+      "Procerus muscle.l",
+      "Procerus muscle.r"
+    ],
+    "frontalis": [
+      "Frontalis muscle.l",
+      "Frontalis muscle.r"
+    ],
+    "platysma": [
+      "Platysma.l",
+      "Platysma.r"
+    ],
+    "mentalis": [
+      "Mentalis muscle.l",
+      "Mentalis muscle.r"
+    ],
+    "adductor-brevis": [
+      "Adductor brevis.l",
+      "Adductor brevis.r"
+    ],
+    "gracilis": [
+      "Gracilis muscle.l",
+      "Gracilis muscle.r"
+    ],
+    "hand-lumbricals": [
+      "Lumbrical muscles of hand.l",
+      "Lumbrical muscles of hand.r"
+    ],
+    "foot-lumbricals": [
+      "Lumbrical muscles of foot.l",
+      "Lumbrical muscles of foot.r"
+    ]
+  },
+  "unfound": [
+    "obliques",
+    "tfl",
+    "semispinalis-capitis"
+  ]
+}

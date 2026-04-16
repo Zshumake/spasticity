@@ -1,0 +1,2006 @@
+# Total objects: 7184
+# Objects matching 'muscul': 55
+# Collections: 1944
+
+## Collections
+  1: Skeletal system
+  2: Muscular insertions
+  3: Joints
+  4: Muscular system
+  5: Cardiovascular system
+  6: Lymphoid organs
+  7: Nervous system & Sense organs
+  8: Visceral systems
+  9: Regions of human body
+  Abdomen
+  Abdominal aorta'
+  Abdominal lymph nodes
+  Abdominal part of muscular system
+  Abdominal part of oesophagus
+  Abdominal part of thoracic duct'
+  Abdominal plexuses
+  Abdominal recesses of peritoneal cavity
+  Abdominal visceral fascia
+  Abdominopelvic cavity
+  Abductor digiti minimi of foot
+  Accessory bones of cranium
+  Accessory bones of thorax
+  Accessory carpal bones
+  Accessory hemi-azygos vein'
+  Accessory ligaments
+  Accessory nerve (XI)
+  Accessory tarsal bone
+  Accessory visual structures
+  Acetabulum
+  Acromial end
+  Acromioclavicular joint
+  Acromion
+  Adductor hallucis
+  Adductor pollicis
+  Adenohypophysis
+  Aditus to mastoid antrum
+  Ala of ilium
+  Allocortex
+  Alveolar foramina
+  Alveolar part of mandible
+  Alveolar process
+  Amygdaloid body
+  Anal canal
+  Anal region
+  Angle of mandible
+  Ankle joint
+  Ansa cervicalis
+  Antebrachial fascia
+  Antebrachial region
+  Anterior border of radius
+  Anterior branch of obturator nerve
+  Anterior branch of renal artery'
+  Anterior cerebral artery'
+  Anterior cervical nodes
+  Anterior chamber of eyeball
+  Anterior clinoid process
+  Anterior commissure
+  Anterior communicating artery'
+  Anterior compartment of arm
+  Anterior compartment of forearm
+  Anterior compartment of leg
+  Anterior compartment of thigh
+  Anterior cutaneous branch of intercostal nerve
+  Anterior division of internal iliac artery'
+  Anterior division of mandibular nerve
+  Anterior division of retromandibular vein'
+  Anterior ethmoidal artery'
+  Anterior ethmoidal nerve
+  Anterior funiculus
+  Anterior gastric branches
+  Anterior horn of spinal cord
+  Anterior hypothalamic zone
+  Anterior inferior cerebellar artery'
+  Anterior internal vertebral venous plexus'
+  Anterior jugular vein'
+  Anterior limb of internal capsule
+  Anterior mediastinum
+  Anterior membranous ampulla
+  Anterior parietal peritoneal structures
+  Anterior pectoral cutaneous branch of intercostal nerve
+  Anterior quadrangular lobule
+  Anterior rami of cervical nerves
+  Anterior rami of lumbar nerves
+  Anterior rami of sacral nerves
+  Anterior rami of thoracic nerves
+  Anterior ramus of spinal nerve
+  Anterior region of arm
+  Anterior region of elbow
+  Anterior region of neck
+  Anterior region of thigh
+  Anterior region of thorax
+  Anterior segment of eyeball
+  Anterior semicircular canal
+  Anterior semicircular duct
+  Anterior spinal artery'
+  Anterior superior alveolar artery'
+  Anterior superior pancreaticoduodenal artery'
+  Anterior surface of lens
+  Anterior surface of maxilla
+  Anterior surface of petrous part
+  Anterior tarsal tendon sheaths
+  Anterior teeth
+  Anterior tibial artery'
+  Anterior tibial veins'
+  Anterior trunk
+  Anterior vagal trunk
+  Anterolateral fasciculus
+  Anterolateral surface of arytenoid cartilage
+  Anterolateral surface of humerus
+  Antihelix
+  Aorta
+  Aortic arch
+  Aortic bifurcation
+  Aortic sinuses
+  Aortic valve
+  Apex of heart
+  Apex of petrous part
+  Appendicular insertions
+  Appendicular skeleton
+  Approximal surface of tooth
+  Arachnoid
+  Arch of azygos vein'
+  Arcuate artery'
+  Arteries of heart
+  Arteries of spinal cord
+  Arteries'
+  Arthrology
+  Articular capsule
+  Articular cavity
+  Articular fibrocartilage
+  Articular tubercle
+  Articulations of auditory ossicles
+  Ary-epiglottic fold
+  Arytenoid cartilage
+  Ascending pharyngeal artery
+  Association fibres of telencephalon
+  Atlanto-occipital joint
+  Atlas
+  Atrioventricular bundle
+  Attachment
+  Auditory ossicles
+  Auditory tube
+  Auricle
+  Auricular cartilage
+  Auricular region
+  Auriculotemporal nerve
+  Automatic division of peripheral nervous system
+  Autonomic ganglia
+  Autonomic plexus
+  Axial insertions
+  Axial skeleton
+  Axillary artery'
+  Axillary nerve
+  Axillary nodes
+  Axillary region
+  Axillary vein'
+  Axis
+  Azygos vein'
+  Back
+  Bare area of liver
+  Basal forebrain
+  Base of arythenoid cartilage
+  Base of mandible
+  Base of peduncle
+  Base of sacrum
+  Basilar artery'
+  Basilar part of occipital bone
+  Basilar part of pons
+  Basilic vein'
+  Biceps brachii muscle
+  Biceps femoris muscle
+  Bifurcate ligament
+  Bile duct
+  Bladder neck part of detrusor vesicae
+  Blood vessels'
+  Body of cerebellum
+  Body of clavicle
+  Body of femur
+  Body of fibula
+  Body of humerus
+  Body of ilium
+  Body of incus
+  Body of mandible
+  Body of maxilla
+  Body of pancreas
+  Body of pubis
+  Body of radius
+  Body of rib
+  Body of sphenoid bone
+  Body of stomach
+  Body of talus
+  Body of tibia
+  Body of ulna
+  Bones of cranium
+  Bones of foot
+  Bones of free lower limb
+  Bones of free part of upper limb
+  Bones of hand
+  Bones of lower limb
+  Bones of pectoral girdle
+  Bones of pelvic girdle
+  Bones of thorax
+  Bones of upper limb
+  Bones of vertebral column
+  Bonus collection
+  Bony labyrinth
+  Bony palate
+  Bony part of auditory tube
+  Bony pelvis
+  Brachial artery'
+  Brachial plexus
+  Brachial region
+  Brachial veins'
+  Brachiocephalic trunk'
+  Brachiocephalic vein'
+  Brain
+  Brainstem
+  Branches of anterior part of lumbar plexus
+  Branches of anterior part of sacral plexus
+  Branches of hepatic portal vein'
+  Branches of lateral cord of brachial plexus
+  Branches of medial cord of brachial plexus
+  Branches of posterior cord of brachial plexus
+  Branches of posterior part of lumbar plexus
+  Branches of posterior part of sacral plexus
+  Broad ligament of uterus
+  Bronchi
+  Bronchopulmonary segment
+  Bronchus
+  Buccal nerve
+  Bursae
+  Bursae of head
+  Bursae of lower limb
+  Bursae of upper limb
+  Caecum
+  Calcaneal tuberosity
+  Calcaneocuboid joint
+  Calcaneus
+  Callosomarginal artery'
+  Calvaria
+  Cardia
+  Cardiac plexus
+  Cardiac septa
+  Cardiac veins
+  Cardiac vessels
+  Cardiovascular system
+  Carotid canal
+  Carotid wall of tympanic cavity
+  Carpal bones
+  Carpal region
+  Carpal tendon sheath
+  Carpometacarpal joints
+  Cartilage of auditory tube
+  Cartilage of external acoustic meatus
+  Cartilages
+  Cartilages of ear
+  Cartilaginous joints
+  Cartilaginous joints of pelvic girdle
+  Cartilaginous joints of sternum
+  Cartilaginous joints of thorax
+  Cartilaginous joints of vertebral column
+  Cartilaginous part of auditory tube
+  Caudate lobe
+  Caudate nucleus
+  Cavernous sinus'
+  Cells of ethmoid bone
+  Central fibrous body of heart
+  Central intermediate substance
+  Central lobule
+  Central mesencephalic structures
+  Central nervous system
+  Central retinal artery'
+  Central retinal vein'
+  Central structures of spinal cord
+  Central tegmental tract
+  Cephalic vein'
+  Cerebellar nuclei
+  Cerebellar peduncles
+  Cerebellum
+  Cerebral arterial circle
+  Cerebral cortex
+  Cerebral hemisphere
+  Cerebral lobes
+  Cerebral peduncle
+  Cerebrum
+  Cervical bursae
+  Cervical fascia
+  Cervical ganglia
+  Cervical nerves
+  Cervical part of muscular system
+  Cervical part of thoracic duct'
+  Cervical plexus
+  Cervical vertebra
+  Cervical vertebrae
+  Chorda tympani
+  Choroid plexus of lateral ventricle
+  Ciliary body
+  Ciliary ganglion
+  Ciliary muscle
+  Ciliary zonule
+  Clavicle
+  Clitoris'
+  Coccygeal nerve
+  Coccygeal plexus
+  Coccyx
+  Cochlea
+  Cochlear area
+  Cochlear duct
+  Cochlear nerve
+  Cochlear window
+  Coeliac plexus
+  Coeliac trunk'
+  Colon
+  Column of fornix
+  Commissural fibres of telencephalon
+  Common bony limb
+  Common carotid artery
+  Common cochlear artery'
+  Common facial vein'
+  Common fibular nerve
+  Common hepatic artery'
+  Common hepatic duct
+  Common iliac artery'
+  Common iliac nodes
+  Common iliac vein'
+  Common interosseus artery'
+  Common membranous limb
+  Common palmar digital branches of median nerve
+  Common palmar digital branches of ulnar nerve
+  Common plantar digital arteries'
+  Common plantar digital branches of lateral plantar nerve
+  Common plantar digital branches of medial plantar nerve
+  Concha of auricle
+  Conducting system of heart
+  Condylar process
+  Condyle of humerus
+  Confluence of sinuses'
+  Conjugate diameters
+  Conjunctiva
+  Conus elasticus
+  Coracoclavicular ligament
+  Cornea
+  Corona ciliaris
+  Coronary ligament
+  Coronoid proces of ulna
+  Corpus callosum
+  Corpus striatum
+  Cortex of kidney lobe
+  Corticomesencephalic fibres
+  Corticonuclear fibres
+  Corticopontine fibres
+  Costal cartilages
+  Costal surface of scapula
+  Costocervical trunk'
+  Costotransverse joint
+  Costovertebral joints
+  Cranial arachnoid
+  Cranial base
+  Cranial cartilaginous joints
+  Cranial dura
+  Cranial fibrous joints
+  Cranial nerves
+  Cranial part
+  Cranial part of muscular system
+  Cranial pia
+  Cranial subarachnoid cisterns
+  Cranial sutures
+  Cranial synchondroses
+  Cranial syndesmosis
+  Cranial synovial joints
+  Cranial veins'
+  Craniosacral part of autonomic division
+  Cranium
+  Cribriform area
+  Cribriform plate
+  Crico-arythenoid joint
+  Cricoid cartilage
+  Cricothyroid joint
+  Cricothyroid muscle
+  Crista galli
+  Cross section planes
+  Crown of tooth
+  Cruciform ligament
+  Cubital nodes
+  Cubital region
+  Cuboid bone
+  Cuboidonavicular joint
+  Culmen
+  Cuneocuboid joint
+  Cuneonavicular joint
+  Cylindrical joints
+  Cystic duct
+  Deep anterior cervical nodes
+  Deep brachial artery'
+  Deep branch of perineal nerve
+  Deep branch of radial nerve
+  Deep branches of cervical plexus
+  Deep circumflex iliac artery'
+  Deep external pudendal artery'
+  Deep femoral artery'
+  Deep femoral vein'
+  Deep fibular nerve
+  Deep gluteal muscles
+  Deep inguinal nodes
+  Deep investing cervical fascia
+  Deep layer of temporal fascia
+  Deep palmar arch'
+  Deep parotid nodes
+  Deep part of anterior compartment of forearm
+  Deep part of posterior compartment of forearm
+  Deep part of posterior compartment of leg
+  Deep perineal space
+  Deep temporal nerves
+  Deltoid muscle
+  Dens axis
+  Dental pulp
+  Dentate nucleus
+  Dento-alveolar syndesmosis
+  Dermis
+  Descending aorta
+  Descending genicular artery'
+  Detrusor vesicae
+  Diaphragmatic fascia
+  Diaphragmatic surface of liver
+  Diarthrosis
+  Diencephalon
+  Digastric muscle
+  Digestive canal
+  Digestive system
+  Diploe
+  Diploic veins'
+  Distal phalanx of foot
+  Distal phalanx of hand
+  Distal radio-ulnar joint
+  Dorsal branch of ulnar nerve
+  Dorsal carpal anastomosis'
+  Dorsal carpal branch of radial artery'
+  Dorsal carpal tendon sheaths
+  Dorsal intercarpal ligaments
+  Dorsal metacarpal arteries'
+  Dorsal metatarsal artery'
+  Dorsal metatarsal veins of foot'
+  Dorsal nuclei of thalamus
+  Dorsal pancreatic artery'
+  Dorsal part of muscular system
+  Dorsal scapular nerve
+  Dorsal striatum
+  Dorsal surface of sacrum
+  Dorsal venous arch of foot'
+  Dorsal venous network of hand'
+  Dorsalis pedis artery'
+  Dorsum of tongue
+  Duodenum
+  Dura
+  Dural venous sinuses'
+  Ear
+  Elbow joint
+  Elliptical recess
+  Emissary veins'
+  Endo-abdominal fascia
+  Endocrine glands
+  Endolymphatic space
+  Enteric plexus
+  Epaxial muscles
+  Epicardium
+  Epicranius muscle
+  Epigastric region
+  Epiglottic cartilage
+  Epiglottis
+  Episcleral vein'
+  Epithalamus
+  Epitympanic recess
+  Epoophoron'
+  Erector spinae
+  Erector spinae aponeurosis
+  Ethmoid bone
+  Ethmoid cells
+  Ethmoid labyrinth
+  Extensor carpi ulnaris
+  Extensor digitorum
+  Extensor digitorum longus
+  Extensor expansion of foot
+  Extensor expansion of hand
+  External abdominal oblique muscle
+  External acoustic meatus
+  External anal sphincter
+  External carotid artery
+  External carotid plexus
+  External ear
+  External iliac artery'
+  External iliac nodes
+  External iliac vein'
+  External jugular vein'
+  External nose
+  External pudendal veins'
+  External surface of cranial base
+  External surface of parietal bone
+  External surface of squamous part of frontal bone
+  External vertebral venous plexuses'
+  External wall of cochlear duct
+  Extra-ocular muscles
+  Extracranial bones of head
+  Extrahepatic bile ducts
+  Extraperitoneal fascia
+  Extraperitoneal space
+  Extrinsic auricular muscles
+  Eye*
+  Eyeball
+  Eyelids
+  Face
+  Facial artery
+  Facial canal
+  Facial muscles
+  Facial nerve (VII)
+  Facial nerve proper
+  Facial nodes
+  Facial vein'
+  Falciform margin of saphenous hiatus
+  False ribs
+  Fascia
+  Fascia lata
+  Fascia of abdomen
+  Fascia of body cavities
+  Fascia of head
+  Fascia of lower limb
+  Fascia of muscles
+  Fascia of upper limb
+  Fatty layer of subcutaneous tissue
+  Fauces
+  Female external genitalia'
+  Female genital system'
+  Female internal genitalia'
+  Female urethra
+  Femoral artery
+  Femoral nerve
+  Femoral region
+  Femoral sheath
+  Femoral vein'
+  Femur
+  Fibro-elastic membrane of larynx
+  Fibromusculocartilaginous layer of trachea
+  Fibrous joints
+  Fibrous joints of auditory ossicles
+  Fibrous joints of free lower limb
+  Fibrous joints of free upper limb
+  Fibrous joints of larynx
+  Fibrous joints of pectoral girdle
+  Fibrous joints of pelvic girdle
+  Fibrous joints of thorax
+  Fibrous joints of vertebral column
+  Fibrous layer of eyeball
+  Fibrous sheaths of digits of hand
+  Fibrous sheaths of toes
+  Fibrous skeleton of heart
+  Fibula
+  Fibular artery'
+  Fibular tarsal tendon sheaths
+  Fifth metatarsal bone
+  First metatarsal bone
+  First posterior intercostal artery'
+  First rib
+  Flexor carpi ulnaris
+  Flexor digitorum superficialis
+  Flexor hallucis brevis
+  Flexor pollicis brevis
+  Floating ribs
+  Fontanelles
+  Foramen caecum of tongue
+  Fornicate gyrus
+  Fornix
+  Fornix of stomach
+  Fourth ventricle
+  Fovea centralis
+  Frontal bone
+  Frontal lobe
+  Frontal nerve
+  Frontal part of orbital margin
+  Frontal process of maxilla
+  Frontal region
+  Fundus of internal acoustic meatus
+  Fundus of stomach
+  Gallbladder
+  Ganglia
+  Ganglia of sympathetic trunk
+  Gastrocnemius muscle
+  Gastroduodenal artery'
+  General terms
+  Genital systems'
+  Genitofemoral nerve
+  Gingiva
+  Glenohumeral joint
+  Glenohumeral ligaments
+  Glenoid process of scapula
+  Globus pallidus
+  Glossopharyngeal nerve (IX)
+  Glottis
+  Gluteal nodes
+  Gluteal region
+  Gluteal surface of ilium
+  Great lymphatic vessels
+  Great saphenous vein'
+  Greater omentum
+  Greater palatine nerve
+  Greater petrosal nerve
+  Greater trochanter
+  Greater wing
+  Grey matter of cerebellum
+  Grey matter of medulla oblongata
+  Grey matter of pontine tegmentum
+  Grey matter of spinal cord
+  Grey matter of tegmentum of midbrain
+  Gustatory organ
+  Habenula
+  Hairs
+  Hamate bone
+  Head
+  Head of femur
+  Head of fibula
+  Head of malleus
+  Head of pancreas
+  Head of phalanx of foot
+  Head of phalanx of hand
+  Head of posterior horn
+  Head of radius
+  Head of rib
+  Head of stapes
+  Head of talus
+  Head of ulna
+  Heart
+  Helix
+  Hemi-azygos vein'
+  Hemisphere of cerebellum
+  Hepatic branches
+  Hepatic nodes
+  Hepatic portal vein'
+  Hepatic veins'
+  Hepatopancreatic ampulla
+  Hip bone
+  Hip joint
+  Hippocampus
+  Horizontal plate of palatine bone
+  Humerus
+  Hyoglossus muscle
+  Hyoid bone
+  Hypaxial muscles of back
+  Hypoglossal nerve (XII)
+  Hypophysis
+  Hypothalamohypophysial tract
+  Hypothalamus
+  Ileal orifice
+  Ileocolic artery'
+  Ileum
+  Iliac crest
+  Ilio-inguinal nerve
+  Iliocostalis muscles
+  Iliofemoral ligament
+  Iliohypogastric nerve
+  Iliolumbar artery'
+  Iliopsoas fascia
+  Iliopsoas muscle
+  Ilium
+  Incus
+  Inferior alveolar foramen
+  Inferior alveolar nerve
+  Inferior articular process of vertebra
+  Inferior border of liver
+  Inferior branch of oculomotor nerve
+  Inferior branch of vestibular nerve
+  Inferior cerebellar peduncle
+  Inferior colliculus
+  Inferior deep lateral cervical nodes
+  Inferior dental plexus
+  Inferior epigastric artery'
+  Inferior epigastric vein'
+  Inferior frontal gyrus
+  Inferior gluteal artery'
+  Inferior hypogastric plexus
+  Inferior lobar artery of left lung'
+  Inferior lobe of left lung
+  Inferior lobe of right lung
+  Inferior mediastinum
+  Inferior mesenteric artery'
+  Inferior mesenteric nodes
+  Inferior mesenteric plexus
+  Inferior nasal concha bone
+  Inferior nasal meatus of cranium
+  Inferior olivary complex
+  Inferior pancreaticoduodenal artery'
+  Inferior parietal lobe
+  Inferior petrosal sinus'
+  Inferior pharyngeal constrictor
+  Inferior phrenic artery'
+  Inferior pyramid space
+  Inferior surface of petrous part
+  Inferior surface of tongue
+  Inferior teeth
+  Inferior thyroid vein'
+  Inferior trunk of brachial plexus
+  Inferior vena cava'
+  Inferior vesical artery'
+  Inferior vestibular area
+  Infra-orbital artery'
+  Infra-orbital nerve
+  Infraclavicular part of brachial plexus
+  Infrahyoid muscles
+  Infrahyoid nodes
+  Infrahyoid region
+  Infrapatellar synovial fold
+  Infraperitoneal space
+  Infratemporal surface of maxilla
+  Infratrochlear nerve
+  Infundibulum of hypothalamus
+  Inguinal ligament
+  Inguinal lymph nodes
+  Inner layer of eyeball
+  Inner sheath of optic nerve
+  Inner zone of iris
+  Inrarenal veins of kidney'
+  Insertions of Iliopsoas muscle
+  Insertions of Scalenus medius and posterior
+  Insertions of Sternohyoid muscle
+  Insertions of abductor pollicis longus
+  Insertions of adductor hallucis brevis
+  Insertions of adductor muscles of hip
+  Insertions of anconeus muscle
+  Insertions of biceps brachii muscle
+  Insertions of biceps femoris muscle
+  Insertions of brachialis mucle
+  Insertions of brachioradialis muscle
+  Insertions of buccinator muscle
+  Insertions of coracoradialis muscle
+  Insertions of deltoid muscle
+  Insertions of diaphragm
+  Insertions of extensor carpi ulnaris
+  Insertions of extensor digitorum indicis
+  Insertions of extensor digitorum longus of foot
+  Insertions of extensor hallucis brevis
+  Insertions of extensor hallucis longus muscle
+  Insertions of extensor pollicis brevis
+  Insertions of extensor pollicis longus
+  Insertions of extensor radialis longus
+  Insertions of external abdominal oblique muscle
+  Insertions of facial muscles
+  Insertions of fibularis brevis muscle
+  Insertions of fibularis tertius muscle
+  Insertions of flexor carpi ulnaris muscle
+  Insertions of flexor digitorum brevis
+  Insertions of flexor digitorum longus
+  Insertions of flexor hallucis longus
+  Insertions of flexor pollicis longus muscle
+  Insertions of gemellus muscles
+  Insertions of geniohyoid muscle
+  Insertions of gluteal muscles
+  Insertions of gluteus maximus muscle
+  Insertions of gluteus medius muscle
+  Insertions of gracilis muscle
+  Insertions of infraspinatus muscle
+  Insertions of internal abdominal oblique
+  Insertions of internal abdominal oblique muscle
+  Insertions of latissimus dorsi mucle
+  Insertions of levatores longi costarum
+  Insertions of long plantar ligament
+  Insertions of longissimus thoracis
+  Insertions of lower limbs
+  Insertions of masseter
+  Insertions of obliquus inferior capitis
+  Insertions of obturator externus muscle
+  Insertions of obturator internus muscle
+  Insertions of omohyoid muscle
+  Insertions of pectoralis major
+  Insertions of pectoralis minor muscle
+  Insertions of plantar interossei muscle
+  Insertions of popliteus muscle
+  Insertions of procerus muscle
+  Insertions of pronator quadratus muscle
+  Insertions of pronator teres muscle
+  Insertions of pterygoid muscles
+  Insertions of quadratus femoris muscle
+  Insertions of rectus abdominis muscle
+  Insertions of rectus anterior capitis
+  Insertions of rectus posterior major muscle
+  Insertions of rectus posterior minor muscle
+  Insertions of rhomboid muscles
+  Insertions of sartorius muscle
+  Insertions of scalene anterior
+  Insertions of semimenbranosus muscle
+  Insertions of semitendinosus muscle
+  Insertions of serratus anterior muscle
+  Insertions of serratus posterior
+  Insertions of serratus posterior inferior muscle
+  Insertions of serratus posterior superior muscle
+  Insertions of sternocleidomastoid
+  Insertions of subscapularis muscle
+  Insertions of supinator muscle
+  Insertions of supraspinatus muscle
+  Insertions of temporalis muscle
+  Insertions of teres major muscle
+  Insertions of teres minor muscle
+  Insertions of thyrohyoid muscle
+  Insertions of tibialis anterior muscle
+  Insertions of tibialis posterior muscle
+  Insertions of transverse abdominal muscle
+  Insertions of trapezius muscle
+  Insertions of triceps brachii
+  Insertions of triceps surae
+  Insertions of upper limbs
+  Insula
+  Integument
+  Interatrial septum
+  Intercarpal joints
+  Intercavernous sinus'
+  Interchondral joints
+  Intercondylar eminence
+  Intercondylar surfaces of tibia
+  Intercostal nerve
+  Intercostal nerves
+  Intercuneiform joints
+  Interlobular sulci
+  Intermediate bronchus
+  Intermediate hypothalamic area
+  Intermediate zone of spinal cord
+  Intermetacarpal joints
+  Intermetatarsal joints
+  Internal abdominal oblique muscle
+  Internal acoustic meatus
+  Internal capsule
+  Internal carotid artery
+  Internal carotid plexus
+  Internal ear
+  Internal iliac artery'
+  Internal iliac nodes
+  Internal iliac vein'
+  Internal jugular vein'
+  Internal nasal branches of anterior ethmoidal nerve
+  Internal pudendal artery'
+  Internal surface of cheek
+  Internal surface of cranial base
+  Internal surface of frontal bone
+  Internal surface of parietal bone
+  Internal table of calvaria
+  Internal thoracic artery'
+  Internal thoracic veins'
+  Interosseus intercarpal ligaments
+  Interphalangeal joints of foot
+  Interphalangeal joints of hand
+  Interspinales muscles
+  Intertarsal joints
+  Intertransversarii muscles
+  Intertrochanteric crest
+  Intertubercular sulcus
+  Interventricular septum
+  Intervertebral disc
+  Intervertebral symphysis
+  Intervertebral veins'
+  Intramural part of bile duct
+  Intramural part of female urethra
+  Intramural part of male urethra
+  Intraocular part of optic nerve
+  Intrapulmonary bronchi
+  Intrarenal arteries'
+  Intrarenal veins of left kidney'
+  Intrinsic auricular muscles
+  Iris
+  Ischio-anal fossa
+  Ischium
+  Joint of head of rib
+  Joints
+  Joints of auditory ossicles
+  Joints of foot
+  Joints of free lower limb
+  Joints of free upper limb
+  Joints of hand
+  Joints of lower limb
+  Joints of pectoral girdle
+  Joints of pelvic girdle
+  Joints of skull
+  Joints of upper limb
+  Joints of vertebral column
+  Jugular fossa
+  Jugular wall of tympanic cavity
+  Kidney
+  Kidney lobe
+  Knee joint
+  Knee region
+  Labyrinthine artery'
+  Labyrinthine wall of tympanic cavity
+  Lacrimal apparatus
+  Lacrimal artery'
+  Lacrimal bone
+  Lacrimal canliculus
+  Lacrimal gland
+  Lacrimal groove of maxilla
+  Lacrimal papilla
+  Lacrimal sac
+  Lamina of cricoid cartilage
+  Lamina of thyroid cartilage
+  Lamina of vertebral arch
+  Large intestine
+  Laryngeal cartilages
+  Laryngeal cavity
+  Laryngeal inlet
+  Laryngeal joints
+  Laryngeal muscles
+  Laryngeal ventricle
+  Laryngopharynx
+  Larynx
+  Lateral angle of scapula
+  Lateral border of humerus
+  Lateral cervical nodes
+  Lateral circumflex femoral artery'
+  Lateral collateral ligament
+  Lateral compartment of leg
+  Lateral condyle of femur
+  Lateral condyle of tibia
+  Lateral cuaneous branch of intercostal nerve
+  Lateral flexures of rectum
+  Lateral funiculus
+  Lateral horn of spinal cord
+  Lateral intermediate substance
+  Lateral intertransversarii lumborum muscles
+  Lateral malleolar branch of fibular artery'
+  Lateral malleolar facet
+  Lateral malleolus
+  Lateral mass
+  Lateral membranous ampulla
+  Lateral meniscus
+  Lateral nuclei of thalamus
+  Lateral part of occipital bone
+  Lateral part of sacrum
+  Lateral pectoral cutaneous branch of intercostal nerve
+  Lateral pectoral nerve
+  Lateral plantar artery'
+  Lateral plantar nerve
+  Lateral plantar veins'
+  Lateral pterygoid muscle
+  Lateral rectus muscle
+  Lateral region of neck
+  Lateral sacral arteries'
+  Lateral semicircular canal
+  Lateral semicircular duct
+  Lateral surface of radius
+  Lateral thoracic artery'
+  Lateral ventricle
+  Lateral wall of nasal cavity
+  Lateral wall of orbit
+  Left atrioventricular valve
+  Left atrium
+  Left auricle of heart
+  Left brachiocephalic vein'
+  Left branch of hepatic partal vein'
+  Left bundle branch
+  Left cerebral hemisphere
+  Left colic artery'
+  Left coronary artery
+  Left foot
+  Left gastric artery'
+  Left gastro-omental artery'
+  Left hand
+  Left hepatic artery'
+  Left hepatic duct
+  Left inferior lobar bronchus
+  Left inferior pulmonary vein'
+  Left lateral division of liver
+  Left lobe of liver
+  Left lower limb
+  Left lumbar nodes
+  Left lung
+  Left main bronchus
+  Left maxilla
+  Left medial division of liver
+  Left part of liver
+  Left pulmonary artery'
+  Left renal vein'
+  Left superior intercostal vein'
+  Left superior lobar bronchus
+  Left superior pulmonary vein'
+  Left suprarenal vein'
+  Left testicular vein'
+  Left upper limb
+  Left ventricle
+  Leg region
+  Lens
+  Lenticular process of incus
+  Lentiform nucleus
+  Leptomeninges
+  Lesser curvature of stomach
+  Lesser omentum
+  Lesser palatine nerve
+  Lesser thoracic splanchnic nerve
+  Lesser wing
+  Levator ani
+  Ligaments of auditory ossicles
+  Ligaments of auricle
+  Ligaments of epiglottis
+  Limbic gyrus
+  Limbic lobe
+  Linea alba
+  Linea aspera
+  Lingual artery
+  Lingual nerve
+  Lingual papillae
+  Lingual tonsil
+  Lingual vein'
+  Lingula of left lung
+  Lingular vein of left lung'
+  Liver
+  Lobe of lung
+  Lobe of thymus
+  Lobe of thyroid gland
+  Lobules of thymus
+  Long association fibres
+  Long limb of incus
+  Long posterior ciliary arteries'
+  Long thoracic nerve
+  Longissimus muscles
+  Longissimus thoracis muscle
+  Longitudinal arch of foot
+  Longitudinal bands of cruciform ligament
+  Longitudinal duct of epoophoron'
+  Longitudinal muscular layer of colon
+  Longitudinal planes
+  Lower thoracic vertebra
+  Lumbar arteries'
+  Lumbar nerves
+  Lumbar plexus
+  Lumbar vertebra
+  Lumbar vertebrae
+  Lumbosacral plexus
+  Lumbosacral trunk
+  Lungs
+  Lymph node
+  Lymph nodes
+  Lymph nodes of head
+  Lymph nodes of lower limb
+  Lymph nodes of neck
+  Lymph nodes of upper limb
+  Lymphatic vessels'
+  Lymphoid system
+  Macula
+  Maculae cribrosae
+  Magnocellular nuclei of basal forebrain
+  Main divisions
+  Main portal fissure
+  Major alar cartilage
+  Major calices
+  Major salivary glands
+  Male external genitalia'
+  Male genital system'
+  Male internal genitalia'
+  Male urethra
+  Malleus
+  Mandible
+  Mandibular fossa
+  Mandibular nerve
+  Manubrium of sternum
+  Masseter
+  Masticatory muscles
+  Mastoid antrum
+  Mastoid wall of tympanic cavity
+  Maxilla
+  Maxillary artery
+  Maxillary nerve
+  Maxillary veins'
+  Medial antebrachial cutaneous nerve
+  Medial border of humerus
+  Medial border of kidney
+  Medial circumflex femoral artery'
+  Medial collateral ligament
+  Medial compartment of thigh
+  Medial condyle of femur
+  Medial crus of major alar cartilage
+  Medial epicondyle of humerus
+  Medial malleolus
+  Medial meniscus
+  Medial nuclei of thalamus
+  Medial palpebral arteries'
+  Medial plantar artery'
+  Medial plantar nerve
+  Medial pterygoid muscle
+  Medial sural cutaneous nerve
+  Medial surface of fibula
+  Medial surface of lung
+  Medial wall of orbit
+  Median atlanto-axial joint
+  Median nerve
+  Median sacral artery'
+  Mediastinal lymph nodes
+  Mediastinum
+  Medulla oblongata
+  Medullary reticular formation
+  Membranous labyrinth
+  Membranous part of female urethra
+  Membranous part of male urthra
+  Membranous wall of tympanic cavity
+  Meninges
+  Mental nerve
+  Mesentery
+  Mesocolon
+  Metacarpal bone
+  Metacarpal bones
+  Metacarpal bones of left hand
+  Metacarpal bones of right hand
+  Metacarpophalangeal joints
+  Metatarsal bone
+  Metatarsal bones
+  Metatarsal region
+  Metatarsophalangeal joints
+  Midbrain
+  Middle anorectal artery'
+  Middle cerebellar peduncle
+  Middle cerebral artery'
+  Middle ear
+  Middle lobar bronchus
+  Middle lobe of right lung
+  Middle mediastinum
+  Middle nasal meatus
+  Middle pharyngeal constrictor
+  Middle superior alveolar artery'
+  Middle trunk of brachial plexus
+  Minor laryngeal cartilage
+  Minor salivary glands
+  Mixed nerve
+  Modiolous of cochlea
+  Molar tooth
+  Mouth
+  Mouth'
+  Movements
+  Mucosa of auditory tube
+  Mucosa of bladder
+  Mucosa of female urethra
+  Mucosa of gallblader
+  Mucosa of large intestine
+  Mucosa of male urethra
+  Mucosa of mouth
+  Mucosa of nasal cavity
+  Mucosa of small intestine
+  Mucosa of stomach
+  Mucosa of tongue
+  Multifidus muscles
+  Muscle
+  Muscle of anal triangle
+  Muscles
+  Muscles of abdomen
+  Muscles of auditory ossicles
+  Muscles of foot
+  Muscles of hand
+  Muscles of head
+  Muscles of lower limb
+  Muscles of neck
+  Muscles of pelvis
+  Muscles of soft palate
+  Muscles of tongue
+  Muscles of upper limb
+  Muscles of urogenital triangle
+  Muscular arteries'
+  Muscular insertions
+  Muscular layer of bladder
+  Muscular layer of colon
+  Muscular layer of female urethra
+  Muscular layer of male urethra
+  Muscular layer of oesophagus
+  Muscular layer of rectum
+  Muscular layer of small intestine
+  Muscular layer of stomach
+  Muscular system
+  Muscular system of lower limb
+  Muscular system of upper limb
+  Musculocutaneous nerve
+  Musculotubal canal
+  Myocardium
+  Nail
+  Nail plate
+  Nasal bone
+  Nasal cartilages
+  Nasal cavity
+  Nasal cavity of cranium
+  Nasal part of frontal bone
+  Nasal region
+  Nasal septal cartilage
+  Nasal septum
+  Nasal surface of maxilla
+  Nasalis muscle
+  Nasociliary nerve
+  Nasolacrimal duct
+  Nasopalatine nerve
+  Nasopharynx
+  Navicular bone
+  Neck
+  Neck of rib
+  Neck of talus
+  Neo-cortex
+  Neocortex
+  Nerve
+  Nerve fascicle
+  Nerves
+  Nervous system
+  Nervus plexuses
+  Neural layer of optical retina
+  Neurocranial part of head
+  Neurohypophysis
+  Nonvisual retina
+  Nose
+  Nuclei of cranial nerve
+  Nuclei of geniculate bodies
+  Oblique arythenoid muscle
+  Obturator artery'
+  Obturator fascia
+  Obturator membrane
+  Obturator nerve
+  Occipital artery
+  Occipital bone
+  Occipital lobe
+  Occipitofrontalis muscle
+  Occipitotemporal gyri
+  Oculomotor complex
+  Oculomotor nerve (III)
+  Oesophagus
+  Olfactory nerve (I)
+  Olfactory organ
+  Olfactory part of nasal mucosa
+  Olfactory structures
+  Omental bursa
+  Omohyoid muscle
+  Ophtalmic artery'
+  Ophtalmic nerve
+  Optic disc
+  Optic nerve (II)
+  Optic part of retina
+  Optic tract
+  Oral cavity
+  Oral region
+  Orbiculari oris muscle
+  Orbicularis oculi muscle
+  Orbit
+  Orbital cavity
+  Orbital margin
+  Orbital part of frontal bone
+  Orbital region
+  Orbital surface of frontal bone
+  Orbital surface of maxilla
+  Orbital veins'
+  Orientations
+  Oropharynx
+  Osseus spiral lamina
+  Otic ganglion
+  Outer lip of iliac crest
+  Ovarian artery'
+  Ovary'
+  Palate
+  Palatine bone
+  Palatine process
+  Palatine tonsil
+  Palatoglossal arch
+  Palatopharyngeal arch
+  Palatopharyngeus muscle
+  Pallium
+  Palm
+  Palmar carpal tendon sheaths
+  Palmar intercarpal ligaments
+  Palmar metacarpal arteries'
+  Palmar radiocarpal ligament
+  Palmar ulnocarpal ligament
+  Palpebral part of orbicularis ocule
+  Pancreas
+  Pancreatic branches of splenic artery'
+  Pancreatic duct
+  Pancreatic nodes
+  Pancreatic part of bile duct
+  Pancreaticoduodenal nodes
+  Papillary layer
+  Papillary muscles of left ventricle
+  Papillary muscles of right ventricle
+  Para-urethral glands of female urethra
+  Para-urthral glands of male urethra
+  Paraganglia
+  Parametrium
+  Paranasal sinuses
+  Parathyroid glands
+  Paravertebral ganglia
+  Paravesical nodes
+  Parietal bone
+  Parietal lobe
+  Parietal lymph nodes
+  Parietal pelvic fascia
+  Parietal pelvic lymph nodes
+  Parietal peritoneum
+  Parietal pleura
+  Parietal thoracic lymph nodes
+  Paroophoron'
+  Parotid gland
+  Parotid plexus
+  Patella
+  Pectoral region
+  Pectoralis major muscle
+  Pelvic diaphragm
+  Pelvic extraperitoneal fascia
+  Pelvic fasciae
+  Pelvic lymph nodes
+  Pelvic part of muscular system
+  Pelvic peritoneal structures
+  Pelvic plexuses
+  Pelvic recesses of peritoneal cavity
+  Pelvic surface of sacrum
+  Pelvic visceral fascia
+  Pelvis
+  Penis'
+  Perforating branches of internal thoracic artery'
+  Perforating femoral arteries'
+  Pericallosal artery'
+  Pericardial cavity
+  Pericardial sac
+  Pericardium
+  Perihypoglossal nuclei
+  Perilymphatic duct
+  Perilymphatic space
+  Perineal membrane
+  Perineal muscles
+  Perineal nerve
+  Peripharyngeal space
+  Peripheral nervous system
+  Peritoneal cavity
+  Peritoneal ligaments of liver
+  Peritoneal structures
+  Peritoneum
+  Perivascular plexus
+  Perivascular plexuses
+  Periventricular organs of third ventricle
+  Perpendicular plate of palatine bone
+  Petrous part of temporal bone
+  Petrous ridge
+  Phalanges of foot
+  Phalanges of hand
+  Phalanx of foot
+  Phalanx of hand
+  Pharyngeal branch of vagus nerve
+  Pharyngeal lymphoid ring
+  Pharyngeal muscles
+  Pharyngeal tonsil
+  Pharyngeal venous plexus'
+  Pharynx
+  Phrenic nerve
+  Phrenic plexus
+  Pia
+  Pisiform joint
+  Plantar aponeurosis
+  Plantar arch'
+  Plantar metatarsal arteries'
+  Plantar venous arch'
+  Pleura
+  Pleural cavity
+  Pleural recesses
+  Pons
+  Pontine central grey matter
+  Pontine raphe nuclei
+  Pontine reticular formation
+  Popliteal artery'
+  Popliteal lymph nodes
+  Popliteal vein'
+  Portal tract
+  Posterior auricular artery
+  Posterior auricular nerve
+  Posterior border of petrous part
+  Posterior branch of obturator nerve
+  Posterior branch of renal artery'
+  Posterior cerebellar artery'
+  Posterior communicating artery'
+  Posterior compartment of arm
+  Posterior compartment of forearm
+  Posterior compartment of leg
+  Posterior compartment of thigh
+  Posterior cranial fossa
+  Posterior division of internal iliac artery'
+  Posterior division of mandibular nerve
+  Posterior ethmoidal artery'
+  Posterior femoral cutaneous nerve
+  Posterior funiculus
+  Posterior gastric branches
+  Posterior horn of spinal cord
+  Posterior hypothalamic area
+  Posterior layer of thoracolumbar fascia
+  Posterior limb of internal capsule
+  Posterior lobe of cerebellum
+  Posterior mediastinum
+  Posterior membranous ampulla
+  Posterior parietal peritoneal structures
+  Posterior part of liver
+  Posterior part of tongue
+  Posterior process of talus
+  Posterior rami of cervical nerves
+  Posterior rami of lumbar nerves
+  Posterior rami of sacral nerves
+  Posterior rami of thoracic nerves
+  Posterior ramus of spinal nerve
+  Posterior region of ankle
+  Posterior region of knee
+  Posterior region of leg
+  Posterior segment of eyeball
+  Posterior semicircular canal
+  Posterior semicircular duct
+  Posterior superior pancreaticoduodenal artery'
+  Posterior surface of humerus
+  Posterior surface of lens
+  Posterior surface of petrous part
+  Posterior surface of scapula
+  Posterior surface of tibia
+  Posterior teeth
+  Posterior tibial artery'
+  Posterior tibial veins'
+  Posterior tympanic artery
+  Posterior vagal trunk
+  Postnatal septum
+  Postremal chamber of eyeball
+  Preoptic area
+  Prerubral tegmentum
+  Pretectum
+  Prethalamus
+  Prevertebral ganglia
+  Primary curvatures
+  Primary lymphoid organs
+  Principal inferior olivary nucleus
+  Projection fibers of telencephalon
+  Promontory of tympanic cavity
+  Pronator teres
+  Proper hepatic artery'
+  Prostatic plexus
+  Prostatic urethra
+  Pterygoid hamulus
+  Pterygoid process
+  Pterygoid venous plexus'
+  Pterygopalatine ganglion
+  Pubic branch of inferior epigastric artery'
+  Pubic symphysis
+  Pubis
+  Pudendal nerve
+  Pulmonary arteries
+  Pulmonary lymph nodes
+  Pulmonary trunk'
+  Pulmonary valve
+  Pulmonary veins
+  Pulmonary vessels
+  Pulp cavity
+  Pyloric nodes
+  Pyloric part
+  Pylorus
+  Pyramidal tract
+  Quadrangular membrane
+  Quadriceps femoris muscle
+  Radial artery'
+  Radial nerve
+  Radial veins'
+  Radiation of corpus callosum
+  Radicular arteries'
+  Radicular veins'
+  Radio-ulnar syndesmoses
+  Radiocarpal joint
+  Radius
+  Ramus of ischium
+  Ramus of mandible
+  Raphe nuclei of medulla oblongata
+  Raphe of medulla oblongata
+  Raphe of pons
+  Recesses of tympanic membrane
+  Rectal plexus
+  Recto-urethral muscles
+  Rectum
+  Rectus abdominis muscle
+  Rectus sheath
+  Recurrent laryngeal nerve
+  Reference lines
+  Reference lines, planes & movements'
+  Reference lines, reference planes, movements
+  Reference planes
+  Region of digits of foot
+  Region of digits of hand
+  Region of hand
+  Regions of abdomen
+  Regions of epicranium
+  Regions of face
+  Regions of foot
+  Regions of head
+  Regions of human body
+  Regions of lower limb
+  Regions of neck
+  Regions of perineum
+  Regions of thorax
+  Regions of trunk
+  Regions of upper limb
+  Renal artery'
+  Renal fascia
+  Renal papilla
+  Renal pelvis
+  Renal plexus
+  Renal pyramid
+  Respiratory system
+  Restiform body
+  Retcus femoris muscle
+  Reticular formation of midbrain
+  Reticular layer
+  Retina
+  Retrolentiform limb of internal capsule
+  Retromandibular vein'
+  Retroperitoneal fascia
+  Retroperitoneal space
+  Rhomboid fossa
+  Rib
+  Ribs
+  Right atrioventricular valve
+  Right atrium
+  Right auricle of heart
+  Right brachiocephalic vein'
+  Right branch of hepatic portal vein'
+  Right cerebal hemisphere
+  Right coronary artery
+  Right foot
+  Right gastro-omental artery'
+  Right hand
+  Right hepatic artery'
+  Right hepatic duct
+  Right inferior lobar bronchus
+  Right inferior pulmonary vein'
+  Right lateral division of liver
+  Right lower limb
+  Right lumbar nodes
+  Right lung
+  Right lymphatic duct'
+  Right main bronchus
+  Right maxilla
+  Right medial division of liver
+  Right part of liver
+  Right pulonary artery'
+  Right renal vein'
+  Right superior lobar bronchus
+  Right superior pulmonary vein'
+  Right suprarenal vein'
+  Right testicular vein'
+  Right upper limb
+  Right ventricle
+  Rima glottidis
+  Roof of fourth ventricle
+  Roof of nasal cavity
+  Root canal
+  Root of aorta
+  Root of nerve
+  Root of nerves
+  Root of tooth
+  Root pulmonary trunk
+  Rotator cuff muscles
+  Rotatores
+  Rotatores thoracis
+  Saccule
+  Sacral canal
+  Sacral nerves
+  Sacral part of autonomic division
+  Sacral plexus
+  Sacro-iliac joint
+  Sacrococcygeal joint
+  Sacropelvic surface of ilium
+  Sacrotuberous ligament
+  Sacrum
+  Sagittal planes
+  Salivary glands
+  Saphenous hiatus
+  Saphenous nerve
+  Sartorius muscle
+  Scaphoid bone
+  Scapula
+  Scapulohumeral muscles
+  Sciatic nerve
+  Sclera
+  Scrotum'
+  Second posterior intercostal artery'
+  Second rib
+  Secondary curvatures
+  Secondary lymphoid organs
+  Segmental medullary artery'
+  Sella turcica
+  Semicircular canals
+  Semicircular duct
+  Semilunar hiatus
+  Seminal colliculus
+  Semispinalis muscles
+  Semlunar lobules
+  Sense organs
+  Sensory ganglia
+  Sensory nerve
+  Sensory root of facial nerve
+  Sensory root of trigeminal nerve
+  Septomarginal trabecula
+  Septum pellucidum
+  Serous pericardium
+  Sesamoid bones of knee
+  Short association fibres
+  Short posterior ciliary arteries'
+  Sigmoid sinus'
+  Sinus of frontal bone
+  Sinus of pulmonary veins
+  Sinus of sphenoid bone
+  Sinus of venae cavea
+  Sinuses of pulmonary trunk
+  Skeletal system
+  Skeleton of lower limbs
+  Skeleton of upper limbs
+  Skin
+  Skin appendages
+  Skin glands
+  Small intestine
+  Small saphenous vein'
+  Smoot part of riht atrium
+  Smooth muscles of infraperitoneal space
+  Smooth part of left atrium
+  Soft palate
+  Sole
+  Soleus muscle
+  Sphenoid bone
+  Sphincter of bile duct
+  Spinal arachnoid
+  Spinal area X
+  Spinal arterial branch'
+  Spinal arterial branches'
+  Spinal cord
+  Spinal dura
+  Spinal nerve
+  Spinal nerves
+  Spinal nucleus of trigeminal nerve
+  Spinal pia
+  Spinalis muscles
+  Spine of scapula
+  Spinomesencephalic tracts
+  Spinothalamic tracts
+  Spinotransversales muscles
+  Spiral membrane
+  Spleen
+  Splenic artery'
+  Splenic branches of splenic artery'
+  Splenic pulp
+  Splenius muscles
+  Spongy urethra
+  Squamous part of frontal bone
+  Squamous part of occipital bone
+  Squamous part of temporal bone
+  Stapes
+  Sternal end
+  Sternochondral joints
+  Sternoclavicular joint
+  Sternocleidomastoid muscle
+  Sternocleidomastoid region
+  Sternopericardial ligaments
+  Sternum
+  Stomach
+  Subcallosal area
+  Subclavian artery
+  Subclavian nerve
+  Subclavian vein'
+  Subcostal nerve
+  Subcutaneous tissue
+  Subcutaneous tissue of abdomen
+  Subcutaneous tissue of peritoneum
+  Subhepatic space
+  Sublentiform limb of internal capsule
+  Sublingual gland
+  Submandibular ganglion
+  Submandibular gland
+  Submucosa of pharynx
+  Suboccipital muscles
+  Subscapular artery'
+  Subscapular nerves
+  Subscapular vein'
+  Substancia nigra
+  Subtalar joint
+  Subthalamus
+  Superficial branch of lateral plantar nerve
+  Superficial branch of perineal nerve
+  Superficial branch of radial nerve
+  Superficial branch of ulnar nerve
+  Superficial branches of cervical plexus
+  Superficial fibular nerve
+  Superficial gluteal muscles
+  Superficial inguinal nodes
+  Superficial inguinal ring
+  Superficial investing cervical fascia
+  Superficial muscles
+  Superficial muscles of head
+  Superficial palmar arch'
+  Superficial part of anterior compartment of forearm
+  Superficial part of posterior compartment of forearm
+  Superficial part of posterior compartment of leg
+  Superficial perineal space
+  Superficial temporal artery
+  Superior articular process of vertebra
+  Superior articular surfaces of tibia
+  Superior border of scapula
+  Superior branch of vestibular nerve
+  Superior cerebellar peduncle
+  Superior colliculus
+  Superior deep lateral cervical nodes
+  Superior dental plexus
+  Superior fascia of pelvic diaphragm
+  Superior gluteal artery'
+  Superior labial artery'
+  Superior laryngeal nerve
+  Superior lobar artery of left lung'
+  Superior lobe of left lung
+  Superior lobe of right lung
+  Superior medullary velum
+  Superior mesenteric artery'
+  Superior mesenteric nodes
+  Superior oblique muscle
+  Superior ophtalmic vein'
+  Superior part of duodenum
+  Superior pharyngeal constrictor
+  Superior pubic ramus
+  Superior surface of liver
+  Superior teeth
+  Superior temporal gyrus
+  Superior thyroid artery
+  Superior thyroid vein'
+  Superior tibiofibular joint
+  Superior trunk of brachial plexus
+  Superior vena cava'
+  Supernumerary ribs
+  Supinator
+  Supra-optic commissures
+  Supra-orbital nerve
+  Supraclavicular branches of brachial plexus
+  Supraclavicular part of brachial plexus
+  Suprahyoid muscles
+  Suprahyoid region
+  Suprarenal gland
+  Suprascapular nerve
+  Supreme intercostal artery'
+  Sural nerve
+  Suspensory muscle of duodenum
+  Sustentaculum tali
+  Sutures
+  Sweat glands
+  Sympathetic nerves
+  Sympathetic trunk
+  Synchondroses
+  Syndesmoses
+  Synovial bursa
+  Synovial bursae
+  Synovial joint
+  Synovial joints of free lower limb
+  Synovial joints of free upper limb
+  Synovial joints of larynx
+  Synovial joints of pectoral girdle
+  Synovial joints of pelvic girdle
+  Synovial joints of thorax
+  Synovial joints of vertebral column
+  Synovial membrane of articular capsule
+  Synovial sheaths of digits of hand
+  Synovial sheaths of toes
+  Systemic arteries
+  Systemic veins
+  Taeniae coli
+  Talocalcaneonavicular joint
+  Talocrural region
+  Talus
+  Tarsal bones
+  Tarsometatarsal joints
+  Tectum of midbrain
+  Teeth
+  Tegmental decussations
+  Tegmentum of midbrain
+  Tegmentum of pons
+  Telencephalon
+  Temporal bone
+  Temporal fascia
+  Temporal lobe
+  Temporal surface of frontal bone
+  Temporomandibular joint
+  Tendon
+  Tendon of quadriceps femoris muscle
+  Tendon sheath of upper limb
+  Tendon sheaths
+  Tendon sheaths of digits of hand
+  Tendon sheaths of lower limb
+  Tendon sheaths of toes
+  Tentorium cerebelli
+  Terminal nerve
+  Testicular artery'
+  Thalamic medullary laminae
+  Thalamus
+  Third metacarpal bone
+  Third ventricle
+  Thoracic aorta'
+  Thoracic cavity
+  Thoracic duct'
+  Thoracic joints
+  Thoracic lymph nodes
+  Thoracic nerves
+  Thoracic part of muscular system
+  Thoracic part of oesophagus
+  Thoracic part of thoracic duct'
+  Thoracic plexuses
+  Thoracic skeleton
+  Thoracic vertebra
+  Thoracic vertebrae
+  Thoracic visceral nerves
+  Thoraco-acromial artery'
+  Thoraco-epigastric vein'
+  Thoracolumbar fascia
+  Thoracolumbar part of autonomic division
+  Thorax
+  Thymus
+  Thyro-arythenoid muscle
+  Thyrocervical trunk'
+  Thyrohyoid membrane
+  Thyroid cartilage
+  Thyroid gland
+  Tibia
+  Tibial collateral ligament
+  Tibial nerve
+  Tibial plateau
+  Tibial tarsal tendon sheaths
+  Tibiofibular syndesmosis
+  Tongue
+  Tonsillar fossa
+  Tooth
+  Torus tubaris
+  Trabeculae carnae of left ventricle
+  Trabecular carnae of right ventricle
+  Trabecular part of left ventricle
+  Trabecular part of right ventricle
+  Trachea
+  Tracheobronchial nodes
+  Tracheobronchial tree
+  Transversalis fascia
+  Transverse part of left branch of hepatic portal vein'
+  Transverse planes
+  Transverse process
+  Transverse sinus'
+  Transverse tarsal joint
+  Transversospinal muscles
+  Transversus abdominis muscle
+  Trapezium bone
+  Trapezius muscle
+  Tributaries of hepatic portal vein'
+  Triceps brachii muscle
+  Triceps surae muscle
+  Trigeminal lemniscus
+  Trigeminal nerve (V)
+  Trigonal muscles
+  Trigone of bladder
+  Trochlea of talus
+  True ribs
+  Trunk
+  Trunk of spinal nerve
+  Tubal tonsil
+  Tubercle of rib
+  Tuberosity for coracoclavicular ligament
+  Tympanic cavity
+  Tympanic cavity proper
+  Tympanic lamella
+  Tympanic membrane
+  Tympanic nerve
+  Tympanic part of temporal bone
+  Tympanic plexus
+  Ulna
+  Ulnar artery'
+  Ulnar nerve
+  Ulnar recurrent artery'
+  Ulnar veins'
+  Umbilical artery'
+  Umbilical fissure
+  Umbilical part of left branch of hepatic poratl vein'
+  Umbilical region
+  Unpaired thyroid venous plexus'
+  Ureter
+  Urethra
+  Urinary bladder
+  Urinary system
+  Uterine artery'
+  Uterine tube'
+  Uterovaginal plexus
+  Uterus'
+  Utricule
+  Utriculosaccural duct
+  Vagal part of autonomic division
+  Vagina'
+  Vaginal artery'
+  Vaginal process of sphenoid bone
+  Vagus nerve (X)
+  Valvular complex of heart
+  Vascular layer of eyeball
+  Vascular plexuses
+  Vault of pharynx
+  Veins of brain'
+  Veins of cerebral column'
+  Veins of prostate'
+  Veins'
+  Vena comitans of hypoglossal nerve'
+  Ventral nuclei of thalamus
+  Ventral striatum
+  Ventroposterior complex
+  Vermiform appendix
+  Vermis of cerebellum
+  Vertebra
+  Vertebra C6
+  Vertebral arch
+  Vertebral artery'
+  Vertebral body
+  Vertebral column
+  Vertebral vein'
+  Vesical veins'
+  Vessel'
+  Vessels
+  Vestibular labyrinth
+  Vestibular nerve
+  Vestibular nuclei
+  Vestibular surface of tooth
+  Vestibule
+  Vestibule of right atrioventricular valve
+  Vestibulocochlear nerve (VIII)
+  Vincula tendinum of hand
+  Visceral cervical fascia
+  Visceral fascia of abdominopelvic cavity
+  Visceral lymph nodes
+  Visceral part of autonomic division
+  Visceral pelvic lymph nodes
+  Visceral surface of liver
+  Visceral surface of spleen
+  Visceral systems
+  Vitreous body
+  Vomer
+  Vulva'
+  Walls of cochlea
+  Walls of lateral ventricle
+  Walls of third ventricle
+  Walls of tympanic cavity
+  Walls of vestibule
+  White matter of brainstem
+  White matter of cerebellum
+  White matter of diencephalon
+  White matter of medulla oblongata
+  White matter of pontine tectum
+  White matter of spinal cord
+  White matter of tegmentum of midbrain
+  White matter of telencephalon
+  Wing of central lobule
+  Zygomatic bone
+  Zygomatic nerve
+  Zygomatic process of temporal bone
+  Zygomaticotemporal nerve
+
+## Muscle objects
+  Abdominal part of muscular system.g
+  Abdominal part of muscular system.j
+  Anterior intermuscular septum of leg.l
+  Anterior intermuscular septum of leg.r
+  Cervical part of muscular system.g
+  Cervical part of muscular system.j
+  Cranial part of muscular system.g
+  Cranial part of muscular system.j
+  Dorsal part of muscular system.g
+  Dorsal part of muscular system.j
+  Intermuscular gluteal bursae.l
+  Intermuscular gluteal bursae.r
+  Lateral femoral intermuscular septum.l
+  Lateral femoral intermuscular septum.r
+  Lateral intermuscular septum of arm.l
+  Lateral intermuscular septum of arm.r
+  Medial femoral intermuscular septum.l
+  Medial femoral intermuscular septum.r
+  Medial intermuscular septum of arm.l
+  Medial intermuscular septum of arm.r
+  Muscular branches of axillary nerve.l
+  Muscular branches of axillary nerve.r
+  Muscular branches of deep fibular nerve.l
+  Muscular branches of deep fibular nerve.r
+  Muscular branches of median nerve.l
+  Muscular branches of median nerve.r
+  Muscular branches of radial nerve.l
+  Muscular branches of radial nerve.r
+  Muscular branches of ulnar nerve.l
+  Muscular branches of ulnar nerve.r
+  Muscular process.i
+  Muscular process.j
+  Muscular process.s
+  Muscular process.t
+  Muscular system of lower limb.g
+  Muscular system of lower limb.j
+  Muscular system of upper limb.g
+  Muscular system of upper limb.j
+  Muscular system.g
+  Muscular triangle.l
+  Muscular triangle.r
+  Musculocutaneous nerve.l
+  Musculocutaneous nerve.r
+  Musculophrenic artery.l
+  Musculophrenic artery.r
+  Musculophrenic veins.l
+  Musculophrenic veins.r
+  Pelvic part of muscular system.g
+  Pelvic part of muscular system.j
+  Posterior intermuscular septum of leg.l
+  Posterior intermuscular septum of leg.r
+  Thoracic part of muscular system.g
+  Thoracic part of muscular system.j
+  Transverse intermuscular septum of leg.l
+  Transverse intermuscular septum of leg.r

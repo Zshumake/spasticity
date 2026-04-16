@@ -92,7 +92,11 @@
       "subscapularis",
       "teres-major"
     ],
-    "dosageNote": "Total across both heads. Split dose between clavicular and sternal heads (e.g. 25-50U each)."
+    "dosageNote": "Total across both heads. Split dose between clavicular and sternal heads (e.g. 25-50U each).",
+    "anatomyImages": [
+      "pec-major.png"
+    ],
+    "anatomyCaption": "Anterior chest · pectoralis major highlighted"
   },
   {
     "id": "lat-dorsi",
@@ -180,7 +184,11 @@
       "xeomin": "100-150",
       "dysport": "300-450"
     },
-    "dosageNote": "Large muscle — distribute across 2-3 sites along the posterior axillary fold."
+    "dosageNote": "Large muscle — distribute across 2-3 sites along the posterior axillary fold.",
+    "anatomyImages": [
+      "lat-dorsi.png"
+    ],
+    "anatomyCaption": "Posterior trunk · latissimus dorsi highlighted"
   },
   {
     "id": "biceps-brachii",
@@ -272,7 +280,11 @@
       "xeomin": "50-200",
       "dysport": "150-600"
     },
-    "dosageNote": "Large muscle with 2 heads. Split across short and long heads. FDA PI allows up to 200 U."
+    "dosageNote": "Large muscle with 2 heads. Split across short and long heads. FDA PI allows up to 200 U.",
+    "anatomyImages": [
+      "biceps-brachii.png"
+    ],
+    "anatomyCaption": "Anterior arm · biceps brachii highlighted"
   },
   {
     "id": "brachialis",
@@ -362,7 +374,11 @@
       "xeomin": "25-75",
       "dysport": "75-225"
     },
-    "dosageNote": "Deep to biceps — often underdosed. Confirm placement on US before injecting."
+    "dosageNote": "Deep to biceps — often underdosed. Confirm placement on US before injecting.",
+    "anatomyImages": [
+      "brachialis.png"
+    ],
+    "anatomyCaption": "Anterior arm · brachialis highlighted (deep to biceps)"
   },
   {
     "id": "quadratus-lumborum",
@@ -451,7 +467,11 @@
       "xeomin": "50-100",
       "dysport": "150-300"
     },
-    "dosageNote": "Deep muscle requiring curvilinear probe. Distribute across 2-3 sites."
+    "dosageNote": "Deep muscle requiring curvilinear probe. Distribute across 2-3 sites.",
+    "anatomyImages": [
+      "quadratus-lumborum.png"
+    ],
+    "anatomyCaption": "Posterior trunk · quadratus lumborum highlighted"
   },
   {
     "id": "rectus-abdominis",
@@ -546,7 +566,11 @@
       "paraspinals",
       "quadratus-lumborum"
     ],
-    "dosageNote": "Total across all sites bilaterally. Use conservative dosing — respiratory compromise is a risk with excessive abdominal wall weakness."
+    "dosageNote": "Total across all sites bilaterally. Use conservative dosing — respiratory compromise is a risk with excessive abdominal wall weakness.",
+    "anatomyImages": [
+      "rectus-abdominis.png"
+    ],
+    "anatomyCaption": "Anterior abdomen · rectus abdominis highlighted"
   },
   {
     "id": "obliques",
@@ -644,7 +668,11 @@
       "paraspinals",
       "quadratus-lumborum"
     ],
-    "dosageNote": "Dose is per side. Combines external and internal oblique as a single injection target. Inject bilaterally only if clinically indicated — monitor for trunk weakness."
+    "dosageNote": "Dose is per side. Combines external and internal oblique as a single injection target. Inject bilaterally only if clinically indicated — monitor for trunk weakness.",
+    "anatomyImages": [
+      "obliques.png"
+    ],
+    "anatomyCaption": "Lateral abdomen · internal + external obliques highlighted"
   },
   {
     "id": "paraspinals",
@@ -741,7 +769,11 @@
       "obliques",
       "quadratus-lumborum"
     ],
-    "dosageNote": "Dose is per spinal level. Typically inject 2-3 levels per session for a total of 100-300 U Botox. Use conservative initial dosing to avoid excessive trunk extensor weakness."
+    "dosageNote": "Dose is per spinal level. Typically inject 2-3 levels per session for a total of 100-300 U Botox. Use conservative initial dosing to avoid excessive trunk extensor weakness.",
+    "anatomyImages": [
+      "paraspinals.png"
+    ],
+    "anatomyCaption": "Posterior trunk · erector spinae group highlighted"
   },
   {
     "id": "gluteus-maximus",
@@ -831,7 +863,11 @@
       "iliopsoas",
       "rectus-femoris"
     ],
-    "dosageNote": "One of the largest muscles in the body — distribute across 3-4 sites."
+    "dosageNote": "One of the largest muscles in the body — distribute across 3-4 sites.",
+    "anatomyImages": [
+      "gluteus-maximus.png"
+    ],
+    "anatomyCaption": "Posterior hip · gluteus maximus highlighted"
   },
   {
     "id": "piriformis",
@@ -918,7 +954,11 @@
     ],
     "relatedMuscles": [
       "gluteus-maximus"
-    ]
+    ],
+    "anatomyImages": [
+      "piriformis.png"
+    ],
+    "anatomyCaption": "Posterior hip · piriformis highlighted"
   },
   {
     "id": "tfl",
@@ -1004,7 +1044,11 @@
       "xeomin": "50-100",
       "dysport": "150-300"
     },
-    "dosageNote": "Compact muscle at ASIS. 1-2 sites."
+    "dosageNote": "Compact muscle at ASIS. 1-2 sites.",
+    "anatomyImages": [
+      "tfl.png"
+    ],
+    "anatomyCaption": "Lateral hip · tensor fasciae latae highlighted"
   },
   {
     "id": "rectus-femoris",
@@ -1094,7 +1138,11 @@
       "xeomin": "100-150",
       "dysport": "300-450"
     },
-    "dosageNote": "Primary stiff-knee gait target. 1-2 sites in proximal-mid muscle belly."
+    "dosageNote": "Primary stiff-knee gait target. 1-2 sites in proximal-mid muscle belly.",
+    "anatomyImages": [
+      "rectus-femoris.png"
+    ],
+    "anatomyCaption": "Anterior thigh · rectus femoris highlighted"
   },
   {
     "id": "vastus-medialis",
@@ -1182,7 +1230,11 @@
       "xeomin": "50-100",
       "dysport": "150-300"
     },
-    "dosageNote": "Use cautiously — weakening VMO can destabilize the patella."
+    "dosageNote": "Use cautiously — weakening VMO can destabilize the patella.",
+    "anatomyImages": [
+      "vastus-medialis.png"
+    ],
+    "anatomyCaption": "Anterior thigh · vastus medialis highlighted"
   },
   {
     "id": "vastus-lateralis",
@@ -1269,7 +1321,11 @@
       "rectus-femoris",
       "vastus-intermedius",
       "vastus-medialis"
-    ]
+    ],
+    "anatomyImages": [
+      "vastus-lateralis.png"
+    ],
+    "anatomyCaption": "Anterior thigh · vastus lateralis highlighted"
   },
   {
     "id": "vastus-intermedius",
@@ -1356,7 +1412,11 @@
       "rectus-femoris",
       "vastus-lateralis",
       "vastus-medialis"
-    ]
+    ],
+    "anatomyImages": [
+      "vastus-intermedius.png"
+    ],
+    "anatomyCaption": "Anterior thigh · vastus intermedius highlighted (deep)"
   },
   {
     "id": "semimembranosus",
@@ -1442,7 +1502,11 @@
     "relatedMuscles": [
       "biceps-femoris",
       "semitendinosus"
-    ]
+    ],
+    "anatomyImages": [
+      "semimembranosus.png"
+    ],
+    "anatomyCaption": "Posterior thigh · semimembranosus highlighted"
   },
   {
     "id": "semitendinosus",
@@ -1527,7 +1591,11 @@
     "relatedMuscles": [
       "biceps-femoris",
       "semimembranosus"
-    ]
+    ],
+    "anatomyImages": [
+      "semitendinosus.png"
+    ],
+    "anatomyCaption": "Posterior thigh · semitendinosus highlighted"
   },
   {
     "id": "gastrocnemius-medial",
@@ -2086,7 +2154,11 @@
       "xeomin": "25-50",
       "dysport": "75-150"
     },
-    "dosageNote": "Plantar injection — painful. Consider topical anesthetic."
+    "dosageNote": "Plantar injection — painful. Consider topical anesthetic.",
+    "anatomyImages": [
+      "fdb.png"
+    ],
+    "anatomyCaption": "Plantar foot · flexor digitorum brevis highlighted"
   },
   {
     "id": "tibialis-anterior",
@@ -2536,7 +2608,11 @@
       "xeomin": "10-25",
       "dysport": "30-75"
     },
-    "dosageNote": "Very small intrinsic foot muscle. Low doses only."
+    "dosageNote": "Very small intrinsic foot muscle. Low doses only.",
+    "anatomyImages": [
+      "add-hallucis.png"
+    ],
+    "anatomyCaption": "Plantar foot · adductor hallucis highlighted"
   },
   {
     "id": "triceps",
@@ -2628,7 +2704,11 @@
       "xeomin": "50-100",
       "dysport": "150-300"
     },
-    "dosageNote": "Rarely injected for spasticity. Confirm genuine spasticity before treating."
+    "dosageNote": "Rarely injected for spasticity. Confirm genuine spasticity before treating.",
+    "anatomyImages": [
+      "triceps.png"
+    ],
+    "anatomyCaption": "Posterior arm · triceps brachii highlighted"
   },
   {
     "id": "brachioradialis",
@@ -2720,7 +2800,11 @@
       "xeomin": "25-75",
       "dysport": "75-225"
     },
-    "dosageNote": "Superficial forearm muscle. Stay lateral and superficial to avoid radial nerve."
+    "dosageNote": "Superficial forearm muscle. Stay lateral and superficial to avoid radial nerve.",
+    "anatomyImages": [
+      "brachioradialis.png"
+    ],
+    "anatomyCaption": "Lateral forearm · brachioradialis highlighted"
   },
   {
     "id": "pronator-teres",
@@ -2814,7 +2898,11 @@
       "xeomin": "25-75",
       "dysport": "75-225"
     },
-    "dosageNote": "Compact muscle. 1-2 sites in proximal belly."
+    "dosageNote": "Compact muscle. 1-2 sites in proximal belly.",
+    "anatomyImages": [
+      "pronator-teres.png"
+    ],
+    "anatomyCaption": "Anterior forearm · pronator teres highlighted"
   },
   {
     "id": "fcr",
@@ -2905,7 +2993,11 @@
       "botox": "25-50",
       "xeomin": "25-50",
       "dysport": "75-150"
-    }
+    },
+    "anatomyImages": [
+      "fcr.png"
+    ],
+    "anatomyCaption": "Anterior forearm · FCR highlighted"
   },
   {
     "id": "fcu",
@@ -3000,7 +3092,11 @@
       "xeomin": "20-50",
       "dysport": "60-150"
     },
-    "dosageNote": "Inject proximal third only — ulnar nerve becomes superficial distally."
+    "dosageNote": "Inject proximal third only — ulnar nerve becomes superficial distally.",
+    "anatomyImages": [
+      "fcu.png"
+    ],
+    "anatomyCaption": "Anterior forearm · FCU highlighted"
   },
   {
     "id": "fds",
@@ -3096,7 +3192,11 @@
       "xeomin": "25-50",
       "dysport": "75-150"
     },
-    "dosageNote": "Dose per head if targeting individual fingers."
+    "dosageNote": "Dose per head if targeting individual fingers.",
+    "anatomyImages": [
+      "fds.png"
+    ],
+    "anatomyCaption": "Anterior forearm · FDS highlighted"
   },
   {
     "id": "fdp",
@@ -3193,7 +3293,11 @@
       "xeomin": "25-50",
       "dysport": "75-150"
     },
-    "dosageNote": "Deep muscle — confirm placement on US."
+    "dosageNote": "Deep muscle — confirm placement on US.",
+    "anatomyImages": [
+      "fdp.png"
+    ],
+    "anatomyCaption": "Anterior forearm · FDP highlighted (deep)"
   },
   {
     "id": "fpl",
@@ -3287,7 +3391,11 @@
       "xeomin": "10-25",
       "dysport": "30-75"
     },
-    "dosageNote": "Narrow therapeutic window — over-dosing weakens pinch grip. Start low."
+    "dosageNote": "Narrow therapeutic window — over-dosing weakens pinch grip. Start low.",
+    "anatomyImages": [
+      "fpl.png"
+    ],
+    "anatomyCaption": "Anterior forearm · FPL highlighted (deep)"
   },
   {
     "id": "adductor-pollicis",
@@ -3374,7 +3482,11 @@
       "xeomin": "10-20",
       "dysport": "30-60"
     },
-    "dosageNote": "Very small muscle — low doses only. Dorsal approach preferred."
+    "dosageNote": "Very small muscle — low doses only. Dorsal approach preferred.",
+    "anatomyImages": [
+      "adductor-pollicis.png"
+    ],
+    "anatomyCaption": "Palmar hand · adductor pollicis highlighted"
   },
   {
     "id": "subscapularis",
@@ -3465,7 +3577,11 @@
       "xeomin": "50-100",
       "dysport": "150-300"
     },
-    "dosageNote": "Distribute across multiple sites along the muscle belly. Deep injection — confirm tip placement before each."
+    "dosageNote": "Distribute across multiple sites along the muscle belly. Deep injection — confirm tip placement before each.",
+    "anatomyImages": [
+      "subscapularis.png"
+    ],
+    "anatomyCaption": "Anterior scapula · subscapularis highlighted"
   },
   {
     "id": "infraspinatus",
@@ -3545,7 +3661,11 @@
     "relatedMuscles": [
       "subscapularis",
       "teres-major"
-    ]
+    ],
+    "anatomyImages": [
+      "infraspinatus.png"
+    ],
+    "anatomyCaption": "Posterior scapula · infraspinatus highlighted"
   },
   {
     "id": "teres-major",
@@ -3637,7 +3757,11 @@
       "xeomin": "50-100",
       "dysport": "150-300"
     },
-    "dosageNote": "Large rotator. Distribute across 1-2 sites."
+    "dosageNote": "Large rotator. Distribute across 1-2 sites.",
+    "anatomyImages": [
+      "teres-major.png"
+    ],
+    "anatomyCaption": "Posterior scapula · teres major highlighted"
   },
   {
     "id": "adductor-longus",
@@ -3725,7 +3849,11 @@
       "adductor-magnus",
       "adductor-brevis",
       "gracilis"
-    ]
+    ],
+    "anatomyImages": [
+      "adductor-longus.png"
+    ],
+    "anatomyCaption": "Medial thigh · adductor longus highlighted"
   },
   {
     "id": "adductor-magnus",
@@ -3813,7 +3941,11 @@
       "adductor-longus",
       "adductor-brevis",
       "gracilis"
-    ]
+    ],
+    "anatomyImages": [
+      "adductor-magnus.png"
+    ],
+    "anatomyCaption": "Medial thigh · adductor magnus highlighted"
   },
   {
     "id": "biceps-femoris",
@@ -3900,7 +4032,11 @@
     "relatedMuscles": [
       "semimembranosus",
       "semitendinosus"
-    ]
+    ],
+    "anatomyImages": [
+      "biceps-femoris.png"
+    ],
+    "anatomyCaption": "Posterior thigh · biceps femoris highlighted"
   },
   {
     "id": "iliopsoas",
@@ -3988,7 +4124,11 @@
       "rectus-femoris",
       "tfl",
       "adductor-longus"
-    ]
+    ],
+    "anatomyImages": [
+      "iliopsoas.png"
+    ],
+    "anatomyCaption": "Anterior hip · iliopsoas highlighted"
   },
   {
     "id": "peroneus-longus",
@@ -4366,7 +4506,11 @@
       "semispinalis-capitis",
       "scalenes",
       "longissimus-capitis"
-    ]
+    ],
+    "anatomyImages": [
+      "upper-trapezius.png"
+    ],
+    "anatomyCaption": "Posterior neck · upper trapezius highlighted"
   },
   {
     "id": "levator-scapulae",
@@ -4460,7 +4604,11 @@
       "semispinalis-capitis",
       "scalenes",
       "longissimus-capitis"
-    ]
+    ],
+    "anatomyImages": [
+      "levator-scapulae.png"
+    ],
+    "anatomyCaption": "Posterior neck · levator scapulae highlighted"
   },
   {
     "id": "pronator-quadratus",
@@ -4549,7 +4697,11 @@
       "pronator-teres",
       "fcr",
       "fcu"
-    ]
+    ],
+    "anatomyImages": [
+      "pronator-quadratus.png"
+    ],
+    "anatomyCaption": "Anterior forearm · pronator quadratus highlighted (distal, deep)"
   },
   {
     "id": "splenius-capitis",
@@ -4645,7 +4797,11 @@
       "upper-trapezius",
       "levator-scapulae",
       "longissimus-capitis"
-    ]
+    ],
+    "anatomyImages": [
+      "splenius-capitis.png"
+    ],
+    "anatomyCaption": "Posterior neck · splenius capitis highlighted"
   },
   {
     "id": "semispinalis-capitis",
@@ -4741,7 +4897,11 @@
       "upper-trapezius",
       "levator-scapulae",
       "scm"
-    ]
+    ],
+    "anatomyImages": [
+      "semispinalis-capitis.png"
+    ],
+    "anatomyCaption": "Posterior neck · semispinalis highlighted"
   },
   {
     "id": "scalenes",
@@ -4840,7 +5000,11 @@
       "splenius-capitis",
       "upper-trapezius",
       "longissimus-capitis"
-    ]
+    ],
+    "anatomyImages": [
+      "scalenes.png"
+    ],
+    "anatomyCaption": "Lateral neck · scalenes highlighted"
   },
   {
     "id": "longissimus-capitis",
@@ -4936,7 +5100,11 @@
       "upper-trapezius",
       "levator-scapulae",
       "scm"
-    ]
+    ],
+    "anatomyImages": [
+      "longissimus-capitis.png"
+    ],
+    "anatomyCaption": "Posterior neck · longissimus capitis highlighted"
   },
   {
     "id": "masseter",
@@ -5188,7 +5356,11 @@
       "medial-pterygoid",
       "masseter",
       "temporalis"
-    ]
+    ],
+    "anatomyImages": [
+      "lateral-pterygoid.png"
+    ],
+    "anatomyCaption": "Lateral face · lateral pterygoid highlighted (deep)"
   },
   {
     "id": "medial-pterygoid",
@@ -5279,7 +5451,11 @@
       "masseter",
       "temporalis",
       "lateral-pterygoid"
-    ]
+    ],
+    "anatomyImages": [
+      "medial-pterygoid.png"
+    ],
+    "anatomyCaption": "Lateral face · medial pterygoid highlighted (deep)"
   },
   {
     "id": "orbicularis-oculi",
@@ -5344,7 +5520,11 @@
       "corrugator-supercilii",
       "procerus",
       "frontalis"
-    ]
+    ],
+    "anatomyImages": [
+      "orbicularis-oculi.png"
+    ],
+    "anatomyCaption": "Anterior face · orbicularis oculi highlighted"
   },
   {
     "id": "corrugator-supercilii",
@@ -5538,7 +5718,11 @@
       "corrugator-supercilii",
       "procerus",
       "orbicularis-oculi"
-    ]
+    ],
+    "anatomyImages": [
+      "frontalis.png"
+    ],
+    "anatomyCaption": "Anterior face · frontalis highlighted"
   },
   {
     "id": "platysma",
@@ -5603,7 +5787,11 @@
     "relatedMuscles": [
       "scm",
       "mentalis"
-    ]
+    ],
+    "anatomyImages": [
+      "platysma.png"
+    ],
+    "anatomyCaption": "Anterior neck · platysma highlighted"
   },
   {
     "id": "mentalis",
@@ -5754,7 +5942,11 @@
       "adductor-longus",
       "adductor-magnus",
       "gracilis"
-    ]
+    ],
+    "anatomyImages": [
+      "adductor-brevis.png"
+    ],
+    "anatomyCaption": "Medial thigh · adductor brevis highlighted (deep)"
   },
   {
     "id": "gracilis",
@@ -5838,7 +6030,11 @@
       "adductor-longus",
       "adductor-brevis",
       "adductor-magnus"
-    ]
+    ],
+    "anatomyImages": [
+      "gracilis.png"
+    ],
+    "anatomyCaption": "Medial thigh · gracilis highlighted"
   },
   {
     "id": "hand-lumbricals",
@@ -5927,7 +6123,11 @@
       "fdp",
       "adductor-pollicis",
       "fpl"
-    ]
+    ],
+    "anatomyImages": [
+      "hand-lumbricals.png"
+    ],
+    "anatomyCaption": "Palmar hand · hand lumbricals highlighted"
   },
   {
     "id": "foot-lumbricals",
@@ -6016,6 +6216,10 @@
       "fdl",
       "fhl",
       "add-hallucis"
-    ]
+    ],
+    "anatomyImages": [
+      "foot-lumbricals.png"
+    ],
+    "anatomyCaption": "Plantar foot · foot lumbricals highlighted"
   }
 ]

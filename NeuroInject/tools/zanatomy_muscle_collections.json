@@ -1,0 +1,150 @@
+{
+  "Deltoid muscle": [
+    "Acromial part of deltoid muscle.l",
+    "Acromial part of deltoid muscle.r",
+    "Clavicular part of deltoid muscle.l",
+    "Clavicular part of deltoid muscle.r",
+    "Scapular spinal part of deltoid muscle.l",
+    "Scapular spinal part of deltoid muscle.r"
+  ],
+  "Erector spinae": [
+    "Iliocostalis colli muscle",
+    "Iliocostalis colli muscle.r",
+    "Iliocostalis lumborum muscle.l",
+    "Iliocostalis lumborum muscle.r",
+    "Iliocostalis thoracis muscle.l",
+    "Iliocostalis thoracis muscle.r",
+    "Longissimus capitis muscle.l",
+    "Longissimus capitis muscle.r",
+    "Longissimus colli muscle.l",
+    "Longissimus colli muscle.r",
+    "Longissimus thoracis muscle.l",
+    "Longissimus thoracis muscle.r",
+    "Spinalis capitis muscle.l",
+    "Spinalis capitis muscle.r",
+    "Spinalis colli muscle.l",
+    "Spinalis colli muscle.r",
+    "Spinalis thoracis muscle.l",
+    "Spinalis thoracis muscle.r"
+  ],
+  "Obturator membrane": [
+    "Obturator membrane.l",
+    "Obturator membrane.r"
+  ],
+  "Occipitotemporal gyri": [
+    "Lateral occipitotemporal gyrus.l",
+    "Lateral occipitotemporal gyrus.r",
+    "Medial occipitotemporal gyrus (Parahippocampal*).l",
+    "Medial occipitotemporal gyrus (Parahippocampal*).r"
+  ],
+  "Pectoralis major muscle": [
+    "(Abdominal part of pectoralis major muscle).l",
+    "(Abdominal part of pectoralis major muscle).r",
+    "Clavicular head of pectoralis major muscle.l",
+    "Clavicular head of pectoralis major muscle.r",
+    "Sternocostal head of pectoralis major muscle.l",
+    "Sternocostal head of pectoralis major muscle.r"
+  ],
+  "Petrous part of temporal bone": [
+    "Anterior bony ampulla.j",
+    "Anterior semicircular canal.j",
+    "Base of cochlea.j",
+    "Cochlear cupula.j",
+    "Common bony limb.j",
+    "Lateral bony ampulla.j",
+    "Lateral semicircular canal.j",
+    "Posterior bony ampulla.j",
+    "Posterior semicircular canal.j",
+    "Simple bony limb.j",
+    "Spiral canal of cochlea.j"
+  ],
+  "Pterygoid hamulus": [
+    "Groove of pterygoid hamulus.j",
+    "Pterygoid hamulus.j"
+  ],
+  "Pterygoid process": [
+    "Lateral pterygoid plate.j",
+    "Medial pterygoid plate.j",
+    "Pterygoid process .j"
+  ],
+  "Superior temporal gyrus": [
+    "Superior temporal gyrus (Lateral part).l",
+    "Superior temporal gyrus (Lateral part).r",
+    "Temporal plane.l",
+    "Temporal plane.r",
+    "Transverse temporal gyri.l",
+    "Transverse temporal gyri.r"
+  ],
+  "Superior tibiofibular joint": [
+    "Anterior ligament of fibular head.l",
+    "Anterior ligament of fibular head.r",
+    "Articular capsule of superior tibiofibular joint.l",
+    "Articular capsule of superior tibiofibular joint.r",
+    "Posterior ligament of fibular head.l",
+    "Posterior ligament of fibular head.r"
+  ],
+  "Temporal bone": [
+    "Anterior bony ampulla.j",
+    "Anterior semicircular canal.j",
+    "Base of cochlea.j",
+    "Cochlear cupula.j",
+    "Common bony limb.j",
+    "Lateral bony ampulla.j",
+    "Lateral semicircular canal.j",
+    "Posterior bony ampulla.j",
+    "Posterior semicircular canal.j",
+    "Simple bony limb.j",
+    "Spiral canal of cochlea.j"
+  ],
+  "Temporal lobe": [
+    "Inferior temporal gyrus.l",
+    "Inferior temporal gyrus.r",
+    "Inferior temporal sulcus.l",
+    "Inferior temporal sulcus.r",
+    "Lateral occipitotemporal gyrus.l",
+    "Lateral occipitotemporal gyrus.r",
+    "Medial occipitotemporal gyrus (Parahippocampal*).l",
+    "Medial occipitotemporal gyrus (Parahippocampal*).r",
+    "Middle temporal gyrus.l",
+    "Middle temporal gyrus.r",
+    "Occipitotemporal sulcus (Lateral part*).l",
+    "Occipitotemporal sulcus (Lateral part*).r",
+    "Superior temporal gyrus (Lateral part).l",
+    "Superior temporal gyrus (Lateral part).r",
+    "Superior temporal sulcus.l",
+    "Superior temporal sulcus.r",
+    "Temporal lobe.j",
+    "Temporal plane.l",
+    "Temporal plane.r",
+    "Temporal pole.l",
+    "Temporal pole.r",
+    "Transverse temporal gyri.l",
+    "Transverse temporal gyri.r"
+  ],
+  "Temporal surface of frontal bone": [
+    "Temporal line.j",
+    "Temporal surface of frontal bone.j"
+  ],
+  "Tibial collateral ligament": [
+    "Deep part of tibial collateral ligament.l",
+    "Deep part of tibial collateral ligament.r",
+    "Superficial part of tibial collateral ligament.l",
+    "Superficial part of tibial collateral ligament.r"
+  ],
+  "Tibiofibular syndesmosis": [
+    "Anterior tibiofibular ligament.l",
+    "Anterior tibiofibular ligament.r",
+    "Posterior tibiofibular ligament.l",
+    "Posterior tibiofibular ligament.r",
+    "Transverse tibiofibular ligament.l",
+    "Transverse tibiofibular ligament.r"
+  ],
+  "Trapezius muscle": [
+    "Ascending part of trapezius muscle.l",
+    "Ascending part of trapezius muscle.r",
+    "Descending part of trapezius muscle.l",
+    "Descending part of trapezius muscle.r",
+    "Transverse part of trapezius muscle.l",
+    "Transverse part of trapezius muscle.r"
+  ]
+}

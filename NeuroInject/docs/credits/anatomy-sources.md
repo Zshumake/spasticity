@@ -17,12 +17,22 @@ Most of the current anatomy images are sourced from the [Wikimedia Commons "Imag
 
 **ShareAlike note:** Our rendered/resized versions of these images are redistributed under the same CC-BY-SA 2.1 JP license. The ShareAlike provision applies only to these images, not to the surrounding app code or the muscle metadata.
 
-## Future: Z-Anatomy (Phase 2)
+## Z-Anatomy (51 images)
 
-Additional anatomy images will be rendered from the [Z-Anatomy](https://www.z-anatomy.com/) 3D atlas using a custom Blender pipeline. Those images will be licensed under [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en).
+The remaining 51 anatomy images are rendered from the [Z-Anatomy](https://www.z-anatomy.com/) 3D atlas using a custom Blender pipeline. Each image shows the regional skeleton in neutral grey with the target muscle highlighted in terracotta, in a clinically-relevant view.
 
-**Required attribution for Z-Anatomy assets:**
+**Source:** Z-Anatomy Startup.blend from [github.com/Z-Anatomy/Models-of-human-anatomy](https://github.com/Z-Anatomy/Models-of-human-anatomy).
+
+**License:** [Creative Commons Attribution-Share Alike 4.0 International (CC-BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
+
+**Required attribution text:**
 > Z-Anatomy (Gauthier Kervyn, Lluís Vinent, Marcin Zielinski) — https://www.z-anatomy.com/ — licensed under CC-BY-SA 4.0
+
+**Render pipeline:** `tools/render_anatomy.py` — uses Blender headless to isolate target muscle meshes, apply highlight materials, filter skeleton by regional radius, and render at 1024×1024 transparent PNG. Not run in CI; re-run manually when the source .blend or muscle map changes.
+
+**Machine-readable manifest:** `docs/credits/anatomy-zanatomy-manifest.json`.
+
+**ShareAlike note:** Our rendered derivative images are redistributed under CC-BY-SA 4.0. SA applies to the images only, not to the app code or muscle metadata.
 
 ## User-facing attribution
 
