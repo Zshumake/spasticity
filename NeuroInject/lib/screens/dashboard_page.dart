@@ -34,7 +34,7 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   void initState() {
     super.initState();
-    _selectedCategory = widget.initialCategory;
+    _selectedCategory = widget.initialCategory ?? 'All';
     _loadPatterns();
     _searchFocusNode.addListener(() { if (mounted) setState(() {}); });
   }
@@ -226,11 +226,11 @@ class _DashboardPageState extends State<DashboardPage> {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(children: [
-            _filterChip('Patterns', null, Icons.account_tree_rounded,
-                AppTheme.patternColor, isDark),
-            const SizedBox(width: 8),
             _filterChip('All Muscles', 'All', Icons.list_rounded,
                 AppTheme.primary, isDark),
+            const SizedBox(width: 8),
+            _filterChip('Patterns', null, Icons.account_tree_rounded,
+                AppTheme.patternColor, isDark),
             const SizedBox(width: 8),
             _filterChip('Favorites', 'Favorites', Icons.star_rounded,
                 AppTheme.amber, isDark),
