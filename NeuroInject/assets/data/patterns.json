@@ -57,7 +57,8 @@
     "muscles": [
       "fds",
       "fdp",
-      "fpl"
+      "fpl",
+      "hand-lumbricals"
     ],
     "region": "Upper Extremity"
   },
@@ -161,7 +162,8 @@
       "fdl",
       "fdb",
       "fhl",
-      "add-hallucis"
+      "add-hallucis",
+      "foot-lumbricals"
     ],
     "region": "Lower Extremity"
   },

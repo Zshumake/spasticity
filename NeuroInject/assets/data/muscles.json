@@ -1978,7 +1978,8 @@
       "gastrocnemius-medial",
       "soleus-lateral",
       "soleus-medial",
-      "tibialis-posterior"
+      "tibialis-posterior",
+      "foot-lumbricals"
     ]
   },
   {
@@ -2055,7 +2056,8 @@
     "relatedMuscles": [
       "add-hallucis",
       "fdl",
-      "fhl"
+      "fhl",
+      "foot-lumbricals"
     ],
     "dosage": {
       "botox": "25-50",
@@ -3047,7 +3049,8 @@
       "fcr",
       "fcu",
       "fdp",
-      "fpl"
+      "fpl",
+      "hand-lumbricals"
     ],
     "dosage": {
       "botox": "25-50",
@@ -3143,7 +3146,8 @@
       "fcr",
       "fcu",
       "fds",
-      "fpl"
+      "fpl",
+      "hand-lumbricals"
     ],
     "dosage": {
       "botox": "25-50",
@@ -5752,6 +5756,184 @@
       "adductor-longus",
       "adductor-brevis",
       "adductor-magnus"
+    ]
+  },
+  {
+    "id": "hand-lumbricals",
+    "name": "Hand Lumbricals",
+    "group": "Upper Extremity",
+    "pattern": "MCP flexion + IP extension (intrinsic-plus posture)",
+    "landmarks": [
+      "Metacarpal Heads (palpate the knuckles — the lumbricals lie on the radial side of each FDP tendon in the palm, just proximal to the MCP joints)",
+      "Palmar Crease (the distal palmar crease runs across the MCP joints — the lumbricals sit just proximal to this crease in the deep palm)"
+    ],
+    "placement": [
+      "Position the patient with the hand supinated (palm up), fingers relaxed and slightly extended.",
+      "The lumbricals are four small muscles in the palm, each on the radial (thumb) side of the corresponding FDP tendon to fingers 2-5.",
+      "Target the 1st and 2nd lumbricals first (radial side) — they are the most commonly spastic and most accessible.",
+      "PALMAR APPROACH: Insert the needle into the palm just proximal to the MCP joint of the target finger, on the radial side of the flexor tendon.",
+      "Advance only 5-10 mm — the lumbricals are very small and superficial in the palmar space.",
+      "USG or EMG guidance is strongly recommended given the small size and proximity to digital neurovascular bundles.",
+      "Aspirate before injecting. Use very small volumes (0.1-0.2 mL per lumbrical) to avoid diffusion.",
+      "Inject only the clinically affected lumbricals — do not blanket all four unless all are spastic."
+    ],
+    "setup": [
+      "USG with a high-frequency linear or hockey-stick probe is recommended — the lumbricals are very small and surrounded by tendons and neurovascular structures.",
+      "EMG guidance is an excellent adjunct — confirm the muscle is electrically active during MCP flexion with IP extension.",
+      "The proper digital nerves and arteries run immediately adjacent to each lumbrical — identify them on US or use extreme caution with landmark technique.",
+      "Very low doses and volumes are essential — diffusion to adjacent FDP/FDS tendons or interossei can cause unintended weakness."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz); hockey-stick probe preferred for the tight palmar space",
+      "orientation": "Longitudinal along the metacarpal shaft on the palmar surface, or transverse across the palm at the MCP level",
+      "viewSteps": [
+        "Place the probe longitudinally on the palmar surface along the metacarpal of the target finger.",
+        "Identify the FDP and FDS tendons as hyperechoic linear structures running along the metacarpal.",
+        "The lumbrical appears as a small hypoechoic muscle belly on the radial side of the FDP tendon, just proximal to the MCP joint.",
+        "In transverse view, the lumbrical is a small oval hypoechoic structure between the FDP tendons of adjacent fingers.",
+        "The proper digital nerve and artery run immediately adjacent — they appear as a small hyperechoic dot (nerve) and anechoic circle (artery).",
+        "To confirm: ask the patient to flex the MCP while extending the IP joints — the lumbrical will contract."
+      ],
+      "safetyNotes": [
+        "The proper digital nerves and arteries run immediately adjacent to the lumbricals — always identify them before injecting.",
+        "The flexor tendons (FDP/FDS) are immediately deep — do not advance past the lumbrical into the tendon sheath.",
+        "Use the smallest possible volume to prevent diffusion to adjacent structures.",
+        "The 1st lumbrical is innervated by the median nerve; lumbricals 2-4 by the ulnar nerve — toxin spread could weaken intrinsic hand function."
+      ],
+      "probeDiagram": {
+        "cx": 50,
+        "cy": 80,
+        "angle": 0,
+        "length": 5
+      }
+    },
+    "dosage": {
+      "botox": "5-10",
+      "xeomin": "5-10",
+      "dysport": "15-30"
+    },
+    "dosageNote": "Per individual lumbrical. Very small muscles — start at the low end. Total hand lumbrical dose typically 10-25 U Botox across affected digits.",
+    "marker": null,
+    "referenceImages": [],
+    "hasReferenceImage": false,
+    "probePlacementImages": [],
+    "probePlacementHint": "Patient palm-up, fingers relaxed. Place hockey-stick probe longitudinally on palm along the metacarpal. Photo from palmar view showing probe on mid-palm.",
+    "pearls": [
+      "The 'hidden' cause of intrinsic-plus hand — if MCP flexion persists despite treating FDS/FDP, the lumbricals may be the culprit",
+      "1st and 2nd lumbricals (median nerve) are more commonly spastic than 3rd and 4th (ulnar nerve)",
+      "Tiny muscles requiring tiny doses — 5-10 U Botox per lumbrical is usually sufficient; overdosing weakens grip",
+      "EMG confirmation is especially valuable here since the muscles are so small and surrounded by tendons"
+    ],
+    "supplies": [
+      "Ultrasound machine with hockey-stick or high-frequency linear probe",
+      "Sterile ultrasound gel",
+      "Tegaderm or probe cover",
+      "Alcohol swabs / ChloraPrep",
+      "Reconstituted botulinum toxin (drawn up)",
+      "27-30G needle (0.5-1 inch)",
+      "1 mL syringe (for precise small volumes)",
+      "Gloves (non-sterile)",
+      "Gauze pads",
+      "Band-aids",
+      "Sharps container"
+    ],
+    "spasticityPatterns": [
+      "clenched-fist"
+    ],
+    "relatedMuscles": [
+      "fds",
+      "fdp",
+      "adductor-pollicis",
+      "fpl"
+    ]
+  },
+  {
+    "id": "foot-lumbricals",
+    "name": "Foot Lumbricals",
+    "group": "Lower Extremity",
+    "pattern": "MTP flexion + IP extension in the foot (contributes to claw toe deformity)",
+    "landmarks": [
+      "Metatarsal Heads (palpate the ball of the foot — the lumbricals lie just proximal to the MTP joints on the plantar surface, on the medial/tibial side of each FDL tendon to toes 2-5)",
+      "Plantar Surface of Midfoot (the lumbricals originate from the FDL tendons in the mid-sole, approximately halfway between the calcaneus and the MTP joints)"
+    ],
+    "placement": [
+      "Position the patient prone with the foot hanging off the bed, or supine with the ankle dorsiflexed to expose the sole.",
+      "The foot lumbricals are four small muscles on the medial side of the FDL tendons to toes 2-5.",
+      "Target the area just proximal to the MTP joints on the plantar surface — this is where the lumbricals are thickest.",
+      "Insert the needle from the plantar surface perpendicular to the skin, just proximal to the MTP joint of the target toe, on the medial (tibial) side of the flexor tendon.",
+      "Advance only 5-10 mm — these are very small, superficial muscles in the plantar compartment.",
+      "The plantar skin is thick and sensitive — consider topical anesthetic or ethyl chloride spray.",
+      "Aspirate before injecting. Use very small volumes (0.1-0.2 mL per lumbrical).",
+      "A DORSAL approach between the metatarsals is an alternative — advance the needle plantarward to reach the lumbricals from above, avoiding the sensitive plantar skin."
+    ],
+    "setup": [
+      "USG with a hockey-stick probe is recommended given the small muscle size and complex plantar anatomy.",
+      "EMG guidance is a useful adjunct to confirm lumbrical activity (MTP flexion with IP extension).",
+      "The plantar digital nerves and arteries run adjacent to the lumbricals — use Doppler to identify vessels.",
+      "Very low doses are essential — the lumbricals are tiny and diffusion to adjacent FDL/FDB can weaken toe flexion beyond the intended effect."
+    ],
+    "ultrasound": {
+      "probe": "High-frequency linear (10-15 MHz); hockey-stick probe preferred for the narrow intermetatarsal spaces",
+      "orientation": "Longitudinal along the metatarsal shaft on the plantar surface, or transverse across the metatarsal heads",
+      "viewSteps": [
+        "Place the probe longitudinally on the plantar surface along the metatarsal of the target toe.",
+        "Identify the FDL tendon as a hyperechoic linear structure running along the plantar metatarsal.",
+        "The lumbrical appears as a small hypoechoic muscle belly on the medial (tibial) side of the FDL tendon, just proximal to the MTP joint.",
+        "In transverse view at the MTP level, the lumbrical is a small oval between the FDL tendons of adjacent toes.",
+        "The plantar digital nerve and artery run adjacent — the nerve is a small hyperechoic dot, the artery an anechoic circle on Doppler.",
+        "To confirm: ask the patient to flex the MTP while extending the IP joints (difficult with spasticity — EMG may be needed)."
+      ],
+      "safetyNotes": [
+        "The plantar digital nerves and arteries are immediately adjacent to the lumbricals — identify before injecting.",
+        "The FDL and FDB tendons are nearby — avoid injecting into the tendon sheath.",
+        "Use minimal volume to prevent diffusion to FDL/FDB which could worsen foot function.",
+        "The plantar fascia overlies these structures — ensure the needle has passed through it into the muscular compartment."
+      ],
+      "probeDiagram": {
+        "cx": 50,
+        "cy": 95,
+        "angle": 0,
+        "length": 5
+      }
+    },
+    "dosage": {
+      "botox": "5-10",
+      "xeomin": "5-10",
+      "dysport": "15-30"
+    },
+    "dosageNote": "Per individual lumbrical. Tiny muscles — start low. Usually only inject the clinically affected digits, not all four.",
+    "marker": null,
+    "referenceImages": [],
+    "hasReferenceImage": false,
+    "probePlacementImages": [],
+    "probePlacementHint": "Patient prone or supine with foot exposed. Place hockey-stick probe longitudinally on plantar surface along the metatarsal. Photo from plantar view.",
+    "pearls": [
+      "Consider lumbricals when claw toes persist despite treating FDL and FDB — the intrinsic component may be the residual driver",
+      "Dorsal approach between metatarsals avoids the painful plantar skin — advance plantarward to reach the lumbricals from above",
+      "Extremely small muscles — 5-10 U Botox per lumbrical is typical; most patients need only 1-2 lumbricals treated",
+      "Often co-injected with FDL, FDB, and FHL for comprehensive claw-toe pattern management"
+    ],
+    "supplies": [
+      "Ultrasound machine with hockey-stick or high-frequency linear probe",
+      "Sterile ultrasound gel",
+      "Tegaderm or probe cover",
+      "Alcohol swabs / ChloraPrep",
+      "Reconstituted botulinum toxin (drawn up)",
+      "27-30G needle (0.5-1 inch)",
+      "1 mL syringe (for precise small volumes)",
+      "Gloves (non-sterile)",
+      "Gauze pads",
+      "Band-aids",
+      "Sharps container"
+    ],
+    "spasticityPatterns": [
+      "claw-toes"
+    ],
+    "relatedMuscles": [
+      "fdb",
+      "fdl",
+      "fhl",
+      "add-hallucis"
     ]
   }
 ]
