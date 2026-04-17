@@ -348,18 +348,16 @@ def render_muscle(muscle_id: str, config) -> bool:
     target_center, target_size = bbox_of_objects(targets)
     target_span = max(target_size.x, target_size.y, target_size.z) if target_size else 0.5
 
-    # Show skeleton bones using THREE passes so every origin and insertion
-    # bone is guaranteed to be visible regardless of which Z-Anatomy
-    # collection it happens to live in:
+    # Show skeleton bones using TWO passes, both deterministic and curated:
     #
     #   1. Region bones: the curated regional skeleton (e.g. upper limb,
-    #      cranium). Gives overall anatomical context.
-    #   2. Proximity inclusion: any individual bone anywhere in the
-    #      skeleton whose bounding box is within a 20%-expanded shell
-    #      around the target muscle. Catches attachment bones whose
-    #      regions don't match the muscle's region (e.g. SCM's sternum,
-    #      lat dorsi's humerus).
-    #   3. Small buffer around the target center for safety.
+    #      cranium). Covers origin + insertion for ~95% of muscles.
+    #   2. Explicit per-muscle extraCollections: for the handful of
+    #      muscles whose tendons cross regions (iliopsoas, tfl, paraspinals,
+    #      platysma), we list specific Z-Anatomy collections to add.
+    #
+    # No proximity/spatial filtering — it pulled in stray bones (random
+    # phalanx, contralateral femur) and produced cluttered renders.
     shown_bones = 0
     shown_ids = set()
 
@@ -378,58 +376,28 @@ def render_muscle(muscle_id: str, config) -> bool:
         for o in region_meshes[region]:
             show_bone(o)
 
-    # Pass 2: proximity-based inclusion of any other skeleton bone whose
-    # bbox is CLOSE to the muscle's bbox. Many muscles have long tendons
-    # that reach well beyond the muscle-belly bbox (lat dorsi → humerus,
-    # trapezius → scapula spine, SCM → mastoid). We measure bbox-edge
-    # distance so long bones don't get rejected just because their
-    # centers are far away.
-    target_mn = target_center - target_size * 0.5
-    target_mx = target_center + target_size * 0.5
-    # Threshold is fixed (not scaled) so large muscles like lat dorsi
-    # don't pull in distant unrelated bones like the femur just because
-    # they happen to be within N*span of the muscle bbox. A tendon gap
-    # between a muscle belly and its attachment is rarely more than ~5 cm,
-    # so 10 cm is a safe ceiling for "close enough to count as touching".
-    attach_threshold = 0.10
-
-    def bbox_edge_distance(obj):
-        """Minimum distance between the target muscle's bbox and obj's bbox
-        along any single axis — 0 if they overlap, positive otherwise."""
-        bc, sz = bbox_of_objects([obj])
-        if bc is None or sz is None:
-            return float("inf")
-        obj_mn = bc - sz * 0.5
-        obj_mx = bc + sz * 0.5
-        d = 0.0
-        for i in range(3):
-            # Gap between intervals on axis i, or 0 if they overlap
-            if obj_mx[i] < target_mn[i]:
-                gap = target_mn[i] - obj_mx[i]
-            elif obj_mn[i] > target_mx[i]:
-                gap = obj_mn[i] - target_mx[i]
-            else:
-                gap = 0.0
-            # Use squared Euclidean so diagonal gaps count properly
-            d += gap * gap
-        return d ** 0.5
-
-    for o in all_skeleton:
-        if o.name in shown_ids:
+    # Pass 2: explicit extra bone collections for this specific muscle.
+    # Read from the render_map config (if present).
+    extras = []
+    if isinstance(config, dict):
+        extras = config.get("extraCollections", [])
+    for cname in extras:
+        c = bpy.data.collections.get(cname)
+        if not c:
             continue
-        # Skip rolled-up .j parent meshes from "Bones of X" collections
-        # that don't have real geometry — they clutter without adding detail
-        if o.name.endswith(".j") and "Bones of" in o.name:
-            continue
-        # Skip cross-side bones (don't show .l left-side bones for .r muscles)
-        # Our muscles are .r (right) so skip .l except .j combined meshes
-        if o.name.endswith(".l"):
-            continue
-        try:
-            if bbox_edge_distance(o) <= attach_threshold:
-                show_bone(o)
-        except Exception:
-            pass
+        for o in c.all_objects:
+            if o.type != 'MESH':
+                continue
+            # Same filtering as region map construction
+            if o.name.endswith(".l"):
+                continue
+            if o.name.endswith(".j") and "Bones of" in o.name:
+                continue
+            # Filter out non-bone meshes from "Right hand"/"Right foot" etc.
+            if cname in ("Right hand", "Right foot"):
+                if not _is_bone_like(o.name):
+                    continue
+            show_bone(o)
 
     # Make sure lights + camera are visible
     cam_obj.hide_render = False
@@ -438,22 +406,19 @@ def render_muscle(muscle_id: str, config) -> bool:
         sun.hide_render = False
         sun.hide_viewport = False
 
-    # Camera framing: compute the combined bounding box of everything
-    # that will render (target muscle + all shown bones). Framing by just
-    # the muscle bbox clips off distal attachment bones like the humerus
-    # for lat dorsi or the clavicle/sternum for SCM.
+    # Camera framing: use the combined bounding box of everything visible
+    # (muscle + region bones + extras) so distant attachment bones aren't
+    # clipped off at the edge. But cap the pullback so we don't over-zoom
+    # when a large region like "trunk" is in play.
     visible_objs = list(targets) + [o for o in all_skeleton if o.name in shown_ids]
     combined_center, combined_size = bbox_of_objects(visible_objs)
     if combined_center is None:
         return False
 
-    # Center the camera on the TARGET muscle (so the muscle is always the
-    # visual focus) but pull back far enough that the combined bounding box
-    # fits in the frame.
     center = target_center
     size = combined_size
     span = max(size.x, size.y, size.z)
-    cam_distance = max(span * 1.6, 0.7)
+    cam_distance = max(span * 1.4, 0.7)
 
     # Tighten the lens to fit the muscle
     cam_obj.data.lens = 50

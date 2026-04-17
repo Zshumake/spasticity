@@ -60,7 +60,10 @@
       "Spinalis muscles.j",
       "Spinalis thoracis muscle.r"
     ],
-    "region": "trunk"
+    "region": "trunk",
+    "extraCollections": [
+      "Bones of cranium"
+    ]
   },
   "gluteus-maximus": {
     "meshes": [
@@ -284,7 +287,10 @@
       "Iliacus muscle.r",
       "Psoas major.r"
     ],
-    "region": "hip"
+    "region": "hip",
+    "extraCollections": [
+      "Bones of vertebral column"
+    ]
   },
   "peroneus-longus": {
     "meshes": [
@@ -400,7 +406,10 @@
     "meshes": [
       "Platysma.r"
     ],
-    "region": "neck"
+    "region": "neck",
+    "extraCollections": [
+      "Bones of cranium"
+    ]
   },
   "mentalis": {
     "meshes": [
@@ -450,6 +459,9 @@
     "meshes": [
       "Tensor fasciae latae.r"
     ],
-    "region": "hip"
+    "region": "hip",
+    "extraCollections": [
+      "Bones of lower limb"
+    ]
   }
 }
