@@ -181,10 +181,15 @@ print(f"[render] skeleton meshes: {len(all_skeleton)}, muscle meshes: {len(all_m
 # explicitly pick which skeleton subsets belong to each muscle. This produces
 # much cleaner "just the arm" / "just the leg" renders.
 SKELETON_REGION_COLLS = {
-    "upper_limb":      ["Bones of upper limb", "Bones of pectoral girdle"],
-    "lower_limb":      ["Bones of lower limb"],
-    "forearm_hand":    ["Bones of upper limb"],
-    "leg_foot":        ["Bones of lower limb"],
+    # Upper limb: radius/ulna/humerus + pectoral girdle + INDIVIDUAL hand bones
+    # ("Right hand" provides real hand bone meshes since "Bones of upper limb"
+    # only contains rolled-up .j grouping meshes for the hand)
+    "upper_limb":      ["Bones of upper limb", "Bones of pectoral girdle", "Right hand"],
+    "forearm_hand":    ["Bones of upper limb", "Right hand"],
+    # Lower limb: pull in individual foot bones via "Right foot"
+    "lower_limb":      ["Bones of lower limb", "Right foot"],
+    "leg_foot":        ["Bones of lower limb", "Right foot"],
+    "foot":            ["Bones of lower limb", "Right foot"],
     "head":            ["Bones of cranium"],
     "face":            ["Bones of cranium"],
     "neck":            ["Bones of cranium", "Bones of vertebral column"],
@@ -194,10 +199,27 @@ SKELETON_REGION_COLLS = {
     "back":            ["Bones of thorax", "Bones of vertebral column", "Bones of pectoral girdle"],
     "trunk":           ["Bones of thorax", "Bones of vertebral column", "Bony pelvis"],
     "lumbar":          ["Bones of vertebral column", "Bony pelvis"],
-    "hip":             ["Bones of lower limb", "Bony pelvis"],
+    "hip":             ["Bones of lower limb", "Bony pelvis", "Right foot"],
     "thigh":           ["Bones of lower limb", "Bony pelvis"],
-    "foot":            ["Bones of foot", "Bones of lower limb"],
 }
+
+# "Right hand" and "Right foot" collections contain individual hand/foot
+# bones but also non-bone elements (muscles, ligaments, joint capsules).
+# Filter to keep only things that are clearly bony.
+_NON_BONE_KEYWORDS = (
+    "muscle", "muscul", "tendon", "fascia", "ligament", "capsule",
+    "retinaculum", "aponeurosis", "lumbrical", "interosseous", "flexor",
+    "extensor", "abductor", "adductor", "opponens", "palmaris",
+    "head of fcr", "head of fcu",  # just in case
+)
+
+def _is_bone_like(name: str) -> bool:
+    nl = name.lower()
+    if any(k in nl for k in _NON_BONE_KEYWORDS):
+        return False
+    # Skip empty .j/.i grouping meshes that Z-Anatomy uses as parents
+    # (heuristic: they exist but have no bone-specific keyword)
+    return True
 
 region_meshes = {}
 for region, coll_names in SKELETON_REGION_COLLS.items():
@@ -208,9 +230,15 @@ for region, coll_names in SKELETON_REGION_COLLS.items():
         if not c:
             continue
         for o in c.all_objects:
-            if o.type == 'MESH' and o.name not in seen:
-                meshes.append(o)
-                seen.add(o.name)
+            if o.type != 'MESH' or o.name in seen:
+                continue
+            # Skip muscles/ligaments etc when the collection isn't
+            # a pure-bone collection (e.g. "Right hand", "Right foot")
+            if cname in ("Right hand", "Right foot"):
+                if not _is_bone_like(o.name):
+                    continue
+            meshes.append(o)
+            seen.add(o.name)
     region_meshes[region] = meshes
     print(f"[render] region '{region}': {len(meshes)} skeleton meshes")
 
@@ -365,13 +393,21 @@ def render_muscle(muscle_id: str, config) -> bool:
     # The offsets are proportional to the muscle's own bounding-box span,
     # so each muscle is framed appropriately regardless of size.
     # ----------------------------------------------------------------
-    # cam_pos for each view is relative to the muscle's center
+    # cam_pos for each view is relative to the muscle's center.
+    #
+    # For the lateral view we orbit to the SAME SIDE as the muscle — otherwise
+    # the body wall/pelvis/vertebrae occlude the target. Z-Anatomy's default
+    # orientation has subject's right at world -X (we render the .r meshes),
+    # so negative-X muscles are on subject's right. Camera must be on the
+    # same side of 0 as the muscle's center.x — place it further out
+    # along that axis.
     d = cam_distance * 0.9  # pull-back distance along the primary axis
     e = cam_distance * 0.15  # slight elevation for all views
+    lateral_sign = 1.0 if center.x >= 0 else -1.0
     angles = {
         "anterior":  center + Vector(( 0.0, -d,   e)),
         "posterior": center + Vector(( 0.0,  d,   e)),
-        "lateral":   center + Vector(( d,    0.0, e)),
+        "lateral":   center + Vector((lateral_sign * d, 0.0, e)),
     }
 
     rendered_any = False
