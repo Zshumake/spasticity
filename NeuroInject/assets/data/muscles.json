@@ -4327,7 +4327,8 @@
       "posterior": "peroneus-longus_posterior.png",
       "lateral": "peroneus-longus_lateral.png"
     },
-    "anatomyCaption": "Lateral leg · fibularis/peroneus longus"
+    "anatomyCaption": "Lateral leg · fibularis/peroneus longus",
+    "defaultAnatomyView": "lateral"
   },
   {
     "id": "edl",
@@ -4523,7 +4524,8 @@
       "posterior": "scm_posterior.png",
       "lateral": "scm_lateral.png"
     },
-    "anatomyCaption": "Lateral neck · SCM highlighted"
+    "anatomyCaption": "Lateral neck · SCM highlighted",
+    "defaultAnatomyView": "lateral"
   },
   {
     "id": "upper-trapezius",
@@ -5131,7 +5133,8 @@
       "posterior": "scalenes_posterior.png",
       "lateral": "scalenes_lateral.png"
     },
-    "anatomyCaption": "Lateral neck · scalenes highlighted"
+    "anatomyCaption": "Lateral neck · scalenes highlighted",
+    "defaultAnatomyView": "lateral"
   },
   {
     "id": "longissimus-capitis",
@@ -5330,7 +5333,8 @@
       "posterior": "masseter_posterior.png",
       "lateral": "masseter_lateral.png"
     },
-    "anatomyCaption": "Lateral face · masseter highlighted"
+    "anatomyCaption": "Lateral face · masseter highlighted",
+    "defaultAnatomyView": "lateral"
   },
   {
     "id": "temporalis",
@@ -5425,7 +5429,8 @@
       "posterior": "temporalis_posterior.png",
       "lateral": "temporalis_lateral.png"
     },
-    "anatomyCaption": "Lateral face · temporalis highlighted"
+    "anatomyCaption": "Lateral face · temporalis highlighted",
+    "defaultAnatomyView": "lateral"
   },
   {
     "id": "lateral-pterygoid",
