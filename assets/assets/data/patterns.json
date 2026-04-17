@@ -1,0 +1,355 @@
+[
+  {
+    "id": "adducted-shoulder",
+    "name": "Adducted / Internally Rotated Shoulder",
+    "shortName": "Adducted Shoulder",
+    "description": "Shoulder held in adduction and internal rotation, arm pressed against trunk",
+    "muscles": [
+      "pec-major",
+      "lat-dorsi",
+      "subscapularis",
+      "teres-major"
+    ],
+    "region": "Upper Extremity"
+  },
+  {
+    "id": "flexed-elbow",
+    "name": "Flexed Elbow",
+    "shortName": "Flexed Elbow",
+    "description": "Elbow held in flexion, difficulty with extension",
+    "muscles": [
+      "biceps-brachii",
+      "brachialis",
+      "brachioradialis",
+      "pronator-teres"
+    ],
+    "region": "Upper Extremity"
+  },
+  {
+    "id": "pronated-forearm",
+    "name": "Pronated Forearm",
+    "shortName": "Pronated Forearm",
+    "description": "Forearm held in pronation, difficulty supinating",
+    "muscles": [
+      "pronator-teres",
+      "pronator-quadratus"
+    ],
+    "region": "Upper Extremity"
+  },
+  {
+    "id": "flexed-wrist",
+    "name": "Flexed Wrist",
+    "shortName": "Flexed Wrist",
+    "description": "Wrist held in flexion, may include radial or ulnar deviation",
+    "muscles": [
+      "fcr",
+      "fcu",
+      "fds",
+      "fdp"
+    ],
+    "region": "Upper Extremity"
+  },
+  {
+    "id": "clenched-fist",
+    "name": "Clenched Fist",
+    "shortName": "Clenched Fist",
+    "description": "Fingers flexed into palm, difficulty opening hand",
+    "muscles": [
+      "fds",
+      "fdp",
+      "fpl",
+      "hand-lumbricals"
+    ],
+    "region": "Upper Extremity"
+  },
+  {
+    "id": "thumb-in-palm",
+    "name": "Thumb-in-Palm",
+    "shortName": "Thumb-in-Palm",
+    "description": "Thumb adducted and flexed into palm. Note: refractory cases may also need flexor pollicis brevis and opponens pollicis (not yet in this dataset).",
+    "muscles": [
+      "adductor-pollicis",
+      "fpl"
+    ],
+    "region": "Upper Extremity"
+  },
+  {
+    "id": "flexed-hip",
+    "name": "Flexed Hip",
+    "shortName": "Flexed Hip",
+    "description": "Hip held in flexion, difficulty with extension during gait",
+    "muscles": [
+      "iliopsoas",
+      "tfl",
+      "rectus-femoris",
+      "adductor-longus"
+    ],
+    "region": "Lower Extremity"
+  },
+  {
+    "id": "adducted-hip",
+    "name": "Adducted Hip (Scissoring)",
+    "shortName": "Scissoring Gait",
+    "description": "Hips adducted with scissoring gait pattern, legs crossing midline",
+    "muscles": [
+      "adductor-longus",
+      "adductor-magnus",
+      "adductor-brevis",
+      "gracilis"
+    ],
+    "region": "Lower Extremity"
+  },
+  {
+    "id": "stiff-knee",
+    "name": "Stiff Knee Gait",
+    "shortName": "Stiff Knee",
+    "description": "Knee held in extension during swing phase, difficulty with clearance. Rectus femoris is the primary target (it's biarticular and active in swing-phase knee flexion). Vastus intermedius may contribute as a secondary target. Avoid the other vasti — they stabilize the knee in stance phase and weakening them collapses weight-bearing.",
+    "muscles": [
+      "rectus-femoris",
+      "vastus-intermedius",
+      "vastus-medialis",
+      "vastus-lateralis"
+    ],
+    "region": "Lower Extremity"
+  },
+  {
+    "id": "flexed-knee",
+    "name": "Flexed Knee",
+    "shortName": "Flexed Knee",
+    "description": "Knee held in flexion, crouch gait pattern",
+    "muscles": [
+      "semimembranosus",
+      "semitendinosus",
+      "biceps-femoris"
+    ],
+    "region": "Lower Extremity"
+  },
+  {
+    "id": "equinus",
+    "name": "Equinus (Plantarflexion)",
+    "shortName": "Equinus",
+    "description": "Ankle held in plantarflexion, toe-walking pattern",
+    "muscles": [
+      "gastrocnemius-medial",
+      "gastrocnemius-lateral",
+      "soleus-medial",
+      "soleus-lateral"
+    ],
+    "region": "Lower Extremity"
+  },
+  {
+    "id": "equinovarus",
+    "name": "Equinovarus",
+    "shortName": "Equinovarus",
+    "description": "Ankle in plantarflexion and inversion, foot turned inward. Note: tibialis anterior is typically WEAK in this pattern (not spastic) — its weakness is a diagnostic feature; do not inject it.",
+    "muscles": [
+      "tibialis-posterior",
+      "gastrocnemius-medial",
+      "gastrocnemius-lateral",
+      "soleus-medial",
+      "soleus-lateral",
+      "fdl",
+      "fhl"
+    ],
+    "region": "Lower Extremity"
+  },
+  {
+    "id": "claw-toes",
+    "name": "Claw Toes / Curled Toes",
+    "shortName": "Claw Toes",
+    "description": "Toes flexed/clawed, painful with shoe wear",
+    "muscles": [
+      "fdl",
+      "fdb",
+      "fhl",
+      "add-hallucis",
+      "foot-lumbricals"
+    ],
+    "region": "Lower Extremity"
+  },
+  {
+    "id": "striatal-toe",
+    "name": "Striatal Toe (Hitchhiker Toe)",
+    "shortName": "Striatal Toe",
+    "description": "Great toe held in extension/dorsiflexion",
+    "muscles": [
+      "ehl"
+    ],
+    "region": "Lower Extremity"
+  },
+  {
+    "id": "cervical-dystonia",
+    "name": "Cervical Dystonia / Torticollis",
+    "shortName": "Torticollis",
+    "description": "Abnormal head/neck positioning — rotation (torticollis), lateral flexion (laterocollis), extension (retrocollis), or flexion (anterocollis). Includes the major cervical dystonia targets: SCM, splenius capitis, semispinalis capitis, scalenes, longissimus capitis, upper trapezius, and levator scapulae.",
+    "muscles": [
+      "scm",
+      "upper-trapezius",
+      "levator-scapulae",
+      "splenius-capitis",
+      "semispinalis-capitis",
+      "scalenes",
+      "longissimus-capitis"
+    ],
+    "region": "Neck"
+  },
+  {
+    "id": "trunk-lateral-flexion",
+    "name": "Trunk Lateral Flexion (Pisa Syndrome)",
+    "shortName": "Trunk Lean",
+    "description": "Lateral trunk lean, pelvic hiking",
+    "muscles": [
+      "quadratus-lumborum",
+      "obliques"
+    ],
+    "region": "Trunk"
+  },
+  {
+    "id": "blepharospasm",
+    "name": "Blepharospasm",
+    "shortName": "Blepharospasm",
+    "description": "Involuntary forceful eyelid closure. Injection targets the orbicularis oculi (pretarsal > preseptal), corrugator supercilii, and procerus.",
+    "muscles": [
+      "orbicularis-oculi",
+      "corrugator-supercilii",
+      "procerus"
+    ],
+    "region": "Face"
+  },
+  {
+    "id": "oromandibular-dystonia",
+    "name": "Oromandibular Dystonia",
+    "shortName": "Jaw Dystonia",
+    "description": "Involuntary jaw movements — jaw closing (masseter, temporalis, medial pterygoid) or jaw opening (lateral pterygoid). Assess opening vs closing pattern before selecting targets.",
+    "muscles": [
+      "masseter",
+      "temporalis",
+      "lateral-pterygoid",
+      "medial-pterygoid"
+    ],
+    "region": "Face"
+  },
+  {
+    "id": "bruxism",
+    "name": "Bruxism / Jaw Clenching",
+    "shortName": "Bruxism",
+    "description": "Involuntary or habitual jaw clenching and teeth grinding. Masseter is the primary target; temporalis is secondary.",
+    "muscles": [
+      "masseter",
+      "temporalis"
+    ],
+    "region": "Face"
+  },
+  {
+    "id": "anterocollis",
+    "name": "Anterocollis (Forward Head)",
+    "shortName": "Anterocollis",
+    "description": "Head/neck flexed forward. Targets include SCM (bilateral), scalenes, and platysma. Caution: bilateral SCM injection carries high dysphagia risk.",
+    "muscles": [
+      "scm",
+      "scalenes",
+      "platysma"
+    ],
+    "region": "Neck"
+  },
+  {
+    "id": "retrocollis",
+    "name": "Retrocollis (Head Extension)",
+    "shortName": "Retrocollis",
+    "description": "Head/neck extended backward. Primary targets: splenius capitis, semispinalis capitis, longissimus capitis, upper trapezius.",
+    "muscles": [
+      "splenius-capitis",
+      "semispinalis-capitis",
+      "longissimus-capitis",
+      "upper-trapezius"
+    ],
+    "region": "Neck"
+  },
+  {
+    "id": "laterocollis",
+    "name": "Laterocollis (Head Tilt)",
+    "shortName": "Laterocollis",
+    "description": "Head tilted laterally toward the shoulder. Ipsilateral scalenes, levator scapulae, splenius capitis, and SCM (clavicular head) are common targets.",
+    "muscles": [
+      "scalenes",
+      "levator-scapulae",
+      "splenius-capitis",
+      "scm"
+    ],
+    "region": "Neck"
+  },
+  {
+    "id": "trunk-flexion",
+    "name": "Trunk Flexion (Camptocormia)",
+    "shortName": "Camptocormia",
+    "description": "Involuntary trunk flexion when standing/walking. Rectus abdominis and obliques are the primary targets. Note: some cases are treated by injecting the paraspinals if they are the dystonic muscles pulling the trunk forward via co-contraction.",
+    "muscles": [
+      "rectus-abdominis",
+      "obliques"
+    ],
+    "region": "Trunk"
+  },
+  {
+    "id": "trunk-rotation",
+    "name": "Trunk Rotation",
+    "shortName": "Trunk Rotation",
+    "description": "Involuntary trunk rotation / twisting. Obliques (contralateral external + ipsilateral internal) are the primary targets.",
+    "muscles": [
+      "obliques",
+      "paraspinals"
+    ],
+    "region": "Trunk"
+  },
+  {
+    "id": "trunk-extension",
+    "name": "Trunk Extension (Axial Dystonia)",
+    "shortName": "Trunk Extension",
+    "description": "Involuntary trunk extension / backward arching. Paraspinal muscles (erector spinae group) are the primary targets. Inject at 2-3 vertebral levels.",
+    "muscles": [
+      "paraspinals"
+    ],
+    "region": "Trunk"
+  },
+  {
+    "id": "hip-extension",
+    "name": "Hip Extension Spasticity",
+    "shortName": "Hip Extension",
+    "description": "Hip held in extension, difficulty with sitting posture and hip flexion for transfers. Gluteus maximus is the primary target.",
+    "muscles": [
+      "gluteus-maximus"
+    ],
+    "region": "Lower Extremity"
+  },
+  {
+    "id": "hip-external-rotation",
+    "name": "Hip External Rotation",
+    "shortName": "Hip ER",
+    "description": "Hip held in external rotation. Piriformis and gluteus maximus are the primary targets.",
+    "muscles": [
+      "piriformis",
+      "gluteus-maximus"
+    ],
+    "region": "Lower Extremity"
+  },
+  {
+    "id": "toe-extension",
+    "name": "Toe Extension / Dorsiflexion Assist",
+    "shortName": "Toe Extension",
+    "description": "Spastic toe extension or extensor recruitment during gait. EDL and EHL may contribute. Uncommon — confirm with EMG before injecting.",
+    "muscles": [
+      "edl",
+      "ehl"
+    ],
+    "region": "Lower Extremity"
+  },
+  {
+    "id": "elbow-extension",
+    "name": "Elbow Extension Spasticity",
+    "shortName": "Elbow Extension",
+    "description": "Elbow held in extension, difficulty with flexion. Uncommon in stroke (more common in TBI/MS). Triceps is the primary target.",
+    "muscles": [
+      "triceps"
+    ],
+    "region": "Upper Extremity"
+  }
+]
