@@ -96,7 +96,11 @@ def apply_material(obj, mat):
 
 
 GREY_MAT = make_material("Bone_Grey", (0.88, 0.84, 0.78, 1.0), roughness=0.8)
-HIGHLIGHT_MAT = make_material("Muscle_Highlight", (0.88, 0.44, 0.34, 1.0), roughness=0.55)
+# Deep clinical red — matches anatomy-atlas convention for highlighted muscles.
+# RGB (0.50, 0.05, 0.07) ≈ hex #800C12 — saturated, dark, fully opaque, matte.
+# Because the world light is bright white, base colors get washed toward their
+# highlight; darker source values land at a truer clinical red.
+HIGHLIGHT_MAT = make_material("Muscle_Highlight", (0.50, 0.05, 0.07, 1.0), roughness=0.75)
 
 # -----------------------------------------------------------------
 # Camera setup — one global camera we reposition per muscle
@@ -120,13 +124,15 @@ world_local.use_nodes = True
 bg_node = world_local.node_tree.nodes.get("Background")
 if bg_node:
     bg_node.inputs["Color"].default_value = (1.0, 1.0, 1.0, 1.0)
-    bg_node.inputs["Strength"].default_value = 0.8
+    # Moderate world light — enough to keep posterior view legible, low enough
+    # to preserve color saturation on the highlighted muscle.
+    bg_node.inputs["Strength"].default_value = 0.55
 
 # Plus a top-down sun for directional shading so the model doesn't
-# look flat. World light handles the rest, so all view angles come
-# out with reasonable illumination.
+# look flat. Boosted energy compensates for the lower world light so
+# surfaces remain well-lit while keeping muscle colors saturated.
 sun_data = bpy.data.lights.new(name="SunKey", type="SUN")
-sun_data.energy = 2.5
+sun_data.energy = 3.5
 sun_obj = bpy.data.objects.new("SunKey", sun_data)
 scene.collection.objects.link(sun_obj)
 sun_obj.location = (0, 0, 5)
