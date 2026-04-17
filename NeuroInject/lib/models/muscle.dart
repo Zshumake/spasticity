@@ -20,6 +20,11 @@ class Muscle {
   /// Short caption shown as an overlay on the anatomy card.
   /// Example: "Anterior forearm · FCR highlighted"
   final String? anatomyCaption;
+  /// Which view to show first when the detail page opens.
+  /// Used to default posterior-aspect muscles (hamstrings, gastroc,
+  /// triceps, etc.) to their posterior view. When null, defaults
+  /// to 'anterior'.
+  final String? defaultAnatomyView;
   final List<String> pearls;
   final List<String> supplies;
   final String? videoUrl;
@@ -44,6 +49,7 @@ class Muscle {
     this.probePlacementHint,
     this.anatomyImages = const {},
     this.anatomyCaption,
+    this.defaultAnatomyView,
     this.pearls = const [],
     this.supplies = const [],
     this.videoUrl,
@@ -78,6 +84,7 @@ class Muscle {
       probePlacementHint: json['probePlacementHint'] as String?,
       anatomyImages: _parseAnatomyImages(json['anatomyImages']),
       anatomyCaption: json['anatomyCaption'] as String?,
+      defaultAnatomyView: json['defaultAnatomyView'] as String?,
       pearls: json['pearls'] != null
           ? (json['pearls'] as List).cast<String>()
           : const [],

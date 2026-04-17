@@ -192,7 +192,8 @@
       "posterior": "lat-dorsi_posterior.png",
       "lateral": "lat-dorsi_lateral.png"
     },
-    "anatomyCaption": "Posterior trunk · latissimus dorsi highlighted"
+    "anatomyCaption": "Posterior trunk · latissimus dorsi highlighted",
+    "defaultAnatomyView": "posterior"
   },
   {
     "id": "biceps-brachii",
@@ -789,7 +790,8 @@
       "posterior": "paraspinals_posterior.png",
       "lateral": "paraspinals_lateral.png"
     },
-    "anatomyCaption": "Posterior trunk · erector spinae group highlighted"
+    "anatomyCaption": "Posterior trunk · erector spinae group highlighted",
+    "defaultAnatomyView": "posterior"
   },
   {
     "id": "gluteus-maximus",
@@ -885,7 +887,8 @@
       "posterior": "gluteus-maximus_posterior.png",
       "lateral": "gluteus-maximus_lateral.png"
     },
-    "anatomyCaption": "Posterior hip · gluteus maximus highlighted"
+    "anatomyCaption": "Posterior hip · gluteus maximus highlighted",
+    "defaultAnatomyView": "posterior"
   },
   {
     "id": "piriformis",
@@ -978,7 +981,8 @@
       "posterior": "piriformis_posterior.png",
       "lateral": "piriformis_lateral.png"
     },
-    "anatomyCaption": "Posterior hip · piriformis highlighted"
+    "anatomyCaption": "Posterior hip · piriformis highlighted",
+    "defaultAnatomyView": "posterior"
   },
   {
     "id": "tfl",
@@ -1538,7 +1542,8 @@
       "posterior": "semimembranosus_posterior.png",
       "lateral": "semimembranosus_lateral.png"
     },
-    "anatomyCaption": "Posterior thigh · semimembranosus highlighted"
+    "anatomyCaption": "Posterior thigh · semimembranosus highlighted",
+    "defaultAnatomyView": "posterior"
   },
   {
     "id": "semitendinosus",
@@ -1629,7 +1634,8 @@
       "posterior": "semitendinosus_posterior.png",
       "lateral": "semitendinosus_lateral.png"
     },
-    "anatomyCaption": "Posterior thigh · semitendinosus highlighted"
+    "anatomyCaption": "Posterior thigh · semitendinosus highlighted",
+    "defaultAnatomyView": "posterior"
   },
   {
     "id": "gastrocnemius-medial",
@@ -1726,7 +1732,8 @@
       "posterior": "gastrocnemius-medial_posterior.png",
       "lateral": "gastrocnemius-medial_lateral.png"
     },
-    "anatomyCaption": "Posterior leg · gastrocnemius highlighted"
+    "anatomyCaption": "Posterior leg · gastrocnemius highlighted",
+    "defaultAnatomyView": "posterior"
   },
   {
     "id": "gastrocnemius-lateral",
@@ -1823,7 +1830,8 @@
       "posterior": "gastrocnemius-lateral_posterior.png",
       "lateral": "gastrocnemius-lateral_lateral.png"
     },
-    "anatomyCaption": "Posterior leg · gastrocnemius highlighted"
+    "anatomyCaption": "Posterior leg · gastrocnemius highlighted",
+    "defaultAnatomyView": "posterior"
   },
   {
     "id": "soleus-medial",
@@ -1920,7 +1928,8 @@
       "posterior": "soleus-medial_posterior.png",
       "lateral": "soleus-medial_lateral.png"
     },
-    "anatomyCaption": "Posterior leg · soleus highlighted"
+    "anatomyCaption": "Posterior leg · soleus highlighted",
+    "defaultAnatomyView": "posterior"
   },
   {
     "id": "soleus-lateral",
@@ -2014,7 +2023,8 @@
       "posterior": "soleus-lateral_posterior.png",
       "lateral": "soleus-lateral_lateral.png"
     },
-    "anatomyCaption": "Posterior leg · soleus highlighted"
+    "anatomyCaption": "Posterior leg · soleus highlighted",
+    "defaultAnatomyView": "posterior"
   },
   {
     "id": "fdl",
@@ -2114,7 +2124,8 @@
       "posterior": "fdl_posterior.png",
       "lateral": "fdl_lateral.png"
     },
-    "anatomyCaption": "Deep posterior leg · FDL highlighted"
+    "anatomyCaption": "Deep posterior leg · FDL highlighted",
+    "defaultAnatomyView": "posterior"
   },
   {
     "id": "fdb",
@@ -2387,7 +2398,8 @@
       "posterior": "tibialis-posterior_posterior.png",
       "lateral": "tibialis-posterior_lateral.png"
     },
-    "anatomyCaption": "Deep posterior leg · tibialis posterior"
+    "anatomyCaption": "Deep posterior leg · tibialis posterior",
+    "defaultAnatomyView": "posterior"
   },
   {
     "id": "fhl",
@@ -2486,7 +2498,8 @@
       "posterior": "fhl_posterior.png",
       "lateral": "fhl_lateral.png"
     },
-    "anatomyCaption": "Deep posterior leg · FHL highlighted"
+    "anatomyCaption": "Deep posterior leg · FHL highlighted",
+    "defaultAnatomyView": "posterior"
   },
   {
     "id": "ehl",
@@ -2766,7 +2779,8 @@
       "posterior": "triceps_posterior.png",
       "lateral": "triceps_lateral.png"
     },
-    "anatomyCaption": "Posterior arm · triceps brachii highlighted"
+    "anatomyCaption": "Posterior arm · triceps brachii highlighted",
+    "defaultAnatomyView": "posterior"
   },
   {
     "id": "brachioradialis",
@@ -3743,7 +3757,8 @@
       "posterior": "infraspinatus_posterior.png",
       "lateral": "infraspinatus_lateral.png"
     },
-    "anatomyCaption": "Posterior scapula · infraspinatus highlighted"
+    "anatomyCaption": "Posterior scapula · infraspinatus highlighted",
+    "defaultAnatomyView": "posterior"
   },
   {
     "id": "teres-major",
@@ -3841,7 +3856,8 @@
       "posterior": "teres-major_posterior.png",
       "lateral": "teres-major_lateral.png"
     },
-    "anatomyCaption": "Posterior scapula · teres major highlighted"
+    "anatomyCaption": "Posterior scapula · teres major highlighted",
+    "defaultAnatomyView": "posterior"
   },
   {
     "id": "adductor-longus",
@@ -4122,7 +4138,8 @@
       "posterior": "biceps-femoris_posterior.png",
       "lateral": "biceps-femoris_lateral.png"
     },
-    "anatomyCaption": "Posterior thigh · biceps femoris highlighted"
+    "anatomyCaption": "Posterior thigh · biceps femoris highlighted",
+    "defaultAnatomyView": "posterior"
   },
   {
     "id": "iliopsoas",
@@ -4606,7 +4623,8 @@
       "posterior": "upper-trapezius_posterior.png",
       "lateral": "upper-trapezius_lateral.png"
     },
-    "anatomyCaption": "Posterior neck · upper trapezius highlighted"
+    "anatomyCaption": "Posterior neck · upper trapezius highlighted",
+    "defaultAnatomyView": "posterior"
   },
   {
     "id": "levator-scapulae",
@@ -4706,7 +4724,8 @@
       "posterior": "levator-scapulae_posterior.png",
       "lateral": "levator-scapulae_lateral.png"
     },
-    "anatomyCaption": "Posterior neck · levator scapulae highlighted"
+    "anatomyCaption": "Posterior neck · levator scapulae highlighted",
+    "defaultAnatomyView": "posterior"
   },
   {
     "id": "pronator-quadratus",
@@ -4903,7 +4922,8 @@
       "posterior": "splenius-capitis_posterior.png",
       "lateral": "splenius-capitis_lateral.png"
     },
-    "anatomyCaption": "Posterior neck · splenius capitis highlighted"
+    "anatomyCaption": "Posterior neck · splenius capitis highlighted",
+    "defaultAnatomyView": "posterior"
   },
   {
     "id": "semispinalis-capitis",
@@ -5005,7 +5025,8 @@
       "posterior": "semispinalis-capitis_posterior.png",
       "lateral": "semispinalis-capitis_lateral.png"
     },
-    "anatomyCaption": "Posterior neck · semispinalis highlighted"
+    "anatomyCaption": "Posterior neck · semispinalis highlighted",
+    "defaultAnatomyView": "posterior"
   },
   {
     "id": "scalenes",
@@ -5212,7 +5233,8 @@
       "posterior": "longissimus-capitis_posterior.png",
       "lateral": "longissimus-capitis_lateral.png"
     },
-    "anatomyCaption": "Posterior neck · longissimus capitis highlighted"
+    "anatomyCaption": "Posterior neck · longissimus capitis highlighted",
+    "defaultAnatomyView": "posterior"
   },
   {
     "id": "masseter",

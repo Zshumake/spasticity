@@ -28,12 +28,24 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
   bool _procedureMode = false;
   final Set<int> _checkedSupplies = {};
   /// Currently-selected anatomy view ('anterior', 'posterior', 'lateral').
-  /// Defaults to anterior; falls back to whichever view exists if anterior missing.
-  String _anatomyView = 'anterior';
+  /// Initialized from the muscle's defaultAnatomyView — posterior-aspect
+  /// muscles (hamstrings, triceps, gastroc, etc.) open to posterior view.
+  late String _anatomyView;
 
   @override
   void initState() {
     super.initState();
+    // Pick initial view: explicit default from data, or 'anterior' fallback.
+    // If the chosen view isn't actually present on this muscle, fall back
+    // to whichever view is available.
+    final preferred = muscle.defaultAnatomyView ?? 'anterior';
+    if (muscle.anatomyImages.containsKey(preferred)) {
+      _anatomyView = preferred;
+    } else if (muscle.anatomyImages.isNotEmpty) {
+      _anatomyView = muscle.anatomyImages.keys.first;
+    } else {
+      _anatomyView = 'anterior';
+    }
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<RecentlyViewedManager>().recordView(muscle.id);
     });
