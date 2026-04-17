@@ -619,10 +619,21 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         ],
 
         // The card itself — full-width, 220px tall, 16:10 intrinsic
+        // Supports tap-to-enlarge AND horizontal swipe to cycle views.
         GestureDetector(
           onTap: hasImages
               ? () => _showFullImage(context, imagePath!,
                   '${muscle.name} — ${_viewLabel(activeView!)}')
+              : null,
+          onHorizontalDragEnd: hasImages && views.length > 1
+              ? (details) {
+                  // Positive primaryVelocity = swipe right → previous view
+                  // Negative primaryVelocity = swipe left  → next view
+                  // Only respond to decisive swipes (>300 px/s).
+                  final v = details.primaryVelocity ?? 0;
+                  if (v.abs() < 300) return;
+                  _cycleAnatomyView(forward: v < 0);
+                }
               : null,
           child: Container(
             width: double.infinity,
@@ -638,7 +649,20 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
                     // Letterbox tint to avoid harsh borders with BoxFit.contain
                     Container(color: _groupColor.withAlpha(8)),
                     AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 220),
+                      duration: const Duration(milliseconds: 260),
+                      switchInCurve: Curves.easeOutCubic,
+                      switchOutCurve: Curves.easeInCubic,
+                      transitionBuilder: (child, animation) {
+                        // Slide + fade, gives the "rotating through images" feel
+                        final offset = Tween<Offset>(
+                          begin: const Offset(0.08, 0),
+                          end: Offset.zero,
+                        ).animate(animation);
+                        return FadeTransition(
+                          opacity: animation,
+                          child: SlideTransition(position: offset, child: child),
+                        );
+                      },
                       child: Image.asset(
                         imagePath!,
                         key: ValueKey(activeView),
@@ -691,6 +715,22 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
       case 'medial': return 'Medial';
       default: return view[0].toUpperCase() + view.substring(1);
     }
+  }
+
+  /// Advance (or reverse) through the available anatomy views.
+  /// Canonical order: anterior → lateral → posterior → (wraps to anterior).
+  /// Respects the view set actually present on this muscle — if one view
+  /// is missing, it's skipped.
+  void _cycleAnatomyView({required bool forward}) {
+    const canonical = ['anterior', 'lateral', 'posterior'];
+    final available = canonical.where(muscle.anatomyImages.containsKey).toList();
+    if (available.length < 2) return;
+    final current = available.indexOf(_anatomyView);
+    final i = current < 0 ? 0 : current;
+    final next = forward
+        ? (i + 1) % available.length
+        : (i - 1 + available.length) % available.length;
+    setState(() => _anatomyView = available[next]);
   }
 
   Widget _viewChip(String view, bool isDark) {
