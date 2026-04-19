@@ -273,7 +273,7 @@
       "Differentiate from brachialis — biceps is superficial and has a characteristic double-belly on US",
       "If elbow flexion persists after biceps injection, the brachialis is likely the bigger contributor",
       "Biceps is usually treated together with brachialis and brachioradialis — all three elbow flexors are viewed in synergy.",
-      "Exclusive biceps injection is rarely indicated; the biceps is not the only elbow flexor and treating it alone often misses the larger contributor (brachialis)."
+      "When treating elbow-flexion spasticity, consider distributing dose across biceps, brachialis, and brachioradialis rather than concentrating in biceps alone — the three work as a functional group."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -376,7 +376,7 @@
       "Often the primary elbow flexor in spasticity — don't skip it just because biceps is more famous",
       "Lies deep to the biceps — must see both muscles on US to inject the correct one",
       "Higher doses often needed here vs biceps since brachialis is the primary elbow flexor",
-      "Brachialis is unjustifiably neglected in elbow-flexor spasticity — most of the elbow-flexion force comes from brachialis, not biceps.",
+      "Brachialis is often under-treated in elbow-flexor spasticity; it contributes substantial force to elbow flexion and is worth including when planning the distribution of dose across the elbow-flexor group.",
       "Treat brachialis in cases of elbow-flexor spasticity; the dose is distributed among all elbow flexors rather than concentrated in biceps."
     ],
     "supplies": [
@@ -1515,7 +1515,7 @@
       "Deepest of the quadriceps — requires longer needle and confident US identification",
       "Lies directly on the femur — use the femur as your deep landmark on US",
       "Often co-injected when other quads alone don't adequately reduce extension tone",
-      "Cannot be palpated or clinically differentiated from the other vasti — US guidance is not optional.",
+      "Vastus intermedius cannot be reliably palpated or clinically differentiated from the other vasti — US guidance is strongly recommended for accurate targeting.",
       "Deep to rectus femoris; pass the needle through rectus to reach it."
     ],
     "supplies": [
@@ -2947,7 +2947,7 @@
       "Rarely injected in spasticity — extended elbow is uncommon. Confirm the pattern",
       "If injecting, protect elbow extension function as much as possible for reaching",
       "Long head crosses the shoulder — may contribute to shoulder extension posturing",
-      "Rarely treated in spasticity — flexor spasticity is far more common than extensor spasticity.",
+      "Extensor spasticity is less common than flexor; triceps injection is reserved for cases where the extension posture clearly contributes to function loss, positioning difficulty, or hygiene.",
       "When treating extensors, always consider the action and loss-of-action of the opposing flexors and the shoulder muscles.",
       "The three heads are not always clearly distinguishable clinically — US guidance helps target specific heads."
     ],
@@ -3417,7 +3417,9 @@
       "Coronoid Process of Ulna (not directly palpable, but located approximately 2 cm distal to the elbow crease on the medial side — the ulnar head of FDS originates here)",
       "Proximal Radius (palpate the radial head by pronating and supinating the forearm while pressing just distal to the lateral epicondyle — the radial head of FDS originates from the proximal radial shaft)",
       "Medial epicondyle of humerus (humeroulnar head) and anterior shaft of the radius (radial head).",
-      "Middle of the anterior forearm — FDS lies superficial to FDP and deep to FCR/palmaris longus."
+      "Middle of the anterior forearm — FDS lies superficial to FDP and deep to FCR/palmaris longus.",
+      "Medial epicondyle of the humerus (humeroulnar head) and anterior shaft of the radius (radial head).",
+      "Ulnar side of the mid-forearm, halfway between the elbow fold and the wrist crease — here FDS lies most superficially and is the safest target."
     ],
     "placement": [
       "Position the patient seated with the forearm supinated and resting on a flat surface.",
@@ -3429,14 +3431,21 @@
       "The median nerve runs on the superficial surface of the FDS (between the FDS and the superficial flexors) — approach from the ulnar side to minimize risk.",
       "Aspirate before injecting. Multiple injection sites along the forearm may be needed given the broad muscle belly.",
       "Injection site: mid-anterior forearm, into the muscle belly.",
-      "Sites: 1-4 for typical dosing; usually 1-2."
+      "Sites: 1-4 for typical dosing; usually 1-2.",
+      "Preferred site: middle of the ulnar side of the forearm, halfway between elbow and wrist, where the muscle lies superficially.",
+      "Injection direction: vertical (perpendicular to skin).",
+      "Injection depth: 10-20 mm.",
+      "Sites: 1-4. For multiple sites near the elbow, consider BOTH heads — inject on ulnar AND radial sides of the proximal forearm."
     ],
     "setup": [
       "USG is highly recommended — the FDS lies in the intermediate layer and is difficult to distinguish from surrounding muscles by palpation alone.",
       "Have the patient flex the PIP joints with the DIP joints extended to confirm FDS activation.",
       "The FDS has four separate muscle bellies for digits 2-5; target the belly corresponding to the affected digits.",
       "The median nerve travels on the superficial surface of the FDS — always identify it with ultrasound before injecting.",
-      "US guidance strongly recommended — FDS and FDP lie side by side in the proximal forearm and cannot be reliably distinguished by palpation alone."
+      "US guidance strongly recommended — FDS and FDP lie side by side in the proximal forearm and cannot be reliably distinguished by palpation alone.",
+      "Patient position: elbow supinated, wrist and fingers comfortably extended.",
+      "US or EMG guidance is recommended — FDS and FDP lie side by side and cannot be reliably distinguished by palpation alone.",
+      "During clinical exam, keep the wrist in neutral — FDS becomes insufficient (can't generate force) if the wrist is flexed, so you can't test its action properly with the wrist down."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -3477,7 +3486,9 @@
       "Lies between FCR/FCU superficially and FDP deep — be precise on US",
       "Consider injecting specific slips if only certain fingers are affected",
       "Treated in most patients presenting with PIP (proximal interphalangeal) joint flexion spasticity.",
-      "For finger-flexion spasticity, FDS and FDP typically both need treatment — the other flexors should be addressed as well."
+      "For finger-flexion spasticity, FDS and FDP typically both need treatment — the other flexors should be addressed as well.",
+      "The muscle bellies of the individual finger-specific FDS slips are arranged on TWO levels (superficial and deep), not side by side — which is why US is helpful when targeting a specific finger.",
+      "PIP-joint flexion is generated synergistically by FDS and FDP together — inject both for full effect on PIP spasticity."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -3911,7 +3922,7 @@
       "Deep in the axilla — requires careful US guidance due to proximity to axillary vessels",
       "Inject through the anterior axillary approach with the arm abducted and externally rotated",
       "Part of the rotator cuff; paresis leads to maximum external rotation of the arm.",
-      "Frequently involved in upper-limb spasticity but treated only seldom — consider it when internal-rotation contracture resists biceps/pectoral-only treatment."
+      "Commonly involved in upper-limb spasticity with internal-rotation posture; worth considering when pec-major and biceps injections alone don't address the contracture."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -4831,7 +4842,7 @@
       "The spinal accessory nerve runs through the muscle — EMG can help avoid it",
       "SCM and the upper trapezius often lie very close together — causing identification challenges for residents. Palpate with the patient actively turning the head to confirm SCM.",
       "Motor supply is accessory nerve (XI); sensory is cervical plexus C2-C3.",
-      "Dysphagia is the most feared complication of bilateral SCM injection — reduce dose bilaterally and avoid deep/medial injection near the pharynx."
+      "Bilateral SCM injection carries a real risk of dysphagia — reduce dose bilaterally and avoid deep or medial injection near the pharynx when treating both sides."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -5078,7 +5089,8 @@
       "Distal Radius (palpate the flat bony prominence on the radial side of the distal forearm just proximal to the wrist crease — pronator quadratus lies directly over the volar distal radius and ulna)",
       "Distal Ulna (palpate the ulnar styloid and move proximally ~4 cm — the muscle origin is the anterior distal ulnar shaft)",
       "Flexor Tendons at the Wrist (palpate the FCR and palmaris longus tendons — pronator quadratus lies DEEP to all the flexor tendons on the volar distal forearm)",
-      "Distal anterior forearm, just proximal to the wrist crease."
+      "Distal anterior forearm, just proximal to the wrist crease.",
+      "Ulnar border of the distal forearm — the preferred approach is from the medial (ulnar) side at a right angle, slightly above the ulna."
     ],
     "placement": [
       "Position the patient supine or seated with the forearm supinated and resting on a support, wrist in neutral.",
@@ -5089,7 +5101,10 @@
       "Under ultrasound, track the needle tip through the interosseous membrane and stop as soon as it enters the thin hypoechoic pronator quadratus muscle belly just superficial to the pronator line of the radius.",
       "The muscle is thin (5-10 mm) — advance only the minimum distance needed to place the tip within it.",
       "Aspirate before injecting. A single injection site is usually sufficient.",
-      "Injection site: deep to FCR/FDS in the distal anterior forearm."
+      "Injection site: deep to FCR/FDS in the distal anterior forearm.",
+      "Ventral approach (preferred): needle enters from the medial (ulnar) side of the distal anterior forearm, at a right angle to the forearm and slightly above the ulna.",
+      "Dorsal approach (alternative): possible but NOT preferred — the extensor tendons are in the way and the interosseous membrane must be penetrated. If used, the hand must be in supination.",
+      "Sites: typically 1."
     ],
     "setup": [
       "USG guidance is MANDATORY — pronator quadratus is deep and surrounded by neurovascular structures (median nerve, anterior interosseous nerve, radial/ulnar arteries).",
@@ -5097,7 +5112,9 @@
       "Use color Doppler to map the radial and ulnar arteries before needle insertion.",
       "The anterior interosseous nerve (branch of median nerve) runs on the volar surface of the interosseous membrane deep to FDP and FPL — it innervates pronator quadratus. Stay within the muscle belly, not the plane between muscles.",
       "Consider EMG guidance as an adjunct to confirm placement in this small deep muscle.",
-      "US guidance is strongly recommended — pronator quadratus lies deep to the superficial flexors and the median nerve/radial artery are in the vicinity."
+      "US guidance is strongly recommended — pronator quadratus lies deep to the superficial flexors and the median nerve/radial artery are in the vicinity.",
+      "Patient position: forearm supinated, hand slightly open and relaxed.",
+      "US guidance strongly recommended — pronator quadratus cannot be palpated and lies deep to the superficial flexors."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -5137,7 +5154,9 @@
       "The TRUE distal pronator — often missed because pronator teres gets all the attention",
       "Thin, deep muscle — USG mandatory; a dorsal approach through the interosseous membrane is safest",
       "Low doses only (10-25 U Botox) given the small muscle volume",
-      "Co-inject with pronator teres for refractory forearm pronation pattern"
+      "Co-inject with pronator teres for refractory forearm pronation pattern",
+      "Works in synergy with pronator teres; injecting both muscles is uncommon — consider pronator teres alone first for most pronation patterns.",
+      "The ventral (medial/ulnar) approach is preferred; the dorsal approach is difficult due to extensor tendons + interosseous membrane."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -6566,7 +6585,10 @@
       "Metacarpal Heads (palpate the knuckles — the lumbricals lie on the radial side of each FDP tendon in the palm, just proximal to the MCP joints)",
       "Palmar Crease (the distal palmar crease runs across the MCP joints — the lumbricals sit just proximal to this crease in the deep palm)",
       "Metacarpal bones — use them as the palpation reference.",
-      "Radial aspect of each respective tendon at the upper half of the metacarpal."
+      "Radial aspect of each respective tendon at the upper half of the metacarpal.",
+      "Upper half of the palm, radial to each respective flexor tendon (lumbricals 1-4 each sit radial to the flexor digitorum profundus tendon of their respective finger).",
+      "For the 1st lumbrical: directly above the distal border of the 2nd metacarpal.",
+      "For the 2nd-4th lumbricals: slightly distal and radial to the head of the respective metacarpal (3rd, 4th, 5th)."
     ],
     "placement": [
       "Position the patient with the hand supinated (palm up), fingers relaxed and slightly extended.",
@@ -6577,14 +6599,20 @@
       "USG or EMG guidance is strongly recommended given the small size and proximity to digital neurovascular bundles.",
       "Aspirate before injecting. Use very small volumes (0.1-0.2 mL per lumbrical) to avoid diffusion.",
       "Inject only the clinically affected lumbricals — do not blanket all four unless all are spastic.",
-      "Injection site: radial to each respective flexor tendon, approximately in the upper half of the metacarpal."
+      "Injection site: radial to each respective flexor tendon, approximately in the upper half of the metacarpal.",
+      "Primary approach (palmar): needle enters from the palmar side, radial to each respective tendon at the specified landmarks.",
+      "Alternative approach (dorsal): possible from the dorsum of the hand. Place the US probe in the palm and inject from the dorsum so the needle enters the image from below the screen.",
+      "Injection direction: toward the bones (metacarpals).",
+      "Sites: 1 per lumbrical, as many lumbricals as clinically indicated."
     ],
     "setup": [
       "USG with a high-frequency linear or hockey-stick probe is recommended — the lumbricals are very small and surrounded by tendons and neurovascular structures.",
       "EMG guidance is an excellent adjunct — confirm the muscle is electrically active during MCP flexion with IP extension.",
       "The proper digital nerves and arteries run immediately adjacent to each lumbrical — identify them on US or use extreme caution with landmark technique.",
       "Very low doses and volumes are essential — diffusion to adjacent FDP/FDS tendons or interossei can cause unintended weakness.",
-      "Patient position: elbow in supination with the hand resting palm-up."
+      "Patient position: elbow in supination with the hand resting palm-up.",
+      "Patient position: elbow in supination, wrist and fingers comfortably extended.",
+      "US guidance strongly recommended — the lumbricals cannot be palpated, and injection errors or diffusion into adjacent muscles occur easily."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz); hockey-stick probe preferred for the tight palmar space",
@@ -6626,7 +6654,11 @@
       "1st and 2nd lumbricals (median nerve) are more commonly spastic than 3rd and 4th (ulnar nerve)",
       "Tiny muscles requiring tiny doses — 5-10 U Botox per lumbrical is usually sufficient; overdosing weakens grip",
       "EMG confirmation is especially valuable here since the muscles are so small and surrounded by tendons",
-      "Many physiatrists suspect only a minor effect and refrain from injecting the lumbricals — consider with caution and reserve for clear intrinsic-plus deformity."
+      "Many physiatrists suspect only a minor effect and refrain from injecting the lumbricals — consider with caution and reserve for clear intrinsic-plus deformity.",
+      "The lumbricals cannot be palpated; injection errors and toxin diffusion into adjacent muscles occur easily without US.",
+      "The 1st lumbrical must be distinguished from adductor pollicis and the 1st dorsal interosseous — US shows this clearly.",
+      "Lumbrical spasticity contributes to the 'lumbrical hand' deformity (MCP flexion + IP extension). Reserve treatment for this clear pattern.",
+      "Effect of lumbrical injection is debated — many clinicians report only modest benefit. Set patient expectations accordingly."
     ],
     "supplies": [
       "Ultrasound machine with hockey-stick or high-frequency linear probe",
