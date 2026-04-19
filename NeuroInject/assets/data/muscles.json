@@ -7,7 +7,9 @@
     "landmarks": [
       "Lateral third of Clavicle (palpate along the clavicle from the sternum laterally — the lateral third is roughly where the deltopectoral groove begins)",
       "Coracoid Process (palpate below the lateral clavicle — feel for a bony bump under the anterior deltoid by pressing posteriorly into the deltopectoral triangle)",
-      "Sternal Border (palpate the lateral edge of the sternum — the pectoralis major attaches along this bony ridge)"
+      "Sternal Border (palpate the lateral edge of the sternum — the pectoralis major attaches along this bony ridge)",
+      "Anterior axillary fold — the muscle itself forms this fold. Palpate with the arm abducted to 45-90°.",
+      "Sternocostal border (lower) and clavicular border (upper) define different fiber groups — the injection site sits inside the fold the muscle creates."
     ],
     "placement": [
       "Position the patient supine with the arm abducted 30-45 degrees and externally rotated slightly to open the chest.",
@@ -17,13 +19,17 @@
       "For the sternal head: palpate the bulk of the muscle mid-chest, approximately 3-4 cm lateral to the sternal border at the level of the 3rd-4th rib.",
       "Insert the needle TANGENTIALLY to the chest wall (15-30° from the skin, NEVER perpendicular) and aim the needle path OVER a rib, never over an intercostal space. The rib acts as a hard backstop and protects against pleural puncture.",
       "Under ultrasound, confirm the needle tip is in pec major and the rib's bright cortical line is directly deep to the needle path before injecting.",
-      "Aspirate before injecting to confirm you are not intravascular. Distribute the dose across 2-3 sites in the muscle belly."
+      "Aspirate before injecting to confirm you are not intravascular. Distribute the dose across 2-3 sites in the muscle belly.",
+      "Injection site: within the anterior axillary fold.",
+      "Direction: medially, along the fiber course."
     ],
     "setup": [
       "Ultrasound (USG) is highly recommended for this injection.",
       "Visualize the Pectoralis Major overlying the Pectoralis Minor — the injection target is the superficial muscle belly only.",
       "Use a high-frequency linear probe placed transversely across the chest wall to identify the two layers.",
-      "Avoid the rib interspaces to prevent pneumothorax — always confirm needle depth with ultrasound."
+      "Avoid the rib interspaces to prevent pneumothorax — always confirm needle depth with ultrasound.",
+      "Patient position: sitting or supine, with the arm abducted to approximately 45-90°.",
+      "Attention: vessels and nerves run cranial (above) the muscle — stay below the axillary neurovascular bundle."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz), Samsung LA3-16AD recommended",
@@ -69,7 +75,9 @@
     "pearls": [
       "Use 25-50U Botox per injection site, distributed across 2-3 sites per head, for a total session dose as listed in the dosage field.",
       "Avoid injecting too medially near the sternum to prevent spread to intercostals",
-      "A spastic pec major is the #1 cause of shoulder internal rotation/adduction posture"
+      "A spastic pec major is the #1 cause of shoulder internal rotation/adduction posture",
+      "The sternocostal fibers form the anterior border of the axilla; the clavicular fibers define the border of the infraclavicular fossa.",
+      "Can function as an accessory muscle of inspiration; the sternocostal fibers are important when walking on crutches."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -108,7 +116,9 @@
     "landmarks": [
       "Inferior Angle of Scapula (palpate the lowest bony point of the scapula with the patient's arm at the side — the lat dorsi wraps around just below here)",
       "Posterior Axillary Fold (grasp the fold of skin/muscle behind the armpit — the latissimus dorsi forms this fold)",
-      "Iliac Crest (palpate the superior rim of the pelvis posterolaterally — the muscle originates broadly from this structure)"
+      "Iliac Crest (palpate the superior rim of the pelvis posterolaterally — the muscle originates broadly from this structure)",
+      "Inferior angle of the scapula — the muscle wraps around and below this.",
+      "Posterior axillary fold — latissimus forms its lower border."
     ],
     "placement": [
       "Position the patient in lateral decubitus with the affected side up, or prone with arm slightly abducted.",
@@ -117,13 +127,15 @@
       "Identify the injection site approximately 4-5 cm inferior to the axillary crease along the mid-axillary line.",
       "Insert the needle perpendicular to the skin into the mid-belly of the muscle.",
       "Advance 1-2 cm into the muscle substance; you should feel firm muscular resistance.",
-      "Aspirate before injecting. Distribute the total dose across 2-3 sites along the muscle belly."
+      "Aspirate before injecting. Distribute the total dose across 2-3 sites along the muscle belly.",
+      "Target the muscle belly 7-8 cm lateral to the spine, at or below the scapular tip level."
     ],
     "setup": [
       "USG is helpful to distinguish Latissimus Dorsi from Teres Major and Serratus Anterior.",
       "Patient positioning in lateral decubitus with affected side up provides the best access.",
       "Have the patient adduct the arm against resistance to confirm palpation of the correct muscle.",
-      "The muscle becomes tendinous as it approaches the intertubercular groove — inject into the fleshy belly, not the tendon."
+      "The muscle becomes tendinous as it approaches the intertubercular groove — inject into the fleshy belly, not the tendon.",
+      "Patient position: prone with the arm flexed at the shoulder (overhead) to spread the muscle."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -158,7 +170,8 @@
     "pearls": [
       "Often co-injected with pec major and teres major for shoulder adduction/IR pattern",
       "The posterior axillary fold is your best landmark — inject into the muscle belly as it crosses the fold",
-      "Lat dorsi contribution to spasticity is underappreciated — always assess it in shoulder posturing"
+      "Lat dorsi contribution to spasticity is underappreciated — always assess it in shoulder posturing",
+      "Action is very similar to teres major — consider them together; palpation cannot always distinguish them."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -203,7 +216,8 @@
     "landmarks": [
       "Coracoid Process (palpate below the lateral clavicle — feel for a bony prominence deep to the anterior deltoid; the short head originates here)",
       "Acromion (palpate the bony shelf at the top of the shoulder — follow the spine of the scapula laterally to its tip)",
-      "Cubital Fossa (the triangular depression on the anterior elbow — bounded by brachioradialis laterally and pronator teres medially)"
+      "Cubital Fossa (the triangular depression on the anterior elbow — bounded by brachioradialis laterally and pronator teres medially)",
+      "Mid-humeral level on the anterior arm — halfway between the coracoid process and the cubital fossa."
     ],
     "placement": [
       "Position the patient supine or seated with the arm supinated and elbow extended, resting on a support surface.",
@@ -212,7 +226,8 @@
       "Insert the needle into the bulk of the muscle belly at the mid-humeral level, perpendicular to the skin surface.",
       "Advance 1-1.5 cm into the muscle — the biceps is a superficial muscle, so you do not need to go deep.",
       "Stay superficial to the Brachialis muscle (which lies deep against the humerus).",
-      "Aspirate before injecting. You may inject both the long and short heads if needed, spacing injections 2-3 cm apart."
+      "Aspirate before injecting. You may inject both the long and short heads if needed, spacing injections 2-3 cm apart.",
+      "Standard sites: 2-4 across the muscle belly for typical dosing."
     ],
     "setup": [
       "Surface anatomy is usually sufficient for this injection given the prominent muscle belly.",
@@ -256,7 +271,9 @@
     "pearls": [
       "One of the most commonly injected muscles in upper limb spasticity",
       "Differentiate from brachialis — biceps is superficial and has a characteristic double-belly on US",
-      "If elbow flexion persists after biceps injection, the brachialis is likely the bigger contributor"
+      "If elbow flexion persists after biceps injection, the brachialis is likely the bigger contributor",
+      "Biceps is usually treated together with brachialis and brachioradialis — all three elbow flexors are viewed in synergy.",
+      "Exclusive biceps injection is rarely indicated; the biceps is not the only elbow flexor and treating it alone often misses the larger contributor (brachialis)."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -301,7 +318,9 @@
     "landmarks": [
       "Distal Humerus (palpate the anterior arm distally — feel the bony shaft of the humerus just proximal to the elbow)",
       "Biceps Tendon (palpate the firm cord in the antecubital fossa during resisted flexion — the brachialis lies deep to this)",
-      "Lateral Epicondyle (palpate the bony prominence on the lateral elbow — the brachialis inserts on the coronoid process just proximal to this level)"
+      "Lateral Epicondyle (palpate the bony prominence on the lateral elbow — the brachialis inserts on the coronoid process just proximal to this level)",
+      "Elbow fold — measure 3-4 cm proximal to it for the injection site.",
+      "Biceps tendon — the brachialis lies lateral and deep to it."
     ],
     "placement": [
       "Position the patient supine or seated with the elbow slightly flexed (about 30 degrees) and the forearm supinated.",
@@ -311,7 +330,9 @@
       "Insert the needle perpendicular to the skin through the biceps belly, advancing into the brachialis below it.",
       "Confirm the needle tip is in brachialis (deep) and not biceps (superficial) before injecting.",
       "Stop advancing just before contacting bone — the target is the muscle belly, not the periosteum.",
-      "Aspirate before injecting to rule out intravascular placement."
+      "Aspirate before injecting to rule out intravascular placement.",
+      "Injection site: approximately 3-4 cm proximal to the elbow fold, lateral to the biceps tendon, into the belly of brachialis deep to the biceps.",
+      "Sites: 1-2 per treatment."
     ],
     "setup": [
       "USG is MANDATORY for brachialis injection — the radial nerve courses around the lateral humerus and is at risk with any lateral approach.",
@@ -354,7 +375,9 @@
     "pearls": [
       "Often the primary elbow flexor in spasticity — don't skip it just because biceps is more famous",
       "Lies deep to the biceps — must see both muscles on US to inject the correct one",
-      "Higher doses often needed here vs biceps since brachialis is the primary elbow flexor"
+      "Higher doses often needed here vs biceps since brachialis is the primary elbow flexor",
+      "Brachialis is unjustifiably neglected in elbow-flexor spasticity — most of the elbow-flexion force comes from brachialis, not biceps.",
+      "Treat brachialis in cases of elbow-flexor spasticity; the dose is distributed among all elbow flexors rather than concentrated in biceps."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -594,7 +617,11 @@
       "Iliac Crest (palpate the anterolateral bony rim of the pelvis — the external oblique originates from the lower ribs and inserts onto the anterior iliac crest and inguinal ligament)",
       "Lower Ribs (ribs 5-12 laterally — the external oblique originates from the external surfaces of ribs 5-12 as interdigitating slips with serratus anterior)",
       "Linea Semilunaris (palpable as the lateral border of the rectus abdominis — the oblique aponeuroses contribute to the rectus sheath at this line)",
-      "Mid-Axillary Line (an imaginary vertical line from the axilla — the muscular (fleshy) portions of the obliques are thickest along the lateral abdominal wall posterior to this line)"
+      "Mid-Axillary Line (an imaginary vertical line from the axilla — the muscular (fleshy) portions of the obliques are thickest along the lateral abdominal wall posterior to this line)",
+      "Costal arch (lower rib margin) — upper boundary.",
+      "Iliac crest — lower boundary.",
+      "Midclavicular line — useful vertical reference on the anterior abdominal wall.",
+      "Anchor: between the costal arch and the iliac crest, at the midclavicular line."
     ],
     "placement": [
       "Position the patient supine or in the lateral decubitus position with the target side up.",
@@ -605,13 +632,18 @@
       "For external oblique: the needle tip should remain in the most superficial muscle layer, deep to the subcutaneous fat.",
       "For internal oblique: advance through the external oblique and stop in the middle muscle layer, between the inter-fascial planes.",
       "CRITICAL: Do NOT advance past the internal oblique into the transversus abdominis or the peritoneal cavity deep to it.",
-      "Aspirate before injecting. Distribute the dose across 2-3 sites along the lateral abdominal wall."
+      "Aspirate before injecting. Distribute the dose across 2-3 sites along the lateral abdominal wall.",
+      "Injection site: between the costal arch and the iliac crest at the midclavicular line, for either external or internal oblique.",
+      "Sites: 1-5 across the length of the muscle.",
+      "External oblique is more superficial; internal oblique is deep to it."
     ],
     "setup": [
       "USG guidance is strongly recommended — the three-layer abdominal wall anatomy requires image guidance to target the correct muscle.",
       "Use a high-frequency linear probe to clearly resolve the three muscle layers and inter-fascial planes.",
       "An in-plane needle approach is preferred for continuous visualization of the needle tip as it traverses through the layers.",
-      "Avoid the intercostal neurovascular bundles that run between the internal oblique and transversus abdominis — use color Doppler in the intercostal plane."
+      "Avoid the intercostal neurovascular bundles that run between the internal oblique and transversus abdominis — use color Doppler in the intercostal plane.",
+      "US or EMG guidance is strongly recommended — risk of transperitoneal puncture into abdominal viscera if depth is not controlled.",
+      "Patient position: supine."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -656,7 +688,9 @@
       "The classic US 'three-layer sandwich' — external oblique, internal oblique, transversus abdominis — is the key view",
       "The internal oblique is usually the thickest layer and the primary trunk rotator — target it for rotational spasticity",
       "Intercostal nerves run in the TAP plane (between internal oblique and transversus) — stay in the muscle belly, not the fascial interface",
-      "Dose is per side — inject bilaterally only if the pattern is bilateral, and monitor for excessive abdominal wall weakness"
+      "Dose is per side — inject bilaterally only if the pattern is bilateral, and monitor for excessive abdominal wall weakness",
+      "External oblique rotates the torso to the CONTRALATERAL side; internal oblique rotates to the IPSILATERAL side — choose the target based on the direction of the dystonic rotation.",
+      "Transperitoneal puncture (into bowel or other viscera) is the dominant safety concern — never inject without guidance."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -801,7 +835,9 @@
     "landmarks": [
       "PSIS (Posterior Superior Iliac Spine — palpate the bony dimple on each side of the low back, just lateral to the sacrum)",
       "Greater Trochanter (palpate the bony prominence on the lateral hip — have the patient internally/externally rotate the hip to feel it roll under your fingers)",
-      "Ischial Tuberosity (palpate the bony prominence at the bottom of the buttock — most prominent with the hip flexed; the 'sitting bone')"
+      "Ischial Tuberosity (palpate the bony prominence at the bottom of the buttock — most prominent with the hip flexed; the 'sitting bone')",
+      "Greater trochanter of the femur (palpable lateral bony prominence of the hip).",
+      "Sacrum / PSIS — the muscle spans from sacrum to the iliotibial band and gluteal tuberosity."
     ],
     "placement": [
       "Position the patient prone or in lateral decubitus with the affected side up.",
@@ -811,13 +847,16 @@
       "Insert the needle perpendicular to the skin into the muscle bulk at multiple sites distributed across the belly (3-4 sites for a large muscle).",
       "Advance 3-5 cm into the large muscle bulk (depth varies with body habitus).",
       "Aspirate before injecting.",
-      "Stay LATERAL to a line drawn from the PSIS to the ischial tuberosity — the sciatic nerve exits the greater sciatic foramen medial to this line and dives deep beneath piriformis. Use color Doppler to identify the inferior gluteal vessels."
+      "Stay LATERAL to a line drawn from the PSIS to the ischial tuberosity — the sciatic nerve exits the greater sciatic foramen medial to this line and dives deep beneath piriformis. Use color Doppler to identify the inferior gluteal vessels.",
+      "Injection site: middle of a line drawn between the greater trochanter and the sacrum.",
+      "Sites: 1-3."
     ],
     "setup": [
       "USG placement ensures proper depth and avoids intrafascial injection.",
       "The sciatic nerve runs deep to this muscle inferiorly and medially — target the thick mid-belly of gluteus maximus between the sacrum/coccyx and greater trochanter (NOT the upper-outer quadrant, which targets gluteus medius). Stay lateral to a line from the PSIS to the ischial tuberosity.",
       "This is a large, thick muscle — consider distributing the dose across 3-4 sites.",
-      "Have the patient contract the gluteus (squeeze buttocks together) to confirm the correct muscle before marking."
+      "Have the patient contract the gluteus (squeeze buttocks together) to confirm the correct muscle before marking.",
+      "Patient position: prone or lateral decubitus."
     ],
     "ultrasound": {
       "probe": "Curvilinear (5-8 MHz)",
@@ -857,7 +896,8 @@
     "pearls": [
       "Large muscle requiring higher total doses spread across multiple injection sites",
       "Spastic glute max impairs sitting posture and hip flexion for transfers",
-      "The sciatic nerve runs deep — stay in the superficial/mid portion of the muscle belly"
+      "The sciatic nerve runs deep — stay in the superficial/mid portion of the muscle belly",
+      "Depth varies significantly with subcutaneous-fat thickness — consider US or longer needle in patients with a thick gluteal region."
     ],
     "supplies": [
       "Ultrasound machine with curvilinear probe (5-8 MHz, for deep muscles)",
@@ -898,7 +938,10 @@
     "landmarks": [
       "PSIS (Posterior Superior Iliac Spine — palpate the bony dimple on each side of the low back, at the level of S2)",
       "Greater Trochanter (palpate the bony prominence on the lateral hip — the piriformis inserts on its superior-medial surface)",
-      "Sacral Hiatus (palpate the small bony depression at the distal sacrum/proximal coccyx in the midline — the piriformis originates from the anterior sacrum)"
+      "Sacral Hiatus (palpate the small bony depression at the distal sacrum/proximal coccyx in the midline — the piriformis originates from the anterior sacrum)",
+      "Greater trochanter of the femur (insertion).",
+      "Sacrum (origin) — piriformis runs from the anterior sacrum through the greater sciatic foramen.",
+      "Depth anchor: approximately 6-12 cm from skin depending on body habitus."
     ],
     "placement": [
       "Position the patient prone with a pillow under the pelvis to slightly flex the hips.",
@@ -908,13 +951,17 @@
       "Insert the needle perpendicular to the skin surface at the midpoint.",
       "Advance through the Gluteus Maximus (typically 4-6 cm depending on body habitus) until the needle tip enters the piriformis.",
       "You may feel a subtle change in tissue resistance as you pass through the fascial plane between the two muscles.",
-      "Aspirate before injecting. Inject slowly and monitor for any sciatic symptoms (radiating pain down the leg)."
+      "Aspirate before injecting. Inject slowly and monitor for any sciatic symptoms (radiating pain down the leg).",
+      "Injection site: along a line from the greater trochanter to the sacrum, approximately halfway."
     ],
     "setup": [
       "USG guidance is ESSENTIAL — the sciatic nerve exits the pelvis immediately inferior to the piriformis belly.",
       "EMG guidance may be used as an adjunct to confirm needle placement within the piriformis.",
       "If the patient reports radiating pain down the leg during needle advancement, STOP and reposition — you may be near the sciatic nerve.",
-      "The piriformis is a relatively small, deep muscle — precise needle placement is critical."
+      "The piriformis is a relatively small, deep muscle — precise needle placement is critical.",
+      "CT or fluoroscopic guidance is strongly recommended if at all possible — piriformis lies adjacent to the sciatic nerve.",
+      "If CT/fluoroscopy unavailable, US with Doppler to identify inferior gluteal vessels, plus EMG confirmation.",
+      "Patient position: prone with hip internally rotated to expose the muscle."
     ],
     "ultrasound": {
       "probe": "Curvilinear (5-8 MHz)",
@@ -955,7 +1002,8 @@
     "pearls": [
       "Notoriously difficult to isolate on US — confirm with EMG if available",
       "Sciatic nerve runs immediately inferior to (or through) this muscle — USG is essential, and EMG can be a useful adjunct to confirm you are in piriformis rather than adjacent muscles.",
-      "Often co-injected with other hip external rotators for combined pattern"
+      "Often co-injected with other hip external rotators for combined pattern",
+      "Sciatic-nerve proximity is the dominant safety concern — never inject without image guidance."
     ],
     "supplies": [
       "Ultrasound machine with curvilinear probe (5-8 MHz, for deep muscles)",
@@ -991,7 +1039,10 @@
     "pattern": "Hip flexion, abduction, internal rotation",
     "landmarks": [
       "ASIS (Anterior Superior Iliac Spine — palpate the bony prominence at the front of the iliac crest; it is easily felt with the patient supine)",
-      "Greater Trochanter (palpate the bony prominence on the lateral hip — the TFL lies in the interval between the ASIS and this landmark)"
+      "Greater Trochanter (palpate the bony prominence on the lateral hip — the TFL lies in the interval between the ASIS and this landmark)",
+      "Anterior superior iliac spine (ASIS) — palpable bony prominence at the front of the pelvis.",
+      "Greater trochanter of the femur.",
+      "Anchor: approximately 2 fingers (2-3 cm) anterior to the greater trochanter, 5-10 cm below the ASIS."
     ],
     "placement": [
       "Position the patient supine or in lateral decubitus with the affected side up.",
@@ -1001,13 +1052,17 @@
       "Ask the patient to internally rotate the hip against resistance to confirm the muscle belly under your fingers.",
       "Insert the needle perpendicular to the skin surface directly into the palpated muscle belly.",
       "Advance only 1-2 cm — the TFL is a superficial muscle and the deeper Gluteus Minimus lies beneath it.",
-      "Aspirate before injecting. A single injection site in the muscle belly is usually sufficient."
+      "Aspirate before injecting. A single injection site in the muscle belly is usually sufficient.",
+      "Injection site: 2 fingers anterior to the greater trochanter, along the line from ASIS to trochanter.",
+      "Sites: 1-3.",
+      "Injection depth: 1-3 cm depending on body habitus."
     ],
     "setup": [
       "The TFL is a superficial muscle — do not insert the needle too deep or you will enter the Gluteus Minimus.",
       "Confirm the muscle by having the patient internally rotate the hip against resistance.",
       "The IT band is a fascial structure, not a muscle — ensure you are proximal enough to be in the fleshy belly.",
-      "This is generally a straightforward injection that can often be done by palpation alone."
+      "This is generally a straightforward injection that can often be done by palpation alone.",
+      "Patient position: supine or lateral decubitus with the affected hip up."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -1041,7 +1096,9 @@
     "pearls": [
       "Often a key contributor to hip flexion and abduction spasticity patterns",
       "Small muscle — use conservative doses (25-50U Botox)",
-      "Spastic TFL presents with combined hip flexion + internal rotation and resists passive hip extension — assess in supine with the Thomas test"
+      "Spastic TFL presents with combined hip flexion + internal rotation and resists passive hip extension — assess in supine with the Thomas test",
+      "Going too far medial risks injecting sartorius.",
+      "Going too far lateral or posterior risks injecting gluteus medius."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -1083,7 +1140,11 @@
     "pattern": "Stiff knee gait, Knee extension",
     "landmarks": [
       "AIIS (Anterior Inferior Iliac Spine — palpate 2 cm below the ASIS; this deep bony point is the origin of the rectus femoris direct head)",
-      "Superior Pole of Patella (palpate the top of the kneecap — the rectus femoris tendon inserts here as part of the quadriceps tendon)"
+      "Superior Pole of Patella (palpate the top of the kneecap — the rectus femoris tendon inserts here as part of the quadriceps tendon)",
+      "Anterior inferior iliac spine (AIIS) — straight head of origin.",
+      "Superior border of the acetabulum — reflected (posterior) head of origin.",
+      "Patella — insertion via the patellar ligament to the tibial tuberosity.",
+      "Anchor: middle of the muscle belly, on a line from ASIS/AIIS to the patella."
     ],
     "placement": [
       "Position the patient supine with the knee extended and the thigh relaxed.",
@@ -1092,13 +1153,16 @@
       "Palpate the muscle belly — ask the patient to extend the knee against resistance to confirm.",
       "Insert the needle perpendicular to the skin into the bulk of the muscle belly at mid-thigh.",
       "Advance 1-2 cm into the muscle, staying superficial to the Vastus Intermedius below.",
-      "Aspirate before injecting. Distribute the dose across 2 sites within the muscle belly if using higher doses."
+      "Aspirate before injecting. Distribute the dose across 2 sites within the muscle belly if using higher doses.",
+      "Injection site: middle of the muscle belly, midway between the ASIS and the proximal patella.",
+      "Sites: 1-3."
     ],
     "setup": [
       "USG is recommended to distinguish the fascial septum between Rectus Femoris and the underlying Vastus Intermedius.",
       "The Rectus Femoris is the only biarticular quadriceps muscle — it contributes to stiff-knee gait when spastic.",
       "Surface anatomy is usually sufficient for identification, but USG helps confirm depth.",
-      "Have the patient extend the knee against resistance to identify the muscle bulk before marking."
+      "Have the patient extend the knee against resistance to identify the muscle bulk before marking.",
+      "Patient position: supine."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -1133,7 +1197,9 @@
     "pearls": [
       "The only quad that crosses the hip — contributes to both stiff knee gait AND hip flexion",
       "Key target for stiff-knee gait pattern in stroke and TBI",
-      "Superficial and easy to identify — one of the most straightforward injections"
+      "Superficial and easy to identify — one of the most straightforward injections",
+      "The different components of quadriceps femoris must always be viewed as a whole — rectus femoris acts on TWO joints (hip flexion + knee extension) simultaneously.",
+      "Rectus femoris is the primary quadriceps contributor to stiff-knee gait in hemiparetic patients."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -1180,7 +1246,10 @@
     "landmarks": [
       "Adductor Tubercle (palpate the bony prominence on the medial femoral condyle — the VMO fibers originate from the adductor magnus tendon near here)",
       "Patella (palpate the kneecap — the VMO inserts on its superomedial border with an oblique fiber orientation)",
-      "Sartorius (palpate the strap-like muscle crossing the medial thigh obliquely — the VMO lies deep and lateral to its distal portion)"
+      "Sartorius (palpate the strap-like muscle crossing the medial thigh obliquely — the VMO lies deep and lateral to its distal portion)",
+      "Patella — vastus medialis inserts via its medial portion into the medial patellar retinaculum.",
+      "Medial intermuscular septum / medial supracondylar ridge of the femur (origin).",
+      "Anchor: approximately 7-8 cm (4 fingers) proximal to a line drawn from the superior patella to the medial epicondyle of the femur."
     ],
     "placement": [
       "Position the patient supine with the knee extended and the thigh relaxed.",
@@ -1189,13 +1258,18 @@
       "Ask the patient to extend the knee against resistance — the VMO will contract visibly and palpably.",
       "Insert the needle perpendicular to the skin into the bulk of the VMO muscle belly.",
       "Advance 1-2 cm into the muscle substance.",
-      "Aspirate before injecting. A single injection site in the mid-belly is usually sufficient."
+      "Aspirate before injecting. A single injection site in the mid-belly is usually sufficient.",
+      "Injection site: distal portion of the muscle belly, 7-8 cm (4 fingers) proximal to the patella on the medial side.",
+      "Sites: 1-3.",
+      "Injection depth: 15-30 mm."
     ],
     "setup": [
       "USG is optional but helpful to avoid the adductor canal neurovascular bundle, which lies deep to the Sartorius.",
       "The VMO is superficial and easily identified by palpation in most patients.",
       "Be aware that the saphenous nerve and descending genicular artery run in the adductor canal deep and medial to the VMO.",
-      "This injection is rarely performed in isolation — usually part of a broader quadriceps toxin strategy."
+      "This injection is rarely performed in isolation — usually part of a broader quadriceps toxin strategy.",
+      "Patient position: supine with the leg extended.",
+      "US guidance recommended — femoral vessels run in the anteromedial thigh; going too medial risks neurovascular injection."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -1230,7 +1304,9 @@
     "pearls": [
       "VMO dysfunction contributes to patellar tracking issues in spastic patients",
       "Inject at the distal bulge (VMO) — most identifiable part",
-      "Rarely injected in isolation — usually part of a multi-muscle quad program"
+      "Rarely injected in isolation — usually part of a multi-muscle quad program",
+      "Works with the other vasti to stabilize the knee — they must be considered together.",
+      "Going too medial risks injection into the femoral neurovascular bundle."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -1274,7 +1350,10 @@
     "landmarks": [
       "Greater Trochanter (palpate the bony prominence on the lateral hip — the VL originates from the intertrochanteric line and lateral femur distal to this)",
       "Lateral Condyle of Femur (palpate the bony prominence on the lateral knee — the VL inserts via the quadriceps tendon and lateral retinaculum)",
-      "IT Band (palpate the taut band on the lateral thigh — the VL lies deep/anterior to this fascial structure)"
+      "IT Band (palpate the taut band on the lateral thigh — the VL lies deep/anterior to this fascial structure)",
+      "Greater trochanter and lateral lip of the linea aspera (origin).",
+      "Patella — lateral portion of the patellar retinaculum (insertion).",
+      "Anchor: middle-to-distal portion of the muscle belly, approximately 10-11 cm proximal to the superolateral patella."
     ],
     "placement": [
       "Position the patient supine or in lateral decubitus with the affected side up.",
@@ -1284,13 +1363,16 @@
       "Insert the needle through the IT band, angling slightly anteriorly to enter the VL muscle belly.",
       "Advance 2-3 cm into the muscle substance until you feel the firm muscle against bone.",
       "Avoid injecting into the IT band itself — it is a fascial structure and toxin will not be effective there.",
-      "Aspirate before injecting. Use multiple injection sites (2-3) along the length of the muscle for adequate coverage."
+      "Aspirate before injecting. Use multiple injection sites (2-3) along the length of the muscle for adequate coverage.",
+      "Injection site: middle and distal portion of the muscle belly, on the lateral thigh.",
+      "Sites: 1-3, usually 1-2."
     ],
     "setup": [
       "Multiple injection sites are often needed along the length of the femur for this large muscle.",
       "Ensure the needle passes through the IT band into actual muscle tissue.",
       "The VL is a common intramuscular injection site (vaccinations) — familiarity with the anatomy is helpful.",
-      "USG can confirm that the needle is in muscle tissue and not in the IT band or subcutaneous fat."
+      "USG can confirm that the needle is in muscle tissue and not in the IT band or subcutaneous fat.",
+      "Patient position: supine or lateral decubitus with the affected side up."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -1329,7 +1411,9 @@
     "pearls": [
       "Often contributes to knee extension spasticity more than rectus femoris",
       "Large muscle belly — may need multiple injection points for adequate distribution",
-      "Safe injection zone is the lateral thigh — away from major neurovascular structures"
+      "Safe injection zone is the lateral thigh — away from major neurovascular structures",
+      "Largest component of the quadriceps — the easiest vastus to inject.",
+      "Going too medial or too distal risks the needle rotating into rectus femoris or infiltrating into the femur."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -1366,7 +1450,10 @@
     "pattern": "Knee extension",
     "landmarks": [
       "Anterior Femur (not directly palpable — lies deep to the rectus femoris; approximate by palpating the mid-anterior thigh)",
-      "Deep to Rectus Femoris (the VI is only accessible by passing through or around the RF — the fascial septum between them is the key landmark)"
+      "Deep to Rectus Femoris (the VI is only accessible by passing through or around the RF — the fascial septum between them is the key landmark)",
+      "Anterior shaft of the femur (origin — upper two-thirds).",
+      "Patella — insertion via the patellar ligament to the tibial tuberosity.",
+      "Anchor: middle of a line between the ASIS and the proximal patella."
     ],
     "placement": [
       "Position the patient supine with the knee extended and the thigh relaxed.",
@@ -1376,13 +1463,18 @@
       "Advance through the RF (typically 1-2 cm) until you feel a subtle 'pop' through the fascial septum separating the two muscles.",
       "Continue advancing into the VI muscle belly, which sits directly on the femoral shaft (total depth approximately 2-4 cm).",
       "Stop before contacting the periosteum of the femur.",
-      "Aspirate before injecting. USG confirmation of needle position is mandatory."
+      "Aspirate before injecting. USG confirmation of needle position is mandatory.",
+      "Injection site: middle of the anterior thigh, deep to rectus femoris, on the line from ASIS to patella.",
+      "Sites: 1-2.",
+      "Injection depth: 3-5 cm (deep to rectus femoris)."
     ],
     "setup": [
       "USG is MANDATORY to effectively distinguish the fascial plane between Rectus Femoris and Vastus Intermedius.",
       "An in-plane needle approach under US allows real-time visualization of the needle crossing the fascial septum.",
       "The VI is the deepest quadriceps muscle and cannot be reliably targeted by palpation alone.",
-      "This injection is often performed in conjunction with RF injection — plan your dose distribution accordingly."
+      "This injection is often performed in conjunction with RF injection — plan your dose distribution accordingly.",
+      "Patient position: supine with the leg extended.",
+      "US guidance essential — vastus intermedius cannot be palpated and cannot be reliably differentiated from the other vasti without imaging."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -1422,7 +1514,9 @@
     "pearls": [
       "Deepest of the quadriceps — requires longer needle and confident US identification",
       "Lies directly on the femur — use the femur as your deep landmark on US",
-      "Often co-injected when other quads alone don't adequately reduce extension tone"
+      "Often co-injected when other quads alone don't adequately reduce extension tone",
+      "Cannot be palpated or clinically differentiated from the other vasti — US guidance is not optional.",
+      "Deep to rectus femoris; pass the needle through rectus to reach it."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -1459,7 +1553,10 @@
     "pattern": "Knee flexion",
     "landmarks": [
       "Ischial Tuberosity (palpate the bony prominence at the base of the buttock with the hip flexed — the semimembranosus originates here, lateral to the semitendinosus origin)",
-      "Medial Tibial Condyle (palpate the broad bony prominence on the medial proximal tibia — the semimembranosus inserts on its posterior surface)"
+      "Medial Tibial Condyle (palpate the broad bony prominence on the medial proximal tibia — the semimembranosus inserts on its posterior surface)",
+      "Ischial tuberosity (origin).",
+      "Posterior aspect of the medial tibial condyle (insertion).",
+      "Anchor: distal portion of the posterior thigh, at the lateral margin of the semimembranosus tendon as it approaches the knee."
     ],
     "placement": [
       "Position the patient prone with the knee slightly flexed (place a pillow under the ankle).",
@@ -1469,13 +1566,17 @@
       "Approach from the medial side of the thigh to access the semimembranosus belly.",
       "Insert the needle from the medial aspect, angling slightly posteriorly and laterally to pass deep to the Semitendinosus.",
       "Advance 2-3 cm to reach the semimembranosus muscle belly.",
-      "Aspirate before injecting. Confirm placement with ultrasound."
+      "Aspirate before injecting. Confirm placement with ultrasound.",
+      "Injection site: distal portion of the posterior-medial thigh.",
+      "Sites: 1-3, usually 1-2."
     ],
     "setup": [
       "USG is helpful to distinguish the semimembranosus from the more superficial semitendinosus.",
       "The semimembranosus has a broad, flat 'membranous' appearance on ultrasound, in contrast to the round semitendinosus.",
       "Have the patient flex the knee against resistance to identify the hamstring group.",
-      "The sciatic nerve runs laterally in the posterior thigh — it is generally not at risk with a medial approach."
+      "The sciatic nerve runs laterally in the posterior thigh — it is generally not at risk with a medial approach.",
+      "Patient position: prone.",
+      "US guidance recommended — the three hamstring muscles are difficult to differentiate by palpation alone."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -1515,7 +1616,9 @@
     "pearls": [
       "Broader, flatter muscle — differentiate from semitendinosus by its deeper position and membranous aponeurosis on ultrasound.",
       "Key hamstring for medial knee flexion contracture patterns",
-      "Sciatic nerve runs in the posterior thigh — always identify it before injecting"
+      "Sciatic nerve runs in the posterior thigh — always identify it before injecting",
+      "Can be absent or fused with semitendinosus — if expected anatomy is not seen, look for the fused variant.",
+      "The three hamstring muscles are difficult to differentiate from one another; treat them with awareness of their combined action."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -1552,7 +1655,10 @@
     "pattern": "Knee flexion",
     "landmarks": [
       "Ischial Tuberosity (palpate the bony prominence at the base of the buttock with the hip flexed — the semitendinosus shares a common origin tendon with the biceps femoris here)",
-      "Medial Tibial Condyle (palpate the medial proximal tibia — the semitendinosus inserts on the anteromedial surface as part of the pes anserinus)"
+      "Medial Tibial Condyle (palpate the medial proximal tibia — the semitendinosus inserts on the anteromedial surface as part of the pes anserinus)",
+      "Ischial tuberosity (origin, shared with biceps femoris long head).",
+      "Medial tibial surface (pes anserinus insertion).",
+      "Anchor: middle of the posteromedial thigh, on a line between ischial tuberosity and the pes anserinus."
     ],
     "placement": [
       "Position the patient prone with the knee slightly flexed (place a pillow under the ankle).",
@@ -1562,13 +1668,17 @@
       "Palpate the round muscle belly — it becomes a long, cord-like tendon in the distal third.",
       "Insert the needle perpendicular to the skin into the mid-belly of the muscle (proximal to the tendinous portion).",
       "Advance 1-2 cm into the muscle substance — it is relatively superficial.",
-      "Aspirate before injecting."
+      "Aspirate before injecting.",
+      "Injection site: middle of the muscle belly.",
+      "Sites: 1-3, usually 1-2.",
+      "Injection depth: 15-30 mm."
     ],
     "setup": [
       "The semitendinosus is easily palpable in most patients.",
       "Confirm the correct muscle by having the patient flex the knee against resistance — feel for the superficial medial cord.",
       "Inject into the fleshy belly, not the distal tendon (which begins roughly at the junction of the middle and distal thirds).",
-      "USG is generally not required but can confirm you are in the correct muscle."
+      "USG is generally not required but can confirm you are in the correct muscle.",
+      "Patient position: prone."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -1607,7 +1717,9 @@
     "pearls": [
       "Round tendon easily palpated posteromedially — the muscle belly is proximal",
       "Often has a ropy, cord-like tendon that's palpable behind the knee",
-      "Co-injection with semimembranosus gives better results than either alone for hamstring spasticity"
+      "Co-injection with semimembranosus gives better results than either alone for hamstring spasticity",
+      "Long tendon of insertion can be palpated in the belly of the muscle — use it to orient during injection.",
+      "Contraction affects lumbar lordosis indirectly; works antagonistically to hip flexors."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -1644,7 +1756,10 @@
     "pattern": "Equinus deformity, Plantarflexion",
     "landmarks": [
       "Medial Femoral Condyle (palpate the bony prominence on the medial knee — the medial gastrocnemius head originates from its posterior surface)",
-      "Popliteal Fossa (palpate the diamond-shaped depression behind the knee — the gastrocnemius heads form the distal borders of this fossa)"
+      "Popliteal Fossa (palpate the diamond-shaped depression behind the knee — the gastrocnemius heads form the distal borders of this fossa)",
+      "Popliteal crease — palpable behind the knee, forms the proximal boundary of the gastroc.",
+      "Medial femoral condyle (medial head origin).",
+      "Anchor: approximately 4 fingers (8-10 cm) distal to the popliteal crease, in the muscle belly of the medial head."
     ],
     "placement": [
       "Position the patient prone with the feet hanging off the edge of the bed.",
@@ -1653,13 +1768,17 @@
       "The injection site is 2-3 cm distal to the popliteal crease, on the medial side of the calf midline.",
       "Insert the needle perpendicular to the skin into the bulk of the medial gastrocnemius belly.",
       "Advance 1-2 cm into the muscle — the gastrocnemius is superficial.",
-      "Aspirate before injecting. Distribute the dose across 2 sites within the medial belly if using higher doses."
+      "Aspirate before injecting. Distribute the dose across 2 sites within the medial belly if using higher doses.",
+      "Injection site: muscle belly of both medial and lateral heads, approximately 4 fingers (8-10 cm) distal to the popliteal crease.",
+      "Sites: 1-3 per head (medial and lateral), usually 2 sites.",
+      "Injection depth: 2-4 cm, depending on muscle thickness."
     ],
     "setup": [
       "Avoid the midline of the calf to protect the Sural Nerve and small saphenous vein.",
       "The medial head is larger than the lateral head — it is the primary contributor to equinus in most patients.",
       "Prone positioning with feet off the table edge allows easy access and palpation.",
-      "This is one of the most commonly injected muscles in spasticity management — practice good technique here."
+      "This is one of the most commonly injected muscles in spasticity management — practice good technique here.",
+      "Patient position: prone, feet hanging over the edge of the table to relax the calf."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -1700,7 +1819,11 @@
     "pearls": [
       "Most commonly injected muscle for equinovarus foot — start here",
       "The medial head is larger and usually more spastic than the lateral head",
-      "Inject proximal — the muscle belly is short and becomes tendinous quickly"
+      "Inject proximal — the muscle belly is short and becomes tendinous quickly",
+      "Going too deep risks infiltrating the soleus (deep to gastroc).",
+      "Going too deep into the medial head risks hitting flexor digitorum longus.",
+      "Gastroc + soleus + plantaris form the triceps surae — full calf plantarflexion is only treatable if all three are addressed (or the soleus if gastroc alone is insufficient).",
+      "The medial head is typically the dominant contributor to spastic equinus."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -1742,7 +1865,10 @@
     "pattern": "Equinus deformity, Plantarflexion",
     "landmarks": [
       "Lateral Femoral Condyle (palpate the bony prominence on the lateral knee — the lateral gastrocnemius head originates from its posterior surface)",
-      "Fibular Head (palpate the small bony knob on the proximal lateral leg, just distal to the knee — the common peroneal nerve wraps around it)"
+      "Fibular Head (palpate the small bony knob on the proximal lateral leg, just distal to the knee — the common peroneal nerve wraps around it)",
+      "Popliteal crease — palpable behind the knee.",
+      "Lateral femoral condyle (lateral head origin).",
+      "Anchor: approximately 4 fingers (8-10 cm) distal to the popliteal crease, in the muscle belly of the lateral head."
     ],
     "placement": [
       "Position the patient prone with the feet hanging off the edge of the bed.",
@@ -1751,13 +1877,18 @@
       "The injection site is in the center of the lateral gastrocnemius belly, 2-3 cm distal to the popliteal crease, well medial to the fibular head. Maintain at least 2 cm of clearance from the fibular head to avoid the common peroneal nerve.",
       "Insert the needle perpendicular to the skin into the lateral muscle belly.",
       "Advance 1-1.5 cm into the muscle substance.",
-      "Aspirate before injecting."
+      "Aspirate before injecting.",
+      "Injection site: muscle belly of the lateral head, approximately 4 fingers (8-10 cm) distal to the popliteal crease.",
+      "Sites: 1-3 per head.",
+      "Injection depth: 2-4 cm, depending on muscle thickness."
     ],
     "setup": [
       "The lateral head is usually smaller in bulk than the medial head.",
       "Avoid the Common Peroneal Nerve, which wraps around the fibular head — stay medial to the fibular head.",
       "This injection is often combined with the medial gastrocnemius injection for equinus management.",
-      "USG can help distinguish the lateral gastrocnemius from the underlying soleus and plantaris."
+      "USG can help distinguish the lateral gastrocnemius from the underlying soleus and plantaris.",
+      "Patient position: prone, feet hanging over the edge of the table.",
+      "Common peroneal nerve runs lateral to the gastroc at the fibular head — stay in the muscle belly, do not go too lateral."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -1793,7 +1924,9 @@
     "pearls": [
       "Smaller than medial head — use lower doses",
       "Common peroneal nerve runs nearby at the fibular neck — stay distal and medial",
-      "Often co-injected with medial gastroc and soleus for equinus pattern"
+      "Often co-injected with medial gastroc and soleus for equinus pattern",
+      "Going too deep risks the soleus.",
+      "The lateral head is usually smaller and contributes less to equinus than the medial head."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -1840,7 +1973,10 @@
     "pattern": "Plantarflexion",
     "landmarks": [
       "Medial Border of Tibia (palpate the sharp subcutaneous border of the tibia on the medial leg — the soleus originates from the posterior tibial surface just behind this edge)",
-      "Deep to Gastrocnemius (the soleus lies entirely deep to the gastrocnemius in the proximal calf — it extends more distally and is accessible where the gastrocnemius tapers)"
+      "Deep to Gastrocnemius (the soleus lies entirely deep to the gastrocnemius in the proximal calf — it extends more distally and is accessible where the gastrocnemius tapers)",
+      "Soleal line of the tibia and upper third of the posterior fibula (origin).",
+      "Calcaneal tuberosity via the Achilles tendon (insertion).",
+      "Middle-to-distal posterior calf — soleus is deep to gastrocnemius."
     ],
     "placement": [
       "Position the patient prone with the feet hanging off the edge of the bed.",
@@ -1850,13 +1986,17 @@
       "Insert the needle perpendicular to the skin, directed slightly laterally and posteriorly.",
       "Advance 2-3 cm to pass deep to the Gastrocnemius and enter the Soleus muscle belly.",
       "Under ultrasound, confirm the needle tip has crossed the fascial plane between the two muscles.",
-      "Aspirate before injecting. Distribute the dose across 2 sites."
+      "Aspirate before injecting. Distribute the dose across 2 sites.",
+      "Injection site: middle-to-distal posterior calf, deep to the gastroc.",
+      "Sites: 2-4."
     ],
     "setup": [
       "USG is highly recommended to distinguish the fascial plane between Gastrocnemius (superficial) and Soleus (deep).",
       "The soleus is a large muscle that extends more distally than the gastrocnemius — it is best accessed in the mid-to-distal calf.",
       "An in-plane needle approach allows real-time visualization of the needle crossing into the soleus.",
-      "The posterior tibial neurovascular bundle runs deep to the soleus — do not advance too deeply."
+      "The posterior tibial neurovascular bundle runs deep to the soleus — do not advance too deeply.",
+      "Patient position: prone.",
+      "US guidance recommended — soleus lies deep to gastroc and must be distinguished from it."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -1891,7 +2031,9 @@
     "pearls": [
       "Deep to gastrocnemius — must angle the needle past gastroc on US",
       "Key differentiator: gastroc crosses the knee, soleus doesn't. Test with knee flexed vs extended",
-      "If equinus persists with knee flexed, soleus is the primary contributor"
+      "If equinus persists with knee flexed, soleus is the primary contributor",
+      "Part of the triceps surae with gastrocnemius and plantaris — full calf plantarflexion is only controlled when all three are addressed.",
+      "Critical muscle for equinus not responsive to gastroc-only injection."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -2033,7 +2175,10 @@
     "pattern": "Claw toes, toe flexion",
     "landmarks": [
       "Medial Tibial Border (palpate the sharp subcutaneous edge of the tibia on the medial leg — the FDL lies on the posterior tibial surface just behind this border)",
-      "Posterior Tibial Artery Pulse (palpate behind the medial malleolus for the posterior tibial pulse — the FDL tendon runs adjacent to this neurovascular bundle distally)"
+      "Posterior Tibial Artery Pulse (palpate behind the medial malleolus for the posterior tibial pulse — the FDL tendon runs adjacent to this neurovascular bundle distally)",
+      "Posterior surface of the tibia (origin).",
+      "Distal phalanges of toes 2-5 (insertion).",
+      "Use the medial tibial margin for orientation — FDL lies posterior to it, deep to soleus."
     ],
     "placement": [
       "Position the patient prone or supine with the leg externally rotated to expose the medial calf.",
@@ -2043,13 +2188,17 @@
       "The injection site is just posterior to the medial tibial border in the distal third of the leg.",
       "Insert the needle perpendicular to the skin, directing it toward the posterior aspect of the tibia and fibula.",
       "Advance 2-3 cm under ultrasound guidance to enter the FDL muscle belly.",
-      "Aspirate before injecting. Confirm the needle is in the FDL and not in the neurovascular bundle."
+      "Aspirate before injecting. Confirm the needle is in the FDL and not in the neurovascular bundle.",
+      "Injection site: middle-to-distal posterior leg, deep to soleus.",
+      "Sites: 1-2, usually 1."
     ],
     "setup": [
       "USG is MANDATORY — the posterior tibial artery and tibial nerve run immediately adjacent to this muscle.",
       "Color Doppler should be used to identify the posterior tibial artery before needle insertion.",
       "The FDL is a small, deep muscle — precise needle placement requires real-time imaging.",
-      "Have the patient flex the toes against resistance to confirm muscle identification on USG."
+      "Have the patient flex the toes against resistance to confirm muscle identification on USG.",
+      "Patient position: prone or supine.",
+      "US guidance recommended — FDL lies deep and adjacent to tibialis posterior."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -2089,7 +2238,9 @@
     "pearls": [
       "Key target for toe curling/clawing in combination with FDB",
       "Runs behind the medial malleolus — a tight FDL will pull toes into flexion during stance",
-      "Small muscle — conservative dosing (25-50U Botox per muscle)"
+      "Small muscle — conservative dosing (25-50U Botox per muscle)",
+      "Flexes toes 2-5 at the DIP joints.",
+      "Must be considered with FHL and tibialis posterior in curling-toe + inversion patterns."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -2134,7 +2285,10 @@
     "pattern": "Toe flexion (plantar)",
     "landmarks": [
       "Calcaneus (palpate the bony heel — the FDB originates from the medial calcaneal tuberosity on the plantar surface)",
-      "Plantar Fascia (palpate the firm, taut band on the sole of the foot running from the heel toward the toes — the FDB lies deep to this structure)"
+      "Plantar Fascia (palpate the firm, taut band on the sole of the foot running from the heel toward the toes — the FDB lies deep to this structure)",
+      "Plantar aponeurosis and calcaneal tuberosity (origin).",
+      "Middle phalanges of toes 2-5 (insertion).",
+      "Anchor: middle of the plantar arch of the foot, superficial under the plantar aponeurosis."
     ],
     "placement": [
       "Position the patient prone with the foot hanging off the edge of the bed, or supine with the ankle dorsiflexed to expose the sole.",
@@ -2144,13 +2298,18 @@
       "Insert the needle perpendicular to the plantar skin surface.",
       "Advance through the thick plantar fascia (you will feel firm resistance, then a give as you penetrate the fascia).",
       "Enter the FDB muscle belly — typically 1-2 cm depth total.",
-      "Aspirate before injecting. Stay superficial to the deeper foot intrinsics (quadratus plantae, lumbricals)."
+      "Aspirate before injecting. Stay superficial to the deeper foot intrinsics (quadratus plantae, lumbricals).",
+      "Injection site: into the plantar aponeurosis in the middle of the arch of the foot.",
+      "Sites: 1-3.",
+      "Injection depth: 5-15 mm (shallow)."
     ],
     "setup": [
       "USG guidance is recommended to ensure the injection is deep to the plantar fascia but superficial to the deeper foot intrinsics.",
       "The plantar skin is very thick and sensitive — consider topical anesthetic or ethyl chloride spray.",
       "A 25-gauge or smaller needle is preferred given the sensitivity of the plantar surface.",
-      "Have the patient flex the toes to confirm the FDB belly on ultrasound before injecting."
+      "Have the patient flex the toes to confirm the FDB belly on ultrasound before injecting.",
+      "Patient position: supine or prone with the foot stabilized.",
+      "The injection is very painful — brace the foot in a fixed position before proceeding."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -2180,7 +2339,9 @@
     "pearls": [
       "Plantar injection — painful for patient, consider local anesthetic or ice first",
       "Very superficial on the plantar surface — use short needle and minimal depth",
-      "Often co-injected with FDL and FHL for comprehensive toe flexion pattern"
+      "Often co-injected with FDL and FHL for comprehensive toe flexion pattern",
+      "Supplements flexor digitorum longus at the PIP joints of toes 2-5.",
+      "Going too far laterally risks hitting abductor digiti minimi or flexor digitorum longus's tendon."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -2224,7 +2385,10 @@
     "pattern": "⚠️ NOT TYPICALLY INJECTED — Dorsiflexor (reference only)",
     "landmarks": [
       "Tibial Crest (palpate the sharp anterior ridge of the tibia — it is subcutaneous and runs the length of the shin; the tibialis anterior lies immediately lateral to it)",
-      "Lateral Condyle of Tibia (palpate the broad bony prominence on the lateral proximal tibia — the tibialis anterior originates from the lateral tibial condyle and upper tibial shaft)"
+      "Lateral Condyle of Tibia (palpate the broad bony prominence on the lateral proximal tibia — the tibialis anterior originates from the lateral tibial condyle and upper tibial shaft)",
+      "Lateral tibial condyle and upper lateral tibial surface (origin).",
+      "Medial cuneiform and base of the 1st metatarsal (insertion).",
+      "Proximal-to-middle anterolateral leg, lateral to the tibial crest."
     ],
     "placement": [
       "Position the patient supine with the leg extended and the ankle in neutral.",
@@ -2234,13 +2398,16 @@
       "Ask the patient to dorsiflex the foot against resistance to confirm the muscle belly under your fingers.",
       "Insert the needle perpendicular to the skin into the largest muscle bulk, approximately 2 cm lateral to the tibial crest.",
       "Advance 1-2 cm into the muscle belly.",
-      "Aspirate before injecting."
+      "Aspirate before injecting.",
+      "Injection site: upper third of the anterolateral leg, lateral to the tibial ridge, into the muscle belly.",
+      "Sites: 1-3."
     ],
     "setup": [
       "The tibialis anterior is superficial and easily identified — this is a straightforward injection.",
       "Avoid the anterior tibial artery, which runs deep to the muscle near the interosseous membrane.",
       "The deep peroneal nerve runs alongside the anterior tibial artery — it is generally protected by the muscle itself.",
-      "⚠️ STOP — DO NOT INJECT in typical UMN spasticity. The tibialis anterior is the primary ankle dorsiflexor and is almost always WEAK in upper-motor-neuron syndromes (it's the muscle that fails in foot drop). Injecting it will cause or worsen drop foot."
+      "⚠️ STOP — DO NOT INJECT in typical UMN spasticity. The tibialis anterior is the primary ankle dorsiflexor and is almost always WEAK in upper-motor-neuron syndromes (it's the muscle that fails in foot drop). Injecting it will cause or worsen drop foot.",
+      "Patient position: supine with the leg extended."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -2275,7 +2442,9 @@
     "pearls": [
       "⚠️ DO NOT INJECT in typical UMN spasticity — this muscle is almost always weak, not spastic. Injecting it causes foot drop.",
       "Rare exception: focal dystonia with confirmed EMG over-activity in TA, with neurology / physiatry consultation. Even then, very low doses only.",
-      "Listed here for anatomic reference and to warn against injection. PROTECT this muscle's function for foot clearance during swing phase."
+      "Listed here for anatomic reference and to warn against injection. PROTECT this muscle's function for foot clearance during swing phase.",
+      "Test for active contraction before injecting — contraction of the calf muscles may be mistaken for tibialis anterior activity.",
+      "Tibialis anterior spasticity is less common than its weakness (in equinovarus) — always confirm the clinical picture before injecting."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -2311,7 +2480,10 @@
     "landmarks": [
       "Medial Tibial Border (palpate the sharp subcutaneous tibial edge — the tibialis posterior lies on the posterior surface of the interosseous membrane, deep to the superficial posterior compartment muscles)",
       "Fibular Head (palpate the bony knob on the proximal lateral leg — helps orient the interosseous membrane between tibia and fibula)",
-      "Intermalleolar Line (draw an imaginary line between the medial and lateral malleoli — the midpoint of the leg between the fibular head and this line approximates the mid-belly)"
+      "Intermalleolar Line (draw an imaginary line between the medial and lateral malleoli — the midpoint of the leg between the fibular head and this line approximates the mid-belly)",
+      "Lateral part of the posterior tibia, interosseous membrane, proximal posterior fibula (origin).",
+      "Navicular tuberosity (primary insertion) — palpable medial-plantar foot bony prominence.",
+      "Tibialis posterior is the deepest of the posterior-compartment muscles — below soleus, between tibia and fibula."
     ],
     "placement": [
       "Position the patient prone or supine with the leg externally rotated.",
@@ -2321,13 +2493,17 @@
       "Advance through the superficial posterior compartment muscles (Gastrocnemius/Soleus) toward the interosseous membrane.",
       "The tibialis posterior lies directly on the interosseous membrane — it is the deepest muscle in this compartment.",
       "Typical depth is 3-5 cm depending on body habitus — USG confirms placement.",
-      "Aspirate before injecting. Confirm the needle is in the tibialis posterior and not in overlying muscles."
+      "Aspirate before injecting. Confirm the needle is in the tibialis posterior and not in overlying muscles.",
+      "Injection site: middle-to-distal posterior leg, deep to soleus and flexor digitorum longus.",
+      "Sites: 1-3."
     ],
     "setup": [
       "USG is MANDATORY — high risk of posterior tibial artery and tibial nerve injury.",
       "The tibialis posterior is the deepest muscle in the deep posterior compartment.",
       "Use an in-plane needle approach for continuous visualization during this deep injection.",
-      "Have the patient invert the foot against resistance to confirm the muscle on ultrasound — this is the strongest foot invertor."
+      "Have the patient invert the foot against resistance to confirm the muscle on ultrasound — this is the strongest foot invertor.",
+      "Patient position: prone or supine with the leg externally rotated.",
+      "US guidance strongly recommended — tibialis posterior is deep; needle must pass through overlying muscles."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz) in thin patients; lower-frequency linear (6-9 MHz) or curvilinear (5-8 MHz) is often required in average/larger patients due to muscle depth (3-5+ cm)",
@@ -2367,7 +2543,9 @@
     "pearls": [
       "The #1 cause of varus foot in spasticity — always assess this muscle",
       "Deep compartment — longer needle needed. Use US to navigate past soleus",
-      "Posterior tibial artery runs alongside — identify it with color Doppler before injecting"
+      "Posterior tibial artery runs alongside — identify it with color Doppler before injecting",
+      "Strongest supinator (inverter) of the foot — a key target for equinovarus deformity.",
+      "Must be addressed alongside gastroc/soleus for comprehensive equinovarus treatment."
     ],
     "supplies": [
       "Ultrasound machine with linear probe (high-frequency for thin patients; lower-frequency or curvilinear for deeper anatomy)",
@@ -2408,7 +2586,10 @@
     "pattern": "Claw hallux, Equinovarus support",
     "landmarks": [
       "Fibula — distal shaft (palpate the lateral leg bone in its distal third — the FHL originates from the posterior fibula and lies posteromedial to it)",
-      "Achilles Tendon (palpate the thick cord at the posterior ankle — the FHL belly lies deep and lateral in the distal calf, anterior to the Achilles)"
+      "Achilles Tendon (palpate the thick cord at the posterior ankle — the FHL belly lies deep and lateral in the distal calf, anterior to the Achilles)",
+      "Posterior surface of the fibula (origin).",
+      "Plantar surface of the distal phalanx of the great toe (insertion).",
+      "Deep posterior calf — FHL lies along the posterior fibula, deep to soleus."
     ],
     "placement": [
       "Position the patient prone with the feet hanging off the edge of the bed.",
@@ -2418,13 +2599,16 @@
       "Insert the needle lateral to the Achilles tendon, directed toward the posterior fibula.",
       "Advance 2-4 cm under ultrasound guidance to pass through the Soleus and enter the FHL belly.",
       "Confirm placement by asking the patient to flex the great toe — you should see movement of the muscle on ultrasound.",
-      "Aspirate before injecting."
+      "Aspirate before injecting.",
+      "Injection site: distal two-thirds of the posterior calf, deep to soleus.",
+      "Sites: 1-2."
     ],
     "setup": [
       "USG is MANDATORY — the FHL is a deep muscle and the neurovascular bundle runs medially.",
       "A lateral approach minimizes risk to the posterior tibial artery and tibial nerve.",
       "Have the patient flex the great toe against resistance to identify the FHL on ultrasound.",
-      "The FHL is smaller than the FDL — use precise dosing."
+      "The FHL is smaller than the FDL — use precise dosing.",
+      "US guidance strongly recommended — FHL is deep; tibialis posterior and FDL are adjacent."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -2464,7 +2648,9 @@
     "pearls": [
       "Key target for great toe hyperflexion (claw hallux) pattern — do NOT confuse with hitchhiker's toe (striatal toe), which is caused by EHL spasticity.",
       "Located lateral to FDL in the deep posterior compartment",
-      "Small muscle, conservative dosing — over-injection causes toe weakness during push-off"
+      "Small muscle, conservative dosing — over-injection causes toe weakness during push-off",
+      "The only muscle that flexes the IP joint of the great toe.",
+      "Key target for spastic hallux (curled great toe) deformity."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -2508,7 +2694,10 @@
     "pattern": "Hallux extension, hitchhiking thumb sign",
     "landmarks": [
       "Anterior Tibia (palpate the anterior tibial crest — the EHL lies in the anterior compartment lateral to the tibialis anterior)",
-      "Distal Fibula (palpate the lateral malleolus and trace the fibula proximally — the EHL originates from the middle third of the anterior fibula)"
+      "Distal Fibula (palpate the lateral malleolus and trace the fibula proximally — the EHL originates from the middle third of the anterior fibula)",
+      "Middle third of the medial anterior fibula and interosseous membrane (origin).",
+      "Distal phalanx of the great toe (insertion).",
+      "EHL tendon — palpable on the dorsum of the foot with active toe extension."
     ],
     "placement": [
       "Position the patient supine with the leg extended and the ankle in neutral.",
@@ -2518,13 +2707,16 @@
       "Palpate the gap between these two muscle bellies — the EHL is in this interval.",
       "Insert the needle perpendicular to the skin into the EHL muscle belly.",
       "Advance 1-2 cm into the muscle substance.",
-      "Aspirate before injecting."
+      "Aspirate before injecting.",
+      "Injection site: middle third of the anterior leg, between tibia and fibula, into the muscle belly.",
+      "Sites: 1-2, usually 1."
     ],
     "setup": [
       "Palpate the EHL tendon during active hallux extension to trace it proximally to the muscle belly.",
       "The EHL is a relatively small muscle — precise needle placement is important.",
       "The anterior tibial artery and deep peroneal nerve run in the anterior compartment near the EHL — use caution.",
-      "USG can confirm placement and identify the neurovascular structures."
+      "USG can confirm placement and identify the neurovascular structures.",
+      "Patient position: supine with the leg extended."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -2564,7 +2756,9 @@
     "pearls": [
       "Causes great toe hyperextension (hitchhiker's toe/striatal toe)",
       "Thin muscle — easy to over-inject. Start with very low doses (10-25U Botox)",
-      "Runs between tibialis anterior and EDL — identify all three on US"
+      "Runs between tibialis anterior and EDL — identify all three on US",
+      "Treated in cases of striatal toe deformity (great toe extension) or rigid hallux valgus.",
+      "EDL and EHL often examined together — both extend the toes."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -2691,7 +2885,8 @@
     "landmarks": [
       "Acromion (palpate the bony shelf at the tip of the shoulder — follow the spine of the scapula laterally to its most lateral point)",
       "Olecranon (palpate the prominent bony point at the posterior elbow — this is the insertion of the triceps tendon)",
-      "Posterior Midline of Humerus (draw an imaginary line from the acromion to the olecranon along the posterior arm — the muscle belly is centered here)"
+      "Posterior Midline of Humerus (draw an imaginary line from the acromion to the olecranon along the posterior arm — the muscle belly is centered here)",
+      "Center of each muscle belly (long head, lateral head, medial head) — each head is treated as an independent belly."
     ],
     "placement": [
       "Position the patient seated or prone with the arm resting on a support, elbow flexed to approximately 90 degrees.",
@@ -2701,13 +2896,18 @@
       "For the lateral head: insert the needle into the lateral portion of the posterior arm, slightly more proximal, perpendicular to the skin.",
       "Advance 1.5-2 cm into the muscle belly — the triceps is a large, superficial muscle on the posterior arm.",
       "Avoid the medial aspect of the distal arm where the ulnar nerve courses in the ulnar groove behind the medial epicondyle.",
-      "Aspirate before injecting. Distribute injections across both heads if needed, spacing sites 3-4 cm apart."
+      "Aspirate before injecting. Distribute injections across both heads if needed, spacing sites 3-4 cm apart.",
+      "Sites: 3-4 total, depending on dose and indication (typically 3 for routine spasticity).",
+      "Direction: vertical, or along the fiber course.",
+      "Injection depth: dictated by the thickness of the targeted head — thinner distally, thicker proximally.",
+      "When injecting the lateral head, confirm it is distinguishable from the overlying deltoid."
     ],
     "setup": [
       "Surface anatomy is usually adequate given the large, easily palpable muscle belly.",
       "USG can help distinguish the long head from the lateral head and confirm depth.",
       "Have the patient extend the elbow against resistance to identify and mark the muscle belly before injection.",
-      "The radial nerve courses in the spiral groove of the humerus on the posterolateral aspect — stay in the central or medial muscle belly at the mid-humeral level to avoid it."
+      "The radial nerve courses in the spiral groove of the humerus on the posterolateral aspect — stay in the central or medial muscle belly at the mid-humeral level to avoid it.",
+      "Patient position: sitting or prone, with the shoulder slightly abducted."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -2746,7 +2946,10 @@
     "pearls": [
       "Rarely injected in spasticity — extended elbow is uncommon. Confirm the pattern",
       "If injecting, protect elbow extension function as much as possible for reaching",
-      "Long head crosses the shoulder — may contribute to shoulder extension posturing"
+      "Long head crosses the shoulder — may contribute to shoulder extension posturing",
+      "Rarely treated in spasticity — flexor spasticity is far more common than extensor spasticity.",
+      "When treating extensors, always consider the action and loss-of-action of the opposing flexors and the shoulder muscles.",
+      "The three heads are not always clearly distinguishable clinically — US guidance helps target specific heads."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -2790,7 +2993,9 @@
     "landmarks": [
       "Lateral Epicondyle (palpate the bony prominence on the lateral distal humerus — it is the origin landmark for the mobile wad of muscles)",
       "Radial Styloid (palpate the bony prominence at the distal lateral wrist — the brachioradialis inserts at the base of the styloid process)",
-      "Lateral Supracondylar Ridge (palpate the bony ridge running proximally from the lateral epicondyle along the lateral humerus — the muscle originates from its distal two-thirds)"
+      "Lateral Supracondylar Ridge (palpate the bony ridge running proximally from the lateral epicondyle along the lateral humerus — the muscle originates from its distal two-thirds)",
+      "Lateral supracondylar ridge of the humerus (origin) — palpate just above the lateral elbow.",
+      "Radial aspect of the forearm — the muscle forms the lateral border of the cubital fossa."
     ],
     "placement": [
       "Position the patient seated with the forearm resting on a table in neutral position (thumb pointing upward).",
@@ -2800,13 +3005,15 @@
       "Insert the needle into the bulk of the muscle belly at the junction of the proximal and middle thirds of the forearm, perpendicular to the skin.",
       "Advance 1-1.5 cm — the muscle is superficial.",
       "Stay lateral and superficial to avoid the radial nerve/posterior interosseous nerve, which courses deep to the brachioradialis.",
-      "Aspirate before injecting. A single injection into the mid-belly is usually sufficient."
+      "Aspirate before injecting. A single injection into the mid-belly is usually sufficient.",
+      "Injection site: proximal third of the lateral forearm, into the muscle belly."
     ],
     "setup": [
       "Surface anatomy is usually sufficient — the muscle belly is easily palpable when the patient flexes the elbow with the forearm in neutral.",
       "USG can confirm the needle is in brachioradialis and not in the deeper supinator or extensor muscles.",
       "Mark the muscle belly with the forearm in neutral and the elbow flexed against resistance.",
-      "The radial nerve bifurcates into the superficial (sensory) branch and the posterior interosseous nerve (motor) deep to this muscle at the level of the radial head — stay proximal in the muscle belly and superficial."
+      "The radial nerve bifurcates into the superficial (sensory) branch and the posterior interosseous nerve (motor) deep to this muscle at the level of the radial head — stay proximal in the muscle belly and superficial.",
+      "Patient position: elbow flexed and in mid-position (neither fully supinated nor fully pronated)."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz), Samsung LA3-16AD recommended",
@@ -2844,7 +3051,8 @@
     "pearls": [
       "Key contributor to elbow flexion often missed — it's a forearm muscle that flexes the elbow",
       "Best identified on US with forearm in neutral (thumb up) position",
-      "Co-inject with biceps and brachialis for refractory elbow flexion"
+      "Co-inject with biceps and brachialis for refractory elbow flexion",
+      "All three flexors of the elbow (biceps, brachialis, brachioradialis) must be viewed in synergy."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -2888,7 +3096,9 @@
     "landmarks": [
       "Medial Epicondyle (palpate the prominent bony point on the medial distal humerus — the humeral head of pronator teres originates here along with the common flexor tendon)",
       "Cubital Fossa (palpate the triangular depression on the anterior elbow — the pronator teres forms the medial border of this fossa)",
-      "Radial Tuberosity (not directly palpable, but located on the medial proximal radius approximately 3-4 cm distal to the elbow crease — the muscle crosses obliquely to insert on the mid-lateral radius)"
+      "Radial Tuberosity (not directly palpable, but located on the medial proximal radius approximately 3-4 cm distal to the elbow crease — the muscle crosses obliquely to insert on the mid-lateral radius)",
+      "Medial epicondyle (humeral head origin) — palpate the bony prominence at the medial distal humerus.",
+      "Middle of a line drawn from the medial epicondyle to the mid-point of the anterior radius (the insertion)."
     ],
     "placement": [
       "Position the patient seated with the forearm supinated and the elbow extended, resting on a support surface.",
@@ -2898,13 +3108,15 @@
       "Insert the needle 2-3 cm distal to the medial epicondyle, into the bulk of the muscle belly on the medial-to-anterior proximal forearm.",
       "Advance the needle 1-1.5 cm perpendicular to the skin.",
       "The median nerve passes between the two heads of pronator teres — stay superficial in the muscle bulk and do not advance deep toward the ulna.",
-      "Aspirate before injecting."
+      "Aspirate before injecting.",
+      "Injection site: proximal forearm along the line from medial epicondyle to mid-radius."
     ],
     "setup": [
       "USG is recommended to identify the median nerve, which passes between the humeral and ulnar heads of the pronator teres.",
       "Have the patient pronate and supinate the forearm against resistance to confirm the muscle belly location.",
       "Mark the injection site 2-3 cm distal and slightly lateral to the medial epicondyle.",
-      "The median nerve and brachial/ulnar arteries are in close proximity — ultrasound guidance significantly improves safety."
+      "The median nerve and brachial/ulnar arteries are in close proximity — ultrasound guidance significantly improves safety.",
+      "Patient position: forearm supinated, elbow flexed ~90°."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz), Samsung LA3-16AD recommended",
@@ -2942,7 +3154,9 @@
     "pearls": [
       "Primary target for forearm pronation spasticity",
       "Median nerve passes between its two heads — identify on US and avoid",
-      "Often co-injected with FCR and FCU for combined wrist/forearm pattern"
+      "Often co-injected with FCR and FCU for combined wrist/forearm pattern",
+      "Primary action: pronates the forearm; weakly flexes the elbow.",
+      "A key muscle in the pronation component of the upper-limb spasticity pattern."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -2988,7 +3202,9 @@
     "landmarks": [
       "Medial Epicondyle (palpate the bony prominence on the medial distal humerus — the FCR originates from the common flexor tendon here)",
       "FCR Tendon at Wrist (palpate the prominent tendon on the anterior wrist just radial to midline — ask the patient to flex the wrist against resistance; the FCR tendon is the most radial of the two prominent wrist flexor tendons)",
-      "Palmaris Longus Tendon (palpate the most prominent midline tendon at the anterior wrist with wrist flexion — the FCR lies immediately radial to it; if palmaris longus is absent, the FCR is the single prominent tendon)"
+      "Palmaris Longus Tendon (palpate the most prominent midline tendon at the anterior wrist with wrist flexion — the FCR lies immediately radial to it; if palmaris longus is absent, the FCR is the single prominent tendon)",
+      "Medial epicondyle of the humerus (common flexor origin).",
+      "FCR tendon at the wrist (radial to palmaris longus) — palpable with resisted wrist flexion."
     ],
     "placement": [
       "Position the patient seated with the forearm supinated and resting on a flat surface.",
@@ -2998,13 +3214,16 @@
       "Insert the needle into the bulk of the muscle belly at the junction of the proximal and middle thirds of the forearm, perpendicular to the skin.",
       "Advance 1-1.5 cm — the FCR is a relatively superficial muscle.",
       "Stay superficial and radial to avoid the median nerve, which lies deep between the FCR and the flexor digitorum superficialis.",
-      "Aspirate before injecting."
+      "Aspirate before injecting.",
+      "Injection site: proximal-to-middle forearm, into the muscle belly.",
+      "Direction: vertical, along the fiber course, not too deep."
     ],
     "setup": [
       "USG is recommended to distinguish FCR from adjacent flexor muscles and to identify the median nerve.",
       "Have the patient flex the wrist against resistance and palpate the FCR tendon at the wrist, then trace it proximally to the muscle belly.",
       "Mark the injection site before proceeding.",
-      "The radial artery runs lateral to the FCR tendon in the distal forearm — stay in the proximal muscle belly to avoid this vessel."
+      "The radial artery runs lateral to the FCR tendon in the distal forearm — stay in the proximal muscle belly to avoid this vessel.",
+      "Patient position: seated with the forearm supinated on a flat surface."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz), Samsung LA3-16AD recommended",
@@ -3042,7 +3261,9 @@
     "pearls": [
       "Main contributor to wrist flexion and radial deviation",
       "Radial artery runs alongside — identify on US with color Doppler",
-      "One of the most commonly injected forearm muscles for wrist flexion pattern"
+      "One of the most commonly injected forearm muscles for wrist flexion pattern",
+      "Median nerve runs deep between FCR and FDS — stay in the muscle belly; do not go deep.",
+      "Should always be viewed in synergy with the other wrist flexors (FCU, palmaris longus) and treated accordingly."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -3085,7 +3306,9 @@
     "landmarks": [
       "Medial Epicondyle (palpate the prominent bony point on the medial distal humerus — the humeral head of FCU originates from the common flexor tendon here)",
       "Olecranon (palpate the bony prominence at the posterior elbow — the ulnar head of FCU originates from the medial border of the olecranon and proximal ulna)",
-      "Pisiform Bone (palpate the small round bony prominence at the base of the hypothenar eminence on the ulnar-volar wrist — the FCU tendon inserts here; it is easily felt with the wrist in slight flexion and ulnar deviation)"
+      "Pisiform Bone (palpate the small round bony prominence at the base of the hypothenar eminence on the ulnar-volar wrist — the FCU tendon inserts here; it is easily felt with the wrist in slight flexion and ulnar deviation)",
+      "Medial epicondyle of the humerus.",
+      "FCU tendon at the ulnar wrist — palpable at the pisiform."
     ],
     "placement": [
       "Position the patient seated with the forearm supinated or in neutral, resting on a support.",
@@ -3096,13 +3319,17 @@
       "Advance 1-1.5 cm perpendicular to the skin — the muscle is superficial.",
       "The ulnar nerve travels between the two heads of the FCU proximally and then runs deep to the muscle along its ulnar border — stay in the central muscle belly.",
       "Aspirate before injecting.",
-      "Inject in the PROXIMAL THIRD of the forearm only — distally, the ulnar nerve becomes increasingly superficial as it approaches Guyon's canal at the wrist. Avoid the distal half."
+      "Inject in the PROXIMAL THIRD of the forearm only — distally, the ulnar nerve becomes increasingly superficial as it approaches Guyon's canal at the wrist. Avoid the distal half.",
+      "Injection site: proximal-to-middle medial forearm, into the muscle belly.",
+      "Sites: 2 per treatment for typical dosing."
     ],
     "setup": [
       "USG is recommended to identify the ulnar nerve, which runs deep to and along the ulnar border of the FCU.",
       "Have the patient flex the wrist with ulnar deviation against resistance to identify the muscle belly.",
       "Trace the FCU tendon from the pisiform bone proximally to locate the muscle belly.",
-      "The ulnar artery runs alongside the ulnar nerve deep to the FCU — ultrasound guidance helps avoid both structures."
+      "The ulnar artery runs alongside the ulnar nerve deep to the FCU — ultrasound guidance helps avoid both structures.",
+      "Patient position: forearm supinated.",
+      "Ulnar nerve runs alongside FCU — US or careful palpation recommended to avoid nerve injection."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -3142,7 +3369,9 @@
     "pearls": [
       "Main contributor to wrist flexion and ulnar deviation",
       "Ulnar nerve and artery run in Guyon's canal nearby — identify on US",
-      "Combined FCR + FCU injection gives best results for wrist flexion"
+      "Combined FCR + FCU injection gives best results for wrist flexion",
+      "Flexes and adducts (ulnar-deviates) the hand.",
+      "Always examined and treated in synergy with the other flexors of the wrist."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -3186,7 +3415,9 @@
     "landmarks": [
       "Medial Epicondyle (palpate the bony prominence on the medial distal humerus — the humeroulnar head of FDS originates from the common flexor tendon here)",
       "Coronoid Process of Ulna (not directly palpable, but located approximately 2 cm distal to the elbow crease on the medial side — the ulnar head of FDS originates here)",
-      "Proximal Radius (palpate the radial head by pronating and supinating the forearm while pressing just distal to the lateral epicondyle — the radial head of FDS originates from the proximal radial shaft)"
+      "Proximal Radius (palpate the radial head by pronating and supinating the forearm while pressing just distal to the lateral epicondyle — the radial head of FDS originates from the proximal radial shaft)",
+      "Medial epicondyle of humerus (humeroulnar head) and anterior shaft of the radius (radial head).",
+      "Middle of the anterior forearm — FDS lies superficial to FDP and deep to FCR/palmaris longus."
     ],
     "placement": [
       "Position the patient seated with the forearm supinated and resting on a flat surface.",
@@ -3196,13 +3427,16 @@
       "Insert the needle at the mid-forearm level, between the FCR and FCU, slightly deeper than the superficial flexor layer.",
       "Advance 1.5-2 cm perpendicular to the skin to pass through the superficial flexor layer and into the FDS.",
       "The median nerve runs on the superficial surface of the FDS (between the FDS and the superficial flexors) — approach from the ulnar side to minimize risk.",
-      "Aspirate before injecting. Multiple injection sites along the forearm may be needed given the broad muscle belly."
+      "Aspirate before injecting. Multiple injection sites along the forearm may be needed given the broad muscle belly.",
+      "Injection site: mid-anterior forearm, into the muscle belly.",
+      "Sites: 1-4 for typical dosing; usually 1-2."
     ],
     "setup": [
       "USG is highly recommended — the FDS lies in the intermediate layer and is difficult to distinguish from surrounding muscles by palpation alone.",
       "Have the patient flex the PIP joints with the DIP joints extended to confirm FDS activation.",
       "The FDS has four separate muscle bellies for digits 2-5; target the belly corresponding to the affected digits.",
-      "The median nerve travels on the superficial surface of the FDS — always identify it with ultrasound before injecting."
+      "The median nerve travels on the superficial surface of the FDS — always identify it with ultrasound before injecting.",
+      "US guidance strongly recommended — FDS and FDP lie side by side in the proximal forearm and cannot be reliably distinguished by palpation alone."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -3241,7 +3475,9 @@
     "pearls": [
       "Target for finger flexion at PIP joints",
       "Lies between FCR/FCU superficially and FDP deep — be precise on US",
-      "Consider injecting specific slips if only certain fingers are affected"
+      "Consider injecting specific slips if only certain fingers are affected",
+      "Treated in most patients presenting with PIP (proximal interphalangeal) joint flexion spasticity.",
+      "For finger-flexion spasticity, FDS and FDP typically both need treatment — the other flexors should be addressed as well."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -3288,7 +3524,9 @@
     "landmarks": [
       "Medial Epicondyle and Proximal Ulna (palpate the medial epicondyle and run your finger distally along the subcutaneous medial border of the ulna — the FDP originates from the proximal three-quarters of the ulna and the interosseous membrane)",
       "Subcutaneous Ulnar Border (palpate the sharp posterior border of the ulna along the entire medial forearm — the FDP lies just anterior and lateral to this border)",
-      "DIP Joints of Fingers (ask the patient to flex the DIP joints while you stabilize the middle phalanx — this isolates FDP contraction and you can feel the tendon on the volar finger)"
+      "DIP Joints of Fingers (ask the patient to flex the DIP joints while you stabilize the middle phalanx — this isolates FDP contraction and you can feel the tendon on the volar finger)",
+      "Proximal anterior shaft of the ulna (origin).",
+      "Middle of the anterior forearm — FDP lies deep to FDS."
     ],
     "placement": [
       "Position the patient seated with the forearm supinated and resting on a flat surface.",
@@ -3298,13 +3536,19 @@
       "Insert the needle from the medial (ulnar) side of the forearm, just anterior to the palpable subcutaneous ulnar border, at the junction of the proximal and middle thirds of the forearm.",
       "Advance the needle 2-2.5 cm, directing it anterolaterally toward the interosseous membrane to reach the deep compartment.",
       "Use ultrasound to confirm needle tip position in the FDP and not in the FDS (superficial) or the interosseous membrane (too deep).",
-      "Aspirate before injecting. Multiple injection sites may be needed to target individual muscle bellies for specific digits."
+      "Aspirate before injecting. Multiple injection sites may be needed to target individual muscle bellies for specific digits.",
+      "Injection site: mid-anterior forearm, at the depth of the ulna.",
+      "Sites: 1-4 for typical dosing, usually 1-2.",
+      "Injection depth: approximately 10-20 mm from the skin."
     ],
     "setup": [
       "USG is strongly recommended — the FDP is a deep muscle that is difficult to access accurately by surface anatomy alone.",
       "The medial (ulnar) approach is preferred as the subcutaneous ulnar border provides a reliable bony landmark.",
       "Have the patient flex the DIP joints to confirm FDP activation before marking the site.",
-      "The anterior interosseous nerve and artery run on the anterior surface of the interosseous membrane within the FDP — identify these with ultrasound."
+      "The anterior interosseous nerve and artery run on the anterior surface of the interosseous membrane within the FDP — identify these with ultrasound.",
+      "Patient position: elbow supinated.",
+      "US guidance essential — FDS and FDP muscle bellies lie side-by-side and cannot be reliably distinguished by palpation alone.",
+      "For action-induced dystonia, sonography is required for precise targeting of individual muscle parts."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -3344,7 +3588,10 @@
     "pearls": [
       "Target for finger flexion at DIP joints — the deeper layer",
       "Anterior interosseous nerve (motor branch of median) is vulnerable — ID on US",
-      "Often co-injected with FDS for full finger flexion pattern"
+      "Often co-injected with FDS for full finger flexion pattern",
+      "Only flexor of the distal interphalangeal (DIP) joint.",
+      "For finger-flexion spasticity, FDP typically requires treatment alongside FDS and the other forearm flexors.",
+      "Proximal injection benefits from in-plane US technique to confirm depth."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -3391,7 +3638,10 @@
     "landmarks": [
       "Anterior Radial Shaft (palpate the anterior surface of the radius in the mid-forearm — the FPL originates from the middle third of the anterior radial surface; the radius is palpable lateral to the flexor muscle mass)",
       "Thenar Eminence (palpate the fleshy mound at the base of the thumb on the palmar surface — the FPL tendon courses deep here to insert on the distal phalanx of the thumb)",
-      "Radial Artery at the Wrist (palpate the radial pulse at the radial-volar wrist, just lateral to the FCR tendon — the FPL tendon lies deep and slightly ulnar to the radial artery at this level)"
+      "Radial Artery at the Wrist (palpate the radial pulse at the radial-volar wrist, just lateral to the FCR tendon — the FPL tendon lies deep and slightly ulnar to the radial artery at this level)",
+      "Middle of the anterior shaft of the radius (origin).",
+      "Interosseous membrane — FPL lies along it, deep in the anterior forearm.",
+      "Radial artery runs in the lateral forearm — stay medial to avoid it."
     ],
     "placement": [
       "Position the patient seated with the forearm supinated and resting flat on a support surface.",
@@ -3401,13 +3651,18 @@
       "Insert the needle at the mid-forearm level, on the radial side, between the brachioradialis (laterally) and the FCR (medially).",
       "Advance the needle 2-2.5 cm, directing it posteriorly toward the radius to reach the deep compartment where the FPL lies.",
       "Use ultrasound to confirm the needle tip is in the FPL and not in the superficial flexor muscles (FCR, FDS) or the pronator teres.",
-      "Aspirate before injecting."
+      "Aspirate before injecting.",
+      "Injection site: proximal-to-middle anterior forearm.",
+      "Sites: 1-2.",
+      "Injection depth: approximately 10-20 mm."
     ],
     "setup": [
       "USG is strongly recommended — the FPL is a deep muscle that requires passing through superficial flexor layers.",
       "Have the patient repeatedly flex the thumb IP joint while you confirm the muscle belly location with ultrasound.",
       "Approach from the radial side between the brachioradialis and FCR to minimize traversal of other muscle layers.",
-      "The anterior interosseous nerve provides motor innervation to the FPL and runs along the interosseous membrane — identify it and avoid injecting near it."
+      "The anterior interosseous nerve provides motor innervation to the FPL and runs along the interosseous membrane — identify it and avoid injecting near it.",
+      "Patient position: elbow extended, forearm supinated, wrist in neutral.",
+      "US guidance recommended given radial artery proximity and depth."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -3446,7 +3701,8 @@
     "pearls": [
       "Target for thumb-in-palm deformity (thumb flexion component)",
       "Located on the radial side of the deep forearm — don't confuse with FDP",
-      "Often part of a multi-muscle thumb-in-palm program with adductor pollicis"
+      "Often part of a multi-muscle thumb-in-palm program with adductor pollicis",
+      "Only muscle that flexes the IP joint of the thumb — its action is additive to that of flexor pollicis brevis at the MCP joint."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -3491,7 +3747,9 @@
     "landmarks": [
       "First Web Space (palpate the fleshy area between the thumb and index finger metacarpals on the dorsal hand — the adductor pollicis fills this web space; squeeze the web space between your thumb and index finger to feel the muscle bulk)",
       "Third Metacarpal (palpate the long bone of the middle finger on the dorsal hand — the oblique head of the adductor pollicis originates from the base of the second and third metacarpals and the capitate)",
-      "Proximal Phalanx of the Thumb, Ulnar Side (palpate the base of the thumb proximal phalanx on the ulnar side — the adductor pollicis inserts here via the ulnar sesamoid bone)"
+      "Proximal Phalanx of the Thumb, Ulnar Side (palpate the base of the thumb proximal phalanx on the ulnar side — the adductor pollicis inserts here via the ulnar sesamoid bone)",
+      "First web space of the hand — adductor pollicis forms the deep floor.",
+      "Transverse head (along the 3rd metacarpal) and oblique head — the muscle is two-headed."
     ],
     "placement": [
       "Position the patient with the hand resting on a flat surface, palm down (pronated), with the thumb abducted away from the palm.",
@@ -3501,13 +3759,16 @@
       "Insert the needle from the dorsal aspect of the first web space, perpendicular to the plane of the hand.",
       "Advance 0.5-1 cm — this is a thin muscle in a confined space.",
       "Stay within the web space and do not advance toward the palmar surface where the digital neurovascular bundles run.",
-      "Aspirate before injecting. A single injection into the bulk of the web space is usually sufficient. Use a small-gauge needle (25-27G)."
+      "Aspirate before injecting. A single injection into the bulk of the web space is usually sufficient. Use a small-gauge needle (25-27G).",
+      "Injection site: into the first web space, toward the 3rd metacarpal.",
+      "Sites: 1-2."
     ],
     "setup": [
       "USG is helpful but the muscle can be injected reliably using surface anatomy in the first web space.",
       "Use a dorsal approach to avoid the palmar digital nerves and arteries.",
       "Have the patient adduct the thumb to confirm the muscle belly before marking.",
-      "Differentiate from the first dorsal interosseous, which lies dorsal and lateral in the web space — the adductor pollicis is deeper and more palmar."
+      "Differentiate from the first dorsal interosseous, which lies dorsal and lateral in the web space — the adductor pollicis is deeper and more palmar.",
+      "End branches of the radial artery run nearby — identify on US with Doppler."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz); a hockey-stick probe is helpful in the tight first web space",
@@ -3542,7 +3803,9 @@
     "pearls": [
       "Key target for thumb-in-palm deformity (thumb adduction component)",
       "Very small — use hockey-stick probe and minimal doses (10-20U Botox)",
-      "Dorsal approach is safer — avoids thenar neurovascular structures"
+      "Dorsal approach is safer — avoids thenar neurovascular structures",
+      "Two-headed muscle (transverse and oblique heads) — injection errors are common if you inject too superficially (hits dorsal interosseous instead).",
+      "Key for thumb-in-palm deformity along with FPL and FPB."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -3584,7 +3847,10 @@
     "landmarks": [
       "Coracoid Process (palpate below the lateral clavicle, approximately 2 cm inferior and medial to the anterolateral acromion — feel for a bony prominence deep to the anterior deltoid; the subscapularis tendon passes just lateral to the coracoid)",
       "Anterior Axillary Fold (grasp the fold of skin and muscle at the front of the axilla — the subscapularis forms the posterior wall of the axilla and its tendon contributes to the anterior fold deep to the pectoralis major)",
-      "Lesser Tuberosity of the Humerus (with the arm externally rotated, palpate the anterior shoulder just lateral to the coracoid and medial to the bicipital groove — the lesser tuberosity is where the subscapularis tendon inserts)"
+      "Lesser Tuberosity of the Humerus (with the arm externally rotated, palpate the anterior shoulder just lateral to the coracoid and medial to the bicipital groove — the lesser tuberosity is where the subscapularis tendon inserts)",
+      "Margo medialis scapulae (medial scapular border) — primary access landmark, palpable with the arm internally rotated (Lift-Off Test position).",
+      "Inferior angle of the scapula — alternative access when the medial border is hard to reach.",
+      "Lesser tubercle of the humerus — the insertion, commonly used by physiatrists via ventral access."
     ],
     "placement": [
       "Position the patient supine or seated with the arm abducted to 45-60 degrees and externally rotated, resting on a support.",
@@ -3594,13 +3860,19 @@
       "Insert the needle through the ANTERIOR axillary fold (formed by pec major), directing it posterolaterally toward the anterior (costal) surface of the scapula.",
       "Advance under ultrasound guidance until the needle tip is within the subscapularis muscle belly on the costal (anterior) surface of the scapula.",
       "This is a deep injection — typically 3-4 cm depending on body habitus.",
-      "Aspirate before injecting. Multiple injection sites along the muscle belly may be needed for adequate distribution."
+      "Aspirate before injecting. Multiple injection sites along the muscle belly may be needed for adequate distribution.",
+      "Preferred route: via the margo medialis or inferior angle of the scapula, advancing along the fiber direction toward the scapula itself (twin-needle contact confirms depth).",
+      "Alternative ventral route: insertion through the axilla dorsocranially, tangential to the thorax, toward the scapula. Requires arm abducted + externally rotated.",
+      "Alternative: direct insertion at the Lesser tubercle of the humerus (common physiatrist approach)."
     ],
     "setup": [
       "USG is MANDATORY — the subscapularis is deep and bordered by critical neurovascular structures.",
       "Position the patient to maximize access to the axilla and the anterior scapular surface.",
       "Externally rotate the arm to bring the subscapularis into a more accessible position.",
-      "The axillary neurovascular bundle (axillary artery, vein, and brachial plexus cords) runs through the axilla — always identify these with Doppler before injecting."
+      "The axillary neurovascular bundle (axillary artery, vein, and brachial plexus cords) runs through the axilla — always identify these with Doppler before injecting.",
+      "Patient position (dorsal route): Lift-Off Test position — arm internally rotated behind the back.",
+      "Patient position (ventral route): arm abducted and externally rotated.",
+      "EMG guidance is often useful given the muscle's depth under the scapula."
     ],
     "ultrasound": {
       "probe": "Low-to-medium frequency curvilinear (5-8 MHz) or high-frequency linear (10-15 MHz) in thin patients",
@@ -3637,7 +3909,9 @@
     "pearls": [
       "Most important muscle for internal rotation spasticity at the shoulder",
       "Deep in the axilla — requires careful US guidance due to proximity to axillary vessels",
-      "Inject through the anterior axillary approach with the arm abducted and externally rotated"
+      "Inject through the anterior axillary approach with the arm abducted and externally rotated",
+      "Part of the rotator cuff; paresis leads to maximum external rotation of the arm.",
+      "Frequently involved in upper-limb spasticity but treated only seldom — consider it when internal-rotation contracture resists biceps/pectoral-only treatment."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -3681,7 +3955,9 @@
     "landmarks": [
       "Spine of the Scapula (palpate the prominent bony ridge running horizontally across the posterior scapula — run your fingers from the medial scapular border laterally to the acromion; the infraspinatus fossa lies below this ridge)",
       "Medial Border of the Scapula (palpate the vertical bony edge of the scapula medially — ask the patient to retract the scapula to make it more prominent; the infraspinatus fills the fossa between this border and the lateral border)",
-      "Greater Tuberosity of the Humerus (palpate the lateral shoulder just below the acromion with the arm in neutral rotation — the infraspinatus tendon inserts on the middle facet of the greater tuberosity)"
+      "Greater Tuberosity of the Humerus (palpate the lateral shoulder just below the acromion with the arm in neutral rotation — the infraspinatus tendon inserts on the middle facet of the greater tuberosity)",
+      "Scapular spine — the muscle sits in the infraspinous fossa below it.",
+      "Middle of the triangle formed by the scapular spine, medial border, and lateral border of the scapula."
     ],
     "placement": [
       "Position the patient seated, leaning forward, or in a prone position with the arms at the sides.",
@@ -3691,13 +3967,15 @@
       "Insert the needle perpendicular to the skin into the center of the infraspinous fossa, targeting the thickest part of the muscle belly.",
       "Advance 1.5-2 cm — the muscle lies directly on the scapular bone, so you will feel resistance when the needle contacts the scapula.",
       "The scapula acts as a protective backstop — you cannot advance past it.",
-      "Aspirate before injecting. Distribute injections across the muscle belly if treating a large area of spasticity."
+      "Aspirate before injecting. Distribute injections across the muscle belly if treating a large area of spasticity.",
+      "Injection site: middle of the infraspinous fossa."
     ],
     "setup": [
       "Surface anatomy is often sufficient given the well-defined bony borders of the infraspinous fossa.",
       "USG can confirm needle placement within the infraspinatus and not the overlying trapezius or deltoid.",
       "Have the patient externally rotate the shoulder against resistance to confirm the muscle belly.",
-      "The suprascapular nerve and artery pass through the spinoglenoid notch at the lateral base of the spine of the scapula — avoid injecting near this area."
+      "The suprascapular nerve and artery pass through the spinoglenoid notch at the lateral base of the spine of the scapula — avoid injecting near this area.",
+      "Patient position: sitting or prone. When prone, the patient's arm can drape over the edge of the table."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -3732,7 +4010,10 @@
     "pearls": [
       "⚠️ DO NOT INJECT in typical UMN spasticity. The infraspinatus is a shoulder EXTERNAL rotator. In hemiplegic shoulder posturing, the deformity is INTERNAL rotation — injecting infraspinatus would weaken the external rotators and WORSEN the pattern.",
       "Listed here for anatomic reference only. In the rare case of post-stroke external-rotation dystonia or focal dystonia, expert consultation is required before injecting.",
-      "Suprascapular nerve runs through the spinoglenoid notch nearby — additional reason to avoid this muscle without strong indication."
+      "Suprascapular nerve runs through the spinoglenoid notch nearby — additional reason to avoid this muscle without strong indication.",
+      "Injecting too superficially risks hitting the overlying trapezius.",
+      "Injecting too laterally risks hitting teres minor.",
+      "Orientation on a curved scapular surface — pneumothorax risk if the needle goes too deep and medial."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -3768,7 +4049,9 @@
     "landmarks": [
       "Inferior Angle of the Scapula (palpate the lowest point of the scapula posteriorly — ask the patient to retract the scapula to make it prominent; the teres major originates from the posterior surface near the inferior angle and the lower lateral border)",
       "Posterior Axillary Fold (grasp the fold of tissue at the back of the axilla — the teres major and latissimus dorsi form this fold; the teres major is the more superior and lateral of the two muscles in this fold)",
-      "Intertubercular (Bicipital) Groove of the Humerus (palpate the anterior shoulder between the greater and lesser tuberosities — the teres major inserts on the medial lip of the bicipital groove, along with the latissimus dorsi)"
+      "Intertubercular (Bicipital) Groove of the Humerus (palpate the anterior shoulder between the greater and lesser tuberosities — the teres major inserts on the medial lip of the bicipital groove, along with the latissimus dorsi)",
+      "Inferior angle of the scapula (origin) — palpate the bony corner.",
+      "Posterior axillary fold — teres major contributes to it along with latissimus dorsi."
     ],
     "placement": [
       "Position the patient seated or prone with the arm adducted at the side.",
@@ -3778,13 +4061,15 @@
       "Insert the needle into the bulk of the muscle belly at the level of the inferior scapular angle, approximately 2-3 cm lateral to the lateral border of the scapula.",
       "Advance 1.5-2 cm perpendicular to the skin.",
       "Distinguish from the latissimus dorsi, which wraps around the teres major inferiorly — the teres major has a rounder, shorter belly.",
-      "Aspirate before injecting."
+      "Aspirate before injecting.",
+      "Injection site: into the muscle belly along the lateral border of the scapula, below the level of the infraspinatus."
     ],
     "setup": [
       "USG is recommended to distinguish teres major from the latissimus dorsi and teres minor, which are in close proximity.",
       "Have the patient internally rotate the arm against resistance to identify the muscle belly in the posterior axillary fold.",
       "The latissimus dorsi wraps around and lies superficial to the teres major at the posterior axillary fold — ultrasound helps separate the two.",
-      "The circumflex scapular artery passes through the triangular space (bordered by teres minor, teres major, and long head of triceps) — identify this with Doppler."
+      "The circumflex scapular artery passes through the triangular space (bordered by teres minor, teres major, and long head of triceps) — identify this with Doppler.",
+      "Patient position: prone or lateral decubitus, arm in neutral."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz) or curvilinear for deeper patients",
@@ -3822,7 +4107,9 @@
     "pearls": [
       "Works synergistically with lat dorsi and subscapularis for shoulder IR/adduction",
       "Often the forgotten muscle in shoulder internal rotation pattern — always assess it",
-      "The posterior axillary fold contains both lat dorsi and teres major — differentiate on US"
+      "The posterior axillary fold contains both lat dorsi and teres major — differentiate on US",
+      "Palpation can be challenging due to overlying latissimus — the two muscles are often fused and have very similar action.",
+      "Consider together with latissimus dorsi in adduction / internal-rotation spasticity."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -3867,7 +4154,10 @@
     "landmarks": [
       "Pubic Tubercle (palpate the bony prominence on the superior pubic ramus just lateral to the pubic symphysis — the adductor longus tendon originates here as a prominent, palpable cord)",
       "Medial Femoral Condyle (palpate the large bony prominence on the inner aspect of the distal femur — the adductor longus inserts along the middle third of the linea aspera proximal to this)",
-      "Adductor Longus Tendon (with the hip slightly abducted and flexed, palpate the most prominent tendon in the proximal medial thigh originating from the pubic tubercle — this is the superficial border of the muscle)"
+      "Adductor Longus Tendon (with the hip slightly abducted and flexed, palpate the most prominent tendon in the proximal medial thigh originating from the pubic tubercle — this is the superficial border of the muscle)",
+      "Pubic tubercle — palpate the adductor longus tendon at its origin.",
+      "Medial condyle of the tibia — adductor longus inserts along the middle third of the linea aspera.",
+      "Anchor: 4 fingers (approximately 7-8 cm) distal to the pubic tubercle, along the adductor group."
     ],
     "placement": [
       "Position the patient supine with the hip slightly abducted and externally rotated, and the knee flexed with the sole of the foot resting against the opposite knee (frog-leg position).",
@@ -3875,13 +4165,15 @@
       "The injection site is approximately 3-5 cm distal to the pubic tubercle along the muscle belly, in the medial thigh.",
       "Insert the needle perpendicular to the skin into the muscle belly just lateral to the palpable tendon.",
       "Advance approximately 1.5-2.5 cm — the adductor longus is the most superficial muscle in the medial compartment at this level.",
-      "Aspirate before injecting. Distribute the dose across 2 sites along the proximal muscle belly."
+      "Aspirate before injecting. Distribute the dose across 2 sites along the proximal muscle belly.",
+      "Injection site: palpate the adductor longus tendon at the pubic tubercle, then move approximately 4 fingers (7-8 cm) distal, into the muscle belly."
     ],
     "setup": [
       "USG is strongly recommended to avoid the femoral neurovascular bundle, which lies lateral to the adductor longus in the femoral triangle.",
       "Have the patient adduct the hip against resistance to confirm the correct muscle belly before injection.",
       "The profunda femoris artery runs deep to the adductor longus — do not advance the needle too deeply.",
-      "The obturator nerve anterior branch runs on the superficial surface of the adductor brevis, deep to the adductor longus — ultrasound helps avoid it."
+      "The obturator nerve anterior branch runs on the superficial surface of the adductor brevis, deep to the adductor longus — ultrasound helps avoid it.",
+      "Patient position: supine, hip slightly flexed and abducted."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -3922,7 +4214,9 @@
     "pearls": [
       "Most superficial adductor — the 'go-to' for adductor spasticity injection",
       "Palpable as the prominent tendon in the proximal medial thigh with hip abduction",
-      "Femoral vessels lie LATERAL to the adductor longus in the femoral triangle — identify them with color Doppler and keep the needle medial to these structures."
+      "Femoral vessels lie LATERAL to the adductor longus in the femoral triangle — identify them with color Doppler and keep the needle medial to these structures.",
+      "The adductors cannot be differentiated from one another with certainty by palpation — US guidance is recommended if targeting specifically.",
+      "Going too deep risks hitting adductor magnus; too far lateral or posterior risks gracilis."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -3961,7 +4255,10 @@
     "landmarks": [
       "Ischial Tuberosity (palpate the large bony prominence at the inferior aspect of the pelvis in the buttock crease — the hamstring portion of the adductor magnus originates here)",
       "Inferior Pubic Ramus (palpate the bony ridge extending inferolaterally from the pubic symphysis — the adductor portion of the muscle originates along this ridge)",
-      "Adductor Tubercle (palpate the small bony prominence on the medial supracondylar ridge of the distal femur just above the medial epicondyle — the hamstring portion of the adductor magnus inserts here)"
+      "Adductor Tubercle (palpate the small bony prominence on the medial supracondylar ridge of the distal femur just above the medial epicondyle — the hamstring portion of the adductor magnus inserts here)",
+      "Pubic tubercle and ischial tuberosity (combined origin).",
+      "Linea aspera of the femur (insertion).",
+      "Anchor: 10-13 cm distal to the pubic tubercle for proximal injection; additional sites at 4 fingers (7-8 cm) intervals along the adductor line."
     ],
     "placement": [
       "Position the patient prone with the legs slightly apart, or supine with the hip abducted and externally rotated.",
@@ -3969,13 +4266,17 @@
       "The injection site is at the junction of the middle and distal thirds of the medial thigh, posterior to the gracilis and adductor longus.",
       "Insert the needle from the posteromedial aspect of the thigh, angling slightly anteriorly.",
       "Advance approximately 2.5-4 cm — the adductor magnus is a deep muscle and the needle must traverse the more superficial adductors or approach from the posterior aspect.",
-      "Aspirate before injecting. Distribute the dose across 2-3 sites within the muscle belly due to its large size."
+      "Aspirate before injecting. Distribute the dose across 2-3 sites within the muscle belly due to its large size.",
+      "Injection site: multiple sites along the medial thigh, on a line from origin toward the linea aspera.",
+      "Sites: 1-3.",
+      "When injecting at two sites, position them on the same line rather than perpendicular — adductor magnus is long and oriented vertically."
     ],
     "setup": [
       "USG guidance is strongly recommended due to the depth of this muscle and the proximity of the sciatic nerve and profunda femoris vessels.",
       "Have the patient adduct the hip forcefully against resistance to help identify the muscle bulk.",
       "The sciatic nerve runs lateral and posterior to the adductor magnus in the posterior thigh — confirm its location with ultrasound.",
-      "The adductor hiatus (gap in the distal adductor magnus) transmits the femoral vessels into the popliteal fossa — avoid injecting near the distal muscle."
+      "The adductor hiatus (gap in the distal adductor magnus) transmits the femoral vessels into the popliteal fossa — avoid injecting near the distal muscle.",
+      "Patient position: supine, leg slightly flexed and abducted."
     ],
     "ultrasound": {
       "probe": "Low-frequency curvilinear (5-8 MHz) or high-frequency linear (10-15 MHz) for thinner patients",
@@ -4017,7 +4318,9 @@
     "pearls": [
       "Largest adductor — requires higher doses and multiple injection sites",
       "Deep position makes US guidance essential",
-      "Sciatic nerve runs posterior — inject from medial approach to stay safe"
+      "Sciatic nerve runs posterior — inject from medial approach to stay safe",
+      "Adducts the free-swinging thigh; when standing, its most important action is stabilizing the femur together with TFL.",
+      "A very strong muscle — dose tends to be at the higher end of the adductor-group range."
     ],
     "supplies": [
       "Ultrasound machine with curvilinear probe (5-8 MHz, for deep muscles)",
@@ -4055,7 +4358,10 @@
     "landmarks": [
       "Ischial Tuberosity (palpate the large bony prominence deep in the inferior gluteal fold — the long head of the biceps femoris originates here, sharing a conjoined tendon with the semitendinosus)",
       "Fibular Head (palpate the small bony prominence on the lateral aspect of the proximal leg just below the knee — the biceps femoris tendon inserts here and is easily palpable as a taut cord)",
-      "Lateral Hamstring Tendon (with the knee flexed to 90 degrees, palpate the prominent tendon on the posterolateral aspect of the knee running toward the fibular head — this defines the lateral border of the popliteal fossa)"
+      "Lateral Hamstring Tendon (with the knee flexed to 90 degrees, palpate the prominent tendon on the posterolateral aspect of the knee running toward the fibular head — this defines the lateral border of the popliteal fossa)",
+      "Long head: ischial tuberosity (origin). Anchor the injection at the middle of a line between the ischial tuberosity and the popliteal fossa (approximately 4 fingers).",
+      "Short head: linea aspera (origin). Anchor approximately 2 cm above the popliteal cavity, superficial to the head of the fibula.",
+      "Head of the fibula (insertion) — palpable lateral bony prominence behind the knee."
     ],
     "placement": [
       "Position the patient prone with the knee slightly flexed over a pillow or bolster.",
@@ -4063,13 +4369,16 @@
       "The injection site for the long head is at the junction of the proximal and middle thirds of the posterior thigh on the lateral side.",
       "Insert the needle perpendicular to the skin into the lateral muscle belly of the posterior thigh.",
       "Advance approximately 1.5-3 cm depending on subcutaneous tissue thickness — the biceps femoris long head is relatively superficial in the lateral posterior thigh.",
-      "Aspirate before injecting. Distribute the dose across 2 sites within the long head muscle belly. If the short head is also targeted, inject separately at the distal third of the lateral posterior thigh."
+      "Aspirate before injecting. Distribute the dose across 2 sites within the long head muscle belly. If the short head is also targeted, inject separately at the distal third of the lateral posterior thigh.",
+      "Long head injection: middle of the line between ischial tuberosity and popliteal cavity, approximately 4 fingers distal to the ischial tuberosity. Sites: 1-3.",
+      "Short head injection: 2 cm above the popliteal cavity, superficial to the fibular head, medial or lateral to the short-head belly. Sites: 1-2."
     ],
     "setup": [
       "USG is recommended to differentiate the long head from the short head and to identify the sciatic nerve.",
       "Have the patient flex the knee against resistance to clearly delineate the biceps femoris from the medial hamstrings (semimembranosus and semitendinosus).",
       "The sciatic nerve (or its divisions: tibial and common peroneal nerves) runs medial and deep to the biceps femoris in the posterior thigh — confirm its position before injecting.",
-      "The common peroneal nerve wraps around the fibular head immediately deep to the biceps femoris tendon distally — do not inject near the distal tendon insertion."
+      "The common peroneal nerve wraps around the fibular head immediately deep to the biceps femoris tendon distally — do not inject near the distal tendon insertion.",
+      "Patient position: prone."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz) or low-frequency curvilinear (5-8 MHz) for deeper targets",
@@ -4111,7 +4420,10 @@
     "pearls": [
       "Lateral hamstring — key target for lateral knee flexion patterns",
       "Common peroneal nerve branches from sciatic near the biceps femoris tendon — identify on US",
-      "Long and short heads may need separate injection points"
+      "Long and short heads may need separate injection points",
+      "Going too medial (from either head) risks penetrating semitendinosus.",
+      "Biceps femoris is usually treated together with the other knee flexors for hamstring spasticity.",
+      "Can rotate the flexed knee laterally — its action is distinct from semitendinosus and semimembranosus."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -4243,7 +4555,10 @@
     "landmarks": [
       "Fibular Head (palpate the small bony prominence on the lateral aspect of the proximal leg just below the lateral knee joint line — the peroneus longus originates from the upper two-thirds of the lateral fibular surface just distal to this)",
       "Lateral Malleolus (palpate the prominent bony landmark on the lateral ankle — the peroneus longus tendon courses posterior to the lateral malleolus in the retromalleolar groove)",
-      "Common Peroneal Nerve at Fibular Neck (palpate the fibular neck just distal to the fibular head — the common peroneal nerve wraps around here and is at risk during proximal injections)"
+      "Common Peroneal Nerve at Fibular Neck (palpate the fibular neck just distal to the fibular head — the common peroneal nerve wraps around here and is at risk during proximal injections)",
+      "Fibular head and upper lateral fibular surface (origin).",
+      "Medial cuneiform and 1st metatarsal base (insertion) — peroneus longus has a very long tendon that wraps under the foot.",
+      "Proximal-to-middle lateral leg, posterior to the fibular shaft."
     ],
     "placement": [
       "Position the patient supine with the leg internally rotated to expose the lateral compartment, or in a lateral decubitus position with the affected side up.",
@@ -4251,13 +4566,16 @@
       "The injection site is approximately 5-8 cm distal to the fibular head along the lateral aspect of the leg.",
       "Insert the needle perpendicular to the skin into the lateral muscle belly, aiming toward the fibula.",
       "Advance approximately 1-2 cm — the peroneus longus is relatively superficial in the lateral compartment.",
-      "Aspirate before injecting. Distribute the dose across 2 sites along the proximal muscle belly, staying at least 3-4 cm distal to the fibular head to avoid the common peroneal nerve."
+      "Aspirate before injecting. Distribute the dose across 2 sites along the proximal muscle belly, staying at least 3-4 cm distal to the fibular head to avoid the common peroneal nerve.",
+      "Injection site: upper third of the lateral leg, posterior to the fibula, into the muscle belly (NOT the long tendon).",
+      "Sites: 1-2."
     ],
     "setup": [
       "USG is recommended to differentiate the peroneus longus from the peroneus brevis and to identify the common peroneal nerve.",
       "Have the patient evert the ankle against resistance to confirm the correct muscle before injection.",
       "The common peroneal nerve wraps around the fibular neck superficially — injections must stay at least 3-4 cm distal to the fibular head.",
-      "The superficial peroneal nerve runs between the peroneus longus and peroneus brevis — ultrasound helps avoid it."
+      "The superficial peroneal nerve runs between the peroneus longus and peroneus brevis — ultrasound helps avoid it.",
+      "Patient position: supine or lateral decubitus with the affected leg up."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -4300,7 +4618,9 @@
       "⚠️ This muscle is an EVERTOR — injecting it in equinovarus (the most common spastic foot pattern) will WORSEN the varus deformity. Only inject peroneus longus when clinical exam confirms spastic EVERSION contributing to the deformity (equinovalgus or equinus with eversion component).",
       "Key target for foot eversion if spastic (less common than invertors)",
       "Common peroneal nerve wraps around the fibular neck just proximal — stay distal",
-      "Superficial position makes it easy to inject once correctly identified"
+      "Superficial position makes it easy to inject once correctly identified",
+      "Also known as fibularis longus.",
+      "Has a very long tendon that runs under the foot; the muscle belly is proximal — do not inject the distal tendon."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -4338,7 +4658,10 @@
     "landmarks": [
       "Lateral Tibial Condyle (palpate the bony prominence on the lateral aspect of the proximal tibia just below the knee joint line — the EDL originates from the lateral condyle and the proximal anterior fibular surface)",
       "Tibialis Anterior Tendon (palpate the prominent tendon on the anterior ankle during dorsiflexion — the EDL tendons lie just lateral to this, fanning out to the lateral four toes)",
-      "Anterior Border of the Fibula (palpate the fibula along the anterolateral leg — the EDL lies in the anterior compartment just medial to this border, between the tibialis anterior and peroneus longus)"
+      "Anterior Border of the Fibula (palpate the fibula along the anterolateral leg — the EDL lies in the anterior compartment just medial to this border, between the tibialis anterior and peroneus longus)",
+      "Lateral tibial condyle, upper two-thirds of the anterior fibula, interosseous membrane (origin).",
+      "Middle and distal phalanges of toes 2-5 (insertion).",
+      "Anchor: middle third of the lower leg, between tibia and fibula."
     ],
     "placement": [
       "Position the patient supine with the leg in neutral position and the foot relaxed.",
@@ -4346,13 +4669,17 @@
       "The injection site is at the junction of the proximal and middle thirds of the anterolateral leg, approximately 8-12 cm distal to the tibial tuberosity and lateral to the tibialis anterior muscle belly.",
       "Insert the needle perpendicular to the skin into the anterolateral muscle belly.",
       "Advance approximately 1.5-2.5 cm — the EDL lies deep to the tibialis anterior proximally but becomes more superficial in the mid-leg.",
-      "Aspirate before injecting. Distribute the dose across 2 sites along the muscle belly."
+      "Aspirate before injecting. Distribute the dose across 2 sites along the muscle belly.",
+      "Injection site: middle third of the lower leg, between tibia and fibula, into the muscle belly.",
+      "Sites: 1-2, usually 1."
     ],
     "setup": [
       "USG is recommended to differentiate the EDL from the tibialis anterior and to identify the deep peroneal nerve and anterior tibial vessels.",
       "Have the patient extend the toes against resistance to confirm the correct muscle before injection.",
       "The deep peroneal nerve and anterior tibial artery run on the interosseous membrane between the tibialis anterior and EDL — avoid this neurovascular bundle.",
-      "In the proximal leg, the EDL lies partly deep to the tibialis anterior — ultrasound helps ensure accurate targeting."
+      "In the proximal leg, the EDL lies partly deep to the tibialis anterior — ultrasound helps ensure accurate targeting.",
+      "Patient position: supine.",
+      "Note: if the injection is made too deep, the extensor hallucis longus can be reached instead."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -4394,7 +4721,9 @@
     "pearls": [
       "Target for toe extension (toe dorsiflexion) if spastic",
       "Anterior compartment muscle — deep peroneal nerve runs between it and tibialis anterior",
-      "Rarely injected in isolation — usually part of a broader pattern"
+      "Rarely injected in isolation — usually part of a broader pattern",
+      "Examined together with the extensor digitorum brevis — both extend the toes.",
+      "Treated in striatal toe or claw-toe deformity."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -4432,7 +4761,11 @@
     "landmarks": [
       "Sternal Head Origin (palpate the superior aspect of the manubrium sterni — the sternal head attaches as a rounded tendon just lateral to the suprasternal notch; ask the patient to turn their head to the opposite side to make it prominent)",
       "Clavicular Head Origin (palpate the medial third of the clavicle — the clavicular head arises as a broad muscular attachment just lateral to the sternal head; the two heads form a visible triangular gap superiorly)",
-      "Mastoid Process Insertion (palpate behind the ear — feel for the prominent bony bump at the base of the skull; the SCM inserts onto the lateral surface of the mastoid process and the superior nuchal line)"
+      "Mastoid Process Insertion (palpate behind the ear — feel for the prominent bony bump at the base of the skull; the SCM inserts onto the lateral surface of the mastoid process and the superior nuchal line)",
+      "Manubrium of the sternum (sternal head origin).",
+      "Medial third of the clavicle (clavicular head origin).",
+      "Mastoid process and superior nuchal line (insertion) — palpable behind the ear.",
+      "SCM forms the anterolateral neck border — clearly palpable with the head rotated to the contralateral side."
     ],
     "placement": [
       "Position the patient supine with the head turned slightly to the contralateral side to make the SCM prominent but not maximally stretched.",
@@ -4442,14 +4775,18 @@
       "Advance the needle only 0.5-1 cm into the muscle — the SCM is a relatively thin, superficial muscle and deep penetration risks entering the carotid sheath.",
       "For the clavicular head: inject 2-3 cm above the clavicular origin, again staying superficial within the muscle belly.",
       "Aspirate before every injection to confirm you are not intravascular — the internal jugular vein and carotid artery lie immediately deep to the SCM.",
-      "Distribute the total dose across 2-4 sites along the length of the muscle belly. Use the lowest effective dose to minimize dysphagia risk, particularly with bilateral injections."
+      "Distribute the total dose across 2-4 sites along the length of the muscle belly. Use the lowest effective dose to minimize dysphagia risk, particularly with bilateral injections.",
+      "Injection site: into the muscle belly at the mid-cervical level, into either the sternal or clavicular head as clinically indicated.",
+      "Sites: 1-3."
     ],
     "setup": [
       "Ultrasound (USG) guidance is strongly recommended for SCM injection to avoid the carotid sheath.",
       "Visualize the SCM as the superficial strap-like muscle overlying the carotid sheath and scalene muscles.",
       "Use a high-frequency linear probe placed transversely across the neck at the mid-cervical level.",
       "WARNING: Bilateral SCM injections carry a significant risk of dysphagia and neck weakness — use the minimum effective dose and consider staggering bilateral injections by 2 weeks.",
-      "When bilateral injection is necessary, preferentially dose the clavicular head over the sternal head — the sternal head is deeper and closer to pharyngeal muscles, carrying higher dysphagia risk."
+      "When bilateral injection is necessary, preferentially dose the clavicular head over the sternal head — the sternal head is deeper and closer to pharyngeal muscles, carrying higher dysphagia risk.",
+      "Patient position: supine with the head rotated to the opposite side to make SCM prominent.",
+      "Needle length: 20-40 mm / 27 gauge (use the shorter length to avoid excessive depth)."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -4491,7 +4828,10 @@
     "pearls": [
       "Most commonly injected neck muscle for torticollis and laterocollis",
       "Carotid artery and internal jugular vein are immediately deep — ALWAYS use US",
-      "The spinal accessory nerve runs through the muscle — EMG can help avoid it"
+      "The spinal accessory nerve runs through the muscle — EMG can help avoid it",
+      "SCM and the upper trapezius often lie very close together — causing identification challenges for residents. Palpate with the patient actively turning the head to confirm SCM.",
+      "Motor supply is accessory nerve (XI); sensory is cervical plexus C2-C3.",
+      "Dysphagia is the most feared complication of bilateral SCM injection — reduce dose bilaterally and avoid deep/medial injection near the pharynx."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -4737,7 +5077,8 @@
     "landmarks": [
       "Distal Radius (palpate the flat bony prominence on the radial side of the distal forearm just proximal to the wrist crease — pronator quadratus lies directly over the volar distal radius and ulna)",
       "Distal Ulna (palpate the ulnar styloid and move proximally ~4 cm — the muscle origin is the anterior distal ulnar shaft)",
-      "Flexor Tendons at the Wrist (palpate the FCR and palmaris longus tendons — pronator quadratus lies DEEP to all the flexor tendons on the volar distal forearm)"
+      "Flexor Tendons at the Wrist (palpate the FCR and palmaris longus tendons — pronator quadratus lies DEEP to all the flexor tendons on the volar distal forearm)",
+      "Distal anterior forearm, just proximal to the wrist crease."
     ],
     "placement": [
       "Position the patient supine or seated with the forearm supinated and resting on a support, wrist in neutral.",
@@ -4747,14 +5088,16 @@
       "DORSAL APPROACH (preferred): Insert the needle from the dorsal distal forearm, between the radius and ulna, advancing through the interosseous membrane into pronator quadratus on the volar side.",
       "Under ultrasound, track the needle tip through the interosseous membrane and stop as soon as it enters the thin hypoechoic pronator quadratus muscle belly just superficial to the pronator line of the radius.",
       "The muscle is thin (5-10 mm) — advance only the minimum distance needed to place the tip within it.",
-      "Aspirate before injecting. A single injection site is usually sufficient."
+      "Aspirate before injecting. A single injection site is usually sufficient.",
+      "Injection site: deep to FCR/FDS in the distal anterior forearm."
     ],
     "setup": [
       "USG guidance is MANDATORY — pronator quadratus is deep and surrounded by neurovascular structures (median nerve, anterior interosseous nerve, radial/ulnar arteries).",
       "A dorsal approach avoids the median nerve and the radial/ulnar arteries on the volar side.",
       "Use color Doppler to map the radial and ulnar arteries before needle insertion.",
       "The anterior interosseous nerve (branch of median nerve) runs on the volar surface of the interosseous membrane deep to FDP and FPL — it innervates pronator quadratus. Stay within the muscle belly, not the plane between muscles.",
-      "Consider EMG guidance as an adjunct to confirm placement in this small deep muscle."
+      "Consider EMG guidance as an adjunct to confirm placement in this small deep muscle.",
+      "US guidance is strongly recommended — pronator quadratus lies deep to the superficial flexors and the median nerve/radial artery are in the vicinity."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -6020,7 +6363,9 @@
     "pattern": "Hip adduction (deep, short adductor)",
     "landmarks": [
       "Pubic Tubercle (palpate the bony prominence on the superior pubic ramus medially — the adductor brevis originates from the body and inferior ramus of the pubis, just lateral to gracilis)",
-      "Adductor Longus Tendon (palpate the prominent cord in the proximal medial thigh with the hip slightly abducted — the adductor brevis lies immediately deep to adductor longus)"
+      "Adductor Longus Tendon (palpate the prominent cord in the proximal medial thigh with the hip slightly abducted — the adductor brevis lies immediately deep to adductor longus)",
+      "Pubic tubercle — palpate the adductor longus tendon at its origin (brevis lies deep and behind it).",
+      "Anchor: 4 fingers (approximately 7-8 cm) distal from the pubic tubercle, 3-5 cm deep through the overlying adductor longus."
     ],
     "placement": [
       "Position the patient supine with the hip abducted 30-45 degrees, knee flexed, and the leg externally rotated (frog-leg position).",
@@ -6030,13 +6375,18 @@
       "Under ultrasound, advance the needle through the adductor longus until the tip crosses the fascial plane into the deeper adductor brevis muscle belly.",
       "Confirm depth — adductor brevis lies between adductor longus (superficial) and adductor magnus/obturator externus (deep).",
       "Aspirate before injecting. A single injection into the mid-belly is usually sufficient.",
-      "Avoid advancing too deeply past adductor brevis into the obturator externus or adductor magnus unless those are also targets."
+      "Avoid advancing too deeply past adductor brevis into the obturator externus or adductor magnus unless those are also targets.",
+      "Injection site: palpate the tendon at the pubic tubercle origin; inject 4 fingers (7-8 cm) distal and 3-5 cm deep through the skin.",
+      "Sites: 1-2, usually one site.",
+      "Injection depth: 3-5 cm depending on muscle thickness."
     ],
     "setup": [
       "USG guidance is strongly recommended — adductor brevis is deep to adductor longus and cannot be reliably injected by landmark alone.",
       "The obturator nerve (anterior branch) runs on the superficial surface of adductor brevis between it and adductor longus — identify it and avoid direct injection into the nerve.",
       "The posterior branch of the obturator nerve runs between adductor brevis and adductor magnus — it may be visible deep to the target on US.",
-      "The profunda femoris artery and its branches run in this plane — use color Doppler to identify vessels before needle insertion."
+      "The profunda femoris artery and its branches run in this plane — use color Doppler to identify vessels before needle insertion.",
+      "Patient position: supine, hip slightly flexed and abducted, knee slightly flexed.",
+      "US guidance recommended — adductor brevis lies between longus (anterior) and magnus (posterior); hard to target blindly."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -6075,7 +6425,10 @@
     "pearls": [
       "The 'hidden' adductor — lies deep to adductor longus and is often missed when only the superficial adductor longus is injected",
       "If scissoring persists after treating adductor longus alone, add adductor brevis (and magnus) to the injection set",
-      "Anterior branch of obturator nerve sits right on top of this muscle — always identify it on US before injecting"
+      "Anterior branch of obturator nerve sits right on top of this muscle — always identify it on US before injecting",
+      "Going too far lateral hits adductor longus (not the target).",
+      "Going too far medial or too deep hits adductor magnus.",
+      "Going too far dorsomedial (posteromedial) penetrates gracilis instead."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -6112,7 +6465,10 @@
     "pattern": "Hip adduction + knee flexion (crosses both joints)",
     "landmarks": [
       "Pubic Symphysis (palpate the midline bony prominence — gracilis originates from the inferior pubic ramus near the symphysis, the most medial of the adductor origins)",
-      "Pes Anserinus (palpate the medial tibial flare below the knee — gracilis inserts here along with semitendinosus and sartorius; it is the middle tendon of the three)"
+      "Pes Anserinus (palpate the medial tibial flare below the knee — gracilis inserts here along with semitendinosus and sartorius; it is the middle tendon of the three)",
+      "Pubic tubercle (origin).",
+      "Medial condyle of the tibia (insertion).",
+      "Anchor: middle of a line between the pubic tubercle and the medial tibial condyle."
     ],
     "placement": [
       "Position the patient supine with the hip abducted 30-45 degrees and knee slightly flexed.",
@@ -6122,12 +6478,15 @@
       "Insert the needle perpendicular to the skin on the medial thigh into the superficial muscle belly.",
       "Advance only 1-1.5 cm — gracilis is thin and superficial.",
       "Aspirate before injecting. A single injection into the proximal belly is usually sufficient.",
-      "Stay superficial — the adductor longus and brevis lie deep to gracilis."
+      "Stay superficial — the adductor longus and brevis lie deep to gracilis.",
+      "Injection site: middle of the line between the pubic tubercle and the medial tibial condyle, into the long thin muscle belly.",
+      "Sites: 1-3."
     ],
     "setup": [
       "Gracilis is superficial and thin — landmark-guided injection is often adequate, but USG can confirm you are in gracilis and not the deeper adductor longus.",
       "The muscle is a thin strap — use low volume to avoid diffusion into adjacent adductors.",
-      "The saphenous nerve and great saphenous vein run in the medial thigh — they are anterior to gracilis but should be identified if using US."
+      "The saphenous nerve and great saphenous vein run in the medial thigh — they are anterior to gracilis but should be identified if using US.",
+      "Patient position: supine with the leg slightly abducted."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz)",
@@ -6165,7 +6524,10 @@
     "pearls": [
       "The only adductor that crosses both hip and knee — contributes to both scissoring AND knee flexion",
       "Standard target in adductor injection sets alongside longus and magnus — don't forget it",
-      "Very thin and superficial — easy to over-penetrate into deeper adductors; use short needle and minimal depth"
+      "Very thin and superficial — easy to over-penetrate into deeper adductors; use short needle and minimal depth",
+      "Flexes both at the hip and knee; primarily active in initial hip flexion.",
+      "Rarely treated individually — must be considered when treating adductor-group spasm since gracilis contributes to the adduction pattern.",
+      "Going too deep risks hitting adductor magnus."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -6202,7 +6564,9 @@
     "pattern": "MCP flexion + IP extension (intrinsic-plus posture)",
     "landmarks": [
       "Metacarpal Heads (palpate the knuckles — the lumbricals lie on the radial side of each FDP tendon in the palm, just proximal to the MCP joints)",
-      "Palmar Crease (the distal palmar crease runs across the MCP joints — the lumbricals sit just proximal to this crease in the deep palm)"
+      "Palmar Crease (the distal palmar crease runs across the MCP joints — the lumbricals sit just proximal to this crease in the deep palm)",
+      "Metacarpal bones — use them as the palpation reference.",
+      "Radial aspect of each respective tendon at the upper half of the metacarpal."
     ],
     "placement": [
       "Position the patient with the hand supinated (palm up), fingers relaxed and slightly extended.",
@@ -6212,13 +6576,15 @@
       "Advance only 5-10 mm — the lumbricals are very small and superficial in the palmar space.",
       "USG or EMG guidance is strongly recommended given the small size and proximity to digital neurovascular bundles.",
       "Aspirate before injecting. Use very small volumes (0.1-0.2 mL per lumbrical) to avoid diffusion.",
-      "Inject only the clinically affected lumbricals — do not blanket all four unless all are spastic."
+      "Inject only the clinically affected lumbricals — do not blanket all four unless all are spastic.",
+      "Injection site: radial to each respective flexor tendon, approximately in the upper half of the metacarpal."
     ],
     "setup": [
       "USG with a high-frequency linear or hockey-stick probe is recommended — the lumbricals are very small and surrounded by tendons and neurovascular structures.",
       "EMG guidance is an excellent adjunct — confirm the muscle is electrically active during MCP flexion with IP extension.",
       "The proper digital nerves and arteries run immediately adjacent to each lumbrical — identify them on US or use extreme caution with landmark technique.",
-      "Very low doses and volumes are essential — diffusion to adjacent FDP/FDS tendons or interossei can cause unintended weakness."
+      "Very low doses and volumes are essential — diffusion to adjacent FDP/FDS tendons or interossei can cause unintended weakness.",
+      "Patient position: elbow in supination with the hand resting palm-up."
     ],
     "ultrasound": {
       "probe": "High-frequency linear (10-15 MHz); hockey-stick probe preferred for the tight palmar space",
@@ -6259,7 +6625,8 @@
       "The 'hidden' cause of intrinsic-plus hand — if MCP flexion persists despite treating FDS/FDP, the lumbricals may be the culprit",
       "1st and 2nd lumbricals (median nerve) are more commonly spastic than 3rd and 4th (ulnar nerve)",
       "Tiny muscles requiring tiny doses — 5-10 U Botox per lumbrical is usually sufficient; overdosing weakens grip",
-      "EMG confirmation is especially valuable here since the muscles are so small and surrounded by tendons"
+      "EMG confirmation is especially valuable here since the muscles are so small and surrounded by tendons",
+      "Many physiatrists suspect only a minor effect and refrain from injecting the lumbricals — consider with caution and reserve for clear intrinsic-plus deformity."
     ],
     "supplies": [
       "Ultrasound machine with hockey-stick or high-frequency linear probe",
