@@ -74,7 +74,6 @@
     "probePlacementHint": "Patient supine, arm abducted 30°. Place probe transversely on anterior chest, lateral to sternum at 3rd-4th rib. Photo from patient's right side showing probe on chest wall.",
     "pearls": [
       "Use 25-50U Botox per injection site, distributed across 2-3 sites per head, for a total session dose as listed in the dosage field.",
-      "Avoid injecting too medially near the sternum to prevent spread to intercostals",
       "A spastic pec major is the #1 cause of shoulder internal rotation/adduction posture",
       "The sternocostal fibers form the anterior border of the axilla; the clavicular fibers define the border of the infraclavicular fossa.",
       "Can function as an accessory muscle of inspiration; the sternocostal fibers are important when walking on crutches."
@@ -106,7 +105,10 @@
       "posterior": "pec-major_posterior.png",
       "lateral": "pec-major_lateral.png"
     },
-    "anatomyCaption": "Anterior chest · pectoralis major highlighted"
+    "anatomyCaption": "Anterior chest · pectoralis major highlighted",
+    "dangerZones": [
+      "Avoid injecting too medially near the sternum to prevent spread to intercostals"
+    ]
   },
   {
     "id": "lat-dorsi",
@@ -574,7 +576,6 @@
     "hasReferenceImage": false,
     "probePlacementHint": "Patient supine, knees bent. Place linear probe transversely on the anterior abdomen, just lateral to midline at the umbilical level. Photo from the patient's side showing probe on the abdomen.",
     "pearls": [
-      "Superficial muscle — easily identified on US, but the danger is going too deep into the peritoneum",
       "Key target for camptocormia (forward-flexed trunk posture) in stroke, TBI, and Parkinson disease",
       "Start with conservative doses (50 U Botox total) — excessive weakening can impair cough and respiratory function",
       "Distribute dose across 2-4 sites; inject bilaterally if the flexion pattern is symmetric"
@@ -606,7 +607,10 @@
       "posterior": "rectus-abdominis_posterior.png",
       "lateral": "rectus-abdominis_lateral.png"
     },
-    "anatomyCaption": "Anterior abdomen · rectus abdominis highlighted"
+    "anatomyCaption": "Anterior abdomen · rectus abdominis highlighted",
+    "dangerZones": [
+      "Superficial muscle — easily identified on US, but the danger is going too deep into the peritoneum"
+    ]
   },
   {
     "id": "obliques",
@@ -689,8 +693,7 @@
       "The internal oblique is usually the thickest layer and the primary trunk rotator — target it for rotational spasticity",
       "Intercostal nerves run in the TAP plane (between internal oblique and transversus) — stay in the muscle belly, not the fascial interface",
       "Dose is per side — inject bilaterally only if the pattern is bilateral, and monitor for excessive abdominal wall weakness",
-      "External oblique rotates the torso to the CONTRALATERAL side; internal oblique rotates to the IPSILATERAL side — choose the target based on the direction of the dystonic rotation.",
-      "Transperitoneal puncture (into bowel or other viscera) is the dominant safety concern — never inject without guidance."
+      "External oblique rotates the torso to the CONTRALATERAL side; internal oblique rotates to the IPSILATERAL side — choose the target based on the direction of the dystonic rotation."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -721,7 +724,10 @@
       "posterior": "obliques_posterior.png",
       "lateral": "obliques_lateral.png"
     },
-    "anatomyCaption": "Lateral abdomen · internal + external obliques highlighted"
+    "anatomyCaption": "Lateral abdomen · internal + external obliques highlighted",
+    "dangerZones": [
+      "Transperitoneal puncture (into bowel or other viscera) is the dominant safety concern — never inject without guidance."
+    ]
   },
   {
     "id": "paraspinals",
@@ -896,7 +902,6 @@
     "pearls": [
       "Large muscle requiring higher total doses spread across multiple injection sites",
       "Spastic glute max impairs sitting posture and hip flexion for transfers",
-      "The sciatic nerve runs deep — stay in the superficial/mid portion of the muscle belly",
       "Depth varies significantly with subcutaneous-fat thickness — consider US or longer needle in patients with a thick gluteal region."
     ],
     "supplies": [
@@ -928,7 +933,10 @@
       "lateral": "gluteus-maximus_lateral.png"
     },
     "anatomyCaption": "Posterior hip · gluteus maximus highlighted",
-    "defaultAnatomyView": "posterior"
+    "defaultAnatomyView": "posterior",
+    "dangerZones": [
+      "The sciatic nerve runs deep — stay in the superficial/mid portion of the muscle belly"
+    ]
   },
   {
     "id": "piriformis",
@@ -1001,7 +1009,6 @@
     "probePlacementHint": "Patient prone, pillow under pelvis. Place curvilinear probe transversely along PSIS-to-greater-trochanter line, at midpoint. Photo showing probe between PSIS and GT.",
     "pearls": [
       "Notoriously difficult to isolate on US — confirm with EMG if available",
-      "Sciatic nerve runs immediately inferior to (or through) this muscle — USG is essential, and EMG can be a useful adjunct to confirm you are in piriformis rather than adjacent muscles.",
       "Often co-injected with other hip external rotators for combined pattern",
       "Sciatic-nerve proximity is the dominant safety concern — never inject without image guidance."
     ],
@@ -1030,7 +1037,10 @@
       "lateral": "piriformis_lateral.png"
     },
     "anatomyCaption": "Posterior hip · piriformis highlighted",
-    "defaultAnatomyView": "posterior"
+    "defaultAnatomyView": "posterior",
+    "dangerZones": [
+      "Sciatic nerve runs immediately inferior to (or through) this muscle — USG is essential, and EMG can be a useful adjunct to confirm you are in piriformis rather than adjacent muscles."
+    ]
   },
   {
     "id": "tfl",
@@ -1096,9 +1106,7 @@
     "pearls": [
       "Often a key contributor to hip flexion and abduction spasticity patterns",
       "Small muscle — use conservative doses (25-50U Botox)",
-      "Spastic TFL presents with combined hip flexion + internal rotation and resists passive hip extension — assess in supine with the Thomas test",
-      "Going too far medial risks injecting sartorius.",
-      "Going too far lateral or posterior risks injecting gluteus medius."
+      "Spastic TFL presents with combined hip flexion + internal rotation and resists passive hip extension — assess in supine with the Thomas test"
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -1131,7 +1139,11 @@
       "posterior": "tfl_posterior.png",
       "lateral": "tfl_lateral.png"
     },
-    "anatomyCaption": "Lateral hip · tensor fasciae latae highlighted"
+    "anatomyCaption": "Lateral hip · tensor fasciae latae highlighted",
+    "dangerZones": [
+      "Going too far medial risks injecting sartorius.",
+      "Going too far lateral or posterior risks injecting gluteus medius."
+    ]
   },
   {
     "id": "rectus-femoris",
@@ -1305,8 +1317,7 @@
       "VMO dysfunction contributes to patellar tracking issues in spastic patients",
       "Inject at the distal bulge (VMO) — most identifiable part",
       "Rarely injected in isolation — usually part of a multi-muscle quad program",
-      "Works with the other vasti to stabilize the knee — they must be considered together.",
-      "Going too medial risks injection into the femoral neurovascular bundle."
+      "Works with the other vasti to stabilize the knee — they must be considered together."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -1340,7 +1351,10 @@
       "posterior": "vastus-medialis_posterior.png",
       "lateral": "vastus-medialis_lateral.png"
     },
-    "anatomyCaption": "Anterior thigh · vastus medialis highlighted"
+    "anatomyCaption": "Anterior thigh · vastus medialis highlighted",
+    "dangerZones": [
+      "Going too medial risks injection into the femoral neurovascular bundle."
+    ]
   },
   {
     "id": "vastus-lateralis",
@@ -1411,9 +1425,7 @@
     "pearls": [
       "Often contributes to knee extension spasticity more than rectus femoris",
       "Large muscle belly — may need multiple injection points for adequate distribution",
-      "Safe injection zone is the lateral thigh — away from major neurovascular structures",
-      "Largest component of the quadriceps — the easiest vastus to inject.",
-      "Going too medial or too distal risks the needle rotating into rectus femoris or infiltrating into the femur."
+      "Largest component of the quadriceps — the easiest vastus to inject."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -1441,7 +1453,11 @@
       "posterior": "vastus-lateralis_posterior.png",
       "lateral": "vastus-lateralis_lateral.png"
     },
-    "anatomyCaption": "Anterior thigh · vastus lateralis highlighted"
+    "anatomyCaption": "Anterior thigh · vastus lateralis highlighted",
+    "dangerZones": [
+      "Safe injection zone is the lateral thigh — away from major neurovascular structures",
+      "Going too medial or too distal risks the needle rotating into rectus femoris or infiltrating into the femur."
+    ]
   },
   {
     "id": "vastus-intermedius",
@@ -1616,7 +1632,6 @@
     "pearls": [
       "Broader, flatter muscle — differentiate from semitendinosus by its deeper position and membranous aponeurosis on ultrasound.",
       "Key hamstring for medial knee flexion contracture patterns",
-      "Sciatic nerve runs in the posterior thigh — always identify it before injecting",
       "Can be absent or fused with semitendinosus — if expected anatomy is not seen, look for the fused variant.",
       "The three hamstring muscles are difficult to differentiate from one another; treat them with awareness of their combined action."
     ],
@@ -1646,7 +1661,10 @@
       "lateral": "semimembranosus_lateral.png"
     },
     "anatomyCaption": "Posterior thigh · semimembranosus highlighted",
-    "defaultAnatomyView": "posterior"
+    "defaultAnatomyView": "posterior",
+    "dangerZones": [
+      "Sciatic nerve runs in the posterior thigh — always identify it before injecting"
+    ]
   },
   {
     "id": "semitendinosus",
@@ -1820,8 +1838,6 @@
       "Most commonly injected muscle for equinovarus foot — start here",
       "The medial head is larger and usually more spastic than the lateral head",
       "Inject proximal — the muscle belly is short and becomes tendinous quickly",
-      "Going too deep risks infiltrating the soleus (deep to gastroc).",
-      "Going too deep into the medial head risks hitting flexor digitorum longus.",
       "Gastroc + soleus + plantaris form the triceps surae — full calf plantarflexion is only treatable if all three are addressed (or the soleus if gastroc alone is insufficient).",
       "The medial head is typically the dominant contributor to spastic equinus."
     ],
@@ -1856,7 +1872,11 @@
       "lateral": "gastrocnemius-medial_lateral.png"
     },
     "anatomyCaption": "Posterior leg · gastrocnemius highlighted",
-    "defaultAnatomyView": "posterior"
+    "defaultAnatomyView": "posterior",
+    "dangerZones": [
+      "Going too deep risks infiltrating the soleus (deep to gastroc).",
+      "Going too deep into the medial head risks hitting flexor digitorum longus."
+    ]
   },
   {
     "id": "gastrocnemius-lateral",
@@ -1923,9 +1943,7 @@
     "probePlacementHint": "Patient prone, feet off bed edge. Place probe transversely on proximal lateral calf, 2-3 cm below popliteal crease. Photo from behind showing probe on lateral proximal calf.",
     "pearls": [
       "Smaller than medial head — use lower doses",
-      "Common peroneal nerve runs nearby at the fibular neck — stay distal and medial",
       "Often co-injected with medial gastroc and soleus for equinus pattern",
-      "Going too deep risks the soleus.",
       "The lateral head is usually smaller and contributes less to equinus than the medial head."
     ],
     "supplies": [
@@ -1964,7 +1982,11 @@
       "lateral": "gastrocnemius-lateral_lateral.png"
     },
     "anatomyCaption": "Posterior leg · gastrocnemius highlighted",
-    "defaultAnatomyView": "posterior"
+    "defaultAnatomyView": "posterior",
+    "dangerZones": [
+      "Common peroneal nerve runs nearby at the fibular neck — stay distal and medial",
+      "Going too deep risks the soleus."
+    ]
   },
   {
     "id": "soleus-medial",
@@ -2340,8 +2362,7 @@
       "Plantar injection — painful for patient, consider local anesthetic or ice first",
       "Very superficial on the plantar surface — use short needle and minimal depth",
       "Often co-injected with FDL and FHL for comprehensive toe flexion pattern",
-      "Supplements flexor digitorum longus at the PIP joints of toes 2-5.",
-      "Going too far laterally risks hitting abductor digiti minimi or flexor digitorum longus's tendon."
+      "Supplements flexor digitorum longus at the PIP joints of toes 2-5."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -2376,7 +2397,10 @@
       "posterior": "fdb_posterior.png",
       "lateral": "fdb_lateral.png"
     },
-    "anatomyCaption": "Plantar foot · flexor digitorum brevis highlighted"
+    "anatomyCaption": "Plantar foot · flexor digitorum brevis highlighted",
+    "dangerZones": [
+      "Going too far laterally risks hitting abductor digiti minimi or flexor digitorum longus's tendon."
+    ]
   },
   {
     "id": "tibialis-anterior",
@@ -2543,7 +2567,6 @@
     "pearls": [
       "The #1 cause of varus foot in spasticity — always assess this muscle",
       "Deep compartment — longer needle needed. Use US to navigate past soleus",
-      "Posterior tibial artery runs alongside — identify it with color Doppler before injecting",
       "Strongest supinator (inverter) of the foot — a key target for equinovarus deformity.",
       "Must be addressed alongside gastroc/soleus for comprehensive equinovarus treatment."
     ],
@@ -2577,7 +2600,10 @@
       "lateral": "tibialis-posterior_lateral.png"
     },
     "anatomyCaption": "Deep posterior leg · tibialis posterior",
-    "defaultAnatomyView": "posterior"
+    "defaultAnatomyView": "posterior",
+    "dangerZones": [
+      "Posterior tibial artery runs alongside — identify it with color Doppler before injecting"
+    ]
   },
   {
     "id": "fhl",
@@ -3260,9 +3286,7 @@
     "probePlacementHint": "Patient seated, forearm supinated on table. Place probe transversely on central volar forearm at proximal-to-mid third. Photo from above showing probe on volar mid-forearm.",
     "pearls": [
       "Main contributor to wrist flexion and radial deviation",
-      "Radial artery runs alongside — identify on US with color Doppler",
       "One of the most commonly injected forearm muscles for wrist flexion pattern",
-      "Median nerve runs deep between FCR and FDS — stay in the muscle belly; do not go deep.",
       "Should always be viewed in synergy with the other wrist flexors (FCU, palmaris longus) and treated accordingly."
     ],
     "supplies": [
@@ -3296,7 +3320,11 @@
       "posterior": "fcr_posterior.png",
       "lateral": "fcr_lateral.png"
     },
-    "anatomyCaption": "Anterior forearm · FCR highlighted"
+    "anatomyCaption": "Anterior forearm · FCR highlighted",
+    "dangerZones": [
+      "Radial artery runs alongside — identify on US with color Doppler",
+      "Median nerve runs deep between FCR and FDS — stay in the muscle belly; do not go deep."
+    ]
   },
   {
     "id": "fcu",
@@ -3814,8 +3842,6 @@
     "pearls": [
       "Key target for thumb-in-palm deformity (thumb adduction component)",
       "Very small — use hockey-stick probe and minimal doses (10-20U Botox)",
-      "Dorsal approach is safer — avoids thenar neurovascular structures",
-      "Two-headed muscle (transverse and oblique heads) — injection errors are common if you inject too superficially (hits dorsal interosseous instead).",
       "Key for thumb-in-palm deformity along with FPL and FPB."
     ],
     "supplies": [
@@ -3848,7 +3874,11 @@
       "posterior": "adductor-pollicis_posterior.png",
       "lateral": "adductor-pollicis_lateral.png"
     },
-    "anatomyCaption": "Palmar hand · adductor pollicis highlighted"
+    "anatomyCaption": "Palmar hand · adductor pollicis highlighted",
+    "dangerZones": [
+      "Dorsal approach is safer — avoids thenar neurovascular structures",
+      "Two-headed muscle (transverse and oblique heads) — injection errors are common if you inject too superficially (hits dorsal interosseous instead)."
+    ]
   },
   {
     "id": "subscapularis",
@@ -4021,10 +4051,7 @@
     "pearls": [
       "⚠️ DO NOT INJECT in typical UMN spasticity. The infraspinatus is a shoulder EXTERNAL rotator. In hemiplegic shoulder posturing, the deformity is INTERNAL rotation — injecting infraspinatus would weaken the external rotators and WORSEN the pattern.",
       "Listed here for anatomic reference only. In the rare case of post-stroke external-rotation dystonia or focal dystonia, expert consultation is required before injecting.",
-      "Suprascapular nerve runs through the spinoglenoid notch nearby — additional reason to avoid this muscle without strong indication.",
-      "Injecting too superficially risks hitting the overlying trapezius.",
-      "Injecting too laterally risks hitting teres minor.",
-      "Orientation on a curved scapular surface — pneumothorax risk if the needle goes too deep and medial."
+      "Suprascapular nerve runs through the spinoglenoid notch nearby — additional reason to avoid this muscle without strong indication."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -4050,7 +4077,12 @@
       "lateral": "infraspinatus_lateral.png"
     },
     "anatomyCaption": "Posterior scapula · infraspinatus highlighted",
-    "defaultAnatomyView": "posterior"
+    "defaultAnatomyView": "posterior",
+    "dangerZones": [
+      "Injecting too superficially risks hitting the overlying trapezius.",
+      "Injecting too laterally risks hitting teres minor.",
+      "Orientation on a curved scapular surface — pneumothorax risk if the needle goes too deep and medial."
+    ]
   },
   {
     "id": "teres-major",
@@ -4226,8 +4258,7 @@
       "Most superficial adductor — the 'go-to' for adductor spasticity injection",
       "Palpable as the prominent tendon in the proximal medial thigh with hip abduction",
       "Femoral vessels lie LATERAL to the adductor longus in the femoral triangle — identify them with color Doppler and keep the needle medial to these structures.",
-      "The adductors cannot be differentiated from one another with certainty by palpation — US guidance is recommended if targeting specifically.",
-      "Going too deep risks hitting adductor magnus; too far lateral or posterior risks gracilis."
+      "The adductors cannot be differentiated from one another with certainty by palpation — US guidance is recommended if targeting specifically."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -4256,7 +4287,10 @@
       "posterior": "adductor-longus_posterior.png",
       "lateral": "adductor-longus_lateral.png"
     },
-    "anatomyCaption": "Medial thigh · adductor longus highlighted"
+    "anatomyCaption": "Medial thigh · adductor longus highlighted",
+    "dangerZones": [
+      "Going too deep risks hitting adductor magnus; too far lateral or posterior risks gracilis."
+    ]
   },
   {
     "id": "adductor-magnus",
@@ -4329,7 +4363,6 @@
     "pearls": [
       "Largest adductor — requires higher doses and multiple injection sites",
       "Deep position makes US guidance essential",
-      "Sciatic nerve runs posterior — inject from medial approach to stay safe",
       "Adducts the free-swinging thigh; when standing, its most important action is stabilizing the femur together with TFL.",
       "A very strong muscle — dose tends to be at the higher end of the adductor-group range."
     ],
@@ -4359,7 +4392,10 @@
       "posterior": "adductor-magnus_posterior.png",
       "lateral": "adductor-magnus_lateral.png"
     },
-    "anatomyCaption": "Medial thigh · adductor magnus highlighted"
+    "anatomyCaption": "Medial thigh · adductor magnus highlighted",
+    "dangerZones": [
+      "Sciatic nerve runs posterior — inject from medial approach to stay safe"
+    ]
   },
   {
     "id": "biceps-femoris",
@@ -4432,7 +4468,6 @@
       "Lateral hamstring — key target for lateral knee flexion patterns",
       "Common peroneal nerve branches from sciatic near the biceps femoris tendon — identify on US",
       "Long and short heads may need separate injection points",
-      "Going too medial (from either head) risks penetrating semitendinosus.",
       "Biceps femoris is usually treated together with the other knee flexors for hamstring spasticity.",
       "Can rotate the flexed knee laterally — its action is distinct from semitendinosus and semimembranosus."
     ],
@@ -4462,7 +4497,10 @@
       "lateral": "biceps-femoris_lateral.png"
     },
     "anatomyCaption": "Posterior thigh · biceps femoris highlighted",
-    "defaultAnatomyView": "posterior"
+    "defaultAnatomyView": "posterior",
+    "dangerZones": [
+      "Going too medial (from either head) risks penetrating semitendinosus."
+    ]
   },
   {
     "id": "iliopsoas",
@@ -4628,7 +4666,6 @@
     "pearls": [
       "⚠️ This muscle is an EVERTOR — injecting it in equinovarus (the most common spastic foot pattern) will WORSEN the varus deformity. Only inject peroneus longus when clinical exam confirms spastic EVERSION contributing to the deformity (equinovalgus or equinus with eversion component).",
       "Key target for foot eversion if spastic (less common than invertors)",
-      "Common peroneal nerve wraps around the fibular neck just proximal — stay distal",
       "Superficial position makes it easy to inject once correctly identified",
       "Also known as fibularis longus.",
       "Has a very long tendon that runs under the foot; the muscle belly is proximal — do not inject the distal tendon."
@@ -4659,7 +4696,10 @@
       "lateral": "peroneus-longus_lateral.png"
     },
     "anatomyCaption": "Lateral leg · fibularis/peroneus longus",
-    "defaultAnatomyView": "lateral"
+    "defaultAnatomyView": "lateral",
+    "dangerZones": [
+      "Common peroneal nerve wraps around the fibular neck just proximal — stay distal"
+    ]
   },
   {
     "id": "edl",
@@ -4731,7 +4771,6 @@
     "probePlacementHint": "Patient supine, leg neutral. Place probe transversely on anterolateral proximal leg at proximal-middle third junction. Photo from anterolateral view showing probe on outer upper shin.",
     "pearls": [
       "Target for toe extension (toe dorsiflexion) if spastic",
-      "Anterior compartment muscle — deep peroneal nerve runs between it and tibialis anterior",
       "Rarely injected in isolation — usually part of a broader pattern",
       "Examined together with the extensor digitorum brevis — both extend the toes.",
       "Treated in striatal toe or claw-toe deformity."
@@ -4762,7 +4801,10 @@
       "posterior": "edl_posterior.png",
       "lateral": "edl_lateral.png"
     },
-    "anatomyCaption": "Anterior leg · EDL highlighted"
+    "anatomyCaption": "Anterior leg · EDL highlighted",
+    "dangerZones": [
+      "Anterior compartment muscle — deep peroneal nerve runs between it and tibialis anterior"
+    ]
   },
   {
     "id": "scm",
@@ -6444,10 +6486,7 @@
     "pearls": [
       "The 'hidden' adductor — lies deep to adductor longus and is often missed when only the superficial adductor longus is injected",
       "If scissoring persists after treating adductor longus alone, add adductor brevis (and magnus) to the injection set",
-      "Anterior branch of obturator nerve sits right on top of this muscle — always identify it on US before injecting",
-      "Going too far lateral hits adductor longus (not the target).",
-      "Going too far medial or too deep hits adductor magnus.",
-      "Going too far dorsomedial (posteromedial) penetrates gracilis instead."
+      "Anterior branch of obturator nerve sits right on top of this muscle — always identify it on US before injecting"
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -6475,7 +6514,12 @@
       "posterior": "adductor-brevis_posterior.png",
       "lateral": "adductor-brevis_lateral.png"
     },
-    "anatomyCaption": "Medial thigh · adductor brevis highlighted (deep)"
+    "anatomyCaption": "Medial thigh · adductor brevis highlighted (deep)",
+    "dangerZones": [
+      "Going too far lateral hits adductor longus (not the target).",
+      "Going too far medial or too deep hits adductor magnus.",
+      "Going too far dorsomedial (posteromedial) penetrates gracilis instead."
+    ]
   },
   {
     "id": "gracilis",
@@ -6545,8 +6589,7 @@
       "Standard target in adductor injection sets alongside longus and magnus — don't forget it",
       "Very thin and superficial — easy to over-penetrate into deeper adductors; use short needle and minimal depth",
       "Flexes both at the hip and knee; primarily active in initial hip flexion.",
-      "Rarely treated individually — must be considered when treating adductor-group spasm since gracilis contributes to the adduction pattern.",
-      "Going too deep risks hitting adductor magnus."
+      "Rarely treated individually — must be considered when treating adductor-group spasm since gracilis contributes to the adduction pattern."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -6574,7 +6617,10 @@
       "posterior": "gracilis_posterior.png",
       "lateral": "gracilis_lateral.png"
     },
-    "anatomyCaption": "Medial thigh · gracilis highlighted"
+    "anatomyCaption": "Medial thigh · gracilis highlighted",
+    "dangerZones": [
+      "Going too deep risks hitting adductor magnus."
+    ]
   },
   {
     "id": "hand-lumbricals",

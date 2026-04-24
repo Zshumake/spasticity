@@ -154,6 +154,14 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
       const SizedBox(height: 16),
       _section('SETUP & TIPS', Icons.lightbulb_outline, AppTheme.success,
         LandmarkList(landmarks: muscle.setup)),
+      if (muscle.dangerZones.isNotEmpty) ...[
+        const SizedBox(height: 16),
+        SafetyCallout(
+          warnings: muscle.dangerZones,
+          title: 'Adjacent structures — what to avoid',
+          icon: Icons.gpp_maybe_outlined,
+        ),
+      ],
       if (muscle.pearls.isNotEmpty) ...[
         const SizedBox(height: 16),
         _buildPearlsCard(isDark),
@@ -267,9 +275,20 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         ...muscle.placement.asMap().entries.map((e) => _procStep(e.key + 1, e.value)),
         const SizedBox(height: 12),
 
-        // Safety
+        // Adjacent-structure hazards (muscle-level dangerZones)
+        if (muscle.dangerZones.isNotEmpty) ...[
+          _procHeader('ADJACENT STRUCTURES'),
+          SafetyCallout(
+            warnings: muscle.dangerZones,
+            title: 'What to avoid',
+            icon: Icons.gpp_maybe_outlined,
+          ),
+          const SizedBox(height: 12),
+        ],
+
+        // Ultrasound-specific safety
         if (us != null && us.safetyNotes.isNotEmpty) ...[
-          _procHeader('SAFETY'),
+          _procHeader('US SAFETY'),
           SafetyCallout(warnings: us.safetyNotes),
           const SizedBox(height: 12),
         ],
