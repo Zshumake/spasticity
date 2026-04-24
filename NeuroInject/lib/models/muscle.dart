@@ -26,6 +26,12 @@ class Muscle {
   /// to 'anterior'.
   final String? defaultAnatomyView;
   final List<String> pearls;
+  /// Adjacent-structure hazards — "if you go wrong direction, you hit Y"
+  /// items sourced from the book's "Topographical indication" section.
+  /// Rendered as an amber safety callout in the UI, separate from the
+  /// general `pearls` list so safety-critical information is visually
+  /// demoted from clinical-teaching commentary.
+  final List<String> dangerZones;
   final List<String> supplies;
   final String? videoUrl;
   final List<String> spasticityPatterns;
@@ -51,6 +57,7 @@ class Muscle {
     this.anatomyCaption,
     this.defaultAnatomyView,
     this.pearls = const [],
+    this.dangerZones = const [],
     this.supplies = const [],
     this.videoUrl,
     this.spasticityPatterns = const [],
@@ -87,6 +94,9 @@ class Muscle {
       defaultAnatomyView: json['defaultAnatomyView'] as String?,
       pearls: json['pearls'] != null
           ? (json['pearls'] as List).cast<String>()
+          : const [],
+      dangerZones: json['dangerZones'] != null
+          ? (json['dangerZones'] as List).cast<String>()
           : const [],
       supplies: json['supplies'] != null
           ? (json['supplies'] as List).cast<String>()
