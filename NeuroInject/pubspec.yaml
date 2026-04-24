@@ -69,6 +69,7 @@ flutter:
   assets:
     - assets/data/muscles.json
     - assets/data/patterns.json
+    - assets/data/ue_pattern_classification.json
     - assets/images/us_reference/
     - assets/images/probe_placement/
     - assets/images/anatomy/
