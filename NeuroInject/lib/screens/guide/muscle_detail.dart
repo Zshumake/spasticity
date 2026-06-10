@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../data/muscle_provider.dart';
+import '../../data/session_planner.dart';
 import '../../models/muscle.dart';
 import '../../theme/app_theme.dart';
 import '../../theme/favorites_manager.dart';
@@ -58,6 +59,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final favs = context.watch<FavoritesManager>();
     final isFav = favs.isFavorite(muscle.id);
+    final inSession = context.watch<SessionPlanner>().contains(muscle.id);
 
     return Scaffold(
       backgroundColor: isDark ? AppTheme.bgDark : AppTheme.bgLight,
@@ -70,6 +72,13 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         title: Text(muscle.name, style: GoogleFonts.sora(
           fontWeight: FontWeight.w700, fontSize: 16)),
         actions: [
+          IconButton(
+            icon: Icon(
+              inSession ? Icons.playlist_add_check_rounded : Icons.playlist_add_rounded,
+              color: inSession ? AppTheme.success : (isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight)),
+            tooltip: inSession ? 'In session — view plan' : 'Add to session',
+            onPressed: () => _toggleSession(inSession),
+          ),
           IconButton(
             icon: AnimatedSwitcher(
               duration: const Duration(milliseconds: 200),
@@ -624,6 +633,31 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         ? '?brand=$brand&dose=${dose.toStringAsFixed(0)}'
         : '?brand=$brand';
     context.push('/calculator$query');
+  }
+
+  /// Adds this muscle to the session plan (seeded brand + midpoint dose), or
+  /// navigates to the plan if it is already there.
+  void _toggleSession(bool inSession) {
+    if (inSession) {
+      context.push('/session');
+      return;
+    }
+    final item = defaultSessionItem(muscle);
+    if (item == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('No dose data to add for this muscle.')),
+      );
+      return;
+    }
+    context.read<SessionPlanner>().addOrUpdate(item);
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('Added ${muscle.name} to session'),
+        action: SnackBarAction(
+            label: 'View', onPressed: () => context.push('/session')),
+        duration: const Duration(seconds: 3),
+      ),
+    );
   }
 
   /// Midpoint of a dose-range string: "100-200" -> 150, "100" -> 100.

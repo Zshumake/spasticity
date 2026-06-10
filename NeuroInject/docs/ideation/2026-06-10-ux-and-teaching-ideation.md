@@ -55,7 +55,14 @@ structured `maxSessionUnits` field (today the ceilings are prose), and lateralit
 modeling. Deliberately local-only/no PHI to stay simple and safe.
 **Confidence:** 90%
 **Complexity:** High (ships in slices: tray+total → ceiling meter → bulk-add → save/reload)
-**Status:** Unexplored
+**Status:** Explored — core slices implemented 2026-06-10. Persistent `SessionPlanner`
+provider (local, no PHI) holding one line per muscle with brand / per-side dose /
+laterality (R/L/Bilateral, bilateral doubles the total); per-brand running totals
+vs a new structured `ToxinBrand.maxSessionUnits` ceiling, rendered as an amber/red
+meter on `/session`; add-to-session action on the muscle detail app bar; top-bar
+Session chip with a live count badge; clear-session. Covered by
+`test/data/session_planner_test.dart`. Deferred follow-ups: pattern bulk-add,
+named save/reload of multiple sessions, and multi-muscle PDF cheat-sheet export.
 
 ### 2. Deep-link a muscle's dose into the pre-filled calculator
 **Description:** A "Calculate this" affordance beside each brand dose chip opens

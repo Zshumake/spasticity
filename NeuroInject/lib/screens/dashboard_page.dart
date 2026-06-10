@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../data/muscle_data.dart';
 import '../data/muscle_provider.dart';
+import '../data/session_planner.dart';
 import '../models/muscle.dart';
 import '../models/spasticity_pattern.dart';
 import '../theme/app_theme.dart';
@@ -214,6 +215,9 @@ class _DashboardPageState extends State<DashboardPage> {
             fontWeight: FontWeight.w800, fontSize: 14, letterSpacing: 2.0,
             color: isDark ? AppTheme.primary : AppTheme.primaryDim)),
           const Spacer(),
+          // Session plan link with a count badge
+          _sessionNavChip(isDark),
+          const SizedBox(width: 8),
           // Dose Calculator link
           _navChip(Icons.calculate_outlined, 'Dose Calc',
             AppTheme.amber, isDark, () => context.push('/calculator')),
@@ -306,6 +310,41 @@ class _DashboardPageState extends State<DashboardPage> {
           const SizedBox(width: 6),
           Text(label, style: GoogleFonts.ibmPlexMono(
             fontSize: 10, fontWeight: FontWeight.w600, color: color)),
+        ]),
+      ),
+    );
+  }
+
+  /// Session-plan link in the top bar, with a live count badge.
+  Widget _sessionNavChip(bool isDark) {
+    final count = context.watch<SessionPlanner>().count;
+    const color = AppTheme.primary;
+    return GestureDetector(
+      onTap: () => context.push('/session'),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+        decoration: BoxDecoration(
+          color: count > 0 ? color.withAlpha(30) : Colors.transparent,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: color.withAlpha(count > 0 ? 120 : 80)),
+        ),
+        child: Row(mainAxisSize: MainAxisSize.min, children: [
+          const Icon(Icons.vaccines_outlined, size: 13, color: color),
+          const SizedBox(width: 6),
+          Text('Session', style: GoogleFonts.ibmPlexMono(
+            fontSize: 10, fontWeight: FontWeight.w600, color: color)),
+          if (count > 0) ...[
+            const SizedBox(width: 6),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 1),
+              decoration: BoxDecoration(
+                color: color,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Text('$count', style: GoogleFonts.ibmPlexMono(
+                fontSize: 10, fontWeight: FontWeight.w700, color: Colors.white)),
+            ),
+          ],
         ]),
       ),
     );

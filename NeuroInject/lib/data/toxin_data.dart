@@ -18,6 +18,7 @@ const toxinBrands = [
         'Store frozen or refrigerated (2-8°C). Reconstituted: use within 24 hrs (refrigerated).',
     maxDoseNote:
         'Max per session: 400 U for spasticity (adult). FDA max across all indications: 360 U/3 months.',
+    maxSessionUnits: 400,
     color: Color(0xFF3D8BFF),
   ),
   ToxinBrand(
@@ -35,6 +36,7 @@ const toxinBrands = [
     storageNote:
         'Room temperature storage OK (up to 25°C) before reconstitution. Use within 24 hrs after.',
     maxDoseNote: 'Max per session: 400 U for upper + lower limb spasticity.',
+    maxSessionUnits: 400,
     conversionNote:
         'Xeomin and Botox are generally considered 1:1 unit equivalent for spasticity.',
     color: Color(0xFF9C27B0),
@@ -55,6 +57,7 @@ const toxinBrands = [
         'Store refrigerated (2-8°C). Reconstituted: use within 4 hrs.',
     maxDoseNote:
         'Max per session: 1500 U for adult lower limb spasticity. Max upper limb: 1000 U.',
+    maxSessionUnits: 1500,
     conversionNote:
         'Dysport units are NOT equivalent to Botox/Xeomin.\nConversion: ~2.5-3 Dysport units = 1 Botox unit.\nExample: 100 U Botox ≈ 250-300 U Dysport.',
     color: Color(0xFFFF9800),
@@ -79,8 +82,17 @@ const toxinBrands = [
         'Store refrigerated (2-8°C). Pre-diluted solution — DO NOT freeze. Use within 4 hrs of opening.',
     maxDoseNote:
         'Typical range: 10,000-25,000 U per session for cervical dystonia/spasticity.',
+    maxSessionUnits: 25000,
     conversionNote:
         'Myobloc (Type B) units are NOT interchangeable with ANY Type A toxin.\nConversion: ~50-100 Myobloc units = 1 Botox unit.\nExample: 100 U Botox ≈ 5,000-10,000 U Myobloc.',
     color: Color(0xFF4CAF50),
   ),
 ];
+
+/// Look up a brand by name (case-insensitive). Returns null if not found.
+ToxinBrand? brandByName(String name) {
+  for (final b in toxinBrands) {
+    if (b.name.toLowerCase() == name.toLowerCase()) return b;
+  }
+  return null;
+}

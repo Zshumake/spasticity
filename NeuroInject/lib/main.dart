@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'data/muscle_provider.dart';
+import 'data/session_planner.dart';
 import 'router.dart';
 import 'theme/app_theme.dart';
 import 'theme/theme_manager.dart';
@@ -15,6 +16,7 @@ void main() {
         ChangeNotifierProvider(create: (_) => FavoritesManager()),
         ChangeNotifierProvider(create: (_) => RecentlyViewedManager()),
         ChangeNotifierProvider(create: (_) => MuscleDataProvider()),
+        ChangeNotifierProvider(create: (_) => SessionPlanner()),
       ],
       child: const NeuroInjectApp(),
     ),

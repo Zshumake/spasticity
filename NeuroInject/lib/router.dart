@@ -5,6 +5,7 @@ import 'data/muscle_provider.dart';
 import 'screens/dashboard_page.dart';
 import 'screens/guide/muscle_detail.dart';
 import 'screens/calculator/calculator_screen.dart';
+import 'screens/session/session_screen.dart';
 
 final router = GoRouter(
   routes: [
@@ -65,6 +66,10 @@ final router = GoRouter(
         final dose = double.tryParse(state.uri.queryParameters['dose'] ?? '');
         return CalculatorScreen(initialBrand: brand, initialDose: dose);
       },
+    ),
+    GoRoute(
+      path: '/session',
+      builder: (context, state) => const SessionScreen(),
     ),
   ],
 );
