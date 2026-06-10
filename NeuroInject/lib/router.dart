@@ -59,7 +59,12 @@ final router = GoRouter(
     ),
     GoRoute(
       path: '/calculator',
-      builder: (context, state) => const CalculatorScreen(),
+      builder: (context, state) {
+        // Optional deep-link seed, e.g. /calculator?brand=Botox&dose=150
+        final brand = state.uri.queryParameters['brand'];
+        final dose = double.tryParse(state.uri.queryParameters['dose'] ?? '');
+        return CalculatorScreen(initialBrand: brand, initialDose: dose);
+      },
     ),
   ],
 );

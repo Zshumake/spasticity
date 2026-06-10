@@ -9,7 +9,13 @@ import '../../widgets/dilution_explainer.dart';
 // ─── Calculator Screen ───────────────────────────────────────
 
 class CalculatorScreen extends StatefulWidget {
-  const CalculatorScreen({super.key});
+  /// Optional deep-link seed: a brand name ('Botox' / 'Xeomin' / 'Dysport' /
+  /// 'Myobloc') and a dose in that brand's units — e.g. from tapping a
+  /// muscle's dose chip. When null, the calculator opens with its defaults.
+  final String? initialBrand;
+  final double? initialDose;
+
+  const CalculatorScreen({super.key, this.initialBrand, this.initialDose});
 
   @override
   State<CalculatorScreen> createState() => _CalculatorScreenState();
@@ -29,9 +35,35 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   @override
   void initState() {
     super.initState();
-    _vialSize = _brand.defaultVial.toDouble();
+    // Seed from a deep link (e.g. tapping a muscle's dose) when provided;
+    // otherwise fall back to the defaults (Botox, 50 U).
+    final linkedIndex = widget.initialBrand == null
+        ? -1
+        : toxinBrands.indexWhere(
+            (b) => b.name.toLowerCase() == widget.initialBrand!.toLowerCase());
+    if (linkedIndex >= 0) _brandIndex = linkedIndex;
+
+    final brand = _brand;
+    _vialSize = brand.defaultVial.toDouble();
+    _dilution = brand.commonDilutions.length > 1
+        ? brand.commonDilutions[1].salineMl
+        : brand.commonDilutions[0].salineMl;
+    _dose = widget.initialDose ?? _defaultDoseFor(brand);
+
     _vialController = TextEditingController(text: _vialSize.toStringAsFixed(0));
     _doseController = TextEditingController(text: _dose.toStringAsFixed(0));
+  }
+
+  /// Sensible starting dose for a brand's unit scale.
+  double _defaultDoseFor(ToxinBrand brand) {
+    switch (brand.name) {
+      case 'Myobloc':
+        return 2500;
+      case 'Dysport':
+        return 250;
+      default:
+        return 50;
+    }
   }
 
   @override
@@ -80,16 +112,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         _dilution = brand.commonDilutions[0].salineMl;
       }
       // Reset dose for each brand's unit scale
-      if (brand.name == 'Myobloc') {
-        _dose = 2500;
-        _doseController.text = '2500';
-      } else if (brand.name == 'Dysport') {
-        _dose = 250;
-        _doseController.text = '250';
-      } else {
-        _dose = 50;
-        _doseController.text = '50';
-      }
+      _dose = _defaultDoseFor(brand);
+      _doseController.text = _dose.toStringAsFixed(0);
     });
   }
 

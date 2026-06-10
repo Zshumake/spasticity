@@ -247,6 +247,10 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
               const SizedBox(height: 6),
               Text('Dosage: ${muscle.dosage!.displayFull}', style: GoogleFonts.ibmPlexMono(
                 fontSize: 12, fontWeight: FontWeight.w700, color: AppTheme.amber)),
+              if (muscle.dosage!.hasAny) ...[
+                const SizedBox(height: 8),
+                _calcLink(),
+              ],
             ],
           ]),
         ),
@@ -523,15 +527,18 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
             if (muscle.dosage?.botox != null)
               _heroChip(Icons.medication_outlined, 'BOTOX',
                   '${muscle.dosage!.botox!} U',
-                  const Color(0xFF3D8BFF), isDark),
+                  const Color(0xFF3D8BFF), isDark,
+                  onTap: () => _openCalculator('Botox', muscle.dosage!.botox!)),
             if (muscle.dosage?.xeomin != null)
               _heroChip(Icons.medication_outlined, 'XEOMIN',
                   '${muscle.dosage!.xeomin!} U',
-                  const Color(0xFF9C27B0), isDark),
+                  const Color(0xFF9C27B0), isDark,
+                  onTap: () => _openCalculator('Xeomin', muscle.dosage!.xeomin!)),
             if (muscle.dosage?.dysport != null)
               _heroChip(Icons.medication_outlined, 'DYSPORT',
                   '${muscle.dosage!.dysport!} U',
-                  const Color(0xFFFF9800), isDark),
+                  const Color(0xFFFF9800), isDark,
+                  onTap: () => _openCalculator('Dysport', muscle.dosage!.dysport!)),
             if (us != null)
               _heroChip(Icons.sensors, 'PROBE', _shortProbe(us.probe), _groupColor, isDark),
             if (us != null)
@@ -570,8 +577,8 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     return s.length > 28 ? '${s.substring(0, 28)}…' : s;
   }
 
-  Widget _heroChip(IconData icon, String label, String value, Color accent, bool isDark) {
-    return Container(
+  Widget _heroChip(IconData icon, String label, String value, Color accent, bool isDark, {VoidCallback? onTap}) {
+    final content = Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: BoxDecoration(
         color: (isDark ? AppTheme.bgDark : AppTheme.bgLight).withAlpha(178),
@@ -589,7 +596,78 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
             fontSize: 13, fontWeight: FontWeight.w700,
             color: isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight)),
         ]),
+        // Tappable dose chips show a calculator hint and open the dilution
+        // calculator pre-seeded with this brand + dose.
+        if (onTap != null) ...[
+          const SizedBox(width: 8),
+          Icon(Icons.calculate_outlined, size: 14, color: accent.withAlpha(160)),
+        ],
       ]),
+    );
+    if (onTap == null) return content;
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+        child: content,
+      ),
+    );
+  }
+
+  /// Opens the dose calculator pre-seeded with [brand] and the midpoint of
+  /// the muscle's dose [range] (e.g. "100-200" -> 150), which the user can
+  /// then adjust. Closes the muscle -> dose -> calculator gap.
+  void _openCalculator(String brand, String range) {
+    final dose = _midpointDose(range);
+    final query = dose != null
+        ? '?brand=$brand&dose=${dose.toStringAsFixed(0)}'
+        : '?brand=$brand';
+    context.push('/calculator$query');
+  }
+
+  /// Midpoint of a dose-range string: "100-200" -> 150, "100" -> 100.
+  double? _midpointDose(String range) {
+    final nums = RegExp(r'\d+(?:\.\d+)?')
+        .allMatches(range)
+        .map((m) => double.parse(m.group(0)!))
+        .toList();
+    if (nums.isEmpty) return null;
+    if (nums.length == 1) return nums.first;
+    return ((nums.first + nums[1]) / 2).roundToDouble();
+  }
+
+  /// Tappable link under the procedure-mode dose line that opens the
+  /// calculator pre-seeded with the muscle's preferred brand (Botox, then
+  /// Xeomin, then Dysport) and dose.
+  Widget _calcLink() {
+    final d = muscle.dosage!;
+    final String brand;
+    final String range;
+    if (d.botox != null) {
+      brand = 'Botox';
+      range = d.botox!;
+    } else if (d.xeomin != null) {
+      brand = 'Xeomin';
+      range = d.xeomin!;
+    } else {
+      brand = 'Dysport';
+      range = d.dysport!;
+    }
+    return InkWell(
+      onTap: () => _openCalculator(brand, range),
+      borderRadius: BorderRadius.circular(8),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 2),
+        child: Row(mainAxisSize: MainAxisSize.min, children: [
+          Icon(Icons.calculate_outlined, size: 14, color: AppTheme.success),
+          const SizedBox(width: 6),
+          Text('Calculate draw-up volume', style: GoogleFonts.ibmPlexMono(
+            fontSize: 11, fontWeight: FontWeight.w700, color: AppTheme.success)),
+          const SizedBox(width: 4),
+          Icon(Icons.arrow_forward_rounded, size: 12, color: AppTheme.success),
+        ]),
+      ),
     );
   }
 
