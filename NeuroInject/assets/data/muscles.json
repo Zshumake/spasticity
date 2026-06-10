@@ -472,8 +472,7 @@
     "probePlacementHint": "Patient prone, pillow under abdomen. Place curvilinear probe transversely on flank, just above iliac crest. Photo from side showing probe on lateral flank.",
     "pearls": [
       "Use curvilinear probe — this muscle is deep and linear probes often can't penetrate",
-      "Critical for lateral trunk flexion spasticity and pelvic obliquity",
-      "The kidney lies anterior — always identify it on US before injecting"
+      "Critical for lateral trunk flexion spasticity and pelvic obliquity"
     ],
     "supplies": [
       "Ultrasound machine with curvilinear probe (5-8 MHz, for deep muscles)",
@@ -507,7 +506,10 @@
       "posterior": "quadratus-lumborum_posterior.png",
       "lateral": "quadratus-lumborum_lateral.png"
     },
-    "anatomyCaption": "Posterior trunk · quadratus lumborum highlighted"
+    "anatomyCaption": "Posterior trunk · quadratus lumborum highlighted",
+    "dangerZones": [
+      "The kidney lies anterior — always identify it on US before injecting"
+    ]
   },
   {
     "id": "rectus-abdominis",
@@ -798,8 +800,7 @@
       "The erector spinae group (iliocostalis, longissimus, spinalis) is treated as a single injection target — sub-compartment targeting is rarely needed clinically",
       "Use curvilinear probe — these muscles are thick and deep, especially in the lumbar region",
       "Inject at 2-3 vertebral levels per session; dose listed is per level — total session dose may be 100-300 U Botox across all levels",
-      "Key target for axial dystonia and for camptocormia in Parkinson disease (injected to reduce extensor co-contraction or dystonic extension)",
-      "NEVER direct needle medially past the lamina — the spinal canal is immediately deep"
+      "Key target for axial dystonia and for camptocormia in Parkinson disease (injected to reduce extensor co-contraction or dystonic extension)"
     ],
     "supplies": [
       "Ultrasound machine with curvilinear probe (5-8 MHz, for deep muscles)",
@@ -831,7 +832,10 @@
       "lateral": "paraspinals_lateral.png"
     },
     "anatomyCaption": "Posterior trunk · erector spinae group highlighted",
-    "defaultAnatomyView": "posterior"
+    "defaultAnatomyView": "posterior",
+    "dangerZones": [
+      "NEVER direct needle medially past the lamina — the spinal canal is immediately deep"
+    ]
   },
   {
     "id": "gluteus-maximus",
@@ -2154,7 +2158,6 @@
     "probePlacementHint": "Patient prone, feet off edge. Place probe transversely on lateral mid-calf. Photo from behind showing probe on lateral mid-calf.",
     "pearls": [
       "Less commonly injected than medial soleus but important for varus component",
-      "Posterior tibial vessels run between soleus and deep compartment — identify on US",
       "Smaller volume than medial — adjust dosing accordingly"
     ],
     "supplies": [
@@ -2188,7 +2191,10 @@
       "lateral": "soleus-lateral_lateral.png"
     },
     "anatomyCaption": "Posterior leg · soleus highlighted",
-    "defaultAnatomyView": "posterior"
+    "defaultAnatomyView": "posterior",
+    "dangerZones": [
+      "Posterior tibial vessels run between soleus and deep compartment — identify on US"
+    ]
   },
   {
     "id": "fdl",
@@ -3179,7 +3185,6 @@
     "probePlacementHint": "Patient seated, forearm supinated. Place probe transversely on medial proximal forearm, 3-5 cm below medial epicondyle. Photo showing probe on medial proximal forearm near elbow.",
     "pearls": [
       "Primary target for forearm pronation spasticity",
-      "Median nerve passes between its two heads — identify on US and avoid",
       "Often co-injected with FCR and FCU for combined wrist/forearm pattern",
       "Primary action: pronates the forearm; weakly flexes the elbow.",
       "A key muscle in the pronation component of the upper-limb spasticity pattern."
@@ -3218,7 +3223,10 @@
       "posterior": "pronator-teres_posterior.png",
       "lateral": "pronator-teres_lateral.png"
     },
-    "anatomyCaption": "Anterior forearm · pronator teres highlighted"
+    "anatomyCaption": "Anterior forearm · pronator teres highlighted",
+    "dangerZones": [
+      "Median nerve passes between its two heads — identify on US and avoid"
+    ]
   },
   {
     "id": "fcr",
@@ -3396,7 +3404,6 @@
     "probePlacementHint": "Patient seated, forearm supinated. Place probe transversely on medial forearm. Photo showing probe on ulnar/medial side of mid-forearm.",
     "pearls": [
       "Main contributor to wrist flexion and ulnar deviation",
-      "Ulnar nerve and artery run in Guyon's canal nearby — identify on US",
       "Combined FCR + FCU injection gives best results for wrist flexion",
       "Flexes and adducts (ulnar-deviates) the hand.",
       "Always examined and treated in synergy with the other flexors of the wrist."
@@ -3433,7 +3440,10 @@
       "posterior": "fcu_posterior.png",
       "lateral": "fcu_lateral.png"
     },
-    "anatomyCaption": "Anterior forearm · FCU highlighted"
+    "anatomyCaption": "Anterior forearm · FCU highlighted",
+    "dangerZones": [
+      "Ulnar nerve and artery run in Guyon's canal nearby — identify on US"
+    ]
   },
   {
     "id": "fds",
@@ -3626,7 +3636,6 @@
     "probePlacementHint": "Patient seated, forearm supinated. Place probe transversely on medial-volar mid-forearm. Photo showing probe on deep volar forearm, slightly ulnar.",
     "pearls": [
       "Target for finger flexion at DIP joints — the deeper layer",
-      "Anterior interosseous nerve (motor branch of median) is vulnerable — ID on US",
       "Often co-injected with FDS for full finger flexion pattern",
       "Only flexor of the distal interphalangeal (DIP) joint.",
       "For finger-flexion spasticity, FDP typically requires treatment alongside FDS and the other forearm flexors.",
@@ -3667,7 +3676,10 @@
       "posterior": "fdp_posterior.png",
       "lateral": "fdp_lateral.png"
     },
-    "anatomyCaption": "Anterior forearm · FDP highlighted (deep)"
+    "anatomyCaption": "Anterior forearm · FDP highlighted (deep)",
+    "dangerZones": [
+      "Anterior interosseous nerve (motor branch of median) is vulnerable — ID on US"
+    ]
   },
   {
     "id": "fpl",
@@ -3949,7 +3961,6 @@
     "probePlacementHint": "Patient supine, arm abducted 45-60° and externally rotated. Place probe parasagitally in anterior axilla. Photo from front showing probe in axillary fold aimed toward scapula.",
     "pearls": [
       "Most important muscle for internal rotation spasticity at the shoulder",
-      "Deep in the axilla — requires careful US guidance due to proximity to axillary vessels",
       "Inject through the anterior axillary approach with the arm abducted and externally rotated",
       "Part of the rotator cuff; paresis leads to maximum external rotation of the arm.",
       "Commonly involved in upper-limb spasticity with internal-rotation posture; worth considering when pec-major and biceps injections alone don't address the contracture."
@@ -3986,7 +3997,10 @@
       "posterior": "subscapularis_posterior.png",
       "lateral": "subscapularis_lateral.png"
     },
-    "anatomyCaption": "Anterior scapula · subscapularis highlighted"
+    "anatomyCaption": "Anterior scapula · subscapularis highlighted",
+    "dangerZones": [
+      "Deep in the axilla — requires careful US guidance due to proximity to axillary vessels"
+    ]
   },
   {
     "id": "infraspinatus",
@@ -4565,8 +4579,7 @@
     "probePlacementHint": "Patient supine, hip neutral. Place curvilinear probe transversely on proximal anterior thigh, 2-3 cm below inguinal ligament, lateral to femoral vessels. Photo from front showing probe in inguinal/proximal thigh region.",
     "pearls": [
       "Primary hip flexor — the most important muscle for hip flexion spasticity",
-      "Deep target requiring curvilinear probe and careful technique",
-      "Femoral nerve, artery, and vein are right next door — always identify with color Doppler"
+      "Deep target requiring curvilinear probe and careful technique"
     ],
     "supplies": [
       "Ultrasound machine with curvilinear probe (5-8 MHz, for deep muscles)",
@@ -4594,7 +4607,10 @@
       "posterior": "iliopsoas_posterior.png",
       "lateral": "iliopsoas_lateral.png"
     },
-    "anatomyCaption": "Anterior hip · iliopsoas highlighted"
+    "anatomyCaption": "Anterior hip · iliopsoas highlighted",
+    "dangerZones": [
+      "Femoral nerve, artery, and vein are right next door — always identify with color Doppler"
+    ]
   },
   {
     "id": "peroneus-longus",
@@ -4880,11 +4896,8 @@
     "probePlacementHint": "Patient supine, head turned slightly contralateral. Place probe transversely on lateral neck at thyroid cartilage level. Photo from front/lateral showing probe across SCM muscle belly on neck.",
     "pearls": [
       "Most commonly injected neck muscle for torticollis and laterocollis",
-      "Carotid artery and internal jugular vein are immediately deep — ALWAYS use US",
-      "The spinal accessory nerve runs through the muscle — EMG can help avoid it",
       "SCM and the upper trapezius often lie very close together — causing identification challenges for residents. Palpate with the patient actively turning the head to confirm SCM.",
-      "Motor supply is accessory nerve (XI); sensory is cervical plexus C2-C3.",
-      "Bilateral SCM injection carries a real risk of dysphagia — reduce dose bilaterally and avoid deep or medial injection near the pharynx when treating both sides."
+      "Motor supply is accessory nerve (XI); sensory is cervical plexus C2-C3."
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -4918,7 +4931,12 @@
       "lateral": "scm_lateral.png"
     },
     "anatomyCaption": "Lateral neck · SCM highlighted",
-    "defaultAnatomyView": "lateral"
+    "defaultAnatomyView": "lateral",
+    "dangerZones": [
+      "Carotid artery and internal jugular vein are immediately deep — ALWAYS use US",
+      "The spinal accessory nerve runs through the muscle — EMG can help avoid it",
+      "Bilateral SCM injection carries a real risk of dysphagia — reduce dose bilaterally and avoid deep or medial injection near the pharynx when treating both sides."
+    ]
   },
   {
     "id": "upper-trapezius",
@@ -4985,8 +5003,7 @@
     "probePlacementHint": "Patient seated, arms relaxed. Place probe transversely on upper trapezius ridge, midway between cervical spine and acromion. Photo from behind showing probe on upper trap between neck and shoulder.",
     "pearls": [
       "Very commonly injected for cervical dystonia and shoulder elevation",
-      "Superficial muscle — easy to inject but watch for spread to adjacent muscles",
-      "Spinal accessory nerve is the motor nerve — avoid injecting near the posterior triangle"
+      "Superficial muscle — easy to inject but watch for spread to adjacent muscles"
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -5019,7 +5036,10 @@
       "lateral": "upper-trapezius_lateral.png"
     },
     "anatomyCaption": "Posterior neck · upper trapezius highlighted",
-    "defaultAnatomyView": "posterior"
+    "defaultAnatomyView": "posterior",
+    "dangerZones": [
+      "Spinal accessory nerve is the motor nerve — avoid injecting near the posterior triangle"
+    ]
   },
   {
     "id": "levator-scapulae",
@@ -5086,8 +5106,7 @@
     "probePlacementHint": "Patient seated, arms relaxed. Place probe transversely over superior angle of scapula, 2-3 cm lateral to C7-T2 spinous processes. Photo from behind showing probe on posterolateral neck/upper back.",
     "pearls": [
       "Deep to upper trapezius — must visualize past the trap on US",
-      "Contributes to scapular elevation and lateral cervical flexion",
-      "Dorsal scapular nerve may be nearby — consider EMG confirmation"
+      "Contributes to scapular elevation and lateral cervical flexion"
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -5120,7 +5139,10 @@
       "lateral": "levator-scapulae_lateral.png"
     },
     "anatomyCaption": "Posterior neck · levator scapulae highlighted",
-    "defaultAnatomyView": "posterior"
+    "defaultAnatomyView": "posterior",
+    "dangerZones": [
+      "Dorsal scapular nerve may be nearby — consider EMG confirmation"
+    ]
   },
   {
     "id": "pronator-quadratus",
@@ -5399,8 +5421,7 @@
     "pearls": [
       "The primary target for retrocollis — bilateral neck extension is its chief action",
       "Deepest of the three posterior cervical layers (trapezius > splenius capitis > semispinalis capitis) — USG is essential to reach the correct layer",
-      "Use conservative doses (25-50 U per side) — excessive weakening causes dropped head syndrome (anterocollis)",
-      "The greater occipital nerve pierces this muscle — patients may report temporary occipital numbness after injection"
+      "Use conservative doses (25-50 U per side) — excessive weakening causes dropped head syndrome (anterocollis)"
     ],
     "supplies": [
       "Ultrasound machine with linear probe",
@@ -5432,7 +5453,10 @@
       "lateral": "semispinalis-capitis_lateral.png"
     },
     "anatomyCaption": "Posterior neck · semispinalis highlighted",
-    "defaultAnatomyView": "posterior"
+    "defaultAnatomyView": "posterior",
+    "dangerZones": [
+      "The greater occipital nerve pierces this muscle — patients may report temporary occipital numbness after injection"
+    ]
   },
   {
     "id": "scalenes",
@@ -5502,8 +5526,6 @@
     "probePlacementHint": "Patient supine, head neutral or slightly turned contralateral. Place probe transversely on lateral neck at C5-C7 level, posterior to SCM. Photo from front/lateral showing probe on lateral neck behind the SCM.",
     "pearls": [
       "The primary target for laterocollis — ipsilateral lateral flexion is the chief action",
-      "USG is MANDATORY — the brachial plexus and subclavian vessels are millimeters away",
-      "The phrenic nerve runs on the anterior scalene surface — NEVER inject anterior scalenes bilaterally in the same session",
       "Start with low doses (15-25 U Botox per muscle) and titrate up — overcorrection or nerve spread can be disabling",
       "The middle scalene is often the safest and largest target for injection"
     ],
@@ -5538,7 +5560,11 @@
       "lateral": "scalenes_lateral.png"
     },
     "anatomyCaption": "Lateral neck · scalenes highlighted",
-    "defaultAnatomyView": "lateral"
+    "defaultAnatomyView": "lateral",
+    "dangerZones": [
+      "USG is MANDATORY — the brachial plexus and subclavian vessels are millimeters away",
+      "The phrenic nerve runs on the anterior scalene surface — NEVER inject anterior scalenes bilaterally in the same session"
+    ]
   },
   {
     "id": "longissimus-capitis",
@@ -5706,7 +5732,6 @@
     "probePlacementHint": "Patient seated upright with jaw relaxed. Place probe transversely on lateral face over the mandibular ramus midway between zygomatic arch and mandibular angle. Photo from lateral view showing probe on cheek.",
     "pearls": [
       "Ask the patient to clench — the masseter is the most powerful jaw closer and will bulge prominently, making landmark identification trivial",
-      "Stay in the lower two-thirds of the muscle and the posterior half to avoid Stensen's duct anteriorly and the zygomatic branch of CN VII superiorly",
       "For oromandibular dystonia (jaw closing type), the masseter and medial pterygoid work synergistically — consider injecting both for refractory cases",
       "Onset of effect for bruxism is typically 3-7 days; warn patients that jaw may feel weak when chewing tough food"
     ],
@@ -5738,7 +5763,10 @@
       "lateral": "masseter_lateral.png"
     },
     "anatomyCaption": "Lateral face · masseter highlighted",
-    "defaultAnatomyView": "lateral"
+    "defaultAnatomyView": "lateral",
+    "dangerZones": [
+      "Stay in the lower two-thirds of the muscle and the posterior half to avoid Stensen's duct anteriorly and the zygomatic branch of CN VII superiorly"
+    ]
   },
   {
     "id": "temporalis",
@@ -5802,7 +5830,6 @@
     "probePlacementHint": "Patient seated upright with jaw relaxed. Place probe transversely in the temporal fossa above the zygomatic arch. Photo from lateral view showing probe on temple.",
     "pearls": [
       "The temporalis and masseter are the two primary jaw closers — for refractory bruxism or jaw-closing dystonia, inject both muscles bilaterally",
-      "Always palpate for the superficial temporal artery pulse before injecting — it is the major vascular risk in this region",
       "The anterior fibers are the strongest jaw elevators and the primary target; posterior fibers primarily retract the mandible",
       "In migraine patients, temporalis injection sites overlap with PREEMPT protocol sites — 20 U per side (5 U x 4 sites) per the Allergan PREEMPT paradigm"
     ],
@@ -5834,7 +5861,10 @@
       "lateral": "temporalis_lateral.png"
     },
     "anatomyCaption": "Lateral face · temporalis highlighted",
-    "defaultAnatomyView": "lateral"
+    "defaultAnatomyView": "lateral",
+    "dangerZones": [
+      "Always palpate for the superficial temporal artery pulse before injecting — it is the major vascular risk in this region"
+    ]
   },
   {
     "id": "lateral-pterygoid",
@@ -5877,7 +5907,6 @@
     "pearls": [
       "The lateral pterygoid is the PRIMARY jaw opener and protruder — it is the key target for jaw-opening oromandibular dystonia and involuntary jaw protrusion",
       "EMG confirmation is essential: the lateral pterygoid fires on jaw OPENING (distinguishing it from the medial pterygoid which fires on jaw CLOSING)",
-      "The maxillary artery and pterygoid venous plexus surround this muscle — aspiration is mandatory; be prepared for minor bleeding or hematoma",
       "Unilateral lateral pterygoid injection can cause jaw deviation to the injected side — in unilateral jaw deviation dystonia, inject the contralateral lateral pterygoid"
     ],
     "supplies": [
@@ -5905,7 +5934,10 @@
       "posterior": "lateral-pterygoid_posterior.png",
       "lateral": "lateral-pterygoid_lateral.png"
     },
-    "anatomyCaption": "Lateral face · lateral pterygoid highlighted (deep)"
+    "anatomyCaption": "Lateral face · lateral pterygoid highlighted (deep)",
+    "dangerZones": [
+      "The maxillary artery and pterygoid venous plexus surround this muscle — aspiration is mandatory; be prepared for minor bleeding or hematoma"
+    ]
   },
   {
     "id": "medial-pterygoid",
@@ -5972,8 +6004,7 @@
     "pearls": [
       "The medial pterygoid and masseter form a 'pterygo-masseteric sling' around the mandibular angle — together they are the primary jaw closers",
       "For refractory jaw-closing dystonia, inject both the masseter AND medial pterygoid — the medial pterygoid is often the overlooked synergist",
-      "Differentiate from lateral pterygoid on EMG: medial pterygoid fires on jaw CLENCHING, lateral pterygoid fires on jaw OPENING",
-      "Temporary numbness of the lower lip (inferior alveolar nerve block) is a known risk — warn patients before injection"
+      "Differentiate from lateral pterygoid on EMG: medial pterygoid fires on jaw CLENCHING, lateral pterygoid fires on jaw OPENING"
     ],
     "supplies": [
       "Ultrasound machine with linear probe (for submandibular approach)",
@@ -6002,7 +6033,10 @@
       "posterior": "medial-pterygoid_posterior.png",
       "lateral": "medial-pterygoid_lateral.png"
     },
-    "anatomyCaption": "Lateral face · medial pterygoid highlighted (deep)"
+    "anatomyCaption": "Lateral face · medial pterygoid highlighted (deep)",
+    "dangerZones": [
+      "Temporary numbness of the lower lip (inferior alveolar nerve block) is a known risk — warn patients before injection"
+    ]
   },
   {
     "id": "orbicularis-oculi",
@@ -6043,8 +6077,6 @@
     "hasReferenceImage": false,
     "probePlacementHint": "Landmark-guided injection — no ultrasound used. Patient seated upright in well-lit room. Six injection sites distributed around the orbital rim: 3 upper (medial, central, lateral) and 3 lower (lateral, central, medial).",
     "pearls": [
-      "Inject into the PRESEPTAL and ORBITAL portions only — avoid the PRETARSAL upper lid to prevent ptosis from diffusion to the levator palpebrae superioris",
-      "Stay lateral at the medial lower site to avoid the lacrimal pump mechanism — weakening the pretarsal orbicularis medially causes epiphora (excessive tearing)",
       "Apply digital pressure for 30 seconds after each injection to minimize ecchymosis and reduce diffusion — the periorbital skin is extremely thin and vascular",
       "For hemifacial spasm, the orbicularis oculi is almost always the first and most prominently affected muscle — start here and add lower face muscles only if needed"
     ],
@@ -6073,7 +6105,11 @@
       "posterior": "orbicularis-oculi_posterior.png",
       "lateral": "orbicularis-oculi_lateral.png"
     },
-    "anatomyCaption": "Anterior face · orbicularis oculi highlighted"
+    "anatomyCaption": "Anterior face · orbicularis oculi highlighted",
+    "dangerZones": [
+      "Inject into the PRESEPTAL and ORBITAL portions only — avoid the PRETARSAL upper lid to prevent ptosis from diffusion to the levator palpebrae superioris",
+      "Stay lateral at the medial lower site to avoid the lacrimal pump mechanism — weakening the pretarsal orbicularis medially causes epiphora (excessive tearing)"
+    ]
   },
   {
     "id": "corrugator-supercilii",
@@ -6115,8 +6151,7 @@
     "pearls": [
       "Ask the patient to frown hard — the corrugator produces the vertical '11 lines' between the brows and becomes palpable as an oblique cord at the medial eyebrow",
       "The corrugator is DEEP to the frontalis — ensure the needle penetrates through the frontalis to reach it; superficial injection only weakens the frontalis and misses the target",
-      "In blepharospasm, the corrugator and procerus should be injected together with the orbicularis oculi for comprehensive glabellar control",
-      "Ptosis risk: keep the needle directed laterally and superiorly, NEVER inferiorly into the orbit — diffusion to the levator palpebrae is the most feared complication"
+      "In blepharospasm, the corrugator and procerus should be injected together with the orbicularis oculi for comprehensive glabellar control"
     ],
     "supplies": [
       "Alcohol swabs / ChloraPrep",
@@ -6141,7 +6176,10 @@
       "posterior": "corrugator-supercilii_posterior.png",
       "lateral": "corrugator-supercilii_lateral.png"
     },
-    "anatomyCaption": "Frontal face · corrugator supercilii"
+    "anatomyCaption": "Frontal face · corrugator supercilii",
+    "dangerZones": [
+      "Ptosis risk: keep the needle directed laterally and superiorly, NEVER inferiorly into the orbit — diffusion to the levator palpebrae is the most feared complication"
+    ]
   },
   {
     "id": "procerus",
@@ -6321,9 +6359,7 @@
     "probePlacementHint": "Landmark-guided injection — platysmal bands are identified visually by asking the patient to grimace. Patient seated upright, grimacing to display anterior neck bands. Inject subcutaneously into each visible band.",
     "pearls": [
       "Ask the patient to grimace or forcefully depress the lower lip — the platysmal bands will become visible as vertical cords in the anterior neck",
-      "The platysma is paper-thin (1-3 mm) and lies in the subcutaneous tissue — use short needles, stay superficial, and NEVER inject deeply to avoid the underlying strap muscles and swallowing musculature",
-      "For anterocollis, the platysma is usually an ADJUNCT target — the deep neck flexors (longus colli/capitis) are typically the primary drivers of forward head flexion",
-      "Dysphagia is the most feared complication — minimize dose, avoid bilateral high-dose treatment, and warn patients about potential swallowing difficulty for 2-4 weeks"
+      "For anterocollis, the platysma is usually an ADJUNCT target — the deep neck flexors (longus colli/capitis) are typically the primary drivers of forward head flexion"
     ],
     "supplies": [
       "Alcohol swabs / ChloraPrep",
@@ -6348,7 +6384,11 @@
       "posterior": "platysma_posterior.png",
       "lateral": "platysma_lateral.png"
     },
-    "anatomyCaption": "Anterior neck · platysma highlighted"
+    "anatomyCaption": "Anterior neck · platysma highlighted",
+    "dangerZones": [
+      "The platysma is paper-thin (1-3 mm) and lies in the subcutaneous tissue — use short needles, stay superficial, and NEVER inject deeply to avoid the underlying strap muscles and swallowing musculature",
+      "Dysphagia is the most feared complication — minimize dose, avoid bilateral high-dose treatment, and warn patients about potential swallowing difficulty for 2-4 weeks"
+    ]
   },
   {
     "id": "mentalis",
@@ -6389,9 +6429,7 @@
     "probePlacementHint": "Landmark-guided injection — no ultrasound used. Patient seated upright, pouting to activate the mentalis and display chin dimpling. Inject at the center of the chin pad approximately 1 cm below the labiomental crease.",
     "pearls": [
       "Ask the patient to 'pout' or push the lower lip out — the mentalis produces the classic 'orange peel' or dimpled chin appearance when it contracts",
-      "The mental nerve exits the mental foramen below the second premolar — stay in the midline and avoid lateral injections to prevent chin and lip numbness",
-      "Very low doses are effective for this small muscle — start with 2.5 U Botox per side and titrate up only if needed",
-      "Diffusion to the adjacent orbicularis oris can impair lip seal (oral incompetence, drooling) — stay within the chin pad and avoid directing the needle superiorly toward the lip"
+      "Very low doses are effective for this small muscle — start with 2.5 U Botox per side and titrate up only if needed"
     ],
     "supplies": [
       "Alcohol swabs / ChloraPrep",
@@ -6415,7 +6453,11 @@
       "posterior": "mentalis_posterior.png",
       "lateral": "mentalis_lateral.png"
     },
-    "anatomyCaption": "Frontal face · mentalis highlighted"
+    "anatomyCaption": "Frontal face · mentalis highlighted",
+    "dangerZones": [
+      "The mental nerve exits the mental foramen below the second premolar — stay in the midline and avoid lateral injections to prevent chin and lip numbness",
+      "Diffusion to the adjacent orbicularis oris can impair lip seal (oral incompetence, drooling) — stay within the chin pad and avoid directing the needle superiorly toward the lip"
+    ]
   },
   {
     "id": "adductor-brevis",
