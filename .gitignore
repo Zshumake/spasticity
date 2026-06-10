@@ -6,6 +6,8 @@ video_frames/
 
 # Source reference books (large, copyrighted — keep local, don't version)
 *.pdf
+# ...but the generated clinical photo capture guide is a shippable deliverable
+!NeuroInject/docs/clinical-photo-guide.pdf
 
 # Flutter build artifacts
 NeuroInject/build/
