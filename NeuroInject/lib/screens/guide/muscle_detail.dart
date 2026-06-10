@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../data/muscle_provider.dart';
 import '../../data/session_planner.dart';
+import '../../models/clinical_photo.dart';
 import '../../models/muscle.dart';
 import '../../theme/app_theme.dart';
 import '../../theme/favorites_manager.dart';
@@ -28,6 +29,9 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
   Muscle get muscle => widget.muscle;
   bool _procedureMode = false;
   final Set<int> _checkedSupplies = {};
+  /// Clinical-photo asset paths actually bundled in the app, so each slot can
+  /// show the real photo once it exists and a placeholder until then.
+  Set<String> _clinicalAssets = {};
   /// Currently-selected anatomy view ('anterior', 'posterior', 'lateral').
   /// Initialized from the muscle's defaultAnatomyView — posterior-aspect
   /// muscles (hamstrings, triceps, gastroc, etc.) open to posterior view.
@@ -50,6 +54,22 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<RecentlyViewedManager>().recordView(muscle.id);
     });
+    _loadClinicalAssets();
+  }
+
+  /// Loads the set of bundled clinical-photo paths so slots can distinguish a
+  /// captured photo from a not-yet-shot placeholder.
+  Future<void> _loadClinicalAssets() async {
+    try {
+      final manifest = await AssetManifest.loadFromAssetBundle(rootBundle);
+      final clinical = manifest
+          .listAssets()
+          .where((p) => p.startsWith('${ClinicalPhotoSlot.dir}/'))
+          .toSet();
+      if (mounted) setState(() => _clinicalAssets = clinical);
+    } catch (_) {
+      // No manifest or no clinical assets yet — placeholders stay shown.
+    }
   }
 
   Color get _groupColor => AppTheme.groupColor(muscle.group);
@@ -146,7 +166,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         _buildUltrasoundCard(isDark),
       ],
       const SizedBox(height: 16),
-      _buildProbeAndNeedlePhotos(isDark),
+      _buildClinicalPhotos(isDark),
       if (muscle.videoUrl != null) ...[
         const SizedBox(height: 16),
         VideoLinkCard(
@@ -937,13 +957,33 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
   ///   2. Ultrasound image with needle visible in muscle
   /// Shows real images when available, otherwise a styled placeholder
   /// prompting the user to add their own.
-  Widget _buildProbeAndNeedlePhotos(bool isDark) {
-    final probeImg = muscle.probePlacementImages.isNotEmpty
-        ? 'assets/images/probe_placement/${muscle.probePlacementImages.first}'
-        : null;
-    final usImg = muscle.referenceImages.isNotEmpty
-        ? 'assets/images/us_reference/${muscle.referenceImages.first}'
-        : null;
+  Widget _buildClinicalPhotos(bool isDark) {
+    // Accent per slot (avoid alarming red); paired with the enum order.
+    const accents = {
+      ClinicalPhotoSlot.position: AppTheme.success,
+      ClinicalPhotoSlot.probe: AppTheme.primary,
+      ClinicalPhotoSlot.needle: AppTheme.patternColor,
+      ClinicalPhotoSlot.ultrasound: AppTheme.amber,
+    };
+
+    final captured = ClinicalPhotoSlot.values
+        .where((s) => _clinicalAssets.contains(s.assetPath(muscle.id)))
+        .length;
+
+    Widget slot(ClinicalPhotoSlot s) {
+      final path = s.assetPath(muscle.id);
+      final has = _clinicalAssets.contains(path);
+      return _imageSlot(
+        isDark: isDark,
+        title: s.label,
+        subtitle: s.description,
+        icon: s.icon,
+        accentColor: accents[s]!,
+        imagePath: has ? path : null,
+        imageLabel: '${muscle.name} — ${s.label}',
+        fileName: s.fileName(muscle.id),
+      );
+    }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -952,37 +992,28 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         Row(children: [
           Container(width: 24, height: 2, color: AppTheme.primary),
           const SizedBox(width: 10),
-          Text('CLINICAL IMAGES', style: GoogleFonts.ibmPlexMono(
+          Text('CLINICAL PHOTOS', style: GoogleFonts.ibmPlexMono(
             fontSize: 10, fontWeight: FontWeight.w700,
             letterSpacing: 2.0, color: AppTheme.primary)),
+          const Spacer(),
+          Text('$captured/4 captured', style: GoogleFonts.ibmPlexMono(
+            fontSize: 9, fontWeight: FontWeight.w600,
+            color: captured == 4 ? AppTheme.success : AppTheme.textTertiary)),
         ]),
         const SizedBox(height: 14),
 
-        // Two cards side by side
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(child: _imageSlot(
-              isDark: isDark,
-              title: 'Probe Placement\n& Needle Site',
-              subtitle: 'Surface photo showing probe position and needle insertion point',
-              icon: Icons.sensors,
-              accentColor: AppTheme.primary,
-              imagePath: probeImg,
-              imageLabel: '${muscle.name} — Probe & Needle',
-            )),
-            const SizedBox(width: 12),
-            Expanded(child: _imageSlot(
-              isDark: isDark,
-              title: 'US Image with\nNeedle in Muscle',
-              subtitle: 'Ultrasound screenshot showing needle tip in target muscle',
-              icon: Icons.monitor_heart_outlined,
-              accentColor: AppTheme.amber,
-              imagePath: usImg,
-              imageLabel: '${muscle.name} — US + Needle',
-            )),
-          ],
-        ),
+        // 2 × 2 grid of slots
+        Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Expanded(child: slot(ClinicalPhotoSlot.position)),
+          const SizedBox(width: 12),
+          Expanded(child: slot(ClinicalPhotoSlot.probe)),
+        ]),
+        const SizedBox(height: 12),
+        Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Expanded(child: slot(ClinicalPhotoSlot.needle)),
+          const SizedBox(width: 12),
+          Expanded(child: slot(ClinicalPhotoSlot.ultrasound)),
+        ]),
 
         // Photo hint (if available)
         if (muscle.probePlacementHint != null) ...[
@@ -1017,6 +1048,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     required Color accentColor,
     required String? imagePath,
     required String imageLabel,
+    String? fileName,
   }) {
     final hasImage = imagePath != null;
     return GestureDetector(
@@ -1038,7 +1070,8 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
                 Positioned.fill(
                   child: Image.asset(imagePath, fit: BoxFit.cover,
                     errorBuilder: (_, _, _) => _placeholderContent(
-                        isDark, title, subtitle, icon, accentColor)),
+                        isDark, title, subtitle, icon, accentColor,
+                        fileName: fileName)),
                 ),
                 // Gradient overlay at bottom with label
                 Positioned(left: 0, right: 0, bottom: 0,
@@ -1068,35 +1101,45 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
                   ),
                 ),
               ])
-            : _placeholderContent(isDark, title, subtitle, icon, accentColor),
+            : _placeholderContent(isDark, title, subtitle, icon, accentColor,
+                fileName: fileName),
       ),
     );
   }
 
   Widget _placeholderContent(bool isDark, String title, String subtitle,
-      IconData icon, Color accentColor) {
+      IconData icon, Color accentColor, {String? fileName}) {
     return Padding(
-      padding: const EdgeInsets.all(14),
+      padding: const EdgeInsets.all(12),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            width: 44, height: 44,
+            width: 40, height: 40,
             decoration: BoxDecoration(
               color: accentColor.withAlpha(20),
               borderRadius: BorderRadius.circular(AppTheme.radiusMd)),
-            child: Icon(icon, color: accentColor.withAlpha(140), size: 22),
+            child: Icon(icon, color: accentColor.withAlpha(140), size: 20),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 8),
           Text(title, textAlign: TextAlign.center,
+            maxLines: 2, overflow: TextOverflow.ellipsis,
             style: GoogleFonts.sourceSans3(
-              fontSize: 12, fontWeight: FontWeight.w700, height: 1.3,
+              fontSize: 12, fontWeight: FontWeight.w700, height: 1.2,
               color: isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight)),
           const SizedBox(height: 4),
-          Text(subtitle, textAlign: TextAlign.center,
-            style: GoogleFonts.sourceSans3(
-              fontSize: 10, height: 1.3,
-              color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight)),
+          // Show the exact target filename when this is a capture placeholder,
+          // otherwise the generic description (image-load fallback).
+          Text(fileName ?? subtitle, textAlign: TextAlign.center,
+            maxLines: 2, overflow: TextOverflow.ellipsis,
+            style: fileName != null
+                ? GoogleFonts.ibmPlexMono(
+                    fontSize: 8, height: 1.3,
+                    color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight)
+                : GoogleFonts.sourceSans3(
+                    fontSize: 10, height: 1.3,
+                    color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight)),
           const SizedBox(height: 8),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
@@ -1104,9 +1147,10 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
               color: accentColor.withAlpha(15),
               borderRadius: BorderRadius.circular(4),
               border: Border.all(color: accentColor.withAlpha(40))),
-            child: Text('ADD PHOTO', style: GoogleFonts.ibmPlexMono(
-              fontSize: 8, fontWeight: FontWeight.w700,
-              letterSpacing: 1.5, color: accentColor.withAlpha(180))),
+            child: Text(fileName != null ? 'PHOTO NEEDED' : 'ADD PHOTO',
+              style: GoogleFonts.ibmPlexMono(
+                fontSize: 8, fontWeight: FontWeight.w700,
+                letterSpacing: 1.5, color: accentColor.withAlpha(180))),
           ),
         ],
       ),
