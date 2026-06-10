@@ -60,9 +60,13 @@ provider (local, no PHI) holding one line per muscle with brand / per-side dose 
 laterality (R/L/Bilateral, bilateral doubles the total); per-brand running totals
 vs a new structured `ToxinBrand.maxSessionUnits` ceiling, rendered as an amber/red
 meter on `/session`; add-to-session action on the muscle detail app bar; top-bar
-Session chip with a live count badge; clear-session. Covered by
-`test/data/session_planner_test.dart`. Deferred follow-ups: pattern bulk-add,
-named save/reload of multiple sessions, and multi-muscle PDF cheat-sheet export.
+Session chip with a live count badge; clear-session. Follow-ups also shipped
+2026-06-10: **pattern bulk-add** ("Add all N to session" on a pattern's muscle
+grid), **named save/reload** of sessions for recurring 12-week visits (local
+on-device, via a session-options menu), and a **whole-session PDF handout**
+(`printSessionPlan`, multi-page table with per-brand totals vs ceiling). Covered
+by `test/data/session_planner_test.dart` and `test/screens/session_screen_test.dart`.
+All originally-scoped slices for this idea are now complete.
 
 ### 2. Deep-link a muscle's dose into the pre-filled calculator
 **Description:** A "Calculate this" affordance beside each brand dose chip opens

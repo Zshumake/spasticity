@@ -9,7 +9,9 @@ import '../models/session_item.dart';
 /// patient identifiers) so a plan survives an app restart.
 class SessionPlanner extends ChangeNotifier {
   List<SessionItem> _items = [];
+  final Map<String, List<SessionItem>> _saved = {};
   static const String _storageKey = 'session_plan_v1';
+  static const String _savedKey = 'saved_sessions_v1';
 
   SessionPlanner() {
     _load();
@@ -52,6 +54,24 @@ class SessionPlanner extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Add several muscles at once (replacing any existing line by muscleId),
+  /// notifying listeners a single time. Used for "add a whole pattern".
+  void addAll(Iterable<SessionItem> newItems) {
+    var changed = false;
+    for (final item in newItems) {
+      final idx = _items.indexWhere((i) => i.muscleId == item.muscleId);
+      if (idx >= 0) {
+        _items[idx] = item;
+      } else {
+        _items.add(item);
+      }
+      changed = true;
+    }
+    if (!changed) return;
+    _save();
+    notifyListeners();
+  }
+
   void remove(String muscleId) {
     _items.removeWhere((i) => i.muscleId == muscleId);
     _save();
@@ -74,6 +94,42 @@ class SessionPlanner extends ChangeNotifier {
     notifyListeners();
   }
 
+  // ─── Named sessions (recurring-visit save/reload) ────────────
+  // Stored locally on-device only. Names are free text — clinicians can use
+  // non-identifying labels (e.g. "LUE flexor pattern") to avoid storing PHI.
+
+  /// Names of saved sessions, most-recently-saved last.
+  List<String> get savedNames => _saved.keys.toList();
+  bool get hasSaved => _saved.isNotEmpty;
+  int savedCount(String name) => _saved[name]?.length ?? 0;
+
+  /// Snapshot the current plan under [name], overwriting an existing name.
+  void saveCurrentAs(String name) {
+    final trimmed = name.trim();
+    if (trimmed.isEmpty || _items.isEmpty) return;
+    // Re-insert at the end so the most recent save sorts last.
+    _saved.remove(trimmed);
+    _saved[trimmed] = List<SessionItem>.from(_items);
+    _saveSaved();
+    notifyListeners();
+  }
+
+  /// Replace the current plan with the saved session [name].
+  void loadSaved(String name) {
+    final saved = _saved[name];
+    if (saved == null) return;
+    _items = List<SessionItem>.from(saved);
+    _save();
+    notifyListeners();
+  }
+
+  void deleteSaved(String name) {
+    if (_saved.remove(name) != null) {
+      _saveSaved();
+      notifyListeners();
+    }
+  }
+
   void _mutate(String muscleId, SessionItem Function(SessionItem) update) {
     final idx = _items.indexWhere((i) => i.muscleId == muscleId);
     if (idx < 0) return;
@@ -85,12 +141,25 @@ class SessionPlanner extends ChangeNotifier {
   Future<void> _load() async {
     try {
       final prefs = await SharedPreferences.getInstance();
+
       final raw = prefs.getString(_storageKey);
-      if (raw == null) return;
-      final list = json.decode(raw) as List<dynamic>;
-      _items = list
-          .map((e) => SessionItem.fromJson(e as Map<String, dynamic>))
-          .toList();
+      if (raw != null) {
+        _items = (json.decode(raw) as List<dynamic>)
+            .map((e) => SessionItem.fromJson(e as Map<String, dynamic>))
+            .toList();
+      }
+
+      final savedRaw = prefs.getString(_savedKey);
+      if (savedRaw != null) {
+        final map = json.decode(savedRaw) as Map<String, dynamic>;
+        _saved.clear();
+        map.forEach((name, list) {
+          _saved[name] = (list as List<dynamic>)
+              .map((e) => SessionItem.fromJson(e as Map<String, dynamic>))
+              .toList();
+        });
+      }
+
       notifyListeners();
     } catch (e) {
       debugPrint('Error loading session plan: $e');
@@ -106,6 +175,18 @@ class SessionPlanner extends ChangeNotifier {
       );
     } catch (e) {
       debugPrint('Error saving session plan: $e');
+    }
+  }
+
+  Future<void> _saveSaved() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final map = _saved.map(
+        (name, items) => MapEntry(name, items.map((i) => i.toJson()).toList()),
+      );
+      await prefs.setString(_savedKey, json.encode(map));
+    } catch (e) {
+      debugPrint('Error saving named sessions: $e');
     }
   }
 }

@@ -9,6 +9,7 @@ import '../../data/toxin_data.dart';
 import '../../models/muscle.dart';
 import '../../models/session_item.dart';
 import '../../theme/app_theme.dart';
+import '../../widgets/print_cheat_sheet.dart';
 
 /// The injection "tray": muscles the clinician has added to the current
 /// session, with editable brand / dose / side, and a per-brand running total
@@ -34,11 +35,32 @@ class SessionScreen extends StatelessWidget {
         title: Text('Session Plan',
             style: GoogleFonts.sora(fontWeight: FontWeight.w700, fontSize: 16)),
         actions: [
-          if (planner.isNotEmpty)
-            IconButton(
-              icon: const Icon(Icons.delete_sweep_outlined, size: 20),
-              tooltip: 'Clear session',
-              onPressed: () => _confirmClear(context, planner),
+          if (planner.isNotEmpty || planner.hasSaved)
+            PopupMenuButton<String>(
+              icon: const Icon(Icons.more_vert_rounded),
+              tooltip: 'Session options',
+              onSelected: (v) {
+                switch (v) {
+                  case 'print':
+                    printSessionPlan(context, planner.items);
+                  case 'save':
+                    _saveDialog(context, planner);
+                  case 'load':
+                    _loadSheet(context, planner);
+                  case 'clear':
+                    _confirmClear(context, planner);
+                }
+              },
+              itemBuilder: (ctx) => [
+                if (planner.isNotEmpty)
+                  _menuItem('print', Icons.print_outlined, 'Print / export'),
+                if (planner.isNotEmpty)
+                  _menuItem('save', Icons.bookmark_add_outlined, 'Save session…'),
+                if (planner.hasSaved)
+                  _menuItem('load', Icons.folder_open_outlined, 'Load saved…'),
+                if (planner.isNotEmpty)
+                  _menuItem('clear', Icons.delete_sweep_outlined, 'Clear session'),
+              ],
             ),
         ],
       ),
@@ -398,6 +420,154 @@ class SessionScreen extends StatelessWidget {
             fontWeight: FontWeight.w700,
             letterSpacing: 2.0,
             color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight));
+  }
+
+  PopupMenuItem<String> _menuItem(String value, IconData icon, String label) {
+    return PopupMenuItem<String>(
+      value: value,
+      child: Row(children: [
+        Icon(icon, size: 18, color: AppTheme.textSecondary),
+        const SizedBox(width: 12),
+        Text(label),
+      ]),
+    );
+  }
+
+  // ─── Save / load named sessions ──────────────────────────────
+  void _saveDialog(BuildContext context, SessionPlanner planner) {
+    final controller = TextEditingController();
+    final messenger = ScaffoldMessenger.of(context);
+    showDialog<void>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Save session'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextField(
+              controller: controller,
+              autofocus: true,
+              textCapitalization: TextCapitalization.words,
+              decoration: const InputDecoration(
+                labelText: 'Name',
+                hintText: 'e.g. LUE flexor pattern',
+              ),
+              onSubmitted: (_) =>
+                  _commitSave(ctx, messenger, planner, controller.text),
+            ),
+            const SizedBox(height: 10),
+            Text('Stored only on this device — use a non-identifying label.',
+                style: GoogleFonts.sourceSans3(
+                    fontSize: 11, color: AppTheme.textTertiary)),
+          ],
+        ),
+        actions: [
+          TextButton(
+              onPressed: () => Navigator.of(ctx).pop(),
+              child: const Text('Cancel')),
+          FilledButton(
+            style: FilledButton.styleFrom(backgroundColor: AppTheme.primary),
+            onPressed: () =>
+                _commitSave(ctx, messenger, planner, controller.text),
+            child: const Text('Save'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _commitSave(BuildContext dialogCtx, ScaffoldMessengerState messenger,
+      SessionPlanner planner, String name) {
+    final trimmed = name.trim();
+    if (trimmed.isEmpty) return;
+    final existed = planner.savedNames.contains(trimmed);
+    planner.saveCurrentAs(trimmed);
+    Navigator.of(dialogCtx).pop();
+    messenger.showSnackBar(SnackBar(
+        content:
+            Text(existed ? 'Updated "$trimmed"' : 'Saved as "$trimmed"')));
+  }
+
+  void _loadSheet(BuildContext context, SessionPlanner planner) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    showModalBottomSheet<void>(
+      context: context,
+      backgroundColor: isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight,
+      builder: (sheetCtx) => Consumer<SessionPlanner>(
+        builder: (consumerCtx, p, _) {
+          final names = p.savedNames.reversed.toList();
+          return SafeArea(
+            child: Column(mainAxisSize: MainAxisSize.min, children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 16, 20, 8),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text('SAVED SESSIONS',
+                      style: GoogleFonts.ibmPlexMono(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 2.0,
+                          color: AppTheme.textSecondary)),
+                ),
+              ),
+              if (names.isEmpty)
+                Padding(
+                  padding: const EdgeInsets.all(24),
+                  child: Text('No saved sessions yet.',
+                      style: GoogleFonts.sourceSans3(
+                          fontSize: 13, color: AppTheme.textTertiary)),
+                ),
+              ...names.map((name) => ListTile(
+                    leading: const Icon(Icons.vaccines_outlined,
+                        color: AppTheme.primary),
+                    title: Text(name),
+                    subtitle: Text('${p.savedCount(name)} muscles',
+                        style: GoogleFonts.ibmPlexMono(fontSize: 11)),
+                    trailing: IconButton(
+                      icon: const Icon(Icons.delete_outline_rounded, size: 20),
+                      color: AppTheme.textTertiary,
+                      tooltip: 'Delete',
+                      onPressed: () => p.deleteSaved(name),
+                    ),
+                    onTap: () => _loadSaved(sheetCtx, context, p, name),
+                  )),
+              const SizedBox(height: 8),
+            ]),
+          );
+        },
+      ),
+    );
+  }
+
+  void _loadSaved(BuildContext sheetCtx, BuildContext screenCtx,
+      SessionPlanner planner, String name) {
+    Navigator.of(sheetCtx).pop();
+    if (planner.isEmpty) {
+      planner.loadSaved(name);
+      return;
+    }
+    showDialog<void>(
+      context: screenCtx,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Replace current plan?'),
+        content: Text('Loading "$name" will replace the ${planner.count} '
+            'muscle(s) currently in your session.'),
+        actions: [
+          TextButton(
+              onPressed: () => Navigator.of(ctx).pop(),
+              child: const Text('Cancel')),
+          FilledButton(
+            style: FilledButton.styleFrom(backgroundColor: AppTheme.primary),
+            onPressed: () {
+              planner.loadSaved(name);
+              Navigator.of(ctx).pop();
+            },
+            child: const Text('Load'),
+          ),
+        ],
+      ),
+    );
   }
 
   void _confirmClear(BuildContext context, SessionPlanner planner) {

@@ -7,6 +7,7 @@ import '../data/muscle_data.dart';
 import '../data/muscle_provider.dart';
 import '../data/session_planner.dart';
 import '../models/muscle.dart';
+import '../models/session_item.dart';
 import '../models/spasticity_pattern.dart';
 import '../theme/app_theme.dart';
 import '../theme/favorites_manager.dart';
@@ -350,6 +351,34 @@ class _DashboardPageState extends State<DashboardPage> {
     );
   }
 
+  void _addPatternToSession(List<Muscle> muscles) {
+    final planner = context.read<SessionPlanner>();
+    final items = <SessionItem>[];
+    for (final m in muscles) {
+      final item = defaultSessionItem(m);
+      if (item != null) items.add(item);
+    }
+    if (items.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('No dose data to add for these muscles.')),
+      );
+      return;
+    }
+    planner.addAll(items);
+    final skipped = muscles.length - items.length;
+    final msg = skipped > 0
+        ? 'Added ${items.length} to session · $skipped had no dose data'
+        : 'Added ${items.length} muscles to session';
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(msg),
+        action: SnackBarAction(
+            label: 'View', onPressed: () => context.push('/session')),
+        duration: const Duration(seconds: 3),
+      ),
+    );
+  }
+
   Widget _buildSearchBar(bool isDark) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 200),
@@ -575,6 +604,30 @@ class _DashboardPageState extends State<DashboardPage> {
                 padding: const EdgeInsets.only(left: 16, top: 6),
                 child: Text(_selectedPattern!.description,
                   style: GoogleFonts.sourceSans3(fontSize: 13, color: AppTheme.textSecondary)),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 16, top: 12),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: GestureDetector(
+                    onTap: () => _addPatternToSession(filtered),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: AppTheme.primary.withAlpha(30),
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(color: AppTheme.primary.withAlpha(120)),
+                      ),
+                      child: Row(mainAxisSize: MainAxisSize.min, children: [
+                        const Icon(Icons.playlist_add_rounded, size: 15, color: AppTheme.primary),
+                        const SizedBox(width: 6),
+                        Text('Add all ${filtered.length} to session',
+                          style: GoogleFonts.ibmPlexMono(
+                            fontSize: 11, fontWeight: FontWeight.w600, color: AppTheme.primary)),
+                      ]),
+                    ),
+                  ),
+                ),
               ),
             ],
           ]),

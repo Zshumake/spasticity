@@ -135,4 +135,58 @@ void main() {
       expect(defaultSessionItem(muscleWith({})), null);
     });
   });
+
+  group('bulk add and named sessions', () {
+    test('addAll adds many and replaces by id (no duplicates)', () {
+      final p = SessionPlanner();
+      p.addAll([item('a', 'Botox', 50), item('b', 'Botox', 30)]);
+      expect(p.count, 2);
+
+      p.addAll([item('b', 'Botox', 99), item('c', 'Botox', 10)]);
+      expect(p.count, 3);
+      expect(p.itemFor('b')!.dose, 99);
+    });
+
+    test('save snapshot is independent of later edits; load restores it', () {
+      final p = SessionPlanner();
+      p.addOrUpdate(item('a', 'Botox', 50));
+      p.addOrUpdate(item('b', 'Dysport', 250));
+      p.saveCurrentAs('plan one');
+      expect(p.savedNames, contains('plan one'));
+      expect(p.savedCount('plan one'), 2);
+
+      // Clearing the live plan must not touch the saved snapshot.
+      p.clear();
+      expect(p.isEmpty, true);
+      expect(p.savedCount('plan one'), 2);
+
+      p.loadSaved('plan one');
+      expect(p.count, 2);
+      expect(p.itemFor('b')!.brand, 'Dysport');
+    });
+
+    test('saveCurrentAs is a no-op when the plan is empty', () {
+      final p = SessionPlanner();
+      p.saveCurrentAs('empty');
+      expect(p.hasSaved, false);
+    });
+
+    test('saveCurrentAs overwrites an existing name in place', () {
+      final p = SessionPlanner();
+      p.addOrUpdate(item('a', 'Botox', 50));
+      p.saveCurrentAs('plan');
+      p.addOrUpdate(item('b', 'Botox', 50));
+      p.saveCurrentAs('plan');
+      expect(p.savedNames.where((n) => n == 'plan').length, 1);
+      expect(p.savedCount('plan'), 2);
+    });
+
+    test('deleteSaved removes the snapshot', () {
+      final p = SessionPlanner();
+      p.addOrUpdate(item('a', 'Botox', 50));
+      p.saveCurrentAs('plan');
+      p.deleteSaved('plan');
+      expect(p.hasSaved, false);
+    });
+  });
 }
