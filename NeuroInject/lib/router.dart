@@ -29,7 +29,7 @@ final router = GoRouter(
           return CustomTransitionPage<void>(
             key: state.pageKey,
             child: const Scaffold(body: Center(child: Text('Muscle not found'))),
-            transitionsBuilder: (_, a, __, child) => FadeTransition(opacity: a, child: child),
+            transitionsBuilder: (_, a, _, child) => FadeTransition(opacity: a, child: child),
           );
         }
         return CustomTransitionPage<void>(

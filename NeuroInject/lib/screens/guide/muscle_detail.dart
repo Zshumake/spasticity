@@ -698,7 +698,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
                         imagePath!,
                         key: ValueKey(activeView),
                         fit: BoxFit.contain,
-                        errorBuilder: (_, __, ___) => _anatomyPlaceholder(isDark),
+                        errorBuilder: (_, _, _) => _anatomyPlaceholder(isDark),
                       ),
                     ),
                     // Caption overlay
@@ -925,7 +925,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
             ? Stack(children: [
                 Positioned.fill(
                   child: Image.asset(imagePath, fit: BoxFit.cover,
-                    errorBuilder: (_, __, ___) => _placeholderContent(
+                    errorBuilder: (_, _, _) => _placeholderContent(
                         isDark, title, subtitle, icon, accentColor)),
                 ),
                 // Gradient overlay at bottom with label
@@ -1048,7 +1048,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         title: Text(title, style: const TextStyle(fontSize: 16))),
       body: InteractiveViewer(minScale: 0.5, maxScale: 5.0,
         child: Center(child: Image.asset(path, fit: BoxFit.contain,
-          errorBuilder: (_, __, ___) => const Center(
+          errorBuilder: (_, _, _) => const Center(
             child: Text('Image not found', style: TextStyle(color: Colors.white54)))))),
     )));
   }

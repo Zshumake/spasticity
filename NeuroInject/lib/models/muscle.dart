@@ -112,9 +112,9 @@ class Muscle {
     );
   }
 
-  /// Parse anatomyImages: supports new Map<String,String> schema (keyed
+  /// Parse anatomyImages: supports new `Map<String, String>` schema (keyed
   /// by view name: 'anterior', 'posterior', 'lateral') and legacy
-  /// List<String> schema (treated as {'anterior': filename}).
+  /// `List<String>` schema (treated as {'anterior': filename}).
   static Map<String, String> _parseAnatomyImages(dynamic value) {
     if (value == null) return const {};
     if (value is Map) {
