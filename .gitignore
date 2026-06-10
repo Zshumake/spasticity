@@ -4,6 +4,9 @@
 # Video frames (large, generated)
 video_frames/
 
+# Source reference books (large, copyrighted — keep local, don't version)
+*.pdf
+
 # Flutter build artifacts
 NeuroInject/build/
 NeuroInject/.dart_tool/
