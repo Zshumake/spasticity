@@ -8,6 +8,9 @@ class LandmarkList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Theme-aware so landmark text stays readable in light mode (the legacy
+    // AppColors.textPrimary is a fixed dark-theme warm-white).
+    final textColor = Theme.of(context).colorScheme.onSurface;
     return Column(
       children: landmarks.map((landmark) {
         return Padding(
@@ -30,9 +33,9 @@ class LandmarkList extends StatelessWidget {
               Expanded(
                 child: Text(
                   landmark,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 15,
-                    color: AppColors.textPrimary,
+                    color: textColor,
                     height: 1.5,
                   ),
                 ),

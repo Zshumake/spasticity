@@ -27,6 +27,18 @@ class MuscleDetailScreen extends StatefulWidget {
 
 class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
   Muscle get muscle => widget.muscle;
+
+  /// US safety notes not already surfaced as muscle-level [Muscle.dangerZones]
+  /// (which are promoted from these notes for many muscles), so the same
+  /// hazard never renders twice on one page.
+  List<String> get _uniqueSafetyNotes {
+    final us = muscle.ultrasound;
+    if (us == null) return const [];
+    return us.safetyNotes
+        .where((n) => !muscle.dangerZones.contains(n))
+        .toList();
+  }
+
   bool _procedureMode = false;
   final Set<int> _checkedSupplies = {};
   /// Clinical-photo asset paths actually bundled in the app, so each slot can
@@ -319,10 +331,11 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
           const SizedBox(height: 12),
         ],
 
-        // Ultrasound-specific safety
-        if (us != null && us.safetyNotes.isNotEmpty) ...[
+        // Ultrasound-specific safety (excluding notes already shown as
+        // adjacent-structure danger zones just above).
+        if (_uniqueSafetyNotes.isNotEmpty) ...[
           _procHeader('US SAFETY'),
-          SafetyCallout(warnings: us.safetyNotes),
+          SafetyCallout(warnings: _uniqueSafetyNotes),
           const SizedBox(height: 12),
         ],
 
@@ -704,9 +717,12 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     } else if (d.xeomin != null) {
       brand = 'Xeomin';
       range = d.xeomin!;
-    } else {
+    } else if (d.dysport != null) {
       brand = 'Dysport';
       range = d.dysport!;
+    } else {
+      // hasAny was true but none of the known brands matched — nothing to seed.
+      return const SizedBox.shrink();
     }
     return InkWell(
       onTap: () => _openCalculator(brand, range),
@@ -952,9 +968,11 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     );
   }
 
-  /// Two side-by-side image slots:
-  ///   1. Probe placement + needle insertion site (surface photo)
-  ///   2. Ultrasound image with needle visible in muscle
+  /// The three clinical photo slots:
+  ///   1. Patient position
+  ///   2. Probe + needle site — one annotated surface photo
+  ///      (blue bar = probe footprint, red dot = needle entry)
+  ///   3. Ultrasound image with needle visible in muscle
   /// Shows real images when available, otherwise a styled placeholder
   /// prompting the user to add their own.
   Widget _buildClinicalPhotos(bool isDark) {
@@ -962,7 +980,6 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     const accents = {
       ClinicalPhotoSlot.position: AppTheme.success,
       ClinicalPhotoSlot.probe: AppTheme.primary,
-      ClinicalPhotoSlot.needle: AppTheme.patternColor,
       ClinicalPhotoSlot.ultrasound: AppTheme.amber,
     };
 
@@ -996,13 +1013,13 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
             fontSize: 10, fontWeight: FontWeight.w700,
             letterSpacing: 2.0, color: AppTheme.primary)),
           const Spacer(),
-          Text('$captured/4 captured', style: GoogleFonts.ibmPlexMono(
+          Text('$captured/3 captured', style: GoogleFonts.ibmPlexMono(
             fontSize: 9, fontWeight: FontWeight.w600,
-            color: captured == 4 ? AppTheme.success : AppTheme.textTertiary)),
+            color: captured == 3 ? AppTheme.success : AppTheme.textTertiary)),
         ]),
         const SizedBox(height: 14),
 
-        // 2 × 2 grid of slots
+        // Three slots: position + probe/needle site on top, US below.
         Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Expanded(child: slot(ClinicalPhotoSlot.position)),
           const SizedBox(width: 12),
@@ -1010,9 +1027,9 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         ]),
         const SizedBox(height: 12),
         Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Expanded(child: slot(ClinicalPhotoSlot.needle)),
-          const SizedBox(width: 12),
           Expanded(child: slot(ClinicalPhotoSlot.ultrasound)),
+          const SizedBox(width: 12),
+          const Expanded(child: SizedBox.shrink()),
         ]),
 
         // Photo hint (if available)
@@ -1170,8 +1187,8 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
           fontSize: 10, fontWeight: FontWeight.w700, letterSpacing: 2.0, color: AppTheme.textSecondary)),
         const SizedBox(height: 8),
         StepList(steps: us.viewSteps),
-        if (us.safetyNotes.isNotEmpty) ...[
-          const SizedBox(height: 12), SafetyCallout(warnings: us.safetyNotes)],
+        if (_uniqueSafetyNotes.isNotEmpty) ...[
+          const SizedBox(height: 12), SafetyCallout(warnings: _uniqueSafetyNotes)],
         if (us.videoSource != null) ...[
           const SizedBox(height: 12),
           Row(children: [

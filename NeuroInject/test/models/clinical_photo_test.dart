@@ -3,15 +3,18 @@ import 'package:neuroinject/models/clinical_photo.dart';
 
 void main() {
   group('ClinicalPhotoSlot', () {
-    test('there are exactly four slots with the expected keys', () {
+    test('there are exactly three slots with the expected keys', () {
       expect(ClinicalPhotoSlot.values.map((s) => s.key).toList(),
-          ['position', 'probe', 'needle', 'us']);
+          ['position', 'probe', 'us']);
+    });
+
+    test('probe slot is the combined probe + needle site photo', () {
+      expect(ClinicalPhotoSlot.probe.label, 'Probe + Needle Site');
     });
 
     test('fileName follows the <muscleId>-<key>.jpg convention', () {
       expect(ClinicalPhotoSlot.position.fileName('fcr'), 'fcr-position.jpg');
       expect(ClinicalPhotoSlot.probe.fileName('fcr'), 'fcr-probe.jpg');
-      expect(ClinicalPhotoSlot.needle.fileName('fcr'), 'fcr-needle.jpg');
       expect(ClinicalPhotoSlot.ultrasound.fileName('pec-major'),
           'pec-major-us.jpg');
     });

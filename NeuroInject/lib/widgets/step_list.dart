@@ -8,6 +8,9 @@ class StepList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Theme-aware so step text stays readable in light mode (the legacy
+    // AppColors.textPrimary is a fixed dark-theme warm-white).
+    final textColor = Theme.of(context).colorScheme.onSurface;
     return Column(
       children: List.generate(steps.length, (index) {
         return Padding(
@@ -38,9 +41,9 @@ class StepList extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 3),
                   child: Text(
                     steps[index],
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 15,
-                      color: AppColors.textPrimary,
+                      color: textColor,
                       height: 1.5,
                     ),
                   ),

@@ -208,7 +208,12 @@
       "lateral": "lat-dorsi_lateral.png"
     },
     "anatomyCaption": "Posterior trunk · latissimus dorsi highlighted",
-    "defaultAnatomyView": "posterior"
+    "defaultAnatomyView": "posterior",
+    "dangerZones": [
+      "The thoracodorsal nerve and artery run along the deep surface of the Latissimus Dorsi — use color Doppler to identify the vascular bundle.",
+      "Avoid the axillary neurovascular bundle by staying inferior and posterior to the axillary crease.",
+      "The long thoracic nerve runs along the Serratus Anterior — do not inject too deep."
+    ]
   },
   {
     "id": "biceps-brachii",
@@ -310,7 +315,12 @@
       "posterior": "biceps-brachii_posterior.png",
       "lateral": "biceps-brachii_lateral.png"
     },
-    "anatomyCaption": "Anterior arm · biceps brachii highlighted"
+    "anatomyCaption": "Anterior arm · biceps brachii highlighted",
+    "dangerZones": [
+      "The Musculocutaneous Nerve runs between the biceps and brachialis — inject into the superficial belly of the biceps only.",
+      "The brachial artery and vein run on the medial side of the arm — avoid the medial approach.",
+      "The median nerve also runs medially — use an anterior or lateral approach for safety."
+    ]
   },
   {
     "id": "brachialis",
@@ -412,7 +422,12 @@
       "posterior": "brachialis_posterior.png",
       "lateral": "brachialis_lateral.png"
     },
-    "anatomyCaption": "Anterior arm · brachialis highlighted (deep to biceps)"
+    "anatomyCaption": "Anterior arm · brachialis highlighted (deep to biceps)",
+    "dangerZones": [
+      "The radial nerve courses along the lateral and posterior humerus in the spiral groove — always identify it before needle insertion.",
+      "The brachial artery and median nerve lie medially — the ANTERIOR approach through the biceps (as described in placement) keeps the needle medial to the radial nerve and lateral to the brachial vessels, providing the safest corridor.",
+      "Avoid contacting the periosteum of the humerus, which can cause significant pain."
+    ]
   },
   {
     "id": "quadratus-lumborum",
@@ -879,7 +894,7 @@
         "In the lower quadrants, the sciatic nerve may be visible as a large hyperechoic flattened oval structure — confirm it is not in your injection path."
       ],
       "safetyNotes": [
-        "The sciatic nerve exits the greater sciatic foramen deep to the piriformis and runs deep to the gluteus maximus — always inject in the upper-outer quadrant.",
+        "The sciatic nerve exits the greater sciatic foramen deep to the piriformis and runs deep to the gluteus maximus — target the thick mid-belly and stay lateral to a line from the PSIS to the ischial tuberosity. (The upper-outer-quadrant rule applies to gluteus medius, not maximus.)",
         "The superior and inferior gluteal arteries run deep to the muscle — aspirate before injection.",
         "In thin patients the iliac bone is close to the surface — avoid periosteal injection."
       ],
@@ -1252,7 +1267,11 @@
       "posterior": "rectus-femoris_posterior.png",
       "lateral": "rectus-femoris_lateral.png"
     },
-    "anatomyCaption": "Anterior thigh · rectus femoris highlighted"
+    "anatomyCaption": "Anterior thigh · rectus femoris highlighted",
+    "dangerZones": [
+      "The femoral nerve, artery, and vein lie in the femoral triangle (medial proximal thigh) — avoid the proximal medial approach.",
+      "The descending branch of the lateral circumflex femoral artery runs between the rectus femoris and vastus lateralis — use color Doppler."
+    ]
   },
   {
     "id": "vastus-medialis",
@@ -1564,7 +1583,11 @@
       "posterior": "vastus-intermedius_posterior.png",
       "lateral": "vastus-intermedius_lateral.png"
     },
-    "anatomyCaption": "Anterior thigh · vastus intermedius highlighted (deep)"
+    "anatomyCaption": "Anterior thigh · vastus intermedius highlighted (deep)",
+    "dangerZones": [
+      "The descending branch of the lateral circumflex femoral artery runs laterally between the muscles — use color Doppler before inserting.",
+      "Do not advance the needle to the periosteum of the femur, which causes pain and is not the target."
+    ]
   },
   {
     "id": "semimembranosus",
@@ -1769,7 +1792,12 @@
       "lateral": "semitendinosus_lateral.png"
     },
     "anatomyCaption": "Posterior thigh · semitendinosus highlighted",
-    "defaultAnatomyView": "posterior"
+    "defaultAnatomyView": "posterior",
+    "dangerZones": [
+      "The sciatic nerve runs laterally in the posterior thigh — it is generally safe with a medial injection approach.",
+      "The posterior femoral cutaneous nerve runs superficially in the midline — avoid the most superficial subcutaneous plane.",
+      "Distally, the popliteal vessels are at risk — do not inject in the distal third of the thigh."
+    ]
   },
   {
     "id": "gastrocnemius-medial",
@@ -2097,7 +2125,12 @@
       "lateral": "soleus-medial_lateral.png"
     },
     "anatomyCaption": "Posterior leg · soleus highlighted",
-    "defaultAnatomyView": "posterior"
+    "defaultAnatomyView": "posterior",
+    "dangerZones": [
+      "The posterior tibial artery and tibial nerve run deep to the soleus in the deep posterior compartment — do not advance the needle through the soleus.",
+      "The saphenous vein and nerve run subcutaneously along the medial leg — avoid very superficial injury.",
+      "Peroneal vessels may be encountered laterally if the needle is directed too far lateral."
+    ]
   },
   {
     "id": "soleus-lateral",
@@ -2304,7 +2337,11 @@
       "lateral": "fdl_lateral.png"
     },
     "anatomyCaption": "Deep posterior leg · FDL highlighted",
-    "defaultAnatomyView": "posterior"
+    "defaultAnatomyView": "posterior",
+    "dangerZones": [
+      "The posterior tibial artery and tibial nerve run immediately adjacent to the FDL — always identify them with color Doppler before injecting.",
+      "The peroneal artery runs laterally between the deep compartment muscles — do not direct the needle too laterally."
+    ]
   },
   {
     "id": "fdb",
@@ -2500,7 +2537,12 @@
       "posterior": "tibialis-anterior_posterior.png",
       "lateral": "tibialis-anterior_lateral.png"
     },
-    "anatomyCaption": "Anterior leg · tibialis anterior"
+    "anatomyCaption": "Anterior leg · tibialis anterior",
+    "dangerZones": [
+      "The anterior tibial artery and deep peroneal nerve run deep to the muscle on the interosseous membrane — do not advance the needle to this depth.",
+      "The superficial peroneal nerve runs in the lateral compartment — avoid directing the needle too far laterally.",
+      "The tibial cortex is immediately medial — contacting the periosteum is painful; angle the needle slightly laterally."
+    ]
   },
   {
     "id": "tibialis-posterior",
@@ -2717,7 +2759,12 @@
       "lateral": "fhl_lateral.png"
     },
     "anatomyCaption": "Deep posterior leg · FHL highlighted",
-    "defaultAnatomyView": "posterior"
+    "defaultAnatomyView": "posterior",
+    "dangerZones": [
+      "The posterior tibial artery and tibial nerve lie medial to the FHL — always use a lateral approach.",
+      "The peroneal artery runs between the FHL and tibialis posterior — identify with color Doppler.",
+      "The sural nerve runs superficially in the posterior calf — avoid the superficial subcutaneous plane."
+    ]
   },
   {
     "id": "ehl",
@@ -2819,7 +2866,11 @@
       "posterior": "ehl_posterior.png",
       "lateral": "ehl_lateral.png"
     },
-    "anatomyCaption": "Anterior leg · EHL highlighted"
+    "anatomyCaption": "Anterior leg · EHL highlighted",
+    "dangerZones": [
+      "The anterior tibial artery and deep peroneal nerve run immediately adjacent to the EHL — identify them with color Doppler before injecting.",
+      "The interosseous membrane lies deep — do not advance the needle to this level."
+    ]
   },
   {
     "id": "add-hallucis",
@@ -2907,7 +2958,11 @@
       "posterior": "add-hallucis_posterior.png",
       "lateral": "add-hallucis_lateral.png"
     },
-    "anatomyCaption": "Plantar foot · adductor hallucis highlighted"
+    "anatomyCaption": "Plantar foot · adductor hallucis highlighted",
+    "dangerZones": [
+      "The plantar digital nerves run between the metatarsal heads — interdigital neuromas are common here; identify nerve tissue before injecting.",
+      "The plantar metatarsal arteries run in the interosseous spaces — use color Doppler to identify them."
+    ]
   },
   {
     "id": "triceps",
@@ -3015,7 +3070,13 @@
       "lateral": "triceps_lateral.png"
     },
     "anatomyCaption": "Posterior arm · triceps brachii highlighted",
-    "defaultAnatomyView": "posterior"
+    "defaultAnatomyView": "posterior",
+    "dangerZones": [
+      "The Radial Nerve runs in the spiral groove of the humerus, directly deep to the triceps — ALWAYS identify it before injecting.",
+      "Inject into the superficial-to-mid portion of the muscle belly — do not advance the needle to the bone.",
+      "The profunda brachii artery accompanies the radial nerve — use color Doppler to confirm.",
+      "The long head is safest to inject in the mid-substance away from the spiral groove."
+    ]
   },
   {
     "id": "brachioradialis",
@@ -3118,7 +3179,12 @@
       "posterior": "brachioradialis_posterior.png",
       "lateral": "brachioradialis_lateral.png"
     },
-    "anatomyCaption": "Lateral forearm · brachioradialis highlighted"
+    "anatomyCaption": "Lateral forearm · brachioradialis highlighted",
+    "dangerZones": [
+      "The Radial Nerve runs in the intermuscular septum between the Brachioradialis and Brachialis — always identify it before injecting.",
+      "Keep the needle tip superficial and within the BR muscle belly — do not advance past the fascial plane toward the radial nerve.",
+      "The radial recurrent artery may run near the radial nerve — use color Doppler if uncertain."
+    ]
   },
   {
     "id": "pronator-teres",
@@ -3466,7 +3532,7 @@
       "The FDS lies deep to the FCR, palmaris longus, and FCU, but superficial to the FDP.",
       "Insert the needle at the mid-forearm level, between the FCR and FCU, slightly deeper than the superficial flexor layer.",
       "Advance 1.5-2 cm perpendicular to the skin to pass through the superficial flexor layer and into the FDS.",
-      "The median nerve runs on the superficial surface of the FDS (between the FDS and the superficial flexors) — approach from the ulnar side to minimize risk.",
+      "The median nerve lies at the deep surface of the FDS (between the FDS and the FDP) — stay in the superficial-to-mid muscle belly and approach from the ulnar side to minimize risk.",
       "Aspirate before injecting. Multiple injection sites along the forearm may be needed given the broad muscle belly.",
       "Injection site: mid-anterior forearm, into the muscle belly.",
       "Sites: 1-4 for typical dosing; usually 1-2.",
@@ -3479,7 +3545,7 @@
       "USG is highly recommended — the FDS lies in the intermediate layer and is difficult to distinguish from surrounding muscles by palpation alone.",
       "Have the patient flex the PIP joints with the DIP joints extended to confirm FDS activation.",
       "The FDS has four separate muscle bellies for digits 2-5; target the belly corresponding to the affected digits.",
-      "The median nerve travels on the superficial surface of the FDS — always identify it with ultrasound before injecting.",
+      "The median nerve travels at the deep border of the FDS — always identify it with ultrasound before injecting.",
       "US guidance strongly recommended — FDS and FDP lie side by side in the proximal forearm and cannot be reliably distinguished by palpation alone.",
       "Patient position: elbow supinated, wrist and fingers comfortably extended.",
       "US or EMG guidance is recommended — FDS and FDP lie side by side and cannot be reliably distinguished by palpation alone.",
@@ -3563,7 +3629,12 @@
       "posterior": "fds_posterior.png",
       "lateral": "fds_lateral.png"
     },
-    "anatomyCaption": "Anterior forearm · FDS highlighted"
+    "anatomyCaption": "Anterior forearm · FDS highlighted",
+    "dangerZones": [
+      "The Median Nerve lies directly at the deep border of the FDS — inject into the superficial-to-mid portion of the muscle belly.",
+      "The Ulnar Nerve runs along the medial border between FDS and FCU — avoid the medial edge.",
+      "Keep the needle superficial within the FDS — the nerve-vessel plane lies at the FDS-FDP interface."
+    ]
   },
   {
     "id": "fdp",
@@ -3788,7 +3859,12 @@
       "posterior": "fpl_posterior.png",
       "lateral": "fpl_lateral.png"
     },
-    "anatomyCaption": "Anterior forearm · FPL highlighted (deep)"
+    "anatomyCaption": "Anterior forearm · FPL highlighted (deep)",
+    "dangerZones": [
+      "The Anterior Interosseous Nerve (AIN) — a pure motor branch of the median nerve — runs on the anterior surface of the interosseous membrane between FPL and FDP. Do not inject deep to FPL.",
+      "The radial artery runs superficial and lateral — use color Doppler near the radial border.",
+      "Target the mid-substance of FPL where it overlies the radius for the safest injection zone."
+    ]
   },
   {
     "id": "adductor-pollicis",
@@ -4201,7 +4277,11 @@
       "lateral": "teres-major_lateral.png"
     },
     "anatomyCaption": "Posterior scapula · teres major highlighted",
-    "defaultAnatomyView": "posterior"
+    "defaultAnatomyView": "posterior",
+    "dangerZones": [
+      "The circumflex scapular artery and thoracodorsal neurovascular bundle run near the Teres Major — use color Doppler.",
+      "The axillary nerve is superior to the Teres Major — avoid angling the needle superiorly."
+    ]
   },
   {
     "id": "adductor-longus",
@@ -5248,7 +5328,12 @@
       "posterior": "pronator-quadratus_posterior.png",
       "lateral": "pronator-quadratus_lateral.png"
     },
-    "anatomyCaption": "Anterior forearm · pronator quadratus highlighted (distal, deep)"
+    "anatomyCaption": "Anterior forearm · pronator quadratus highlighted (distal, deep)",
+    "dangerZones": [
+      "The median nerve and anterior interosseous nerve lie in this plane — always identify the median nerve on US before needle insertion.",
+      "The radial and ulnar arteries lie on the volar surface of the forearm — use color Doppler to map them. A dorsal approach avoids both.",
+      "The pronator quadratus is thin — minor needle over-advancement can exit the muscle. Use in-plane technique with continuous needle tip visualization."
+    ]
   },
   {
     "id": "splenius-capitis",
@@ -5351,7 +5436,13 @@
       "lateral": "splenius-capitis_lateral.png"
     },
     "anatomyCaption": "Posterior neck · splenius capitis highlighted",
-    "defaultAnatomyView": "posterior"
+    "defaultAnatomyView": "posterior",
+    "dangerZones": [
+      "The vertebral artery runs through the transverse foramina of C1-C6 — it lies deep and medial to the splenius capitis. Never direct the needle medially toward the transverse processes without continuous ultrasound visualization.",
+      "The greater occipital nerve (dorsal ramus of C2) pierces the semispinalis capitis and may traverse the splenius capitis near the superior nuchal line — avoid injecting within 2 cm of the occipital insertion to minimize risk of occipital neuralgia.",
+      "The occipital artery courses superficially over the splenius capitis near its mastoid insertion — use color Doppler to identify and avoid it when injecting the upper portion of the muscle.",
+      "The spinal accessory nerve crosses the posterior triangle superficial to the splenius capitis — it is generally protected by the overlying trapezius, but awareness of its course is important when injecting the lateral muscle belly."
+    ]
   },
   {
     "id": "semispinalis-capitis",
@@ -5667,7 +5758,12 @@
       "lateral": "longissimus-capitis_lateral.png"
     },
     "anatomyCaption": "Posterior neck · longissimus capitis highlighted",
-    "defaultAnatomyView": "posterior"
+    "defaultAnatomyView": "posterior",
+    "dangerZones": [
+      "The vertebral artery lies within the transverse foramina anterior to the articular pillars — never advance the needle beyond the bony cortex of the articular pillar. The bone serves as a natural stop.",
+      "The deep cervical artery and vein run in the deep posterior cervical musculature — use color Doppler to identify and avoid vascular structures before injecting.",
+      "The dorsal rami of the cervical spinal nerves pass through or near the longissimus capitis — injection may cause temporary local paresthesias or numbness in the posterior neck."
+    ]
   },
   {
     "id": "masseter",
@@ -6067,11 +6163,11 @@
     ],
     "ultrasound": null,
     "dosage": {
-      "botox": "1.25-2.5 per site (7.5-15 total per eye)",
-      "xeomin": "1.25-2.5 per site (7.5-15 total per eye)",
-      "dysport": "4-8 per site (24-48 total per eye)"
+      "botox": "7.5-15",
+      "xeomin": "7.5-15",
+      "dysport": "24-48"
     },
-    "dosageNote": "Dosage is per SITE (6 sites per eye). Total dose per eye: 7.5-15 U Botox. Bilateral total: 15-30 U. Per the Allergan PI for blepharospasm, the initial recommended dose is 1.25-2.5 U per site. Do not exceed 5 U per site or 200 U total over 30 days.",
+    "dosageNote": "Shown as total per eye. Deliver as 1.25-2.5 U per site across 6 sites per eye (total 7.5-15 U Botox per eye; bilateral 15-30 U). Per the Allergan PI for blepharospasm, the initial recommended dose is 1.25-2.5 U per site; do not exceed 5 U per site or 200 U total over 30 days.",
     "marker": null,
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -6246,7 +6342,11 @@
       "posterior": "procerus_posterior.png",
       "lateral": "procerus_lateral.png"
     },
-    "anatomyCaption": "Frontal face · procerus highlighted"
+    "anatomyCaption": "Frontal face · procerus highlighted",
+    "dangerZones": [
+      "The procerus is extremely thin (1-3 mm) — deep insertion is not necessary and risks penetrating to the periosteum.",
+      "Over-injection or diffusion can cause a 'flat' or 'frozen' appearance of the nasal root — start with lower doses in cosmetically conscious patients."
+    ]
   },
   {
     "id": "frontalis",
@@ -6315,7 +6415,11 @@
       "posterior": "frontalis_posterior.png",
       "lateral": "frontalis_lateral.png"
     },
-    "anatomyCaption": "Anterior face · frontalis highlighted"
+    "anatomyCaption": "Anterior face · frontalis highlighted",
+    "dangerZones": [
+      "⚠️ IMPORTANT CLINICAL NOTE: The frontalis is the ONLY muscle that elevates the brow. Excessive weakening causes brow ptosis, which can be functionally and cosmetically significant. Always warn the patient about this risk.",
+      "CRITICAL: Do not inject within 2 cm of the brow — this causes brow ptosis (the frontalis is the ONLY brow elevator). Loss of frontalis function drops the brow and may worsen pre-existing dermatochalasis or upper lid heaviness."
+    ]
   },
   {
     "id": "platysma",
@@ -6717,7 +6821,7 @@
         "The proper digital nerves and arteries run immediately adjacent to the lumbricals — always identify them before injecting.",
         "The flexor tendons (FDP/FDS) are immediately deep — do not advance past the lumbrical into the tendon sheath.",
         "Use the smallest possible volume to prevent diffusion to adjacent structures.",
-        "The 1st lumbrical is innervated by the median nerve; lumbricals 2-4 by the ulnar nerve — toxin spread could weaken intrinsic hand function."
+        "The 1st and 2nd lumbricals are innervated by the median nerve; the 3rd and 4th by the ulnar nerve — toxin spread could weaken intrinsic hand function."
       ],
       "probeDiagram": {
         "cx": 50,
@@ -6775,7 +6879,11 @@
       "posterior": "hand-lumbricals_posterior.png",
       "lateral": "hand-lumbricals_lateral.png"
     },
-    "anatomyCaption": "Palmar hand · hand lumbricals highlighted"
+    "anatomyCaption": "Palmar hand · hand lumbricals highlighted",
+    "dangerZones": [
+      "The proper digital nerves and arteries run immediately adjacent to the lumbricals — always identify them before injecting.",
+      "The flexor tendons (FDP/FDS) are immediately deep — do not advance past the lumbrical into the tendon sheath."
+    ]
   },
   {
     "id": "foot-lumbricals",
@@ -6870,6 +6978,10 @@
       "posterior": "foot-lumbricals_posterior.png",
       "lateral": "foot-lumbricals_lateral.png"
     },
-    "anatomyCaption": "Plantar foot · foot lumbricals highlighted"
+    "anatomyCaption": "Plantar foot · foot lumbricals highlighted",
+    "dangerZones": [
+      "The plantar digital nerves and arteries are immediately adjacent to the lumbricals — identify before injecting.",
+      "The FDL and FDB tendons are nearby — avoid injecting into the tendon sheath."
+    ]
   }
 ]

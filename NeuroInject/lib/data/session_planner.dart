@@ -139,16 +139,22 @@ class SessionPlanner extends ChangeNotifier {
   }
 
   Future<void> _load() async {
-    try {
-      final prefs = await SharedPreferences.getInstance();
+    final prefs = await SharedPreferences.getInstance();
 
+    // Load the active plan and the saved named sessions independently, so a
+    // corrupt blob in one can't suppress the other (they are unrelated data).
+    try {
       final raw = prefs.getString(_storageKey);
       if (raw != null) {
         _items = (json.decode(raw) as List<dynamic>)
             .map((e) => SessionItem.fromJson(e as Map<String, dynamic>))
             .toList();
       }
+    } catch (e) {
+      debugPrint('Error loading active session plan: $e');
+    }
 
+    try {
       final savedRaw = prefs.getString(_savedKey);
       if (savedRaw != null) {
         final map = json.decode(savedRaw) as Map<String, dynamic>;
@@ -159,11 +165,11 @@ class SessionPlanner extends ChangeNotifier {
               .toList();
         });
       }
-
-      notifyListeners();
     } catch (e) {
-      debugPrint('Error loading session plan: $e');
+      debugPrint('Error loading saved sessions: $e');
     }
+
+    notifyListeners();
   }
 
   Future<void> _save() async {
