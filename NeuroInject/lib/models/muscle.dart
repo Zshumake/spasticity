@@ -1,3 +1,5 @@
+import 'clinical_photo.dart';
+
 class Muscle {
   final String id;
   final String name;
@@ -37,6 +39,12 @@ class Muscle {
   final List<String> spasticityPatterns;
   final List<String> relatedMuscles;
   final bool hasReferenceImage;
+  /// Key identifying the shared patient-position photo. Muscles with the same
+  /// [positionGroup] are set up identically, so they reuse ONE position photo
+  /// (`assets/images/clinical/pos-<positionGroup>.jpg`) instead of each having
+  /// their own. [positionLabel] is the human-readable position.
+  final String? positionGroup;
+  final String? positionLabel;
 
   const Muscle({
     required this.id,
@@ -63,6 +71,8 @@ class Muscle {
     this.spasticityPatterns = const [],
     this.relatedMuscles = const [],
     this.hasReferenceImage = false,
+    this.positionGroup,
+    this.positionLabel,
   });
 
   factory Muscle.fromJson(Map<String, dynamic> json) {
@@ -109,8 +119,24 @@ class Muscle {
           ? (json['relatedMuscles'] as List).cast<String>()
           : const [],
       hasReferenceImage: json['hasReferenceImage'] as bool? ?? false,
+      positionGroup: json['positionGroup'] as String?,
+      positionLabel: json['positionLabel'] as String?,
     );
   }
+
+  /// Bundled asset path for a clinical photo [slot]. The patient-position photo
+  /// is shared by [positionGroup] (one `pos-<group>.jpg` for every muscle set up
+  /// the same way); probe and ultrasound stay per-muscle.
+  String clinicalPhotoPath(ClinicalPhotoSlot slot) =>
+      slot == ClinicalPhotoSlot.position && positionGroup != null
+          ? '${ClinicalPhotoSlot.dir}/pos-$positionGroup.jpg'
+          : slot.assetPath(id);
+
+  /// Bare filename for a clinical photo [slot] (see [clinicalPhotoPath]).
+  String clinicalPhotoFileName(ClinicalPhotoSlot slot) =>
+      slot == ClinicalPhotoSlot.position && positionGroup != null
+          ? 'pos-$positionGroup.jpg'
+          : slot.fileName(id);
 
   /// Parse anatomyImages: supports new `Map<String, String>` schema (keyed
   /// by view name: 'anterior', 'posterior', 'lateral') and legacy

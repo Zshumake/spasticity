@@ -109,6 +109,25 @@ GUIDANCE = {
 }
 
 
+def slot_filename(m, key):
+    """Target filename for a shot. Patient-position photos are SHARED across
+    muscles set up the same way (one `pos-<positionGroup>.jpg`); probe and US
+    stay per-muscle (`<id>-<key>.jpg`)."""
+    if key == "position" and m.get("positionGroup"):
+        return f"pos-{m['positionGroup']}.jpg"
+    return f"{m['id']}-{key}.jpg"
+
+
+def position_groups(muscles):
+    """Ordered {group_key: (label, [muscles])}, first-appearance order — the
+    set of unique patient-position photos to capture."""
+    groups = {}
+    for m in muscles:
+        key = m.get("positionGroup") or f"{m['id']}-position"
+        groups.setdefault(key, (m.get("positionLabel") or m["id"], []))[1].append(m)
+    return groups
+
+
 def main():
     muscles = json.loads(DATA.read_text())
     by_region = {r: [] for r in REGION_ORDER}
@@ -117,14 +136,18 @@ def main():
 
     total = len(muscles)
     us_guided = sum(1 for m in muscles if m.get("ultrasound"))
-    total_images = total * PHOTOS_PER_MUSCLE
+    pos_groups = position_groups(muscles)
+    n_positions = len(pos_groups)
+    # Position photos are shared by group; probe is per-muscle; US per US-guided.
+    total_images = n_positions + total + us_guided
 
     L = []
     L.append("# NeuroInject — Clinical Photo Capture Guide")
     L.append("")
     L.append(
         f"Shot list for the clinical photography session. "
-        f"**{total} muscles × {PHOTOS_PER_MUSCLE} photos = {total_images} images.**"
+        f"**{n_positions} patient-position photos (shared) + {total} probe + "
+        f"{us_guided} ultrasound = {total_images} images** across {total} muscles."
     )
     L.append("")
     L.append(
@@ -137,12 +160,13 @@ def main():
     L.append("| # | Photo | What to capture |")
     L.append("|---|-------|-----------------|")
     L.append("| 1 | **Patient Position** | The patient positioned and the segment "
-             "exposed, as you set up to inject. |")
+             "exposed. **Shared** — many muscles use the same position, so this is "
+             "shot once and reused (see the table below). |")
     L.append("| 2 | **Probe + Needle Site** | ONE surface photo, annotated: a "
              "**blue bar** over the probe footprint on the skin and a **red dot** "
-             "at the needle insertion point. |")
+             "at the needle insertion point. Per-muscle. |")
     L.append("| 3 | **Ultrasound Image** | The US screen of the target muscle (with "
-             "the needle in the muscle if you can). |")
+             "the needle in the muscle if you can). Per-muscle. |")
     L.append("")
     L.append("## Naming & where files go")
     L.append("")
@@ -152,12 +176,18 @@ def main():
     )
     L.append("")
     L.append("```")
-    L.append("<muscleId>-position.jpg")
-    L.append("<muscleId>-probe.jpg   (the combined probe + needle site photo)")
-    L.append("<muscleId>-us.jpg")
+    L.append("pos-<positionGroup>.jpg   (ONE shared patient-position photo)")
+    L.append("<muscleId>-probe.jpg      (combined probe + needle site, per muscle)")
+    L.append("<muscleId>-us.jpg         (ultrasound, per muscle)")
     L.append("```")
     L.append("")
     L.append("- **Format:** JPG (convert HEIC → JPG first). Landscape preferred.")
+    L.append(
+        f"- **Patient position is shared.** The {total} muscles need only "
+        f"**{n_positions}** position photos — capture each `pos-<group>.jpg` once "
+        f"and every muscle in that group reuses it. That's {total - n_positions} "
+        "fewer position shots."
+    )
     L.append(
         "- **Annotation convention:** blue bar = probe footprint, red dot = "
         "needle insertion point — drawn on the same image."
@@ -172,6 +202,20 @@ def main():
         f"{total - us_guided} that are not, the US image is optional and the "
         f"site photo needs only the red needle dot (blue probe bar optional)."
     )
+    L.append("")
+
+    # ── Shared patient-position reference ─────────────────────────────
+    L.append(f"## Patient positions — {n_positions} photos to capture once")
+    L.append("")
+    L.append(
+        "Each row is **one** photo. Shoot it once; every listed muscle reuses it."
+    )
+    L.append("")
+    L.append("| Position | File | Muscles |")
+    L.append("|----------|------|---------|")
+    for key, (label, ms) in pos_groups.items():
+        names = ", ".join(x["name"] for x in ms)
+        L.append(f"| {label} | `pos-{key}.jpg` | {len(ms)} — {names} |")
     L.append("")
     L.append("---")
     L.append("")
@@ -192,7 +236,10 @@ def main():
             L.append(f"*{m['group']} — {m.get('pattern', '')}*")
             L.append("")
             for key, label in SLOTS:
-                L.append(f"- [ ] **{label}** — `{mid}-{key}.jpg`")
+                fn = slot_filename(m, key)
+                shared = (" · _shared_" if key == "position"
+                          and m.get("positionGroup") else "")
+                L.append(f"- [ ] **{label}** — `{fn}`{shared}")
                 L.append(f"  {GUIDANCE[key](m)}")
             L.append("")
         L.append("---")
@@ -202,10 +249,20 @@ def main():
     L.append("")
     L.append(f"All {total_images} files, for ticking off during the shoot:")
     L.append("")
+    L.append(f"**Patient position — {n_positions} shared:**")
+    for key in pos_groups:
+        L.append(f"- [ ] `pos-{key}.jpg`")
+    L.append("")
+    L.append(f"**Probe + needle site — {total}:**")
     for region in REGION_ORDER:
         for m in by_region[region]:
-            for key, _ in SLOTS:
-                L.append(f"- [ ] `{m['id']}-{key}.jpg`")
+            L.append(f"- [ ] `{m['id']}-probe.jpg`")
+    L.append("")
+    L.append(f"**Ultrasound — {us_guided}:**")
+    for region in REGION_ORDER:
+        for m in by_region[region]:
+            if m.get("ultrasound"):
+                L.append(f"- [ ] `{m['id']}-us.jpg`")
     L.append("")
 
     OUT.write_text("\n".join(L) + "\n")

@@ -28,7 +28,9 @@ from generate_photo_capture_guide import (  # noqa: E402
     REGION_ORDER,
     SLOTS,
     clip,
+    position_groups,
     region_of,
+    slot_filename,
 )
 
 OUT_PDF = ROOT / "docs" / "clinical-photo-guide.pdf"
@@ -74,7 +76,8 @@ body { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
        color: #1a1512; font-size: 9.5px; margin: 0; }
 code { font-family: 'SF Mono', Menlo, Consolas, monospace; }
 
-.cover { text-align: center; padding: 26px 0 16px; border-bottom: 2px solid #E17055; }
+.cover { text-align: center; padding: 8px 0 14px; border-bottom: 2px solid #E17055;
+         margin-bottom: 16px; }
 .cover h1 { font-size: 26px; margin: 0; }
 .cover .sub { color: #E17055; font-weight: 700; letter-spacing: 1.5px;
               margin: 5px 0 14px; text-transform: uppercase; font-size: 10px; }
@@ -92,9 +95,12 @@ code { font-family: 'SF Mono', Menlo, Consolas, monospace; }
 .note { max-width: 6.4in; margin: 0 auto; font-size: 9px; color: #555; line-height: 1.55; }
 .note code { color:#C05A44; }
 
-.region { break-before: page; }
+/* Regions flow continuously — no forced page break between body parts. */
+.region { margin-top: 14px; }
+section.region:first-of-type { margin-top: 0; }
 .region h2 { font-size: 15px; color: #E17055; border-bottom: 1px solid #E0D5CC;
-             padding-bottom: 4px; margin: 0 0 10px; }
+             padding-bottom: 4px; margin: 0 0 10px;
+             break-after: avoid-page; /* don't strand a header at a page bottom */ }
 .region h2 .count { font-size: 9px; color: #999; font-weight: 400; }
 
 .cards { column-count: 2; column-gap: 16px; }
@@ -114,6 +120,20 @@ code { font-family: 'SF Mono', Menlo, Consolas, monospace; }
 .lbl { font-weight:600; font-size:9px; }
 .fn { font-size:8px; color:#C05A44; }
 .guide { font-size:8px; color:#555; line-height:1.35; margin-top:1px; }
+.shared { font-size:7px; color:#0C8A6E; background:#E2F3EE; padding:0 3px;
+          border-radius:3px; margin-left:4px; }
+
+/* Shared patient-position reference table */
+.posref { margin: 0 0 6px; break-inside: avoid; }
+.posref h2 { font-size: 14px; color:#E17055; border-bottom:1px solid #E0D5CC;
+             padding-bottom:4px; margin:0 0 8px; }
+.posref h2 .count { font-size: 9px; color:#999; font-weight:400; }
+.posrow { display:flex; gap:10px; padding:2.5px 0; border-top:1px dashed #eee;
+          font-size:8.5px; align-items:baseline; break-inside: avoid; }
+.posrow .pf { flex:none; width:172px; font-family:'SF Mono',Menlo,monospace;
+              color:#C05A44; }
+.posrow .pl { flex:none; width:180px; font-weight:700; }
+.posrow .pm { flex:1; color:#555; line-height:1.3; }
 """
 
 
@@ -123,6 +143,9 @@ def build_html(muscles):
         by_region[region_of(m["group"])].append(m)
     total = len(muscles)
     us_guided = sum(1 for m in muscles if m.get("ultrasound"))
+    pos_groups = position_groups(muscles)
+    n_positions = len(pos_groups)
+    total_images = n_positions + total + us_guided
 
     p = ["<!doctype html><html><head><meta charset='utf-8'>",
          f"<style>{CSS}</style></head><body>"]
@@ -131,28 +154,42 @@ def build_html(muscles):
       <header class='cover'>
         <h1>Clinical Photo Capture Guide</h1>
         <div class='sub'>NeuroInject · Spasticity Injection Guide</div>
-        <div class='big'>{total} muscles × {PHOTOS_PER_MUSCLE} photos
-          = {total * PHOTOS_PER_MUSCLE} images</div>
+        <div class='big'>{n_positions} shared position + {total} probe
+          + {us_guided} ultrasound = {total_images} images</div>
         <div class='legend'>
           <div><span class='dot position'></span>Patient Position</div>
           <div><span class='probemark'><span class='ndot'></span></span>Probe + Needle Site</div>
           <div><span class='dot us'></span>Ultrasound Image</div>
         </div>
         <div class='note'>
-          Save each photo as <code>&lt;muscleId&gt;-&lt;type&gt;.jpg</code>
-          (type = <code>position</code> · <code>probe</code> · <code>us</code>)
-          into <code>assets/images/clinical/</code>. JPG, landscape preferred.
-          The probe + needle site is <b>one annotated photo</b>: draw a
-          <b style='color:#0984E3'>blue bar</b> over the probe footprint on the
-          skin and a <b style='color:#D63031'>red dot</b> at the needle insertion
-          point — save it as <code>&lt;muscleId&gt;-probe.jpg</code>. The app
-          auto-detects each file and shows an "N/{PHOTOS_PER_MUSCLE} captured"
-          counter on the muscle. <b>{us_guided}/{total}</b> muscles are
-          ultrasound-guided; for the rest, the US image is optional and the site
-          photo needs only the red dot.
+          <b>Patient position is shared</b> — many muscles set up identically, so the
+          {total} muscles need only <b>{n_positions}</b> position photos. Capture each
+          <code>pos-&lt;group&gt;.jpg</code> once (table below) and every muscle in that
+          group reuses it. Probe &amp; ultrasound are per muscle
+          (<code>&lt;muscleId&gt;-probe.jpg</code> · <code>-us.jpg</code>) in
+          <code>assets/images/clinical/</code>. The probe + needle site is <b>one annotated
+          photo</b>: a <b style='color:#0984E3'>blue bar</b> over the probe footprint and a
+          <b style='color:#D63031'>red dot</b> at the needle insertion point.
+          <b>{us_guided}/{total}</b> muscles are ultrasound-guided; for the rest the US image
+          is optional and the site photo needs only the red dot.
         </div>
       </header>
     """)
+
+    # Shared patient-position reference — each row is one photo, shot once.
+    prows = []
+    for key, (label, ms) in pos_groups.items():
+        names = ", ".join(x["name"] for x in ms)
+        prows.append(
+            f"<div class='posrow'><span class='pf'>pos-{esc(key)}.jpg</span>"
+            f"<span class='pl'>{esc(label)}</span>"
+            f"<span class='pm'>{len(ms)} · {esc(names)}</span></div>"
+        )
+    p.append(
+        "<section class='posref'><h2>Patient positions "
+        f"<span class='count'>· {n_positions} photos, shot once &amp; reused</span></h2>"
+        + "".join(prows) + "</section>"
+    )
 
     for region in REGION_ORDER:
         ms = by_region[region]
@@ -170,11 +207,14 @@ def build_html(muscles):
                    else " <span class='optflag'>not typically US-guided</span>")
             rows = []
             for key, label in SLOTS:
+                fn = slot_filename(m, key)
+                tag = ("<span class='shared'>shared</span>"
+                       if key == "position" and m.get("positionGroup") else "")
                 rows.append(f"""
                   <div class='shot {key}'><span class='box'></span>
                     <div>
                       <div class='shothead'><span class='lbl'>{esc(label)}</span>
-                        <code class='fn'>{esc(mid)}-{key}.jpg</code></div>
+                        <code class='fn'>{esc(fn)}</code>{tag}</div>
                       <div class='guide'>{esc(compact(m, key))}</div>
                     </div>
                   </div>""")
@@ -247,8 +287,12 @@ def main():
             return 1
 
     kb = OUT_PDF.stat().st_size // 1024
+    n_positions = len(position_groups(muscles))
+    us_guided = sum(1 for m in muscles if m.get("ultrasound"))
+    images = n_positions + len(muscles) + us_guided
     print(f"Wrote {OUT_PDF.relative_to(ROOT)} ({kb} KB) — "
-          f"{len(muscles)} muscles, {len(muscles) * PHOTOS_PER_MUSCLE} images.")
+          f"{len(muscles)} muscles, {n_positions} shared positions, "
+          f"{images} images.")
     return 0
 
 
