@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'data/muscle_provider.dart';
 import 'screens/dashboard_page.dart';
 import 'screens/guide/muscle_detail.dart';
+import 'screens/highlight/muscle_highlighter_screen.dart';
 import 'screens/calculator/calculator_screen.dart';
 import 'screens/session/session_screen.dart';
 
@@ -56,6 +57,17 @@ final router = GoRouter(
             );
           },
         );
+      },
+    ),
+    GoRoute(
+      path: '/highlight/:id',
+      builder: (context, state) {
+        final id = state.pathParameters['id'] ?? '';
+        final muscle = context.read<MuscleDataProvider>().findById(id);
+        if (muscle == null) {
+          return const Scaffold(body: Center(child: Text('Muscle not found')));
+        }
+        return MuscleHighlighterScreen(muscle: muscle);
       },
     ),
     GoRoute(

@@ -569,17 +569,17 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
             if (muscle.dosage?.botox != null)
               _heroChip(Icons.medication_outlined, 'BOTOX',
                   '${muscle.dosage!.botox!} U',
-                  const Color(0xFF3D8BFF), isDark,
+                  const Color(0xFF3E8FE0), isDark, // brand-botox
                   onTap: () => _openCalculator('Botox', muscle.dosage!.botox!)),
             if (muscle.dosage?.xeomin != null)
               _heroChip(Icons.medication_outlined, 'XEOMIN',
                   '${muscle.dosage!.xeomin!} U',
-                  const Color(0xFF9C27B0), isDark,
+                  const Color(0xFFA05BC4), isDark, // brand-xeomin
                   onTap: () => _openCalculator('Xeomin', muscle.dosage!.xeomin!)),
             if (muscle.dosage?.dysport != null)
               _heroChip(Icons.medication_outlined, 'DYSPORT',
                   '${muscle.dosage!.dysport!} U',
-                  const Color(0xFFFF9800), isDark,
+                  const Color(0xFFE59A2E), isDark, // brand-dysport
                   onTap: () => _openCalculator('Dysport', muscle.dosage!.dysport!)),
             if (us != null)
               _heroChip(Icons.sensors, 'PROBE', _shortProbe(us.probe), _groupColor, isDark),
@@ -983,22 +983,26 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
       ClinicalPhotoSlot.ultrasound: AppTheme.amber,
     };
 
+    // Position photos are shared by positionGroup (one pos-<group>.jpg reused
+    // by every muscle set up the same way); probe/US stay per-muscle.
     final captured = ClinicalPhotoSlot.values
-        .where((s) => _clinicalAssets.contains(s.assetPath(muscle.id)))
+        .where((s) => _clinicalAssets.contains(muscle.clinicalPhotoPath(s)))
         .length;
 
     Widget slot(ClinicalPhotoSlot s) {
-      final path = s.assetPath(muscle.id);
+      final path = muscle.clinicalPhotoPath(s);
       final has = _clinicalAssets.contains(path);
+      final isShared =
+          s == ClinicalPhotoSlot.position && muscle.positionLabel != null;
       return _imageSlot(
         isDark: isDark,
         title: s.label,
-        subtitle: s.description,
+        subtitle: isShared ? '${muscle.positionLabel} · shared' : s.description,
         icon: s.icon,
         accentColor: accents[s]!,
         imagePath: has ? path : null,
         imageLabel: '${muscle.name} — ${s.label}',
-        fileName: s.fileName(muscle.id),
+        fileName: muscle.clinicalPhotoFileName(s),
       );
     }
 
@@ -1029,7 +1033,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Expanded(child: slot(ClinicalPhotoSlot.ultrasound)),
           const SizedBox(width: 12),
-          const Expanded(child: SizedBox.shrink()),
+          Expanded(child: _highlightCta(isDark)),
         ]),
 
         // Photo hint (if available)
@@ -1052,6 +1056,54 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
           ),
         ],
       ],
+    );
+  }
+
+  /// Entry point to the draw-to-highlight surface for this muscle's US image.
+  Widget _highlightCta(bool isDark) {
+    return GestureDetector(
+      onTap: () => context.push('/highlight/${muscle.id}'),
+      child: Container(
+        height: 180,
+        padding: const EdgeInsets.all(14),
+        decoration: BoxDecoration(
+          color: AppTheme.primary.withAlpha(isDark ? 22 : 14),
+          borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+          border: Border.all(color: AppTheme.primary.withAlpha(70)),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Icon(Icons.gesture, color: AppTheme.primary, size: 26),
+            const SizedBox(height: 10),
+            Text('HIGHLIGHT',
+                style: GoogleFonts.ibmPlexMono(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 1.6,
+                    color: AppTheme.primary)),
+            const SizedBox(height: 6),
+            Text('Draw to outline the muscle on US and surface adjacent structures.',
+                style: GoogleFonts.sourceSans3(
+                    fontSize: 11.5,
+                    height: 1.35,
+                    color: isDark
+                        ? AppTheme.textSecondary
+                        : AppTheme.textSecondaryLight)),
+            const SizedBox(height: 8),
+            Row(children: [
+              Text('Open',
+                  style: GoogleFonts.ibmPlexMono(
+                      fontSize: 10,
+                      fontWeight: FontWeight.w700,
+                      color: AppTheme.primary)),
+              const SizedBox(width: 4),
+              const Icon(Icons.arrow_forward, size: 13, color: AppTheme.primary),
+            ]),
+          ],
+        ),
+      ),
     );
   }
 
