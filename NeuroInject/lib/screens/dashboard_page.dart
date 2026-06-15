@@ -546,14 +546,8 @@ class _DashboardPageState extends State<DashboardPage> {
   }
 
   Color _regionColor(String region) {
-    switch (region) {
-      case 'Face': return const Color(0xFFE17055);
-      case 'Neck': return const Color(0xFF00B894);
-      case 'Upper Extremity': return const Color(0xFFFF6B6B);
-      case 'Lower Extremity': return const Color(0xFF0984E3);
-      case 'Trunk': return const Color(0xFFFDAA5C);
-      default: return AppTheme.primary;
-    }
+    // Single source of truth — the design-system region colors.
+    return AppTheme.groupColor(region);
   }
 
   // ─── Muscle Grid (filtered view) ───────────────────────────

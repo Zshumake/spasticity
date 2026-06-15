@@ -23,3 +23,6 @@ NeuroInject/.pub-cache/
 .idea/
 *.iml
 .vscode/
+
+# Deep-research run scratch (logs, prompts, child outputs, reports)
+.research/
