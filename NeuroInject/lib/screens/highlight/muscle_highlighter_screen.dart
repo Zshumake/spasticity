@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../data/highlight_capture_store.dart';
@@ -173,15 +174,21 @@ class _MuscleHighlighterScreenState extends State<MuscleHighlighterScreen> {
   Widget _savedCount() {
     final n = context.watch<HighlightCaptureStore>().countFor(muscle.id);
     if (n == 0) return const SizedBox.shrink();
-    return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-      const Icon(Icons.dataset_outlined, size: 13, color: AppTheme.success),
-      const SizedBox(width: 6),
-      Text(
-        '$n highlight${n == 1 ? '' : 's'} saved for this muscle · builds the training set',
-        style: GoogleFonts.ibmPlexMono(
-            fontSize: 9.5, letterSpacing: 0.4, color: AppTheme.textTertiary),
-      ),
-    ]);
+    return GestureDetector(
+      onTap: () => context.push('/captures'),
+      behavior: HitTestBehavior.opaque,
+      child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+        const Icon(Icons.dataset_outlined, size: 13, color: AppTheme.success),
+        const SizedBox(width: 6),
+        Text(
+          '$n highlight${n == 1 ? '' : 's'} saved for this muscle · view all',
+          style: GoogleFonts.ibmPlexMono(
+              fontSize: 9.5, letterSpacing: 0.4, color: AppTheme.textTertiary),
+        ),
+        const SizedBox(width: 3),
+        const Icon(Icons.chevron_right, size: 13, color: AppTheme.textTertiary),
+      ]),
+    );
   }
 
   Widget _toolbar(bool hasMask) {

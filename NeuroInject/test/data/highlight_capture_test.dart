@@ -39,6 +39,23 @@ void main() {
     expect(store.countFor('biceps-brachii'), 0);
   });
 
+  test('remove deletes one capture by id; clear empties the store', () async {
+    final store = HighlightCaptureStore();
+    await store.add(sample('fcr', t: 1));
+    await store.add(sample('fcr', t: 2));
+    await store.add(sample('triceps', t: 3));
+
+    await store.remove('cap_2');
+    expect(store.count, 2);
+    expect(store.countFor('fcr'), 1);
+
+    await store.remove('does-not-exist'); // no-op
+    expect(store.count, 2);
+
+    await store.clear();
+    expect(store.count, 0);
+  });
+
   test('captures persist across store instances', () async {
     final a = HighlightCaptureStore();
     await a.add(sample('soleus-medial', t: 7));

@@ -30,6 +30,21 @@ class HighlightCaptureStore extends ChangeNotifier {
     await _persist();
   }
 
+  Future<void> remove(String id) async {
+    final before = _items.length;
+    _items.removeWhere((c) => c.id == id);
+    if (_items.length == before) return;
+    notifyListeners();
+    await _persist();
+  }
+
+  Future<void> clear() async {
+    if (_items.isEmpty) return;
+    _items.clear();
+    notifyListeners();
+    await _persist();
+  }
+
   Future<void> _persist() async {
     try {
       final prefs = await SharedPreferences.getInstance();

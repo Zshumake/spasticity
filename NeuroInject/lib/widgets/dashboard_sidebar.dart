@@ -47,7 +47,10 @@ class DashboardSidebar extends StatelessWidget {
             ],
             const SizedBox(height: 16),
             _sectionLabel('TOOLS', isDark),
-            _buildToolItem(context, 'Dose Calculator', Icons.calculate_outlined, isDark),
+            _buildToolItem(context, 'Dose Calculator', Icons.calculate_outlined,
+                isDark, '/calculator'),
+            _buildToolItem(context, 'Captured Highlights',
+                Icons.dataset_outlined, isDark, '/captures'),
           ]),
         )),
         _buildFooter(context, isDark),
@@ -133,10 +136,11 @@ class DashboardSidebar extends StatelessWidget {
     );
   }
 
-  Widget _buildToolItem(BuildContext context, String title, IconData icon, bool isDark) {
+  Widget _buildToolItem(BuildContext context, String title, IconData icon,
+      bool isDark, String route) {
     return InkWell(
       onTap: () {
-        context.push('/calculator');
+        context.push(route);
         if (isMobile) Navigator.pop(context);
       },
       child: AnimatedContainer(

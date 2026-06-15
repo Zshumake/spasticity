@@ -5,6 +5,7 @@ import 'data/muscle_provider.dart';
 import 'screens/dashboard_page.dart';
 import 'screens/guide/muscle_detail.dart';
 import 'screens/highlight/muscle_highlighter_screen.dart';
+import 'screens/highlight/captures_review_screen.dart';
 import 'screens/calculator/calculator_screen.dart';
 import 'screens/session/session_screen.dart';
 
@@ -69,6 +70,10 @@ final router = GoRouter(
         }
         return MuscleHighlighterScreen(muscle: muscle);
       },
+    ),
+    GoRoute(
+      path: '/captures',
+      builder: (context, state) => const CapturesReviewScreen(),
     ),
     GoRoute(
       path: '/calculator',
