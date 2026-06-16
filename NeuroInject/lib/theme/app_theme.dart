@@ -4,40 +4,45 @@ import 'package:google_fonts/google_fonts.dart';
 /// Design: "Biomechanical / Anatomical"
 /// Warm charcoal surfaces, terracotta accents, clinical warmth.
 class AppTheme {
-  // ── Core palette ──────────────────────────────────────────────
-  static const Color primary = Color(0xFFE17055);      // terracotta
-  static const Color primarySoft = Color(0xFFFAB1A0);  // blush
-  static const Color primaryDim = Color(0xFFC05A44);   // dark terracotta (light mode)
-  static const Color amber = Color(0xFFF9CA24);        // warm gold
-  static const Color danger = Color(0xFFEB4D4B);       // arterial red
-  static const Color success = Color(0xFF00B894);      // surgical teal
-  static const Color patternColor = Color(0xFF6C5CE7); // clinical purple (spasticity patterns)
+  // ── Core palette (NeuroInject Design System — cool, clinical) ──
+  // Re-grounded from the design-system bundle: one restrained terracotta
+  // "clay" accent reading as a single signal against cool blue-steel slate.
+  // Neutrals never warm. Dark is default; light is the cool-daylight alternate.
+  static const Color primary = Color(0xFFE5694C);      // clay-bright (accent on dark)
+  static const Color primarySoft = Color(0xFFF0BFAF);  // clay-200 (blush)
+  static const Color primaryDim = Color(0xFFD5604A);   // clay-500 (accent on light)
+  static const Color amber = Color(0xFFEBC04A);        // gold-300 — caution / pearls
+  static const Color danger = Color(0xFFE04A3F);       // red-500 — arterial / avoid
+  static const Color success = Color(0xFF18A98A);      // teal-500 — safe
+  static const Color patternColor = Color(0xFF6C5CE7); // indigo — spasticity patterns
 
-  // ── Dark mode (default) ───────────────────────────────────────
-  static const Color bgDark = Color(0xFF12100E);           // warm charcoal
-  static const Color surfaceDark = Color(0xFF1E1B18);      // leather dark
-  static const Color surfaceElevated = Color(0xFF2A2521);  // warm raised
-  static const Color borderDark = Color(0xFF332E29);       // warm border
-  static const Color textPrimary = Color(0xFFF5F0EB);      // warm white
-  static const Color textSecondary = Color(0xFF9B8E82);    // warm gray
-  static const Color textTertiary = Color(0xFF5C524A);     // muted warm
+  // ── Dark mode (default — cool near-black slate) ───────────────
+  static const Color bgDark = Color(0xFF090B0F);           // ink-900 canvas
+  static const Color surfaceDark = Color(0xFF10151C);      // surface (card/panel)
+  static const Color surfaceElevated = Color(0xFF141A22);  // ink-800 raised
+  static const Color borderDark = Color(0xFF212A35);       // ink-700 hairline
+  static const Color textStrong = Color(0xFFEDF1F6);       // headings
+  static const Color textPrimary = Color(0xFFDBE2EA);      // body
+  static const Color textSecondary = Color(0xFF97A2B0);    // secondary
+  static const Color textTertiary = Color(0xFF66717F);     // tertiary / eyebrow
 
-  // ── Light mode ────────────────────────────────────────────────
-  static const Color bgLight = Color(0xFFF5F0EB);             // warm cream
-  static const Color surfaceLight = Color(0xFFFFFFFF);
-  static const Color borderLight = Color(0xFFE0D5CC);          // warm beige
-  static const Color textPrimaryLight = Color(0xFF1A1512);
-  static const Color textSecondaryLight = Color(0xFF7A6E64);
+  // ── Light mode (cool daylight alternate) ──────────────────────
+  static const Color bgLight = Color(0xFFEFF2F6);             // ink-50 canvas
+  static const Color surfaceLight = Color(0xFFFFFFFF);        // paper
+  static const Color borderLight = Color(0xFFCAD2DC);         // ink-200 hairline
+  static const Color textStrongLight = Color(0xFF131922);     // headings
+  static const Color textPrimaryLight = Color(0xFF283039);    // body
+  static const Color textSecondaryLight = Color(0xFF5B6573);
 
-  // ── Light-mode amber (darker for WCAG AA contrast on light bg) ─
-  static const Color amberDark = Color(0xFFD4A017);
+  // ── Light-mode caution (darker gold for WCAG AA on light bg) ──
+  static const Color amberDark = Color(0xFFC8920E);  // gold-500
   static Color amberText(bool isDark) => isDark ? amber : amberDark;
 
-  // ── Orchid (Recent category) ──────────────────────────────────
+  // ── Orchid (Recent category — UI affordance, non-clinical) ────
   static const Color orchid = Color(0xFFD980FA);
 
-  // ── Tertiary text (fixed for light-mode WCAG AA 4.5:1) ────────
-  static const Color textTertiaryLight = Color(0xFF6B5F55);
+  // ── Tertiary text (light, WCAG AA) ────────────────────────────
+  static const Color textTertiaryLight = Color(0xFF8893A1);
 
   // ── Radii ─────────────────────────────────────────────────────
   static const double radiusSm = 4;
@@ -54,13 +59,18 @@ class AppTheme {
 
   static TextStyle get bodyFont => GoogleFonts.sourceSans3();
 
-  // ── Muscle group colors ───────────────────────────────────────
+  // ── Anatomical region colors (design-system region system) ────
+  // Each region owns one color. Check 'face' before 'neck' because the
+  // "Face / Neck" group string contains both.
   static Color groupColor(String group) {
     final g = group.toLowerCase();
-    if (g.contains('upper')) return const Color(0xFFE17055);   // terracotta
-    if (g.contains('lower')) return const Color(0xFF00B894);   // teal
-    if (g.contains('trunk')) return const Color(0xFFF9CA24);   // warm gold
-    if (g.contains('neck'))  return const Color(0xFFD980FA);   // orchid
+    if (g.contains('upper')) return const Color(0xFFE5694C);   // clay
+    if (g.contains('lower')) return const Color(0xFF3E9BE0);   // clinical blue
+    if (g.contains('trunk')) return const Color(0xFFD79A3A);   // ochre
+    if (g.contains('face'))  return const Color(0xFFB06B9E);   // plum
+    if (g.contains('neck') || g.contains('cervical')) {
+      return const Color(0xFF18A98A);                          // teal
+    }
     return primary;
   }
 
@@ -79,9 +89,9 @@ class AppTheme {
         onPrimary: bgDark,
       ),
       textTheme: TextTheme(
-        displaySmall: displayFont.copyWith(color: textPrimary, fontSize: 28),
-        headlineMedium: displayFont.copyWith(color: textPrimary, fontSize: 22),
-        titleLarge: displayFont.copyWith(color: textPrimary, fontSize: 18),
+        displaySmall: displayFont.copyWith(color: textStrong, fontSize: 28),
+        headlineMedium: displayFont.copyWith(color: textStrong, fontSize: 22),
+        titleLarge: displayFont.copyWith(color: textStrong, fontSize: 18),
         titleMedium: bodyFont.copyWith(color: textPrimary, fontWeight: FontWeight.w600, fontSize: 15),
         bodyLarge: bodyFont.copyWith(color: textPrimary, fontSize: 14, height: 1.6),
         bodyMedium: bodyFont.copyWith(color: textPrimary, fontSize: 13, height: 1.5),
@@ -119,9 +129,9 @@ class AppTheme {
         onSurface: textPrimaryLight, error: danger, outline: borderLight,
       ),
       textTheme: TextTheme(
-        displaySmall: displayFont.copyWith(color: textPrimaryLight, fontSize: 28),
-        headlineMedium: displayFont.copyWith(color: textPrimaryLight, fontSize: 22),
-        titleLarge: displayFont.copyWith(color: textPrimaryLight, fontSize: 18),
+        displaySmall: displayFont.copyWith(color: textStrongLight, fontSize: 28),
+        headlineMedium: displayFont.copyWith(color: textStrongLight, fontSize: 22),
+        titleLarge: displayFont.copyWith(color: textStrongLight, fontSize: 18),
         titleMedium: bodyFont.copyWith(color: textPrimaryLight, fontWeight: FontWeight.w600, fontSize: 15),
         bodyLarge: bodyFont.copyWith(color: textPrimaryLight, fontSize: 14, height: 1.6),
         bodyMedium: bodyFont.copyWith(color: textPrimaryLight, fontSize: 13, height: 1.5),

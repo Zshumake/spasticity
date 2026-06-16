@@ -19,7 +19,7 @@ const toxinBrands = [
     maxDoseNote:
         'Max per session: 400 U for spasticity (adult). FDA max across all indications: 360 U/3 months.',
     maxSessionUnits: 400,
-    color: Color(0xFF3D8BFF),
+    color: Color(0xFF3E8FE0), // brand-botox (design system)
   ),
   ToxinBrand(
     name: 'Xeomin',
@@ -39,7 +39,7 @@ const toxinBrands = [
     maxSessionUnits: 400,
     conversionNote:
         'Xeomin and Botox are generally considered 1:1 unit equivalent for spasticity.',
-    color: Color(0xFF9C27B0),
+    color: Color(0xFFA05BC4), // brand-xeomin (design system)
   ),
   ToxinBrand(
     name: 'Dysport',
@@ -60,7 +60,7 @@ const toxinBrands = [
     maxSessionUnits: 1500,
     conversionNote:
         'Dysport units are NOT equivalent to Botox/Xeomin.\nConversion: ~2.5-3 Dysport units = 1 Botox unit.\nExample: 100 U Botox ≈ 250-300 U Dysport.',
-    color: Color(0xFFFF9800),
+    color: Color(0xFFE59A2E), // brand-dysport (design system)
   ),
   ToxinBrand(
     name: 'Myobloc',
@@ -85,7 +85,7 @@ const toxinBrands = [
     maxSessionUnits: 25000,
     conversionNote:
         'Myobloc (Type B) units are NOT interchangeable with ANY Type A toxin.\nConversion: ~50-100 Myobloc units = 1 Botox unit.\nExample: 100 U Botox ≈ 5,000-10,000 U Myobloc.',
-    color: Color(0xFF4CAF50),
+    color: Color(0xFF6B8597), // brand-myobloc (design system)
   ),
 ];
 

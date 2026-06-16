@@ -217,7 +217,7 @@ class DashboardSidebar extends StatelessWidget {
           width: 28, height: 28,
           decoration: BoxDecoration(
             gradient: const LinearGradient(
-              colors: [AppTheme.primary, Color(0xFFD980FA)],
+              colors: [AppTheme.primary, AppTheme.orchid],
               begin: Alignment.topLeft, end: Alignment.bottomRight),
             borderRadius: BorderRadius.circular(6)),
           alignment: Alignment.center,
