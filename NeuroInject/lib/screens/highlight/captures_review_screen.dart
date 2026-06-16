@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import '../../data/coco_exporter.dart';
 import '../../data/highlight_capture_store.dart';
 import '../../data/muscle_provider.dart';
 import '../../models/highlight_capture.dart';
@@ -46,6 +48,12 @@ class CapturesReviewScreen extends StatelessWidget {
           ],
         ),
         actions: [
+          if (all.isNotEmpty)
+            IconButton(
+              tooltip: 'Export COCO',
+              icon: const Icon(Icons.file_download_outlined),
+              onPressed: () => _exportCoco(context, all, muscles),
+            ),
           if (all.isNotEmpty)
             IconButton(
               tooltip: 'Clear all',
@@ -171,6 +179,58 @@ class CapturesReviewScreen extends StatelessWidget {
                 fontSize: 13, height: 1.45, color: AppTheme.textSecondary),
           ),
         ]),
+      ),
+    );
+  }
+
+  void _exportCoco(BuildContext context,
+      List<HighlightCapture> captures, MuscleDataProvider muscles) {
+    final json = CocoExporter.toCocoJson(
+      captures,
+      categoryName: (id) => muscles.findById(id)?.name ?? id,
+      superCategory: (id) => muscles.findById(id)?.group ?? 'muscle',
+      dateEpochMillis: DateTime.now().millisecondsSinceEpoch,
+    );
+    final coco = CocoExporter.toCoco(captures);
+    final nImg = (coco['images'] as List).length;
+    final nCat = (coco['categories'] as List).length;
+    final kb = (json.length / 1024).toStringAsFixed(1);
+    final messenger = ScaffoldMessenger.of(context);
+
+    showDialog<void>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Export training set (COCO)'),
+        content: Column(mainAxisSize: MainAxisSize.min, children: [
+          Text('$nImg image${nImg == 1 ? '' : 's'} · '
+              '$nImg mask${nImg == 1 ? '' : 's'} · '
+              '$nCat muscle${nCat == 1 ? '' : 's'}'),
+          const SizedBox(height: 8),
+          Text(
+            '$kb KB of COCO JSON. Copy it and paste into a .json file for your '
+            'model run.',
+            style: GoogleFonts.sourceSans3(
+                fontSize: 12.5, height: 1.4, color: AppTheme.textSecondary),
+          ),
+        ]),
+        actions: [
+          TextButton(
+              onPressed: () => Navigator.of(ctx).pop(),
+              child: const Text('Close')),
+          FilledButton.icon(
+            style: FilledButton.styleFrom(backgroundColor: AppTheme.primary),
+            icon: const Icon(Icons.copy, size: 16),
+            label: const Text('Copy JSON'),
+            onPressed: () {
+              Clipboard.setData(ClipboardData(text: json));
+              Navigator.of(ctx).pop();
+              messenger.showSnackBar(SnackBar(
+                content: Text('Copied COCO JSON ($kb KB) to clipboard'),
+                behavior: SnackBarBehavior.floating,
+              ));
+            },
+          ),
+        ],
       ),
     );
   }
