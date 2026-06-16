@@ -474,7 +474,7 @@ class SessionScreen extends StatelessWidget {
           ),
         ],
       ),
-    );
+    ).whenComplete(controller.dispose);
   }
 
   void _commitSave(BuildContext dialogCtx, ScaffoldMessengerState messenger,

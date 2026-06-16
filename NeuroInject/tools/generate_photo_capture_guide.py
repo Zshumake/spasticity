@@ -2,10 +2,12 @@
 """Generate the clinical photo capture guide from muscles.json.
 
 Produces docs/clinical-photo-guide.md — a shot list for the photography
-session. For each of the 68 muscles it lists the four standardized photos
-(patient position, probe placement, needle insertion, ultrasound image), each
-with its exact target filename and capture guidance pulled from that muscle's
-own data. Filenames match the app's ClinicalPhotoSlot convention
+session. For each of the 68 muscles it lists the three standardized photos
+(patient position, probe + needle site, ultrasound image), each with its
+exact target filename and capture guidance pulled from that muscle's own
+data. The probe + needle site is ONE photo, annotated afterward: a blue bar
+over the probe footprint and a red dot at the needle insertion point.
+Filenames match the app's ClinicalPhotoSlot convention
 (lib/models/clinical_photo.dart), so a photo dropped into
 assets/images/clinical/ appears automatically.
 
@@ -21,12 +23,15 @@ DATA = ROOT / "assets" / "data" / "muscles.json"
 OUT = ROOT / "docs" / "clinical-photo-guide.md"
 
 # (key, label) — key matches ClinicalPhotoSlot.key and the filename suffix.
+# "probe" is the combined surface shot: blue bar = probe footprint,
+# red dot = needle insertion point, annotated on the same image.
 SLOTS = [
     ("position", "Patient Position"),
-    ("probe", "Probe Placement"),
-    ("needle", "Needle Insertion"),
+    ("probe", "Probe + Needle Site"),
     ("us", "Ultrasound Image"),
 ]
+
+PHOTOS_PER_MUSCLE = len(SLOTS)
 
 REGION_ORDER = ["Upper Extremity", "Lower Extremity", "Cervical / Neck", "Face / Neck"]
 
@@ -58,6 +63,7 @@ def position_guidance(m):
 
 
 def probe_guidance(m):
+    """One surface photo: probe footprint (blue bar) + needle entry (red dot)."""
     us = m.get("ultrasound") or {}
     parts = []
     hint = m.get("probePlacementHint")
@@ -67,20 +73,17 @@ def probe_guidance(m):
         parts.append(f"Probe: {us['probe']}.")
     if us.get("orientation"):
         parts.append(f"Orientation: {clip(us['orientation'], 160)}.")
-    if not us:
-        parts.append("Not typically ultrasound-guided — probe shot optional.")
-    return " ".join(parts) if parts else "Show the probe position on the skin."
-
-
-def needle_guidance(m):
     pl = m.get("placement") or []
     hits = [s for s in pl if NEEDLE_RE.search(s)]
     if hits:
-        return " ".join(clip(h) for h in hits[:2])
-    return (
-        "Show the needle entry point and angle — see the placement steps "
-        "in the app."
-    )
+        parts.append("Needle: " + clip(hits[0], 200))
+    if not us:
+        parts.append(
+            "Not typically ultrasound-guided — still mark the red needle dot; "
+            "the blue probe bar is optional."
+        )
+    return (" ".join(parts) if parts
+            else "Mark the probe footprint and needle entry on the skin.")
 
 
 def us_guidance(m):
@@ -102,7 +105,6 @@ def us_guidance(m):
 GUIDANCE = {
     "position": position_guidance,
     "probe": probe_guidance,
-    "needle": needle_guidance,
     "us": us_guidance,
 }
 
@@ -115,14 +117,14 @@ def main():
 
     total = len(muscles)
     us_guided = sum(1 for m in muscles if m.get("ultrasound"))
-    total_images = total * 4
+    total_images = total * PHOTOS_PER_MUSCLE
 
     L = []
     L.append("# NeuroInject — Clinical Photo Capture Guide")
     L.append("")
     L.append(
         f"Shot list for the clinical photography session. "
-        f"**{total} muscles × 4 photos = {total_images} images.**"
+        f"**{total} muscles × {PHOTOS_PER_MUSCLE} photos = {total_images} images.**"
     )
     L.append("")
     L.append(
@@ -130,17 +132,16 @@ def main():
         "`tools/generate_photo_capture_guide.py`. Re-run after editing muscle data."
     )
     L.append("")
-    L.append("## The four photos per muscle")
+    L.append("## The three photos per muscle")
     L.append("")
     L.append("| # | Photo | What to capture |")
     L.append("|---|-------|-----------------|")
     L.append("| 1 | **Patient Position** | The patient positioned and the segment "
              "exposed, as you set up to inject. |")
-    L.append("| 2 | **Probe Placement** | The ultrasound probe held on the skin at "
-             "the injection site. |")
-    L.append("| 3 | **Needle Insertion** | The needle entry point and angle at the "
-             "surface. |")
-    L.append("| 4 | **Ultrasound Image** | The US screen of the target muscle (with "
+    L.append("| 2 | **Probe + Needle Site** | ONE surface photo, annotated: a "
+             "**blue bar** over the probe footprint on the skin and a **red dot** "
+             "at the needle insertion point. |")
+    L.append("| 3 | **Ultrasound Image** | The US screen of the target muscle (with "
              "the needle in the muscle if you can). |")
     L.append("")
     L.append("## Naming & where files go")
@@ -152,20 +153,24 @@ def main():
     L.append("")
     L.append("```")
     L.append("<muscleId>-position.jpg")
-    L.append("<muscleId>-probe.jpg")
-    L.append("<muscleId>-needle.jpg")
+    L.append("<muscleId>-probe.jpg   (the combined probe + needle site photo)")
     L.append("<muscleId>-us.jpg")
     L.append("```")
     L.append("")
     L.append("- **Format:** JPG (convert HEIC → JPG first). Landscape preferred.")
     L.append(
+        "- **Annotation convention:** blue bar = probe footprint, red dot = "
+        "needle insertion point — drawn on the same image."
+    )
+    L.append(
         "- The app auto-detects each file — the muscle's detail page swaps the "
-        "placeholder for the photo and shows an \"N/4 captured\" counter. No code "
-        "or data edit needed."
+        f"placeholder for the photo and shows an \"N/{PHOTOS_PER_MUSCLE} "
+        "captured\" counter. No code or data edit needed."
     )
     L.append(
         f"- **{us_guided}/{total}** muscles are ultrasound-guided; for the "
-        f"{total - us_guided} that are not, the probe/US shots are marked optional."
+        f"{total - us_guided} that are not, the US image is optional and the "
+        f"site photo needs only the red needle dot (blue probe bar optional)."
     )
     L.append("")
     L.append("---")
@@ -177,7 +182,7 @@ def main():
             continue
         L.append(
             f"## {region}  ·  {len(group_muscles)} muscles  ·  "
-            f"{len(group_muscles) * 4} photos"
+            f"{len(group_muscles) * PHOTOS_PER_MUSCLE} photos"
         )
         L.append("")
         for m in group_muscles:

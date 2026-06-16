@@ -191,6 +191,27 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 brandColor: _brand.color,
               ),
             ),
+            // The visual is a single 1 mL syringe; flag draws that won't fit so
+            // a clamped-full barrel isn't mistaken for "fits in one syringe".
+            if (_volume > 1.0) ...[
+              const SizedBox(height: 8),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Icon(Icons.info_outline,
+                      size: 16, color: AppColors.warningOrange),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      '${_volume.toStringAsFixed(2)} mL exceeds one 1 mL syringe — '
+                      'split across ${_volume.ceil()} draws or use a larger syringe.',
+                      style: const TextStyle(
+                          fontSize: 12, color: AppColors.warningOrange),
+                    ),
+                  ),
+                ],
+              ),
+            ],
 
             // Step-by-step math explanation
             const SizedBox(height: 24),
@@ -495,7 +516,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           onChanged: (v) {
             final parsed = double.tryParse(v);
             if (parsed != null && parsed >= 0) {
-              setState(() => _dose = parsed.clamp(0, maxDose));
+              // Keep the entered value (no silent clamp) so the field, the
+              // computed volume, and the over-max warning all agree.
+              setState(() => _dose = parsed);
             } else if (v.isEmpty) {
               setState(() => _dose = 0);
             }

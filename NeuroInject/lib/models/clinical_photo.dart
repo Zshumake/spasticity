@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// The four standardized clinical photos captured per muscle.
+/// The three standardized clinical photos captured per muscle.
 ///
 /// Paths follow a strict convention, so adding a photo is just dropping a
 /// correctly-named file into `assets/images/clinical/`:
@@ -8,9 +8,12 @@ import 'package:flutter/material.dart';
 ///     assets/images/clinical/<muscleId>-<key>.jpg
 ///
 /// e.g. for `pec-major`: `pec-major-position.jpg`, `pec-major-probe.jpg`,
-/// `pec-major-needle.jpg`, `pec-major-us.jpg`. No JSON or code edit is needed —
-/// the muscle detail page auto-detects the file and swaps the placeholder for
-/// the photo.
+/// `pec-major-us.jpg`. No JSON or code edit is needed — the muscle detail
+/// page auto-detects the file and swaps the placeholder for the photo.
+///
+/// The probe slot is one annotated surface photo covering both probe
+/// placement and the needle insertion site: a blue bar marks the probe
+/// footprint and a red dot marks the needle entry point.
 enum ClinicalPhotoSlot {
   position(
     key: 'position',
@@ -20,15 +23,9 @@ enum ClinicalPhotoSlot {
   ),
   probe(
     key: 'probe',
-    label: 'Probe Placement',
-    description: 'US probe on the skin at the injection site',
+    label: 'Probe + Needle Site',
+    description: 'Blue bar = probe footprint · red dot = needle entry',
     icon: Icons.sensors_rounded,
-  ),
-  needle(
-    key: 'needle',
-    label: 'Needle Insertion',
-    description: 'Needle entry point and angle on the surface',
-    icon: Icons.vaccines_outlined,
   ),
   ultrasound(
     key: 'us',
