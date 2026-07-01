@@ -12,10 +12,14 @@ class MuscleOverlayPainter extends CustomPainter {
   final SegmentationResult? mask;
   final Color accent;
 
-  const MuscleOverlayPainter({
+  /// [repaint] drives live-stroke repaints without rebuilding any widget: the
+  /// canvas mutates [liveStroke] in place and ticks this listenable, so only the
+  /// painter (inside a RepaintBoundary) repaints during a drag — not the screen.
+  MuscleOverlayPainter({
     required this.liveStroke,
     required this.mask,
     required this.accent,
+    super.repaint,
   });
 
   @override
@@ -69,7 +73,5 @@ class MuscleOverlayPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(MuscleOverlayPainter old) =>
-      old.mask != mask ||
-      old.accent != accent ||
-      !identical(old.liveStroke, liveStroke);
+      old.mask != mask || old.accent != accent;
 }

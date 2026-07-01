@@ -31,7 +31,6 @@ class _MuscleHighlighterScreenState extends State<MuscleHighlighterScreen> {
   // TODO(seg): inject a real MuscleSegmenter (MobileSAM via Core ML/LiteRT).
   final MuscleSegmenter _segmenter = const PolygonStubSegmenter();
 
-  List<Offset> _live = const [];
   SegmentationResult? _mask;
   bool _refining = false;
   Size _canvasSize = Size.zero;
@@ -41,15 +40,13 @@ class _MuscleHighlighterScreenState extends State<MuscleHighlighterScreen> {
   String get _usImagePath =>
       muscle.clinicalPhotoPath(ClinicalPhotoSlot.ultrasound);
 
-  void _onPanStart(Offset p) => setState(() {
-        _live = [p];
-        _mask = null;
-      });
+  // The in-progress stroke lives in DrawingCanvas; the screen only reacts to
+  // a stroke starting (clear the old mask) or completing (refine into a mask).
+  void _onStrokeStart() {
+    if (_mask != null) setState(() => _mask = null);
+  }
 
-  void _onPanUpdate(Offset p) => setState(() => _live = [..._live, p]);
-
-  Future<void> _onPanEnd() async {
-    final stroke = _live;
+  Future<void> _onStrokeComplete(List<Offset> stroke) async {
     setState(() => _refining = true);
     final result = await _segmenter.refine(
       SegmentationInput(strokes: [stroke], canvasSize: _canvasSize),
@@ -57,15 +54,11 @@ class _MuscleHighlighterScreenState extends State<MuscleHighlighterScreen> {
     if (!mounted) return;
     setState(() {
       _mask = result.isEmpty ? null : result;
-      _live = const [];
       _refining = false;
     });
   }
 
-  void _clear() => setState(() {
-        _live = const [];
-        _mask = null;
-      });
+  void _clear() => setState(() => _mask = null);
 
   void _accept() {
     final m = _mask;
@@ -88,10 +81,7 @@ class _MuscleHighlighterScreenState extends State<MuscleHighlighterScreen> {
           'Saved highlight #${store.countFor(muscle.id)} for ${muscle.name}'),
       behavior: SnackBarBehavior.floating,
     ));
-    setState(() {
-      _mask = null;
-      _live = const [];
-    });
+    setState(() => _mask = null);
   }
 
   @override
@@ -125,11 +115,9 @@ class _MuscleHighlighterScreenState extends State<MuscleHighlighterScreen> {
           DrawingCanvas(
             imagePath: _usImagePath,
             accent: accent,
-            liveStroke: _live,
             mask: _mask,
-            onPanStart: _onPanStart,
-            onPanUpdate: _onPanUpdate,
-            onPanEnd: _onPanEnd,
+            onStrokeStart: _onStrokeStart,
+            onStrokeComplete: _onStrokeComplete,
             onSize: (s) => _canvasSize = s,
           ),
           const SizedBox(height: 12),
@@ -195,7 +183,7 @@ class _MuscleHighlighterScreenState extends State<MuscleHighlighterScreen> {
     return Row(children: [
       Expanded(
         child: OutlinedButton.icon(
-          onPressed: (hasMask || _live.isNotEmpty) ? _clear : null,
+          onPressed: hasMask ? _clear : null,
           icon: const Icon(Icons.refresh, size: 18),
           label: const Text('Clear'),
           style: OutlinedButton.styleFrom(

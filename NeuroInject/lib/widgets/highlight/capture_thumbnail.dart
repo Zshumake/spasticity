@@ -18,7 +18,11 @@ class CaptureThumbnail extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(AppTheme.radiusSm),
         child: Stack(fit: StackFit.expand, children: [
-          Image.asset(capture.imageRef, fit: BoxFit.cover,
+          // Decode at ~thumbnail size, not full US resolution, so a list of
+          // these doesn't blow up the image cache (Flutter's "sizes" analog).
+          Image.asset(capture.imageRef,
+              fit: BoxFit.cover,
+              cacheWidth: 360,
               errorBuilder: (_, _, _) => Container(color: AppTheme.bgDark)),
           Positioned.fill(
             child: CustomPaint(painter: _MaskThumbPainter(capture, accent)),
