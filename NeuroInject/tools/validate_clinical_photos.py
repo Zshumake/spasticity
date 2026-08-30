@@ -50,8 +50,8 @@ IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".heic", ".webp"}
 def expected_photos(muscles):
     """{filename: (bucket, slot)} for every photo the app will look for."""
     exp = {}
-    for key, (_label, _ms) in position_groups(muscles).items():
-        exp[f"pos-{key}.jpg"] = (POSITION_BUCKET, "position")
+    # Patient-position photos retired 2026-08: the probe illustration shows
+    # the posture, so pos-<group>.jpg files are no longer expected or shipped.
     for m in muscles:
         bucket = region_of(m["group"])
         exp[slot_filename(m, "probe")] = (bucket, "probe")
@@ -82,7 +82,7 @@ def main():
     missing = expected_names - present_names
     unexpected = present_names - expected_names
 
-    buckets = [POSITION_BUCKET] + REGION_ORDER
+    buckets = list(REGION_ORDER)
 
     # ── Coverage, per bucket × slot ──────────────────────────────
     print("NeuroInject — clinical photo validation")
@@ -96,11 +96,11 @@ def main():
         exp = {n for n, (b, s) in expected.items() if b == bucket and s == slot}
         return len(exp & have), len(exp)
 
-    print(f"{'Region':<28}{'position':>10}{'probe':>10}{'ultrasound':>13}")
+    print(f"{'Region':<28}{'probe':>10}{'ultrasound':>13}")
     print("-" * 61)
     for b in buckets:
         cells = []
-        for slot in ("position", "probe", "us"):
+        for slot in ("probe", "us"):
             got, tot = counts(b, slot)
             cells.append(f"{got}/{tot}" if tot else "—")
         print(f"{b:<28}{cells[0]:>10}{cells[1]:>10}{cells[2]:>13}")

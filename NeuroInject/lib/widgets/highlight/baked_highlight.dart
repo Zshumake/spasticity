@@ -30,9 +30,12 @@ class BakedHighlight extends StatefulWidget {
   /// White RGB with the falloff in the alpha channel.
   final String maskAsset;
 
-  /// Tint colour. Defaults to the muscle accent; pass a [StructureKind] colour
-  /// when highlighting a vessel or nerve instead.
+  /// Tint colour, stamped with a luminosity-preserving blend so the scan's
+  /// echotexture stays fully readable. Defaults to the brand terracotta.
   final Color? accent;
+
+  /// --terracotta-fill from the brand palette.
+  static const Color terracotta = Color(0xFFB2502F);
 
   /// 0–1 overall strength, for a reveal animation or a learner "show me" toggle.
   final double intensity;
@@ -125,7 +128,7 @@ class _BakedHighlightState extends State<BakedHighlight> {
         painter: BakedHighlightPainter(
           scan: scan,
           mask: _mask,
-          accent: widget.accent ?? AppTheme.primary,
+          accent: widget.accent ?? BakedHighlight.terracotta,
           intensity: widget.intensity.clamp(0.0, 1.0),
           fit: widget.fit,
         ),
@@ -140,14 +143,16 @@ class _BakedHighlightState extends State<BakedHighlight> {
 class BakedHighlightPainter extends CustomPainter {
   final ui.Image scan;
   final ui.Image? mask;
-  final Color accent;
+
+  /// Null = use the colour ramp baked into the mask itself.
+  final Color? accent;
   final double intensity;
   final BoxFit fit;
 
   const BakedHighlightPainter({
     required this.scan,
     required this.mask,
-    required this.accent,
+    this.accent,
     required this.intensity,
     required this.fit,
   });
@@ -161,18 +166,24 @@ class BakedHighlightPainter extends CustomPainter {
     final m = mask;
     if (m == null || intensity <= 0) return;
 
-    // saveLayer so the blend applies to the composited tint as a whole rather
-    // than per-draw-call. Where the mask's alpha is 0 the layer is transparent
-    // and the scan shows through untouched; where it is 1 the muscle takes the
-    // accent's hue at the scan's own luminosity.
+    if (accent == null) {
+      // Default: composite the mask's own baked colour ramp with plain alpha
+      // blending. The bake keeps the edge partially opaque so its lighter
+      // colour is actually VISIBLE - the highlight fades to lighter terracotta
+      // toward the border, then feathers out over the last few pixels.
+      paintImage(
+          canvas: canvas, rect: rect, image: m, fit: fit, opacity: intensity);
+      return;
+    }
+    // Accent override: luminosity-preserving stamp of a uniform colour
+    // (used for one-off tints such as marking a vessel).
     canvas.saveLayer(rect, Paint()..blendMode = BlendMode.color);
     paintImage(
       canvas: canvas,
       rect: rect,
       image: m,
       fit: fit,
-      // srcIn stamps the accent colour into the mask's alpha shape.
-      colorFilter: ColorFilter.mode(accent, BlendMode.srcIn),
+      colorFilter: ColorFilter.mode(accent!, BlendMode.srcIn),
       opacity: intensity,
     );
     canvas.restore();

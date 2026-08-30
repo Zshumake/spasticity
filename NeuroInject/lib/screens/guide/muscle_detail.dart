@@ -10,6 +10,7 @@ import '../../models/muscle.dart';
 import '../../theme/app_theme.dart';
 import '../../theme/favorites_manager.dart';
 import '../../theme/recently_viewed_manager.dart';
+import '../../widgets/highlight/baked_highlight.dart';
 import '../../widgets/info_card.dart';
 import '../../widgets/step_list.dart';
 import '../../widgets/landmark_list.dart';
@@ -44,6 +45,8 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
   /// Clinical-photo asset paths actually bundled in the app, so each slot can
   /// show the real photo once it exists and a placeholder until then.
   Set<String> _clinicalAssets = {};
+  /// Baked highlight masks bundled under assets/images/us_reference/.
+  Set<String> _maskAssets = {};
   /// Currently-selected anatomy view ('anterior', 'posterior', 'lateral').
   /// Initialized from the muscle's defaultAnatomyView — posterior-aspect
   /// muscles (hamstrings, triceps, gastroc, etc.) open to posterior view.
@@ -74,11 +77,17 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
   Future<void> _loadClinicalAssets() async {
     try {
       final manifest = await AssetManifest.loadFromAssetBundle(rootBundle);
-      final clinical = manifest
-          .listAssets()
-          .where((p) => p.startsWith('${ClinicalPhotoSlot.dir}/'))
-          .toSet();
-      if (mounted) setState(() => _clinicalAssets = clinical);
+      final all = manifest.listAssets();
+      final clinical =
+          all.where((p) => p.startsWith('${ClinicalPhotoSlot.dir}/')).toSet();
+      final masks =
+          all.where((p) => p.startsWith('assets/images/us_reference/')).toSet();
+      if (mounted) {
+        setState(() {
+          _clinicalAssets = clinical;
+          _maskAssets = masks;
+        });
+      }
     } catch (_) {
       // No manifest or no clinical assets yet — placeholders stay shown.
     }
@@ -973,41 +982,60 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     );
   }
 
-  /// The three clinical photo slots:
-  ///   1. Patient position
-  ///   2. Probe + needle site — one annotated surface photo
+  /// The two clinical photo slots:
+  ///   1. Probe + needle site — atlas illustration of the surface anatomy
   ///      (blue bar = probe footprint, red dot = needle entry)
-  ///   3. Ultrasound image with needle visible in muscle
+  ///   2. Ultrasound image of the target muscle
+  /// (The patient-position slot was retired 2026-08: the probe illustration
+  /// already shows the posture, so a third card added noise, not signal.)
   /// Shows real images when available, otherwise a styled placeholder
   /// prompting the user to add their own.
   Widget _buildClinicalPhotos(bool isDark) {
-    // Accent per slot (avoid alarming red); paired with the enum order.
+    // Accent per slot (avoid alarming red).
     const accents = {
-      ClinicalPhotoSlot.position: AppTheme.success,
+      ClinicalPhotoSlot.position: AppTheme.success, // retired from display
       ClinicalPhotoSlot.probe: AppTheme.primary,
       ClinicalPhotoSlot.ultrasound: AppTheme.amber,
     };
 
-    // Position photos are shared by positionGroup (one pos-<group>.jpg reused
-    // by every muscle set up the same way); probe/US stay per-muscle.
-    final captured = ClinicalPhotoSlot.values
+    // Only the slots whose asset is actually bundled are rendered - a muscle
+    // with no imagery gets no section at all rather than placeholder cards.
+    final shown = [ClinicalPhotoSlot.probe, ClinicalPhotoSlot.ultrasound]
         .where((s) => _clinicalAssets.contains(muscle.clinicalPhotoPath(s)))
-        .length;
+        .toList();
+    if (shown.isEmpty) return const SizedBox.shrink();
 
-    Widget slot(ClinicalPhotoSlot s) {
+    Widget slot(ClinicalPhotoSlot s, {double height = 180}) {
       final path = muscle.clinicalPhotoPath(s);
       final has = _clinicalAssets.contains(path);
-      final isShared =
-          s == ClinicalPhotoSlot.position && muscle.positionLabel != null;
+      // The scan renders with this muscle's baked highlight tint whenever the
+      // mask produced by tools/refine_highlights.py is bundled; otherwise the
+      // plain scan shows. Per-muscle even on shared scans - the mask is what
+      // distinguishes gastrocnemius from soleus on the same image.
+      if (s == ClinicalPhotoSlot.ultrasound &&
+          has &&
+          _maskAssets.contains(muscle.ultrasoundMaskPath)) {
+        return SizedBox(
+          height: height,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+            child: BakedHighlight(
+              scanAsset: path,
+              maskAsset: muscle.ultrasoundMaskPath,
+            ),
+          ),
+        );
+      }
       return _imageSlot(
         isDark: isDark,
         title: s.label,
-        subtitle: isShared ? '${muscle.positionLabel} · shared' : s.description,
+        subtitle: s.description,
         icon: s.icon,
         accentColor: accents[s]!,
         imagePath: has ? path : null,
         imageLabel: '${muscle.name} — ${s.label}',
         fileName: muscle.clinicalPhotoFileName(s),
+        height: height,
       );
     }
 
@@ -1021,32 +1049,22 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
           Text('CLINICAL PHOTOS', style: GoogleFonts.ibmPlexMono(
             fontSize: 10, fontWeight: FontWeight.w700,
             letterSpacing: 2.0, color: AppTheme.primary)),
-          const Spacer(),
-          Text('$captured/3 captured', style: GoogleFonts.ibmPlexMono(
-            fontSize: 9, fontWeight: FontWeight.w600,
-            color: captured == 3 ? AppTheme.success : AppTheme.textTertiary)),
         ]),
         const SizedBox(height: 14),
 
-        // Three slots: position + probe/needle site on top, US below.
-        Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Expanded(child: slot(ClinicalPhotoSlot.position)),
-          const SizedBox(width: 12),
-          Expanded(child: slot(ClinicalPhotoSlot.probe)),
-        ]),
-        const SizedBox(height: 12),
-        Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Expanded(child: slot(ClinicalPhotoSlot.ultrasound)),
-          // The highlighter has nothing to draw on until this muscle's US scan
-          // is bundled, so the entry point only appears once it is. Several
-          // muscles are landmark- or EMG-guided by design and will never have
-          // one; gating on the asset rather than on a flag means the CTA
-          // appears by itself as scans are added, with nothing to keep in sync.
-          if (_hasUltrasoundScan) ...[
-            const SizedBox(width: 12),
-            Expanded(child: _highlightCta(isDark)),
-          ],
-        ]),
+        // BIG stacked images - only the ones that exist - each full column
+        // width. Tap either for the full-resolution viewer.
+        for (final s in shown) ...[
+          slot(s, height: 420),
+          if (s != shown.last) const SizedBox(height: 12),
+        ],
+        // The highlighter has nothing to draw on until this muscle's US scan
+        // is bundled, so the entry point only appears once it is; gating on
+        // the asset means it turns itself on as scans are added.
+        if (_hasUltrasoundScan) ...[
+          const SizedBox(height: 12),
+          _highlightCta(isDark),
+        ],
 
         // Photo hint (if available)
         if (muscle.probePlacementHint != null) ...[
@@ -1130,12 +1148,13 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     required String? imagePath,
     required String imageLabel,
     String? fileName,
+    double height = 180,
   }) {
     final hasImage = imagePath != null;
     return GestureDetector(
       onTap: hasImage ? () => _showFullImage(context, imagePath, imageLabel) : null,
       child: Container(
-        height: 180,
+        height: height,
         decoration: BoxDecoration(
           color: isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight,
           borderRadius: BorderRadius.circular(AppTheme.radiusMd),

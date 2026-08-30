@@ -62,8 +62,20 @@ TOOLS = Path(__file__).resolve().parent
 ROOT = TOOLS.parent
 US_DIR = ROOT / "assets" / "images" / "us_reference"
 
-# AppTheme.primary (#18A98A) as BGR — preview only; the app tints at runtime.
-ACCENT_BGR = (0x8A, 0xA9, 0x18)
+# Highlight palette (user's brand colours, 2026-08-30). The mask carries its
+# own colour ramp: terracotta-fill in the muscle's core, lightening toward a
+# cream-mixed terracotta at the edge, so the tint literally fades to LIGHTER
+# (not merely to transparent) as it approaches the border.
+CORE_BGR = (0x2F, 0x50, 0xB2)      # --terracotta-fill  #B2502F
+EDGE_BGR = (0xB4, 0xC9, 0xE7)      # terracotta mixed 75% toward --cream
+ACCENT_BGR = CORE_BGR              # kept for the preview helper
+
+# Opacity envelope for plain alpha compositing (srcOver in the app): strong in
+# the core, still clearly visible at the edge so the lighter edge colour READS,
+# then a short feather to zero right at the boundary.
+ALPHA_CORE = 0.72
+ALPHA_EDGE = 0.34
+EDGE_FEATHER_PX = 5
 
 # How far the drawn line is trusted to be wrong, as a fraction of the lasso's
 # size. Sets the width of the collar the watershed searches.
@@ -167,28 +179,33 @@ def smooth_mask(mask, sigma=4.0):
 # --------------------------------------------------------------- alpha field
 
 def falloff_alpha(mask):
-    """Alpha: opaque through the bulk, fading to 0 before the border.
+    """Depth field t (0 at border -> 1 in the core), smoothstepped.
 
-    Built from the distance transform so the fade follows the muscle's own
+    Drives BOTH the colour ramp (edge colour -> core colour) and the opacity
+    envelope. Built from the distance transform so it follows the muscle's own
     shape rather than a blurred silhouette.
     """
     d = cv2.distanceTransform(mask.astype(np.uint8), cv2.DIST_L2, 5)
     depth = float(np.clip(d.max() * FADE_FRACTION, FADE_MIN, FADE_MAX))
     x = np.clip(d / depth, 0, 1)
-    a = x * x * (3 - 2 * x)                       # smoothstep
-    return cv2.GaussianBlur(a, (0, 0), 2.0)
+    t = x * x * (3 - 2 * x)                       # smoothstep: uniform fill
+    return cv2.GaussianBlur(t, (0, 0), 2.0)       # with a soft edge, no fade
 
 
-def preview(gray, alpha, color=ACCENT_BGR, strength=0.9):
-    """Approximate the app's runtime compositing, for visual QA.
+def opacity_envelope(mask, t):
+    """Uniform tint (design decision 2026-08-30, after trying every kind of
+    gradient): the falloff band only softens the border - inside it the
+    highlight is constant density."""
+    return t
 
-    Mirrors Flutter's BlendMode.color: keep luminosity, take hue/saturation
-    from the accent. Done here in CIELAB, which is the same idea.
-    """
+
+def preview(gray, t_field, a_field, strength=0.9):
+    """Approximate the app's BlendMode.color compositing: keep the scan's
+    luminosity (echotexture), take terracotta's hue/saturation."""
     bgr = cv2.cvtColor(gray, cv2.COLOR_GRAY2BGR)
     lab = cv2.cvtColor(bgr, cv2.COLOR_BGR2LAB).astype(np.float32)
-    tgt = cv2.cvtColor(np.uint8([[color]]), cv2.COLOR_BGR2LAB)[0, 0].astype(np.float32)
-    w = alpha * strength
+    tgt = cv2.cvtColor(np.uint8([[CORE_BGR]]), cv2.COLOR_BGR2LAB)[0, 0].astype(np.float32)
+    w = np.clip(a_field, 0, 1) * strength
     lab[..., 1] = lab[..., 1] * (1 - w) + tgt[1] * w
     lab[..., 2] = lab[..., 2] * (1 - w) + tgt[2] * w
     return cv2.cvtColor(lab.astype(np.uint8), cv2.COLOR_LAB2BGR)
@@ -288,23 +305,33 @@ def bake(job, out_dir, write_preview=True):
     if mask.sum() < 50:
         return f"SKIP {job['muscle']}: refinement produced an empty mask"
 
-    alpha = falloff_alpha(mask)
+    t_field = falloff_alpha(mask)
+    a_field = opacity_envelope(mask, t_field)
 
     # Write at full source-image resolution so the app can letterbox it exactly
     # like the photo it overlays.
     full = np.zeros(gray.shape, np.float32)
-    full[y0:y1, x0:x1] = alpha
+    full[y0:y1, x0:x1] = t_field
+    full_alpha = np.zeros(gray.shape, np.float32)
+    full_alpha[y0:y1, x0:x1] = a_field
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    # White RGB with the falloff as the ALPHA channel, so Flutter can tint it
-    # with a single ColorFilter(srcIn) and composite it with BlendMode.color —
-    # no shader and no luminance-to-alpha conversion on device.
-    a8 = (np.clip(full, 0, 1) * 255).astype(np.uint8)
-    rgba = np.dstack([np.full_like(a8, 255)] * 3 + [a8])
-    cv2.imwrite(str(out_dir / f"{job['muscle']}-us.mask.png"), rgba)
+    # The mask carries the colour ramp itself: BGR interpolated from EDGE to
+    # CORE by the same normalised depth that drives the alpha, so the app can
+    # composite it directly (BlendMode.color, no colour filter) and the tint
+    # lightens toward the border.
+    # White RGB + alpha: the app stamps the accent colour (terracotta) with a
+    # luminosity-preserving blend, so echotexture stays fully readable.
+    a8 = (np.clip(full_alpha, 0, 1) * 255).astype(np.uint8)
+    bgra = np.dstack([np.full_like(a8, 255)] * 3 + [a8])
+    cv2.imwrite(str(out_dir / f"{job['muscle']}-us.mask.png"), bgra)
     if write_preview:
-        cv2.imwrite(str(out_dir / f"{job['muscle']}-us.preview.png"),
-                    preview(gray, full))
+        # Previews live OUTSIDE the asset tree - us_reference/ is a declared
+        # pubspec asset dir, so anything written there ships in the app bundle.
+        pv = ROOT / "docs" / "mask-previews"
+        pv.mkdir(parents=True, exist_ok=True)
+        cv2.imwrite(str(pv / f"{job['muscle']}-us.preview.png"),
+                    preview(gray, full, full_alpha))
     cov = 100.0 * mask.sum() / mask.size
     return f"ok   {job['muscle']:<26} {cov:5.1f}% of scan   <- {job['image'].name}"
 
@@ -321,9 +348,18 @@ def main():
 
     coco = Path(args.coco)
     if not coco.exists():
-        print(f"No COCO export at {coco}\n"
-              f"Export one from the captures screen (/captures) first.", file=sys.stderr)
-        return 1
+        # The app's export button downloads a timestamped file - grab the
+        # newest one rather than making the user copy it around.
+        dl = sorted(Path.home().glob("Downloads/neuroinject-captures-*.json"),
+                    key=lambda p: p.stat().st_mtime)
+        if dl:
+            coco = dl[-1]
+            print(f"Using newest export: {coco}")
+        else:
+            print(f"No COCO export at {coco} and none in ~/Downloads.\n"
+                  f"Export one from the captures screen (/captures) first.",
+                  file=sys.stderr)
+            return 1
 
     try:
         jobs = load_jobs(coco, Path(args.images))

@@ -115,54 +115,6 @@
   "illustration_task": "piriformis",
   "source_frame": "DSC_0504"
  },
- "pos-arm-supinated-on-support.jpg": {
-  "illustration_task": "supine-head-neutral",
-  "source_frame": "DSC_0442"
- },
- "pos-lateral-decub-arm-abducted.jpg": {
-  "illustration_task": "lateral-decub-arm-abducted",
-  "source_frame": "DSC_0444"
- },
- "pos-prone-feet-off-bed.jpg": {
-  "illustration_task": "prone-pillow-pelvis",
-  "source_frame": "DSC_0498"
- },
- "pos-prone-knee-flexed.jpg": {
-  "illustration_task": "prone-pillow-pelvis",
-  "source_frame": "DSC_0498"
- },
- "pos-prone-pillow-pelvis.jpg": {
-  "illustration_task": "prone-pillow-pelvis",
-  "source_frame": "DSC_0498"
- },
- "pos-supine-arm-abducted.jpg": {
-  "illustration_task": "supine-arm-abducted",
-  "source_frame": "DSC_0445"
- },
- "pos-supine-frog-leg.jpg": {
-  "illustration_task": "supine-frog-leg",
-  "source_frame": "DSC_0728"
- },
- "pos-supine-head-neutral.jpg": {
-  "illustration_task": "supine-head-neutral",
-  "source_frame": "DSC_0442"
- },
- "pos-supine-hip-neutral.jpg": {
-  "illustration_task": "supine-hip-neutral",
-  "source_frame": "DSC_0442"
- },
- "pos-supine-knee-extended.jpg": {
-  "illustration_task": "supine-knee-extended",
-  "source_frame": "DSC_0443"
- },
- "pos-supine-leg-neutral.jpg": {
-  "illustration_task": "supine-knee-extended",
-  "source_frame": "DSC_0443"
- },
- "pos-supine-or-lat-decub.jpg": {
-  "illustration_task": "supine-knee-extended",
-  "source_frame": "DSC_0443"
- },
  "pronator-quadratus-probe.jpg": {
   "illustration_task": "pronator-quadratus",
   "source_frame": "DSC_0722"
