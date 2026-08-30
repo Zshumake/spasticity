@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import '../../data/coco_download.dart';
 import '../../data/coco_exporter.dart';
 import '../../data/highlight_capture_store.dart';
 import '../../data/muscle_provider.dart';
@@ -183,6 +184,17 @@ class CapturesReviewScreen extends StatelessWidget {
     );
   }
 
+  /// Timestamped so consecutive exports do not overwrite one another — losing
+  /// a training set to a same-name download would repeat the mistake this
+  /// whole download path exists to prevent.
+  String _exportFileName() {
+    final t = DateTime.now();
+    String p(int v, [int w = 2]) => v.toString().padLeft(w, '0');
+    return 'neuroinject-captures-'
+        '${t.year}${p(t.month)}${p(t.day)}-${p(t.hour)}${p(t.minute)}${p(t.second)}'
+        '.json';
+  }
+
   void _exportCoco(BuildContext context,
       List<HighlightCapture> captures, MuscleDataProvider muscles) {
     final json = CocoExporter.toCocoJson(
@@ -207,8 +219,8 @@ class CapturesReviewScreen extends StatelessWidget {
               '$nCat muscle${nCat == 1 ? '' : 's'}'),
           const SizedBox(height: 8),
           Text(
-            '$kb KB of COCO JSON. Copy it and paste into a .json file for your '
-            'model run.',
+            '$kb KB of COCO JSON. Download it, then run '
+            'tools/refine_highlights.py against the file.',
             style: GoogleFonts.sourceSans3(
                 fontSize: 12.5, height: 1.4, color: AppTheme.textSecondary),
           ),
@@ -217,10 +229,12 @@ class CapturesReviewScreen extends StatelessWidget {
           TextButton(
               onPressed: () => Navigator.of(ctx).pop(),
               child: const Text('Close')),
-          FilledButton.icon(
-            style: FilledButton.styleFrom(backgroundColor: AppTheme.primary),
+          // Copy stays available, but it is not a backup — it survives only
+          // until the next copy. Download is the action that gets the work out
+          // of the browser, so it is the primary one.
+          TextButton.icon(
             icon: const Icon(Icons.copy, size: 16),
-            label: const Text('Copy JSON'),
+            label: const Text('Copy'),
             onPressed: () {
               Clipboard.setData(ClipboardData(text: json));
               Navigator.of(ctx).pop();
@@ -228,6 +242,28 @@ class CapturesReviewScreen extends StatelessWidget {
                 content: Text('Copied COCO JSON ($kb KB) to clipboard'),
                 behavior: SnackBarBehavior.floating,
               ));
+            },
+          ),
+          FilledButton.icon(
+            style: FilledButton.styleFrom(backgroundColor: AppTheme.primary),
+            icon: const Icon(Icons.download, size: 16),
+            label: const Text('Download .json'),
+            onPressed: () async {
+              Navigator.of(ctx).pop();
+              try {
+                final where = await saveJson(json, _exportFileName());
+                messenger.showSnackBar(SnackBar(
+                  content: Text('Saved ${_exportFileName()} to $where'),
+                  behavior: SnackBarBehavior.floating,
+                  duration: const Duration(seconds: 6),
+                ));
+              } catch (e) {
+                messenger.showSnackBar(SnackBar(
+                  content: Text('Could not save the file: $e'),
+                  backgroundColor: AppTheme.danger,
+                  behavior: SnackBarBehavior.floating,
+                ));
+              }
             },
           ),
         ],

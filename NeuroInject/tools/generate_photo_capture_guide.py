@@ -110,11 +110,19 @@ GUIDANCE = {
 
 
 def slot_filename(m, key):
-    """Target filename for a shot. Patient-position photos are SHARED across
-    muscles set up the same way (one `pos-<positionGroup>.jpg`); probe and US
-    stay per-muscle (`<id>-<key>.jpg`)."""
+    """Target filename for a shot, mirroring Muscle.clinicalPhotoFileName in
+    lib/models/muscle.dart. Two slots are shared between muscles:
+
+      * position — muscles set up identically reuse `pos-<positionGroup>.jpg`.
+      * us       — one transverse view usually shows several muscles, so
+                   muscles with an `ultrasoundGroup` reuse `us-<group>.jpg`
+                   (per-muscle highlight masks tell them apart).
+
+    The probe photo is always per-muscle (`<id>-probe.jpg`)."""
     if key == "position" and m.get("positionGroup"):
         return f"pos-{m['positionGroup']}.jpg"
+    if key == "us" and m.get("ultrasoundGroup"):
+        return f"us-{m['ultrasoundGroup']}.jpg"
     return f"{m['id']}-{key}.jpg"
 
 

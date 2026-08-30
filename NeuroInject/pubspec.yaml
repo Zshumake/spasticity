@@ -43,6 +43,8 @@ dependencies:
   webview_flutter_web: ^0.2.3  # Official federated web implementation (iframe)
   printing: ^5.13.4
   pdf: ^3.11.3
+  # Imported directly by lib/data/coco_download_web.dart (Blob download).
+  web: ^1.1.1
 
 dev_dependencies:
   flutter_test:

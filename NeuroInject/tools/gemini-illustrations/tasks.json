@@ -1,0 +1,512 @@
+[
+ {
+  "id": "supine-head-neutral",
+  "source": "sources/supine-head-neutral.jpg",
+  "source_frame": "DSC_0442",
+  "mode": "position",
+  "prompt": "MODE: Position Mode (patient positioning only - no probe or needle overlays; none are present in the source).\nConvert this clinical photograph into a publication-grade patient-positioning illustration.\nScene (preserve exactly): Patient supine, arms relaxed at the sides with palms up, head on a pillow.\nShow the full posture cleanly: table/pillow/towel simplified to minimal clinical props, clothing rendered as simple neutral shorts/shirt, background clean light gray.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective and laterality.",
+  "output": "output/supine-head-neutral-position-illustration.png",
+  "copy_to_assets": [
+   "pos-supine-head-neutral.jpg",
+   "pos-arm-supinated-on-support.jpg"
+  ]
+ },
+ {
+  "id": "supine-knee-extended",
+  "source": "sources/supine-knee-extended.jpg",
+  "source_frame": "DSC_0443",
+  "mode": "position",
+  "prompt": "MODE: Position Mode (patient positioning only - no probe or needle overlays; none are present in the source).\nConvert this clinical photograph into a publication-grade patient-positioning illustration.\nScene (preserve exactly): Patient supine, full body in view, arms at the sides, legs extended and relaxed.\nShow the full posture cleanly: table/pillow/towel simplified to minimal clinical props, clothing rendered as simple neutral shorts/shirt, background clean light gray.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective and laterality.",
+  "output": "output/supine-knee-extended-position-illustration.png",
+  "copy_to_assets": [
+   "pos-supine-knee-extended.jpg",
+   "pos-supine-leg-neutral.jpg",
+   "pos-supine-or-lat-decub.jpg"
+  ]
+ },
+ {
+  "id": "lateral-decub-arm-abducted",
+  "source": "sources/lateral-decub-arm-abducted.jpg",
+  "source_frame": "DSC_0444",
+  "mode": "position",
+  "prompt": "MODE: Position Mode (patient positioning only - no probe or needle overlays; none are present in the source).\nConvert this clinical photograph into a publication-grade patient-positioning illustration.\nScene (preserve exactly): Patient rolled toward side-lying, upper arm drawn forward across the body.\nShow the full posture cleanly: table/pillow/towel simplified to minimal clinical props, clothing rendered as simple neutral shorts/shirt, background clean light gray.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective and laterality.",
+  "output": "output/lateral-decub-arm-abducted-position-illustration.png",
+  "copy_to_assets": [
+   "pos-lateral-decub-arm-abducted.jpg"
+  ]
+ },
+ {
+  "id": "supine-arm-abducted",
+  "source": "sources/supine-arm-abducted.jpg",
+  "source_frame": "DSC_0445",
+  "mode": "position",
+  "prompt": "MODE: Position Mode (patient positioning only - no probe or needle overlays; none are present in the source).\nConvert this clinical photograph into a publication-grade patient-positioning illustration.\nScene (preserve exactly): Patient supine with the right arm raised and hand behind the head, exposing the chest and axilla.\nShow the full posture cleanly: table/pillow/towel simplified to minimal clinical props, clothing rendered as simple neutral shorts/shirt, background clean light gray.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective and laterality.",
+  "output": "output/supine-arm-abducted-position-illustration.png",
+  "copy_to_assets": [
+   "pos-supine-arm-abducted.jpg"
+  ]
+ },
+ {
+  "id": "pec-major",
+  "source": "sources/pec-major.jpg",
+  "source_frame": "DSC_0456",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Pectoralis Major.\nScene (preserve exactly): Patient supine, arms relaxed at the sides. View of the anterior chest and shoulder from the patient's right.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Coracoid Process; Lateral third of Clavicle; Sternal Border.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/pec-major-probe-illustration.png",
+  "copy_to_assets": [
+   "pec-major-probe.jpg"
+  ]
+ },
+ {
+  "id": "lat-dorsi",
+  "source": "sources/lat-dorsi.jpg",
+  "source_frame": "DSC_0760",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Latissimus Dorsi.\nScene (preserve exactly): Patient side-lying with the right side up, arm drawn forward. View of the right lateral chest wall and posterior axillary region.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Iliac Crest; Inferior Angle of Scapula; Posterior Axillary Fold.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/lat-dorsi-probe-illustration.png",
+  "copy_to_assets": [
+   "lat-dorsi-probe.jpg"
+  ]
+ },
+ {
+  "id": "biceps-brachii",
+  "source": "sources/biceps-brachii.jpg",
+  "source_frame": "DSC_0465",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Biceps Brachii.\nScene (preserve exactly): Patient supine, right arm at the side, elbow slightly flexed. View of the anterior right upper arm.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Acromion; Coracoid Process; Cubital Fossa.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/biceps-brachii-probe-illustration.png",
+  "copy_to_assets": [
+   "biceps-brachii-probe.jpg"
+  ]
+ },
+ {
+  "id": "brachialis",
+  "source": "sources/brachialis.jpg",
+  "source_frame": "DSC_0466",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Brachialis.\nScene (preserve exactly): Patient supine, right arm at the side. View of the distal anterior/lateral right upper arm near the elbow.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Biceps Tendon; Distal Humerus; Lateral Epicondyle.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/brachialis-probe-illustration.png",
+  "copy_to_assets": [
+   "brachialis-probe.jpg"
+  ]
+ },
+ {
+  "id": "triceps",
+  "source": "sources/triceps.jpg",
+  "source_frame": "DSC_0756",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Triceps.\nScene (preserve exactly): Patient supine with the right arm across the chest, exposing the posterior arm. View of the posteromedial right upper arm.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Acromion; Olecranon; Posterior Midline of Humerus.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/triceps-probe-illustration.png",
+  "copy_to_assets": [
+   "triceps-probe.jpg"
+  ]
+ },
+ {
+  "id": "pronator-teres",
+  "source": "sources/pronator-teres.jpg",
+  "source_frame": "DSC_0489",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Pronator Teres.\nScene (preserve exactly): Patient supine, right forearm supinated. View of the proximal anterior forearm just distal to the elbow crease.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Cubital Fossa; Medial Epicondyle; Radial Tuberosity.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/pronator-teres-probe-illustration.png",
+  "copy_to_assets": [
+   "pronator-teres-probe.jpg"
+  ]
+ },
+ {
+  "id": "fcr",
+  "source": "sources/fcr.jpg",
+  "source_frame": "DSC_0494",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Flexor Carpi Radialis.\nScene (preserve exactly): Patient supine, right forearm supinated at the side. Wide view of the anterior forearm and trunk.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: FCR Tendon at Wrist; Medial Epicondyle; Palmaris Longus Tendon.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/fcr-probe-illustration.png",
+  "copy_to_assets": [
+   "fcr-probe.jpg"
+  ]
+ },
+ {
+  "id": "prone-pillow-pelvis",
+  "source": "sources/prone-pillow-pelvis.jpg",
+  "source_frame": "DSC_0498",
+  "mode": "position",
+  "prompt": "MODE: Position Mode (patient positioning only - no probe or needle overlays; none are present in the source).\nConvert this clinical photograph into a publication-grade patient-positioning illustration.\nScene (preserve exactly): Patient prone, head to the side on a pillow, arms up beside the head, legs extended.\nShow the full posture cleanly: table/pillow/towel simplified to minimal clinical props, clothing rendered as simple neutral shorts/shirt, background clean light gray.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective and laterality.",
+  "output": "output/prone-pillow-pelvis-position-illustration.png",
+  "copy_to_assets": [
+   "pos-prone-pillow-pelvis.jpg",
+   "pos-prone-feet-off-bed.jpg",
+   "pos-prone-knee-flexed.jpg"
+  ]
+ },
+ {
+  "id": "piriformis",
+  "source": "sources/piriformis.jpg",
+  "source_frame": "DSC_0504",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Piriformis.\nScene (preserve exactly): Patient prone, right buttock exposed with towel draping. View of the upper gluteal region.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Greater Trochanter; PSIS; Sacral Hiatus.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/piriformis-probe-illustration.png",
+  "copy_to_assets": [
+   "piriformis-probe.jpg"
+  ]
+ },
+ {
+  "id": "brachioradialis",
+  "source": "sources/brachioradialis.jpg",
+  "source_frame": "DSC_0709",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Brachioradialis.\nScene (preserve exactly): Patient supine, right arm extended at the side, forearm neutral. View of the proximal dorsal-radial right forearm.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Lateral Epicondyle; Lateral Supracondylar Ridge; Radial Styloid.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/brachioradialis-probe-illustration.png",
+  "copy_to_assets": [
+   "brachioradialis-probe.jpg"
+  ]
+ },
+ {
+  "id": "fcu",
+  "source": "sources/fcu.jpg",
+  "source_frame": "DSC_0496",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Flexor Carpi Ulnaris.\nScene (preserve exactly): Patient supine, right forearm supinated, palm up. View of the proximal ulnar-volar forearm.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Medial Epicondyle; Olecranon; Pisiform Bone.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/fcu-probe-illustration.png",
+  "copy_to_assets": [
+   "fcu-probe.jpg"
+  ]
+ },
+ {
+  "id": "fds",
+  "source": "sources/fds.jpg",
+  "source_frame": "DSC_0720",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Flexor Digitorum Superficialis, Flexor Digitorum Profundus.\nScene (preserve exactly): Patient supine, right forearm supinated, palm open. View of the mid volar forearm.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Coronoid Process of Ulna; DIP Joints of Fingers; Medial Epicondyle; Medial Epicondyle and Proximal Ulna; Proximal Radius; Subcutaneous Ulnar Border.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/fds-probe-illustration.png",
+  "copy_to_assets": [
+   "fds-probe.jpg",
+   "fdp-probe.jpg"
+  ]
+ },
+ {
+  "id": "fpl",
+  "source": "sources/fpl.jpg",
+  "source_frame": "DSC_0717",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Flexor Pollicis Longus.\nScene (preserve exactly): Patient supine, right forearm supinated. View of the distal volar-radial forearm above the wrist crease.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Anterior Radial Shaft; Radial Artery at the Wrist; Thenar Eminence.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/fpl-probe-illustration.png",
+  "copy_to_assets": [
+   "fpl-probe.jpg"
+  ]
+ },
+ {
+  "id": "pronator-quadratus",
+  "source": "sources/pronator-quadratus.jpg",
+  "source_frame": "DSC_0722",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Pronator Quadratus.\nScene (preserve exactly): Patient supine, right forearm supinated. View of the distal volar forearm just proximal to the wrist crease.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Distal Radius; Distal Ulna; Flexor Tendons at the Wrist.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/pronator-quadratus-probe-illustration.png",
+  "copy_to_assets": [
+   "pronator-quadratus-probe.jpg"
+  ]
+ },
+ {
+  "id": "adductor-pollicis",
+  "source": "sources/adductor-pollicis.jpg",
+  "source_frame": "DSC_0723",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Adductor Pollicis.\nScene (preserve exactly): Patient supine, right hand pronated and relaxed. View of the dorsal first web space between thumb and index.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: First Web Space; Proximal Phalanx of the Thumb, Ulnar Side; Third Metacarpal.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/adductor-pollicis-probe-illustration.png",
+  "copy_to_assets": [
+   "adductor-pollicis-probe.jpg"
+  ]
+ },
+ {
+  "id": "hand-lumbricals",
+  "source": "sources/hand-lumbricals.jpg",
+  "source_frame": "DSC_0726",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Hand Lumbricals.\nScene (preserve exactly): Patient supine, right hand pronated flat on the table. View of the dorsum of the hand over the metacarpals.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Metacarpal Heads; Metacarpal bones \u2014 use them as the palpation reference.; Palmar Crease.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/hand-lumbricals-probe-illustration.png",
+  "copy_to_assets": [
+   "hand-lumbricals-probe.jpg"
+  ]
+ },
+ {
+  "id": "supine-frog-leg",
+  "source": "sources/supine-frog-leg.jpg",
+  "source_frame": "DSC_0728",
+  "mode": "position",
+  "prompt": "MODE: Position Mode (patient positioning only - no probe or needle overlays; none are present in the source).\nConvert this clinical photograph into a publication-grade patient-positioning illustration.\nScene (preserve exactly): Patient supine in frog-leg position: hip flexed, abducted and externally rotated, knee bent, sole of the foot near the opposite knee.\nShow the full posture cleanly: table/pillow/towel simplified to minimal clinical props, clothing rendered as simple neutral shorts/shirt, background clean light gray.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective and laterality.",
+  "output": "output/supine-frog-leg-position-illustration.png",
+  "copy_to_assets": [
+   "pos-supine-frog-leg.jpg"
+  ]
+ },
+ {
+  "id": "adductor-longus",
+  "source": "sources/adductor-longus.jpg",
+  "source_frame": "DSC_0730",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Adductor Longus, Adductor Brevis, Adductor Magnus.\nScene (preserve exactly): Patient supine in frog-leg position (hip flexed, abducted, externally rotated; knee bent). View of the proximal medial right thigh.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Adductor Longus Tendon; Adductor Tubercle; Inferior Pubic Ramus; Ischial Tuberosity; Medial Femoral Condyle; Pubic Tubercle; Pubic tubercle \u2014 palpate the adductor longus tendon at its origin.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/adductor-longus-probe-illustration.png",
+  "copy_to_assets": [
+   "adductor-longus-probe.jpg",
+   "adductor-brevis-probe.jpg",
+   "adductor-magnus-probe.jpg"
+  ]
+ },
+ {
+  "id": "gracilis",
+  "source": "sources/gracilis.jpg",
+  "source_frame": "DSC_0735",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Gracilis.\nScene (preserve exactly): Patient supine in frog-leg position. View of the medial right thigh, slightly posterior and distal to the adductor longus line.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Pes Anserinus; Pubic Symphysis; Pubic tubercle.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/gracilis-probe-illustration.png",
+  "copy_to_assets": [
+   "gracilis-probe.jpg"
+  ]
+ },
+ {
+  "id": "supine-hip-neutral",
+  "source": "sources/supine-hip-neutral.jpg",
+  "source_frame": "DSC_0442",
+  "mode": "position",
+  "prompt": "MODE: Position Mode (patient positioning only - no probe or needle overlays; none are present in the source).\nConvert this clinical photograph into a publication-grade patient-positioning illustration.\nScene (preserve exactly): Patient supine, hips neutral, legs extended, towel folded at the waistline.\nShow the full posture cleanly: table/pillow/towel simplified to minimal clinical props, clothing rendered as simple neutral shorts/shirt, background clean light gray.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective and laterality.",
+  "output": "output/supine-hip-neutral-position-illustration.png",
+  "copy_to_assets": [
+   "pos-supine-hip-neutral.jpg"
+  ]
+ },
+ {
+  "id": "iliopsoas",
+  "source": "sources/iliopsoas.jpg",
+  "source_frame": "DSC_0738",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Iliopsoas.\nScene (preserve exactly): Patient supine, hips neutral, towel at the groin line. View of the right inguinal region and proximal thigh.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Anterior Superior Iliac Spine; Inguinal Ligament; Lesser Trochanter.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/iliopsoas-probe-illustration.png",
+  "copy_to_assets": [
+   "iliopsoas-probe.jpg"
+  ]
+ },
+ {
+  "id": "rectus-femoris",
+  "source": "sources/rectus-femoris.jpg",
+  "source_frame": "DSC_0739",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Rectus Femoris, Vastus Intermedius.\nScene (preserve exactly): Patient supine, right leg extended. View of the anterior mid-thigh.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: AIIS; Anterior Femur; Anterior inferior iliac spine; Anterior shaft of the femur; Deep to Rectus Femoris; Superior Pole of Patella.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/rectus-femoris-probe-illustration.png",
+  "copy_to_assets": [
+   "rectus-femoris-probe.jpg",
+   "vastus-intermedius-probe.jpg"
+  ]
+ },
+ {
+  "id": "vastus-lateralis",
+  "source": "sources/vastus-lateralis.jpg",
+  "source_frame": "DSC_0740",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Vastus Lateralis.\nScene (preserve exactly): Patient supine, right leg extended. View of the anterolateral thigh.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Greater Trochanter; IT Band; Lateral Condyle of Femur.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/vastus-lateralis-probe-illustration.png",
+  "copy_to_assets": [
+   "vastus-lateralis-probe.jpg"
+  ]
+ },
+ {
+  "id": "vastus-medialis",
+  "source": "sources/vastus-medialis.jpg",
+  "source_frame": "DSC_0741",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Vastus Medialis.\nScene (preserve exactly): Patient supine, right leg extended. View of the distal anteromedial thigh above the knee.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Adductor Tubercle; Patella; Sartorius.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/vastus-medialis-probe-illustration.png",
+  "copy_to_assets": [
+   "vastus-medialis-probe.jpg"
+  ]
+ },
+ {
+  "id": "biceps-femoris",
+  "source": "sources/biceps-femoris.jpg",
+  "source_frame": "DSC_0763",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Biceps Femoris.\nScene (preserve exactly): Patient prone, posterior right thigh in view, opposite leg beside it.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Fibular Head; Ischial Tuberosity; Lateral Hamstring Tendon.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/biceps-femoris-probe-illustration.png",
+  "copy_to_assets": [
+   "biceps-femoris-probe.jpg"
+  ]
+ },
+ {
+  "id": "semitendinosus",
+  "source": "sources/semitendinosus.jpg",
+  "source_frame": "DSC_0762",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Semitendinosus.\nScene (preserve exactly): Patient prone, posterior right thigh in view, opposite leg beside it.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Ischial Tuberosity; Ischial tuberosity; Medial Tibial Condyle.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/semitendinosus-probe-illustration.png",
+  "copy_to_assets": [
+   "semitendinosus-probe.jpg"
+  ]
+ },
+ {
+  "id": "semimembranosus",
+  "source": "sources/semimembranosus.jpg",
+  "source_frame": "DSC_0761",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Semimembranosus.\nScene (preserve exactly): Patient prone, posterior right thigh in view, opposite leg beside it.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Ischial Tuberosity; Ischial tuberosity; Medial Tibial Condyle.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/semimembranosus-probe-illustration.png",
+  "copy_to_assets": [
+   "semimembranosus-probe.jpg"
+  ]
+ },
+ {
+  "id": "fdl",
+  "source": "sources/fdl.jpg",
+  "source_frame": "DSC_0745",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Flexor Digitorum Longus (FDL), Tibialis Posterior.\nScene (preserve exactly): Patient supine, right leg externally rotated exposing the medial leg. View of the medial mid-to-distal lower leg.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Fibular Head; Intermalleolar Line; Medial Tibial Border; Posterior Tibial Artery Pulse; Posterior surface of the tibia.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/fdl-probe-illustration.png",
+  "copy_to_assets": [
+   "fdl-probe.jpg",
+   "tibialis-posterior-probe.jpg"
+  ]
+ },
+ {
+  "id": "tibialis-anterior",
+  "source": "sources/tibialis-anterior.jpg",
+  "source_frame": "DSC_0746",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Tibialis Anterior.\nScene (preserve exactly): Patient supine, leg neutral. View of the anterolateral proximal right shin.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Lateral Condyle of Tibia; Lateral tibial condyle and upper lateral tibial surface; Tibial Crest.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/tibialis-anterior-probe-illustration.png",
+  "copy_to_assets": [
+   "tibialis-anterior-probe.jpg"
+  ]
+ },
+ {
+  "id": "scm",
+  "source": "sources/scm.jpg",
+  "source_frame": "DSC_0747",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Sternocleidomastoid (SCM).\nScene (preserve exactly): Patient seated, head turned away from the examined side. View of the right lateral neck.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Clavicular Head Origin; Mastoid Process Insertion; Sternal Head Origin.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/scm-probe-illustration.png",
+  "copy_to_assets": [
+   "scm-probe.jpg"
+  ]
+ },
+ {
+  "id": "upper-trapezius",
+  "source": "sources/upper-trapezius.jpg",
+  "source_frame": "DSC_0748",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Upper Trapezius.\nScene (preserve exactly): Patient seated, viewed from behind. View of the top of the right shoulder along the upper trapezius ridge.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: External Occipital Protuberance; Lateral Third of the Clavicle and Acromion; Spinous Process of C7.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/upper-trapezius-probe-illustration.png",
+  "copy_to_assets": [
+   "upper-trapezius-probe.jpg"
+  ]
+ },
+ {
+  "id": "levator-scapulae",
+  "source": "sources/levator-scapulae.jpg",
+  "source_frame": "DSC_0750",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Levator Scapulae.\nScene (preserve exactly): Patient seated, neck gently side-flexed. View of the right posterolateral neck.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Medial Border of the Scapula above the Scapular Spine; Superior Angle of the Scapula; Transverse Processes of C1-C4.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/levator-scapulae-probe-illustration.png",
+  "copy_to_assets": [
+   "levator-scapulae-probe.jpg"
+  ]
+ },
+ {
+  "id": "splenius-capitis",
+  "source": "sources/splenius-capitis.jpg",
+  "source_frame": "DSC_0751",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Splenius Capitis, Semispinalis Capitis.\nScene (preserve exactly): Patient seated, head neutral, viewed from behind. View of the posterior neck at the hairline.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Between the Superior and Inferior Nuchal Lines; External Occipital Protuberance; Mastoid Process; Spinous Processes of C3-T3; Superior Nuchal Line; Transverse Processes of C4-T6.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/splenius-capitis-probe-illustration.png",
+  "copy_to_assets": [
+   "splenius-capitis-probe.jpg",
+   "semispinalis-capitis-probe.jpg"
+  ]
+ },
+ {
+  "id": "scalenes",
+  "source": "sources/scalenes.jpg",
+  "source_frame": "DSC_0752",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Scalenes (Anterior, Middle, Posterior).\nScene (preserve exactly): Patient seated, head extended slightly. View of the right supraclavicular fossa above the clavicle.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: First and Second Ribs; Posterior Border of the SCM; Transverse Processes of C2-C7.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/scalenes-probe-illustration.png",
+  "copy_to_assets": [
+   "scalenes-probe.jpg"
+  ]
+ },
+ {
+  "id": "teres-major",
+  "source": "sources/teres-major.jpg",
+  "source_frame": "DSC_0757",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Teres Major.\nScene (preserve exactly): Patient seated, viewed from behind, arm relaxed at the side. View of the right posterior axillary fold and lateral scapular border.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Inferior Angle of the Scapula; Intertubercular; Posterior Axillary Fold.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/teres-major-probe-illustration.png",
+  "copy_to_assets": [
+   "teres-major-probe.jpg"
+  ]
+ },
+ {
+  "id": "gastrocnemius-lateral",
+  "source": "sources/gastrocnemius-lateral.jpg",
+  "source_frame": "DSC_0764",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Gastrocnemius (Lateral), Soleus (Lateral).\nScene (preserve exactly): Patient prone, legs relaxed. View of the proximal posterolateral right calf.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Fibula; Fibular Head; Lateral Border of Gastrocnemius; Lateral Femoral Condyle; Popliteal crease \u2014 palpable behind the knee..\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/gastrocnemius-lateral-probe-illustration.png",
+  "copy_to_assets": [
+   "gastrocnemius-lateral-probe.jpg",
+   "soleus-lateral-probe.jpg"
+  ]
+ },
+ {
+  "id": "gastrocnemius-medial",
+  "source": "sources/gastrocnemius-medial.jpg",
+  "source_frame": "DSC_0766",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Gastrocnemius (Medial), Soleus (Medial).\nScene (preserve exactly): Patient supine with knee dropped outward, exposing the medial calf. View of the proximal posteromedial calf.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Deep to Gastrocnemius; Medial Border of Tibia; Medial Femoral Condyle; Popliteal Fossa; Popliteal crease \u2014 palpable behind the knee, forms the proximal boundary of the gastroc.; Soleal line of the tibia and upper third of the posterior fibula.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/gastrocnemius-medial-probe-illustration.png",
+  "copy_to_assets": [
+   "gastrocnemius-medial-probe.jpg",
+   "soleus-medial-probe.jpg"
+  ]
+ },
+ {
+  "id": "fhl",
+  "source": "sources/fhl.jpg",
+  "source_frame": "DSC_0768",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Flexor Hallucis Longus (FHL).\nScene (preserve exactly): Patient side-lying, leg extended. View of the distal posterolateral lower leg above the ankle.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Achilles Tendon; Fibula \u2014 distal shaft; Posterior surface of the fibula.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/fhl-probe-illustration.png",
+  "copy_to_assets": [
+   "fhl-probe.jpg"
+  ]
+ },
+ {
+  "id": "ecrl",
+  "source": "sources/ecrl.jpg",
+  "source_frame": "DSC_0771",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Extensor Carpi Radialis Longus, Extensor Carpi Radialis Brevis.\nScene (preserve exactly): Patient supine, right forearm pronated at the side, palm down. View of the proximal dorsal-radial forearm.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Base of the second metacarpal; Base of the third metacarpal; Lateral epicondyle of the humerus via the common extensor origin.; Lateral supracondylar ridge of the humerus; Mobile wad of three; Mobile wad \u2014 ECRB lies deep to the ECRL on the radiodorsal proximal forearm..\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/ecrl-probe-illustration.png",
+  "copy_to_assets": [
+   "ecrl-probe.jpg",
+   "ecrb-probe.jpg"
+  ]
+ },
+ {
+  "id": "ehl",
+  "source": "sources/ehl.jpg",
+  "source_frame": "DSC_0773",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Extensor Hallucis Longus (EHL), Extensor Digitorum Longus.\nScene (preserve exactly): Patient supine, leg neutral. View of the anterolateral right shin at the junction of proximal and middle thirds.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Anterior Border of the Fibula; Anterior Tibia; Distal Fibula; Lateral Tibial Condyle; Middle third of the medial anterior fibula and interosseous membrane; Tibialis Anterior Tendon.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/ehl-probe-illustration.png",
+  "copy_to_assets": [
+   "ehl-probe.jpg",
+   "edl-probe.jpg"
+  ]
+ },
+ {
+  "id": "pectineus",
+  "source": "sources/pectineus.jpg",
+  "source_frame": "DSC_0774",
+  "mode": "injection",
+  "prompt": "MODE: Injection / Procedure Mode.\nConvert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Pectineus.\nScene (preserve exactly): Patient supine, thigh slightly abducted, towel draping at the groin. View of the proximal medial thigh.\nThe dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.\nThe red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.\nEmphasize these palpable landmarks where visible in frame: Femoral triangle \u2014 the pectineus forms part of its floor, immediately medial to the femoral vein.; Pectineal line of the femur, just below the lesser trochanter; Superior pubic ramus / pectineal line.\nMaintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.",
+  "output": "output/pectineus-probe-illustration.png",
+  "copy_to_assets": [
+   "pectineus-probe.jpg"
+  ]
+ }
+]

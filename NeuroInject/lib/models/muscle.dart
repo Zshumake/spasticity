@@ -46,6 +46,14 @@ class Muscle {
   final String? positionGroup;
   final String? positionLabel;
 
+  /// Key identifying a shared ultrasound scan. One transverse view usually
+  /// contains several muscles — a calf view shows medial gastrocnemius AND
+  /// soleus — and the relationship between them is itself the lesson. Muscles
+  /// with the same [ultrasoundGroup] share ONE scan
+  /// (`assets/images/clinical/us-<ultrasoundGroup>.jpg`) and are told apart by
+  /// their own highlight mask, rather than each duplicating identical pixels.
+  final String? ultrasoundGroup;
+
   const Muscle({
     required this.id,
     required this.name,
@@ -73,6 +81,7 @@ class Muscle {
     this.hasReferenceImage = false,
     this.positionGroup,
     this.positionLabel,
+    this.ultrasoundGroup,
   });
 
   factory Muscle.fromJson(Map<String, dynamic> json) {
@@ -121,22 +130,35 @@ class Muscle {
       hasReferenceImage: json['hasReferenceImage'] as bool? ?? false,
       positionGroup: json['positionGroup'] as String?,
       positionLabel: json['positionLabel'] as String?,
+      ultrasoundGroup: json['ultrasoundGroup'] as String?,
     );
   }
 
-  /// Bundled asset path for a clinical photo [slot]. The patient-position photo
-  /// is shared by [positionGroup] (one `pos-<group>.jpg` for every muscle set up
-  /// the same way); probe and ultrasound stay per-muscle.
+  /// Bundled asset path for a clinical photo [slot].
+  ///
+  /// Two slots can be shared between muscles: the patient-position photo by
+  /// [positionGroup] (one `pos-<group>.jpg` per identical setup) and the
+  /// ultrasound scan by [ultrasoundGroup] (one `us-<group>.jpg` per view, with
+  /// each muscle distinguished by its own [ultrasoundMaskPath]). The probe
+  /// photo is always per-muscle.
   String clinicalPhotoPath(ClinicalPhotoSlot slot) =>
-      slot == ClinicalPhotoSlot.position && positionGroup != null
-          ? '${ClinicalPhotoSlot.dir}/pos-$positionGroup.jpg'
-          : slot.assetPath(id);
+      '${ClinicalPhotoSlot.dir}/${clinicalPhotoFileName(slot)}';
 
   /// Bare filename for a clinical photo [slot] (see [clinicalPhotoPath]).
-  String clinicalPhotoFileName(ClinicalPhotoSlot slot) =>
-      slot == ClinicalPhotoSlot.position && positionGroup != null
-          ? 'pos-$positionGroup.jpg'
-          : slot.fileName(id);
+  String clinicalPhotoFileName(ClinicalPhotoSlot slot) => switch (slot) {
+        ClinicalPhotoSlot.position when positionGroup != null =>
+          'pos-$positionGroup.jpg',
+        ClinicalPhotoSlot.ultrasound when ultrasoundGroup != null =>
+          'us-$ultrasoundGroup.jpg',
+        _ => slot.fileName(id),
+      };
+
+  /// Baked highlight mask for this muscle, produced by
+  /// `tools/refine_highlights.py`. Always per-muscle even when the underlying
+  /// scan is shared — the mask is what separates one muscle from its
+  /// neighbours in the same view.
+  String get ultrasoundMaskPath =>
+      'assets/images/us_reference/$id-us.mask.png';
 
   /// Parse anatomyImages: supports new `Map<String, String>` schema (keyed
   /// by view name: 'anterior', 'posterior', 'lateral') and legacy

@@ -1440,7 +1440,8 @@
       "Keep the needle superficial within the FDS — the nerve-vessel plane lies at the FDS-FDP interface."
     ],
     "positionGroup": "seated-forearm-supinated",
-    "positionLabel": "Seated · forearm supinated on a flat surface"
+    "positionLabel": "Seated · forearm supinated on a flat surface",
+    "ultrasoundGroup": "fcu-fds-fdp"
   },
   {
     "id": "fdp",
@@ -1558,7 +1559,8 @@
       "Anterior interosseous nerve (motor branch of median) is vulnerable — ID on US"
     ],
     "positionGroup": "seated-forearm-supinated",
-    "positionLabel": "Seated · forearm supinated on a flat surface"
+    "positionLabel": "Seated · forearm supinated on a flat surface",
+    "ultrasoundGroup": "fcu-fds-fdp"
   },
   {
     "id": "fpl",
@@ -1871,7 +1873,8 @@
       "The radial artery lies on the volar-radial forearm — stay dorsal."
     ],
     "positionGroup": "seated-forearm-pronated",
-    "positionLabel": "Seated · forearm pronated on a flat surface"
+    "positionLabel": "Seated · forearm pronated on a flat surface",
+    "ultrasoundGroup": "ecrl-ecrb"
   },
   {
     "id": "ecrb",
@@ -1954,7 +1957,8 @@
       "Stay dorsal to the radial artery on the volar-radial forearm."
     ],
     "positionGroup": "seated-forearm-pronated",
-    "positionLabel": "Seated · forearm pronated on a flat surface"
+    "positionLabel": "Seated · forearm pronated on a flat surface",
+    "ultrasoundGroup": "ecrl-ecrb"
   },
   {
     "id": "ecu",
@@ -3381,7 +3385,8 @@
       "Going too deep risks hitting adductor magnus; too far lateral or posterior risks gracilis."
     ],
     "positionGroup": "supine-frog-leg",
-    "positionLabel": "Supine · frog-leg (hip abducted & externally rotated)"
+    "positionLabel": "Supine · frog-leg (hip abducted & externally rotated)",
+    "ultrasoundGroup": "adductor-longus-brevis-magnus"
   },
   {
     "id": "adductor-brevis",
@@ -3487,7 +3492,8 @@
       "Going too far dorsomedial (posteromedial) penetrates gracilis instead."
     ],
     "positionGroup": "supine-frog-leg",
-    "positionLabel": "Supine · frog-leg (hip abducted & externally rotated)"
+    "positionLabel": "Supine · frog-leg (hip abducted & externally rotated)",
+    "ultrasoundGroup": "adductor-longus-brevis-magnus"
   },
   {
     "id": "adductor-magnus",
@@ -3594,7 +3600,8 @@
       "Sciatic nerve runs posterior — inject from medial approach to stay safe"
     ],
     "positionGroup": "prone-legs-apart",
-    "positionLabel": "Prone, legs apart (or supine, hip abducted & ER)"
+    "positionLabel": "Prone, legs apart (or supine, hip abducted & ER)",
+    "ultrasoundGroup": "adductor-longus-brevis-magnus"
   },
   {
     "id": "gracilis",
@@ -3808,7 +3815,8 @@
       "The descending branch of the lateral circumflex femoral artery runs between the rectus femoris and vastus lateralis — use color Doppler."
     ],
     "positionGroup": "supine-knee-extended",
-    "positionLabel": "Supine · knee extended, thigh relaxed"
+    "positionLabel": "Supine · knee extended, thigh relaxed",
+    "ultrasoundGroup": "rectus-femoris-vastus-intermedius"
   },
   {
     "id": "vastus-lateralis",
@@ -4130,7 +4138,8 @@
       "Do not advance the needle to the periosteum of the femur, which causes pain and is not the target."
     ],
     "positionGroup": "supine-knee-extended",
-    "positionLabel": "Supine · knee extended, thigh relaxed"
+    "positionLabel": "Supine · knee extended, thigh relaxed",
+    "ultrasoundGroup": "rectus-femoris-vastus-intermedius"
   },
   {
     "id": "biceps-femoris",
@@ -4564,7 +4573,8 @@
       "Going too deep into the medial head risks hitting flexor digitorum longus."
     ],
     "positionGroup": "prone-feet-off-bed",
-    "positionLabel": "Prone · feet hanging off the edge of the bed"
+    "positionLabel": "Prone · feet hanging off the edge of the bed",
+    "ultrasoundGroup": "gastrocnemius-medial-soleus"
   },
   {
     "id": "gastrocnemius-lateral",
@@ -4676,7 +4686,8 @@
       "Going too deep risks the soleus."
     ],
     "positionGroup": "prone-feet-off-bed",
-    "positionLabel": "Prone · feet hanging off the edge of the bed"
+    "positionLabel": "Prone · feet hanging off the edge of the bed",
+    "ultrasoundGroup": "gastrocnemius-lateral-soleus"
   },
   {
     "id": "soleus-medial",
@@ -4790,7 +4801,8 @@
       "Peroneal vessels may be encountered laterally if the needle is directed too far lateral."
     ],
     "positionGroup": "prone-feet-off-bed",
-    "positionLabel": "Prone · feet hanging off the edge of the bed"
+    "positionLabel": "Prone · feet hanging off the edge of the bed",
+    "ultrasoundGroup": "gastrocnemius-medial-soleus"
   },
   {
     "id": "soleus-lateral",
@@ -4889,7 +4901,8 @@
       "Posterior tibial vessels run between soleus and deep compartment — identify on US"
     ],
     "positionGroup": "prone-feet-off-bed",
-    "positionLabel": "Prone · feet hanging off the edge of the bed"
+    "positionLabel": "Prone · feet hanging off the edge of the bed",
+    "ultrasoundGroup": "gastrocnemius-lateral-soleus"
   },
   {
     "id": "tibialis-posterior",
@@ -5000,7 +5013,8 @@
       "Posterior tibial artery runs alongside — identify it with color Doppler before injecting"
     ],
     "positionGroup": "leg-ext-rotated",
-    "positionLabel": "Prone or supine · leg externally rotated (expose medial calf)"
+    "positionLabel": "Prone or supine · leg externally rotated (expose medial calf)",
+    "ultrasoundGroup": "tibialis-anterior-posterior"
   },
   {
     "id": "fdl",
@@ -5332,7 +5346,8 @@
       "The tibial cortex is immediately medial — contacting the periosteum is painful; angle the needle slightly laterally."
     ],
     "positionGroup": "supine-leg-neutral",
-    "positionLabel": "Supine · leg extended, ankle neutral"
+    "positionLabel": "Supine · leg extended, ankle neutral",
+    "ultrasoundGroup": "tibialis-anterior-posterior"
   },
   {
     "id": "ehl",
@@ -5440,7 +5455,8 @@
       "The interosseous membrane lies deep — do not advance the needle to this level."
     ],
     "positionGroup": "supine-leg-neutral",
-    "positionLabel": "Supine · leg extended, ankle neutral"
+    "positionLabel": "Supine · leg extended, ankle neutral",
+    "ultrasoundGroup": "ehl-edl-tibialis-anterior"
   },
   {
     "id": "edl",
@@ -5547,7 +5563,8 @@
       "Anterior compartment muscle — deep peroneal nerve runs between it and tibialis anterior"
     ],
     "positionGroup": "supine-leg-neutral",
-    "positionLabel": "Supine · leg extended, ankle neutral"
+    "positionLabel": "Supine · leg extended, ankle neutral",
+    "ultrasoundGroup": "ehl-edl-tibialis-anterior"
   },
   {
     "id": "peroneus-longus",
@@ -6502,7 +6519,8 @@
       "The spinal accessory nerve crosses the posterior triangle superficial to the splenius capitis — it is generally protected by the overlying trapezius, but awareness of its course is important when injecting the lateral muscle belly."
     ],
     "positionGroup": "cervical-posterior-flexed",
-    "positionLabel": "Seated · neck slightly flexed (or prone, forehead on hands)"
+    "positionLabel": "Seated · neck slightly flexed (or prone, forehead on hands)",
+    "ultrasoundGroup": "trapezius-splenius-capitis-semispinalis-capitis"
   },
   {
     "id": "splenius-cervicis",
@@ -6774,7 +6792,8 @@
       "The greater occipital nerve pierces this muscle — patients may report temporary occipital numbness after injection"
     ],
     "positionGroup": "cervical-posterior-flexed",
-    "positionLabel": "Seated · neck slightly flexed (or prone, forehead on hands)"
+    "positionLabel": "Seated · neck slightly flexed (or prone, forehead on hands)",
+    "ultrasoundGroup": "trapezius-splenius-capitis-semispinalis-capitis"
   },
   {
     "id": "longissimus-capitis",

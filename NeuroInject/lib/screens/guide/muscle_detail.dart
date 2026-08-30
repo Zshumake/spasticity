@@ -84,6 +84,11 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     }
   }
 
+  /// Whether this muscle's ultrasound scan is actually bundled — the gate for
+  /// every US-dependent surface (the highlighter, and the baked overlay).
+  bool get _hasUltrasoundScan =>
+      _clinicalAssets.contains(muscle.clinicalPhotoPath(ClinicalPhotoSlot.ultrasound));
+
   Color get _groupColor => AppTheme.groupColor(muscle.group);
 
   @override
@@ -1032,8 +1037,15 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         const SizedBox(height: 12),
         Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Expanded(child: slot(ClinicalPhotoSlot.ultrasound)),
-          const SizedBox(width: 12),
-          Expanded(child: _highlightCta(isDark)),
+          // The highlighter has nothing to draw on until this muscle's US scan
+          // is bundled, so the entry point only appears once it is. Several
+          // muscles are landmark- or EMG-guided by design and will never have
+          // one; gating on the asset rather than on a flag means the CTA
+          // appears by itself as scans are added, with nothing to keep in sync.
+          if (_hasUltrasoundScan) ...[
+            const SizedBox(width: 12),
+            Expanded(child: _highlightCta(isDark)),
+          ],
         ]),
 
         // Photo hint (if available)
