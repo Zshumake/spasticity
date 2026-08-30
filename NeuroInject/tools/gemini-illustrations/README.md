@@ -10,6 +10,22 @@ on skin) into publication-grade atlas illustrations, one Gemini image generation
 - `sources/` — staged input photos (2048 px), one per task, named by muscle/group.
 - `output/` — write generated illustrations here, named exactly as each task's `output` field.
 
+## How to run the batch
+Three equivalent paths — the handoff page is the recommended one:
+0. **Handoff page (one at a time, you drive):** `python3 handoff.py` →
+   http://127.0.0.1:8125. Each screen is one task: Copy image → ⌘V into the
+   Gemini chat in Antigravity, Copy prompt → ⌘V, send; then drag/paste the
+   generated image back onto the drop zone — it is saved to the correct
+   output path, ticked in tasks.md, and the next task appears. Reviewer-marked
+   regenerations automatically jump the queue with feedback appended. Paste
+   the Gem system instructions (top of the page) once per Gemini session.
+1. **Antigravity (no API key):** open this folder as the workspace and paste the
+   mission from `ANTIGRAVITY-KICKOFF.md` into the Agent Manager. Re-pasting the
+   same mission after a review round automatically becomes a regeneration pass.
+2. **Gemini API (unattended):** `export GEMINI_API_KEY=...` then
+   `python3 generate.py` (first pass) / `python3 generate.py --regen` (after
+   review). `--dry-run` previews the plan; `--only <id>` runs one task.
+
 ## Agent workflow (follow exactly)
 1. Read `gem-system-instructions.md` once; use it as the system instruction for every generation.
 2. Open `tasks.md`. Process tasks strictly top to bottom, one at a time.

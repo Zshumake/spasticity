@@ -16,7 +16,7 @@ After the user accepts the pilot style, the same normalized prompt contract is a
 
 ## Visual Contract
 
-Every image uses the Atlas standardized patient: an average healthy adult male physique, hairless and sanitized skin, clean ink contours, soft volume-based shading, and a neutral light-gray clinical background. Skin remains fully opaque. The illustration must preserve the source crop, viewpoint, laterality, pose, and visible anatomy without expanding the frame.
+Every image uses the Atlas standardized patient: an average healthy adult male physique, hairless and sanitized skin, clean ink contours, soft volume-based shading, and a neutral light-gray clinical background. Surface musculature and palpable landmark contours are mildly accentuated (approximately 15% over natural prominence) with restrained lines, highlights, and cel shadows for teaching clarity, without bulk, vascularity, striation, or a bodybuilder appearance. Skin remains fully opaque. The illustration must preserve the source crop, viewpoint, laterality, pose, and visible anatomy without expanding the frame.
 
 Injection-mode images retain only two procedural graphics: a cobalt-blue bar with rounded caps at the source probe footprint and a solid crimson circle at the source needle target. Position-mode images contain neither marker. Clothing is context-aware and is never invented when absent from the source.
 

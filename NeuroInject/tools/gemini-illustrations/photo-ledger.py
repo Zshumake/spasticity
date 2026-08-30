@@ -28,24 +28,24 @@ L = {
  "DSC_0490":("palmaris-longus-phi","probe"),"DSC_0491":("palmaris-longus-phi","probe"),
  "DSC_0492":("fcr-palmaris-longus-phi","mark"),"DSC_0493":("fcr-palmaris-longus-phi","mark"),
  "DSC_0494":("fcr-palmaris-longus-phi","mark"),
- "DSC_0495":("palmaris-longus-phi","mark"),"DSC_0496":("palmaris-longus-phi","mark"),
- "DSC_0497":("palmaris-longus-phi","mark"),
+ "DSC_0495":("fcr-palmaris-longus-phi","mark"),"DSC_0496":("fcr-palmaris-longus-phi","mark"),   # user: likely FCR
+ "DSC_0497":("fcr-palmaris-longus-phi","mark"),
  # ---- Apr 29 ----
  "DSC_0498":("prone","pos"),"DSC_0499":("supine-knee-flexed","pos"),
  "DSC_0500":("si-joint","deleted"),"DSC_0501":("si-joint","deleted"),
  "DSC_0502":("piriformis","mark"),
- "DSC_0503":("ischial-tuberosity","deleted"),"DSC_0504":("ischial-tuberosity","deleted"),
+ "DSC_0503":("ischial-tuberosity","deleted"),"DSC_0504":("piriformis","mark"),
  "DSC_0505":("ischial-tuberosity","deleted"),"DSC_0506":("ischial-tuberosity","deleted"),
  "DSC_0507":("suprapatellar","deleted"),"DSC_0508":("suprapatellar","deleted"),
  "DSC_0509":("it-band","deleted"),"DSC_0510":("peroneal-tendons","deleted"),
  # ---- Jun 12 ----
  "DSC_0708":("","junk"),
  "DSC_0709":("brachioradialis-2","mark"),"DSC_0710":("brachioradialis-2","mark"),"DSC_0711":("brachioradialis-2","mark"),
- "DSC_0712":("brachioradialis-2","mark"),"DSC_0713":("brachioradialis-2","mark"),
+ "DSC_0712":("fcu","mark"),"DSC_0713":("fcu","mark"),   # user-confirmed: FCU, arm raised
  "DSC_0714":("fcu","mark"),"DSC_0715":("fcu","mark"),"DSC_0716":("fcu","mark"),
- "DSC_0717":("fcu-fds-fdp","mark"),"DSC_0718":("fcu-fds-fdp","mark"),
- "DSC_0719":("fcu-fds-fdp","mark"),"DSC_0720":("fcu-fds-fdp","mark"),
- "DSC_0721":("fpl","mark"),"DSC_0722":("pronator-quadratus-median-nerve","mark"),
+ "DSC_0717":("fpl","mark"),"DSC_0718":("fpl","mark"),   # user-corrected: this marker is FPL
+ "DSC_0719":("fpl","mark"),"DSC_0720":("fpl","mark"),
+ "DSC_0721":("pronator-quadratus-median-nerve","mark"),"DSC_0722":("pronator-quadratus-median-nerve","mark"),
  "DSC_0723":("interossei-adductor-pollicis-fpb","mark"),"DSC_0724":("interossei-adductor-pollicis-fpb","mark"),
  "DSC_0725":("hand-lumbricals","mark"),"DSC_0726":("hand-lumbricals","mark"),"DSC_0727":("hand-lumbricals","mark"),
  "DSC_0728":("adductor-longus-brevis-magnus","pos"),
@@ -74,8 +74,8 @@ L = {
  "DSC_0755":("triceps-long-lateral","mark"),"DSC_0756":("triceps-long-lateral","mark"),
  "DSC_0757":("teres-major-serratus-anterior","mark"),"DSC_0758":("teres-major-serratus-anterior","mark"),
  "DSC_0759":("lat-dorsi-serratus-anterior","mark"),"DSC_0760":("lat-dorsi-serratus-anterior","mark"),
- "DSC_0761":("biceps-femoris","mark"),"DSC_0762":("semitendinosus","mark"),   # Jun-25 hamstring RETAKES
- "DSC_0763":("semimembranosus","mark"),   # Jun-25 hamstring retake
+ "DSC_0761":("semimembranosus","mark"),"DSC_0762":("semitendinosus","mark"),   # Jun-25 hamstring RETAKES
+ "DSC_0763":("biceps-femoris","mark"),   # Jun-25 hamstring retake
  "DSC_0764":("gastrocnemius-lateral-soleus","mark"),"DSC_0765":("gastrocnemius-lateral-soleus","mark"),
  "DSC_0766":("gastrocnemius-medial-soleus","mark"),"DSC_0767":("gastrocnemius-medial-soleus","mark"),
  "DSC_0768":("fhl","mark"),

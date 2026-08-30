@@ -180,6 +180,11 @@ class H(SimpleHTTPRequestHandler):
             return
         s = load_status()
         v = s[tid]
+        out_file = G / BY_ID[tid]["output"]
+        if status == "approved" and not out_file.exists():
+            # nothing to approve yet - refuse instead of poisoning the queue
+            self.send_error(409, "no generated image to approve")
+            return
         v["status"] = status
         v["note"] = req.get("note", "")
         if status == "regenerate":

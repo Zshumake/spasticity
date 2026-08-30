@@ -5,7 +5,7 @@ Work strictly top to bottom. For each task: attach the SOURCE image, send the PR
 (with `gem-system-instructions.md` as system context), save the result to OUTPUT,
 tick the box, then continue. Never batch multiple sources into one generation.
 
-## [ ] supine-head-neutral  (position)
+## [x] supine-head-neutral  (position)
 - **Source:** `sources/supine-head-neutral.jpg`  (frame DSC_0442)
 - **Output:** `output/supine-head-neutral-position-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `pos-supine-head-neutral.jpg`, `pos-arm-supinated-on-support.jpg`
@@ -18,7 +18,7 @@ Show the full posture cleanly: table/pillow/towel simplified to minimal clinical
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective and laterality.
 ```
 
-## [ ] supine-knee-extended  (position)
+## [x] supine-knee-extended  (position)
 - **Source:** `sources/supine-knee-extended.jpg`  (frame DSC_0443)
 - **Output:** `output/supine-knee-extended-position-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `pos-supine-knee-extended.jpg`, `pos-supine-leg-neutral.jpg`, `pos-supine-or-lat-decub.jpg`
@@ -31,7 +31,7 @@ Show the full posture cleanly: table/pillow/towel simplified to minimal clinical
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective and laterality.
 ```
 
-## [ ] lateral-decub-arm-abducted  (position)
+## [x] lateral-decub-arm-abducted  (position)
 - **Source:** `sources/lateral-decub-arm-abducted.jpg`  (frame DSC_0444)
 - **Output:** `output/lateral-decub-arm-abducted-position-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `pos-lateral-decub-arm-abducted.jpg`
@@ -44,7 +44,7 @@ Show the full posture cleanly: table/pillow/towel simplified to minimal clinical
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective and laterality.
 ```
 
-## [ ] supine-arm-abducted  (position)
+## [x] supine-arm-abducted  (position)
 - **Source:** `sources/supine-arm-abducted.jpg`  (frame DSC_0445)
 - **Output:** `output/supine-arm-abducted-position-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `pos-supine-arm-abducted.jpg`
@@ -57,7 +57,7 @@ Show the full posture cleanly: table/pillow/towel simplified to minimal clinical
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective and laterality.
 ```
 
-## [ ] pec-major  (injection)
+## [x] pec-major  (injection)
 - **Source:** `sources/pec-major.jpg`  (frame DSC_0456)
 - **Output:** `output/pec-major-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `pec-major-probe.jpg`
@@ -72,7 +72,7 @@ Emphasize these palpable landmarks where visible in frame: Coracoid Process; Lat
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] lat-dorsi  (injection)
+## [x] lat-dorsi  (injection)
 - **Source:** `sources/lat-dorsi.jpg`  (frame DSC_0760)
 - **Output:** `output/lat-dorsi-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `lat-dorsi-probe.jpg`
@@ -117,7 +117,7 @@ Emphasize these palpable landmarks where visible in frame: Biceps Tendon; Distal
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] triceps  (injection)
+## [x] triceps  (injection)
 - **Source:** `sources/triceps.jpg`  (frame DSC_0756)
 - **Output:** `output/triceps-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `triceps-probe.jpg`
@@ -132,7 +132,7 @@ Emphasize these palpable landmarks where visible in frame: Acromion; Olecranon; 
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] pronator-teres  (injection)
+## [x] pronator-teres  (injection)
 - **Source:** `sources/pronator-teres.jpg`  (frame DSC_0489)
 - **Output:** `output/pronator-teres-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `pronator-teres-probe.jpg`
@@ -147,7 +147,7 @@ Emphasize these palpable landmarks where visible in frame: Cubital Fossa; Medial
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] fcr  (injection)
+## [x] fcr  (injection)
 - **Source:** `sources/fcr.jpg`  (frame DSC_0494)
 - **Output:** `output/fcr-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `fcr-probe.jpg`
@@ -162,7 +162,7 @@ Emphasize these palpable landmarks where visible in frame: FCR Tendon at Wrist; 
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] prone-pillow-pelvis  (position)
+## [x] prone-pillow-pelvis  (position)
 - **Source:** `sources/prone-pillow-pelvis.jpg`  (frame DSC_0498)
 - **Output:** `output/prone-pillow-pelvis-position-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `pos-prone-pillow-pelvis.jpg`, `pos-prone-feet-off-bed.jpg`, `pos-prone-knee-flexed.jpg`
@@ -175,7 +175,7 @@ Show the full posture cleanly: table/pillow/towel simplified to minimal clinical
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective and laterality.
 ```
 
-## [ ] piriformis  (injection)
+## [x] piriformis  (injection)
 - **Source:** `sources/piriformis.jpg`  (frame DSC_0504)
 - **Output:** `output/piriformis-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `piriformis-probe.jpg`
@@ -205,37 +205,37 @@ Emphasize these palpable landmarks where visible in frame: Lateral Epicondyle; L
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] fcu  (injection)
-- **Source:** `sources/fcu.jpg`  (frame DSC_0496)
+## [x] fcu  (injection)
+- **Source:** `sources/fcu.jpg`  (frame DSC_0713)
 - **Output:** `output/fcu-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `fcu-probe.jpg`
 
 ```
 MODE: Injection / Procedure Mode.
 Convert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Flexor Carpi Ulnaris.
-Scene (preserve exactly): Patient supine, right forearm supinated, palm up. View of the proximal ulnar-volar forearm.
+Scene (preserve exactly): Patient supine with the right arm raised overhead, elbow flexed, forearm upright. View of the ulnar-volar proximal forearm.
 The dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.
 The red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.
 Emphasize these palpable landmarks where visible in frame: Medial Epicondyle; Olecranon; Pisiform Bone.
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] fds  (injection)
-- **Source:** `sources/fds.jpg`  (frame DSC_0720)
+## [x] fds  (injection)
+- **Source:** `sources/fds.jpg`  (frame DSC_0715)
 - **Output:** `output/fds-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `fds-probe.jpg`, `fdp-probe.jpg`
 
 ```
 MODE: Injection / Procedure Mode.
 Convert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Flexor Digitorum Superficialis, Flexor Digitorum Profundus.
-Scene (preserve exactly): Patient supine, right forearm supinated, palm open. View of the mid volar forearm.
+Scene (preserve exactly): Patient supine, right forearm supinated, palm up. View of the proximal ulnar-volar forearm (the FDS/FDP approach shares the FCU skin mark).
 The dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.
 The red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.
 Emphasize these palpable landmarks where visible in frame: Coronoid Process of Ulna; DIP Joints of Fingers; Medial Epicondyle; Medial Epicondyle and Proximal Ulna; Proximal Radius; Subcutaneous Ulnar Border.
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] fpl  (injection)
+## [x] fpl  (injection)
 - **Source:** `sources/fpl.jpg`  (frame DSC_0717)
 - **Output:** `output/fpl-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `fpl-probe.jpg`
@@ -243,14 +243,14 @@ Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb postu
 ```
 MODE: Injection / Procedure Mode.
 Convert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Flexor Pollicis Longus.
-Scene (preserve exactly): Patient supine, right forearm supinated. View of the distal volar-radial forearm above the wrist crease.
+Scene (preserve exactly): Patient supine, right forearm supinated, palm open. View of the mid volar forearm.
 The dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.
 The red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.
 Emphasize these palpable landmarks where visible in frame: Anterior Radial Shaft; Radial Artery at the Wrist; Thenar Eminence.
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] pronator-quadratus  (injection)
+## [x] pronator-quadratus  (injection)
 - **Source:** `sources/pronator-quadratus.jpg`  (frame DSC_0722)
 - **Output:** `output/pronator-quadratus-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `pronator-quadratus-probe.jpg`
@@ -280,7 +280,7 @@ Emphasize these palpable landmarks where visible in frame: First Web Space; Prox
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] hand-lumbricals  (injection)
+## [x] hand-lumbricals  (injection)
 - **Source:** `sources/hand-lumbricals.jpg`  (frame DSC_0726)
 - **Output:** `output/hand-lumbricals-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `hand-lumbricals-probe.jpg`
@@ -295,13 +295,13 @@ Emphasize these palpable landmarks where visible in frame: Metacarpal Heads; Met
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] supine-frog-leg  (position)
+## [x] supine-frog-leg  (position)
 - **Source:** `sources/supine-frog-leg.jpg`  (frame DSC_0728)
 - **Output:** `output/supine-frog-leg-position-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `pos-supine-frog-leg.jpg`
 
 ```
-MODE: Position Mode (patient positioning only - no probe or needle overlays; none are present in the source).
+MODE: Position Mode (patient positioning only - no probe or needle overlays). A painted blue line and/or red dot IS visible on the skin in this source photo: OMIT it entirely from the illustration - render clean, unmarked skin.
 Convert this clinical photograph into a publication-grade patient-positioning illustration.
 Scene (preserve exactly): Patient supine in frog-leg position: hip flexed, abducted and externally rotated, knee bent, sole of the foot near the opposite knee.
 Show the full posture cleanly: table/pillow/towel simplified to minimal clinical props, clothing rendered as simple neutral shorts/shirt, background clean light gray.
@@ -315,15 +315,15 @@ Maintain 1:1 spatial fidelity with the photo: same crop, perspective and lateral
 
 ```
 MODE: Injection / Procedure Mode.
-Convert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Adductor Longus, Adductor Brevis, Adductor Magnus.
-Scene (preserve exactly): Patient supine in frog-leg position (hip flexed, abducted, externally rotated; knee bent). View of the proximal medial right thigh.
+Convert this clinical photograph into a publication-grade atlas illustration for an ultrasound-guided intramuscular injection of the thigh adductor group (adductor longus, brevis, magnus).
+Scene (preserve exactly): Close clinical view of the right inner thigh, patient supine with the knee flexed outward (frog-leg position); white draping borders the field. Standard musculoskeletal injection-site reference photo.
 The dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.
 The red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.
 Emphasize these palpable landmarks where visible in frame: Adductor Longus Tendon; Adductor Tubercle; Inferior Pubic Ramus; Ischial Tuberosity; Medial Femoral Condyle; Pubic Tubercle; Pubic tubercle — palpate the adductor longus tendon at its origin.
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] gracilis  (injection)
+## [x] gracilis  (injection)
 - **Source:** `sources/gracilis.jpg`  (frame DSC_0735)
 - **Output:** `output/gracilis-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `gracilis-probe.jpg`
@@ -338,20 +338,20 @@ Emphasize these palpable landmarks where visible in frame: Pes Anserinus; Pubic 
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] supine-hip-neutral  (position)
+## [x] supine-hip-neutral  (position)
 - **Source:** `sources/supine-hip-neutral.jpg`  (frame DSC_0442)
 - **Output:** `output/supine-hip-neutral-position-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `pos-supine-hip-neutral.jpg`
 
 ```
-MODE: Position Mode (patient positioning only - no probe or needle overlays; none are present in the source).
+MODE: Position Mode (patient positioning only - no probe or needle overlays). A painted blue line and/or red dot IS visible on the skin in this source photo: OMIT it entirely from the illustration - render clean, unmarked skin.
 Convert this clinical photograph into a publication-grade patient-positioning illustration.
 Scene (preserve exactly): Patient supine, hips neutral, legs extended, towel folded at the waistline.
 Show the full posture cleanly: table/pillow/towel simplified to minimal clinical props, clothing rendered as simple neutral shorts/shirt, background clean light gray.
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective and laterality.
 ```
 
-## [ ] iliopsoas  (injection)
+## [x] iliopsoas  (injection)
 - **Source:** `sources/iliopsoas.jpg`  (frame DSC_0738)
 - **Output:** `output/iliopsoas-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `iliopsoas-probe.jpg`
@@ -366,7 +366,7 @@ Emphasize these palpable landmarks where visible in frame: Anterior Superior Ili
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] rectus-femoris  (injection)
+## [x] rectus-femoris  (injection)
 - **Source:** `sources/rectus-femoris.jpg`  (frame DSC_0739)
 - **Output:** `output/rectus-femoris-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `rectus-femoris-probe.jpg`, `vastus-intermedius-probe.jpg`
@@ -381,7 +381,7 @@ Emphasize these palpable landmarks where visible in frame: AIIS; Anterior Femur;
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] vastus-lateralis  (injection)
+## [x] vastus-lateralis  (injection)
 - **Source:** `sources/vastus-lateralis.jpg`  (frame DSC_0740)
 - **Output:** `output/vastus-lateralis-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `vastus-lateralis-probe.jpg`
@@ -396,7 +396,7 @@ Emphasize these palpable landmarks where visible in frame: Greater Trochanter; I
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] vastus-medialis  (injection)
+## [x] vastus-medialis  (injection)
 - **Source:** `sources/vastus-medialis.jpg`  (frame DSC_0741)
 - **Output:** `output/vastus-medialis-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `vastus-medialis-probe.jpg`
@@ -411,7 +411,7 @@ Emphasize these palpable landmarks where visible in frame: Adductor Tubercle; Pa
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] biceps-femoris  (injection)
+## [x] biceps-femoris  (injection)
 - **Source:** `sources/biceps-femoris.jpg`  (frame DSC_0763)
 - **Output:** `output/biceps-femoris-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `biceps-femoris-probe.jpg`
@@ -426,7 +426,7 @@ Emphasize these palpable landmarks where visible in frame: Fibular Head; Ischial
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] semitendinosus  (injection)
+## [x] semitendinosus  (injection)
 - **Source:** `sources/semitendinosus.jpg`  (frame DSC_0762)
 - **Output:** `output/semitendinosus-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `semitendinosus-probe.jpg`
@@ -441,7 +441,7 @@ Emphasize these palpable landmarks where visible in frame: Ischial Tuberosity; I
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] semimembranosus  (injection)
+## [x] semimembranosus  (injection)
 - **Source:** `sources/semimembranosus.jpg`  (frame DSC_0761)
 - **Output:** `output/semimembranosus-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `semimembranosus-probe.jpg`
@@ -456,7 +456,7 @@ Emphasize these palpable landmarks where visible in frame: Ischial Tuberosity; I
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] fdl  (injection)
+## [x] fdl  (injection)
 - **Source:** `sources/fdl.jpg`  (frame DSC_0745)
 - **Output:** `output/fdl-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `fdl-probe.jpg`, `tibialis-posterior-probe.jpg`
@@ -471,7 +471,7 @@ Emphasize these palpable landmarks where visible in frame: Fibular Head; Interma
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] tibialis-anterior  (injection)
+## [x] tibialis-anterior  (injection)
 - **Source:** `sources/tibialis-anterior.jpg`  (frame DSC_0746)
 - **Output:** `output/tibialis-anterior-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `tibialis-anterior-probe.jpg`
@@ -486,7 +486,7 @@ Emphasize these palpable landmarks where visible in frame: Lateral Condyle of Ti
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] scm  (injection)
+## [x] scm  (injection)
 - **Source:** `sources/scm.jpg`  (frame DSC_0747)
 - **Output:** `output/scm-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `scm-probe.jpg`
@@ -501,7 +501,7 @@ Emphasize these palpable landmarks where visible in frame: Clavicular Head Origi
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] upper-trapezius  (injection)
+## [x] upper-trapezius  (injection)
 - **Source:** `sources/upper-trapezius.jpg`  (frame DSC_0748)
 - **Output:** `output/upper-trapezius-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `upper-trapezius-probe.jpg`
@@ -516,7 +516,7 @@ Emphasize these palpable landmarks where visible in frame: External Occipital Pr
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] levator-scapulae  (injection)
+## [x] levator-scapulae  (injection)
 - **Source:** `sources/levator-scapulae.jpg`  (frame DSC_0750)
 - **Output:** `output/levator-scapulae-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `levator-scapulae-probe.jpg`
@@ -531,7 +531,7 @@ Emphasize these palpable landmarks where visible in frame: Medial Border of the 
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] splenius-capitis  (injection)
+## [x] splenius-capitis  (injection)
 - **Source:** `sources/splenius-capitis.jpg`  (frame DSC_0751)
 - **Output:** `output/splenius-capitis-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `splenius-capitis-probe.jpg`, `semispinalis-capitis-probe.jpg`
@@ -546,7 +546,7 @@ Emphasize these palpable landmarks where visible in frame: Between the Superior 
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] scalenes  (injection)
+## [x] scalenes  (injection)
 - **Source:** `sources/scalenes.jpg`  (frame DSC_0752)
 - **Output:** `output/scalenes-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `scalenes-probe.jpg`
@@ -561,7 +561,7 @@ Emphasize these palpable landmarks where visible in frame: First and Second Ribs
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] teres-major  (injection)
+## [x] teres-major  (injection)
 - **Source:** `sources/teres-major.jpg`  (frame DSC_0757)
 - **Output:** `output/teres-major-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `teres-major-probe.jpg`
@@ -576,7 +576,7 @@ Emphasize these palpable landmarks where visible in frame: Inferior Angle of the
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] gastrocnemius-lateral  (injection)
+## [x] gastrocnemius-lateral  (injection)
 - **Source:** `sources/gastrocnemius-lateral.jpg`  (frame DSC_0764)
 - **Output:** `output/gastrocnemius-lateral-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `gastrocnemius-lateral-probe.jpg`, `soleus-lateral-probe.jpg`
@@ -591,7 +591,7 @@ Emphasize these palpable landmarks where visible in frame: Fibula; Fibular Head;
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] gastrocnemius-medial  (injection)
+## [x] gastrocnemius-medial  (injection)
 - **Source:** `sources/gastrocnemius-medial.jpg`  (frame DSC_0766)
 - **Output:** `output/gastrocnemius-medial-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `gastrocnemius-medial-probe.jpg`, `soleus-medial-probe.jpg`
@@ -606,7 +606,7 @@ Emphasize these palpable landmarks where visible in frame: Deep to Gastrocnemius
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] fhl  (injection)
+## [x] fhl  (injection)
 - **Source:** `sources/fhl.jpg`  (frame DSC_0768)
 - **Output:** `output/fhl-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `fhl-probe.jpg`
@@ -621,7 +621,7 @@ Emphasize these palpable landmarks where visible in frame: Achilles Tendon; Fibu
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] ecrl  (injection)
+## [x] ecrl  (injection)
 - **Source:** `sources/ecrl.jpg`  (frame DSC_0771)
 - **Output:** `output/ecrl-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `ecrl-probe.jpg`, `ecrb-probe.jpg`
@@ -636,7 +636,7 @@ Emphasize these palpable landmarks where visible in frame: Base of the second me
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] ehl  (injection)
+## [x] ehl  (injection)
 - **Source:** `sources/ehl.jpg`  (frame DSC_0773)
 - **Output:** `output/ehl-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `ehl-probe.jpg`, `edl-probe.jpg`
@@ -651,15 +651,15 @@ Emphasize these palpable landmarks where visible in frame: Anterior Border of th
 Maintain 1:1 spatial fidelity with the photo: same crop, perspective, limb posture and laterality. Do not add anatomy outside the original frame.
 ```
 
-## [ ] pectineus  (injection)
+## [x] pectineus  (injection)
 - **Source:** `sources/pectineus.jpg`  (frame DSC_0774)
 - **Output:** `output/pectineus-probe-illustration.png`
 - **Then copy the finished PNG over these app assets** (after human approval): `pectineus-probe.jpg`
 
 ```
 MODE: Injection / Procedure Mode.
-Convert this clinical photograph into a publication-grade atlas illustration for ultrasound-guided injection of the Pectineus.
-Scene (preserve exactly): Patient supine, thigh slightly abducted, towel draping at the groin. View of the proximal medial thigh.
+Convert this clinical photograph into a publication-grade atlas illustration for an ultrasound-guided intramuscular injection of the Pectineus (thigh adductor group).
+Scene (preserve exactly): Close clinical view of the right upper inner thigh, patient supine, leg extended and slightly abducted; white towel draping borders the field. Standard musculoskeletal injection-site reference photo.
 The dark-blue painted bar on the skin marks the ultrasound probe footprint - redraw it as the clean cobalt-blue rounded probe bar at the identical location, length and angle.
 The red painted dot marks the needle entry site - redraw it as a solid crimson dot at the identical spot.
 Emphasize these palpable landmarks where visible in frame: Femoral triangle — the pectineus forms part of its floor, immediately medial to the femoral vein.; Pectineal line of the femur, just below the lesser trochanter; Superior pubic ramus / pectineal line.
