@@ -158,15 +158,16 @@ class BakedHighlightPainter extends CustomPainter {
   final ui.Image scan;
   final ui.Image? mask;
 
-  /// Null = use the colour ramp baked into the mask itself.
-  final Color? accent;
+  /// Tint stamped into the mask's alpha shape. Required: shipped masks are
+  /// colourless (white RGB + alpha), so there is no colour to fall back on.
+  final Color accent;
   final double intensity;
   final BoxFit fit;
 
   const BakedHighlightPainter({
     required this.scan,
     required this.mask,
-    this.accent,
+    required this.accent,
     required this.intensity,
     required this.fit,
   });
@@ -180,24 +181,16 @@ class BakedHighlightPainter extends CustomPainter {
     final m = mask;
     if (m == null || intensity <= 0) return;
 
-    if (accent == null) {
-      // Default: composite the mask's own baked colour ramp with plain alpha
-      // blending. The bake keeps the edge partially opaque so its lighter
-      // colour is actually VISIBLE - the highlight fades to lighter terracotta
-      // toward the border, then feathers out over the last few pixels.
-      paintImage(
-          canvas: canvas, rect: rect, image: m, fit: fit, opacity: intensity);
-      return;
-    }
-    // Accent override: luminosity-preserving stamp of a uniform colour
-    // (used for one-off tints such as marking a vessel).
+    // Luminosity-preserving stamp: the accent supplies the hue, the scan keeps
+    // its own brightness, so the echotexture the learner reads stays at full
+    // contrast. A plain semi-transparent fill washes it out.
     canvas.saveLayer(rect, Paint()..blendMode = BlendMode.color);
     paintImage(
       canvas: canvas,
       rect: rect,
       image: m,
       fit: fit,
-      colorFilter: ColorFilter.mode(accent!, BlendMode.srcIn),
+      colorFilter: ColorFilter.mode(accent, BlendMode.srcIn),
       opacity: intensity,
     );
     canvas.restore();

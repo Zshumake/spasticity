@@ -115,7 +115,12 @@
    "scan": "assets/scans/pec-major-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/pec-major-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/pec-major-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/pec-major-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/pec-major_anterior.png",
+    "posterior": "assets/anatomy/pec-major_posterior.png",
+    "lateral": "assets/anatomy/pec-major_lateral.png"
+   }
   }
  },
  {
@@ -228,7 +233,12 @@
    "scan": "assets/scans/lat-dorsi-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/lat-dorsi-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/lat-dorsi-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/lat-dorsi-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/lat-dorsi_anterior.png",
+    "posterior": "assets/anatomy/lat-dorsi_posterior.png",
+    "lateral": "assets/anatomy/lat-dorsi_lateral.png"
+   }
   }
  },
  {
@@ -345,7 +355,12 @@
    "scan": "assets/scans/teres-major-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/teres-major-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/teres-major-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/teres-major-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/teres-major_anterior.png",
+    "posterior": "assets/anatomy/teres-major_posterior.png",
+    "lateral": "assets/anatomy/teres-major_lateral.png"
+   }
   }
  },
  {
@@ -460,7 +475,12 @@
    "scan": "assets/scans/biceps-brachii-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/biceps-brachii-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/biceps-brachii-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/biceps-brachii-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/biceps-brachii_anterior.png",
+    "posterior": "assets/anatomy/biceps-brachii_posterior.png",
+    "lateral": "assets/anatomy/biceps-brachii_lateral.png"
+   }
   }
  },
  {
@@ -575,7 +595,12 @@
    "scan": "assets/scans/brachialis-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/brachialis-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/brachialis-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/brachialis-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/brachialis_anterior.png",
+    "posterior": "assets/anatomy/brachialis_posterior.png",
+    "lateral": "assets/anatomy/brachialis_lateral.png"
+   }
   }
  },
  {
@@ -697,7 +722,12 @@
    "scan": "assets/scans/triceps-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/triceps-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/triceps-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/triceps-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/triceps_anterior.png",
+    "posterior": "assets/anatomy/triceps_posterior.png",
+    "lateral": "assets/anatomy/triceps_lateral.png"
+   }
   }
  },
  {
@@ -813,7 +843,12 @@
    "scan": "assets/scans/brachioradialis-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/brachioradialis-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/brachioradialis-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/brachioradialis-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/brachioradialis_anterior.png",
+    "posterior": "assets/anatomy/brachioradialis_posterior.png",
+    "lateral": "assets/anatomy/brachioradialis_lateral.png"
+   }
   }
  },
  {
@@ -929,7 +964,12 @@
    "scan": "assets/scans/pronator-teres-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/pronator-teres-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/pronator-teres-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/pronator-teres-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/pronator-teres_anterior.png",
+    "posterior": "assets/anatomy/pronator-teres_posterior.png",
+    "lateral": "assets/anatomy/pronator-teres_lateral.png"
+   }
   }
  },
  {
@@ -1043,7 +1083,12 @@
    "scan": "assets/scans/fcr-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/fcr-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/fcr-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/fcr-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/fcr_anterior.png",
+    "posterior": "assets/anatomy/fcr_posterior.png",
+    "lateral": "assets/anatomy/fcr_lateral.png"
+   }
   }
  },
  {
@@ -1162,7 +1207,12 @@
    "scan": "assets/scans/fcu-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/fcu-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/fcu-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/fcu-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/fcu_anterior.png",
+    "posterior": "assets/anatomy/fcu_posterior.png",
+    "lateral": "assets/anatomy/fcu_lateral.png"
+   }
   }
  },
  {
@@ -1298,7 +1348,12 @@
     "fdp"
    ],
    "mask": "assets/masks/fds-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/fds-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/fds-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/fds_anterior.png",
+    "posterior": "assets/anatomy/fds_posterior.png",
+    "lateral": "assets/anatomy/fds_lateral.png"
+   }
   }
  },
  {
@@ -1425,7 +1480,12 @@
     "fds"
    ],
    "mask": "assets/masks/fdp-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/fdp-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/fdp-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/fdp_anterior.png",
+    "posterior": "assets/anatomy/fdp_posterior.png",
+    "lateral": "assets/anatomy/fdp_lateral.png"
+   }
   }
  },
  {
@@ -1547,7 +1607,12 @@
    "scan": "assets/scans/fpl-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/fpl-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/fpl-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/fpl-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/fpl_anterior.png",
+    "posterior": "assets/anatomy/fpl_posterior.png",
+    "lateral": "assets/anatomy/fpl_lateral.png"
+   }
   }
  },
  {
@@ -1666,7 +1731,12 @@
    "scan": "assets/scans/pronator-quadratus-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/pronator-quadratus-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/pronator-quadratus-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/pronator-quadratus-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/pronator-quadratus_anterior.png",
+    "posterior": "assets/anatomy/pronator-quadratus_posterior.png",
+    "lateral": "assets/anatomy/pronator-quadratus_lateral.png"
+   }
   }
  },
  {
@@ -1961,7 +2031,12 @@
    "scan": "assets/scans/adductor-pollicis-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/adductor-pollicis-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/adductor-pollicis-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/adductor-pollicis-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/adductor-pollicis_anterior.png",
+    "posterior": "assets/anatomy/adductor-pollicis_posterior.png",
+    "lateral": "assets/anatomy/adductor-pollicis_lateral.png"
+   }
   }
  },
  {
@@ -2086,7 +2161,12 @@
    "scan": "assets/scans/hand-lumbricals-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/hand-lumbricals-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/hand-lumbricals-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/hand-lumbricals-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/hand-lumbricals_anterior.png",
+    "posterior": "assets/anatomy/hand-lumbricals_posterior.png",
+    "lateral": "assets/anatomy/hand-lumbricals_lateral.png"
+   }
   }
  },
  {
@@ -2190,7 +2270,12 @@
    "scan": "assets/scans/iliopsoas-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/iliopsoas-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/iliopsoas-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/iliopsoas-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/iliopsoas_anterior.png",
+    "posterior": "assets/anatomy/iliopsoas_posterior.png",
+    "lateral": "assets/anatomy/iliopsoas_lateral.png"
+   }
   }
  },
  {
@@ -2302,7 +2387,12 @@
    "scan": "assets/scans/piriformis-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/piriformis-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/piriformis-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/piriformis-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/piriformis_anterior.png",
+    "posterior": "assets/anatomy/piriformis_posterior.png",
+    "lateral": "assets/anatomy/piriformis_lateral.png"
+   }
   }
  },
  {
@@ -2510,7 +2600,12 @@
     "adductor-magnus"
    ],
    "mask": "assets/masks/adductor-longus-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/adductor-longus-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/adductor-longus-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/adductor-longus_anterior.png",
+    "posterior": "assets/anatomy/adductor-longus_posterior.png",
+    "lateral": "assets/anatomy/adductor-longus_lateral.png"
+   }
   }
  },
  {
@@ -2626,7 +2721,12 @@
     "adductor-magnus"
    ],
    "mask": "assets/masks/adductor-brevis-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/adductor-brevis-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/adductor-brevis-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/adductor-brevis_anterior.png",
+    "posterior": "assets/anatomy/adductor-brevis_posterior.png",
+    "lateral": "assets/anatomy/adductor-brevis_lateral.png"
+   }
   }
  },
  {
@@ -2743,7 +2843,12 @@
     "adductor-brevis"
    ],
    "mask": "assets/masks/adductor-magnus-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/adductor-magnus-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/adductor-magnus-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/adductor-magnus_anterior.png",
+    "posterior": "assets/anatomy/adductor-magnus_posterior.png",
+    "lateral": "assets/anatomy/adductor-magnus_lateral.png"
+   }
   }
  },
  {
@@ -2852,7 +2957,12 @@
    "scan": "assets/scans/gracilis-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/gracilis-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/gracilis-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/gracilis-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/gracilis_anterior.png",
+    "posterior": "assets/anatomy/gracilis_posterior.png",
+    "lateral": "assets/anatomy/gracilis_lateral.png"
+   }
   }
  },
  {
@@ -2972,7 +3082,12 @@
     "vastus-intermedius"
    ],
    "mask": "assets/masks/rectus-femoris-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/rectus-femoris-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/rectus-femoris-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/rectus-femoris_anterior.png",
+    "posterior": "assets/anatomy/rectus-femoris_posterior.png",
+    "lateral": "assets/anatomy/rectus-femoris_lateral.png"
+   }
   }
  },
  {
@@ -3083,7 +3198,12 @@
    "scan": "assets/scans/vastus-lateralis-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/vastus-lateralis-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/vastus-lateralis-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/vastus-lateralis-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/vastus-lateralis_anterior.png",
+    "posterior": "assets/anatomy/vastus-lateralis_posterior.png",
+    "lateral": "assets/anatomy/vastus-lateralis_lateral.png"
+   }
   }
  },
  {
@@ -3197,7 +3317,12 @@
    "scan": "assets/scans/vastus-medialis-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/vastus-medialis-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/vastus-medialis-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/vastus-medialis-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/vastus-medialis_anterior.png",
+    "posterior": "assets/anatomy/vastus-medialis_posterior.png",
+    "lateral": "assets/anatomy/vastus-medialis_lateral.png"
+   }
   }
  },
  {
@@ -3315,7 +3440,12 @@
     "rectus-femoris"
    ],
    "mask": "assets/masks/vastus-intermedius-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/vastus-intermedius-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/vastus-intermedius-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/vastus-intermedius_anterior.png",
+    "posterior": "assets/anatomy/vastus-intermedius_posterior.png",
+    "lateral": "assets/anatomy/vastus-intermedius_lateral.png"
+   }
   }
  },
  {
@@ -3428,7 +3558,12 @@
    "scan": "assets/scans/biceps-femoris-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/biceps-femoris-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/biceps-femoris-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/biceps-femoris-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/biceps-femoris_anterior.png",
+    "posterior": "assets/anatomy/biceps-femoris_posterior.png",
+    "lateral": "assets/anatomy/biceps-femoris_lateral.png"
+   }
   }
  },
  {
@@ -3542,7 +3677,12 @@
    "scan": "assets/scans/semitendinosus-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/semitendinosus-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/semitendinosus-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/semitendinosus-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/semitendinosus_anterior.png",
+    "posterior": "assets/anatomy/semitendinosus_posterior.png",
+    "lateral": "assets/anatomy/semitendinosus_lateral.png"
+   }
   }
  },
  {
@@ -3654,7 +3794,12 @@
    "scan": "assets/scans/semimembranosus-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/semimembranosus-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/semimembranosus-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/semimembranosus-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/semimembranosus_anterior.png",
+    "posterior": "assets/anatomy/semimembranosus_posterior.png",
+    "lateral": "assets/anatomy/semimembranosus_lateral.png"
+   }
   }
  },
  {
@@ -3776,7 +3921,12 @@
     "soleus-medial"
    ],
    "mask": "assets/masks/gastrocnemius-medial-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/gastrocnemius-medial-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/gastrocnemius-medial-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/gastrocnemius-medial_anterior.png",
+    "posterior": "assets/anatomy/gastrocnemius-medial_posterior.png",
+    "lateral": "assets/anatomy/gastrocnemius-medial_lateral.png"
+   }
   }
  },
  {
@@ -3897,7 +4047,12 @@
     "soleus-lateral"
    ],
    "mask": "assets/masks/gastrocnemius-lateral-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/gastrocnemius-lateral-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/gastrocnemius-lateral-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/gastrocnemius-lateral_anterior.png",
+    "posterior": "assets/anatomy/gastrocnemius-lateral_posterior.png",
+    "lateral": "assets/anatomy/gastrocnemius-lateral_lateral.png"
+   }
   }
  },
  {
@@ -4020,7 +4175,12 @@
     "gastrocnemius-medial"
    ],
    "mask": "assets/masks/soleus-medial-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/soleus-medial-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/soleus-medial-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/soleus-medial_anterior.png",
+    "posterior": "assets/anatomy/soleus-medial_posterior.png",
+    "lateral": "assets/anatomy/soleus-medial_lateral.png"
+   }
   }
  },
  {
@@ -4128,7 +4288,12 @@
     "gastrocnemius-lateral"
    ],
    "mask": "assets/masks/soleus-lateral-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/soleus-lateral-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/soleus-lateral-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/soleus-lateral_anterior.png",
+    "posterior": "assets/anatomy/soleus-lateral_posterior.png",
+    "lateral": "assets/anatomy/soleus-lateral_lateral.png"
+   }
   }
  },
  {
@@ -4243,12 +4408,12 @@
   "positionLabel": "Prone or supine · leg externally rotated (expose medial calf)",
   "ultrasoundGroup": "tibialis-anterior-posterior",
   "export": {
-   "scan": "assets/scans/us-tibialis-anterior-posterior.jpg",
+   "scan": null,
    "scanSharedWith": [
     "tibialis-anterior"
    ],
    "mask": null,
-   "probeIllustration": "assets/probe-illustrations/tibialis-anterior-probe.jpg",
+   "probeIllustration": null,
    "views": [
     {
      "label": "Anterior approach",
@@ -4262,7 +4427,12 @@
      "mask": null,
      "probeIllustration": "assets/probe-illustrations/fdl-probe.jpg"
     }
-   ]
+   ],
+   "anatomy": {
+    "anterior": "assets/anatomy/tibialis-posterior_anterior.png",
+    "posterior": "assets/anatomy/tibialis-posterior_posterior.png",
+    "lateral": "assets/anatomy/tibialis-posterior_lateral.png"
+   }
   },
   "ultrasoundViews": [
    {
@@ -4398,7 +4568,12 @@
    "scan": "assets/scans/fdl-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/fdl-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/fdl-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/fdl-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/fdl_anterior.png",
+    "posterior": "assets/anatomy/fdl_posterior.png",
+    "lateral": "assets/anatomy/fdl_lateral.png"
+   }
   }
  },
  {
@@ -4519,7 +4694,12 @@
    "scan": "assets/scans/fhl-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/fhl-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/fhl-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/fhl-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/fhl_anterior.png",
+    "posterior": "assets/anatomy/fhl_posterior.png",
+    "lateral": "assets/anatomy/fhl_lateral.png"
+   }
   }
  },
  {
@@ -4629,7 +4809,12 @@
     "tibialis-posterior"
    ],
    "mask": "assets/masks/tibialis-anterior-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/tibialis-anterior-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/tibialis-anterior-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/tibialis-anterior_anterior.png",
+    "posterior": "assets/anatomy/tibialis-anterior_posterior.png",
+    "lateral": "assets/anatomy/tibialis-anterior_lateral.png"
+   }
   }
  },
  {
@@ -4746,7 +4931,12 @@
     "edl"
    ],
    "mask": "assets/masks/ehl-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/ehl-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/ehl-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/ehl_anterior.png",
+    "posterior": "assets/anatomy/ehl_posterior.png",
+    "lateral": "assets/anatomy/ehl_lateral.png"
+   }
   }
  },
  {
@@ -4862,7 +5052,12 @@
     "ehl"
    ],
    "mask": "assets/masks/edl-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/edl-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/edl-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/edl_anterior.png",
+    "posterior": "assets/anatomy/edl_posterior.png",
+    "lateral": "assets/anatomy/edl_lateral.png"
+   }
   }
  },
  {
@@ -4986,7 +5181,12 @@
    "scan": "assets/scans/scm-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/scm-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/scm-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/scm-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/scm_anterior.png",
+    "posterior": "assets/anatomy/scm_posterior.png",
+    "lateral": "assets/anatomy/scm_lateral.png"
+   }
   }
  },
  {
@@ -5102,7 +5302,12 @@
    "scan": "assets/scans/scalenes-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/scalenes-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/scalenes-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/scalenes-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/scalenes_anterior.png",
+    "posterior": "assets/anatomy/scalenes_posterior.png",
+    "lateral": "assets/anatomy/scalenes_lateral.png"
+   }
   }
  },
  {
@@ -5213,7 +5418,12 @@
    "scan": "assets/scans/upper-trapezius-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/upper-trapezius-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/upper-trapezius-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/upper-trapezius-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/upper-trapezius_anterior.png",
+    "posterior": "assets/anatomy/upper-trapezius_posterior.png",
+    "lateral": "assets/anatomy/upper-trapezius_lateral.png"
+   }
   }
  },
  {
@@ -5324,7 +5534,12 @@
    "scan": "assets/scans/levator-scapulae-us.jpg",
    "scanSharedWith": [],
    "mask": "assets/masks/levator-scapulae-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/levator-scapulae-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/levator-scapulae-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/levator-scapulae_anterior.png",
+    "posterior": "assets/anatomy/levator-scapulae_posterior.png",
+    "lateral": "assets/anatomy/levator-scapulae_lateral.png"
+   }
   }
  },
  {
@@ -5444,7 +5659,12 @@
     "semispinalis-capitis"
    ],
    "mask": "assets/masks/splenius-capitis-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/splenius-capitis-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/splenius-capitis-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/splenius-capitis_anterior.png",
+    "posterior": "assets/anatomy/splenius-capitis_posterior.png",
+    "lateral": "assets/anatomy/splenius-capitis_lateral.png"
+   }
   }
  },
  {
@@ -5560,7 +5780,12 @@
     "splenius-capitis"
    ],
    "mask": "assets/masks/semispinalis-capitis-us.mask.png",
-   "probeIllustration": "assets/probe-illustrations/semispinalis-capitis-probe.jpg"
+   "probeIllustration": "assets/probe-illustrations/semispinalis-capitis-probe.jpg",
+   "anatomy": {
+    "anterior": "assets/anatomy/semispinalis-capitis_anterior.png",
+    "posterior": "assets/anatomy/semispinalis-capitis_posterior.png",
+    "lateral": "assets/anatomy/semispinalis-capitis_lateral.png"
+   }
   }
  }
 ]

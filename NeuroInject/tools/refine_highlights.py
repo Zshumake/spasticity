@@ -62,10 +62,11 @@ TOOLS = Path(__file__).resolve().parent
 ROOT = TOOLS.parent
 US_DIR = ROOT / "assets" / "images" / "us_reference"
 
-# Highlight palette (user's brand colours, 2026-08-30). The mask carries its
-# own colour ramp: terracotta-fill in the muscle's core, lightening toward a
-# cream-mixed terracotta at the edge, so the tint literally fades to LIGHTER
-# (not merely to transparent) as it approaches the border.
+# Preview palette only. The SHIPPED masks are colourless (white RGB + alpha);
+# the app stamps its own accent at render time, which is what makes the
+# highlight rethemeable. An earlier design baked a colour ramp into the mask
+# (core terracotta lightening to cream at the border) and was dropped after
+# review — these constants survive solely to tint the docs/mask-previews PNGs.
 CORE_BGR = (0x2F, 0x50, 0xB2)      # --terracotta-fill  #B2502F
 EDGE_BGR = (0xB4, 0xC9, 0xE7)      # terracotta mixed 75% toward --cream
 ACCENT_BGR = CORE_BGR              # kept for the preview helper
@@ -188,9 +189,9 @@ def smooth_mask(mask, sigma=4.0):
 def falloff_alpha(mask):
     """Depth field t (0 at border -> 1 in the core), smoothstepped.
 
-    Drives BOTH the colour ramp (edge colour -> core colour) and the opacity
-    envelope. Built from the distance transform so it follows the muscle's own
-    shape rather than a blurred silhouette.
+    Drives the alpha envelope of the shipped mask (and the edge->core tint of
+    the preview PNG). Built from the distance transform so it follows the
+    muscle's own shape rather than a blurred silhouette.
     """
     d = cv2.distanceTransform(mask.astype(np.uint8), cv2.DIST_L2, 5)
     depth = float(np.clip(d.max() * FADE_FRACTION, FADE_MIN, FADE_MAX))
@@ -347,11 +348,7 @@ def bake(job, out_dir, write_preview=True):
     full_alpha[y0:y1, x0:x1] = a_field
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    # The mask carries the colour ramp itself: BGR interpolated from EDGE to
-    # CORE by the same normalised depth that drives the alpha, so the app can
-    # composite it directly (BlendMode.color, no colour filter) and the tint
-    # lightens toward the border.
-    # White RGB + alpha: the app stamps the accent colour (terracotta) with a
+    # White RGB + alpha: the app stamps the accent colour with a
     # luminosity-preserving blend, so echotexture stays fully readable.
     a8 = (np.clip(full_alpha, 0, 1) * 255).astype(np.uint8)
     bgra = np.dstack([np.full_like(a8, 255)] * 3 + [a8])

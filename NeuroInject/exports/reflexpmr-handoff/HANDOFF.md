@@ -12,7 +12,8 @@ is baked into the images (see "Rendering the highlight").
 data/muscles.json                48 muscles (pre-filtered), full clinical records
 assets/scans/                    38 ultrasound scans (9 are shared by 2-3 muscles)
 assets/masks/                    47 muscle-highlight alpha masks (PNG, white RGB + alpha)
-assets/probe-illustrations/      48 atlas illustrations (blue probe bar + red entry dot)
+assets/probe-illustrations/      47 atlas illustrations (blue probe bar + red entry dot)
+assets/anatomy/                  135 anatomy renders, keyed by view in export.anatomy
 reference/us-label-archive.json  transcript of the label burned into each original scan
 reference/us-label-crops/        the literal text-band pixels cut from each original
 reference/highlight-captures.json  raw hand-drawn lasso polygons (provenance/rebake source)
@@ -24,7 +25,8 @@ Each record in `data/muscles.json` is the full NeuroInject clinical record
 (name, group, pattern, landmarks[], placement[], setup[], ultrasound{probe,
 orientation, viewSteps}, dosage, dosageNote, pearls[], dangerZones[],
 spasticityPatterns[], relatedMuscles[], positionGroup/Label, …) plus a
-resolved `export` object so you never re-implement path logic:
+resolved `export` object so you never re-implement path logic. `export.anatomy`
+maps view name ('anterior' / 'lateral' / 'posterior') to a bundled render:
 
 ```json
 "export": {
@@ -56,8 +58,12 @@ window:
 }
 ```
 
-The scalar `scan`/`probeIllustration` mirror `views[0]` so an importer that
-ignores `views` still renders something coherent.
+**The scalars are `null` whenever `views` is present — deliberately.** They
+used to mirror `views[0]`, which meant an importer that ignored `views` showed
+the anterior window forever and never surfaced an error. Silence is the wrong
+failure mode here: the two windows have different needle entries, so an
+importer that does not understand `views` must break loudly rather than teach
+one approach under the other's name.
 
 - **Shared scans are intentional.** One transverse view often shows several
   muscles (all three adductors; each gastroc + its soleus; FDS + FDP; …) and
@@ -152,7 +158,8 @@ bone) around each target. When that happens:
 
 ## Quick import validation
 
-After ingesting, assert: 48 muscle records; every scan file referenced by
+After ingesting, assert: 48 muscle records; every `export.anatomy` path
+exists (135 renders, referenced by 45 records); every scan file referenced by
 `export.scan` or `export.views[].scan` exists; 47 non-null masks whose PNG
 dimensions equal their scan's dimensions; `tibialis-posterior` carries two
 entries in `export.views[]` with distinct scans and probe illustrations, and
