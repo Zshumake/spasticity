@@ -118,12 +118,28 @@ def slot_filename(m, key):
                    muscles with an `ultrasoundGroup` reuse `us-<group>.jpg`
                    (per-muscle highlight masks tell them apart).
 
-    The probe photo is always per-muscle (`<id>-probe.jpg`)."""
+    The probe photo is per-muscle (`<id>-probe.jpg`) EXCEPT on muscles with
+    several `ultrasoundViews` — see [slot_filenames]."""
+    return slot_filenames(m, key)[0]
+
+
+def slot_filenames(m, key):
+    """Every file the app can ask for in this slot, in view order.
+
+    A muscle scanned from more than one window (tibialis posterior: anterior
+    vs medial) needs a probe photo AND a scan per approach, so both slots
+    become lists — the transducer sits somewhere different in each, and the
+    probe picture is what tells the learner where.
+    """
+    views = m.get("ultrasoundViews") or []
+    if views and key in ("probe", "us"):
+        field = "probe" if key == "probe" else "scan"
+        return [v[field].split("/")[-1] for v in views if v.get(field)]
     if key == "position" and m.get("positionGroup"):
-        return f"pos-{m['positionGroup']}.jpg"
+        return [f"pos-{m['positionGroup']}.jpg"]
     if key == "us" and m.get("ultrasoundGroup"):
-        return f"us-{m['ultrasoundGroup']}.jpg"
-    return f"{m['id']}-{key}.jpg"
+        return [f"us-{m['ultrasoundGroup']}.jpg"]
+    return [f"{m['id']}-{key}.jpg"]
 
 
 def position_groups(muscles):

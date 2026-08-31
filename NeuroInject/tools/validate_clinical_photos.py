@@ -39,7 +39,7 @@ from generate_photo_capture_guide import (  # noqa: E402
     REGION_ORDER,
     position_groups,
     region_of,
-    slot_filename,
+    slot_filenames,
 )
 
 CLINICAL = ROOT / "assets" / "images" / "clinical"
@@ -54,9 +54,11 @@ def expected_photos(muscles):
     # the posture, so pos-<group>.jpg files are no longer expected or shipped.
     for m in muscles:
         bucket = region_of(m["group"])
-        exp[slot_filename(m, "probe")] = (bucket, "probe")
+        for fn in slot_filenames(m, "probe"):
+            exp[fn] = (bucket, "probe")
         if m.get("ultrasound"):
-            exp[slot_filename(m, "us")] = (bucket, "us")
+            for fn in slot_filenames(m, "us"):
+                exp[fn] = (bucket, "us")
     return exp
 
 
@@ -103,7 +105,7 @@ def main():
         for slot in ("probe", "us"):
             got, tot = counts(b, slot)
             cells.append(f"{got}/{tot}" if tot else "—")
-        print(f"{b:<28}{cells[0]:>10}{cells[1]:>10}{cells[2]:>13}")
+        print(f"{b:<28}{cells[0]:>10}{cells[1]:>13}")
     pct = (100 * len(have) / len(expected_names)) if expected_names else 100
     print("-" * 61)
     print(f"{'TOTAL':<28}{len(have)}/{len(expected_names)} ({pct:.0f}%)\n")

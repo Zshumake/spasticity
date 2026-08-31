@@ -68,7 +68,9 @@ final router = GoRouter(
         if (muscle == null) {
           return const Scaffold(body: Center(child: Text('Muscle not found')));
         }
-        return MuscleHighlighterScreen(muscle: muscle);
+        final view =
+            int.tryParse(state.uri.queryParameters['view'] ?? '') ?? 0;
+        return MuscleHighlighterScreen(muscle: muscle, viewIndex: view);
       },
     ),
     GoRoute(

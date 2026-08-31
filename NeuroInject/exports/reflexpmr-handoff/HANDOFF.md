@@ -35,14 +35,52 @@ resolved `export` object so you never re-implement path logic:
 }
 ```
 
+A multi-approach muscle looks like this instead — same keys, one set per
+window:
+
+```json
+"export": {
+  "scan": "assets/scans/us-tibialis-anterior-posterior.jpg",
+  "mask": null,
+  "probeIllustration": "assets/probe-illustrations/tibialis-anterior-probe.jpg",
+  "views": [
+    {"label": "Anterior approach",
+     "scan": "assets/scans/us-tibialis-anterior-posterior.jpg",
+     "mask": "assets/masks/tibialis-posterior-anterior-us.mask.png",
+     "probeIllustration": "assets/probe-illustrations/tibialis-anterior-probe.jpg"},
+    {"label": "Medial approach",
+     "scan": "assets/scans/fdl-us.jpg",
+     "mask": "assets/masks/tibialis-posterior-medial-us.mask.png",
+     "probeIllustration": "assets/probe-illustrations/fdl-probe.jpg"}
+  ]
+}
+```
+
+The scalar `scan`/`probeIllustration` mirror `views[0]` so an importer that
+ignores `views` still renders something coherent.
+
 - **Shared scans are intentional.** One transverse view often shows several
   muscles (all three adductors; each gastroc + its soleus; FDS + FDP; …) and
   the relationship IS the lesson. Muscles listed in `scanSharedWith` point at
   the same scan file; only the mask differs. Do not duplicate scan bytes per
   muscle — key your UI on (scan, mask) pairs.
-- **`mask: null` for exactly one muscle: tibialis-posterior.** Its lasso is
-  pending a redraw (the drawn one duplicated tibialis anterior). Show the
-  plain scan; a wrong highlight is worse than none.
+- **One muscle has TWO approaches, not one view: tibialis-posterior.** It is
+  scanned and injected from two different windows — anterior (through the
+  tibialis anterior, onto the interosseous membrane) and medial (the FDL
+  window) — so its record carries `export.views[]` instead of a single
+  scan/mask/probe triple, and its scalar `export.mask` is `null` to stop a
+  naive importer picking one arbitrarily. Each entry in `views[]` has its own
+  `label`, `scan`, `mask` and `probeIllustration`.
+
+  **Swap all three together.** The probe illustration says where the
+  transducer sits on the skin; pairing one window's probe picture with the
+  other window's scan teaches the wrong needle entry. NeuroInject renders
+  this as a labelled chip toggle above the two big pictures. Muscles without
+  `views[]` are single-window and unchanged.
+
+  Both tibialis-posterior masks are `null` today — the outlines are pending
+  a redraw (the previously drawn one duplicated tibialis anterior). Show the
+  plain scan until they land; a wrong highlight is worse than none.
 - **ecrl and ecrb share one mask by design** (identical files): separating the
   radial wrist extensors at the scanned level is clinically arbitrary, so they
   highlight as one ECR group. Not a bug; do not "fix".
@@ -114,7 +152,9 @@ bone) around each target. When that happens:
 
 ## Quick import validation
 
-After ingesting, assert: 48 muscle records; every `export.scan` file exists;
-47 non-null masks whose PNG dimensions equal their scan's dimensions;
-`tibialis-posterior` mask null; `ecrl`/`ecrb` mask files byte-identical;
-9 scan files referenced by 2+ muscles. If all pass, the import is faithful.
+After ingesting, assert: 48 muscle records; every scan file referenced by
+`export.scan` or `export.views[].scan` exists; 47 non-null masks whose PNG
+dimensions equal their scan's dimensions; `tibialis-posterior` carries two
+entries in `export.views[]` with distinct scans and probe illustrations, and
+a null scalar `export.mask`; `ecrl`/`ecrb` mask files byte-identical; 9 scan
+files referenced by 2+ muscles. If all pass, the import is faithful.

@@ -251,10 +251,34 @@ def scan_for(muscle_id, images_dir):
     for m in _muscles():
         if m.get("id") != muscle_id:
             continue
+        views = m.get("ultrasoundViews") or []
+        if views:
+            # Multi-approach muscle with no usable imageRef: fall back to the
+            # first view rather than guessing a group filename.
+            cand = images_dir / Path(views[0]["scan"]).name
+            return cand if cand.exists() else None
         g = m.get("ultrasoundGroup")
         cand = images_dir / (f"us-{g}.jpg" if g else f"{muscle_id}-us.jpg")
         return cand if cand.exists() else None
     return None
+
+
+def mask_name(muscle_id, image_path):
+    """Output mask filename for one (muscle, scan) pair.
+
+    Single-view muscles get `<id>-us.mask.png`. A muscle scanned from more
+    than one window (tibialis posterior: anterior vs medial) has an outline
+    per window, so its mask filename comes from the matching entry in
+    `ultrasoundViews` — otherwise the second lasso would silently overwrite
+    the first.
+    """
+    for m in _muscles():
+        if m.get("id") != muscle_id:
+            continue
+        for v in m.get("ultrasoundViews") or []:
+            if Path(v["scan"]).name == Path(image_path).name:
+                return Path(v["mask"]).name
+    return f"{muscle_id}-us.mask.png"
 
 
 _MUSCLE_CACHE = []
@@ -331,16 +355,18 @@ def bake(job, out_dir, write_preview=True):
     # luminosity-preserving blend, so echotexture stays fully readable.
     a8 = (np.clip(full_alpha, 0, 1) * 255).astype(np.uint8)
     bgra = np.dstack([np.full_like(a8, 255)] * 3 + [a8])
-    cv2.imwrite(str(out_dir / f"{job['muscle']}-us.mask.png"), bgra)
+    out_name = mask_name(job["muscle"], job["image"])
+    cv2.imwrite(str(out_dir / out_name), bgra)
     if write_preview:
         # Previews live OUTSIDE the asset tree - us_reference/ is a declared
         # pubspec asset dir, so anything written there ships in the app bundle.
         pv = ROOT / "docs" / "mask-previews"
         pv.mkdir(parents=True, exist_ok=True)
-        cv2.imwrite(str(pv / f"{job['muscle']}-us.preview.png"),
+        cv2.imwrite(str(pv / out_name.replace(".mask.png", ".preview.png")),
                     preview(gray, full, full_alpha))
     cov = 100.0 * mask.sum() / mask.size
-    return f"ok   {job['muscle']:<26} {cov:5.1f}% of scan   <- {job['image'].name}"
+    return (f"ok   {out_name.replace('-us.mask.png', ''):<26} {cov:5.1f}% of scan"
+            f"   <- {job['image'].name}")
 
 
 def main():

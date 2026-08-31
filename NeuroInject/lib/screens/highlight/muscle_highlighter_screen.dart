@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../data/highlight_capture_store.dart';
-import '../../models/clinical_photo.dart';
 import '../../models/highlight_capture.dart';
 import '../../models/muscle.dart';
 import '../../models/segmentation.dart';
@@ -20,7 +19,15 @@ import '../../widgets/highlight/structure_legend.dart';
 /// and "Accept" will persist the (image, mask, muscleId) example that trains it.
 class MuscleHighlighterScreen extends StatefulWidget {
   final Muscle muscle;
-  const MuscleHighlighterScreen({super.key, required this.muscle});
+
+  /// Which ultrasound approach to draw on, an index into
+  /// [Muscle.resolvedUltrasoundViews]. Multi-view muscles (tibialis
+  /// posterior) need a lasso per view — the capture's imageRef records which
+  /// scan was drawn on, and the bake keys the mask off that.
+  final int viewIndex;
+
+  const MuscleHighlighterScreen(
+      {super.key, required this.muscle, this.viewIndex = 0});
 
   @override
   State<MuscleHighlighterScreen> createState() =>
@@ -37,8 +44,10 @@ class _MuscleHighlighterScreenState extends State<MuscleHighlighterScreen> {
 
   Muscle get muscle => widget.muscle;
 
-  String get _usImagePath =>
-      muscle.clinicalPhotoPath(ClinicalPhotoSlot.ultrasound);
+  String get _usImagePath {
+    final views = muscle.resolvedUltrasoundViews;
+    return views[widget.viewIndex.clamp(0, views.length - 1)].scanAsset;
+  }
 
   // The in-progress stroke lives in DrawingCanvas; the screen only reacts to
   // a stroke starting (clear the old mask) or completing (refine into a mask).

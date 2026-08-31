@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show AssetManifest, rootBundle;
-import '../models/clinical_photo.dart';
 import '../models/muscle.dart';
 import 'muscle_data.dart';
 
@@ -32,9 +31,11 @@ class MuscleDataProvider extends ChangeNotifier {
     try {
       final manifest = await AssetManifest.loadFromAssetBundle(rootBundle);
       final assets = manifest.listAssets().toSet();
+      // A muscle is scanned if ANY of its ultrasound approaches is bundled —
+      // multi-view muscles stay visible as long as one window exists.
       _scannedIds = _muscles
-          .where((m) =>
-              assets.contains(m.clinicalPhotoPath(ClinicalPhotoSlot.ultrasound)))
+          .where((m) => m.resolvedUltrasoundViews
+              .any((v) => assets.contains(v.scanAsset)))
           .map((m) => m.id)
           .toSet();
     } catch (_) {

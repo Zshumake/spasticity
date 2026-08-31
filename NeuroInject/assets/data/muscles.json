@@ -5014,7 +5014,21 @@
     ],
     "positionGroup": "leg-ext-rotated",
     "positionLabel": "Prone or supine · leg externally rotated (expose medial calf)",
-    "ultrasoundGroup": "tibialis-anterior-posterior"
+    "ultrasoundGroup": "tibialis-anterior-posterior",
+    "ultrasoundViews": [
+      {
+        "label": "Anterior approach",
+        "probe": "assets/images/clinical/tibialis-anterior-probe.jpg",
+        "scan": "assets/images/clinical/us-tibialis-anterior-posterior.jpg",
+        "mask": "assets/images/us_reference/tibialis-posterior-anterior-us.mask.png"
+      },
+      {
+        "label": "Medial approach",
+        "probe": "assets/images/clinical/fdl-probe.jpg",
+        "scan": "assets/images/clinical/fdl-us.jpg",
+        "mask": "assets/images/us_reference/tibialis-posterior-medial-us.mask.png"
+      }
+    ]
   },
   {
     "id": "fdl",

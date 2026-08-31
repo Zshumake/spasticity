@@ -51,6 +51,9 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
   /// Initialized from the muscle's defaultAnatomyView — posterior-aspect
   /// muscles (hamstrings, triceps, gastroc, etc.) open to posterior view.
   late String _anatomyView;
+  /// Selected ultrasound approach for multi-view muscles (index into
+  /// [Muscle.resolvedUltrasoundViews]); always 0 for single-view muscles.
+  int _usView = 0;
 
   @override
   void initState() {
@@ -93,10 +96,18 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     }
   }
 
-  /// Whether this muscle's ultrasound scan is actually bundled — the gate for
-  /// every US-dependent surface (the highlighter, and the baked overlay).
+  /// The ultrasound approach currently on screen. Single-view muscles have
+  /// exactly one; multi-view muscles (tibialis posterior) follow the toggle.
+  UltrasoundView get _currentUsView {
+    final views = muscle.resolvedUltrasoundViews;
+    return views[_usView.clamp(0, views.length - 1)];
+  }
+
+  /// Whether the selected approach's ultrasound scan is actually bundled —
+  /// the gate for every US-dependent surface (the highlighter, and the baked
+  /// overlay).
   bool get _hasUltrasoundScan =>
-      _clinicalAssets.contains(muscle.clinicalPhotoPath(ClinicalPhotoSlot.ultrasound));
+      _clinicalAssets.contains(_currentUsView.scanAsset);
 
   Color get _groupColor => AppTheme.groupColor(muscle.group);
 
@@ -926,6 +937,32 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     setState(() => _anatomyView = available[next]);
   }
 
+  /// Chip for the ultrasound-approach toggle, styled to match the anatomy
+  /// view chips but keyed by index into [Muscle.resolvedUltrasoundViews].
+  Widget _usViewChip(int index, String label, bool isDark) {
+    final active = _usView == index;
+    return GestureDetector(
+      onTap: () => setState(() => _usView = index),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 160),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        decoration: BoxDecoration(
+          color: active ? AppTheme.primary.withAlpha(30) : Colors.transparent,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(
+            color: active
+                ? AppTheme.primary.withAlpha(140)
+                : (isDark ? AppTheme.borderDark : AppTheme.borderLight),
+          ),
+        ),
+        child: Text(label.toUpperCase(),
+          style: GoogleFonts.ibmPlexMono(
+            fontSize: 10, fontWeight: FontWeight.w700, letterSpacing: 1.4,
+            color: active ? AppTheme.primary : AppTheme.textTertiary)),
+      ),
+    );
+  }
+
   Widget _viewChip(String view, bool isDark) {
     final active = _anatomyView == view ||
         (!muscle.anatomyImages.containsKey(_anatomyView) &&
@@ -998,15 +1035,27 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
       ClinicalPhotoSlot.ultrasound: AppTheme.amber,
     };
 
+    // Both big pictures resolve through the selected ultrasound approach so
+    // they always agree: the probe illustration encodes where the transducer
+    // sits, and the scan is what that placement shows. For single-view
+    // muscles the resolved view is just the muscle's own probe/scan pair.
+    final views = muscle.resolvedUltrasoundViews;
+    final view = _currentUsView;
+
     // Only the slots whose asset is actually bundled are rendered - a muscle
     // with no imagery gets no section at all rather than placeholder cards.
+    String? pathFor(ClinicalPhotoSlot s) =>
+        s == ClinicalPhotoSlot.probe ? view.probeAsset : view.scanAsset;
     final shown = [ClinicalPhotoSlot.probe, ClinicalPhotoSlot.ultrasound]
-        .where((s) => _clinicalAssets.contains(muscle.clinicalPhotoPath(s)))
+        .where((s) {
+          final p = pathFor(s);
+          return p != null && _clinicalAssets.contains(p);
+        })
         .toList();
-    if (shown.isEmpty) return const SizedBox.shrink();
+    if (shown.isEmpty && views.length == 1) return const SizedBox.shrink();
 
     Widget slot(ClinicalPhotoSlot s, {double height = 180}) {
-      final path = muscle.clinicalPhotoPath(s);
+      final path = pathFor(s)!;
       final has = _clinicalAssets.contains(path);
       // The scan renders with this muscle's baked highlight tint whenever the
       // mask produced by tools/refine_highlights.py is bundled; otherwise the
@@ -1014,14 +1063,14 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
       // distinguishes gastrocnemius from soleus on the same image.
       if (s == ClinicalPhotoSlot.ultrasound &&
           has &&
-          _maskAssets.contains(muscle.ultrasoundMaskPath)) {
+          _maskAssets.contains(view.maskAsset)) {
         return SizedBox(
           height: height,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(AppTheme.radiusMd),
             child: BakedHighlight(
               scanAsset: path,
-              maskAsset: muscle.ultrasoundMaskPath,
+              maskAsset: view.maskAsset,
               accent: BakedHighlight.regionTint(muscle.group),
             ),
           ),
@@ -1034,8 +1083,10 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         icon: s.icon,
         accentColor: accents[s]!,
         imagePath: has ? path : null,
-        imageLabel: '${muscle.name} — ${s.label}',
-        fileName: muscle.clinicalPhotoFileName(s),
+        imageLabel: views.length > 1
+            ? '${muscle.name} — ${view.label} — ${s.label}'
+            : '${muscle.name} — ${s.label}',
+        fileName: path.split('/').last,
         height: height,
       );
     }
@@ -1052,6 +1103,20 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
             letterSpacing: 2.0, color: AppTheme.primary)),
         ]),
         const SizedBox(height: 14),
+
+        // Approach toggle for multi-view muscles: swaps the probe
+        // illustration AND the scan together, since they describe the same
+        // transducer placement.
+        if (views.length > 1) ...[
+          Row(children: [
+            for (var i = 0; i < views.length; i++)
+              Padding(
+                padding: const EdgeInsets.only(right: 8),
+                child: _usViewChip(i, views[i].label, isDark),
+              ),
+          ]),
+          const SizedBox(height: 12),
+        ],
 
         // BIG stacked images - only the ones that exist - each full column
         // width. Tap either for the full-resolution viewer.
@@ -1093,7 +1158,9 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
   /// Entry point to the draw-to-highlight surface for this muscle's US image.
   Widget _highlightCta(bool isDark) {
     return GestureDetector(
-      onTap: () => context.push('/highlight/${muscle.id}'),
+      // Carry the selected approach so the lasso lands on the scan that is
+      // actually on screen (tibialis posterior: anterior vs medial window).
+      onTap: () => context.push('/highlight/${muscle.id}?view=$_usView'),
       child: Container(
         height: 180,
         padding: const EdgeInsets.all(14),

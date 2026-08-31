@@ -54,6 +54,13 @@ class Muscle {
   /// their own highlight mask, rather than each duplicating identical pixels.
   final String? ultrasoundGroup;
 
+  /// Alternative ultrasound views for muscles that can be scanned (and
+  /// injected) from more than one window — e.g. tibialis posterior is seen
+  /// both on the anterior TA view and on the medial FDL view. When non-empty
+  /// this REPLACES the single ultrasoundGroup/mask pair: the detail screen
+  /// shows a toggle and each view carries its own scan and highlight mask.
+  final List<UltrasoundView> ultrasoundViews;
+
   const Muscle({
     required this.id,
     required this.name,
@@ -82,6 +89,7 @@ class Muscle {
     this.positionGroup,
     this.positionLabel,
     this.ultrasoundGroup,
+    this.ultrasoundViews = const [],
   });
 
   factory Muscle.fromJson(Map<String, dynamic> json) {
@@ -131,6 +139,12 @@ class Muscle {
       positionGroup: json['positionGroup'] as String?,
       positionLabel: json['positionLabel'] as String?,
       ultrasoundGroup: json['ultrasoundGroup'] as String?,
+      ultrasoundViews: json['ultrasoundViews'] != null
+          ? [
+              for (final v in json['ultrasoundViews'] as List)
+                UltrasoundView.fromJson(v as Map<String, dynamic>)
+            ]
+          : const [],
     );
   }
 
@@ -159,6 +173,22 @@ class Muscle {
   /// neighbours in the same view.
   String get ultrasoundMaskPath =>
       'assets/images/us_reference/$id-us.mask.png';
+
+  /// The ultrasound views to render, always at least one: the explicit
+  /// [ultrasoundViews] when present, else the muscle's single default
+  /// scan/mask pair. Every US surface (detail slot, highlighter) iterates
+  /// this instead of touching the raw fields, so multi-view muscles work
+  /// everywhere without special-casing.
+  List<UltrasoundView> get resolvedUltrasoundViews => ultrasoundViews.isNotEmpty
+      ? ultrasoundViews
+      : [
+          UltrasoundView(
+            label: 'Ultrasound',
+            scanAsset: clinicalPhotoPath(ClinicalPhotoSlot.ultrasound),
+            maskAsset: ultrasoundMaskPath,
+            probeAsset: clinicalPhotoPath(ClinicalPhotoSlot.probe),
+          )
+        ];
 
   /// Parse anatomyImages: supports new `Map<String, String>` schema (keyed
   /// by view name: 'anterior', 'posterior', 'lateral') and legacy
@@ -328,4 +358,35 @@ class MarkerPosition {
       y: (json['y'] as num).toDouble(),
     );
   }
+}
+
+/// One labelled ultrasound window onto a muscle: which bundled scan shows it
+/// and which baked mask highlights it there. Multi-view muscles (tibialis
+/// posterior: anterior TA window vs medial FDL window) carry one of these per
+/// approach; the mask is view-specific because the muscle's outline differs
+/// completely between windows.
+class UltrasoundView {
+  final String label;
+  final String scanAsset;
+  final String maskAsset;
+
+  /// Probe-placement illustration for THIS approach. The blue-bar/red-dot
+  /// picture encodes where the transducer sits on the skin, so it must swap
+  /// together with the scan — an anterior-window scan next to a medial-window
+  /// probe picture would teach the wrong needle entry.
+  final String? probeAsset;
+
+  const UltrasoundView({
+    required this.label,
+    required this.scanAsset,
+    required this.maskAsset,
+    this.probeAsset,
+  });
+
+  factory UltrasoundView.fromJson(Map<String, dynamic> json) => UltrasoundView(
+        label: json['label'] as String,
+        scanAsset: json['scan'] as String,
+        maskAsset: json['mask'] as String,
+        probeAsset: json['probe'] as String?,
+      );
 }
