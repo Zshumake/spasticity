@@ -228,6 +228,17 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
           icon: Icons.gpp_maybe_outlined,
         ),
       ],
+      // What the TOXIN does, kept visually distinct from the needle hazards
+      // above: for several muscles this is the injection's primary clinical
+      // risk and it lives in neither needle-hazard layer.
+      if (muscle.sideEffects.isNotEmpty) ...[
+        const SizedBox(height: 16),
+        SafetyCallout(
+          warnings: muscle.sideEffects,
+          title: 'Expected effects of weakening this muscle',
+          icon: Icons.vaccines_outlined,
+        ),
+      ],
       if (muscle.pearls.isNotEmpty) ...[
         const SizedBox(height: 16),
         _buildPearlsCard(isDark),
@@ -352,6 +363,16 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
             warnings: muscle.dangerZones,
             title: 'What to avoid',
             icon: Icons.gpp_maybe_outlined,
+          ),
+          const SizedBox(height: 12),
+        ],
+
+        if (muscle.sideEffects.isNotEmpty) ...[
+          _procHeader('EXPECTED EFFECTS'),
+          SafetyCallout(
+            warnings: muscle.sideEffects,
+            title: 'Effects of weakening this muscle',
+            icon: Icons.vaccines_outlined,
           ),
           const SizedBox(height: 12),
         ],

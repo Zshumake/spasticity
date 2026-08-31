@@ -34,6 +34,17 @@ class Muscle {
   /// general `pearls` list so safety-critical information is visually
   /// demoted from clinical-teaching commentary.
   final List<String> dangerZones;
+
+  /// What the TOXIN does — the function lost when this muscle is weakened as
+  /// intended, and the weakness caused when it spreads to a neighbour.
+  ///
+  /// Deliberately separate from [dangerZones] and [UltrasoundGuide.safetyNotes],
+  /// which hold what the NEEDLE can hit. The distinction is not cosmetic: for
+  /// several muscles the primary clinical risk of the injection is a
+  /// consequence of the toxin working, so it was absent from both needle-hazard
+  /// layers entirely (SCM dysphagia is the clearest case).
+  final List<String> sideEffects;
+
   final List<String> supplies;
   final String? videoUrl;
   final List<String> spasticityPatterns;
@@ -81,6 +92,7 @@ class Muscle {
     this.defaultAnatomyView,
     this.pearls = const [],
     this.dangerZones = const [],
+    this.sideEffects = const [],
     this.supplies = const [],
     this.videoUrl,
     this.spasticityPatterns = const [],
@@ -124,6 +136,9 @@ class Muscle {
           : const [],
       dangerZones: json['dangerZones'] != null
           ? (json['dangerZones'] as List).cast<String>()
+          : const [],
+      sideEffects: json['sideEffects'] != null
+          ? (json['sideEffects'] as List).cast<String>()
           : const [],
       supplies: json['supplies'] != null
           ? (json['supplies'] as List).cast<String>()
