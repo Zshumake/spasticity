@@ -88,6 +88,13 @@ SLACK_MIN, SLACK_MAX = 8, 45
 FADE_FRACTION = 0.30
 FADE_MIN, FADE_MAX = 10, 90
 
+# Muscles that deliberately SHARE one highlight region because separating them
+# on ultrasound is arbitrary at the scanned level (clinical decision
+# 2026-08-30): the alias's mask is a copy of its source muscle's mask, and any
+# lasso drawn for the alias is ignored.
+#   ecrb -> ecrl : the radial wrist extensors highlight as one ECR group.
+MASK_ALIASES = {"ecrb": "ecrl"}
+
 
 # ---------------------------------------------------------------- image prep
 
@@ -370,6 +377,8 @@ def main():
         print("COCO export contains no usable annotations.", file=sys.stderr)
         return 1
 
+    skipped_aliases = [j["muscle"] for j in jobs if j["muscle"] in MASK_ALIASES]
+    jobs = [j for j in jobs if j["muscle"] not in MASK_ALIASES]
     print(f"Baking {len(jobs)} highlight(s) -> {args.out}\n")
     bad = 0
     for j in jobs:
@@ -377,6 +386,18 @@ def main():
         if line.startswith("SKIP"):
             bad += 1
         print("  " + line)
+    # copy aliased masks (and previews) from their source muscle
+    import shutil
+    for alias, srcm in MASK_ALIASES.items():
+        srcmask = Path(args.out) / f"{srcm}-us.mask.png"
+        if srcmask.exists():
+            shutil.copy2(srcmask, Path(args.out) / f"{alias}-us.mask.png")
+            pv = ROOT / "docs" / "mask-previews"
+            if (pv / f"{srcm}-us.preview.png").exists():
+                shutil.copy2(pv / f"{srcm}-us.preview.png",
+                             pv / f"{alias}-us.preview.png")
+            note = " (drawn lasso ignored)" if alias in skipped_aliases else ""
+            print(f"  ok   {alias:<26} aliased to {srcm}{note}")
     print(f"\n{len(jobs) - bad} baked, {bad} skipped.")
     return 1 if bad else 0
 
