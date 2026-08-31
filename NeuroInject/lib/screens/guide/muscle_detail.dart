@@ -1022,6 +1022,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
             child: BakedHighlight(
               scanAsset: path,
               maskAsset: muscle.ultrasoundMaskPath,
+              accent: BakedHighlight.regionTint(muscle.group),
             ),
           ),
         );

@@ -34,8 +34,22 @@ class BakedHighlight extends StatefulWidget {
   /// echotexture stays fully readable. Defaults to the brand terracotta.
   final Color? accent;
 
-  /// --terracotta-fill from the brand palette.
+  /// --terracotta-fill from the brand palette (fallback tint).
   static const Color terracotta = Color(0xFFB2502F);
+
+  /// Region-coded highlight tint (decision 2026-08-30): orange for the arm,
+  /// blue for the leg, purple for the neck. Upper/lower reuse the app's
+  /// groupColor identity so the highlight matches the muscle's cards.
+  static Color regionTint(String group) {
+    final g = group.toLowerCase();
+    if (g.contains('upper')) return const Color(0xFFE5694C);   // arm - orange
+    if (g.contains('lower')) return const Color(0xFF3E9BE0);   // leg - blue
+    if (g.contains('cervical') || g.contains('neck')) {
+      return const Color(0xFF9B6BCB);                          // neck - purple
+    }
+    if (g.contains('trunk')) return const Color(0xFFD79A3A);   // ochre
+    return terracotta;
+  }
 
   /// 0–1 overall strength, for a reveal animation or a learner "show me" toggle.
   final double intensity;

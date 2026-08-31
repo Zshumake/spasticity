@@ -76,6 +76,7 @@ class _DashboardPageState extends State<DashboardPage> {
           .map((id) => data.findById(id))
           .where((m) => m != null)
           .cast<Muscle>()
+          .where((m) => data.isVisible(m.id))
           .where(_matchesSearch)
           .toList();
     }
@@ -248,15 +249,27 @@ class _DashboardPageState extends State<DashboardPage> {
             const SizedBox(width: 8),
             _filterChip('Lower', 'Lower Extremity', Icons.directions_walk_rounded,
                 AppTheme.groupColor('Lower Extremity'), isDark),
-            const SizedBox(width: 8),
-            _filterChip('Face', 'Face', Icons.face_outlined,
-                AppTheme.groupColor('Face'), isDark),
-            const SizedBox(width: 8),
-            _filterChip('Neck', 'Cervical', Icons.accessibility_new_rounded,
-                AppTheme.groupColor('Cervical'), isDark),
-            const SizedBox(width: 8),
-            _filterChip('Trunk', 'Trunk', Icons.straighten_rounded,
-                AppTheme.groupColor('Trunk'), isDark),
+            // Category chips only for regions that have visible muscles -
+            // with muscles hidden until their scan is bundled, Face (and
+            // possibly others) would otherwise lead to an empty grid.
+            if (context.read<MuscleDataProvider>().muscles
+                .any((m) => m.group.contains('Face'))) ...[
+              const SizedBox(width: 8),
+              _filterChip('Face', 'Face', Icons.face_outlined,
+                  AppTheme.groupColor('Face'), isDark),
+            ],
+            if (context.read<MuscleDataProvider>().muscles
+                .any((m) => m.group == 'Cervical')) ...[
+              const SizedBox(width: 8),
+              _filterChip('Neck', 'Cervical', Icons.accessibility_new_rounded,
+                  AppTheme.groupColor('Cervical'), isDark),
+            ],
+            if (context.read<MuscleDataProvider>().muscles
+                .any((m) => m.group.contains('Trunk'))) ...[
+              const SizedBox(width: 8),
+              _filterChip('Trunk', 'Trunk', Icons.straighten_rounded,
+                  AppTheme.groupColor('Trunk'), isDark),
+            ],
           ]),
         ),
       ]),
@@ -423,10 +436,14 @@ class _DashboardPageState extends State<DashboardPage> {
     final width = MediaQuery.of(context).size.width;
     final crossAxisCount = width > 1200 ? 4 : (width > 800 ? 3 : (width > 500 ? 2 : 1));
 
-    // Group patterns by region
+    // Group patterns by region. Patterns whose muscles are all hidden
+    // (no ultrasound bundled) are not shown - selecting them would land on
+    // an empty list.
+    final data = context.read<MuscleDataProvider>();
     final regionOrder = ['Face', 'Neck', 'Upper Extremity', 'Lower Extremity', 'Trunk'];
     final grouped = <String, List<SpasticityPattern>>{};
     for (final p in _patterns) {
+      if (!p.muscles.any(data.isVisible)) continue;
       grouped.putIfAbsent(p.region, () => []).add(p);
     }
 
@@ -531,7 +548,8 @@ class _DashboardPageState extends State<DashboardPage> {
                   color: regionColor.withAlpha(20),
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: regionColor.withAlpha(50))),
-                child: Text('${pattern.muscles.length} muscles',
+                child: Text(
+                  '${pattern.muscles.where(context.read<MuscleDataProvider>().isVisible).length} muscles',
                   style: GoogleFonts.ibmPlexMono(
                     fontSize: 9, fontWeight: FontWeight.w600, color: regionColor)),
               ),

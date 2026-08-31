@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import '../data/muscle_provider.dart';
 import '../models/spasticity_pattern.dart';
 import '../theme/app_theme.dart';
 import '../theme/theme_manager.dart';
@@ -201,8 +202,10 @@ class DashboardSidebar extends StatelessWidget {
                 fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
                 color: isSelected ? color : (isDark ? AppTheme.textSecondary : AppTheme.textSecondaryLight)),
                 overflow: TextOverflow.ellipsis),
-              Text('${pattern.muscles.length} muscles', style: GoogleFonts.ibmPlexMono(
-                fontSize: 9, color: AppTheme.textTertiary)),
+              Text(
+                '${pattern.muscles.where(context.read<MuscleDataProvider>().isVisible).length} muscles',
+                style: GoogleFonts.ibmPlexMono(
+                    fontSize: 9, color: AppTheme.textTertiary)),
             ],
           )),
         ]),
