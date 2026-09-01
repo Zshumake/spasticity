@@ -189,7 +189,12 @@ class _DashboardPageState extends State<DashboardPage> {
       },
       child: Scaffold(
         backgroundColor: isDark ? AppTheme.bgDark : AppTheme.bgLight,
-        body: CustomScrollView(
+        // Top inset only: the status bar and Dynamic Island paint over this
+        // space on a phone, and the wordmark was sitting underneath them.
+        // Bottom stays false so the list scrolls under the home indicator.
+        body: SafeArea(
+          bottom: false,
+          child: CustomScrollView(
           slivers: [
             // Search + nav bar
             SliverToBoxAdapter(child: _buildTopBar(isDark)),
@@ -199,6 +204,7 @@ class _DashboardPageState extends State<DashboardPage> {
             else
               ..._buildMuscleGrid(isDark),
           ],
+          ),
         ),
       ),
     );
@@ -489,21 +495,27 @@ class _DashboardPageState extends State<DashboardPage> {
         ),
       ));
 
-      // Pattern cards grid
+      // Pattern cards: list on a phone, grid above it (see the muscle grid).
       slivers.add(SliverPadding(
         padding: EdgeInsets.fromLTRB(sidePad, 0, sidePad, 8),
-        sliver: SliverGrid(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: crossAxisCount,
-            childAspectRatio: width < 500 ? 3.0 : 2.8,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-          ),
-          delegate: SliverChildBuilderDelegate(
-            (ctx, i) => _patternCard(pats[i], isDark),
-            childCount: pats.length,
-          ),
-        ),
+        sliver: crossAxisCount == 1
+            ? SliverList.separated(
+                itemCount: pats.length,
+                separatorBuilder: (_, i) => const SizedBox(height: 10),
+                itemBuilder: (ctx, i) => _patternCard(pats[i], isDark),
+              )
+            : SliverGrid(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: crossAxisCount,
+                  childAspectRatio: 2.8,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                ),
+                delegate: SliverChildBuilderDelegate(
+                  (ctx, i) => _patternCard(pats[i], isDark),
+                  childCount: pats.length,
+                ),
+              ),
       ));
     }
 
@@ -646,7 +658,23 @@ class _DashboardPageState extends State<DashboardPage> {
         ),
       ),
       // Grid
-      if (filtered.isNotEmpty)
+      // One column on a phone is a LIST, not a one-wide grid: a grid cell is
+      // locked to childAspectRatio, so a card whose probe chips wrap to a
+      // second line overflows it (25px, seen on an iPhone 16 Pro). A list
+      // sizes each row to its own content and cannot overflow.
+      if (filtered.isNotEmpty && crossAxisCount == 1)
+        SliverPadding(
+          padding: EdgeInsets.fromLTRB(sidePad, 0, sidePad, 24),
+          sliver: SliverList.separated(
+            itemCount: filtered.length,
+            separatorBuilder: (_, i) => const SizedBox(height: 10),
+            itemBuilder: (ctx, i) => MuscleCard(
+                muscle: filtered[i],
+                isSelected: i == _selectedIndex,
+                asRow: true),
+          ),
+        ),
+      if (filtered.isNotEmpty && crossAxisCount > 1)
         SliverPadding(
           padding: EdgeInsets.fromLTRB(sidePad, 0, sidePad, 24),
           sliver: SliverGrid(

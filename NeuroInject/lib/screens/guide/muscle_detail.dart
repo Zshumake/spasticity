@@ -15,6 +15,7 @@ import '../../widgets/info_card.dart';
 import '../../widgets/step_list.dart';
 import '../../widgets/landmark_list.dart';
 import '../../widgets/safety_callout.dart';
+import '../../widgets/safety_layers.dart';
 import '../../widgets/video_link_card.dart';
 import '../../widgets/print_cheat_sheet.dart';
 
@@ -102,6 +103,15 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     final views = muscle.resolvedUltrasoundViews;
     return views[_usView.clamp(0, views.length - 1)];
   }
+
+  /// The three hazard layers as one phase-grouped block. Scanning notes are
+  /// de-duplicated against dangerZones first, so a claim stated in both does
+  /// not appear twice under two different headings.
+  SafetyLayers get _safety => SafetyLayers(
+        sideEffects: muscle.sideEffects,
+        dangerZones: muscle.dangerZones,
+        scanningNotes: _uniqueSafetyNotes,
+      );
 
   /// Whether the selected approach's ultrasound scan is actually bundled —
   /// the gate for every US-dependent surface (the highlighter, and the baked
@@ -220,24 +230,11 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
       const SizedBox(height: 16),
       _section('SETUP & TIPS', Icons.lightbulb_outline, AppTheme.success,
         LandmarkList(landmarks: muscle.setup)),
-      if (muscle.dangerZones.isNotEmpty) ...[
+      // All three hazard layers, grouped by when they are read rather than by
+      // which field they came from — see SafetyLayers.
+      if (!_safety.isEmpty) ...[
         const SizedBox(height: 16),
-        SafetyCallout(
-          warnings: muscle.dangerZones,
-          title: 'Adjacent structures — what to avoid',
-          icon: Icons.gpp_maybe_outlined,
-        ),
-      ],
-      // What the TOXIN does, kept visually distinct from the needle hazards
-      // above: for several muscles this is the injection's primary clinical
-      // risk and it lives in neither needle-hazard layer.
-      if (muscle.sideEffects.isNotEmpty) ...[
-        const SizedBox(height: 16),
-        SafetyCallout(
-          warnings: muscle.sideEffects,
-          title: 'Expected effects of weakening this muscle',
-          icon: Icons.vaccines_outlined,
-        ),
+        _safety,
       ],
       if (muscle.pearls.isNotEmpty) ...[
         const SizedBox(height: 16),
@@ -356,32 +353,11 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         ...muscle.placement.asMap().entries.map((e) => _procStep(e.key + 1, e.value)),
         const SizedBox(height: 12),
 
-        // Adjacent-structure hazards (muscle-level dangerZones)
-        if (muscle.dangerZones.isNotEmpty) ...[
-          _procHeader('ADJACENT STRUCTURES'),
-          SafetyCallout(
-            warnings: muscle.dangerZones,
-            title: 'What to avoid',
-            icon: Icons.gpp_maybe_outlined,
-          ),
-          const SizedBox(height: 12),
-        ],
-
-        if (muscle.sideEffects.isNotEmpty) ...[
-          _procHeader('EXPECTED EFFECTS'),
-          SafetyCallout(
-            warnings: muscle.sideEffects,
-            title: 'Effects of weakening this muscle',
-            icon: Icons.vaccines_outlined,
-          ),
-          const SizedBox(height: 12),
-        ],
-
-        // Ultrasound-specific safety (excluding notes already shown as
-        // adjacent-structure danger zones just above).
-        if (_uniqueSafetyNotes.isNotEmpty) ...[
-          _procHeader('US SAFETY'),
-          SafetyCallout(warnings: _uniqueSafetyNotes),
+        // One phase-grouped safety block instead of three identical callouts
+        // stacked into a wall of warnings.
+        if (!_safety.isEmpty) ...[
+          _procHeader('SAFETY'),
+          _safety,
           const SizedBox(height: 12),
         ],
 
@@ -958,28 +934,34 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     setState(() => _anatomyView = available[next]);
   }
 
-  /// Chip for the ultrasound-approach toggle, styled to match the anatomy
-  /// view chips but keyed by index into [Muscle.resolvedUltrasoundViews].
-  Widget _usViewChip(int index, String label, bool isDark) {
+  /// One segment of the approach switch. The selected segment is a filled
+  /// slab in the muscle's region colour — the same colour the highlight uses
+  /// on the scan below it, so the control and the image it governs read as
+  /// one unit. 44px minimum height: this is a hit target on a phone.
+  Widget _usViewSegment(int index, String label, bool isDark) {
     final active = _usView == index;
+    final accent = _groupColor;
     return GestureDetector(
       onTap: () => setState(() => _usView = index),
+      behavior: HitTestBehavior.opaque,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 160),
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        constraints: const BoxConstraints(minHeight: 44),
+        alignment: Alignment.center,
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 9),
         decoration: BoxDecoration(
-          color: active ? AppTheme.primary.withAlpha(30) : Colors.transparent,
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(
-            color: active
-                ? AppTheme.primary.withAlpha(140)
-                : (isDark ? AppTheme.borderDark : AppTheme.borderLight),
-          ),
+          color: active ? accent : Colors.transparent,
+          borderRadius: BorderRadius.circular(AppTheme.radiusMd - 1),
         ),
         child: Text(label.toUpperCase(),
-          style: GoogleFonts.ibmPlexMono(
-            fontSize: 10, fontWeight: FontWeight.w700, letterSpacing: 1.4,
-            color: active ? AppTheme.primary : AppTheme.textTertiary)),
+            textAlign: TextAlign.center,
+            style: GoogleFonts.ibmPlexMono(
+                fontSize: 11,
+                fontWeight: FontWeight.w700,
+                letterSpacing: 0.6,
+                color: active
+                    ? (isDark ? AppTheme.bgDark : Colors.white)
+                    : AppTheme.textSecondary)),
       ),
     );
   }
@@ -1125,17 +1107,41 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         ]),
         const SizedBox(height: 14),
 
-        // Approach toggle for multi-view muscles: swaps the probe
-        // illustration AND the scan together, since they describe the same
-        // transducer placement.
+        // Approach switch for multi-view muscles. A segmented control rather
+        // than loose chips: the two windows are different procedures with
+        // different needle entries, not two pictures of one, so the choice
+        // reads as a mode and fills the width above the imagery it governs.
         if (views.length > 1) ...[
           Row(children: [
-            for (var i = 0; i < views.length; i++)
-              Padding(
-                padding: const EdgeInsets.only(right: 8),
-                child: _usViewChip(i, views[i].label, isDark),
-              ),
+            Text('APPROACH',
+                style: GoogleFonts.ibmPlexMono(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 2.0,
+                    color: AppTheme.textTertiary)),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Text('two windows · different entry',
+                  style: GoogleFonts.sourceSans3(
+                      fontSize: 11,
+                      fontStyle: FontStyle.italic,
+                      color: AppTheme.textTertiary)),
+            ),
           ]),
+          const SizedBox(height: 8),
+          Container(
+            padding: const EdgeInsets.all(4),
+            decoration: BoxDecoration(
+              color: isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight,
+              borderRadius: BorderRadius.circular(AppTheme.radiusLg - 2),
+              border: Border.all(
+                  color: isDark ? AppTheme.borderDark : AppTheme.borderLight),
+            ),
+            child: Row(children: [
+              for (var i = 0; i < views.length; i++)
+                Expanded(child: _usViewSegment(i, views[i].label, isDark)),
+            ]),
+          ),
           const SizedBox(height: 12),
         ],
 

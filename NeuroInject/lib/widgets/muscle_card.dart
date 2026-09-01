@@ -10,7 +10,19 @@ class MuscleCard extends StatefulWidget {
   final Muscle muscle;
   final bool isSelected;
 
-  const MuscleCard({super.key, required this.muscle, this.isSelected = false});
+  /// Lay out for a LIST row (unbounded height) rather than a fixed grid cell.
+  /// The grid form fills its cell with Expanded + Spacer; a list row has no
+  /// height to fill, so those become an unbounded-constraints crash. In list
+  /// form the card sizes to its own content, which is the whole point: a
+  /// second line of probe text lengthens the row instead of overflowing it.
+  final bool asRow;
+
+  const MuscleCard({
+    super.key,
+    required this.muscle,
+    this.isSelected = false,
+    this.asRow = false,
+  });
 
   @override
   State<MuscleCard> createState() => _MuscleCardState();
@@ -63,10 +75,11 @@ class _MuscleCardState extends State<MuscleCard> {
                     topRight: Radius.circular(AppTheme.radiusMd)),
                 ),
               ),
-              Expanded(
+              _fill(
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(14, 10, 14, 10),
                   child: Column(
+                    mainAxisSize: widget.asRow ? MainAxisSize.min : MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       // Group label + favorite
@@ -75,7 +88,7 @@ class _MuscleCardState extends State<MuscleCard> {
                           style: GoogleFonts.ibmPlexMono(
                             fontSize: 9, fontWeight: FontWeight.w700,
                             letterSpacing: 1.5, color: catColor)),
-                        const Spacer(),
+                        if (!widget.asRow) const Spacer() else const SizedBox(width: 8),
                         GestureDetector(
                           onTap: () => context.read<FavoritesManager>().toggleFavorite(widget.muscle.id),
                           child: AnimatedSwitcher(
@@ -95,7 +108,7 @@ class _MuscleCardState extends State<MuscleCard> {
                           fontWeight: FontWeight.w600, fontSize: 13, height: 1.3,
                           color: isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight),
                         maxLines: 2, overflow: TextOverflow.ellipsis),
-                      const Spacer(),
+                      if (widget.asRow) const SizedBox(height: 6) else const Spacer(),
                       // Pattern
                       Text(widget.muscle.pattern,
                         style: GoogleFonts.sourceSans3(fontSize: 11,
@@ -119,6 +132,11 @@ class _MuscleCardState extends State<MuscleCard> {
       ),
     );
   }
+
+  /// Fills the grid cell, or wraps plainly in a list row where there is no
+  /// bounded height to fill.
+  Widget _fill({required Widget child}) =>
+      widget.asRow ? child : Expanded(child: child);
 
   Widget _tag(String text, Color c, bool isDark) {
     return Container(

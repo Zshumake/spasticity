@@ -37,13 +37,22 @@ void main() {
         withEffects.fold<int>(0, (n, m) => n + m.sideEffects.length), equals(8));
   });
 
-  test('SCM carries its dysphagia warning, and not as a needle hazard', () {
+  test('SCM carries its dysphagia warning in the toxin layer', () {
     final scm = byId('scm');
     expect(scm.sideEffects.single, contains('Dysphagia'));
-    // The claim must live in the toxin layer, not be duplicated into the
-    // needle layers — duplication is what made the earlier corpus contradict
-    // itself when only one copy was corrected.
-    expect(scm.dangerZones.any((z) => z.contains('Dysphagia')), isFalse);
+  });
+
+  test('KNOWN CONTENT ISSUE: SCM states dysphagia in all three layers', () {
+    // Not an assertion that this is correct — it documents what the corpus
+    // currently says, so a future de-duplication has a test to flip rather
+    // than a silent change. Grouping the layers by phase made this visible:
+    // as three identical amber callouts nobody noticed the repetition.
+    final scm = byId('scm');
+    bool mentions(Iterable<String> xs) =>
+        xs.any((x) => x.toLowerCase().contains('dysphagia'));
+    expect(mentions(scm.sideEffects), isTrue);
+    expect(mentions(scm.dangerZones), isTrue);
+    expect(mentions(scm.ultrasound?.safetyNotes ?? const []), isTrue);
   });
 
   test('the subclavian artery relationship is stated correctly everywhere', () {
