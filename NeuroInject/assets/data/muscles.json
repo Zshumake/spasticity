@@ -101,9 +101,9 @@
     ],
     "dosageNote": "Total across both heads. Split dose between clavicular and sternal heads (e.g. 25-50U each).",
     "anatomyImages": {
-      "anterior": "pec-major_anterior.png",
-      "posterior": "pec-major_posterior.png",
-      "lateral": "pec-major_lateral.png"
+      "anterior": "pec-major_anterior.webp",
+      "posterior": "pec-major_posterior.webp",
+      "lateral": "pec-major_lateral.webp"
     },
     "anatomyCaption": "Anterior chest · pectoralis major highlighted",
     "dangerZones": [
@@ -205,9 +205,9 @@
     },
     "dosageNote": "Large muscle — distribute across 2-3 sites along the posterior axillary fold.",
     "anatomyImages": {
-      "anterior": "lat-dorsi_anterior.png",
-      "posterior": "lat-dorsi_posterior.png",
-      "lateral": "lat-dorsi_lateral.png"
+      "anterior": "lat-dorsi_anterior.webp",
+      "posterior": "lat-dorsi_posterior.webp",
+      "lateral": "lat-dorsi_lateral.webp"
     },
     "anatomyCaption": "Posterior trunk · latissimus dorsi highlighted",
     "defaultAnatomyView": "posterior",
@@ -320,9 +320,9 @@
     },
     "dosageNote": "Distribute across multiple sites along the muscle belly. Deep injection — confirm tip placement before each.",
     "anatomyImages": {
-      "anterior": "subscapularis_anterior.png",
-      "posterior": "subscapularis_posterior.png",
-      "lateral": "subscapularis_lateral.png"
+      "anterior": "subscapularis_anterior.webp",
+      "posterior": "subscapularis_posterior.webp",
+      "lateral": "subscapularis_lateral.webp"
     },
     "anatomyCaption": "Anterior scapula · subscapularis highlighted",
     "dangerZones": [
@@ -415,9 +415,9 @@
       "teres-major"
     ],
     "anatomyImages": {
-      "anterior": "infraspinatus_anterior.png",
-      "posterior": "infraspinatus_posterior.png",
-      "lateral": "infraspinatus_lateral.png"
+      "anterior": "infraspinatus_anterior.webp",
+      "posterior": "infraspinatus_posterior.webp",
+      "lateral": "infraspinatus_lateral.webp"
     },
     "anatomyCaption": "Posterior scapula · infraspinatus highlighted",
     "defaultAnatomyView": "posterior",
@@ -527,9 +527,9 @@
     },
     "dosageNote": "Large rotator. Distribute across 1-2 sites.",
     "anatomyImages": {
-      "anterior": "teres-major_anterior.png",
-      "posterior": "teres-major_posterior.png",
-      "lateral": "teres-major_lateral.png"
+      "anterior": "teres-major_anterior.webp",
+      "posterior": "teres-major_posterior.webp",
+      "lateral": "teres-major_lateral.webp"
     },
     "anatomyCaption": "Posterior scapula · teres major highlighted",
     "defaultAnatomyView": "posterior",
@@ -636,9 +636,9 @@
     },
     "dosageNote": "Large muscle with 2 heads. Split across short and long heads. FDA PI allows up to 200 U.",
     "anatomyImages": {
-      "anterior": "biceps-brachii_anterior.png",
-      "posterior": "biceps-brachii_posterior.png",
-      "lateral": "biceps-brachii_lateral.png"
+      "anterior": "biceps-brachii_anterior.webp",
+      "posterior": "biceps-brachii_posterior.webp",
+      "lateral": "biceps-brachii_lateral.webp"
     },
     "anatomyCaption": "Anterior arm · biceps brachii highlighted",
     "dangerZones": [
@@ -745,9 +745,9 @@
     },
     "dosageNote": "Deep to biceps — often underdosed. Confirm placement on US before injecting.",
     "anatomyImages": {
-      "anterior": "brachialis_anterior.png",
-      "posterior": "brachialis_posterior.png",
-      "lateral": "brachialis_lateral.png"
+      "anterior": "brachialis_anterior.webp",
+      "posterior": "brachialis_posterior.webp",
+      "lateral": "brachialis_lateral.webp"
     },
     "anatomyCaption": "Anterior arm · brachialis highlighted (deep to biceps)",
     "dangerZones": [
@@ -859,9 +859,9 @@
     },
     "dosageNote": "Rarely injected for spasticity. Confirm genuine spasticity before treating.",
     "anatomyImages": {
-      "anterior": "triceps_anterior.png",
-      "posterior": "triceps_posterior.png",
-      "lateral": "triceps_lateral.png"
+      "anterior": "triceps_anterior.webp",
+      "posterior": "triceps_posterior.webp",
+      "lateral": "triceps_lateral.webp"
     },
     "anatomyCaption": "Posterior arm · triceps brachii highlighted",
     "defaultAnatomyView": "posterior",
@@ -971,9 +971,9 @@
     },
     "dosageNote": "Superficial forearm muscle. Stay lateral and superficial to avoid radial nerve.",
     "anatomyImages": {
-      "anterior": "brachioradialis_anterior.png",
-      "posterior": "brachioradialis_posterior.png",
-      "lateral": "brachioradialis_lateral.png"
+      "anterior": "brachioradialis_anterior.webp",
+      "posterior": "brachioradialis_posterior.webp",
+      "lateral": "brachioradialis_lateral.webp"
     },
     "anatomyCaption": "Lateral forearm · brachioradialis highlighted",
     "dangerZones": [
@@ -1084,9 +1084,9 @@
     },
     "dosageNote": "Compact muscle. 1-2 sites in proximal belly.",
     "anatomyImages": {
-      "anterior": "pronator-teres_anterior.png",
-      "posterior": "pronator-teres_posterior.png",
-      "lateral": "pronator-teres_lateral.png"
+      "anterior": "pronator-teres_anterior.webp",
+      "posterior": "pronator-teres_posterior.webp",
+      "lateral": "pronator-teres_lateral.webp"
     },
     "anatomyCaption": "Anterior forearm · pronator teres highlighted",
     "dangerZones": [
@@ -1191,9 +1191,9 @@
       "dysport": "75-150"
     },
     "anatomyImages": {
-      "anterior": "fcr_anterior.png",
-      "posterior": "fcr_posterior.png",
-      "lateral": "fcr_lateral.png"
+      "anterior": "fcr_anterior.webp",
+      "posterior": "fcr_posterior.webp",
+      "lateral": "fcr_lateral.webp"
     },
     "anatomyCaption": "Anterior forearm · FCR highlighted",
     "dangerZones": [
@@ -1306,9 +1306,9 @@
     },
     "dosageNote": "Inject proximal third only — ulnar nerve becomes superficial distally.",
     "anatomyImages": {
-      "anterior": "fcu_anterior.png",
-      "posterior": "fcu_posterior.png",
-      "lateral": "fcu_lateral.png"
+      "anterior": "fcu_anterior.webp",
+      "posterior": "fcu_posterior.webp",
+      "lateral": "fcu_lateral.webp"
     },
     "anatomyCaption": "Anterior forearm · FCU highlighted",
     "dangerZones": [
@@ -1431,9 +1431,9 @@
     },
     "dosageNote": "Dose per head if targeting individual fingers.",
     "anatomyImages": {
-      "anterior": "fds_anterior.png",
-      "posterior": "fds_posterior.png",
-      "lateral": "fds_lateral.png"
+      "anterior": "fds_anterior.webp",
+      "posterior": "fds_posterior.webp",
+      "lateral": "fds_lateral.webp"
     },
     "anatomyCaption": "Anterior forearm · FDS highlighted",
     "dangerZones": [
@@ -1554,9 +1554,9 @@
     },
     "dosageNote": "Deep muscle — confirm placement on US.",
     "anatomyImages": {
-      "anterior": "fdp_anterior.png",
-      "posterior": "fdp_posterior.png",
-      "lateral": "fdp_lateral.png"
+      "anterior": "fdp_anterior.webp",
+      "posterior": "fdp_posterior.webp",
+      "lateral": "fdp_lateral.webp"
     },
     "anatomyCaption": "Anterior forearm · FDP highlighted (deep)",
     "dangerZones": [
@@ -1669,9 +1669,9 @@
     },
     "dosageNote": "Narrow therapeutic window — over-dosing weakens pinch grip. Start low.",
     "anatomyImages": {
-      "anterior": "fpl_anterior.png",
-      "posterior": "fpl_posterior.png",
-      "lateral": "fpl_lateral.png"
+      "anterior": "fpl_anterior.webp",
+      "posterior": "fpl_posterior.webp",
+      "lateral": "fpl_lateral.webp"
     },
     "anatomyCaption": "Anterior forearm · FPL highlighted (deep)",
     "dangerZones": [
@@ -1782,9 +1782,9 @@
       "fcu"
     ],
     "anatomyImages": {
-      "anterior": "pronator-quadratus_anterior.png",
-      "posterior": "pronator-quadratus_posterior.png",
-      "lateral": "pronator-quadratus_lateral.png"
+      "anterior": "pronator-quadratus_anterior.webp",
+      "posterior": "pronator-quadratus_posterior.webp",
+      "lateral": "pronator-quadratus_lateral.webp"
     },
     "anatomyCaption": "Anterior forearm · pronator quadratus highlighted (distal, deep)",
     "dangerZones": [
@@ -2221,9 +2221,9 @@
     },
     "dosageNote": "Very small muscle — low doses only. Dorsal approach preferred.",
     "anatomyImages": {
-      "anterior": "adductor-pollicis_anterior.png",
-      "posterior": "adductor-pollicis_posterior.png",
-      "lateral": "adductor-pollicis_lateral.png"
+      "anterior": "adductor-pollicis_anterior.webp",
+      "posterior": "adductor-pollicis_posterior.webp",
+      "lateral": "adductor-pollicis_lateral.webp"
     },
     "anatomyCaption": "Palmar hand · adductor pollicis highlighted",
     "dangerZones": [
@@ -2340,9 +2340,9 @@
       "fpl"
     ],
     "anatomyImages": {
-      "anterior": "hand-lumbricals_anterior.png",
-      "posterior": "hand-lumbricals_posterior.png",
-      "lateral": "hand-lumbricals_lateral.png"
+      "anterior": "hand-lumbricals_anterior.webp",
+      "posterior": "hand-lumbricals_posterior.webp",
+      "lateral": "hand-lumbricals_lateral.webp"
     },
     "anatomyCaption": "Palmar hand · hand lumbricals highlighted",
     "dangerZones": [
@@ -2448,9 +2448,9 @@
     ],
     "dosageNote": "Dose is per spinal level. Typically inject 2-3 levels per session for a total of 100-300 U Botox. Use conservative initial dosing to avoid excessive trunk extensor weakness.",
     "anatomyImages": {
-      "anterior": "paraspinals_anterior.png",
-      "posterior": "paraspinals_posterior.png",
-      "lateral": "paraspinals_lateral.png"
+      "anterior": "paraspinals_anterior.webp",
+      "posterior": "paraspinals_posterior.webp",
+      "lateral": "paraspinals_lateral.webp"
     },
     "anatomyCaption": "Posterior trunk · erector spinae group highlighted",
     "defaultAnatomyView": "posterior",
@@ -2548,9 +2548,9 @@
     },
     "dosageNote": "Deep muscle requiring curvilinear probe. Distribute across 2-3 sites.",
     "anatomyImages": {
-      "anterior": "quadratus-lumborum_anterior.png",
-      "posterior": "quadratus-lumborum_posterior.png",
-      "lateral": "quadratus-lumborum_lateral.png"
+      "anterior": "quadratus-lumborum_anterior.webp",
+      "posterior": "quadratus-lumborum_posterior.webp",
+      "lateral": "quadratus-lumborum_lateral.webp"
     },
     "anatomyCaption": "Posterior trunk · quadratus lumborum highlighted",
     "dangerZones": [
@@ -2653,9 +2653,9 @@
     ],
     "dosageNote": "Total across all sites bilaterally. Use conservative dosing — respiratory compromise is a risk with excessive abdominal wall weakness.",
     "anatomyImages": {
-      "anterior": "rectus-abdominis_anterior.png",
-      "posterior": "rectus-abdominis_posterior.png",
-      "lateral": "rectus-abdominis_lateral.png"
+      "anterior": "rectus-abdominis_anterior.webp",
+      "posterior": "rectus-abdominis_posterior.webp",
+      "lateral": "rectus-abdominis_lateral.webp"
     },
     "anatomyCaption": "Anterior abdomen · rectus abdominis highlighted",
     "dangerZones": [
@@ -2772,9 +2772,9 @@
     ],
     "dosageNote": "Dose is per side. Combines external and internal oblique as a single injection target. Inject bilaterally only if clinically indicated — monitor for trunk weakness.",
     "anatomyImages": {
-      "anterior": "obliques_anterior.png",
-      "posterior": "obliques_posterior.png",
-      "lateral": "obliques_lateral.png"
+      "anterior": "obliques_anterior.webp",
+      "posterior": "obliques_posterior.webp",
+      "lateral": "obliques_lateral.webp"
     },
     "anatomyCaption": "Lateral abdomen · internal + external obliques highlighted",
     "dangerZones": [
@@ -2870,9 +2870,9 @@
       "adductor-longus"
     ],
     "anatomyImages": {
-      "anterior": "iliopsoas_anterior.png",
-      "posterior": "iliopsoas_posterior.png",
-      "lateral": "iliopsoas_lateral.png"
+      "anterior": "iliopsoas_anterior.webp",
+      "posterior": "iliopsoas_posterior.webp",
+      "lateral": "iliopsoas_lateral.webp"
     },
     "anatomyCaption": "Anterior hip · iliopsoas highlighted",
     "dangerZones": [
@@ -2976,9 +2976,9 @@
     ],
     "dosageNote": "One of the largest muscles in the body — distribute across 3-4 sites.",
     "anatomyImages": {
-      "anterior": "gluteus-maximus_anterior.png",
-      "posterior": "gluteus-maximus_posterior.png",
-      "lateral": "gluteus-maximus_lateral.png"
+      "anterior": "gluteus-maximus_anterior.webp",
+      "posterior": "gluteus-maximus_posterior.webp",
+      "lateral": "gluteus-maximus_lateral.webp"
     },
     "anatomyCaption": "Posterior hip · gluteus maximus highlighted",
     "defaultAnatomyView": "posterior",
@@ -3082,9 +3082,9 @@
       "gluteus-maximus"
     ],
     "anatomyImages": {
-      "anterior": "piriformis_anterior.png",
-      "posterior": "piriformis_posterior.png",
-      "lateral": "piriformis_lateral.png"
+      "anterior": "piriformis_anterior.webp",
+      "posterior": "piriformis_posterior.webp",
+      "lateral": "piriformis_lateral.webp"
     },
     "anatomyCaption": "Posterior hip · piriformis highlighted",
     "defaultAnatomyView": "posterior",
@@ -3187,9 +3187,9 @@
     },
     "dosageNote": "Compact muscle at ASIS. 1-2 sites.",
     "anatomyImages": {
-      "anterior": "tfl_anterior.png",
-      "posterior": "tfl_posterior.png",
-      "lateral": "tfl_lateral.png"
+      "anterior": "tfl_anterior.webp",
+      "posterior": "tfl_posterior.webp",
+      "lateral": "tfl_lateral.webp"
     },
     "anatomyCaption": "Lateral hip · tensor fasciae latae highlighted",
     "dangerZones": [
@@ -3381,9 +3381,9 @@
       "gracilis"
     ],
     "anatomyImages": {
-      "anterior": "adductor-longus_anterior.png",
-      "posterior": "adductor-longus_posterior.png",
-      "lateral": "adductor-longus_lateral.png"
+      "anterior": "adductor-longus_anterior.webp",
+      "posterior": "adductor-longus_posterior.webp",
+      "lateral": "adductor-longus_lateral.webp"
     },
     "anatomyCaption": "Medial thigh · adductor longus highlighted",
     "dangerZones": [
@@ -3488,9 +3488,9 @@
       "gracilis"
     ],
     "anatomyImages": {
-      "anterior": "adductor-brevis_anterior.png",
-      "posterior": "adductor-brevis_posterior.png",
-      "lateral": "adductor-brevis_lateral.png"
+      "anterior": "adductor-brevis_anterior.webp",
+      "posterior": "adductor-brevis_posterior.webp",
+      "lateral": "adductor-brevis_lateral.webp"
     },
     "anatomyCaption": "Medial thigh · adductor brevis highlighted (deep)",
     "dangerZones": [
@@ -3598,9 +3598,9 @@
       "gracilis"
     ],
     "anatomyImages": {
-      "anterior": "adductor-magnus_anterior.png",
-      "posterior": "adductor-magnus_posterior.png",
-      "lateral": "adductor-magnus_lateral.png"
+      "anterior": "adductor-magnus_anterior.webp",
+      "posterior": "adductor-magnus_posterior.webp",
+      "lateral": "adductor-magnus_lateral.webp"
     },
     "anatomyCaption": "Medial thigh · adductor magnus highlighted",
     "dangerZones": [
@@ -3705,9 +3705,9 @@
       "adductor-magnus"
     ],
     "anatomyImages": {
-      "anterior": "gracilis_anterior.png",
-      "posterior": "gracilis_posterior.png",
-      "lateral": "gracilis_lateral.png"
+      "anterior": "gracilis_anterior.webp",
+      "posterior": "gracilis_posterior.webp",
+      "lateral": "gracilis_lateral.webp"
     },
     "anatomyCaption": "Medial thigh · gracilis highlighted",
     "dangerZones": [
@@ -3815,9 +3815,9 @@
     },
     "dosageNote": "Primary stiff-knee gait target. 1-2 sites in proximal-mid muscle belly.",
     "anatomyImages": {
-      "anterior": "rectus-femoris_anterior.png",
-      "posterior": "rectus-femoris_posterior.png",
-      "lateral": "rectus-femoris_lateral.png"
+      "anterior": "rectus-femoris_anterior.webp",
+      "posterior": "rectus-femoris_posterior.webp",
+      "lateral": "rectus-femoris_lateral.webp"
     },
     "anatomyCaption": "Anterior thigh · rectus femoris highlighted",
     "dangerZones": [
@@ -3921,9 +3921,9 @@
       "vastus-medialis"
     ],
     "anatomyImages": {
-      "anterior": "vastus-lateralis_anterior.png",
-      "posterior": "vastus-lateralis_posterior.png",
-      "lateral": "vastus-lateralis_lateral.png"
+      "anterior": "vastus-lateralis_anterior.webp",
+      "posterior": "vastus-lateralis_posterior.webp",
+      "lateral": "vastus-lateralis_lateral.webp"
     },
     "anatomyCaption": "Anterior thigh · vastus lateralis highlighted",
     "dangerZones": [
@@ -4035,9 +4035,9 @@
     },
     "dosageNote": "Use cautiously — weakening VMO can destabilize the patella.",
     "anatomyImages": {
-      "anterior": "vastus-medialis_anterior.png",
-      "posterior": "vastus-medialis_posterior.png",
-      "lateral": "vastus-medialis_lateral.png"
+      "anterior": "vastus-medialis_anterior.webp",
+      "posterior": "vastus-medialis_posterior.webp",
+      "lateral": "vastus-medialis_lateral.webp"
     },
     "anatomyCaption": "Anterior thigh · vastus medialis highlighted",
     "dangerZones": [
@@ -4146,9 +4146,9 @@
       "vastus-medialis"
     ],
     "anatomyImages": {
-      "anterior": "vastus-intermedius_anterior.png",
-      "posterior": "vastus-intermedius_posterior.png",
-      "lateral": "vastus-intermedius_lateral.png"
+      "anterior": "vastus-intermedius_anterior.webp",
+      "posterior": "vastus-intermedius_posterior.webp",
+      "lateral": "vastus-intermedius_lateral.webp"
     },
     "anatomyCaption": "Anterior thigh · vastus intermedius highlighted (deep)",
     "dangerZones": [
@@ -4255,9 +4255,9 @@
       "semitendinosus"
     ],
     "anatomyImages": {
-      "anterior": "biceps-femoris_anterior.png",
-      "posterior": "biceps-femoris_posterior.png",
-      "lateral": "biceps-femoris_lateral.png"
+      "anterior": "biceps-femoris_anterior.webp",
+      "posterior": "biceps-femoris_posterior.webp",
+      "lateral": "biceps-femoris_lateral.webp"
     },
     "anatomyCaption": "Posterior thigh · biceps femoris highlighted",
     "defaultAnatomyView": "posterior",
@@ -4361,9 +4361,9 @@
       "semimembranosus"
     ],
     "anatomyImages": {
-      "anterior": "semitendinosus_anterior.png",
-      "posterior": "semitendinosus_posterior.png",
-      "lateral": "semitendinosus_lateral.png"
+      "anterior": "semitendinosus_anterior.webp",
+      "posterior": "semitendinosus_posterior.webp",
+      "lateral": "semitendinosus_lateral.webp"
     },
     "anatomyCaption": "Posterior thigh · semitendinosus highlighted",
     "defaultAnatomyView": "posterior",
@@ -4469,9 +4469,9 @@
       "semitendinosus"
     ],
     "anatomyImages": {
-      "anterior": "semimembranosus_anterior.png",
-      "posterior": "semimembranosus_posterior.png",
-      "lateral": "semimembranosus_lateral.png"
+      "anterior": "semimembranosus_anterior.webp",
+      "posterior": "semimembranosus_posterior.webp",
+      "lateral": "semimembranosus_lateral.webp"
     },
     "anatomyCaption": "Posterior thigh · semimembranosus highlighted",
     "defaultAnatomyView": "posterior",
@@ -4584,9 +4584,9 @@
       "tibialis-posterior"
     ],
     "anatomyImages": {
-      "anterior": "gastrocnemius-medial_anterior.png",
-      "posterior": "gastrocnemius-medial_posterior.png",
-      "lateral": "gastrocnemius-medial_lateral.png"
+      "anterior": "gastrocnemius-medial_anterior.webp",
+      "posterior": "gastrocnemius-medial_posterior.webp",
+      "lateral": "gastrocnemius-medial_lateral.webp"
     },
     "anatomyCaption": "Posterior leg · gastrocnemius highlighted",
     "defaultAnatomyView": "posterior",
@@ -4697,9 +4697,9 @@
       "dysport": "150-225"
     },
     "anatomyImages": {
-      "anterior": "gastrocnemius-lateral_anterior.png",
-      "posterior": "gastrocnemius-lateral_posterior.png",
-      "lateral": "gastrocnemius-lateral_lateral.png"
+      "anterior": "gastrocnemius-lateral_anterior.webp",
+      "posterior": "gastrocnemius-lateral_posterior.webp",
+      "lateral": "gastrocnemius-lateral_lateral.webp"
     },
     "anatomyCaption": "Posterior leg · gastrocnemius highlighted",
     "defaultAnatomyView": "posterior",
@@ -4811,9 +4811,9 @@
       "dysport": "150-300"
     },
     "anatomyImages": {
-      "anterior": "soleus-medial_anterior.png",
-      "posterior": "soleus-medial_posterior.png",
-      "lateral": "soleus-medial_lateral.png"
+      "anterior": "soleus-medial_anterior.webp",
+      "posterior": "soleus-medial_posterior.webp",
+      "lateral": "soleus-medial_lateral.webp"
     },
     "anatomyCaption": "Posterior leg · soleus highlighted",
     "defaultAnatomyView": "posterior",
@@ -4914,9 +4914,9 @@
       "tibialis-posterior"
     ],
     "anatomyImages": {
-      "anterior": "soleus-lateral_anterior.png",
-      "posterior": "soleus-lateral_posterior.png",
-      "lateral": "soleus-lateral_lateral.png"
+      "anterior": "soleus-lateral_anterior.webp",
+      "posterior": "soleus-lateral_posterior.webp",
+      "lateral": "soleus-lateral_lateral.webp"
     },
     "anatomyCaption": "Posterior leg · soleus highlighted",
     "defaultAnatomyView": "posterior",
@@ -5028,9 +5028,9 @@
       "soleus-medial"
     ],
     "anatomyImages": {
-      "anterior": "tibialis-posterior_anterior.png",
-      "posterior": "tibialis-posterior_posterior.png",
-      "lateral": "tibialis-posterior_lateral.png"
+      "anterior": "tibialis-posterior_anterior.webp",
+      "posterior": "tibialis-posterior_posterior.webp",
+      "lateral": "tibialis-posterior_lateral.webp"
     },
     "anatomyCaption": "Deep posterior leg · tibialis posterior",
     "defaultAnatomyView": "posterior",
@@ -5158,9 +5158,9 @@
       "foot-lumbricals"
     ],
     "anatomyImages": {
-      "anterior": "fdl_anterior.png",
-      "posterior": "fdl_posterior.png",
-      "lateral": "fdl_lateral.png"
+      "anterior": "fdl_anterior.webp",
+      "posterior": "fdl_posterior.webp",
+      "lateral": "fdl_lateral.webp"
     },
     "anatomyCaption": "Deep posterior leg · FDL highlighted",
     "defaultAnatomyView": "posterior",
@@ -5272,9 +5272,9 @@
       "tibialis-posterior"
     ],
     "anatomyImages": {
-      "anterior": "fhl_anterior.png",
-      "posterior": "fhl_posterior.png",
-      "lateral": "fhl_lateral.png"
+      "anterior": "fhl_anterior.webp",
+      "posterior": "fhl_posterior.webp",
+      "lateral": "fhl_lateral.webp"
     },
     "anatomyCaption": "Deep posterior leg · FHL highlighted",
     "defaultAnatomyView": "posterior",
@@ -5374,9 +5374,9 @@
       "edl"
     ],
     "anatomyImages": {
-      "anterior": "tibialis-anterior_anterior.png",
-      "posterior": "tibialis-anterior_posterior.png",
-      "lateral": "tibialis-anterior_lateral.png"
+      "anterior": "tibialis-anterior_anterior.webp",
+      "posterior": "tibialis-anterior_posterior.webp",
+      "lateral": "tibialis-anterior_lateral.webp"
     },
     "anatomyCaption": "Anterior leg · tibialis anterior",
     "dangerZones": [
@@ -5484,9 +5484,9 @@
       "tibialis-anterior"
     ],
     "anatomyImages": {
-      "anterior": "ehl_anterior.png",
-      "posterior": "ehl_posterior.png",
-      "lateral": "ehl_lateral.png"
+      "anterior": "ehl_anterior.webp",
+      "posterior": "ehl_posterior.webp",
+      "lateral": "ehl_lateral.webp"
     },
     "anatomyCaption": "Anterior leg · EHL highlighted",
     "dangerZones": [
@@ -5593,9 +5593,9 @@
       "peroneus-longus"
     ],
     "anatomyImages": {
-      "anterior": "edl_anterior.png",
-      "posterior": "edl_posterior.png",
-      "lateral": "edl_lateral.png"
+      "anterior": "edl_anterior.webp",
+      "posterior": "edl_posterior.webp",
+      "lateral": "edl_lateral.webp"
     },
     "anatomyCaption": "Anterior leg · EDL highlighted",
     "dangerZones": [
@@ -5703,9 +5703,9 @@
       "soleus-lateral"
     ],
     "anatomyImages": {
-      "anterior": "peroneus-longus_anterior.png",
-      "posterior": "peroneus-longus_posterior.png",
-      "lateral": "peroneus-longus_lateral.png"
+      "anterior": "peroneus-longus_anterior.webp",
+      "posterior": "peroneus-longus_posterior.webp",
+      "lateral": "peroneus-longus_lateral.webp"
     },
     "anatomyCaption": "Lateral leg · fibularis/peroneus longus",
     "defaultAnatomyView": "lateral",
@@ -5808,9 +5808,9 @@
     },
     "dosageNote": "Plantar injection — painful. Consider topical anesthetic.",
     "anatomyImages": {
-      "anterior": "fdb_anterior.png",
-      "posterior": "fdb_posterior.png",
-      "lateral": "fdb_lateral.png"
+      "anterior": "fdb_anterior.webp",
+      "posterior": "fdb_posterior.webp",
+      "lateral": "fdb_lateral.webp"
     },
     "anatomyCaption": "Plantar foot · flexor digitorum brevis highlighted",
     "dangerZones": [
@@ -5901,9 +5901,9 @@
     },
     "dosageNote": "Very small intrinsic foot muscle. Low doses only.",
     "anatomyImages": {
-      "anterior": "add-hallucis_anterior.png",
-      "posterior": "add-hallucis_posterior.png",
-      "lateral": "add-hallucis_lateral.png"
+      "anterior": "add-hallucis_anterior.webp",
+      "posterior": "add-hallucis_posterior.webp",
+      "lateral": "add-hallucis_lateral.webp"
     },
     "anatomyCaption": "Plantar foot · adductor hallucis highlighted",
     "dangerZones": [
@@ -6002,9 +6002,9 @@
       "add-hallucis"
     ],
     "anatomyImages": {
-      "anterior": "foot-lumbricals_anterior.png",
-      "posterior": "foot-lumbricals_posterior.png",
-      "lateral": "foot-lumbricals_lateral.png"
+      "anterior": "foot-lumbricals_anterior.webp",
+      "posterior": "foot-lumbricals_posterior.webp",
+      "lateral": "foot-lumbricals_lateral.webp"
     },
     "anatomyCaption": "Plantar foot · foot lumbricals highlighted",
     "dangerZones": [
@@ -6119,9 +6119,9 @@
       "longissimus-capitis"
     ],
     "anatomyImages": {
-      "anterior": "scm_anterior.png",
-      "posterior": "scm_posterior.png",
-      "lateral": "scm_lateral.png"
+      "anterior": "scm_anterior.webp",
+      "posterior": "scm_posterior.webp",
+      "lateral": "scm_lateral.webp"
     },
     "anatomyCaption": "Lateral neck · SCM highlighted",
     "defaultAnatomyView": "lateral",
@@ -6235,9 +6235,9 @@
       "longissimus-capitis"
     ],
     "anatomyImages": {
-      "anterior": "scalenes_anterior.png",
-      "posterior": "scalenes_posterior.png",
-      "lateral": "scalenes_lateral.png"
+      "anterior": "scalenes_anterior.webp",
+      "posterior": "scalenes_posterior.webp",
+      "lateral": "scalenes_lateral.webp"
     },
     "anatomyCaption": "Lateral neck · scalenes highlighted",
     "defaultAnatomyView": "lateral",
@@ -6341,9 +6341,9 @@
       "longissimus-capitis"
     ],
     "anatomyImages": {
-      "anterior": "upper-trapezius_anterior.png",
-      "posterior": "upper-trapezius_posterior.png",
-      "lateral": "upper-trapezius_lateral.png"
+      "anterior": "upper-trapezius_anterior.webp",
+      "posterior": "upper-trapezius_posterior.webp",
+      "lateral": "upper-trapezius_lateral.webp"
     },
     "anatomyCaption": "Posterior neck · upper trapezius highlighted",
     "defaultAnatomyView": "posterior",
@@ -6447,9 +6447,9 @@
       "longissimus-capitis"
     ],
     "anatomyImages": {
-      "anterior": "levator-scapulae_anterior.png",
-      "posterior": "levator-scapulae_posterior.png",
-      "lateral": "levator-scapulae_lateral.png"
+      "anterior": "levator-scapulae_anterior.webp",
+      "posterior": "levator-scapulae_posterior.webp",
+      "lateral": "levator-scapulae_lateral.webp"
     },
     "anatomyCaption": "Posterior neck · levator scapulae highlighted",
     "defaultAnatomyView": "posterior",
@@ -6555,9 +6555,9 @@
       "longissimus-capitis"
     ],
     "anatomyImages": {
-      "anterior": "splenius-capitis_anterior.png",
-      "posterior": "splenius-capitis_posterior.png",
-      "lateral": "splenius-capitis_lateral.png"
+      "anterior": "splenius-capitis_anterior.webp",
+      "posterior": "splenius-capitis_posterior.webp",
+      "lateral": "splenius-capitis_lateral.webp"
     },
     "anatomyCaption": "Posterior neck · splenius capitis highlighted",
     "defaultAnatomyView": "posterior",
@@ -6832,9 +6832,9 @@
       "scm"
     ],
     "anatomyImages": {
-      "anterior": "semispinalis-capitis_anterior.png",
-      "posterior": "semispinalis-capitis_posterior.png",
-      "lateral": "semispinalis-capitis_lateral.png"
+      "anterior": "semispinalis-capitis_anterior.webp",
+      "posterior": "semispinalis-capitis_posterior.webp",
+      "lateral": "semispinalis-capitis_lateral.webp"
     },
     "anatomyCaption": "Posterior neck · semispinalis highlighted",
     "defaultAnatomyView": "posterior",
@@ -6944,9 +6944,9 @@
       "scm"
     ],
     "anatomyImages": {
-      "anterior": "longissimus-capitis_anterior.png",
-      "posterior": "longissimus-capitis_posterior.png",
-      "lateral": "longissimus-capitis_lateral.png"
+      "anterior": "longissimus-capitis_anterior.webp",
+      "posterior": "longissimus-capitis_posterior.webp",
+      "lateral": "longissimus-capitis_lateral.webp"
     },
     "anatomyCaption": "Posterior neck · longissimus capitis highlighted",
     "defaultAnatomyView": "posterior",
@@ -7021,9 +7021,9 @@
       "orbicularis-oculi"
     ],
     "anatomyImages": {
-      "anterior": "frontalis_anterior.png",
-      "posterior": "frontalis_posterior.png",
-      "lateral": "frontalis_lateral.png"
+      "anterior": "frontalis_anterior.webp",
+      "posterior": "frontalis_posterior.webp",
+      "lateral": "frontalis_lateral.webp"
     },
     "anatomyCaption": "Anterior face · frontalis highlighted",
     "dangerZones": [
@@ -7094,9 +7094,9 @@
       "frontalis"
     ],
     "anatomyImages": {
-      "anterior": "corrugator-supercilii_anterior.png",
-      "posterior": "corrugator-supercilii_posterior.png",
-      "lateral": "corrugator-supercilii_lateral.png"
+      "anterior": "corrugator-supercilii_anterior.webp",
+      "posterior": "corrugator-supercilii_posterior.webp",
+      "lateral": "corrugator-supercilii_lateral.webp"
     },
     "anatomyCaption": "Frontal face · corrugator supercilii",
     "dangerZones": [
@@ -7166,9 +7166,9 @@
       "frontalis"
     ],
     "anatomyImages": {
-      "anterior": "procerus_anterior.png",
-      "posterior": "procerus_posterior.png",
-      "lateral": "procerus_lateral.png"
+      "anterior": "procerus_anterior.webp",
+      "posterior": "procerus_posterior.webp",
+      "lateral": "procerus_lateral.webp"
     },
     "anatomyCaption": "Frontal face · procerus highlighted",
     "dangerZones": [
@@ -7241,9 +7241,9 @@
       "frontalis"
     ],
     "anatomyImages": {
-      "anterior": "orbicularis-oculi_anterior.png",
-      "posterior": "orbicularis-oculi_posterior.png",
-      "lateral": "orbicularis-oculi_lateral.png"
+      "anterior": "orbicularis-oculi_anterior.webp",
+      "posterior": "orbicularis-oculi_posterior.webp",
+      "lateral": "orbicularis-oculi_lateral.webp"
     },
     "anatomyCaption": "Anterior face · orbicularis oculi highlighted",
     "dangerZones": [
@@ -7341,9 +7341,9 @@
       "lateral-pterygoid"
     ],
     "anatomyImages": {
-      "anterior": "temporalis_anterior.png",
-      "posterior": "temporalis_posterior.png",
-      "lateral": "temporalis_lateral.png"
+      "anterior": "temporalis_anterior.webp",
+      "posterior": "temporalis_posterior.webp",
+      "lateral": "temporalis_lateral.webp"
     },
     "anatomyCaption": "Lateral face · temporalis highlighted",
     "defaultAnatomyView": "lateral",
@@ -7442,9 +7442,9 @@
       "lateral-pterygoid"
     ],
     "anatomyImages": {
-      "anterior": "masseter_anterior.png",
-      "posterior": "masseter_posterior.png",
-      "lateral": "masseter_lateral.png"
+      "anterior": "masseter_anterior.webp",
+      "posterior": "masseter_posterior.webp",
+      "lateral": "masseter_lateral.webp"
     },
     "anatomyCaption": "Lateral face · masseter highlighted",
     "defaultAnatomyView": "lateral",
@@ -7518,9 +7518,9 @@
       "temporalis"
     ],
     "anatomyImages": {
-      "anterior": "lateral-pterygoid_anterior.png",
-      "posterior": "lateral-pterygoid_posterior.png",
-      "lateral": "lateral-pterygoid_lateral.png"
+      "anterior": "lateral-pterygoid_anterior.webp",
+      "posterior": "lateral-pterygoid_posterior.webp",
+      "lateral": "lateral-pterygoid_lateral.webp"
     },
     "anatomyCaption": "Lateral face · lateral pterygoid highlighted (deep)",
     "dangerZones": [
@@ -7619,9 +7619,9 @@
       "lateral-pterygoid"
     ],
     "anatomyImages": {
-      "anterior": "medial-pterygoid_anterior.png",
-      "posterior": "medial-pterygoid_posterior.png",
-      "lateral": "medial-pterygoid_lateral.png"
+      "anterior": "medial-pterygoid_anterior.webp",
+      "posterior": "medial-pterygoid_posterior.webp",
+      "lateral": "medial-pterygoid_lateral.webp"
     },
     "anatomyCaption": "Lateral face · medial pterygoid highlighted (deep)",
     "dangerZones": [
@@ -7689,9 +7689,9 @@
       "platysma"
     ],
     "anatomyImages": {
-      "anterior": "mentalis_anterior.png",
-      "posterior": "mentalis_posterior.png",
-      "lateral": "mentalis_lateral.png"
+      "anterior": "mentalis_anterior.webp",
+      "posterior": "mentalis_posterior.webp",
+      "lateral": "mentalis_lateral.webp"
     },
     "anatomyCaption": "Frontal face · mentalis highlighted",
     "dangerZones": [
@@ -7764,9 +7764,9 @@
       "mentalis"
     ],
     "anatomyImages": {
-      "anterior": "platysma_anterior.png",
-      "posterior": "platysma_posterior.png",
-      "lateral": "platysma_lateral.png"
+      "anterior": "platysma_anterior.webp",
+      "posterior": "platysma_posterior.webp",
+      "lateral": "platysma_lateral.webp"
     },
     "anatomyCaption": "Anterior neck · platysma highlighted",
     "dangerZones": [

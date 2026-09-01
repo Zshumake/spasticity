@@ -13,7 +13,7 @@ data/muscles.json                48 muscles (pre-filtered), full clinical record
 assets/scans/                    38 ultrasound scans (9 are shared by 2-3 muscles)
 assets/masks/                    47 muscle-highlight alpha masks (PNG, white RGB + alpha)
 assets/probe-illustrations/      47 atlas illustrations (blue probe bar + red entry dot)
-assets/anatomy/                  135 anatomy renders, keyed by view in export.anatomy
+assets/anatomy/                  135 anatomy renders (WebP), keyed by view in export.anatomy
 reference/us-label-archive.json  transcript of the label burned into each original scan
 reference/us-label-crops/        the literal text-band pixels cut from each original
 reference/highlight-captures.json  raw hand-drawn lasso polygons (provenance/rebake source)
@@ -137,6 +137,17 @@ theme. `group` values present: "Upper Extremity", "Upper Extremity / Trunk",
    "restore" the black band area.
 4. This is the complete intended set: exactly these 48. The other 27
    NeuroInject muscles have no ultrasound and are deliberately excluded.
+
+**Anatomy renders are WebP, not PNG.** They are stylised 3D illustrations
+that are 73-98% transparent, which PNG stores badly: as PNG they were 60 MB
+of the bundle, as WebP q95 they are 3.6 MB. The alpha channel is preserved
+EXACTLY (asserted per file at conversion); only RGB is lossy, and only over
+pixels that are actually drawn, at a worst-case error of about 3/255. Every
+current browser decodes WebP with alpha.
+
+The ultrasound scans and the highlight masks are deliberately NOT compressed
+this way — the scans are the clinical evidence, and a mask is alpha data that
+must stay pixel-exact and aligned to its scan.
 
 ## Reference material (for the planned structure-labeling feature)
 
