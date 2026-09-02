@@ -65,9 +65,19 @@ void main() {
     await tester.pump();
   }
 
+  /// On a phone-width surface the study view is a lazy list, so the clinical
+  /// photos (and the approach toggle above them) do not exist until scrolled
+  /// to. Scroll there before asserting either way.
+  Future<void> revealClinicalPhotos(WidgetTester tester) async {
+    await tester.scrollUntilVisible(find.text('CLINICAL PHOTOS'), 300,
+        scrollable: find.byType(Scrollable).first);
+    await tester.pump();
+  }
+
   testWidgets('a two-window muscle offers a chip per approach',
       (tester) async {
     await show(tester, byId('tibialis-posterior'));
+    await revealClinicalPhotos(tester);
 
     expect(find.text('ANTERIOR APPROACH'), findsOneWidget);
     expect(find.text('MEDIAL APPROACH'), findsOneWidget);
@@ -78,6 +88,7 @@ void main() {
     expect(biceps.resolvedUltrasoundViews, hasLength(1));
 
     await show(tester, biceps);
+    await revealClinicalPhotos(tester);
 
     expect(find.text('ANTERIOR APPROACH'), findsNothing);
     expect(find.text('MEDIAL APPROACH'), findsNothing);

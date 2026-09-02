@@ -12,6 +12,12 @@ class SessionPlanner extends ChangeNotifier {
   final Map<String, List<SessionItem>> _saved = {};
   static const String _storageKey = 'session_plan_v1';
   static const String _savedKey = 'saved_sessions_v1';
+  static const String _startedKey = 'session_started_at_v1';
+
+  /// When the live session was started, or null when the plan is not running.
+  /// Persisted with the plan: a procedure that outlives a backgrounded app
+  /// must come back with its clock and its ticked-off muscles intact.
+  int? _startedAtMillis;
 
   SessionPlanner() {
     _load();
@@ -23,6 +29,67 @@ class SessionPlanner extends ChangeNotifier {
   bool get isNotEmpty => _items.isNotEmpty;
 
   bool contains(String muscleId) => _items.any((i) => i.muscleId == muscleId);
+
+  // ─── Live session ────────────────────────────────────────────
+
+  bool get isRunning => _startedAtMillis != null;
+  Duration get elapsed => _startedAtMillis == null
+      ? Duration.zero
+      : DateTime.now()
+          .difference(DateTime.fromMillisecondsSinceEpoch(_startedAtMillis!));
+
+  List<SessionItem> get remaining =>
+      _items.where((i) => !i.isDone).toList(growable: false);
+  List<SessionItem> get completed =>
+      _items.where((i) => i.isDone).toList(growable: false);
+
+  /// The muscle being injected: the first one not yet finished.
+  SessionItem? get current => remaining.isEmpty ? null : remaining.first;
+
+  /// Units actually delivered so far, per brand — only finished muscles that
+  /// had at least one site logged. A skipped muscle contributes nothing, which
+  /// is the difference between this and [brandTotals] (what was planned).
+  Map<String, double> get deliveredTotals {
+    final totals = <String, double>{};
+    for (final it in _items) {
+      if (!it.isDone || it.sitesLogged == 0) continue;
+      totals[it.brand] = (totals[it.brand] ?? 0) + it.totalUnits;
+    }
+    return totals;
+  }
+
+  void startSession() {
+    if (_items.isEmpty || isRunning) return;
+    _startedAtMillis = DateTime.now().millisecondsSinceEpoch;
+    _save();
+    notifyListeners();
+  }
+
+  /// Ends the run and clears every muscle's progress, leaving the plan itself
+  /// intact so the same list can be run again at the next visit.
+  void endSession() {
+    _startedAtMillis = null;
+    _items = _items
+        .map((i) => i.copyWith(sitesLogged: 0, clearCompletedAt: true))
+        .toList();
+    _save();
+    notifyListeners();
+  }
+
+  void logSite(String muscleId) =>
+      _mutate(muscleId, (i) => i.copyWith(sitesLogged: i.sitesLogged + 1));
+
+  void undoSite(String muscleId) => _mutate(muscleId,
+      (i) => i.copyWith(sitesLogged: i.sitesLogged > 0 ? i.sitesLogged - 1 : 0));
+
+  /// Marks a muscle finished. With no sites logged this records a deliberate
+  /// skip rather than a completed injection — see [SessionItem.wasSkipped].
+  void finishMuscle(String muscleId) => _mutate(muscleId,
+      (i) => i.copyWith(
+          completedAtMillis: DateTime.now().millisecondsSinceEpoch));
+
+  void reopenMuscle(String muscleId) =>
+      _mutate(muscleId, (i) => i.copyWith(clearCompletedAt: true));
 
   SessionItem? itemFor(String muscleId) {
     for (final i in _items) {
@@ -150,6 +217,9 @@ class SessionPlanner extends ChangeNotifier {
             .map((e) => SessionItem.fromJson(e as Map<String, dynamic>))
             .toList();
       }
+      // A start time with nothing to inject is meaningless state, so it is
+      // dropped rather than resumed against an empty plan.
+      _startedAtMillis = _items.isEmpty ? null : prefs.getInt(_startedKey);
     } catch (e) {
       debugPrint('Error loading active session plan: $e');
     }
@@ -179,6 +249,12 @@ class SessionPlanner extends ChangeNotifier {
         _storageKey,
         json.encode(_items.map((i) => i.toJson()).toList()),
       );
+      final started = _startedAtMillis;
+      if (started == null) {
+        await prefs.remove(_startedKey);
+      } else {
+        await prefs.setInt(_startedKey, started);
+      }
     } catch (e) {
       debugPrint('Error saving session plan: $e');
     }

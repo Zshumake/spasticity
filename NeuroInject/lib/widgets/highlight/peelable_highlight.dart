@@ -133,7 +133,7 @@ class _PeelableHighlightState extends State<PeelableHighlight> {
         ),
         child: Text(text,
             style: GoogleFonts.ibmPlexMono(
-                fontSize: 8.5,
+                fontSize: 10,
                 fontWeight: FontWeight.w700,
                 letterSpacing: 1,
                 color: color)),

@@ -144,7 +144,7 @@ class SafetyLayers extends StatelessWidget {
             Expanded(
               child: Text(label.toUpperCase(),
                   style: GoogleFonts.ibmPlexMono(
-                      fontSize: 9.5,
+                      fontSize: 10,
                       fontWeight: FontWeight.w700,
                       letterSpacing: 1.2,
                       color: accent)),

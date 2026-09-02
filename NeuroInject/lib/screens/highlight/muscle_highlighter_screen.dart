@@ -110,7 +110,7 @@ class _MuscleHighlighterScreenState extends State<MuscleHighlighterScreen> {
                     fontSize: 16, fontWeight: FontWeight.w700)),
             Text('HIGHLIGHT · ULTRASOUND',
                 style: GoogleFonts.ibmPlexMono(
-                    fontSize: 9,
+                    fontSize: 10,
                     letterSpacing: 1.6,
                     color: AppTheme.primary)),
           ],
@@ -180,7 +180,7 @@ class _MuscleHighlighterScreenState extends State<MuscleHighlighterScreen> {
         Text(
           '$n highlight${n == 1 ? '' : 's'} saved for this muscle · view all',
           style: GoogleFonts.ibmPlexMono(
-              fontSize: 9.5, letterSpacing: 0.4, color: AppTheme.textTertiary),
+              fontSize: 10, letterSpacing: 0.4, color: AppTheme.textTertiary),
         ),
         const SizedBox(width: 3),
         const Icon(Icons.chevron_right, size: 13, color: AppTheme.textTertiary),

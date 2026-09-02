@@ -71,7 +71,7 @@ class DilutionExplainer extends StatelessWidget {
               const SizedBox(height: 20),
 
               // Step 1: The vial
-              _buildStep(
+              _buildStep(context,
                 stepNumber: 1,
                 title: 'Start with the vial',
                 explanation: _isPreDiluted
@@ -84,10 +84,10 @@ class DilutionExplainer extends StatelessWidget {
                 formula: '${vialUnits.toStringAsFixed(0)} U in the vial',
                 icon: Icons.science_outlined,
               ),
-              _stepConnector(),
+              _stepConnector(context),
 
               // Step 2: Add saline
-              _buildStep(
+              _buildStep(context,
                 stepNumber: 2,
                 title: _isPreDiluted
                     ? 'No reconstitution needed'
@@ -106,10 +106,10 @@ class DilutionExplainer extends StatelessWidget {
                     : '${vialUnits.toStringAsFixed(0)} U dissolved in ${salineMl.toStringAsFixed(1)} mL',
                 icon: Icons.water_drop_outlined,
               ),
-              _stepConnector(),
+              _stepConnector(context),
 
               // Step 3: Calculate concentration
-              _buildStep(
+              _buildStep(context,
                 stepNumber: 3,
                 title: 'Calculate the concentration',
                 explanation:
@@ -122,10 +122,10 @@ class DilutionExplainer extends StatelessWidget {
                 isKeyFormula: true,
                 icon: Icons.calculate_outlined,
               ),
-              _stepConnector(),
+              _stepConnector(context),
 
               // Step 4: Per 0.1 mL
-              _buildStep(
+              _buildStep(context,
                 stepNumber: 4,
                 title: 'Know what\'s in each 0.1 mL',
                 explanation:
@@ -141,10 +141,10 @@ class DilutionExplainer extends StatelessWidget {
                 isKeyFormula: true,
                 icon: Icons.straighten_outlined,
               ),
-              _stepConnector(),
+              _stepConnector(context),
 
               // Step 5: Calculate injection volume
-              _buildStep(
+              _buildStep(context,
                 stepNumber: 5,
                 title: 'Calculate how much to draw up',
                 explanation:
@@ -189,9 +189,9 @@ class DilutionExplainer extends StatelessWidget {
                       '→ Draw up ${_volumeToInject.toStringAsFixed(2)} mL '
                       'to give ${desiredDose.toStringAsFixed(0)} U',
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 15,
-                        color: AppColors.textPrimary,
+                        color: AppPalette.of(context).textPrimary,
                         height: 1.6,
                       ),
                     ),
@@ -203,7 +203,7 @@ class DilutionExplainer extends StatelessWidget {
         );
   }
 
-  Widget _buildStep({
+  Widget _buildStep(BuildContext context, {
     required int stepNumber,
     required String title,
     required String explanation,
@@ -244,10 +244,10 @@ class DilutionExplainer extends StatelessWidget {
                   Expanded(
                     child: Text(
                       title,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
-                        color: AppColors.textPrimary,
+                        color: AppPalette.of(context).textPrimary,
                       ),
                     ),
                   ),
@@ -256,9 +256,9 @@ class DilutionExplainer extends StatelessWidget {
               const SizedBox(height: 6),
               Text(
                 explanation,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 14,
-                  color: AppColors.textSecondary,
+                  color: AppPalette.of(context).textSecondary,
                   height: 1.5,
                 ),
               ),
@@ -271,12 +271,12 @@ class DilutionExplainer extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: isKeyFormula
                       ? brandColor.withAlpha(20)
-                      : Colors.white.withAlpha(8),
+                      : AppPalette.of(context).subtleFill,
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
                     color: isKeyFormula
                         ? brandColor.withAlpha(80)
-                        : AppColors.borderColor,
+                        : AppPalette.of(context).borderColor,
                   ),
                 ),
                 child: Text(
@@ -285,7 +285,7 @@ class DilutionExplainer extends StatelessWidget {
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                     fontFamily: 'monospace',
-                    color: isKeyFormula ? brandColor : AppColors.textPrimary,
+                    color: isKeyFormula ? brandColor : AppPalette.of(context).textPrimary,
                     height: 1.4,
                   ),
                 ),
@@ -297,13 +297,13 @@ class DilutionExplainer extends StatelessWidget {
     );
   }
 
-  Widget _stepConnector() {
+  Widget _stepConnector(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 15, top: 4, bottom: 4),
       child: Container(
         width: 2,
         height: 20,
-        color: AppColors.borderColor,
+        color: AppPalette.of(context).borderColor,
       ),
     );
   }

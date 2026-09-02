@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart' show CupertinoPage;
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -8,6 +9,7 @@ import 'screens/highlight/muscle_highlighter_screen.dart';
 import 'screens/highlight/captures_review_screen.dart';
 import 'screens/calculator/calculator_screen.dart';
 import 'screens/session/session_screen.dart';
+import 'screens/session/live_session_screen.dart';
 import 'screens/identify/identify_screen.dart';
 import 'screens/plan/pattern_plan_screen.dart';
 
@@ -28,28 +30,13 @@ final router = GoRouter(
       path: '/muscle/:id',
       pageBuilder: (context, state) {
         final id = state.pathParameters['id'] ?? '';
-        return CustomTransitionPage<void>(
+        // The platform page, not a custom fade+slide: the custom transition
+        // dropped the iOS edge-swipe back gesture on the most-visited screen
+        // in the app. CupertinoPage keeps it (and is the Material default on
+        // iOS anyway, so the other routes already behave this way).
+        return CupertinoPage<void>(
           key: state.pageKey,
           child: _MuscleRoute(id: id),
-          transitionDuration: const Duration(milliseconds: 300),
-          reverseTransitionDuration: const Duration(milliseconds: 250),
-          transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            final curved = CurvedAnimation(
-              parent: animation,
-              curve: Curves.easeOutCubic,
-              reverseCurve: Curves.easeInCubic,
-            );
-            return FadeTransition(
-              opacity: curved,
-              child: SlideTransition(
-                position: Tween<Offset>(
-                  begin: const Offset(0.05, 0),
-                  end: Offset.zero,
-                ).animate(curved),
-                child: child,
-              ),
-            );
-          },
         );
       },
     ),
@@ -65,6 +52,10 @@ final router = GoRouter(
             int.tryParse(state.uri.queryParameters['view'] ?? '') ?? 0;
         return MuscleHighlighterScreen(muscle: muscle, viewIndex: view);
       },
+    ),
+    GoRoute(
+      path: '/session/live',
+      builder: (context, state) => const LiveSessionScreen(),
     ),
     GoRoute(
       path: '/pattern/:id/plan',

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kIsWeb, defaultTargetPlatform;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
@@ -56,6 +57,19 @@ class _DashboardPageState extends State<DashboardPage> {
 
   /// True when we should show the pattern landing page
   bool get _showPatternLanding => _selectedCategory == null && _searchQuery.isEmpty;
+
+  /// Keyboard-shortcut hints only where there is a keyboard to press them on.
+  /// The "/" badge in the search field was showing on the phone.
+  bool get _showsKeyboardHints =>
+      kIsWeb ||
+      defaultTargetPlatform == TargetPlatform.macOS ||
+      defaultTargetPlatform == TargetPlatform.windows ||
+      defaultTargetPlatform == TargetPlatform.linux;
+
+  void _clearSearch() {
+    _searchController.clear();
+    _onSearchChanged('');
+  }
 
   @override
   void dispose() {
@@ -306,8 +320,12 @@ class _DashboardPageState extends State<DashboardPage> {
           _searchController.clear();
         }
       }),
+      behavior: HitTestBehavior.opaque,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
+        // Thumb-sized: the chips were 30px tall, well under the 44pt target.
+        constraints: const BoxConstraints(minHeight: 40),
+        alignment: Alignment.center,
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
         decoration: BoxDecoration(
           color: active ? color.withAlpha(30) : Colors.transparent,
@@ -327,13 +345,17 @@ class _DashboardPageState extends State<DashboardPage> {
 
   Widget _navChip(IconData icon, String label, Color color, bool isDark, VoidCallback onTap,
       {bool compact = false}) {
-    return GestureDetector(
+    return Semantics(
+      button: true,
+      // The label is what VoiceOver reads once the chip goes icon-only.
+      label: label,
+      child: GestureDetector(
       onTap: onTap,
       behavior: HitTestBehavior.opaque,
       child: Container(
-        // 36px tall either way: these are the only always-reachable actions
+        // 44pt tall either way: these are the only always-reachable actions
         // on the screen, so they stay thumb-sized when the label drops.
-        constraints: const BoxConstraints(minHeight: 36),
+        constraints: const BoxConstraints(minHeight: 44),
         alignment: Alignment.center,
         padding: EdgeInsets.symmetric(horizontal: compact ? 11 : 10, vertical: 6),
         decoration: BoxDecoration(
@@ -349,6 +371,7 @@ class _DashboardPageState extends State<DashboardPage> {
           ],
         ]),
       ),
+      ),
     );
   }
 
@@ -358,7 +381,10 @@ class _DashboardPageState extends State<DashboardPage> {
     const color = AppTheme.primary;
     return GestureDetector(
       onTap: () => context.push('/session'),
+      behavior: HitTestBehavior.opaque,
       child: Container(
+        constraints: const BoxConstraints(minHeight: 44),
+        alignment: Alignment.center,
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
         decoration: BoxDecoration(
           color: count > 0 ? color.withAlpha(30) : Colors.transparent,
@@ -434,6 +460,12 @@ class _DashboardPageState extends State<DashboardPage> {
         Expanded(child: TextField(
           controller: _searchController, focusNode: _searchFocusNode,
           onChanged: _onSearchChanged,
+          // Muscle names are not dictionary words: iOS autocorrect was
+          // rewriting them mid-search.
+          autocorrect: false,
+          enableSuggestions: false,
+          textCapitalization: TextCapitalization.none,
+          textInputAction: TextInputAction.search,
           style: GoogleFonts.sourceSans3(fontSize: 13),
           decoration: InputDecoration(
             hintText: 'Search muscles, patterns, body regions...',
@@ -441,13 +473,27 @@ class _DashboardPageState extends State<DashboardPage> {
             hintStyle: GoogleFonts.sourceSans3(color: AppTheme.textTertiary, fontSize: 13),
             isDense: true, contentPadding: const EdgeInsets.symmetric(vertical: 10)),
         )),
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-          decoration: BoxDecoration(
-            color: isDark ? AppTheme.borderDark : AppTheme.borderLight,
-            borderRadius: BorderRadius.circular(4)),
-          child: Text('/', style: GoogleFonts.ibmPlexMono(fontSize: 11, color: AppTheme.textTertiary)),
-        ),
+        if (_searchQuery.isNotEmpty)
+          Semantics(
+            button: true,
+            label: 'Clear search',
+            child: GestureDetector(
+              onTap: _clearSearch,
+              behavior: HitTestBehavior.opaque,
+              child: const SizedBox(
+                width: 36, height: 36,
+                child: Icon(Icons.cancel_rounded, size: 18, color: AppTheme.textTertiary),
+              ),
+            ),
+          )
+        else if (_showsKeyboardHints)
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+            decoration: BoxDecoration(
+              color: isDark ? AppTheme.borderDark : AppTheme.borderLight,
+              borderRadius: BorderRadius.circular(4)),
+            child: Text('/', style: GoogleFonts.ibmPlexMono(fontSize: 11, color: AppTheme.textTertiary)),
+          ),
       ]),
     );
   }
@@ -585,7 +631,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 child: Text(
                   '${pattern.muscles.where(context.read<MuscleDataProvider>().isVisible).length} muscles',
                   style: GoogleFonts.ibmPlexMono(
-                    fontSize: 9, fontWeight: FontWeight.w600, color: regionColor)),
+                    fontSize: 10, fontWeight: FontWeight.w600, color: regionColor)),
               ),
               const Spacer(),
               // Straight to the planner, without going through the filtered
@@ -641,14 +687,19 @@ class _DashboardPageState extends State<DashboardPage> {
                 _searchController.clear();
                 _selectedIndex = -1;
               }),
-              child: Row(mainAxisSize: MainAxisSize.min, children: [
-                Icon(Icons.arrow_back_ios_rounded, size: 12, color: AppTheme.patternColor),
-                const SizedBox(width: 4),
-                Text('Back to patterns', style: GoogleFonts.ibmPlexMono(
-                  fontSize: 10, fontWeight: FontWeight.w600, color: AppTheme.patternColor)),
-              ]),
+              behavior: HitTestBehavior.opaque,
+              child: Container(
+                constraints: const BoxConstraints(minHeight: 44),
+                alignment: Alignment.centerLeft,
+                child: Row(mainAxisSize: MainAxisSize.min, children: [
+                  Icon(Icons.arrow_back_ios_rounded, size: 12, color: AppTheme.patternColor),
+                  const SizedBox(width: 4),
+                  Text('Back to patterns', style: GoogleFonts.ibmPlexMono(
+                    fontSize: 10, fontWeight: FontWeight.w600, color: AppTheme.patternColor)),
+                ]),
+              ),
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 4),
             Row(children: [
               Container(width: 4, height: 20, decoration: BoxDecoration(
                 color: _catColor, borderRadius: BorderRadius.circular(2))),

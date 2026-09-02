@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show defaultTargetPlatform, TargetPlatform, kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
@@ -129,9 +130,23 @@ Future<void> printCheatSheet(BuildContext context, Muscle muscle) async {
     ),
   );
 
+  await _present(doc, '${muscle.name} — Cheat Sheet');
+}
+
+/// Hands the document to the platform: the share sheet on a phone (where
+/// AirPrint, Files, Mail, and AirDrop all live behind it), the print dialog
+/// on the desktop and web.
+Future<void> _present(pw.Document doc, String name) async {
+  final mobile = !kIsWeb &&
+      (defaultTargetPlatform == TargetPlatform.iOS ||
+          defaultTargetPlatform == TargetPlatform.android);
+  if (mobile) {
+    await Printing.sharePdf(bytes: await doc.save(), filename: '$name.pdf');
+    return;
+  }
   await Printing.layoutPdf(
     onLayout: (PdfPageFormat format) async => doc.save(),
-    name: '${muscle.name} — Cheat Sheet',
+    name: name,
   );
 }
 
@@ -405,10 +420,7 @@ Future<void> printSessionPlan(
     ),
   );
 
-  await Printing.layoutPdf(
-    onLayout: (PdfPageFormat format) async => doc.save(),
-    name: 'Injection Session Plan — $dateStr',
-  );
+  await _present(doc, 'Injection Session Plan — $dateStr');
 }
 
 pw.Widget _th(String text) => pw.Padding(

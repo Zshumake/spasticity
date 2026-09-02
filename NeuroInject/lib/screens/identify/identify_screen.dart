@@ -128,7 +128,13 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
     if (_correct != null || _probe == null) return;
     _clock.stop();
     final hit = _probe!.hit(local, box);
-    HapticFeedback.selectionClick();
+    // The verdict in the hand before it is on the screen: a light tap for a
+    // hit, a heavy one for a miss.
+    if (hit) {
+      HapticFeedback.lightImpact();
+    } else {
+      HapticFeedback.heavyImpact();
+    }
     setState(() {
       _tap = local;
       _correct = hit;

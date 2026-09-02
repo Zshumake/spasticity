@@ -37,6 +37,16 @@ class SessionItem {
 
   final InjectionSide side;
 
+  /// Injection sites actually performed this session. Counted up as they
+  /// happen rather than down from a plan: fewer than half the muscles
+  /// document a site count, and those that do give a range (1-4), so a target
+  /// number would be invented for most of the list.
+  final int sitesLogged;
+
+  /// When this muscle was marked finished, or null while it is still to do.
+  /// A muscle finished with [sitesLogged] of 0 was deliberately skipped.
+  final int? completedAtMillis;
+
   const SessionItem({
     required this.muscleId,
     required this.muscleName,
@@ -44,12 +54,26 @@ class SessionItem {
     required this.brand,
     required this.dose,
     this.side = InjectionSide.right,
+    this.sitesLogged = 0,
+    this.completedAtMillis,
   });
+
+  bool get isDone => completedAtMillis != null;
+  bool get wasSkipped => isDone && sitesLogged == 0;
 
   /// Total units this item contributes to the session (doubled if bilateral).
   double get totalUnits => dose * side.multiplier;
 
-  SessionItem copyWith({String? brand, double? dose, InjectionSide? side}) {
+  /// [clearCompletedAt] is the only way to un-finish an item: passing null to
+  /// `completedAtMillis` cannot be told apart from omitting it.
+  SessionItem copyWith({
+    String? brand,
+    double? dose,
+    InjectionSide? side,
+    int? sitesLogged,
+    int? completedAtMillis,
+    bool clearCompletedAt = false,
+  }) {
     return SessionItem(
       muscleId: muscleId,
       muscleName: muscleName,
@@ -57,6 +81,9 @@ class SessionItem {
       brand: brand ?? this.brand,
       dose: dose ?? this.dose,
       side: side ?? this.side,
+      sitesLogged: sitesLogged ?? this.sitesLogged,
+      completedAtMillis:
+          clearCompletedAt ? null : (completedAtMillis ?? this.completedAtMillis),
     );
   }
 
@@ -67,6 +94,8 @@ class SessionItem {
         'brand': brand,
         'dose': dose,
         'side': side.name,
+        'sitesLogged': sitesLogged,
+        'completedAt': completedAtMillis,
       };
 
   factory SessionItem.fromJson(Map<String, dynamic> json) {
@@ -80,6 +109,10 @@ class SessionItem {
         (s) => s.name == json['side'],
         orElse: () => InjectionSide.right,
       ),
+      // Absent in plans saved before live sessions existed: an old plan
+      // reloads as one that has not been started, which is correct.
+      sitesLogged: (json['sitesLogged'] as num?)?.toInt() ?? 0,
+      completedAtMillis: (json['completedAt'] as num?)?.toInt(),
     );
   }
 }
