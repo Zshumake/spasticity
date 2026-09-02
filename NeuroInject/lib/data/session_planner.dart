@@ -113,13 +113,22 @@ class SessionPlanner extends ChangeNotifier {
   void addOrUpdate(SessionItem item) {
     final idx = _items.indexWhere((i) => i.muscleId == item.muscleId);
     if (idx >= 0) {
-      _items[idx] = item;
+      _items[idx] = _keepProgress(_items[idx], item);
     } else {
       _items.add(item);
     }
     _save();
     notifyListeners();
   }
+
+  /// A plan line being replaced keeps the live-session fields of the line it
+  /// replaces. Adding a pattern mid-procedure used to reset the overlapping
+  /// muscles to zero sites and not-done — silently, with a needle in hand.
+  SessionItem _keepProgress(SessionItem existing, SessionItem incoming) =>
+      incoming.copyWith(
+        sitesLogged: existing.sitesLogged,
+        completedAtMillis: existing.completedAtMillis,
+      );
 
   /// Add several muscles at once (replacing any existing line by muscleId),
   /// notifying listeners a single time. Used for "add a whole pattern".
@@ -128,7 +137,7 @@ class SessionPlanner extends ChangeNotifier {
     for (final item in newItems) {
       final idx = _items.indexWhere((i) => i.muscleId == item.muscleId);
       if (idx >= 0) {
-        _items[idx] = item;
+        _items[idx] = _keepProgress(_items[idx], item);
       } else {
         _items.add(item);
       }
@@ -156,6 +165,8 @@ class SessionPlanner extends ChangeNotifier {
 
   void clear() {
     if (_items.isEmpty) return;
+    // The clock must not keep running against a plan that no longer exists.
+    _startedAtMillis = null;
     _items = [];
     _save();
     notifyListeners();
@@ -185,7 +196,12 @@ class SessionPlanner extends ChangeNotifier {
   void loadSaved(String name) {
     final saved = _saved[name];
     if (saved == null) return;
-    _items = List<SessionItem>.from(saved);
+    // A saved plan is a fresh visit: any session in progress ends, and the
+    // loaded lines start with no progress even if the snapshot carried some.
+    _startedAtMillis = null;
+    _items = [
+      for (final i in saved) i.copyWith(sitesLogged: 0, clearCompletedAt: true)
+    ];
     _save();
     notifyListeners();
   }

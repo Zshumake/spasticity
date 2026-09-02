@@ -49,7 +49,11 @@ class _PeelableHighlightState extends State<PeelableHighlight> {
         // doing something — a permanent line across every scan would be
         // chrome, not a tool.
         final split = _seam > 0.001 && _seam < 0.999;
-        return GestureDetector(
+        return Semantics(
+          slider: true,
+          label: 'Highlight reveal',
+          value: '${(100 * (1 - _seam)).round()} percent revealed',
+          child: GestureDetector(
           behavior: HitTestBehavior.opaque,
           onHorizontalDragStart: (d) {
             setState(() => _dragging = true);
@@ -120,6 +124,7 @@ class _PeelableHighlightState extends State<PeelableHighlight> {
               ],
             ],
           ),
+          ),
         );
       },
     );
@@ -163,7 +168,10 @@ class PeelControls extends StatelessWidget {
     ]);
   }
 
-  Widget _button(String label, VoidCallback onTap) => GestureDetector(
+  Widget _button(String label, VoidCallback onTap) => Semantics(
+        button: true,
+        label: label == 'COVER' ? 'Cover the highlight' : 'Reveal the highlight',
+        child: GestureDetector(
         onTap: onTap,
         behavior: HitTestBehavior.opaque,
         child: Container(
@@ -181,6 +189,7 @@ class PeelControls extends StatelessWidget {
                   fontWeight: FontWeight.w700,
                   letterSpacing: 1,
                   color: AppTheme.textSecondary)),
+        ),
         ),
       );
 }

@@ -259,7 +259,11 @@ class _PatternPlanScreenState extends State<PatternPlanScreen> {
     return Row(children: [
       for (final b in ['Botox', 'Xeomin', 'Dysport']) ...[
         Expanded(
-          child: GestureDetector(
+          child: Semantics(
+            button: true,
+            selected: _brand == b,
+            label: 'Plan with $b',
+            child: GestureDetector(
             onTap: () => _setBrand(b, muscles),
             behavior: HitTestBehavior.opaque,
             child: Container(
@@ -287,6 +291,7 @@ class _PatternPlanScreenState extends State<PatternPlanScreen> {
                           : AppTheme.textSecondary)),
             ),
           ),
+          ),
         ),
         if (b != 'Dysport') const SizedBox(width: 7),
       ],
@@ -297,7 +302,13 @@ class _PatternPlanScreenState extends State<PatternPlanScreen> {
     final r = DoseRange.forBrand(m.dosage, _brand);
     final on = _picked.containsKey(m.id);
     final accent = AppTheme.groupColor(m.group);
-    return GestureDetector(
+    return Semantics(
+      button: r != null,
+      checked: on,
+      label: r == null
+          ? '${m.name}, no $_brand dose documented'
+          : '${m.name}, ${DoseRange(r.seed, r.seed).label} units',
+      child: GestureDetector(
       onTap: r == null ? null : () => _toggle(m),
       behavior: HitTestBehavior.opaque,
       child: Container(
@@ -365,6 +376,7 @@ class _PatternPlanScreenState extends State<PatternPlanScreen> {
           ],
         ]),
       ),
+      ),
     );
   }
 
@@ -425,7 +437,13 @@ class _PatternPlanScreenState extends State<PatternPlanScreen> {
           ]),
         ],
         const SizedBox(height: 12),
-        GestureDetector(
+        Semantics(
+          button: true,
+          enabled: _picked.isNotEmpty,
+          label: _picked.isEmpty
+              ? 'Select muscles to plan'
+              : 'Add ${_picked.length} muscles to session',
+          child: GestureDetector(
           onTap: _picked.isEmpty ? null : () => _addToSession(muscles),
           behavior: HitTestBehavior.opaque,
           child: Container(
@@ -448,6 +466,7 @@ class _PatternPlanScreenState extends State<PatternPlanScreen> {
                     color: _picked.isEmpty
                         ? AppTheme.textTertiary
                         : AppTheme.bgDark)),
+          ),
           ),
         ),
       ]),

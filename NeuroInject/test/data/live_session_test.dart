@@ -145,4 +145,63 @@ void main() {
     expect(p.itemFor('a')!.sitesLogged, 0);
     expect(p.itemFor('a')!.isDone, isFalse);
   });
+
+  // ── the data-loss paths found in review ───────────────────────
+
+  test('re-adding a muscle mid-session keeps its progress', () async {
+    final p = await _loaded();
+    p.addAll([_item('a'), _item('b')]);
+    p.startSession();
+    p.logSite('a');
+    p.logSite('a');
+    p.finishMuscle('a');
+
+    // Adding a pattern that overlaps the plan replaces the line's dose and
+    // brand — it must not zero the sites or un-finish the muscle.
+    p.addAll([_item('a', dose: 80), _item('c')]);
+    final a = p.itemFor('a')!;
+    expect(a.dose, 80, reason: 'the new dose is taken');
+    expect(a.sitesLogged, 2, reason: 'sites survive the replacement');
+    expect(a.isDone, isTrue, reason: 'completion survives the replacement');
+    expect(p.current?.muscleId, 'b', reason: 'a stays finished');
+
+    p.addOrUpdate(_item('b', dose: 60));
+    p.logSite('b');
+    p.addOrUpdate(_item('b', dose: 70));
+    expect(p.itemFor('b')!.sitesLogged, 1);
+  });
+
+  test('clearing the plan ends the session too', () async {
+    final p = await _loaded();
+    p.addAll([_item('a')]);
+    p.startSession();
+    expect(p.isRunning, isTrue);
+
+    p.clear();
+    expect(p.isRunning, isFalse,
+        reason: 'the clock must not keep running against an empty plan');
+    expect(p.elapsed, Duration.zero);
+
+    // A plan added afterwards is a fresh one, not a resumption.
+    p.addAll([_item('b')]);
+    expect(p.isRunning, isFalse);
+  });
+
+  test('loading a saved session ends the running one and starts clean',
+      () async {
+    final p = await _loaded();
+    p.addAll([_item('a'), _item('b')]);
+    p.saveCurrentAs('visit');
+    p.startSession();
+    p.logSite('a');
+    p.finishMuscle('a');
+    // Snapshot taken again WITH progress, to prove it is stripped on load.
+    p.saveCurrentAs('visit-with-progress');
+
+    p.loadSaved('visit-with-progress');
+    expect(p.isRunning, isFalse);
+    expect(p.completed, isEmpty);
+    expect(p.itemFor('a')!.sitesLogged, 0);
+    expect(p.count, 2, reason: 'the lines themselves are loaded');
+  });
 }
