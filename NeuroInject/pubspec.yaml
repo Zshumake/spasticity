@@ -42,6 +42,7 @@ dependencies:
   webview_flutter: ^4.10.0
   webview_flutter_web: ^0.2.3  # Official federated web implementation (iframe)
   printing: ^5.13.4
+  share_plus: ^13.3.0
   pdf: ^3.11.3
   # Imported directly by lib/data/coco_download_web.dart (Blob download).
   web: ^1.1.1
@@ -77,6 +78,9 @@ flutter:
     - assets/images/probe_placement/
     - assets/images/anatomy/
     - assets/images/clinical/
+    # Bundled Google Fonts: google_fonts loads these by name before ever
+    # touching the network, so a first launch offline still gets the brand type.
+    - assets/fonts/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

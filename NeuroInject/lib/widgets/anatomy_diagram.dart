@@ -46,7 +46,7 @@ class AnatomyDiagram extends StatelessWidget {
               style: GoogleFonts.ibmPlexMono(
                 color: accentColor,
                 fontWeight: FontWeight.w700,
-                fontSize: 9,
+                fontSize: 10,
                 letterSpacing: 1.5,
               ),
             ),
@@ -136,7 +136,7 @@ class AnatomyDiagram extends StatelessWidget {
                   Icon(icon, size: 12, color: accentColor),
                   const SizedBox(width: 6),
                   Text(label, style: GoogleFonts.ibmPlexMono(
-                    fontSize: 8, fontWeight: FontWeight.w700,
+                    fontSize: 10, fontWeight: FontWeight.w700,
                     letterSpacing: 1.5, color: accentColor)),
                 ],
               ),

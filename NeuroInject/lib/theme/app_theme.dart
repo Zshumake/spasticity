@@ -169,3 +169,32 @@ class AppColors {
   static const warningOrange = AppTheme.amber;
   static const successGreen = AppTheme.success;
 }
+
+/// Theme-aware counterparts of the four [AppColors] members that depend on
+/// the brightness. The legacy constants are the DARK values; painting them on
+/// the light theme (which the app now follows from the system) put light text
+/// on a light page. Accent colours (danger, amber, success) stay constant.
+class AppPalette {
+  final Color textPrimary;
+  final Color textSecondary;
+  final Color bgCard;
+  final Color borderColor;
+  /// A chip or control surface one step above the card.
+  final Color surfaceRaised;
+  /// A barely-there wash for row backgrounds.
+  final Color subtleFill;
+  /// Line-work colour for drawings (the syringe ticks and labels).
+  final Color ink;
+  const AppPalette._(this.textPrimary, this.textSecondary, this.bgCard,
+      this.borderColor, this.surfaceRaised, this.subtleFill, this.ink);
+
+  static const dark = AppPalette._(AppTheme.textPrimary, AppTheme.textSecondary,
+      AppTheme.surfaceDark, AppTheme.borderDark, Color(0xFF1D2128),
+      Color(0x08FFFFFF), Colors.white);
+  static const light = AppPalette._(AppTheme.textPrimaryLight,
+      AppTheme.textSecondaryLight, AppTheme.surfaceLight, AppTheme.borderLight,
+      Color(0xFFE4E9F0), Color(0x08000000), Colors.black);
+
+  static AppPalette of(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark ? dark : light;
+}

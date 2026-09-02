@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show defaultTargetPlatform, TargetPlatform, kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -43,7 +44,7 @@ class CapturesReviewScreen extends StatelessWidget {
                     GoogleFonts.sora(fontSize: 16, fontWeight: FontWeight.w700)),
             Text('TRAINING SET',
                 style: GoogleFonts.ibmPlexMono(
-                    fontSize: 9,
+                    fontSize: 10,
                     letterSpacing: 1.6,
                     color: AppTheme.primary)),
           ],
@@ -247,13 +248,15 @@ class CapturesReviewScreen extends StatelessWidget {
           FilledButton.icon(
             style: FilledButton.styleFrom(backgroundColor: AppTheme.primary),
             icon: const Icon(Icons.download, size: 16),
-            label: const Text('Download .json'),
+            label: Text(_mobile ? 'Share .json' : 'Download .json'),
             onPressed: () async {
               Navigator.of(ctx).pop();
               try {
                 final where = await saveJson(json, _exportFileName());
                 messenger.showSnackBar(SnackBar(
-                  content: Text('Saved ${_exportFileName()} to $where'),
+                  content: Text(_mobile
+                      ? 'Shared ${_exportFileName()}'
+                      : 'Saved ${_exportFileName()} to $where'),
                   behavior: SnackBarBehavior.floating,
                   duration: const Duration(seconds: 6),
                 ));
@@ -270,6 +273,12 @@ class CapturesReviewScreen extends StatelessWidget {
       ),
     );
   }
+
+  /// On a phone the export goes to the share sheet, not a Downloads folder.
+  bool get _mobile =>
+      !kIsWeb &&
+      (defaultTargetPlatform == TargetPlatform.iOS ||
+          defaultTargetPlatform == TargetPlatform.android);
 
   void _confirmDelete(BuildContext context, HighlightCapture c) {
     final store = context.read<HighlightCaptureStore>();

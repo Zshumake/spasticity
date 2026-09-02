@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../models/segmentation.dart';
@@ -94,11 +95,20 @@ class _DrawingCanvasState extends State<DrawingCanvas> {
                 ),
               ),
               Positioned.fill(
-                child: GestureDetector(
+                child: RawGestureDetector(
                   behavior: HitTestBehavior.opaque,
-                  onPanStart: (d) => _start(d.localPosition),
-                  onPanUpdate: (d) => _move(d.localPosition),
-                  onPanEnd: (_) => _end(),
+                  gestures: <Type, GestureRecognizerFactory>{
+                    _EagerPanRecognizer:
+                        GestureRecognizerFactoryWithHandlers<_EagerPanRecognizer>(
+                      () => _EagerPanRecognizer(),
+                      (r) {
+                        r.onStart = (d) => _start(d.localPosition);
+                        r.onUpdate = (d) => _move(d.localPosition);
+                        r.onEnd = (_) => _end();
+                        r.onCancel = _end;
+                      },
+                    ),
+                  },
                 ),
               ),
             ],
@@ -134,5 +144,18 @@ class _DrawingCanvasState extends State<DrawingCanvas> {
                 fontSize: 11, color: AppTheme.textTertiary)),
       ]),
     );
+  }
+}
+
+/// A pan that claims the pointer the moment it lands. The canvas sits inside
+/// a scrolling list, and a plain pan recognizer has to win the gesture arena
+/// against the list's vertical drag: a lasso that starts mostly vertical was
+/// scrolling the page mid-outline on iOS. On this surface a touch is always a
+/// stroke, so there is nothing to arbitrate.
+class _EagerPanRecognizer extends PanGestureRecognizer {
+  @override
+  void addAllowedPointer(PointerDownEvent event) {
+    super.addAllowedPointer(event);
+    resolve(GestureDisposition.accepted);
   }
 }

@@ -139,6 +139,10 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     final isFav = favs.isFavorite(muscle.id);
     final inSession = context.watch<SessionPlanner>().contains(muscle.id);
 
+    // Four actions crowded the title down to "Pectoralis Ma…" on a phone;
+    // the two rare ones (print, copy) fold into a menu there.
+    final compact = MediaQuery.sizeOf(context).width < 600;
+
     return Scaffold(
       backgroundColor: isDark ? AppTheme.bgDark : AppTheme.bgLight,
       appBar: AppBar(
@@ -165,18 +169,54 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
                 key: ValueKey(isFav),
                 color: isFav ? AppTheme.amber : (isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight)),
             ),
-            onPressed: () => favs.toggleFavorite(muscle.id),
+            tooltip: isFav ? 'Remove from favorites' : 'Add to favorites',
+            onPressed: () {
+              HapticFeedback.selectionClick();
+              favs.toggleFavorite(muscle.id);
+            },
           ),
-          IconButton(
-            icon: const Icon(Icons.print_outlined, size: 20),
-            tooltip: 'Print cheat sheet',
-            onPressed: () => printCheatSheet(context, muscle),
-          ),
-          IconButton(
-            icon: const Icon(Icons.copy_outlined, size: 20),
-            tooltip: 'Copy procedure note',
-            onPressed: () => _copyProcedureNote(context),
-          ),
+          if (!compact) ...[
+            IconButton(
+              icon: const Icon(Icons.print_outlined, size: 20),
+              tooltip: 'Print cheat sheet',
+              onPressed: () => printCheatSheet(context, muscle),
+            ),
+            IconButton(
+              icon: const Icon(Icons.copy_outlined, size: 20),
+              tooltip: 'Copy procedure note',
+              onPressed: () => _copyProcedureNote(context),
+            ),
+          ] else
+            PopupMenuButton<String>(
+              icon: const Icon(Icons.more_vert_rounded),
+              tooltip: 'More',
+              onSelected: (v) {
+                switch (v) {
+                  case 'print':
+                    printCheatSheet(context, muscle);
+                  case 'copy':
+                    _copyProcedureNote(context);
+                }
+              },
+              itemBuilder: (_) => const [
+                PopupMenuItem(
+                  value: 'print',
+                  child: ListTile(
+                    leading: Icon(Icons.print_outlined, size: 20),
+                    title: Text('Share cheat sheet'),
+                    contentPadding: EdgeInsets.zero,
+                  ),
+                ),
+                PopupMenuItem(
+                  value: 'copy',
+                  child: ListTile(
+                    leading: Icon(Icons.copy_outlined, size: 20),
+                    title: Text('Copy procedure note'),
+                    contentPadding: EdgeInsets.zero,
+                  ),
+                ),
+              ],
+            ),
         ],
       ),
       floatingActionButton: FloatingActionButton.small(
@@ -189,15 +229,33 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
       body: LayoutBuilder(
         builder: (context, constraints) {
           final wide = constraints.maxWidth >= 1100;
+          final side = wide ? 32.0 : 16.0;
+          // Bottom inset clears the home indicator AND the mode FAB, which
+          // was sitting on top of the last lines of the landmark list.
+          final padding = EdgeInsets.fromLTRB(side, 16, side,
+              16 + 72 + MediaQuery.viewPaddingOf(context).bottom);
           return Center(
             child: ConstrainedBox(
               constraints: BoxConstraints(maxWidth: wide ? 1280 : 820),
-              child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(horizontal: wide ? 32 : 16, vertical: 16),
-                child: _procedureMode
-                    ? _buildProcedureView(isDark)
-                    : _buildStudyView(isDark, wide),
-              ),
+              child: _procedureMode || wide
+                  ? SingleChildScrollView(
+                      padding: padding,
+                      child: _procedureMode
+                          ? _buildProcedureView(isDark)
+                          : _buildStudyView(isDark, wide),
+                    )
+                  // One column on a phone is a LAZY list: the study view is
+                  // a dozen sections with full-resolution imagery in half of
+                  // them, and a single scroll view decoded every image on
+                  // open. Sections below the fold now build when reached.
+                  : Builder(builder: (context) {
+                      final sections = _studySections(isDark);
+                      return ListView.builder(
+                        padding: padding,
+                        itemCount: sections.length,
+                        itemBuilder: (_, i) => sections[i],
+                      );
+                    }),
             ),
           );
         },
@@ -208,13 +266,22 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
   // ═══════════════════════════════════════════════════════════════
   //  STUDY MODE — full educational content
   // ═══════════════════════════════════════════════════════════════
-  Widget _buildStudyView(bool isDark, bool wide) {
-    // Two-column layout balanced by content weight.
-    // Left:  Landmarks → Ultrasound Guide → Probe Placement
-    // Right: Needle Placement → Setup & Tips → Pearls → Supplies
-    // Clinical flow still intact (scan before inject) because
-    // users read left-then-right as a natural top-down sequence.
-    final left = <Widget>[
+  /// The study view's sections in reading order, for the phone's lazy list.
+  List<Widget> _studySections(bool isDark) {
+    return [
+      _buildHeroHeader(isDark),
+      const SizedBox(height: 24),
+      ..._studyLeft(isDark),
+      const SizedBox(height: 16),
+      ..._studyRight(isDark),
+      if (muscle.relatedMuscles.isNotEmpty) ...[
+        const SizedBox(height: 24),
+        _buildRelatedMuscles(isDark),
+      ],
+    ];
+  }
+
+  List<Widget> _studyLeft(bool isDark) => <Widget>[
       _section('BONY LANDMARKS', Icons.location_on_outlined, null,
         LandmarkList(landmarks: muscle.landmarks)),
       const SizedBox(height: 16),
@@ -235,7 +302,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
       ],
     ];
 
-    final right = <Widget>[
+  List<Widget> _studyRight(bool isDark) => <Widget>[
       _section('NEEDLE PLACEMENT', Icons.my_location, AppTheme.amber,
         StepList(steps: muscle.placement)),
       const SizedBox(height: 16),
@@ -256,6 +323,15 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         _buildSuppliesChecklist(isDark),
       ],
     ];
+
+  Widget _buildStudyView(bool isDark, bool wide) {
+    // Two-column layout balanced by content weight.
+    // Left:  Landmarks → Ultrasound Guide → Probe Placement
+    // Right: Needle Placement → Setup & Tips → Pearls → Supplies
+    // Clinical flow still intact (scan before inject) because
+    // users read left-then-right as a natural top-down sequence.
+    final left = _studyLeft(isDark);
+    final right = _studyRight(isDark);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -665,7 +741,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         const SizedBox(width: 8),
         Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: [
           Text(label, style: GoogleFonts.ibmPlexMono(
-            fontSize: 8, fontWeight: FontWeight.w700, letterSpacing: 1.5,
+            fontSize: 10, fontWeight: FontWeight.w700, letterSpacing: 1.5,
             color: accent.withAlpha(200))),
           Text(value, style: GoogleFonts.sourceSans3(
             fontSize: 13, fontWeight: FontWeight.w700,
@@ -716,6 +792,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
       return;
     }
     context.read<SessionPlanner>().addOrUpdate(item);
+    HapticFeedback.lightImpact();
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('Added ${muscle.name} to session'),
@@ -953,7 +1030,11 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     final active = _usView == index;
     final accent = _groupColor;
     return GestureDetector(
-      onTap: () => setState(() => _usView = index),
+      onTap: () {
+        if (active) return;
+        HapticFeedback.selectionClick();
+        setState(() => _usView = index);
+      },
       behavior: HitTestBehavior.opaque,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 160),
@@ -1305,7 +1386,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
                     ),
                     child: Text(title.replaceAll('\n', ' '),
                       style: GoogleFonts.ibmPlexMono(
-                        fontSize: 9, fontWeight: FontWeight.w600,
+                        fontSize: 10, fontWeight: FontWeight.w600,
                         color: Colors.white.withAlpha(220), letterSpacing: 0.8)),
                   ),
                 ),
@@ -1354,7 +1435,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
             maxLines: 2, overflow: TextOverflow.ellipsis,
             style: fileName != null
                 ? GoogleFonts.ibmPlexMono(
-                    fontSize: 8, height: 1.3,
+                    fontSize: 10, height: 1.3,
                     color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight)
                 : GoogleFonts.sourceSans3(
                     fontSize: 10, height: 1.3,
@@ -1368,7 +1449,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
               border: Border.all(color: accentColor.withAlpha(40))),
             child: Text(fileName != null ? 'PHOTO NEEDED' : 'ADD PHOTO',
               style: GoogleFonts.ibmPlexMono(
-                fontSize: 8, fontWeight: FontWeight.w700,
+                fontSize: 10, fontWeight: FontWeight.w700,
                 letterSpacing: 1.5, color: accentColor.withAlpha(180))),
           ),
         ],

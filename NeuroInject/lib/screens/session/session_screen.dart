@@ -64,13 +64,38 @@ class SessionScreen extends StatelessWidget {
             ),
         ],
       ),
+      // The plan becomes a procedure here. Running or not, it is one tap from
+      // the plan it runs — see LiveSessionScreen.
+      floatingActionButton: planner.isEmpty
+          ? null
+          : FloatingActionButton.extended(
+              onPressed: () {
+                if (!planner.isRunning) planner.startSession();
+                context.push('/session/live');
+              },
+              backgroundColor:
+                  planner.isRunning ? AppTheme.danger : AppTheme.success,
+              foregroundColor: AppTheme.bgDark,
+              icon: Icon(
+                  planner.isRunning
+                      ? Icons.play_arrow_rounded
+                      : Icons.play_circle_outline_rounded,
+                  size: 20),
+              label: Text(planner.isRunning ? 'RESUME' : 'START SESSION',
+                  style: GoogleFonts.ibmPlexMono(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 1)),
+            ),
       body: planner.isEmpty
           ? _emptyState(context, isDark)
           : Center(
               child: ConstrainedBox(
                 constraints: const BoxConstraints(maxWidth: 820),
                 child: ListView(
-                  padding: const EdgeInsets.all(16),
+                  // Bottom inset so the disclaimer clears the home indicator.
+                  padding: EdgeInsets.fromLTRB(
+                      16, 16, 16, 16 + MediaQuery.viewPaddingOf(context).bottom),
                   children: [
                     _sectionLabel('TOTALS VS LABELED SESSION MAX', isDark),
                     const SizedBox(height: 8),
@@ -416,7 +441,7 @@ class SessionScreen extends StatelessWidget {
   Widget _sectionLabel(String text, bool isDark) {
     return Text(text,
         style: GoogleFonts.ibmPlexMono(
-            fontSize: 9,
+            fontSize: 10,
             fontWeight: FontWeight.w700,
             letterSpacing: 2.0,
             color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight));

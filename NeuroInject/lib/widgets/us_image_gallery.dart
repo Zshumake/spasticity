@@ -49,7 +49,7 @@ class _USImageGalleryState extends State<USImageGallery> {
               style: GoogleFonts.ibmPlexMono(
                 color: widget.accentColor,
                 fontWeight: FontWeight.w700,
-                fontSize: 9,
+                fontSize: 10,
                 letterSpacing: 1.5,
               ),
             ),
@@ -142,7 +142,7 @@ class _USImageGalleryState extends State<USImageGallery> {
                         const SizedBox(width: 4),
                         Text('Tap to enlarge',
                             style: GoogleFonts.sourceSans3(
-                                fontSize: 9, color: Colors.white70)),
+                                fontSize: 10, color: Colors.white70)),
                       ],
                     ),
                   ),
@@ -183,6 +183,9 @@ class _USImageGalleryState extends State<USImageGallery> {
                     child: Image.asset(
                       widget.imagePaths[index],
                       fit: BoxFit.cover,
+                      // Decode at thumbnail size, not the full scan.
+                      cacheWidth:
+                          (72 * MediaQuery.devicePixelRatioOf(context)).round(),
                       errorBuilder: (_, _, _) => Container(
                         color: isDark
                             ? AppTheme.surfaceDark
