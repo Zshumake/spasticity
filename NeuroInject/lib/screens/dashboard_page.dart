@@ -519,7 +519,7 @@ class _DashboardPageState extends State<DashboardPage> {
             ? SliverList.separated(
                 itemCount: pats.length,
                 separatorBuilder: (_, i) => const SizedBox(height: 10),
-                itemBuilder: (ctx, i) => _patternCard(pats[i], isDark),
+                itemBuilder: (ctx, i) => _patternCard(pats[i], isDark, asRow: true),
               )
             : SliverGrid(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -542,7 +542,11 @@ class _DashboardPageState extends State<DashboardPage> {
     return slivers;
   }
 
-  Widget _patternCard(SpasticityPattern pattern, bool isDark) {
+  /// [asRow] lays the card out for a LIST (unbounded height), where the
+  /// Spacers that fill a fixed grid cell would instead be an unbounded-
+  /// constraints crash.
+  Widget _patternCard(SpasticityPattern pattern, bool isDark,
+      {bool asRow = false}) {
     final regionColor = _regionColor(pattern.region);
     return GestureDetector(
       onTap: () => setState(() { _selectedCategory = pattern.id; _selectedIndex = -1; }),
@@ -554,6 +558,7 @@ class _DashboardPageState extends State<DashboardPage> {
           border: Border.all(color: regionColor.withAlpha(50)),
         ),
         child: Column(
+          mainAxisSize: asRow ? MainAxisSize.min : MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -568,7 +573,7 @@ class _DashboardPageState extends State<DashboardPage> {
               fontSize: 11, height: 1.3,
               color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight),
               maxLines: 2, overflow: TextOverflow.ellipsis),
-            const Spacer(),
+            if (asRow) const SizedBox(height: 10) else const Spacer(),
             // Muscle count badge
             Row(children: [
               Container(
@@ -583,8 +588,24 @@ class _DashboardPageState extends State<DashboardPage> {
                     fontSize: 9, fontWeight: FontWeight.w600, color: regionColor)),
               ),
               const Spacer(),
-              Icon(Icons.arrow_forward_ios_rounded, size: 10,
-                  color: AppTheme.textTertiary.withAlpha(100)),
+              // Straight to the planner, without going through the filtered
+              // list first: the pattern IS the question being asked.
+              GestureDetector(
+                onTap: () => context.push('/pattern/${pattern.id}/plan'),
+                behavior: HitTestBehavior.opaque,
+                child: Container(
+                  constraints: const BoxConstraints(minHeight: 32),
+                  alignment: Alignment.center,
+                  padding: const EdgeInsets.symmetric(horizontal: 11),
+                  decoration: BoxDecoration(
+                    color: AppTheme.patternColor.withAlpha(24),
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(color: AppTheme.patternColor.withAlpha(90))),
+                  child: Text('PLAN', style: GoogleFonts.ibmPlexMono(
+                    fontSize: 10, fontWeight: FontWeight.w700,
+                    letterSpacing: 1.2, color: AppTheme.patternColor)),
+                ),
+              ),
             ]),
           ],
         ),

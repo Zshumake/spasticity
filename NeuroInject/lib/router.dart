@@ -9,6 +9,7 @@ import 'screens/highlight/captures_review_screen.dart';
 import 'screens/calculator/calculator_screen.dart';
 import 'screens/session/session_screen.dart';
 import 'screens/identify/identify_screen.dart';
+import 'screens/plan/pattern_plan_screen.dart';
 
 final router = GoRouter(
   routes: [
@@ -64,6 +65,11 @@ final router = GoRouter(
             int.tryParse(state.uri.queryParameters['view'] ?? '') ?? 0;
         return MuscleHighlighterScreen(muscle: muscle, viewIndex: view);
       },
+    ),
+    GoRoute(
+      path: '/pattern/:id/plan',
+      builder: (context, state) =>
+          PatternPlanScreen(patternId: state.pathParameters['id'] ?? ''),
     ),
     GoRoute(
       path: '/identify',
