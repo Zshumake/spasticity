@@ -3,6 +3,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
+import '../../data/cover_fit.dart';
 import '../../theme/app_theme.dart';
 
 /// Renders an ultrasound scan with one muscle tinted, from a mask baked by
@@ -54,6 +55,17 @@ class BakedHighlight extends StatefulWidget {
   /// 0–1 overall strength, for a reveal animation or a learner "show me" toggle.
   final double intensity;
 
+  /// Rectangles, in SOURCE IMAGE pixels, to paint over — the sonographer's
+  /// burned-in labels. Empty everywhere except the identify round, where the
+  /// label names the muscle being asked about. See tools/export_label_boxes.py.
+  final List<Rect> occlude;
+
+  /// Fraction of the width, from the left, left UNTINTED. 0 tints the whole
+  /// scan (the default, and what every reference surface uses); 1 shows the
+  /// plain scan. Anything between is the peel seam: the learner covers the
+  /// answer, names the muscle, then drags back to check.
+  final double revealFrom;
+
   final BoxFit fit;
 
   const BakedHighlight({
@@ -62,6 +74,8 @@ class BakedHighlight extends StatefulWidget {
     required this.maskAsset,
     this.accent,
     this.intensity = 1.0,
+    this.revealFrom = 0.0,
+    this.occlude = const [],
     this.fit = BoxFit.cover,
   });
 
@@ -144,6 +158,8 @@ class _BakedHighlightState extends State<BakedHighlight> {
           mask: _mask,
           accent: widget.accent ?? BakedHighlight.terracotta,
           intensity: widget.intensity.clamp(0.0, 1.0),
+          revealFrom: widget.revealFrom.clamp(0.0, 1.0),
+          occlude: widget.occlude,
           fit: widget.fit,
         ),
         size: Size.infinite,
@@ -162,6 +178,12 @@ class BakedHighlightPainter extends CustomPainter {
   /// colourless (white RGB + alpha), so there is no colour to fall back on.
   final Color accent;
   final double intensity;
+
+  /// See [BakedHighlight.revealFrom].
+  final double revealFrom;
+
+  /// See [BakedHighlight.occlude].
+  final List<Rect> occlude;
   final BoxFit fit;
 
   const BakedHighlightPainter({
@@ -169,8 +191,16 @@ class BakedHighlightPainter extends CustomPainter {
     required this.mask,
     required this.accent,
     required this.intensity,
+    this.revealFrom = 0.0,
+    this.occlude = const [],
     required this.fit,
   });
+
+  /// Maps a rect in source-image pixels onto the widget, for the same
+  /// centre-aligned cover the images are painted with. MaskProbe.toImage is
+  /// the inverse of this; they have to agree or a tap lands somewhere else.
+  Rect _toWidget(Rect src, Size size) =>
+      CoverFit(size, scan.width, scan.height).rectToWidget(src);
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -179,7 +209,20 @@ class BakedHighlightPainter extends CustomPainter {
     paintImage(canvas: canvas, rect: rect, image: scan, fit: fit);
 
     final m = mask;
-    if (m == null || intensity <= 0) return;
+    // No tint to draw — but the labels must still be covered, because the
+    // untinted state IS the identify question and the label is its answer.
+    if (m == null || intensity <= 0 || revealFrom >= 1.0) {
+      _paintOcclusion(canvas, size);
+      return;
+    }
+
+    // The scan underneath is already painted, so clipping the stamp is all the
+    // peel needs: left of the seam stays exactly the plain scan.
+    if (revealFrom > 0) {
+      canvas.save();
+      canvas.clipRect(Rect.fromLTRB(
+          rect.left + rect.width * revealFrom, rect.top, rect.right, rect.bottom));
+    }
 
     // Luminosity-preserving stamp: the accent supplies the hue, the scan keeps
     // its own brightness, so the echotexture the learner reads stays at full
@@ -194,6 +237,16 @@ class BakedHighlightPainter extends CustomPainter {
       opacity: intensity,
     );
     canvas.restore();
+    if (revealFrom > 0) canvas.restore();
+    _paintOcclusion(canvas, size);
+  }
+
+  void _paintOcclusion(Canvas canvas, Size size) {
+    if (occlude.isEmpty) return;
+    final paint = Paint()..color = AppTheme.bgDark;
+    for (final r in occlude) {
+      canvas.drawRect(_toWidget(r, size), paint);
+    }
   }
 
   @override
@@ -202,5 +255,7 @@ class BakedHighlightPainter extends CustomPainter {
       old.mask != mask ||
       old.accent != accent ||
       old.intensity != intensity ||
+      old.revealFrom != revealFrom ||
+      old.occlude != occlude ||
       old.fit != fit;
 }

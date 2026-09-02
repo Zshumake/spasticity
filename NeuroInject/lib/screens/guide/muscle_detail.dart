@@ -11,6 +11,7 @@ import '../../theme/app_theme.dart';
 import '../../theme/favorites_manager.dart';
 import '../../theme/recently_viewed_manager.dart';
 import '../../widgets/highlight/baked_highlight.dart';
+import '../../widgets/highlight/peelable_highlight.dart';
 import '../../widgets/info_card.dart';
 import '../../widgets/step_list.dart';
 import '../../widgets/landmark_list.dart';
@@ -55,6 +56,16 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
   /// Selected ultrasound approach for multi-view muscles (index into
   /// [Muscle.resolvedUltrasoundViews]); always 0 for single-view muscles.
   int _usView = 0;
+  /// Where COVER/REVEAL put the peel seam. Dragging is owned by the widget;
+  /// this only seeds it, and the nonce forces a rebuild when the buttons move
+  /// the seam so the widget picks the new starting value up.
+  double _peelSeam = 0.0;
+  int _peelNonce = 0;
+
+  void _setPeel(double seam) => setState(() {
+        _peelSeam = seam;
+        _peelNonce++;
+      });
 
   @override
   void initState() {
@@ -1071,10 +1082,12 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
           height: height,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(AppTheme.radiusMd),
-            child: BakedHighlight(
+            child: PeelableHighlight(
+              key: ValueKey('peel-${view.maskAsset}-$_peelNonce'),
               scanAsset: path,
               maskAsset: view.maskAsset,
               accent: BakedHighlight.regionTint(muscle.group),
+              initialSeam: _peelSeam,
             ),
           ),
         );
@@ -1149,6 +1162,17 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         // width. Tap either for the full-resolution viewer.
         for (final s in shown) ...[
           slot(s, height: 420),
+          // Cover/reveal sit under the scan they act on, and only when there
+          // is a highlight to hide in the first place.
+          if (s == ClinicalPhotoSlot.ultrasound &&
+              _maskAssets.contains(view.maskAsset)) ...[
+            const SizedBox(height: 8),
+            PeelControls(
+              isDark: isDark,
+              onCover: () => _setPeel(1.0),
+              onReveal: () => _setPeel(0.0),
+            ),
+          ],
           if (s != shown.last) const SizedBox(height: 12),
         ],
         // The highlighter has nothing to draw on until this muscle's US scan

@@ -213,7 +213,9 @@ class _DashboardPageState extends State<DashboardPage> {
   // ─── Top Bar (search + quick filters) ──────────────────────
 
   Widget _buildTopBar(bool isDark) {
-    final sidePad = MediaQuery.of(context).size.width < 900 ? 16.0 : 24.0;
+    final width = MediaQuery.of(context).size.width;
+    final sidePad = width < 900 ? 16.0 : 24.0;
+    final tight = width < 520;
     return Padding(
       padding: EdgeInsets.fromLTRB(sidePad, 24, sidePad, 8),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -226,9 +228,16 @@ class _DashboardPageState extends State<DashboardPage> {
           // Session plan link with a count badge
           _sessionNavChip(isDark),
           const SizedBox(width: 8),
+          // Identify: the practice mode. Icon-only on a phone so all three
+          // actions fit the bar without the wordmark giving up room.
+          _navChip(Icons.my_location_rounded, 'Identify',
+            AppTheme.success, isDark, () => context.push('/identify'),
+            compact: tight),
+          const SizedBox(width: 8),
           // Dose Calculator link
           _navChip(Icons.calculate_outlined, 'Dose Calc',
-            AppTheme.amber, isDark, () => context.push('/calculator')),
+            AppTheme.amber, isDark, () => context.push('/calculator'),
+            compact: tight),
         ]),
         const SizedBox(height: 16),
         // Search bar
@@ -316,20 +325,28 @@ class _DashboardPageState extends State<DashboardPage> {
     );
   }
 
-  Widget _navChip(IconData icon, String label, Color color, bool isDark, VoidCallback onTap) {
+  Widget _navChip(IconData icon, String label, Color color, bool isDark, VoidCallback onTap,
+      {bool compact = false}) {
     return GestureDetector(
       onTap: onTap,
+      behavior: HitTestBehavior.opaque,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+        // 36px tall either way: these are the only always-reachable actions
+        // on the screen, so they stay thumb-sized when the label drops.
+        constraints: const BoxConstraints(minHeight: 36),
+        alignment: Alignment.center,
+        padding: EdgeInsets.symmetric(horizontal: compact ? 11 : 10, vertical: 6),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: color.withAlpha(80)),
         ),
         child: Row(mainAxisSize: MainAxisSize.min, children: [
-          Icon(icon, size: 13, color: color),
-          const SizedBox(width: 6),
-          Text(label, style: GoogleFonts.ibmPlexMono(
-            fontSize: 10, fontWeight: FontWeight.w600, color: color)),
+          Icon(icon, size: compact ? 15 : 13, color: color),
+          if (!compact) ...[
+            const SizedBox(width: 6),
+            Text(label, style: GoogleFonts.ibmPlexMono(
+              fontSize: 10, fontWeight: FontWeight.w600, color: color)),
+          ],
         ]),
       ),
     );

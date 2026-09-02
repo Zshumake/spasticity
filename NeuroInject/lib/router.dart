@@ -8,6 +8,7 @@ import 'screens/highlight/muscle_highlighter_screen.dart';
 import 'screens/highlight/captures_review_screen.dart';
 import 'screens/calculator/calculator_screen.dart';
 import 'screens/session/session_screen.dart';
+import 'screens/identify/identify_screen.dart';
 
 final router = GoRouter(
   routes: [
@@ -63,6 +64,10 @@ final router = GoRouter(
             int.tryParse(state.uri.queryParameters['view'] ?? '') ?? 0;
         return MuscleHighlighterScreen(muscle: muscle, viewIndex: view);
       },
+    ),
+    GoRoute(
+      path: '/identify',
+      builder: (context, state) => const IdentifyScreen(),
     ),
     GoRoute(
       path: '/captures',
