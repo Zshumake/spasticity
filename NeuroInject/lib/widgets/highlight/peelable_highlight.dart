@@ -45,6 +45,10 @@ class _PeelableHighlightState extends State<PeelableHighlight> {
     return LayoutBuilder(
       builder: (context, box) {
         final w = box.maxWidth;
+        // The seam and its labels are only drawn while the seam is actually
+        // doing something — a permanent line across every scan would be
+        // chrome, not a tool.
+        final split = _seam > 0.001 && _seam < 0.999;
         return GestureDetector(
           behavior: HitTestBehavior.opaque,
           onHorizontalDragStart: (d) {
@@ -64,9 +68,7 @@ class _PeelableHighlightState extends State<PeelableHighlight> {
                   revealFrom: _seam,
                 ),
               ),
-              // The seam itself is only drawn while it is doing something —
-              // a permanent line across every scan would be chrome, not a tool.
-              if (_seam > 0.001 && _seam < 0.999) ...[
+              if (split) ...[
                 Positioned(
                   left: w * _seam - 1,
                   top: 0,
@@ -101,17 +103,21 @@ class _PeelableHighlightState extends State<PeelableHighlight> {
                   ),
                 ),
               ],
-              Positioned(
-                left: 10,
-                bottom: 10,
-                child: _tag('PLAIN', AppTheme.textSecondary),
-              ),
-              if (_seam < 0.999)
+              // Only while a seam is actually splitting the image: at either
+              // extreme the labels say nothing the picture does not, and they
+              // land on the scan's own burned-in footer text.
+              if (split) ...[
+                Positioned(
+                  left: 10,
+                  bottom: 10,
+                  child: _tag('PLAIN', AppTheme.textSecondary),
+                ),
                 Positioned(
                   right: 10,
                   bottom: 10,
                   child: _tag('HIGHLIGHTED', widget.accent),
                 ),
+              ],
             ],
           ),
         );
