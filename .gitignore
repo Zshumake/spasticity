@@ -4,6 +4,11 @@
 # Video frames (large, generated)
 video_frames/
 
+# Source reference books (large, copyrighted — keep local, don't version)
+*.pdf
+# ...but the generated clinical photo capture guide is a shippable deliverable
+!NeuroInject/docs/clinical-photo-guide.pdf
+
 # Flutter build artifacts
 NeuroInject/build/
 NeuroInject/.dart_tool/
@@ -18,3 +23,21 @@ NeuroInject/.pub-cache/
 .idea/
 *.iml
 .vscode/
+
+# Deep-research run scratch (logs, prompts, child outputs, reports)
+.research/
+
+# ── clinical photo pipeline (2026-08) ─────────────────────────────────────
+# Raw DSLR originals (~900MB) live outside git; app-ready exports are committed
+# under NeuroInject/assets/images/clinical/ instead.
+NeuroInject/Anatomy positioning pictures/
+# Source ultrasound exports (user keeps external backups); app copies committed.
+NeuroInject/US Pictures/
+# Derived review thumbnails for the photo-matching evidence page (regenerable).
+NeuroInject/docs/photo-matching/img/
+# Gemini staging: sources are re-exportable from originals via picks.json;
+# generated outputs land in assets only after human approval.
+NeuroInject/tools/gemini-illustrations/sources/
+NeuroInject/tools/gemini-illustrations/output/
+# Local editor/agent settings
+.claude/settings.local.json

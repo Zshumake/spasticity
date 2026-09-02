@@ -52,13 +52,10 @@ class _VideoLinkCardState extends State<VideoLinkCard> {
 
   bool get _isYouTube => _videoId != null;
 
-  @override
-  void initState() {
-    super.initState();
-    if (_isYouTube) {
-      _initWebView();
-    }
-  }
+  // The player is created on demand, not in initState: a WKWebView loading
+  // YouTube for every muscle that has a video, before the reader has scrolled
+  // anywhere near it, was network and memory spent on a phone for nothing.
+  // Until tapped, the card shows YouTube's poster frame.
 
   void _initWebView() {
     final vid = _videoId!;
@@ -101,7 +98,7 @@ class _VideoLinkCardState extends State<VideoLinkCard> {
           Expanded(child: Text('PROCEDURE VIDEO',
             style: GoogleFonts.ibmPlexMono(
               color: widget.accentColor, fontWeight: FontWeight.w700,
-              fontSize: 9, letterSpacing: 1.5))),
+              fontSize: 10, letterSpacing: 1.5))),
           // External link button
           InkWell(
             onTap: () async {
@@ -118,7 +115,7 @@ class _VideoLinkCardState extends State<VideoLinkCard> {
                   color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight),
                 const SizedBox(width: 4),
                 Text('Open in browser', style: GoogleFonts.ibmPlexMono(
-                  fontSize: 9, color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight)),
+                  fontSize: 10, color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight)),
               ]),
             ),
           ),
@@ -128,9 +125,63 @@ class _VideoLinkCardState extends State<VideoLinkCard> {
         // Embedded player — works on macOS, iOS, Android, and web (via iframe).
         if (_isYouTube && _controller != null)
           _buildEmbeddedPlayer(isDark)
+        else if (_isYouTube)
+          _buildPoster(isDark)
         else
           _buildExternalLink(isDark),
       ],
+    );
+  }
+
+  Widget _buildPoster(bool isDark) {
+    final vid = _videoId!;
+    return Semantics(
+      button: true,
+      label: 'Play procedure video',
+      child: GestureDetector(
+        onTap: () => setState(_initWebView),
+        child: Container(
+          width: double.infinity,
+          height: 200,
+          decoration: BoxDecoration(
+            color: Colors.black,
+            borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+            border: Border.all(color: widget.accentColor.withAlpha(40)),
+          ),
+          clipBehavior: Clip.antiAlias,
+          child: Stack(fit: StackFit.expand, children: [
+            Image.network(
+              'https://img.youtube.com/vi/$vid/hqdefault.jpg',
+              fit: BoxFit.cover,
+              errorBuilder: (_, _, _) => const SizedBox.shrink(),
+            ),
+            Container(color: Colors.black.withAlpha(90)),
+            Center(
+              child: Container(
+                width: 56, height: 56,
+                decoration: BoxDecoration(
+                  color: widget.accentColor,
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(Icons.play_arrow_rounded,
+                    color: Colors.white, size: 34),
+              ),
+            ),
+            Positioned(
+              bottom: 8, left: 8,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                decoration: BoxDecoration(
+                  color: Colors.black.withAlpha(150),
+                  borderRadius: BorderRadius.circular(4)),
+                child: Text('Tap to load video',
+                  style: GoogleFonts.ibmPlexMono(
+                    fontSize: 10, color: Colors.white70)),
+              ),
+            ),
+          ]),
+        ),
+      ),
     );
   }
 
@@ -209,9 +260,9 @@ class _VideoLinkCardState extends State<VideoLinkCard> {
                   Icon(_isExpanded ? Icons.compress_rounded : Icons.expand_rounded,
                     size: 12, color: Colors.white70),
                   const SizedBox(width: 4),
-                  Text(_isExpanded ? 'Click to shrink' : 'Click to expand',
+                  Text(_isExpanded ? 'Tap to shrink' : 'Tap to expand',
                     style: GoogleFonts.ibmPlexMono(
-                      fontSize: 9, color: Colors.white70)),
+                      fontSize: 10, color: Colors.white70)),
                 ]),
               ),
             ),

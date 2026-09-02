@@ -4,14 +4,19 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../data/muscle_provider.dart';
+import '../../data/session_planner.dart';
+import '../../models/clinical_photo.dart';
 import '../../models/muscle.dart';
 import '../../theme/app_theme.dart';
 import '../../theme/favorites_manager.dart';
 import '../../theme/recently_viewed_manager.dart';
+import '../../widgets/highlight/baked_highlight.dart';
+import '../../widgets/highlight/peelable_highlight.dart';
 import '../../widgets/info_card.dart';
 import '../../widgets/step_list.dart';
 import '../../widgets/landmark_list.dart';
 import '../../widgets/safety_callout.dart';
+import '../../widgets/safety_layers.dart';
 import '../../widgets/video_link_card.dart';
 import '../../widgets/print_cheat_sheet.dart';
 
@@ -25,12 +30,42 @@ class MuscleDetailScreen extends StatefulWidget {
 
 class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
   Muscle get muscle => widget.muscle;
+
+  /// US safety notes not already surfaced as muscle-level [Muscle.dangerZones]
+  /// (which are promoted from these notes for many muscles), so the same
+  /// hazard never renders twice on one page.
+  List<String> get _uniqueSafetyNotes {
+    final us = muscle.ultrasound;
+    if (us == null) return const [];
+    return us.safetyNotes
+        .where((n) => !muscle.dangerZones.contains(n))
+        .toList();
+  }
+
   bool _procedureMode = false;
   final Set<int> _checkedSupplies = {};
+  /// Clinical-photo asset paths actually bundled in the app, so each slot can
+  /// show the real photo once it exists and a placeholder until then.
+  Set<String> _clinicalAssets = {};
+  /// Baked highlight masks bundled under assets/images/us_reference/.
+  Set<String> _maskAssets = {};
   /// Currently-selected anatomy view ('anterior', 'posterior', 'lateral').
   /// Initialized from the muscle's defaultAnatomyView — posterior-aspect
   /// muscles (hamstrings, triceps, gastroc, etc.) open to posterior view.
   late String _anatomyView;
+  /// Selected ultrasound approach for multi-view muscles (index into
+  /// [Muscle.resolvedUltrasoundViews]); always 0 for single-view muscles.
+  int _usView = 0;
+  /// Where COVER/REVEAL put the peel seam. Dragging is owned by the widget;
+  /// this only seeds it, and the nonce forces a rebuild when the buttons move
+  /// the seam so the widget picks the new starting value up.
+  double _peelSeam = 0.0;
+  int _peelNonce = 0;
+
+  void _setPeel(double seam) => setState(() {
+        _peelSeam = seam;
+        _peelNonce++;
+      });
 
   @override
   void initState() {
@@ -49,7 +84,51 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<RecentlyViewedManager>().recordView(muscle.id);
     });
+    _loadClinicalAssets();
   }
+
+  /// Loads the set of bundled clinical-photo paths so slots can distinguish a
+  /// captured photo from a not-yet-shot placeholder.
+  Future<void> _loadClinicalAssets() async {
+    try {
+      final manifest = await AssetManifest.loadFromAssetBundle(rootBundle);
+      final all = manifest.listAssets();
+      final clinical =
+          all.where((p) => p.startsWith('${ClinicalPhotoSlot.dir}/')).toSet();
+      final masks =
+          all.where((p) => p.startsWith('assets/images/us_reference/')).toSet();
+      if (mounted) {
+        setState(() {
+          _clinicalAssets = clinical;
+          _maskAssets = masks;
+        });
+      }
+    } catch (_) {
+      // No manifest or no clinical assets yet — placeholders stay shown.
+    }
+  }
+
+  /// The ultrasound approach currently on screen. Single-view muscles have
+  /// exactly one; multi-view muscles (tibialis posterior) follow the toggle.
+  UltrasoundView get _currentUsView {
+    final views = muscle.resolvedUltrasoundViews;
+    return views[_usView.clamp(0, views.length - 1)];
+  }
+
+  /// The three hazard layers as one phase-grouped block. Scanning notes are
+  /// de-duplicated against dangerZones first, so a claim stated in both does
+  /// not appear twice under two different headings.
+  SafetyLayers get _safety => SafetyLayers(
+        sideEffects: muscle.sideEffects,
+        dangerZones: muscle.dangerZones,
+        scanningNotes: _uniqueSafetyNotes,
+      );
+
+  /// Whether the selected approach's ultrasound scan is actually bundled —
+  /// the gate for every US-dependent surface (the highlighter, and the baked
+  /// overlay).
+  bool get _hasUltrasoundScan =>
+      _clinicalAssets.contains(_currentUsView.scanAsset);
 
   Color get _groupColor => AppTheme.groupColor(muscle.group);
 
@@ -58,6 +137,11 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final favs = context.watch<FavoritesManager>();
     final isFav = favs.isFavorite(muscle.id);
+    final inSession = context.watch<SessionPlanner>().contains(muscle.id);
+
+    // Four actions crowded the title down to "Pectoralis Ma…" on a phone;
+    // the two rare ones (print, copy) fold into a menu there.
+    final compact = MediaQuery.sizeOf(context).width < 600;
 
     return Scaffold(
       backgroundColor: isDark ? AppTheme.bgDark : AppTheme.bgLight,
@@ -71,6 +155,13 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
           fontWeight: FontWeight.w700, fontSize: 16)),
         actions: [
           IconButton(
+            icon: Icon(
+              inSession ? Icons.playlist_add_check_rounded : Icons.playlist_add_rounded,
+              color: inSession ? AppTheme.success : (isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight)),
+            tooltip: inSession ? 'In session — view plan' : 'Add to session',
+            onPressed: () => _toggleSession(inSession),
+          ),
+          IconButton(
             icon: AnimatedSwitcher(
               duration: const Duration(milliseconds: 200),
               child: Icon(
@@ -78,18 +169,54 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
                 key: ValueKey(isFav),
                 color: isFav ? AppTheme.amber : (isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight)),
             ),
-            onPressed: () => favs.toggleFavorite(muscle.id),
+            tooltip: isFav ? 'Remove from favorites' : 'Add to favorites',
+            onPressed: () {
+              HapticFeedback.selectionClick();
+              favs.toggleFavorite(muscle.id);
+            },
           ),
-          IconButton(
-            icon: const Icon(Icons.print_outlined, size: 20),
-            tooltip: 'Print cheat sheet',
-            onPressed: () => printCheatSheet(context, muscle),
-          ),
-          IconButton(
-            icon: const Icon(Icons.copy_outlined, size: 20),
-            tooltip: 'Copy procedure note',
-            onPressed: () => _copyProcedureNote(context),
-          ),
+          if (!compact) ...[
+            IconButton(
+              icon: const Icon(Icons.print_outlined, size: 20),
+              tooltip: 'Print cheat sheet',
+              onPressed: () => printCheatSheet(context, muscle),
+            ),
+            IconButton(
+              icon: const Icon(Icons.copy_outlined, size: 20),
+              tooltip: 'Copy procedure note',
+              onPressed: () => _copyProcedureNote(context),
+            ),
+          ] else
+            PopupMenuButton<String>(
+              icon: const Icon(Icons.more_vert_rounded),
+              tooltip: 'More',
+              onSelected: (v) {
+                switch (v) {
+                  case 'print':
+                    printCheatSheet(context, muscle);
+                  case 'copy':
+                    _copyProcedureNote(context);
+                }
+              },
+              itemBuilder: (_) => const [
+                PopupMenuItem(
+                  value: 'print',
+                  child: ListTile(
+                    leading: Icon(Icons.print_outlined, size: 20),
+                    title: Text('Share cheat sheet'),
+                    contentPadding: EdgeInsets.zero,
+                  ),
+                ),
+                PopupMenuItem(
+                  value: 'copy',
+                  child: ListTile(
+                    leading: Icon(Icons.copy_outlined, size: 20),
+                    title: Text('Copy procedure note'),
+                    contentPadding: EdgeInsets.zero,
+                  ),
+                ),
+              ],
+            ),
         ],
       ),
       floatingActionButton: FloatingActionButton.small(
@@ -102,15 +229,33 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
       body: LayoutBuilder(
         builder: (context, constraints) {
           final wide = constraints.maxWidth >= 1100;
+          final side = wide ? 32.0 : 16.0;
+          // Bottom inset clears the home indicator AND the mode FAB, which
+          // was sitting on top of the last lines of the landmark list.
+          final padding = EdgeInsets.fromLTRB(side, 16, side,
+              16 + 72 + MediaQuery.viewPaddingOf(context).bottom);
           return Center(
             child: ConstrainedBox(
               constraints: BoxConstraints(maxWidth: wide ? 1280 : 820),
-              child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(horizontal: wide ? 32 : 16, vertical: 16),
-                child: _procedureMode
-                    ? _buildProcedureView(isDark)
-                    : _buildStudyView(isDark, wide),
-              ),
+              child: _procedureMode || wide
+                  ? SingleChildScrollView(
+                      padding: padding,
+                      child: _procedureMode
+                          ? _buildProcedureView(isDark)
+                          : _buildStudyView(isDark, wide),
+                    )
+                  // One column on a phone is a LAZY list: the study view is
+                  // a dozen sections with full-resolution imagery in half of
+                  // them, and a single scroll view decoded every image on
+                  // open. Sections below the fold now build when reached.
+                  : Builder(builder: (context) {
+                      final sections = _studySections(isDark);
+                      return ListView.builder(
+                        padding: padding,
+                        itemCount: sections.length,
+                        itemBuilder: (_, i) => sections[i],
+                      );
+                    }),
             ),
           );
         },
@@ -121,13 +266,22 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
   // ═══════════════════════════════════════════════════════════════
   //  STUDY MODE — full educational content
   // ═══════════════════════════════════════════════════════════════
-  Widget _buildStudyView(bool isDark, bool wide) {
-    // Two-column layout balanced by content weight.
-    // Left:  Landmarks → Ultrasound Guide → Probe Placement
-    // Right: Needle Placement → Setup & Tips → Pearls → Supplies
-    // Clinical flow still intact (scan before inject) because
-    // users read left-then-right as a natural top-down sequence.
-    final left = <Widget>[
+  /// The study view's sections in reading order, for the phone's lazy list.
+  List<Widget> _studySections(bool isDark) {
+    return [
+      _buildHeroHeader(isDark),
+      const SizedBox(height: 24),
+      ..._studyLeft(isDark),
+      const SizedBox(height: 16),
+      ..._studyRight(isDark),
+      if (muscle.relatedMuscles.isNotEmpty) ...[
+        const SizedBox(height: 24),
+        _buildRelatedMuscles(isDark),
+      ],
+    ];
+  }
+
+  List<Widget> _studyLeft(bool isDark) => <Widget>[
       _section('BONY LANDMARKS', Icons.location_on_outlined, null,
         LandmarkList(landmarks: muscle.landmarks)),
       const SizedBox(height: 16),
@@ -137,7 +291,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         _buildUltrasoundCard(isDark),
       ],
       const SizedBox(height: 16),
-      _buildProbeAndNeedlePhotos(isDark),
+      _buildClinicalPhotos(isDark),
       if (muscle.videoUrl != null) ...[
         const SizedBox(height: 16),
         VideoLinkCard(
@@ -148,12 +302,18 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
       ],
     ];
 
-    final right = <Widget>[
+  List<Widget> _studyRight(bool isDark) => <Widget>[
       _section('NEEDLE PLACEMENT', Icons.my_location, AppTheme.amber,
         StepList(steps: muscle.placement)),
       const SizedBox(height: 16),
       _section('SETUP & TIPS', Icons.lightbulb_outline, AppTheme.success,
         LandmarkList(landmarks: muscle.setup)),
+      // All three hazard layers, grouped by when they are read rather than by
+      // which field they came from — see SafetyLayers.
+      if (!_safety.isEmpty) ...[
+        const SizedBox(height: 16),
+        _safety,
+      ],
       if (muscle.pearls.isNotEmpty) ...[
         const SizedBox(height: 16),
         _buildPearlsCard(isDark),
@@ -163,6 +323,15 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         _buildSuppliesChecklist(isDark),
       ],
     ];
+
+  Widget _buildStudyView(bool isDark, bool wide) {
+    // Two-column layout balanced by content weight.
+    // Left:  Landmarks → Ultrasound Guide → Probe Placement
+    // Right: Needle Placement → Setup & Tips → Pearls → Supplies
+    // Clinical flow still intact (scan before inject) because
+    // users read left-then-right as a natural top-down sequence.
+    final left = _studyLeft(isDark);
+    final right = _studyRight(isDark);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -239,6 +408,10 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
               const SizedBox(height: 6),
               Text('Dosage: ${muscle.dosage!.displayFull}', style: GoogleFonts.ibmPlexMono(
                 fontSize: 12, fontWeight: FontWeight.w700, color: AppTheme.amber)),
+              if (muscle.dosage!.hasAny) ...[
+                const SizedBox(height: 8),
+                _calcLink(),
+              ],
             ],
           ]),
         ),
@@ -267,10 +440,11 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         ...muscle.placement.asMap().entries.map((e) => _procStep(e.key + 1, e.value)),
         const SizedBox(height: 12),
 
-        // Safety
-        if (us != null && us.safetyNotes.isNotEmpty) ...[
+        // One phase-grouped safety block instead of three identical callouts
+        // stacked into a wall of warnings.
+        if (!_safety.isEmpty) ...[
           _procHeader('SAFETY'),
-          SafetyCallout(warnings: us.safetyNotes),
+          _safety,
           const SizedBox(height: 12),
         ],
 
@@ -504,15 +678,18 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
             if (muscle.dosage?.botox != null)
               _heroChip(Icons.medication_outlined, 'BOTOX',
                   '${muscle.dosage!.botox!} U',
-                  const Color(0xFF3D8BFF), isDark),
+                  const Color(0xFF3E8FE0), isDark, // brand-botox
+                  onTap: () => _openCalculator('Botox', muscle.dosage!.botox!)),
             if (muscle.dosage?.xeomin != null)
               _heroChip(Icons.medication_outlined, 'XEOMIN',
                   '${muscle.dosage!.xeomin!} U',
-                  const Color(0xFF9C27B0), isDark),
+                  const Color(0xFFA05BC4), isDark, // brand-xeomin
+                  onTap: () => _openCalculator('Xeomin', muscle.dosage!.xeomin!)),
             if (muscle.dosage?.dysport != null)
               _heroChip(Icons.medication_outlined, 'DYSPORT',
                   '${muscle.dosage!.dysport!} U',
-                  const Color(0xFFFF9800), isDark),
+                  const Color(0xFFE59A2E), isDark, // brand-dysport
+                  onTap: () => _openCalculator('Dysport', muscle.dosage!.dysport!)),
             if (us != null)
               _heroChip(Icons.sensors, 'PROBE', _shortProbe(us.probe), _groupColor, isDark),
             if (us != null)
@@ -551,8 +728,8 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     return s.length > 28 ? '${s.substring(0, 28)}…' : s;
   }
 
-  Widget _heroChip(IconData icon, String label, String value, Color accent, bool isDark) {
-    return Container(
+  Widget _heroChip(IconData icon, String label, String value, Color accent, bool isDark, {VoidCallback? onTap}) {
+    final content = Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: BoxDecoration(
         color: (isDark ? AppTheme.bgDark : AppTheme.bgLight).withAlpha(178),
@@ -564,13 +741,113 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         const SizedBox(width: 8),
         Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: [
           Text(label, style: GoogleFonts.ibmPlexMono(
-            fontSize: 8, fontWeight: FontWeight.w700, letterSpacing: 1.5,
+            fontSize: 10, fontWeight: FontWeight.w700, letterSpacing: 1.5,
             color: accent.withAlpha(200))),
           Text(value, style: GoogleFonts.sourceSans3(
             fontSize: 13, fontWeight: FontWeight.w700,
             color: isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight)),
         ]),
+        // Tappable dose chips show a calculator hint and open the dilution
+        // calculator pre-seeded with this brand + dose.
+        if (onTap != null) ...[
+          const SizedBox(width: 8),
+          Icon(Icons.calculate_outlined, size: 14, color: accent.withAlpha(160)),
+        ],
       ]),
+    );
+    if (onTap == null) return content;
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+        child: content,
+      ),
+    );
+  }
+
+  /// Opens the dose calculator pre-seeded with [brand] and the midpoint of
+  /// the muscle's dose [range] (e.g. "100-200" -> 150), which the user can
+  /// then adjust. Closes the muscle -> dose -> calculator gap.
+  void _openCalculator(String brand, String range) {
+    final dose = _midpointDose(range);
+    final query = dose != null
+        ? '?brand=$brand&dose=${dose.toStringAsFixed(0)}'
+        : '?brand=$brand';
+    context.push('/calculator$query');
+  }
+
+  /// Adds this muscle to the session plan (seeded brand + midpoint dose), or
+  /// navigates to the plan if it is already there.
+  void _toggleSession(bool inSession) {
+    if (inSession) {
+      context.push('/session');
+      return;
+    }
+    final item = defaultSessionItem(muscle);
+    if (item == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('No dose data to add for this muscle.')),
+      );
+      return;
+    }
+    context.read<SessionPlanner>().addOrUpdate(item);
+    HapticFeedback.lightImpact();
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('Added ${muscle.name} to session'),
+        action: SnackBarAction(
+            label: 'View', onPressed: () => context.push('/session')),
+        duration: const Duration(seconds: 3),
+      ),
+    );
+  }
+
+  /// Midpoint of a dose-range string: "100-200" -> 150, "100" -> 100.
+  double? _midpointDose(String range) {
+    final nums = RegExp(r'\d+(?:\.\d+)?')
+        .allMatches(range)
+        .map((m) => double.parse(m.group(0)!))
+        .toList();
+    if (nums.isEmpty) return null;
+    if (nums.length == 1) return nums.first;
+    return ((nums.first + nums[1]) / 2).roundToDouble();
+  }
+
+  /// Tappable link under the procedure-mode dose line that opens the
+  /// calculator pre-seeded with the muscle's preferred brand (Botox, then
+  /// Xeomin, then Dysport) and dose.
+  Widget _calcLink() {
+    final d = muscle.dosage!;
+    final String brand;
+    final String range;
+    if (d.botox != null) {
+      brand = 'Botox';
+      range = d.botox!;
+    } else if (d.xeomin != null) {
+      brand = 'Xeomin';
+      range = d.xeomin!;
+    } else if (d.dysport != null) {
+      brand = 'Dysport';
+      range = d.dysport!;
+    } else {
+      // hasAny was true but none of the known brands matched — nothing to seed.
+      return const SizedBox.shrink();
+    }
+    return InkWell(
+      onTap: () => _openCalculator(brand, range),
+      borderRadius: BorderRadius.circular(8),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 2),
+        child: Row(mainAxisSize: MainAxisSize.min, children: [
+          Icon(Icons.calculate_outlined, size: 14, color: AppTheme.success),
+          const SizedBox(width: 6),
+          Text('Calculate draw-up volume', style: GoogleFonts.ibmPlexMono(
+            fontSize: 11, fontWeight: FontWeight.w700, color: AppTheme.success)),
+          const SizedBox(width: 4),
+          Icon(Icons.arrow_forward_rounded, size: 12, color: AppTheme.success),
+        ]),
+      ),
     );
   }
 
@@ -679,7 +956,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
                         imagePath!,
                         key: ValueKey(activeView),
                         fit: BoxFit.contain,
-                        errorBuilder: (_, __, ___) => _anatomyPlaceholder(isDark),
+                        errorBuilder: (_, _, _) => _anatomyPlaceholder(isDark),
                       ),
                     ),
                     // Caption overlay
@@ -745,6 +1022,42 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     setState(() => _anatomyView = available[next]);
   }
 
+  /// One segment of the approach switch. The selected segment is a filled
+  /// slab in the muscle's region colour — the same colour the highlight uses
+  /// on the scan below it, so the control and the image it governs read as
+  /// one unit. 44px minimum height: this is a hit target on a phone.
+  Widget _usViewSegment(int index, String label, bool isDark) {
+    final active = _usView == index;
+    final accent = _groupColor;
+    return GestureDetector(
+      onTap: () {
+        if (active) return;
+        HapticFeedback.selectionClick();
+        setState(() => _usView = index);
+      },
+      behavior: HitTestBehavior.opaque,
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 160),
+        constraints: const BoxConstraints(minHeight: 44),
+        alignment: Alignment.center,
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 9),
+        decoration: BoxDecoration(
+          color: active ? accent : Colors.transparent,
+          borderRadius: BorderRadius.circular(AppTheme.radiusMd - 1),
+        ),
+        child: Text(label.toUpperCase(),
+            textAlign: TextAlign.center,
+            style: GoogleFonts.ibmPlexMono(
+                fontSize: 11,
+                fontWeight: FontWeight.w700,
+                letterSpacing: 0.6,
+                color: active
+                    ? (isDark ? AppTheme.bgDark : Colors.white)
+                    : AppTheme.textSecondary)),
+      ),
+    );
+  }
+
   Widget _viewChip(String view, bool isDark) {
     final active = _anatomyView == view ||
         (!muscle.anatomyImages.containsKey(_anatomyView) &&
@@ -801,18 +1114,79 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     );
   }
 
-  /// Two side-by-side image slots:
-  ///   1. Probe placement + needle insertion site (surface photo)
-  ///   2. Ultrasound image with needle visible in muscle
+  /// The two clinical photo slots:
+  ///   1. Probe + needle site — atlas illustration of the surface anatomy
+  ///      (blue bar = probe footprint, red dot = needle entry)
+  ///   2. Ultrasound image of the target muscle
+  /// (The patient-position slot was retired 2026-08: the probe illustration
+  /// already shows the posture, so a third card added noise, not signal.)
   /// Shows real images when available, otherwise a styled placeholder
   /// prompting the user to add their own.
-  Widget _buildProbeAndNeedlePhotos(bool isDark) {
-    final probeImg = muscle.probePlacementImages.isNotEmpty
-        ? 'assets/images/probe_placement/${muscle.probePlacementImages.first}'
-        : null;
-    final usImg = muscle.referenceImages.isNotEmpty
-        ? 'assets/images/us_reference/${muscle.referenceImages.first}'
-        : null;
+  Widget _buildClinicalPhotos(bool isDark) {
+    // Accent per slot (avoid alarming red).
+    const accents = {
+      ClinicalPhotoSlot.position: AppTheme.success, // retired from display
+      ClinicalPhotoSlot.probe: AppTheme.primary,
+      ClinicalPhotoSlot.ultrasound: AppTheme.amber,
+    };
+
+    // Both big pictures resolve through the selected ultrasound approach so
+    // they always agree: the probe illustration encodes where the transducer
+    // sits, and the scan is what that placement shows. For single-view
+    // muscles the resolved view is just the muscle's own probe/scan pair.
+    final views = muscle.resolvedUltrasoundViews;
+    final view = _currentUsView;
+
+    // Only the slots whose asset is actually bundled are rendered - a muscle
+    // with no imagery gets no section at all rather than placeholder cards.
+    String? pathFor(ClinicalPhotoSlot s) =>
+        s == ClinicalPhotoSlot.probe ? view.probeAsset : view.scanAsset;
+    final shown = [ClinicalPhotoSlot.probe, ClinicalPhotoSlot.ultrasound]
+        .where((s) {
+          final p = pathFor(s);
+          return p != null && _clinicalAssets.contains(p);
+        })
+        .toList();
+    if (shown.isEmpty && views.length == 1) return const SizedBox.shrink();
+
+    Widget slot(ClinicalPhotoSlot s, {double height = 180}) {
+      final path = pathFor(s)!;
+      final has = _clinicalAssets.contains(path);
+      // The scan renders with this muscle's baked highlight tint whenever the
+      // mask produced by tools/refine_highlights.py is bundled; otherwise the
+      // plain scan shows. Per-muscle even on shared scans - the mask is what
+      // distinguishes gastrocnemius from soleus on the same image.
+      if (s == ClinicalPhotoSlot.ultrasound &&
+          has &&
+          _maskAssets.contains(view.maskAsset)) {
+        return SizedBox(
+          height: height,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+            child: PeelableHighlight(
+              key: ValueKey('peel-${view.maskAsset}-$_peelNonce'),
+              scanAsset: path,
+              maskAsset: view.maskAsset,
+              accent: BakedHighlight.regionTint(muscle.group),
+              initialSeam: _peelSeam,
+            ),
+          ),
+        );
+      }
+      return _imageSlot(
+        isDark: isDark,
+        title: s.label,
+        subtitle: s.description,
+        icon: s.icon,
+        accentColor: accents[s]!,
+        imagePath: has ? path : null,
+        imageLabel: views.length > 1
+            ? '${muscle.name} — ${view.label} — ${s.label}'
+            : '${muscle.name} — ${s.label}',
+        fileName: path.split('/').last,
+        height: height,
+      );
+    }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -821,37 +1195,74 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         Row(children: [
           Container(width: 24, height: 2, color: AppTheme.primary),
           const SizedBox(width: 10),
-          Text('CLINICAL IMAGES', style: GoogleFonts.ibmPlexMono(
+          Text('CLINICAL PHOTOS', style: GoogleFonts.ibmPlexMono(
             fontSize: 10, fontWeight: FontWeight.w700,
             letterSpacing: 2.0, color: AppTheme.primary)),
         ]),
         const SizedBox(height: 14),
 
-        // Two cards side by side
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(child: _imageSlot(
+        // Approach switch for multi-view muscles. A segmented control rather
+        // than loose chips: the two windows are different procedures with
+        // different needle entries, not two pictures of one, so the choice
+        // reads as a mode and fills the width above the imagery it governs.
+        if (views.length > 1) ...[
+          Row(children: [
+            Text('APPROACH',
+                style: GoogleFonts.ibmPlexMono(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 2.0,
+                    color: AppTheme.textTertiary)),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Text('two windows · different entry',
+                  style: GoogleFonts.sourceSans3(
+                      fontSize: 11,
+                      fontStyle: FontStyle.italic,
+                      color: AppTheme.textTertiary)),
+            ),
+          ]),
+          const SizedBox(height: 8),
+          Container(
+            padding: const EdgeInsets.all(4),
+            decoration: BoxDecoration(
+              color: isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight,
+              borderRadius: BorderRadius.circular(AppTheme.radiusLg - 2),
+              border: Border.all(
+                  color: isDark ? AppTheme.borderDark : AppTheme.borderLight),
+            ),
+            child: Row(children: [
+              for (var i = 0; i < views.length; i++)
+                Expanded(child: _usViewSegment(i, views[i].label, isDark)),
+            ]),
+          ),
+          const SizedBox(height: 12),
+        ],
+
+        // BIG stacked images - only the ones that exist - each full column
+        // width. Tap either for the full-resolution viewer.
+        for (final s in shown) ...[
+          slot(s, height: 420),
+          // Cover/reveal sit under the scan they act on, and only when there
+          // is a highlight to hide in the first place.
+          if (s == ClinicalPhotoSlot.ultrasound &&
+              _maskAssets.contains(view.maskAsset)) ...[
+            const SizedBox(height: 8),
+            PeelControls(
               isDark: isDark,
-              title: 'Probe Placement\n& Needle Site',
-              subtitle: 'Surface photo showing probe position and needle insertion point',
-              icon: Icons.sensors,
-              accentColor: AppTheme.primary,
-              imagePath: probeImg,
-              imageLabel: '${muscle.name} — Probe & Needle',
-            )),
-            const SizedBox(width: 12),
-            Expanded(child: _imageSlot(
-              isDark: isDark,
-              title: 'US Image with\nNeedle in Muscle',
-              subtitle: 'Ultrasound screenshot showing needle tip in target muscle',
-              icon: Icons.monitor_heart_outlined,
-              accentColor: AppTheme.amber,
-              imagePath: usImg,
-              imageLabel: '${muscle.name} — US + Needle',
-            )),
+              onCover: () => _setPeel(1.0),
+              onReveal: () => _setPeel(0.0),
+            ),
           ],
-        ),
+          if (s != shown.last) const SizedBox(height: 12),
+        ],
+        // The highlighter has nothing to draw on until this muscle's US scan
+        // is bundled, so the entry point only appears once it is; gating on
+        // the asset means it turns itself on as scans are added.
+        if (_hasUltrasoundScan) ...[
+          const SizedBox(height: 12),
+          _highlightCta(isDark),
+        ],
 
         // Photo hint (if available)
         if (muscle.probePlacementHint != null) ...[
@@ -876,6 +1287,56 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     );
   }
 
+  /// Entry point to the draw-to-highlight surface for this muscle's US image.
+  Widget _highlightCta(bool isDark) {
+    return GestureDetector(
+      // Carry the selected approach so the lasso lands on the scan that is
+      // actually on screen (tibialis posterior: anterior vs medial window).
+      onTap: () => context.push('/highlight/${muscle.id}?view=$_usView'),
+      child: Container(
+        height: 180,
+        padding: const EdgeInsets.all(14),
+        decoration: BoxDecoration(
+          color: AppTheme.primary.withAlpha(isDark ? 22 : 14),
+          borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+          border: Border.all(color: AppTheme.primary.withAlpha(70)),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Icon(Icons.gesture, color: AppTheme.primary, size: 26),
+            const SizedBox(height: 10),
+            Text('HIGHLIGHT',
+                style: GoogleFonts.ibmPlexMono(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 1.6,
+                    color: AppTheme.primary)),
+            const SizedBox(height: 6),
+            Text('Draw to outline the muscle on US and surface adjacent structures.',
+                style: GoogleFonts.sourceSans3(
+                    fontSize: 11.5,
+                    height: 1.35,
+                    color: isDark
+                        ? AppTheme.textSecondary
+                        : AppTheme.textSecondaryLight)),
+            const SizedBox(height: 8),
+            Row(children: [
+              Text('Open',
+                  style: GoogleFonts.ibmPlexMono(
+                      fontSize: 10,
+                      fontWeight: FontWeight.w700,
+                      color: AppTheme.primary)),
+              const SizedBox(width: 4),
+              const Icon(Icons.arrow_forward, size: 13, color: AppTheme.primary),
+            ]),
+          ],
+        ),
+      ),
+    );
+  }
+
   /// Single image slot: shows the image if [imagePath] is set, otherwise
   /// a placeholder card with an icon + description.
   Widget _imageSlot({
@@ -886,12 +1347,14 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     required Color accentColor,
     required String? imagePath,
     required String imageLabel,
+    String? fileName,
+    double height = 180,
   }) {
     final hasImage = imagePath != null;
     return GestureDetector(
       onTap: hasImage ? () => _showFullImage(context, imagePath, imageLabel) : null,
       child: Container(
-        height: 180,
+        height: height,
         decoration: BoxDecoration(
           color: isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight,
           borderRadius: BorderRadius.circular(AppTheme.radiusMd),
@@ -906,8 +1369,9 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
             ? Stack(children: [
                 Positioned.fill(
                   child: Image.asset(imagePath, fit: BoxFit.cover,
-                    errorBuilder: (_, __, ___) => _placeholderContent(
-                        isDark, title, subtitle, icon, accentColor)),
+                    errorBuilder: (_, _, _) => _placeholderContent(
+                        isDark, title, subtitle, icon, accentColor,
+                        fileName: fileName)),
                 ),
                 // Gradient overlay at bottom with label
                 Positioned(left: 0, right: 0, bottom: 0,
@@ -922,7 +1386,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
                     ),
                     child: Text(title.replaceAll('\n', ' '),
                       style: GoogleFonts.ibmPlexMono(
-                        fontSize: 9, fontWeight: FontWeight.w600,
+                        fontSize: 10, fontWeight: FontWeight.w600,
                         color: Colors.white.withAlpha(220), letterSpacing: 0.8)),
                   ),
                 ),
@@ -937,35 +1401,45 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
                   ),
                 ),
               ])
-            : _placeholderContent(isDark, title, subtitle, icon, accentColor),
+            : _placeholderContent(isDark, title, subtitle, icon, accentColor,
+                fileName: fileName),
       ),
     );
   }
 
   Widget _placeholderContent(bool isDark, String title, String subtitle,
-      IconData icon, Color accentColor) {
+      IconData icon, Color accentColor, {String? fileName}) {
     return Padding(
-      padding: const EdgeInsets.all(14),
+      padding: const EdgeInsets.all(12),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            width: 44, height: 44,
+            width: 40, height: 40,
             decoration: BoxDecoration(
               color: accentColor.withAlpha(20),
               borderRadius: BorderRadius.circular(AppTheme.radiusMd)),
-            child: Icon(icon, color: accentColor.withAlpha(140), size: 22),
+            child: Icon(icon, color: accentColor.withAlpha(140), size: 20),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 8),
           Text(title, textAlign: TextAlign.center,
+            maxLines: 2, overflow: TextOverflow.ellipsis,
             style: GoogleFonts.sourceSans3(
-              fontSize: 12, fontWeight: FontWeight.w700, height: 1.3,
+              fontSize: 12, fontWeight: FontWeight.w700, height: 1.2,
               color: isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight)),
           const SizedBox(height: 4),
-          Text(subtitle, textAlign: TextAlign.center,
-            style: GoogleFonts.sourceSans3(
-              fontSize: 10, height: 1.3,
-              color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight)),
+          // Show the exact target filename when this is a capture placeholder,
+          // otherwise the generic description (image-load fallback).
+          Text(fileName ?? subtitle, textAlign: TextAlign.center,
+            maxLines: 2, overflow: TextOverflow.ellipsis,
+            style: fileName != null
+                ? GoogleFonts.ibmPlexMono(
+                    fontSize: 10, height: 1.3,
+                    color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight)
+                : GoogleFonts.sourceSans3(
+                    fontSize: 10, height: 1.3,
+                    color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight)),
           const SizedBox(height: 8),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
@@ -973,9 +1447,10 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
               color: accentColor.withAlpha(15),
               borderRadius: BorderRadius.circular(4),
               border: Border.all(color: accentColor.withAlpha(40))),
-            child: Text('ADD PHOTO', style: GoogleFonts.ibmPlexMono(
-              fontSize: 8, fontWeight: FontWeight.w700,
-              letterSpacing: 1.5, color: accentColor.withAlpha(180))),
+            child: Text(fileName != null ? 'PHOTO NEEDED' : 'ADD PHOTO',
+              style: GoogleFonts.ibmPlexMono(
+                fontSize: 10, fontWeight: FontWeight.w700,
+                letterSpacing: 1.5, color: accentColor.withAlpha(180))),
           ),
         ],
       ),
@@ -995,8 +1470,8 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
           fontSize: 10, fontWeight: FontWeight.w700, letterSpacing: 2.0, color: AppTheme.textSecondary)),
         const SizedBox(height: 8),
         StepList(steps: us.viewSteps),
-        if (us.safetyNotes.isNotEmpty) ...[
-          const SizedBox(height: 12), SafetyCallout(warnings: us.safetyNotes)],
+        if (_uniqueSafetyNotes.isNotEmpty) ...[
+          const SizedBox(height: 12), SafetyCallout(warnings: _uniqueSafetyNotes)],
         if (us.videoSource != null) ...[
           const SizedBox(height: 12),
           Row(children: [
@@ -1029,7 +1504,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         title: Text(title, style: const TextStyle(fontSize: 16))),
       body: InteractiveViewer(minScale: 0.5, maxScale: 5.0,
         child: Center(child: Image.asset(path, fit: BoxFit.contain,
-          errorBuilder: (_, __, ___) => const Center(
+          errorBuilder: (_, _, _) => const Center(
             child: Text('Image not found', style: TextStyle(color: Colors.white54)))))),
     )));
   }

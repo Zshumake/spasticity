@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kIsWeb, defaultTargetPlatform;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
@@ -5,7 +6,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../data/muscle_data.dart';
 import '../data/muscle_provider.dart';
+import '../data/session_planner.dart';
 import '../models/muscle.dart';
+import '../models/session_item.dart';
 import '../models/spasticity_pattern.dart';
 import '../theme/app_theme.dart';
 import '../theme/favorites_manager.dart';
@@ -55,6 +58,19 @@ class _DashboardPageState extends State<DashboardPage> {
   /// True when we should show the pattern landing page
   bool get _showPatternLanding => _selectedCategory == null && _searchQuery.isEmpty;
 
+  /// Keyboard-shortcut hints only where there is a keyboard to press them on.
+  /// The "/" badge in the search field was showing on the phone.
+  bool get _showsKeyboardHints =>
+      kIsWeb ||
+      defaultTargetPlatform == TargetPlatform.macOS ||
+      defaultTargetPlatform == TargetPlatform.windows ||
+      defaultTargetPlatform == TargetPlatform.linux;
+
+  void _clearSearch() {
+    _searchController.clear();
+    _onSearchChanged('');
+  }
+
   @override
   void dispose() {
     _pageFocusNode.dispose();
@@ -74,6 +90,7 @@ class _DashboardPageState extends State<DashboardPage> {
           .map((id) => data.findById(id))
           .where((m) => m != null)
           .cast<Muscle>()
+          .where((m) => data.isVisible(m.id))
           .where(_matchesSearch)
           .toList();
     }
@@ -186,7 +203,12 @@ class _DashboardPageState extends State<DashboardPage> {
       },
       child: Scaffold(
         backgroundColor: isDark ? AppTheme.bgDark : AppTheme.bgLight,
-        body: CustomScrollView(
+        // Top inset only: the status bar and Dynamic Island paint over this
+        // space on a phone, and the wordmark was sitting underneath them.
+        // Bottom stays false so the list scrolls under the home indicator.
+        body: SafeArea(
+          bottom: false,
+          child: CustomScrollView(
           slivers: [
             // Search + nav bar
             SliverToBoxAdapter(child: _buildTopBar(isDark)),
@@ -196,6 +218,7 @@ class _DashboardPageState extends State<DashboardPage> {
             else
               ..._buildMuscleGrid(isDark),
           ],
+          ),
         ),
       ),
     );
@@ -204,7 +227,9 @@ class _DashboardPageState extends State<DashboardPage> {
   // ─── Top Bar (search + quick filters) ──────────────────────
 
   Widget _buildTopBar(bool isDark) {
-    final sidePad = MediaQuery.of(context).size.width < 900 ? 16.0 : 24.0;
+    final width = MediaQuery.of(context).size.width;
+    final sidePad = width < 900 ? 16.0 : 24.0;
+    final tight = width < 520;
     return Padding(
       padding: EdgeInsets.fromLTRB(sidePad, 24, sidePad, 8),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -214,9 +239,19 @@ class _DashboardPageState extends State<DashboardPage> {
             fontWeight: FontWeight.w800, fontSize: 14, letterSpacing: 2.0,
             color: isDark ? AppTheme.primary : AppTheme.primaryDim)),
           const Spacer(),
+          // Session plan link with a count badge
+          _sessionNavChip(isDark),
+          const SizedBox(width: 8),
+          // Identify: the practice mode. Icon-only on a phone so all three
+          // actions fit the bar without the wordmark giving up room.
+          _navChip(Icons.my_location_rounded, 'Identify',
+            AppTheme.success, isDark, () => context.push('/identify'),
+            compact: tight),
+          const SizedBox(width: 8),
           // Dose Calculator link
           _navChip(Icons.calculate_outlined, 'Dose Calc',
-            AppTheme.amber, isDark, () => context.push('/calculator')),
+            AppTheme.amber, isDark, () => context.push('/calculator'),
+            compact: tight),
         ]),
         const SizedBox(height: 16),
         // Search bar
@@ -243,15 +278,27 @@ class _DashboardPageState extends State<DashboardPage> {
             const SizedBox(width: 8),
             _filterChip('Lower', 'Lower Extremity', Icons.directions_walk_rounded,
                 AppTheme.groupColor('Lower Extremity'), isDark),
-            const SizedBox(width: 8),
-            _filterChip('Face', 'Face', Icons.face_outlined,
-                AppTheme.groupColor('Face'), isDark),
-            const SizedBox(width: 8),
-            _filterChip('Neck', 'Cervical', Icons.accessibility_new_rounded,
-                AppTheme.groupColor('Cervical'), isDark),
-            const SizedBox(width: 8),
-            _filterChip('Trunk', 'Trunk', Icons.straighten_rounded,
-                AppTheme.groupColor('Trunk'), isDark),
+            // Category chips only for regions that have visible muscles -
+            // with muscles hidden until their scan is bundled, Face (and
+            // possibly others) would otherwise lead to an empty grid.
+            if (context.read<MuscleDataProvider>().muscles
+                .any((m) => m.group.contains('Face'))) ...[
+              const SizedBox(width: 8),
+              _filterChip('Face', 'Face', Icons.face_outlined,
+                  AppTheme.groupColor('Face'), isDark),
+            ],
+            if (context.read<MuscleDataProvider>().muscles
+                .any((m) => m.group == 'Cervical')) ...[
+              const SizedBox(width: 8),
+              _filterChip('Neck', 'Cervical', Icons.accessibility_new_rounded,
+                  AppTheme.groupColor('Cervical'), isDark),
+            ],
+            if (context.read<MuscleDataProvider>().muscles
+                .any((m) => m.group.contains('Trunk'))) ...[
+              const SizedBox(width: 8),
+              _filterChip('Trunk', 'Trunk', Icons.straighten_rounded,
+                  AppTheme.groupColor('Trunk'), isDark),
+            ],
           ]),
         ),
       ]),
@@ -273,8 +320,12 @@ class _DashboardPageState extends State<DashboardPage> {
           _searchController.clear();
         }
       }),
+      behavior: HitTestBehavior.opaque,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
+        // Thumb-sized: the chips were 30px tall, well under the 44pt target.
+        constraints: const BoxConstraints(minHeight: 40),
+        alignment: Alignment.center,
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
         decoration: BoxDecoration(
           color: active ? color.withAlpha(30) : Colors.transparent,
@@ -292,21 +343,100 @@ class _DashboardPageState extends State<DashboardPage> {
     );
   }
 
-  Widget _navChip(IconData icon, String label, Color color, bool isDark, VoidCallback onTap) {
-    return GestureDetector(
+  Widget _navChip(IconData icon, String label, Color color, bool isDark, VoidCallback onTap,
+      {bool compact = false}) {
+    return Semantics(
+      button: true,
+      // The label is what VoiceOver reads once the chip goes icon-only.
+      label: label,
+      child: GestureDetector(
       onTap: onTap,
+      behavior: HitTestBehavior.opaque,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+        // 44pt tall either way: these are the only always-reachable actions
+        // on the screen, so they stay thumb-sized when the label drops.
+        constraints: const BoxConstraints(minHeight: 44),
+        alignment: Alignment.center,
+        padding: EdgeInsets.symmetric(horizontal: compact ? 11 : 10, vertical: 6),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: color.withAlpha(80)),
         ),
         child: Row(mainAxisSize: MainAxisSize.min, children: [
-          Icon(icon, size: 13, color: color),
-          const SizedBox(width: 6),
-          Text(label, style: GoogleFonts.ibmPlexMono(
-            fontSize: 10, fontWeight: FontWeight.w600, color: color)),
+          Icon(icon, size: compact ? 15 : 13, color: color),
+          if (!compact) ...[
+            const SizedBox(width: 6),
+            Text(label, style: GoogleFonts.ibmPlexMono(
+              fontSize: 10, fontWeight: FontWeight.w600, color: color)),
+          ],
         ]),
+      ),
+      ),
+    );
+  }
+
+  /// Session-plan link in the top bar, with a live count badge.
+  Widget _sessionNavChip(bool isDark) {
+    final count = context.watch<SessionPlanner>().count;
+    const color = AppTheme.primary;
+    return GestureDetector(
+      onTap: () => context.push('/session'),
+      behavior: HitTestBehavior.opaque,
+      child: Container(
+        constraints: const BoxConstraints(minHeight: 44),
+        alignment: Alignment.center,
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+        decoration: BoxDecoration(
+          color: count > 0 ? color.withAlpha(30) : Colors.transparent,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: color.withAlpha(count > 0 ? 120 : 80)),
+        ),
+        child: Row(mainAxisSize: MainAxisSize.min, children: [
+          const Icon(Icons.vaccines_outlined, size: 13, color: color),
+          const SizedBox(width: 6),
+          Text('Session', style: GoogleFonts.ibmPlexMono(
+            fontSize: 10, fontWeight: FontWeight.w600, color: color)),
+          if (count > 0) ...[
+            const SizedBox(width: 6),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 1),
+              decoration: BoxDecoration(
+                color: color,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Text('$count', style: GoogleFonts.ibmPlexMono(
+                fontSize: 10, fontWeight: FontWeight.w700, color: Colors.white)),
+            ),
+          ],
+        ]),
+      ),
+    );
+  }
+
+  void _addPatternToSession(List<Muscle> muscles) {
+    final planner = context.read<SessionPlanner>();
+    final items = <SessionItem>[];
+    for (final m in muscles) {
+      final item = defaultSessionItem(m);
+      if (item != null) items.add(item);
+    }
+    if (items.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('No dose data to add for these muscles.')),
+      );
+      return;
+    }
+    planner.addAll(items);
+    final skipped = muscles.length - items.length;
+    final msg = skipped > 0
+        ? 'Added ${items.length} to session · $skipped had no dose data'
+        : 'Added ${items.length} muscles to session';
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(msg),
+        action: SnackBarAction(
+            label: 'View', onPressed: () => context.push('/session')),
+        duration: const Duration(seconds: 3),
       ),
     );
   }
@@ -330,6 +460,12 @@ class _DashboardPageState extends State<DashboardPage> {
         Expanded(child: TextField(
           controller: _searchController, focusNode: _searchFocusNode,
           onChanged: _onSearchChanged,
+          // Muscle names are not dictionary words: iOS autocorrect was
+          // rewriting them mid-search.
+          autocorrect: false,
+          enableSuggestions: false,
+          textCapitalization: TextCapitalization.none,
+          textInputAction: TextInputAction.search,
           style: GoogleFonts.sourceSans3(fontSize: 13),
           decoration: InputDecoration(
             hintText: 'Search muscles, patterns, body regions...',
@@ -337,13 +473,27 @@ class _DashboardPageState extends State<DashboardPage> {
             hintStyle: GoogleFonts.sourceSans3(color: AppTheme.textTertiary, fontSize: 13),
             isDense: true, contentPadding: const EdgeInsets.symmetric(vertical: 10)),
         )),
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-          decoration: BoxDecoration(
-            color: isDark ? AppTheme.borderDark : AppTheme.borderLight,
-            borderRadius: BorderRadius.circular(4)),
-          child: Text('/', style: GoogleFonts.ibmPlexMono(fontSize: 11, color: AppTheme.textTertiary)),
-        ),
+        if (_searchQuery.isNotEmpty)
+          Semantics(
+            button: true,
+            label: 'Clear search',
+            child: GestureDetector(
+              onTap: _clearSearch,
+              behavior: HitTestBehavior.opaque,
+              child: const SizedBox(
+                width: 36, height: 36,
+                child: Icon(Icons.cancel_rounded, size: 18, color: AppTheme.textTertiary),
+              ),
+            ),
+          )
+        else if (_showsKeyboardHints)
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+            decoration: BoxDecoration(
+              color: isDark ? AppTheme.borderDark : AppTheme.borderLight,
+              borderRadius: BorderRadius.circular(4)),
+            child: Text('/', style: GoogleFonts.ibmPlexMono(fontSize: 11, color: AppTheme.textTertiary)),
+          ),
       ]),
     );
   }
@@ -355,10 +505,14 @@ class _DashboardPageState extends State<DashboardPage> {
     final width = MediaQuery.of(context).size.width;
     final crossAxisCount = width > 1200 ? 4 : (width > 800 ? 3 : (width > 500 ? 2 : 1));
 
-    // Group patterns by region
+    // Group patterns by region. Patterns whose muscles are all hidden
+    // (no ultrasound bundled) are not shown - selecting them would land on
+    // an empty list.
+    final data = context.read<MuscleDataProvider>();
     final regionOrder = ['Face', 'Neck', 'Upper Extremity', 'Lower Extremity', 'Trunk'];
     final grouped = <String, List<SpasticityPattern>>{};
     for (final p in _patterns) {
+      if (!p.muscles.any(data.isVisible)) continue;
       grouped.putIfAbsent(p.region, () => []).add(p);
     }
 
@@ -404,21 +558,27 @@ class _DashboardPageState extends State<DashboardPage> {
         ),
       ));
 
-      // Pattern cards grid
+      // Pattern cards: list on a phone, grid above it (see the muscle grid).
       slivers.add(SliverPadding(
         padding: EdgeInsets.fromLTRB(sidePad, 0, sidePad, 8),
-        sliver: SliverGrid(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: crossAxisCount,
-            childAspectRatio: width < 500 ? 3.0 : 2.8,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-          ),
-          delegate: SliverChildBuilderDelegate(
-            (ctx, i) => _patternCard(pats[i], isDark),
-            childCount: pats.length,
-          ),
-        ),
+        sliver: crossAxisCount == 1
+            ? SliverList.separated(
+                itemCount: pats.length,
+                separatorBuilder: (_, i) => const SizedBox(height: 10),
+                itemBuilder: (ctx, i) => _patternCard(pats[i], isDark, asRow: true),
+              )
+            : SliverGrid(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: crossAxisCount,
+                  childAspectRatio: 2.8,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                ),
+                delegate: SliverChildBuilderDelegate(
+                  (ctx, i) => _patternCard(pats[i], isDark),
+                  childCount: pats.length,
+                ),
+              ),
       ));
     }
 
@@ -428,7 +588,11 @@ class _DashboardPageState extends State<DashboardPage> {
     return slivers;
   }
 
-  Widget _patternCard(SpasticityPattern pattern, bool isDark) {
+  /// [asRow] lays the card out for a LIST (unbounded height), where the
+  /// Spacers that fill a fixed grid cell would instead be an unbounded-
+  /// constraints crash.
+  Widget _patternCard(SpasticityPattern pattern, bool isDark,
+      {bool asRow = false}) {
     final regionColor = _regionColor(pattern.region);
     return GestureDetector(
       onTap: () => setState(() { _selectedCategory = pattern.id; _selectedIndex = -1; }),
@@ -440,6 +604,7 @@ class _DashboardPageState extends State<DashboardPage> {
           border: Border.all(color: regionColor.withAlpha(50)),
         ),
         child: Column(
+          mainAxisSize: asRow ? MainAxisSize.min : MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -454,7 +619,7 @@ class _DashboardPageState extends State<DashboardPage> {
               fontSize: 11, height: 1.3,
               color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight),
               maxLines: 2, overflow: TextOverflow.ellipsis),
-            const Spacer(),
+            if (asRow) const SizedBox(height: 10) else const Spacer(),
             // Muscle count badge
             Row(children: [
               Container(
@@ -463,13 +628,30 @@ class _DashboardPageState extends State<DashboardPage> {
                   color: regionColor.withAlpha(20),
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: regionColor.withAlpha(50))),
-                child: Text('${pattern.muscles.length} muscles',
+                child: Text(
+                  '${pattern.muscles.where(context.read<MuscleDataProvider>().isVisible).length} muscles',
                   style: GoogleFonts.ibmPlexMono(
-                    fontSize: 9, fontWeight: FontWeight.w600, color: regionColor)),
+                    fontSize: 10, fontWeight: FontWeight.w600, color: regionColor)),
               ),
               const Spacer(),
-              Icon(Icons.arrow_forward_ios_rounded, size: 10,
-                  color: AppTheme.textTertiary.withAlpha(100)),
+              // Straight to the planner, without going through the filtered
+              // list first: the pattern IS the question being asked.
+              GestureDetector(
+                onTap: () => context.push('/pattern/${pattern.id}/plan'),
+                behavior: HitTestBehavior.opaque,
+                child: Container(
+                  constraints: const BoxConstraints(minHeight: 32),
+                  alignment: Alignment.center,
+                  padding: const EdgeInsets.symmetric(horizontal: 11),
+                  decoration: BoxDecoration(
+                    color: AppTheme.patternColor.withAlpha(24),
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(color: AppTheme.patternColor.withAlpha(90))),
+                  child: Text('PLAN', style: GoogleFonts.ibmPlexMono(
+                    fontSize: 10, fontWeight: FontWeight.w700,
+                    letterSpacing: 1.2, color: AppTheme.patternColor)),
+                ),
+              ),
             ]),
           ],
         ),
@@ -478,14 +660,8 @@ class _DashboardPageState extends State<DashboardPage> {
   }
 
   Color _regionColor(String region) {
-    switch (region) {
-      case 'Face': return const Color(0xFFE17055);
-      case 'Neck': return const Color(0xFF00B894);
-      case 'Upper Extremity': return const Color(0xFFFF6B6B);
-      case 'Lower Extremity': return const Color(0xFF0984E3);
-      case 'Trunk': return const Color(0xFFFDAA5C);
-      default: return AppTheme.primary;
-    }
+    // Single source of truth — the design-system region colors.
+    return AppTheme.groupColor(region);
   }
 
   // ─── Muscle Grid (filtered view) ───────────────────────────
@@ -511,14 +687,19 @@ class _DashboardPageState extends State<DashboardPage> {
                 _searchController.clear();
                 _selectedIndex = -1;
               }),
-              child: Row(mainAxisSize: MainAxisSize.min, children: [
-                Icon(Icons.arrow_back_ios_rounded, size: 12, color: AppTheme.patternColor),
-                const SizedBox(width: 4),
-                Text('Back to patterns', style: GoogleFonts.ibmPlexMono(
-                  fontSize: 10, fontWeight: FontWeight.w600, color: AppTheme.patternColor)),
-              ]),
+              behavior: HitTestBehavior.opaque,
+              child: Container(
+                constraints: const BoxConstraints(minHeight: 44),
+                alignment: Alignment.centerLeft,
+                child: Row(mainAxisSize: MainAxisSize.min, children: [
+                  Icon(Icons.arrow_back_ios_rounded, size: 12, color: AppTheme.patternColor),
+                  const SizedBox(width: 4),
+                  Text('Back to patterns', style: GoogleFonts.ibmPlexMono(
+                    fontSize: 10, fontWeight: FontWeight.w600, color: AppTheme.patternColor)),
+                ]),
+              ),
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 4),
             Row(children: [
               Container(width: 4, height: 20, decoration: BoxDecoration(
                 color: _catColor, borderRadius: BorderRadius.circular(2))),
@@ -537,12 +718,52 @@ class _DashboardPageState extends State<DashboardPage> {
                 child: Text(_selectedPattern!.description,
                   style: GoogleFonts.sourceSans3(fontSize: 13, color: AppTheme.textSecondary)),
               ),
+              Padding(
+                padding: const EdgeInsets.only(left: 16, top: 12),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: GestureDetector(
+                    onTap: () => _addPatternToSession(filtered),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: AppTheme.primary.withAlpha(30),
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(color: AppTheme.primary.withAlpha(120)),
+                      ),
+                      child: Row(mainAxisSize: MainAxisSize.min, children: [
+                        const Icon(Icons.playlist_add_rounded, size: 15, color: AppTheme.primary),
+                        const SizedBox(width: 6),
+                        Text('Add all ${filtered.length} to session',
+                          style: GoogleFonts.ibmPlexMono(
+                            fontSize: 11, fontWeight: FontWeight.w600, color: AppTheme.primary)),
+                      ]),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ]),
         ),
       ),
       // Grid
-      if (filtered.isNotEmpty)
+      // One column on a phone is a LIST, not a one-wide grid: a grid cell is
+      // locked to childAspectRatio, so a card whose probe chips wrap to a
+      // second line overflows it (25px, seen on an iPhone 16 Pro). A list
+      // sizes each row to its own content and cannot overflow.
+      if (filtered.isNotEmpty && crossAxisCount == 1)
+        SliverPadding(
+          padding: EdgeInsets.fromLTRB(sidePad, 0, sidePad, 24),
+          sliver: SliverList.separated(
+            itemCount: filtered.length,
+            separatorBuilder: (_, i) => const SizedBox(height: 10),
+            itemBuilder: (ctx, i) => MuscleCard(
+                muscle: filtered[i],
+                isSelected: i == _selectedIndex,
+                asRow: true),
+          ),
+        ),
+      if (filtered.isNotEmpty && crossAxisCount > 1)
         SliverPadding(
           padding: EdgeInsets.fromLTRB(sidePad, 0, sidePad, 24),
           sliver: SliverGrid(

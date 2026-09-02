@@ -9,6 +9,11 @@ class ToxinBrand {
   final List<DilutionPreset> commonDilutions;
   final String storageNote;
   final String maxDoseNote;
+  /// Labeled per-session maximum dose in this brand's units, used by the
+  /// session planner's ceiling meter. This is the headline number; the full
+  /// nuance (e.g. separate upper- vs lower-limb caps) stays in [maxDoseNote].
+  /// Advisory only — always verify against current labeling.
+  final int maxSessionUnits;
   final String? conversionNote;
   final Color color;
 
@@ -25,6 +30,7 @@ class ToxinBrand {
     required this.commonDilutions,
     required this.storageNote,
     required this.maxDoseNote,
+    required this.maxSessionUnits,
     this.conversionNote,
     required this.color,
     this.preDilutedVolumes = const {},

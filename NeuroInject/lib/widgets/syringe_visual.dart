@@ -21,6 +21,7 @@ class SyringeVisual extends StatelessWidget {
     return CustomPaint(
       size: const Size(double.infinity, 280),
       painter: _SyringePainter(
+        ink: AppPalette.of(context).ink,
         concentrationPerMl: concentrationPerMl,
         highlightVolumeMl: highlightVolumeMl,
         brandColor: brandColor,
@@ -33,8 +34,12 @@ class _SyringePainter extends CustomPainter {
   final double concentrationPerMl;
   final double highlightVolumeMl;
   final Color brandColor;
+  /// Tick marks, labels and barrel outline: white on the dark theme, black
+  /// on the light one, where white line-work vanished into the card.
+  final Color ink;
 
   _SyringePainter({
+    required this.ink,
     required this.concentrationPerMl,
     required this.highlightVolumeMl,
     required this.brandColor,
@@ -72,7 +77,7 @@ class _SyringePainter extends CustomPainter {
 
     // Barrel outline
     final barrelOutlinePaint = Paint()
-      ..color = Colors.white.withAlpha(60)
+      ..color = ink.withAlpha(60)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2;
     final barrelRect = RRect.fromRectAndRadius(
@@ -84,7 +89,7 @@ class _SyringePainter extends CustomPainter {
     // Barrel fill (background)
     canvas.drawRRect(
       barrelRect,
-      Paint()..color = Colors.white.withAlpha(8),
+      Paint()..color = ink.withAlpha(8),
     );
 
     // Highlighted fill (the dose volume)
@@ -129,7 +134,7 @@ class _SyringePainter extends CustomPainter {
         Offset(barrelLeft - tickLength, y),
         Offset(barrelLeft, y),
         Paint()
-          ..color = Colors.white.withAlpha(isMajor ? 150 : 60)
+          ..color = ink.withAlpha(isMajor ? 150 : 60)
           ..strokeWidth = isMajor ? 1.5 : 1.0,
       );
 
@@ -138,7 +143,7 @@ class _SyringePainter extends CustomPainter {
         Offset(barrelRight, y),
         Offset(barrelRight + tickLength, y),
         Paint()
-          ..color = Colors.white.withAlpha(isMajor ? 150 : 60)
+          ..color = ink.withAlpha(isMajor ? 150 : 60)
           ..strokeWidth = isMajor ? 1.5 : 1.0,
       );
 
@@ -148,7 +153,7 @@ class _SyringePainter extends CustomPainter {
           text: volumeMl.toStringAsFixed(1),
           style: TextStyle(
             fontSize: 10,
-            color: Colors.white.withAlpha(120),
+            color: ink.withAlpha(120),
             fontWeight: isMajor ? FontWeight.w600 : FontWeight.w400,
           ),
         );
@@ -238,6 +243,7 @@ class _SyringePainter extends CustomPainter {
   bool shouldRepaint(_SyringePainter oldDelegate) {
     return oldDelegate.concentrationPerMl != concentrationPerMl ||
         oldDelegate.highlightVolumeMl != highlightVolumeMl ||
-        oldDelegate.brandColor != brandColor;
+        oldDelegate.brandColor != brandColor ||
+        oldDelegate.ink != ink;
   }
 }

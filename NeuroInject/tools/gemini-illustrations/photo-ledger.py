@@ -1,0 +1,86 @@
+# COMPLETE ledger: every clinical DSC photo -> (muscle-or-tag, role)
+# roles: pos=patient position, mark=probe-line+dot, probe=live probe(+syringe), junk, deleted=target no longer in app
+L = {
+ # ---- Apr 24 ----
+ "DSC_0437":("supine","pos"),"DSC_0438":("supine","pos"),"DSC_0439":("supine","pos"),
+ "DSC_0440":("supine","pos"),"DSC_0441":("supine","pos"),"DSC_0442":("supine","pos"),
+ "DSC_0443":("supine","pos"),"DSC_0444":("lat-dorsi","pos"),"DSC_0445":("pec-major","pos"),
+ "DSC_0446":("pec-major","probe"),"DSC_0447":("pec-major","probe"),
+ "DSC_0448":("lat-dorsi","probe"),"DSC_0449":("lat-dorsi","probe"),"DSC_0450":("lat-dorsi","probe"),
+ "DSC_0451":("lat-dorsi","probe"),"DSC_0452":("lat-dorsi","probe"),
+ "DSC_0453":("pec-major","mark"),"DSC_0454":("pec-major","mark"),"DSC_0455":("pec-major","mark"),
+ "DSC_0456":("pec-major","mark"),"DSC_0457":("pec-major","mark"),
+ "DSC_0458":("lat-dorsi","mark"),"DSC_0459":("lat-dorsi","mark"),"DSC_0460":("lat-dorsi","mark"),
+ "DSC_0461":("biceps-brachii-brachialis","probe"),"DSC_0462":("biceps-brachii-brachialis","probe"),
+ "DSC_0463":("biceps-brachii-brachialis","mark"),"DSC_0464":("biceps-brachii-brachialis","mark"),
+ "DSC_0465":("biceps-brachii-brachialis","mark"),
+ "DSC_0466":("brachialis","mark"),"DSC_0467":("brachialis","mark"),"DSC_0468":("brachialis","mark"),
+ "DSC_0469":("triceps","pos"),"DSC_0470":("triceps","pos"),
+ "DSC_0471":("triceps","probe"),"DSC_0472":("triceps","probe"),
+ "DSC_0473":("triceps","probe"),"DSC_0474":("triceps","probe"),
+ "DSC_0475":("triceps","mark"),"DSC_0476":("triceps","mark"),"DSC_0477":("triceps","mark"),
+ "DSC_0478":("brachioradialis","probe"),"DSC_0479":("brachioradialis","probe"),
+ "DSC_0480":("brachioradialis","mark"),"DSC_0481":("brachioradialis","mark"),"DSC_0482":("brachioradialis","mark"),
+ "DSC_0483":("pronator-teres-fcr-phi","probe"),"DSC_0484":("pronator-teres-fcr-phi","probe"),
+ "DSC_0485":("fcr-palmaris-longus-phi","probe"),"DSC_0486":("fcr-palmaris-longus-phi","probe"),
+ "DSC_0487":("pronator-teres-fcr-phi","mark"),"DSC_0488":("pronator-teres-fcr-phi","mark"),
+ "DSC_0489":("pronator-teres-fcr-phi","mark"),
+ "DSC_0490":("palmaris-longus-phi","probe"),"DSC_0491":("palmaris-longus-phi","probe"),
+ "DSC_0492":("fcr-palmaris-longus-phi","mark"),"DSC_0493":("fcr-palmaris-longus-phi","mark"),
+ "DSC_0494":("fcr-palmaris-longus-phi","mark"),
+ "DSC_0495":("fcr-palmaris-longus-phi","mark"),"DSC_0496":("fcr-palmaris-longus-phi","mark"),   # user: likely FCR
+ "DSC_0497":("fcr-palmaris-longus-phi","mark"),
+ # ---- Apr 29 ----
+ "DSC_0498":("prone","pos"),"DSC_0499":("supine-knee-flexed","pos"),
+ "DSC_0500":("si-joint","deleted"),"DSC_0501":("si-joint","deleted"),
+ "DSC_0502":("piriformis","mark"),
+ "DSC_0503":("ischial-tuberosity","deleted"),"DSC_0504":("piriformis","mark"),
+ "DSC_0505":("ischial-tuberosity","deleted"),"DSC_0506":("ischial-tuberosity","deleted"),
+ "DSC_0507":("suprapatellar","deleted"),"DSC_0508":("suprapatellar","deleted"),
+ "DSC_0509":("it-band","deleted"),"DSC_0510":("peroneal-tendons","deleted"),
+ # ---- Jun 12 ----
+ "DSC_0708":("","junk"),
+ "DSC_0709":("brachioradialis-2","mark"),"DSC_0710":("brachioradialis-2","mark"),"DSC_0711":("brachioradialis-2","mark"),
+ "DSC_0712":("fcu","mark"),"DSC_0713":("fcu","mark"),   # user-confirmed: FCU, arm raised
+ "DSC_0714":("fcu","mark"),"DSC_0715":("fcu","mark"),"DSC_0716":("fcu","mark"),
+ "DSC_0717":("fpl","mark"),"DSC_0718":("fpl","mark"),   # user-corrected: this marker is FPL
+ "DSC_0719":("fpl","mark"),"DSC_0720":("fpl","mark"),
+ "DSC_0721":("pronator-quadratus-median-nerve","mark"),"DSC_0722":("pronator-quadratus-median-nerve","mark"),
+ "DSC_0723":("interossei-adductor-pollicis-fpb","mark"),"DSC_0724":("interossei-adductor-pollicis-fpb","mark"),
+ "DSC_0725":("hand-lumbricals","mark"),"DSC_0726":("hand-lumbricals","mark"),"DSC_0727":("hand-lumbricals","mark"),
+ "DSC_0728":("adductor-longus-brevis-magnus","pos"),
+ "DSC_0729":("adductor-longus-brevis-magnus","mark"),"DSC_0730":("adductor-longus-brevis-magnus","mark"),
+ "DSC_0731":("adductor-longus-brevis-magnus","mark"),"DSC_0732":("adductor-longus-brevis-magnus","mark"),
+ "DSC_0733":("gracilis-adductor-magnus","mark"),"DSC_0734":("gracilis-adductor-magnus","mark"),
+ "DSC_0735":("gracilis-adductor-magnus","mark"),
+ # ---- Jun 15 ----
+ "DSC_0736":("iliopsoas-sartorius","pos"),"DSC_0737":("iliopsoas-sartorius","mark"),"DSC_0738":("iliopsoas-sartorius","mark"),
+ "DSC_0739":("rectus-femoris-vastus-intermedius","mark"),
+ "DSC_0740":("vastus-lateralis-intermedius","mark"),
+ "DSC_0741":("vastus-medialis","mark"),
+ "DSC_0742":("biceps-femoris","mark"),
+ "DSC_0743":("semitendinosus","mark"),
+ "DSC_0744":("semimembranosus","mark"),
+ "DSC_0745":("fdl-tibialis-posterior","mark"),
+ "DSC_0746":("tibialis-anterior-posterior","mark"),
+ # ---- Jun 18 ----
+ "DSC_0747":("scm","mark"),
+ "DSC_0748":("upper-trapezius","mark"),"DSC_0749":("upper-trapezius","mark"),
+ "DSC_0750":("levator-scapulae","mark"),
+ "DSC_0751":("trapezius-splenius-capitis-semispinalis-capitis","mark"),
+ "DSC_0752":("scalenes-anterior-middle","mark"),
+ "DSC_0753":("pec-major-pec-minor","mark"),"DSC_0754":("pec-major-pec-minor","mark"),
+ # ---- Jun 25 ----
+ "DSC_0755":("triceps-long-lateral","mark"),"DSC_0756":("triceps-long-lateral","mark"),
+ "DSC_0757":("teres-major-serratus-anterior","mark"),"DSC_0758":("teres-major-serratus-anterior","mark"),
+ "DSC_0759":("lat-dorsi-serratus-anterior","mark"),"DSC_0760":("lat-dorsi-serratus-anterior","mark"),
+ "DSC_0761":("semimembranosus","mark"),"DSC_0762":("semitendinosus","mark"),   # Jun-25 hamstring RETAKES
+ "DSC_0763":("biceps-femoris","mark"),   # Jun-25 hamstring retake
+ "DSC_0764":("gastrocnemius-lateral-soleus","mark"),"DSC_0765":("gastrocnemius-lateral-soleus","mark"),
+ "DSC_0766":("gastrocnemius-medial-soleus","mark"),"DSC_0767":("gastrocnemius-medial-soleus","mark"),
+ "DSC_0768":("fhl","mark"),
+ # ---- Jun 30 ----
+ "DSC_0769":("ecrl-ecrb","mark"),"DSC_0770":("ecrl-ecrb","mark"),"DSC_0771":("ecrl-ecrb","mark"),
+ "DSC_0772":("ehl-edl-tibialis-anterior","mark"),"DSC_0773":("ehl-edl-tibialis-anterior","mark"),
+ "DSC_0774":("pectineus","mark"),
+}

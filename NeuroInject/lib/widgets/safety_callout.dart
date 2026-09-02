@@ -2,9 +2,22 @@ import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 
 class SafetyCallout extends StatelessWidget {
+  /// The warnings / danger items to list.
   final List<String> warnings;
 
-  const SafetyCallout({super.key, required this.warnings});
+  /// Optional title. Defaults to 'Safety'. Callers can pass e.g.
+  /// 'Adjacent structures' when rendering muscle-level danger zones.
+  final String title;
+
+  /// Optional icon override. Defaults to [Icons.warning_amber_rounded].
+  final IconData icon;
+
+  const SafetyCallout({
+    super.key,
+    required this.warnings,
+    this.title = 'Safety',
+    this.icon = Icons.warning_amber_rounded,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +41,10 @@ class SafetyCallout extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(Icons.warning_amber_rounded,
-                  size: 18, color: AppColors.warningOrange),
+              Icon(icon, size: 18, color: AppColors.warningOrange),
               const SizedBox(width: 6),
               Text(
-                'Safety',
+                title,
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,

@@ -1,0 +1,194 @@
+{
+ "adductor-brevis-probe.jpg": {
+  "illustration_task": "adductor-longus",
+  "source_frame": "DSC_0730"
+ },
+ "adductor-longus-probe.jpg": {
+  "illustration_task": "adductor-longus",
+  "source_frame": "DSC_0730"
+ },
+ "adductor-magnus-probe.jpg": {
+  "illustration_task": "adductor-longus",
+  "source_frame": "DSC_0730"
+ },
+ "adductor-pollicis-probe.jpg": {
+  "illustration_task": "adductor-pollicis",
+  "source_frame": "DSC_0723"
+ },
+ "biceps-brachii-probe.jpg": {
+  "illustration_task": "biceps-brachii",
+  "source_frame": "DSC_0465"
+ },
+ "biceps-femoris-probe.jpg": {
+  "illustration_task": "biceps-femoris",
+  "source_frame": "DSC_0763"
+ },
+ "brachialis-probe.jpg": {
+  "illustration_task": "brachialis",
+  "source_frame": "DSC_0466"
+ },
+ "brachioradialis-probe.jpg": {
+  "illustration_task": "brachioradialis",
+  "source_frame": "DSC_0709"
+ },
+ "ecrb-probe.jpg": {
+  "illustration_task": "ecrl",
+  "source_frame": "DSC_0771"
+ },
+ "ecrl-probe.jpg": {
+  "illustration_task": "ecrl",
+  "source_frame": "DSC_0771"
+ },
+ "edl-probe.jpg": {
+  "illustration_task": "ehl",
+  "source_frame": "DSC_0773"
+ },
+ "ehl-probe.jpg": {
+  "illustration_task": "ehl",
+  "source_frame": "DSC_0773"
+ },
+ "fcr-probe.jpg": {
+  "illustration_task": "fcr",
+  "source_frame": "DSC_0494"
+ },
+ "fcu-probe.jpg": {
+  "illustration_task": "fcu",
+  "source_frame": "DSC_0713"
+ },
+ "fdl-probe.jpg": {
+  "illustration_task": "fdl",
+  "source_frame": "DSC_0745"
+ },
+ "fdp-probe.jpg": {
+  "illustration_task": "fds",
+  "source_frame": "DSC_0715"
+ },
+ "fds-probe.jpg": {
+  "illustration_task": "fds",
+  "source_frame": "DSC_0715"
+ },
+ "fhl-probe.jpg": {
+  "illustration_task": "fhl",
+  "source_frame": "DSC_0768"
+ },
+ "fpl-probe.jpg": {
+  "illustration_task": "fpl",
+  "source_frame": "DSC_0717"
+ },
+ "gastrocnemius-lateral-probe.jpg": {
+  "illustration_task": "gastrocnemius-lateral",
+  "source_frame": "DSC_0764"
+ },
+ "gastrocnemius-medial-probe.jpg": {
+  "illustration_task": "gastrocnemius-medial",
+  "source_frame": "DSC_0766"
+ },
+ "gracilis-probe.jpg": {
+  "illustration_task": "gracilis",
+  "source_frame": "DSC_0735"
+ },
+ "hand-lumbricals-probe.jpg": {
+  "illustration_task": "hand-lumbricals",
+  "source_frame": "DSC_0726"
+ },
+ "iliopsoas-probe.jpg": {
+  "illustration_task": "iliopsoas",
+  "source_frame": "DSC_0738"
+ },
+ "lat-dorsi-probe.jpg": {
+  "illustration_task": "lat-dorsi",
+  "source_frame": "DSC_0760"
+ },
+ "levator-scapulae-probe.jpg": {
+  "illustration_task": "levator-scapulae",
+  "source_frame": "DSC_0750"
+ },
+ "pec-major-probe.jpg": {
+  "illustration_task": "pec-major",
+  "source_frame": "DSC_0456"
+ },
+ "pectineus-probe.jpg": {
+  "illustration_task": "pectineus",
+  "source_frame": "DSC_0774"
+ },
+ "piriformis-probe.jpg": {
+  "illustration_task": "piriformis",
+  "source_frame": "DSC_0504"
+ },
+ "pronator-quadratus-probe.jpg": {
+  "illustration_task": "pronator-quadratus",
+  "source_frame": "DSC_0722"
+ },
+ "pronator-teres-probe.jpg": {
+  "illustration_task": "pronator-teres",
+  "source_frame": "DSC_0489"
+ },
+ "rectus-femoris-probe.jpg": {
+  "illustration_task": "rectus-femoris",
+  "source_frame": "DSC_0739"
+ },
+ "scalenes-probe.jpg": {
+  "illustration_task": "scalenes",
+  "source_frame": "DSC_0752"
+ },
+ "scm-probe.jpg": {
+  "illustration_task": "scm",
+  "source_frame": "DSC_0747"
+ },
+ "semimembranosus-probe.jpg": {
+  "illustration_task": "semimembranosus",
+  "source_frame": "DSC_0761"
+ },
+ "semispinalis-capitis-probe.jpg": {
+  "illustration_task": "splenius-capitis",
+  "source_frame": "DSC_0751"
+ },
+ "semitendinosus-probe.jpg": {
+  "illustration_task": "semitendinosus",
+  "source_frame": "DSC_0762"
+ },
+ "soleus-lateral-probe.jpg": {
+  "illustration_task": "gastrocnemius-lateral",
+  "source_frame": "DSC_0764"
+ },
+ "soleus-medial-probe.jpg": {
+  "illustration_task": "gastrocnemius-medial",
+  "source_frame": "DSC_0766"
+ },
+ "splenius-capitis-probe.jpg": {
+  "illustration_task": "splenius-capitis",
+  "source_frame": "DSC_0751"
+ },
+ "teres-major-probe.jpg": {
+  "illustration_task": "teres-major",
+  "source_frame": "DSC_0757"
+ },
+ "tibialis-anterior-probe.jpg": {
+  "illustration_task": "tibialis-anterior",
+  "source_frame": "DSC_0746"
+ },
+ "tibialis-posterior-probe.jpg": {
+  "illustration_task": "fdl",
+  "source_frame": "DSC_0745"
+ },
+ "triceps-probe.jpg": {
+  "illustration_task": "triceps",
+  "source_frame": "DSC_0756"
+ },
+ "upper-trapezius-probe.jpg": {
+  "illustration_task": "upper-trapezius",
+  "source_frame": "DSC_0748"
+ },
+ "vastus-intermedius-probe.jpg": {
+  "illustration_task": "rectus-femoris",
+  "source_frame": "DSC_0739"
+ },
+ "vastus-lateralis-probe.jpg": {
+  "illustration_task": "vastus-lateralis",
+  "source_frame": "DSC_0740"
+ },
+ "vastus-medialis-probe.jpg": {
+  "illustration_task": "vastus-medialis",
+  "source_frame": "DSC_0741"
+ }
+}

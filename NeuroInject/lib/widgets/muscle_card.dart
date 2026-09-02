@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -10,7 +11,19 @@ class MuscleCard extends StatefulWidget {
   final Muscle muscle;
   final bool isSelected;
 
-  const MuscleCard({super.key, required this.muscle, this.isSelected = false});
+  /// Lay out for a LIST row (unbounded height) rather than a fixed grid cell.
+  /// The grid form fills its cell with Expanded + Spacer; a list row has no
+  /// height to fill, so those become an unbounded-constraints crash. In list
+  /// form the card sizes to its own content, which is the whole point: a
+  /// second line of probe text lengthens the row instead of overflowing it.
+  final bool asRow;
+
+  const MuscleCard({
+    super.key,
+    required this.muscle,
+    this.isSelected = false,
+    this.asRow = false,
+  });
 
   @override
   State<MuscleCard> createState() => _MuscleCardState();
@@ -50,7 +63,11 @@ class _MuscleCardState extends State<MuscleCard> {
                 ? [BoxShadow(color: catColor.withAlpha(20), blurRadius: 20, offset: const Offset(0, 4))]
                 : [],
           ),
-          child: Column(
+          // The favorite star overlays the top-right corner from a Stack so
+          // it can be a full 44pt target without adding a 44pt row to the
+          // card: it used to be an 18px icon in a bare GestureDetector.
+          child: Stack(fit: StackFit.passthrough, children: [
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Color bar
@@ -63,30 +80,21 @@ class _MuscleCardState extends State<MuscleCard> {
                     topRight: Radius.circular(AppTheme.radiusMd)),
                 ),
               ),
-              Expanded(
+              _fill(
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(14, 10, 14, 10),
                   child: Column(
+                    mainAxisSize: widget.asRow ? MainAxisSize.min : MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Group label + favorite
+                      // Group label; the star lives in the Stack above.
                       Row(children: [
-                        Text(widget.muscle.group.toUpperCase(),
+                        Expanded(child: Text(widget.muscle.group.toUpperCase(),
+                          maxLines: 1, overflow: TextOverflow.ellipsis,
                           style: GoogleFonts.ibmPlexMono(
-                            fontSize: 9, fontWeight: FontWeight.w700,
-                            letterSpacing: 1.5, color: catColor)),
-                        const Spacer(),
-                        GestureDetector(
-                          onTap: () => context.read<FavoritesManager>().toggleFavorite(widget.muscle.id),
-                          child: AnimatedSwitcher(
-                            duration: const Duration(milliseconds: 200),
-                            child: Icon(
-                              isFav ? Icons.star_rounded : Icons.star_outline_rounded,
-                              key: ValueKey(isFav),
-                              color: isFav ? AppTheme.amber : AppTheme.textTertiary,
-                              size: 18),
-                          ),
-                        ),
+                            fontSize: 10, fontWeight: FontWeight.w700,
+                            letterSpacing: 1.5, color: catColor))),
+                        const SizedBox(width: 36),
                       ]),
                       const SizedBox(height: 8),
                       // Muscle name
@@ -95,7 +103,7 @@ class _MuscleCardState extends State<MuscleCard> {
                           fontWeight: FontWeight.w600, fontSize: 13, height: 1.3,
                           color: isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight),
                         maxLines: 2, overflow: TextOverflow.ellipsis),
-                      const Spacer(),
+                      if (widget.asRow) const SizedBox(height: 6) else const Spacer(),
                       // Pattern
                       Text(widget.muscle.pattern,
                         style: GoogleFonts.sourceSans3(fontSize: 11,
@@ -115,10 +123,44 @@ class _MuscleCardState extends State<MuscleCard> {
               ),
             ],
           ),
+          Positioned(top: 0, right: 2, child: _favoriteButton(isFav)),
+          ]),
         ),
       ),
     );
   }
+
+  Widget _favoriteButton(bool isFav) {
+    return Semantics(
+      button: true,
+      label: isFav ? 'Remove from favorites' : 'Add to favorites',
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: () {
+          HapticFeedback.selectionClick();
+          context.read<FavoritesManager>().toggleFavorite(widget.muscle.id);
+        },
+        child: SizedBox(
+          width: 44, height: 44,
+          child: Center(
+            child: AnimatedSwitcher(
+              duration: const Duration(milliseconds: 200),
+              child: Icon(
+                isFav ? Icons.star_rounded : Icons.star_outline_rounded,
+                key: ValueKey(isFav),
+                color: isFav ? AppTheme.amber : AppTheme.textTertiary,
+                size: 18),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// Fills the grid cell, or wraps plainly in a list row where there is no
+  /// bounded height to fill.
+  Widget _fill({required Widget child}) =>
+      widget.asRow ? child : Expanded(child: child);
 
   Widget _tag(String text, Color c, bool isDark) {
     return Container(
@@ -130,7 +172,7 @@ class _MuscleCardState extends State<MuscleCard> {
       ),
       child: Text(text.toUpperCase(),
         style: GoogleFonts.ibmPlexMono(
-          fontSize: 8, fontWeight: FontWeight.w600,
+          fontSize: 10, fontWeight: FontWeight.w600,
           color: c.withAlpha(200), letterSpacing: 0.5)),
     );
   }

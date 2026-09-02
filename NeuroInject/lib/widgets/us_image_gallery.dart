@@ -49,7 +49,7 @@ class _USImageGalleryState extends State<USImageGallery> {
               style: GoogleFonts.ibmPlexMono(
                 color: widget.accentColor,
                 fontWeight: FontWeight.w700,
-                fontSize: 9,
+                fontSize: 10,
                 letterSpacing: 1.5,
               ),
             ),
@@ -89,7 +89,7 @@ class _USImageGalleryState extends State<USImageGallery> {
                     key: ValueKey<int>(_selectedIndex),
                     fit: BoxFit.contain,
                     gaplessPlayback: true,
-                    errorBuilder: (_, __, ___) => Center(
+                    errorBuilder: (_, _, _) => Center(
                       child: Icon(Icons.broken_image_outlined,
                           color: AppTheme.textTertiary, size: 48),
                     ),
@@ -142,7 +142,7 @@ class _USImageGalleryState extends State<USImageGallery> {
                         const SizedBox(width: 4),
                         Text('Tap to enlarge',
                             style: GoogleFonts.sourceSans3(
-                                fontSize: 9, color: Colors.white70)),
+                                fontSize: 10, color: Colors.white70)),
                       ],
                     ),
                   ),
@@ -160,7 +160,7 @@ class _USImageGalleryState extends State<USImageGallery> {
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemCount: widget.imagePaths.length,
-              separatorBuilder: (_, __) => const SizedBox(width: 6),
+              separatorBuilder: (_, _) => const SizedBox(width: 6),
               itemBuilder: (context, index) {
                 final isActive = index == _selectedIndex;
                 return GestureDetector(
@@ -183,7 +183,10 @@ class _USImageGalleryState extends State<USImageGallery> {
                     child: Image.asset(
                       widget.imagePaths[index],
                       fit: BoxFit.cover,
-                      errorBuilder: (_, __, ___) => Container(
+                      // Decode at thumbnail size, not the full scan.
+                      cacheWidth:
+                          (72 * MediaQuery.devicePixelRatioOf(context)).round(),
+                      errorBuilder: (_, _, _) => Container(
                         color: isDark
                             ? AppTheme.surfaceDark
                             : AppTheme.bgLight,
@@ -226,7 +229,7 @@ class _USImageGalleryState extends State<USImageGallery> {
             child: Image.asset(
               widget.imagePaths[_selectedIndex],
               fit: BoxFit.contain,
-              errorBuilder: (_, __, ___) => const Center(
+              errorBuilder: (_, _, _) => const Center(
                 child:
                     Text('Image not found', style: TextStyle(color: Colors.white54)),
               ),

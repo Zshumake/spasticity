@@ -1,0 +1,534 @@
+{
+ "adductor-pollicis-us.jpg": {
+  "burned_label": "INTEROSSI, ADDUCTOR POL, FLEX POL BREVIS",
+  "crop_box_yxyx": [
+   68,
+   376,
+   195,
+   836
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/adductor-pollicis-us.png"
+ },
+ "biceps-brachii-us.jpg": {
+  "burned_label": "(see US Pictures/MANIFEST.md)",
+  "crop_box_yxyx": [
+   64,
+   615,
+   158,
+   954
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/biceps-brachii-us.png"
+ },
+ "biceps-femoris-us.jpg": {
+  "burned_label": "BICEPS FEMORIS",
+  "crop_box_yxyx": [
+   42,
+   640,
+   168,
+   942
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/biceps-femoris-us.png"
+ },
+ "brachialis-us.jpg": {
+  "burned_label": "BRACHIALIS",
+  "crop_box_yxyx": [
+   64,
+   617,
+   158,
+   954
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/brachialis-us.png"
+ },
+ "brachioradialis-us.jpg": {
+  "burned_label": "BR",
+  "crop_box_yxyx": [
+   64,
+   526,
+   158,
+   927
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/brachioradialis-us.png"
+ },
+ "fcr-us.jpg": {
+  "burned_label": "FCR AND PALMARIS  [PHI: name burned in]",
+  "crop_box_yxyx": [
+   258,
+   553,
+   158,
+   954
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/fcr-us.png"
+ },
+ "fcu-us.jpg": {
+  "burned_label": "FCU",
+  "crop_box_yxyx": [
+   161,
+   521,
+   158,
+   954
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/fcu-us.png"
+ },
+ "fdl-us.jpg": {
+  "burned_label": "FDL AND TIB POST",
+  "crop_box_yxyx": [
+   42,
+   640,
+   168,
+   941
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/fdl-us.png"
+ },
+ "fhl-us.jpg": {
+  "burned_label": "FHL TRIANGLE IN MIDDLE WITH FIBULA ON RIGHT",
+  "crop_box_yxyx": [
+   85,
+   618,
+   158,
+   954
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/fhl-us.png"
+ },
+ "fpl-us.jpg": {
+  "burned_label": "FPL",
+  "crop_box_yxyx": [
+   42,
+   349,
+   276,
+   836
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/fpl-us.png"
+ },
+ "gracilis-us.jpg": {
+  "burned_label": "GRACILIS TOP,ADUCTOR MAG BOTTOM",
+  "crop_box_yxyx": [
+   98,
+   591,
+   236,
+   872
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/gracilis-us.png"
+ },
+ "hand-lumbricals-us.jpg": {
+  "burned_label": "LUMBRICALS",
+  "crop_box_yxyx": [
+   42,
+   640,
+   273,
+   836
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/hand-lumbricals-us.png"
+ },
+ "iliopsoas-us.jpg": {
+  "burned_label": "ILIOPSOAS AND SARTORIUS",
+  "crop_box_yxyx": [
+   43,
+   616,
+   206,
+   906
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/iliopsoas-us.png"
+ },
+ "lat-dorsi-us.jpg": {
+  "burned_label": "LAT DORSI",
+  "crop_box_yxyx": [
+   64,
+   433,
+   158,
+   954
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/lat-dorsi-us.png"
+ },
+ "levator-scapulae-us.jpg": {
+  "burned_label": "LEVATOR SCAP",
+  "crop_box_yxyx": [
+   97,
+   585,
+   158,
+   954
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/levator-scapulae-us.png"
+ },
+ "pec-major-us.jpg": {
+  "burned_label": "PEC AND NERVE",
+  "crop_box_yxyx": [
+   64,
+   305,
+   158,
+   954
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/pec-major-us.png"
+ },
+ "pectineus-us.jpg": {
+  "burned_label": "PECTINEUS  FEMORAL ARTERY RIGHT CORNER",
+  "crop_box_yxyx": [
+   42,
+   618,
+   168,
+   942
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/pectineus-us.png"
+ },
+ "piriformis-us.jpg": {
+  "burned_label": "(no burned-in label; deep gluteal curvilinear view, 29 Apr session)",
+  "crop_box_yxyx": [
+   108,
+   591,
+   178,
+   853
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/piriformis-us.png"
+ },
+ "pronator-quadratus-us.jpg": {
+  "burned_label": "MED N AND PRO QUAD",
+  "crop_box_yxyx": [
+   42,
+   640,
+   271,
+   836
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/pronator-quadratus-us.png"
+ },
+ "pronator-teres-us.jpg": {
+  "burned_label": "PT AND FCR  [PHI: name burned in]",
+  "crop_box_yxyx": [
+   129,
+   553,
+   158,
+   928
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/pronator-teres-us.png"
+ },
+ "scalenes-us.jpg": {
+  "burned_label": "L TO R MIDDLE SCALENE AND ANTERIOR SCALENE",
+  "crop_box_yxyx": [
+   161,
+   521,
+   158,
+   954
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/scalenes-us.png"
+ },
+ "scm-us.jpg": {
+  "burned_label": "SCM",
+  "crop_box_yxyx": [
+   97,
+   553,
+   158,
+   954
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/scm-us.png"
+ },
+ "semimembranosus-us.jpg": {
+  "burned_label": "SEMIMEMBRANOSUS",
+  "crop_box_yxyx": [
+   42,
+   640,
+   168,
+   942
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/semimembranosus-us.png"
+ },
+ "semitendinosus-us.jpg": {
+  "burned_label": "SEMITENDINOSUS",
+  "crop_box_yxyx": [
+   42,
+   640,
+   168,
+   942
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/semitendinosus-us.png"
+ },
+ "teres-major-us.jpg": {
+  "burned_label": "TERES MAJ TOP, SERR ANT BOTTOM",
+  "crop_box_yxyx": [
+   42,
+   303,
+   168,
+   942
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/teres-major-us.png"
+ },
+ "triceps-us.jpg": {
+  "burned_label": "TRICEPS",
+  "crop_box_yxyx": [
+   64,
+   246,
+   163,
+   954
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/triceps-us.png"
+ },
+ "upper-trapezius-us.jpg": {
+  "burned_label": "UPPER TRAP",
+  "crop_box_yxyx": [
+   97,
+   462,
+   158,
+   954
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/upper-trapezius-us.png"
+ },
+ "us-adductor-longus-brevis-magnus.jpg": {
+  "burned_label": "ADD LONGUS TOP, SECOND LAYER RIGHT ADD BREVIS, BOTTOM (cut off)",
+  "crop_box_yxyx": [
+   42,
+   474,
+   236,
+   866
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/us-adductor-longus-brevis-magnus.png"
+ },
+ "us-ecrl-ecrb.jpg": {
+  "burned_label": "ECRL ERCB",
+  "crop_box_yxyx": [
+   64,
+   618,
+   158,
+   954
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/us-ecrl-ecrb.png"
+ },
+ "us-ehl-edl-tibialis-anterior.jpg": {
+  "burned_label": "EHL MIDDLE BOTTOM EDL MIDDLE TOP TIB ANT LEFT",
+  "crop_box_yxyx": [
+   64,
+   618,
+   158,
+   954
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/us-ehl-edl-tibialis-anterior.png"
+ },
+ "us-fcu-fds-fdp.jpg": {
+  "burned_label": "FCU, FDS AND FDP",
+  "crop_box_yxyx": [
+   146,
+   630,
+   170,
+   942
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/us-fcu-fds-fdp.png"
+ },
+ "us-gastrocnemius-lateral-soleus.jpg": {
+  "burned_label": "LATERAL GASTROC TOP AND SOLEUS BOTTOM",
+  "crop_box_yxyx": [
+   42,
+   640,
+   168,
+   942
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/us-gastrocnemius-lateral-soleus.png"
+ },
+ "us-gastrocnemius-medial-soleus.jpg": {
+  "burned_label": "MEDIAL GASTROC TOP AND SOLEUS BOTTOM",
+  "crop_box_yxyx": [
+   42,
+   540,
+   168,
+   942
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/us-gastrocnemius-medial-soleus.png"
+ },
+ "us-rectus-femoris-vastus-intermedius.jpg": {
+  "burned_label": "RECTUS FEMORIS AND VASTUS INTERMED",
+  "crop_box_yxyx": [
+   42,
+   640,
+   168,
+   942
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/us-rectus-femoris-vastus-intermedius.png"
+ },
+ "us-tibialis-anterior-posterior.jpg": {
+  "burned_label": "TIBIALIS ANT AND TIB POST",
+  "crop_box_yxyx": [
+   43,
+   624,
+   206,
+   906
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/us-tibialis-anterior-posterior.png"
+ },
+ "us-trapezius-splenius-capitis-semispinalis-capitis.jpg": {
+  "burned_label": "TRAP SPLENIUS CAPITIS AND SEMISPINALIS CAPITIS",
+  "crop_box_yxyx": [
+   42,
+   612,
+   309,
+   803
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/us-trapezius-splenius-capitis-semispinalis-capitis.png"
+ },
+ "vastus-lateralis-us.jpg": {
+  "burned_label": "VASTUS LAT AND INTERMED",
+  "crop_box_yxyx": [
+   42,
+   640,
+   168,
+   942
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/vastus-lateralis-us.png"
+ },
+ "vastus-medialis-us.jpg": {
+  "burned_label": "VASTUS MED",
+  "crop_box_yxyx": [
+   42,
+   640,
+   168,
+   942
+  ],
+  "original_size": [
+   960,
+   720
+  ],
+  "text_strip": "docs/us-label-crops/vastus-medialis-us.png"
+ }
+}

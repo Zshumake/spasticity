@@ -9,7 +9,13 @@ import '../../widgets/dilution_explainer.dart';
 // ─── Calculator Screen ───────────────────────────────────────
 
 class CalculatorScreen extends StatefulWidget {
-  const CalculatorScreen({super.key});
+  /// Optional deep-link seed: a brand name ('Botox' / 'Xeomin' / 'Dysport' /
+  /// 'Myobloc') and a dose in that brand's units — e.g. from tapping a
+  /// muscle's dose chip. When null, the calculator opens with its defaults.
+  final String? initialBrand;
+  final double? initialDose;
+
+  const CalculatorScreen({super.key, this.initialBrand, this.initialDose});
 
   @override
   State<CalculatorScreen> createState() => _CalculatorScreenState();
@@ -29,9 +35,35 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   @override
   void initState() {
     super.initState();
-    _vialSize = _brand.defaultVial.toDouble();
+    // Seed from a deep link (e.g. tapping a muscle's dose) when provided;
+    // otherwise fall back to the defaults (Botox, 50 U).
+    final linkedIndex = widget.initialBrand == null
+        ? -1
+        : toxinBrands.indexWhere(
+            (b) => b.name.toLowerCase() == widget.initialBrand!.toLowerCase());
+    if (linkedIndex >= 0) _brandIndex = linkedIndex;
+
+    final brand = _brand;
+    _vialSize = brand.defaultVial.toDouble();
+    _dilution = brand.commonDilutions.length > 1
+        ? brand.commonDilutions[1].salineMl
+        : brand.commonDilutions[0].salineMl;
+    _dose = widget.initialDose ?? _defaultDoseFor(brand);
+
     _vialController = TextEditingController(text: _vialSize.toStringAsFixed(0));
     _doseController = TextEditingController(text: _dose.toStringAsFixed(0));
+  }
+
+  /// Sensible starting dose for a brand's unit scale.
+  double _defaultDoseFor(ToxinBrand brand) {
+    switch (brand.name) {
+      case 'Myobloc':
+        return 2500;
+      case 'Dysport':
+        return 250;
+      default:
+        return 50;
+    }
   }
 
   @override
@@ -80,16 +112,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         _dilution = brand.commonDilutions[0].salineMl;
       }
       // Reset dose for each brand's unit scale
-      if (brand.name == 'Myobloc') {
-        _dose = 2500;
-        _doseController.text = '2500';
-      } else if (brand.name == 'Dysport') {
-        _dose = 250;
-        _doseController.text = '250';
-      } else {
-        _dose = 50;
-        _doseController.text = '50';
-      }
+      _dose = _defaultDoseFor(brand);
+      _doseController.text = _dose.toStringAsFixed(0);
     });
   }
 
@@ -151,14 +175,14 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
             const SizedBox(height: 4),
             Text(
               'Each tick mark on a 1 mL syringe = 0.1 mL',
-              style: TextStyle(fontSize: 12, color: AppColors.textSecondary),
+              style: TextStyle(fontSize: 12, color: AppPalette.of(context).textSecondary),
             ),
             const SizedBox(height: 12),
             Container(
               decoration: BoxDecoration(
-                color: AppColors.bgCard,
+                color: AppPalette.of(context).bgCard,
                 borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: AppColors.borderColor),
+                border: Border.all(color: AppPalette.of(context).borderColor),
               ),
               padding: const EdgeInsets.symmetric(vertical: 12),
               child: SyringeVisual(
@@ -167,6 +191,27 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 brandColor: _brand.color,
               ),
             ),
+            // The visual is a single 1 mL syringe; flag draws that won't fit so
+            // a clamped-full barrel isn't mistaken for "fits in one syringe".
+            if (_volume > 1.0) ...[
+              const SizedBox(height: 8),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Icon(Icons.info_outline,
+                      size: 16, color: AppColors.warningOrange),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      '${_volume.toStringAsFixed(2)} mL exceeds one 1 mL syringe — '
+                      'split across ${_volume.ceil()} draws or use a larger syringe.',
+                      style: const TextStyle(
+                          fontSize: 12, color: AppColors.warningOrange),
+                    ),
+                  ),
+                ],
+              ),
+            ],
 
             // Step-by-step math explanation
             const SizedBox(height: 24),
@@ -206,10 +251,10 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 duration: const Duration(milliseconds: 200),
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 decoration: BoxDecoration(
-                  color: selected ? brand.color : const Color(0xFF1D2128),
+                  color: selected ? brand.color : AppPalette.of(context).surfaceRaised,
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                    color: selected ? brand.color : AppColors.borderColor,
+                    color: selected ? brand.color : AppPalette.of(context).borderColor,
                   ),
                 ),
                 alignment: Alignment.center,
@@ -218,7 +263,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: selected ? FontWeight.w700 : FontWeight.w400,
-                    color: selected ? Colors.white : AppColors.textSecondary,
+                    color: selected ? Colors.white : AppPalette.of(context).textSecondary,
                   ),
                 ),
               ),
@@ -268,10 +313,10 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                   Expanded(
                     child: Text(
                       _brand.genericName,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
-                        color: AppColors.textPrimary,
+                        color: AppPalette.of(context).textPrimary,
                       ),
                     ),
                   ),
@@ -297,19 +342,19 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(icon, size: 16, color: AppColors.textSecondary),
+        Icon(icon, size: 16, color: AppPalette.of(context).textSecondary),
         const SizedBox(width: 8),
         Text('$label: ',
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 13,
               fontWeight: FontWeight.w600,
-              color: AppColors.textSecondary,
+              color: AppPalette.of(context).textSecondary,
             )),
         Expanded(
           child: Text(value,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 13,
-                color: AppColors.textPrimary,
+                color: AppPalette.of(context).textPrimary,
                 height: 1.4,
               )),
         ),
@@ -343,10 +388,10 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 decoration: BoxDecoration(
                   color: isActive
                       ? _brand.color.withAlpha(30)
-                      : const Color(0xFF1D2128),
+                      : AppPalette.of(context).surfaceRaised,
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: isActive ? _brand.color : AppColors.borderColor,
+                    color: isActive ? _brand.color : AppPalette.of(context).borderColor,
                   ),
                 ),
                 child: Column(
@@ -359,7 +404,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                         fontWeight: FontWeight.w600,
                         color: isActive
                             ? _brand.color
-                            : AppColors.textSecondary,
+                            : AppPalette.of(context).textSecondary,
                       ),
                     ),
                     const SizedBox(height: 2),
@@ -367,9 +412,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                       preset.salineMl > 0
                           ? '${preset.vialUnits}U + ${preset.salineMl.toStringAsFixed(1)} mL'
                           : '${preset.vialUnits}U (ready to use)',
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 11,
-                        color: AppColors.textSecondary,
+                        color: AppPalette.of(context).textSecondary,
                       ),
                     ),
                     Text(
@@ -379,7 +424,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                         fontWeight: FontWeight.w700,
                         color: isActive
                             ? _brand.color
-                            : AppColors.textPrimary,
+                            : AppPalette.of(context).textPrimary,
                       ),
                     ),
                   ],
@@ -398,9 +443,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: AppColors.bgCard,
+        color: AppPalette.of(context).bgCard,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppColors.borderColor),
+        border: Border.all(color: AppPalette.of(context).borderColor),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -417,12 +462,12 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                   label: Text('$size U'),
                   selected: selected,
                   selectedColor: _brand.color.withAlpha(50),
-                  backgroundColor: const Color(0xFF1D2128),
+                  backgroundColor: AppPalette.of(context).surfaceRaised,
                   side: BorderSide(
-                    color: selected ? _brand.color : AppColors.borderColor,
+                    color: selected ? _brand.color : AppPalette.of(context).borderColor,
                   ),
                   labelStyle: TextStyle(
-                    color: selected ? _brand.color : AppColors.textSecondary,
+                    color: selected ? _brand.color : AppPalette.of(context).textSecondary,
                     fontWeight:
                         selected ? FontWeight.w600 : FontWeight.w400,
                     fontSize: 13,
@@ -468,16 +513,22 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           controller: _doseController,
           keyboardType:
               const TextInputType.numberWithOptions(decimal: true),
+          // The iPhone decimal pad has no Done key, so the only way to put
+          // the keyboard away is to tap elsewhere on the page.
+          textInputAction: TextInputAction.done,
+          onTapOutside: (_) => FocusManager.instance.primaryFocus?.unfocus(),
           onChanged: (v) {
             final parsed = double.tryParse(v);
             if (parsed != null && parsed >= 0) {
-              setState(() => _dose = parsed.clamp(0, maxDose));
+              // Keep the entered value (no silent clamp) so the field, the
+              // computed volume, and the over-max warning all agree.
+              setState(() => _dose = parsed);
             } else if (v.isEmpty) {
               setState(() => _dose = 0);
             }
           },
           style:
-              const TextStyle(fontSize: 18, color: AppColors.textPrimary),
+              TextStyle(fontSize: 18, color: AppPalette.of(context).textPrimary),
         ),
         if (_dose > maxDose) ...[
           const SizedBox(height: 4),
@@ -496,9 +547,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
       decoration: BoxDecoration(
-        color: const Color(0xFF1D2128),
+        color: AppPalette.of(context).surfaceRaised,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: AppColors.borderColor),
+        border: Border.all(color: AppPalette.of(context).borderColor),
       ),
       child: Row(
         children: [
@@ -507,7 +558,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 ? () => setState(() => _dilution -= step)
                 : null,
             icon: const Icon(Icons.remove),
-            color: AppColors.textPrimary,
+            color: AppPalette.of(context).textPrimary,
           ),
           Expanded(
             child: Text(
@@ -515,10 +566,10 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                   ? 'Pre-diluted (no saline)'
                   : '${_dilution.toStringAsFixed(1)} mL',
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
-                color: AppColors.textPrimary,
+                color: AppPalette.of(context).textPrimary,
               ),
             ),
           ),
@@ -527,7 +578,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 ? () => setState(() => _dilution += step)
                 : null,
             icon: const Icon(Icons.add),
-            color: AppColors.textPrimary,
+            color: AppPalette.of(context).textPrimary,
           ),
         ],
       ),
@@ -540,9 +591,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: AppColors.bgCard,
+        color: AppPalette.of(context).bgCard,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppColors.borderColor),
+        border: Border.all(color: AppPalette.of(context).borderColor),
       ),
       child: Column(
         children: [
@@ -551,13 +602,13 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
             '${_concentration.toStringAsFixed(0)} U/mL',
             AppColors.accentBlue,
           ),
-          const Divider(color: AppColors.borderColor, height: 24),
+          Divider(color: AppPalette.of(context).borderColor, height: 24),
           _resultRow(
             'Per 0.1 mL',
             '${_unitsPer01ml.toStringAsFixed(1)} U',
             AppColors.probeTeal,
           ),
-          const Divider(color: AppColors.borderColor, height: 24),
+          Divider(color: AppPalette.of(context).borderColor, height: 24),
           _resultRow(
             'Volume to inject',
             '${_volume.toStringAsFixed(2)} mL',
@@ -569,15 +620,15 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
             width: double.infinity,
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Colors.white.withAlpha(8),
+              color: AppPalette.of(context).subtleFill,
               borderRadius: BorderRadius.circular(8),
             ),
             child: Text(
               _buildSummaryText(),
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 14,
-                color: AppColors.textPrimary,
+                color: AppPalette.of(context).textPrimary,
                 height: 1.5,
               ),
             ),
@@ -603,8 +654,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(label,
-            style: const TextStyle(
-                fontSize: 16, color: AppColors.textPrimary)),
+            style: TextStyle(
+                fontSize: 16, color: AppPalette.of(context).textPrimary)),
         Text(value,
             style: TextStyle(
               fontSize: 22,
@@ -668,14 +719,14 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         const SizedBox(height: 4),
         Text(
           'Units per 0.1 mL at different dilutions',
-          style: TextStyle(fontSize: 12, color: AppColors.textSecondary),
+          style: TextStyle(fontSize: 12, color: AppPalette.of(context).textSecondary),
         ),
         const SizedBox(height: 10),
         Container(
           decoration: BoxDecoration(
-            color: AppColors.bgCard,
+            color: AppPalette.of(context).bgCard,
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: AppColors.borderColor),
+            border: Border.all(color: AppPalette.of(context).borderColor),
           ),
           child: Column(
             children: [
@@ -684,21 +735,21 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 padding: const EdgeInsets.symmetric(
                     horizontal: 16, vertical: 10),
                 decoration: BoxDecoration(
-                  color: Colors.white.withAlpha(8),
+                  color: AppPalette.of(context).subtleFill,
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(12),
                     topRight: Radius.circular(12),
                   ),
                 ),
                 child: Row(
-                  children: const [
+                  children: [
                     Expanded(
                         flex: 2,
                         child: Text('Saline',
                             style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w600,
-                                color: AppColors.textSecondary))),
+                                color: AppPalette.of(context).textSecondary))),
                     Expanded(
                         flex: 2,
                         child: Text('U/mL',
@@ -706,7 +757,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                             style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w600,
-                                color: AppColors.textSecondary))),
+                                color: AppPalette.of(context).textSecondary))),
                     Expanded(
                         flex: 2,
                         child: Text('Per 0.1 mL',
@@ -714,7 +765,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                             style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w600,
-                                color: AppColors.textSecondary))),
+                                color: AppPalette.of(context).textSecondary))),
                   ],
                 ),
               ),
@@ -733,7 +784,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                         : null,
                     border: Border(
                       top: BorderSide(
-                          color: AppColors.borderColor, width: 0.5),
+                          color: AppPalette.of(context).borderColor, width: 0.5),
                     ),
                   ),
                   child: Row(
@@ -746,7 +797,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                             fontSize: 14,
                             color: isCurrentDilution
                                 ? _brand.color
-                                : AppColors.textPrimary,
+                                : AppPalette.of(context).textPrimary,
                             fontWeight: isCurrentDilution
                                 ? FontWeight.w600
                                 : FontWeight.w400,
@@ -762,7 +813,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                             fontSize: 14,
                             color: isCurrentDilution
                                 ? _brand.color
-                                : AppColors.textPrimary,
+                                : AppPalette.of(context).textPrimary,
                             fontWeight: isCurrentDilution
                                 ? FontWeight.w600
                                 : FontWeight.w400,
@@ -797,10 +848,10 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   Widget _sectionLabel(String text) {
     return Text(
       text,
-      style: const TextStyle(
+      style: TextStyle(
         fontSize: 11,
         fontWeight: FontWeight.w600,
-        color: AppColors.textSecondary,
+        color: AppPalette.of(context).textSecondary,
         letterSpacing: 1,
       ),
     );

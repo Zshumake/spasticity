@@ -1,0 +1,21 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "neuroinject-web",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-lc",
+        "cd NeuroInject && flutter run -d web-server --web-port 8080 --web-hostname 127.0.0.1"
+      ],
+      "port": 8080,
+      "url": "http://127.0.0.1:8080"
+    },
+    {
+      "name": "neuroinject-macos",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-lc", "cd NeuroInject && flutter run -d macos"],
+      "port": 0
+    }
+  ]
+}

@@ -8,35 +8,20 @@ class MuscleData {
   static List<Muscle>? _muscleCache;
   static List<SpasticityPattern>? _patternCache;
 
+  /// Parsed off the UI isolate: the corpus is close to half a megabyte of
+  /// JSON, and decoding it on the main thread was a visible hitch in the
+  /// launch on a phone.
   static Future<List<Muscle>> load() async {
     if (_muscleCache != null) return _muscleCache!;
     final jsonString = await rootBundle.loadString('assets/data/muscles.json');
-    final List<dynamic> jsonList = json.decode(jsonString);
-    final muscles = <Muscle>[];
-    for (final item in jsonList) {
-      try {
-        muscles.add(Muscle.fromJson(item as Map<String, dynamic>));
-      } catch (e) {
-        debugPrint('Skipping malformed muscle entry: $e');
-      }
-    }
-    _muscleCache = muscles;
+    _muscleCache = await compute(_parseMuscles, jsonString);
     return _muscleCache!;
   }
 
   static Future<List<SpasticityPattern>> loadPatterns() async {
     if (_patternCache != null) return _patternCache!;
     final jsonString = await rootBundle.loadString('assets/data/patterns.json');
-    final List<dynamic> jsonList = json.decode(jsonString);
-    final patterns = <SpasticityPattern>[];
-    for (final item in jsonList) {
-      try {
-        patterns.add(SpasticityPattern.fromJson(item as Map<String, dynamic>));
-      } catch (e) {
-        debugPrint('Skipping malformed pattern entry: $e');
-      }
-    }
-    _patternCache = patterns;
+    _patternCache = await compute(_parsePatterns, jsonString);
     return _patternCache!;
   }
 
@@ -54,4 +39,30 @@ class MuscleData {
     final muscles = await load();
     return muscles.where((m) => m.id == id).firstOrNull;
   }
+}
+
+List<Muscle> _parseMuscles(String jsonString) {
+  final List<dynamic> jsonList = json.decode(jsonString);
+  final muscles = <Muscle>[];
+  for (final item in jsonList) {
+    try {
+      muscles.add(Muscle.fromJson(item as Map<String, dynamic>));
+    } catch (e) {
+      debugPrint('Skipping malformed muscle entry: $e');
+    }
+  }
+  return muscles;
+}
+
+List<SpasticityPattern> _parsePatterns(String jsonString) {
+  final List<dynamic> jsonList = json.decode(jsonString);
+  final patterns = <SpasticityPattern>[];
+  for (final item in jsonList) {
+    try {
+      patterns.add(SpasticityPattern.fromJson(item as Map<String, dynamic>));
+    } catch (e) {
+      debugPrint('Skipping malformed pattern entry: $e');
+    }
+  }
+  return patterns;
 }
