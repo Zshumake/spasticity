@@ -81,15 +81,28 @@ def apply_replace(rec, corr, errors):
     val = box[key]
     find, repl = corr["find"], corr.get("replace")
 
-    # Idempotency. An entry is DONE when its replacement is present and its
-    # find is gone - or when the find survives only as a substring of the
-    # applied replacement. A deletion is done when the text is gone and the
-    # entry carries forbid phrases (gate 2 then proves the claim is absent).
-    def done_str(s):
-        return repl is not None and repl in s and (find not in s or find in repl)
+    # Idempotency, judged over the WHOLE field rather than item by item.
+    #
+    # An entry is DONE when the replacement is present AND the text it replaces
+    # is gone - or survives only inside that replacement, which is what an
+    # append looks like. Asking both questions of the same field, rather than
+    # of one string at a time, closes an edge reflexpmr raised: a `replace`
+    # that happens to be a substring of a DIFFERENT item in the same field
+    # would otherwise read as adopted while the real target sat untouched, and
+    # the correction would be skipped in silence. Not reachable on today's
+    # corpus - no field holds two items that near-duplicate - but this file
+    # gates clinical prose, and every defect this audit found was silent.
+    def already_applied(items):
+        if repl is None:
+            return False
+        if not any(repl in s for s in items):
+            return False
+        if find in repl:
+            return True          # append: find survives inside its replacement
+        return not any(find in s for s in items)
 
     if isinstance(val, str):
-        if done_str(val):
+        if already_applied([val]):
             return True
         if find not in val:
             if repl is None and corr.get("forbid"):
@@ -103,7 +116,8 @@ def apply_replace(rec, corr, errors):
         return True
 
     if isinstance(val, list):
-        if any(isinstance(s, str) and done_str(s) for s in val):
+        strings = [s for s in val if isinstance(s, str)]
+        if already_applied(strings):
             return True
         hits = [i for i, s in enumerate(val) if isinstance(s, str) and find in s]
         if not hits:
@@ -189,7 +203,15 @@ def main():
             want = c["text"] if c.get("op") == "add" else c.get("replace")
             if want is None or c.get("superseded"):
                 continue
-            if not any(want in s for s in all_strings(rec)):
+            present = any(want in s for s in all_strings(rec))
+            # For a replacement, presence alone is not adoption: the same
+            # reasoning as apply_replace above. The superseded text must also
+            # be gone, unless it survives inside its own replacement.
+            find = c.get("find")
+            if present and find and c.get("op") != "add" and find not in want:
+                if any(find in s for s in all_strings(rec)):
+                    present = False
+            if not present:
                 missing.append(f"{c['muscle']}/{c['field']}")
         bad = check_forbidden(muscles, corrections)
         for m in missing:
