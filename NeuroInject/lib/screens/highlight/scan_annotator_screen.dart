@@ -474,18 +474,10 @@ class _ScanAnnotatorScreenState extends State<ScanAnnotatorScreen> {
                   _cropControls(),
                 ],
                 const SizedBox(height: 18),
-                if (_a.labels.isNotEmpty) ...[
-                  Text('KEY',
-                      style: GoogleFonts.ibmPlexMono(
-                          fontSize: 10,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 2,
-                          color: isDark
-                              ? AppTheme.textStrong
-                              : AppTheme.textStrongLight)),
-                  const SizedBox(height: 10),
+                // The legend carries its own heading now, so the screen does
+                // not add a second one.
+                if (_a.labels.isNotEmpty)
                   StructureLetterLegend(labels: _a.labels),
-                ],
               ],
             ),
     );

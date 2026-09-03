@@ -148,6 +148,32 @@ void main() {
       expect(_isGrey(p), isFalse);
     });
 
+    test('letters still draw when no mask has been baked', () async {
+      // Tibialis posterior ships with both its outlines pending, and it is a
+      // muscle worth lettering now. A scan with no mask must still carry its
+      // crop and its letters, or the annotations would be invisible on exactly
+      // the views that most need them.
+      final d = await _render(BakedHighlightPainter(
+        scan: scan,
+        mask: null,
+        accent: _blue,
+        intensity: 1.0,
+        crop: const Rect.fromLTWH(0, 0, 32, 32),
+        labels: const [
+          StructureLabel(
+              letter: 'A',
+              name: 'Tibialis posterior',
+              kind: StructureKind.artery,
+              point: Offset(16, 16)),
+        ],
+        fit: BoxFit.cover,
+      ));
+      // Under that crop the label sits at the centre of the widget.
+      final p = _at(d, 38, 16);
+      expect(_isGrey(p), isFalse,
+          reason: 'the puck should be drawn over the plain scan, got $p');
+    });
+
     test('a letter outside the crop is not drawn', () async {
       // Letter sits in the left half; crop shows only the right half.
       final d = await _render(painter(

@@ -13,6 +13,7 @@ import '../../theme/app_theme.dart';
 import '../../theme/favorites_manager.dart';
 import '../../theme/recently_viewed_manager.dart';
 import '../../widgets/highlight/baked_highlight.dart';
+import '../../widgets/highlight/annotated_scan_viewer.dart';
 import '../../widgets/highlight/peelable_highlight.dart';
 import '../../widgets/highlight/structure_legend.dart';
 import '../highlight/scan_annotator_screen.dart';
@@ -1050,6 +1051,24 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     );
   }
 
+  /// Small affordance over the scan. A button rather than a tap on the panel:
+  /// the peel already owns horizontal drags there, and an explicit control is
+  /// discoverable where a hidden tap target is not.
+  Widget _expandScanButton({required VoidCallback onTap}) {
+    return Material(
+      color: Colors.black.withAlpha(140),
+      shape: const CircleBorder(),
+      clipBehavior: Clip.antiAlias,
+      child: InkWell(
+        onTap: onTap,
+        child: const Padding(
+          padding: EdgeInsets.all(7),
+          child: Icon(Icons.zoom_out_map, size: 16, color: Colors.white),
+        ),
+      ),
+    );
+  }
+
   Widget _buildClinicalPhotos(bool isDark) {
     // Accent per slot (avoid alarming red).
     const accents = {
@@ -1088,22 +1107,60 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
       // mask produced by tools/refine_highlights.py is bundled; otherwise the
       // plain scan shows. Per-muscle even on shared scans - the mask is what
       // distinguishes gastrocnemius from soleus on the same image.
-      if (s == ClinicalPhotoSlot.ultrasound &&
-          has &&
-          _maskAssets.contains(view.maskAsset)) {
+      // Every bundled ultrasound goes through the compositor, even when its
+      // mask has not been baked yet: the crop and the letters belong to the
+      // SCAN, so a muscle still awaiting its outline (tibialis posterior) must
+      // still show them. Only the peel needs a mask, because peeling a tint
+      // that does not exist is nothing to drag.
+      if (s == ClinicalPhotoSlot.ultrasound && has) {
+        final hasMask = _maskAssets.contains(view.maskAsset);
+        final accent = BakedHighlight.regionTint(muscle.group);
         return SizedBox(
           height: height,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(AppTheme.radiusMd),
-            child: PeelableHighlight(
-              key: ValueKey('peel-${view.maskAsset}-$_peelNonce'),
-              scanAsset: path,
-              maskAsset: view.maskAsset,
-              accent: BakedHighlight.regionTint(muscle.group),
-              initialSeam: _peelSeam,
-              crop: ann.crop,
-              labels: ann.labels,
-            ),
+            child: Stack(children: [
+              Positioned.fill(
+                child: hasMask
+                    ? PeelableHighlight(
+                        key: ValueKey('peel-${view.maskAsset}-$_peelNonce'),
+                        scanAsset: path,
+                        maskAsset: view.maskAsset,
+                        accent: accent,
+                        initialSeam: _peelSeam,
+                        crop: ann.crop,
+                        labels: ann.labels,
+                      )
+                    : BakedHighlight(
+                        scanAsset: path,
+                        maskAsset: view.maskAsset,
+                        accent: accent,
+                        crop: ann.crop,
+                        labels: ann.labels,
+                      ),
+              ),
+              // The reference panel is small by design; the letters are only
+              // worth placing if they can be read, so enlarging carries the
+              // highlight, the crop and the letters rather than reverting to
+              // the bare file.
+              Positioned(
+                top: 6,
+                right: 6,
+                child: _expandScanButton(
+                  onTap: () => showAnnotatedScan(
+                    context,
+                    scanAsset: path,
+                    maskAsset: view.maskAsset,
+                    accent: accent,
+                    crop: ann.crop,
+                    labels: ann.labels,
+                    title: views.length > 1
+                        ? '${muscle.name} — ${view.label}'
+                        : muscle.name,
+                  ),
+                ),
+              ),
+            ]),
           ),
         );
       }
