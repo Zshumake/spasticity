@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../theme/app_theme.dart';
+import '../../models/us_annotation.dart';
 import 'baked_highlight.dart';
 
 /// The reference scan with a seam the learner can drag across it.
@@ -19,12 +20,20 @@ class PeelableHighlight extends StatefulWidget {
   /// revealed, so a reader who never touches it sees today's behaviour.
   final double initialSeam;
 
+  /// Presentation crop and structure letters for this scan, passed straight
+  /// through to the compositor so the peel, the crop and the letters all use
+  /// the one transform.
+  final Rect? crop;
+  final List<StructureLabel> labels;
+
   const PeelableHighlight({
     super.key,
     required this.scanAsset,
     required this.maskAsset,
     required this.accent,
     this.initialSeam = 0.0,
+    this.crop,
+    this.labels = const [],
   });
 
   @override
@@ -70,6 +79,8 @@ class _PeelableHighlightState extends State<PeelableHighlight> {
                   maskAsset: widget.maskAsset,
                   accent: widget.accent,
                   revealFrom: _seam,
+                  crop: widget.crop,
+                  labels: widget.labels,
                 ),
               ),
               if (split) ...[

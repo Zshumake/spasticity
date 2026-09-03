@@ -1,47 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../models/structure_kind.dart';
+import '../../models/us_annotation.dart';
 import '../../theme/app_theme.dart';
 
-/// The kind of adjacent structure a danger-zone note refers to, with its
-/// semantic colour from the design system. v1 derives this from the existing
-/// `dangerZones` text by keyword; precise in-image localisation is a later
-/// (v2) ML feature, so these render as a colour-coded reference, not as
-/// pixel-anchored markers.
-enum StructureKind {
-  artery('Artery / vessel', AppTheme.danger),
-  nerve('Nerve', AppTheme.amber),
-  bone('Bone', Color(0xFF95A5A6)),
-  other('Structure', AppTheme.primary);
-
-  const StructureKind(this.label, this.color);
-  final String label;
-  final Color color;
-
-  /// Classify a danger-zone sentence by the structure it warns about.
-  static StructureKind classify(String text) {
-    final t = text.toLowerCase();
-    if (t.contains('arter') ||
-        t.contains('vein') ||
-        t.contains('vessel') ||
-        t.contains('vascular') ||
-        t.contains('pleura')) {
-      return StructureKind.artery;
-    }
-    if (t.contains('nerve') ||
-        t.contains('plexus') ||
-        t.contains('ganglion')) {
-      return StructureKind.nerve;
-    }
-    if (t.contains('bone') ||
-        t.contains('periosteum') ||
-        t.contains('cortex') ||
-        t.contains('pillar') ||
-        t.contains('foramen')) {
-      return StructureKind.bone;
-    }
-    return StructureKind.other;
-  }
-}
+export '../../models/structure_kind.dart' show StructureKind;
 
 /// Colour-coded "what to avoid" panel, populated from a muscle's [dangerZones].
 class StructureLegend extends StatelessWidget {
@@ -90,6 +53,130 @@ class StructureLegend extends StatelessWidget {
               ),
             ]),
           );
+        }),
+      ],
+    );
+  }
+}
+
+/// The key to the letters drawn on a scan: `A  Soleus`, in the structure's own
+/// colour, with what kind of thing it is.
+///
+/// The letters and this index are one unit. A letter on the image with no key
+/// beside it is a puzzle rather than a label, so this renders wherever the
+/// lettered scan does — under the reference panel, and under the enlarged view.
+///
+/// Laid out as aligned rows rather than a flowing wrap: this is an INDEX, and
+/// an index whose entries start at different x positions on every line is
+/// harder to scan than the picture it explains. Two columns on a wide surface,
+/// one on a phone.
+class StructureLetterLegend extends StatelessWidget {
+  final List<StructureLabel> labels;
+
+  /// Rendered over the black enlarged view rather than a themed surface.
+  final bool onDark;
+
+  /// The eyebrow above the entries. Off inside the annotator, which has its
+  /// own section heading.
+  final bool showHeader;
+
+  const StructureLetterLegend({
+    super.key,
+    required this.labels,
+    this.onDark = false,
+    this.showHeader = true,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    if (labels.isEmpty) return const SizedBox.shrink();
+    final isDark = onDark || Theme.of(context).brightness == Brightness.dark;
+    final nameColor = onDark
+        ? AppTheme.textStrong
+        : (isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight);
+    final kindColor = isDark ? AppTheme.textTertiary : AppTheme.textTertiaryLight;
+    final sorted = [...labels]..sort((a, b) => a.letter.compareTo(b.letter));
+
+    Widget entry(StructureLabel l) => Padding(
+          padding: const EdgeInsets.only(bottom: 9),
+          child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Container(
+              width: 19,
+              height: 19,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: l.kind.color,
+                shape: BoxShape.circle,
+                border: Border.all(color: Colors.black.withAlpha(60)),
+              ),
+              child: Text(l.letter,
+                  style: GoogleFonts.ibmPlexMono(
+                      fontSize: 10.5,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white)),
+            ),
+            const SizedBox(width: 9),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(l.name,
+                      style: GoogleFonts.sourceSans3(
+                          fontSize: 13,
+                          height: 1.25,
+                          fontWeight: FontWeight.w600,
+                          color: nameColor)),
+                  // The colour on the puck means something; say what, once,
+                  // rather than leaving the reader to infer it.
+                  Text(l.kind.label.toUpperCase(),
+                      style: GoogleFonts.ibmPlexMono(
+                          fontSize: 8.5,
+                          letterSpacing: 1.1,
+                          color: kindColor)),
+                ],
+              ),
+            ),
+          ]),
+        );
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (showHeader) ...[
+          Row(children: [
+            Icon(Icons.abc, size: 16, color: AppTheme.primary),
+            const SizedBox(width: 7),
+            Text('STRUCTURES IN THIS VIEW',
+                style: GoogleFonts.ibmPlexMono(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 1.8,
+                    color: AppTheme.primary)),
+          ]),
+          const SizedBox(height: 10),
+        ],
+        LayoutBuilder(builder: (context, box) {
+          // Two columns once there is room for them; one on a phone.
+          final columns = box.maxWidth >= 420 ? 2 : 1;
+          if (columns == 1) {
+            return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [for (final l in sorted) entry(l)]);
+          }
+          final half = (sorted.length + 1) ~/ 2;
+          return Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Expanded(
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [for (final l in sorted.take(half)) entry(l)]),
+            ),
+            const SizedBox(width: 18),
+            Expanded(
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [for (final l in sorted.skip(half)) entry(l)]),
+            ),
+          ]);
         }),
       ],
     );

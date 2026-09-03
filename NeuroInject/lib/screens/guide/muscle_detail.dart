@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../authoring.dart';
 import '../../data/muscle_provider.dart';
+import '../../data/us_annotation_store.dart';
 import '../../data/session_planner.dart';
 import '../../models/clinical_photo.dart';
 import '../../models/muscle.dart';
@@ -12,7 +13,10 @@ import '../../theme/app_theme.dart';
 import '../../theme/favorites_manager.dart';
 import '../../theme/recently_viewed_manager.dart';
 import '../../widgets/highlight/baked_highlight.dart';
+import '../../widgets/highlight/annotated_scan_viewer.dart';
 import '../../widgets/highlight/peelable_highlight.dart';
+import '../../widgets/highlight/structure_legend.dart';
+import '../highlight/scan_annotator_screen.dart';
 import '../../widgets/info_card.dart';
 import '../../widgets/step_list.dart';
 import '../../widgets/landmark_list.dart';
@@ -1018,6 +1022,53 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
   /// already shows the posture, so a third card added noise, not signal.)
   /// Shows real images when available, otherwise a styled placeholder
   /// prompting the user to add their own.
+  /// Entry to the label-and-crop author mode for the CURRENT window.
+  ///
+  /// Per window, not per muscle: a multi-approach muscle is two different
+  /// pictures, and the structures around the needle differ between them.
+  Widget _annotateCta(bool isDark, UltrasoundView view) {
+    return SizedBox(
+      width: double.infinity,
+      child: OutlinedButton.icon(
+        onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+          builder: (_) => ScanAnnotatorScreen(
+            scanAsset: view.scanAsset,
+            maskAsset: view.maskAsset,
+            accent: BakedHighlight.regionTint(muscle.group),
+            title: muscle.resolvedUltrasoundViews.length > 1
+                ? '${muscle.name} — ${view.label}'
+                : muscle.name,
+          ),
+        )),
+        icon: const Icon(Icons.label_outline, size: 16),
+        label: const Text('Label & crop this scan'),
+        style: OutlinedButton.styleFrom(
+          foregroundColor: AppTheme.primary,
+          side: BorderSide(color: AppTheme.primary.withAlpha(90)),
+          padding: const EdgeInsets.symmetric(vertical: 12),
+        ),
+      ),
+    );
+  }
+
+  /// Small affordance over the scan. A button rather than a tap on the panel:
+  /// the peel already owns horizontal drags there, and an explicit control is
+  /// discoverable where a hidden tap target is not.
+  Widget _expandScanButton({required VoidCallback onTap}) {
+    return Material(
+      color: Colors.black.withAlpha(140),
+      shape: const CircleBorder(),
+      clipBehavior: Clip.antiAlias,
+      child: InkWell(
+        onTap: onTap,
+        child: const Padding(
+          padding: EdgeInsets.all(7),
+          child: Icon(Icons.zoom_out_map, size: 16, color: Colors.white),
+        ),
+      ),
+    );
+  }
+
   Widget _buildClinicalPhotos(bool isDark) {
     // Accent per slot (avoid alarming red).
     const accents = {
@@ -1032,6 +1083,10 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     // muscles the resolved view is just the muscle's own probe/scan pair.
     final views = muscle.resolvedUltrasoundViews;
     final view = _currentUsView;
+    // Letters and crop belong to the SCAN, so a shared view carries the same
+    // ones whichever muscle you arrived from. Watched, not read: authoring in
+    // the annotator should show up here the moment you come back.
+    final ann = context.watch<UsAnnotationStore>().forScan(view.scanAsset);
 
     // Only the slots whose asset is actually bundled are rendered - a muscle
     // with no imagery gets no section at all rather than placeholder cards.
@@ -1052,20 +1107,60 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
       // mask produced by tools/refine_highlights.py is bundled; otherwise the
       // plain scan shows. Per-muscle even on shared scans - the mask is what
       // distinguishes gastrocnemius from soleus on the same image.
-      if (s == ClinicalPhotoSlot.ultrasound &&
-          has &&
-          _maskAssets.contains(view.maskAsset)) {
+      // Every bundled ultrasound goes through the compositor, even when its
+      // mask has not been baked yet: the crop and the letters belong to the
+      // SCAN, so a muscle still awaiting its outline (tibialis posterior) must
+      // still show them. Only the peel needs a mask, because peeling a tint
+      // that does not exist is nothing to drag.
+      if (s == ClinicalPhotoSlot.ultrasound && has) {
+        final hasMask = _maskAssets.contains(view.maskAsset);
+        final accent = BakedHighlight.regionTint(muscle.group);
         return SizedBox(
           height: height,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(AppTheme.radiusMd),
-            child: PeelableHighlight(
-              key: ValueKey('peel-${view.maskAsset}-$_peelNonce'),
-              scanAsset: path,
-              maskAsset: view.maskAsset,
-              accent: BakedHighlight.regionTint(muscle.group),
-              initialSeam: _peelSeam,
-            ),
+            child: Stack(children: [
+              Positioned.fill(
+                child: hasMask
+                    ? PeelableHighlight(
+                        key: ValueKey('peel-${view.maskAsset}-$_peelNonce'),
+                        scanAsset: path,
+                        maskAsset: view.maskAsset,
+                        accent: accent,
+                        initialSeam: _peelSeam,
+                        crop: ann.crop,
+                        labels: ann.labels,
+                      )
+                    : BakedHighlight(
+                        scanAsset: path,
+                        maskAsset: view.maskAsset,
+                        accent: accent,
+                        crop: ann.crop,
+                        labels: ann.labels,
+                      ),
+              ),
+              // The reference panel is small by design; the letters are only
+              // worth placing if they can be read, so enlarging carries the
+              // highlight, the crop and the letters rather than reverting to
+              // the bare file.
+              Positioned(
+                top: 6,
+                right: 6,
+                child: _expandScanButton(
+                  onTap: () => showAnnotatedScan(
+                    context,
+                    scanAsset: path,
+                    maskAsset: view.maskAsset,
+                    accent: accent,
+                    crop: ann.crop,
+                    labels: ann.labels,
+                    title: views.length > 1
+                        ? '${muscle.name} — ${view.label}'
+                        : muscle.name,
+                  ),
+                ),
+              ),
+            ]),
           ),
         );
       }
@@ -1152,12 +1247,23 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
           ],
           if (s != shown.last) const SizedBox(height: 12),
         ],
+
+        // The key to the letters on the scan. Reader-facing, so deliberately
+        // NOT gated on the authoring flag: a letter without its key is a
+        // puzzle, so wherever the lettered scan ships, this ships with it.
+        if (ann.labels.isNotEmpty && _hasUltrasoundScan) ...[
+          const SizedBox(height: 12),
+          StructureLetterLegend(labels: ann.labels),
+        ],
+
         // The highlighter has nothing to draw on until this muscle's US scan
         // is bundled, so the entry point only appears once it is; gating on
         // the asset means it turns itself on as scans are added.
         if (kAuthoring && _hasUltrasoundScan) ...[
           const SizedBox(height: 12),
           _highlightCta(isDark),
+          const SizedBox(height: 8),
+          _annotateCta(isDark, view),
         ],
 
         // Photo hint (if available)

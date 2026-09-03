@@ -9,6 +9,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:neuroinject/data/muscle_provider.dart';
 import 'package:neuroinject/data/session_planner.dart';
+import 'package:neuroinject/data/us_annotation_store.dart';
 import 'package:neuroinject/models/muscle.dart';
 import 'package:neuroinject/screens/guide/muscle_detail.dart';
 import 'package:neuroinject/theme/favorites_manager.dart';
@@ -53,6 +54,8 @@ void main() {
           ChangeNotifierProvider(create: (_) => FavoritesManager()),
           ChangeNotifierProvider(create: (_) => RecentlyViewedManager()),
           ChangeNotifierProvider(create: (_) => SessionPlanner()),
+          // The scan's letters and crop come from here; the screen watches it.
+          ChangeNotifierProvider(create: (_) => UsAnnotationStore()),
         ],
         child: MaterialApp(home: MuscleDetailScreen(muscle: m)),
       );
