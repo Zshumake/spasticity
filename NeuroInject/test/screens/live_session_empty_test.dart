@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/semantics.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -69,7 +68,7 @@ void main() {
     );
     final node = tester.getSemantics(
         find.bySemanticsLabel(RegExp('Go to the session plan')));
-    expect(node.hasFlag(SemanticsFlag.isButton), isTrue);
+    expect(node.flagsCollection.isButton, isTrue);
     handle.dispose();
   });
 }
