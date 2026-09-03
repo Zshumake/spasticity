@@ -1,47 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../models/structure_kind.dart';
+import '../../models/us_annotation.dart';
 import '../../theme/app_theme.dart';
 
-/// The kind of adjacent structure a danger-zone note refers to, with its
-/// semantic colour from the design system. v1 derives this from the existing
-/// `dangerZones` text by keyword; precise in-image localisation is a later
-/// (v2) ML feature, so these render as a colour-coded reference, not as
-/// pixel-anchored markers.
-enum StructureKind {
-  artery('Artery / vessel', AppTheme.danger),
-  nerve('Nerve', AppTheme.amber),
-  bone('Bone', Color(0xFF95A5A6)),
-  other('Structure', AppTheme.primary);
-
-  const StructureKind(this.label, this.color);
-  final String label;
-  final Color color;
-
-  /// Classify a danger-zone sentence by the structure it warns about.
-  static StructureKind classify(String text) {
-    final t = text.toLowerCase();
-    if (t.contains('arter') ||
-        t.contains('vein') ||
-        t.contains('vessel') ||
-        t.contains('vascular') ||
-        t.contains('pleura')) {
-      return StructureKind.artery;
-    }
-    if (t.contains('nerve') ||
-        t.contains('plexus') ||
-        t.contains('ganglion')) {
-      return StructureKind.nerve;
-    }
-    if (t.contains('bone') ||
-        t.contains('periosteum') ||
-        t.contains('cortex') ||
-        t.contains('pillar') ||
-        t.contains('foramen')) {
-      return StructureKind.bone;
-    }
-    return StructureKind.other;
-  }
-}
+export '../../models/structure_kind.dart' show StructureKind;
 
 /// Colour-coded "what to avoid" panel, populated from a muscle's [dangerZones].
 class StructureLegend extends StatelessWidget {
@@ -91,6 +54,53 @@ class StructureLegend extends StatelessWidget {
             ]),
           );
         }),
+      ],
+    );
+  }
+}
+
+/// The key to the letters drawn on a scan: `A  Soleus`, in the structure's own
+/// colour.
+///
+/// The letters and this legend are one unit. A letter on the image with no key
+/// beside it is a puzzle rather than a label, so this renders wherever the
+/// lettered scan does.
+class StructureLetterLegend extends StatelessWidget {
+  final List<StructureLabel> labels;
+
+  const StructureLetterLegend({super.key, required this.labels});
+
+  @override
+  Widget build(BuildContext context) {
+    if (labels.isEmpty) return const SizedBox.shrink();
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final textColor =
+        isDark ? AppTheme.textSecondary : AppTheme.textSecondaryLight;
+    final sorted = [...labels]..sort((a, b) => a.letter.compareTo(b.letter));
+
+    return Wrap(
+      spacing: 14,
+      runSpacing: 8,
+      children: [
+        for (final l in sorted)
+          Row(mainAxisSize: MainAxisSize.min, children: [
+            Container(
+              width: 17,
+              height: 17,
+              alignment: Alignment.center,
+              decoration:
+                  BoxDecoration(color: l.kind.color, shape: BoxShape.circle),
+              child: Text(l.letter,
+                  style: GoogleFonts.ibmPlexMono(
+                      fontSize: 10,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white)),
+            ),
+            const SizedBox(width: 6),
+            Text(l.name,
+                style: GoogleFonts.sourceSans3(
+                    fontSize: 12.5, color: textColor)),
+          ]),
       ],
     );
   }

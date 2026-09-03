@@ -74,6 +74,7 @@ flutter:
     - assets/data/patterns.json
     - assets/data/ue_pattern_classification.json
     - assets/data/us-label-boxes.json
+    - assets/data/us-annotations.json
     - assets/images/us_reference/
     - assets/images/probe_placement/
     - assets/images/anatomy/
