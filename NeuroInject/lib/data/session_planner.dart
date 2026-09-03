@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/muscle.dart';
 import '../models/session_item.dart';
+import 'toxin_data.dart';
 
 /// Holds the clinician's in-progress injection session: a list of muscles
 /// with chosen brand, per-side dose, and laterality. Persisted locally (no
@@ -113,13 +114,22 @@ class SessionPlanner extends ChangeNotifier {
   void addOrUpdate(SessionItem item) {
     final idx = _items.indexWhere((i) => i.muscleId == item.muscleId);
     if (idx >= 0) {
-      _items[idx] = item;
+      _items[idx] = _keepProgress(_items[idx], item);
     } else {
       _items.add(item);
     }
     _save();
     notifyListeners();
   }
+
+  /// A plan line being replaced keeps the live-session fields of the line it
+  /// replaces. Adding a pattern mid-procedure used to reset the overlapping
+  /// muscles to zero sites and not-done — silently, with a needle in hand.
+  SessionItem _keepProgress(SessionItem existing, SessionItem incoming) =>
+      incoming.copyWith(
+        sitesLogged: existing.sitesLogged,
+        completedAtMillis: existing.completedAtMillis,
+      );
 
   /// Add several muscles at once (replacing any existing line by muscleId),
   /// notifying listeners a single time. Used for "add a whole pattern".
@@ -128,7 +138,7 @@ class SessionPlanner extends ChangeNotifier {
     for (final item in newItems) {
       final idx = _items.indexWhere((i) => i.muscleId == item.muscleId);
       if (idx >= 0) {
-        _items[idx] = item;
+        _items[idx] = _keepProgress(_items[idx], item);
       } else {
         _items.add(item);
       }
@@ -156,6 +166,8 @@ class SessionPlanner extends ChangeNotifier {
 
   void clear() {
     if (_items.isEmpty) return;
+    // The clock must not keep running against a plan that no longer exists.
+    _startedAtMillis = null;
     _items = [];
     _save();
     notifyListeners();
@@ -185,7 +197,12 @@ class SessionPlanner extends ChangeNotifier {
   void loadSaved(String name) {
     final saved = _saved[name];
     if (saved == null) return;
-    _items = List<SessionItem>.from(saved);
+    // A saved plan is a fresh visit: any session in progress ends, and the
+    // loaded lines start with no progress even if the snapshot carried some.
+    _startedAtMillis = null;
+    _items = [
+      for (final i in saved) i.copyWith(sitesLogged: 0, clearCompletedAt: true)
+    ];
     _save();
     notifyListeners();
   }
@@ -273,41 +290,16 @@ class SessionPlanner extends ChangeNotifier {
   }
 }
 
-/// Brands (in display preference order) that [m] has a dose for.
-List<String> availableBrandsFor(Muscle m) {
-  final d = m.dosage;
-  if (d == null) return const [];
-  return [
-    if (d.botox != null) 'Botox',
-    if (d.xeomin != null) 'Xeomin',
-    if (d.dysport != null) 'Dysport',
-  ];
-}
-
-/// Midpoint dose for [brand] from a muscle's per-brand range, or null.
-double? doseForBrand(Muscle m, String brand) {
-  final d = m.dosage;
-  if (d == null) return null;
-  final range = switch (brand) {
-    'Botox' => d.botox,
-    'Xeomin' => d.xeomin,
-    'Dysport' => d.dysport,
-    _ => null,
-  };
-  return range == null ? null : midpointOfDoseRange(range);
-}
-
-/// A default session line for [m]: first available brand at its midpoint
-/// dose, right side. Returns null if the muscle has no brand dose.
-SessionItem? defaultSessionItem(Muscle m) {
-  final brands = availableBrandsFor(m);
-  if (brands.isEmpty) return null;
-  final brand = brands.first;
-  return SessionItem(
-    muscleId: m.id,
-    muscleName: m.name,
-    group: m.group,
-    brand: brand,
-    dose: doseForBrand(m, brand) ?? 0,
-  );
-}
+/// A fresh plan line for [m]: the default brand and NO dose.
+///
+/// Per-muscle dose recommendations were withdrawn from the corpus (the audit
+/// found the "Botox" column tracked the Xeomin label), so the app no longer
+/// seeds a number. The injector enters the dose in the session; until then
+/// the line shows 0 U and contributes nothing to the ceiling.
+SessionItem defaultSessionItem(Muscle m) => SessionItem(
+      muscleId: m.id,
+      muscleName: m.name,
+      group: m.group,
+      brand: toxinBrands.first.name,
+      dose: 0,
+    );

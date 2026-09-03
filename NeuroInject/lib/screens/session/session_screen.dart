@@ -248,8 +248,9 @@ class SessionScreen extends StatelessWidget {
     final planner = context.read<SessionPlanner>();
     final muscle = muscles.findById(it.muscleId);
     final groupColor = AppTheme.groupColor(it.group);
-    final brands =
-        muscle != null ? availableBrandsFor(muscle) : <String>[it.brand];
+    // Any of the three type-A brands can be chosen for any line; the corpus
+    // no longer decides which brands a muscle "has".
+    final brands = <String>{'Botox', 'Xeomin', 'Dysport', it.brand}.toList();
 
     return Container(
       padding: const EdgeInsets.fromLTRB(14, 12, 8, 12),
@@ -332,10 +333,10 @@ class SessionScreen extends StatelessWidget {
               ? null
               : (b) {
                   if (b == null) return;
-                  // Re-seed the dose to the new brand's midpoint, since units
-                  // are not interchangeable across brands.
-                  final seeded = doseForBrand(muscle, b) ?? it.dose;
-                  planner.setBrand(it.muscleId, b, seeded);
+                  // Units are not interchangeable across brands and there is
+                  // no corpus value to re-seed from, so the dose resets for
+                  // the injector to enter it in the new brand's units.
+                  planner.setBrand(it.muscleId, b, 0);
                 },
         ),
       ),
@@ -476,13 +477,13 @@ class SessionScreen extends StatelessWidget {
               textCapitalization: TextCapitalization.words,
               decoration: const InputDecoration(
                 labelText: 'Name',
-                hintText: 'e.g. LUE flexor pattern',
+                hintText: 'e.g. LUE flexor pattern — never a patient name',
               ),
               onSubmitted: (_) =>
                   _commitSave(ctx, messenger, planner, controller.text),
             ),
             const SizedBox(height: 10),
-            Text('Stored only on this device — use a non-identifying label.',
+            Text('Stored unencrypted on this device. Use a pattern or a side, never a patient name, MRN or date of birth.',
                 style: GoogleFonts.sourceSans3(
                     fontSize: 11, color: AppTheme.textTertiary)),
           ],
@@ -506,6 +507,19 @@ class SessionScreen extends StatelessWidget {
       SessionPlanner planner, String name) {
     final trimmed = name.trim();
     if (trimmed.isEmpty) return;
+    // Names persist unencrypted (localStorage on the web build). This cannot
+    // recognise a patient's name, but it can refuse the things that are only
+    // ever identifiers: MRN-length digit runs, and DOB/MRN labels.
+    final looksIdentifying = RegExp(r'\d{6,}').hasMatch(trimmed) ||
+        RegExp(r'\b(dob|mrn|d\.o\.b)\b', caseSensitive: false)
+            .hasMatch(trimmed);
+    if (looksIdentifying) {
+      messenger.showSnackBar(const SnackBar(
+          content: Text(
+              'That looks like a patient identifier. Name the session by '
+              'pattern or side instead.')));
+      return;
+    }
     final existed = planner.savedNames.contains(trimmed);
     planner.saveCurrentAs(trimmed);
     Navigator.of(dialogCtx).pop();

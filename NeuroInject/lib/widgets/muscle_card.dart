@@ -110,10 +110,8 @@ class _MuscleCardState extends State<MuscleCard> {
                           color: isDark ? AppTheme.textSecondary : AppTheme.textSecondaryLight),
                         maxLines: 1, overflow: TextOverflow.ellipsis),
                       const SizedBox(height: 6),
-                      // Tags: dosage + probe type
+                      // Tag: probe type
                       Wrap(spacing: 4, runSpacing: 4, children: [
-                        if (widget.muscle.dosage != null)
-                          _tag(widget.muscle.dosage!.displayShort, catColor, isDark),
                         if (widget.muscle.ultrasound != null)
                           _tag(widget.muscle.ultrasound!.probe, catColor, isDark),
                       ]),

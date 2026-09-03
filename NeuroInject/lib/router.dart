@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart' show CupertinoPage;
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'authoring.dart';
 import 'data/muscle_provider.dart';
+import 'models/muscle.dart';
 import 'screens/dashboard_page.dart';
 import 'screens/guide/muscle_detail.dart';
 import 'screens/highlight/muscle_highlighter_screen.dart';
@@ -36,7 +38,10 @@ final router = GoRouter(
         // iOS anyway, so the other routes already behave this way).
         return CupertinoPage<void>(
           key: state.pageKey,
-          child: _MuscleRoute(id: id),
+          child: _MuscleRoute(
+            id: id,
+            builder: (muscle) => MuscleDetailScreen(muscle: muscle),
+          ),
         );
       },
     ),
@@ -44,13 +49,14 @@ final router = GoRouter(
       path: '/highlight/:id',
       builder: (context, state) {
         final id = state.pathParameters['id'] ?? '';
-        final muscle = context.read<MuscleDataProvider>().findById(id);
-        if (muscle == null) {
-          return const Scaffold(body: Center(child: Text('Muscle not found')));
-        }
         final view =
             int.tryParse(state.uri.queryParameters['view'] ?? '') ?? 0;
-        return MuscleHighlighterScreen(muscle: muscle, viewIndex: view);
+        if (!kAuthoring) return const _NotInThisBuild();
+        return _MuscleRoute(
+          id: id,
+          builder: (muscle) =>
+              MuscleHighlighterScreen(muscle: muscle, viewIndex: view),
+        );
       },
     ),
     GoRoute(
@@ -68,7 +74,8 @@ final router = GoRouter(
     ),
     GoRoute(
       path: '/captures',
-      builder: (context, state) => const CapturesReviewScreen(),
+      builder: (context, state) =>
+          kAuthoring ? const CapturesReviewScreen() : const _NotInThisBuild(),
     ),
     GoRoute(
       path: '/calculator',
@@ -87,15 +94,17 @@ final router = GoRouter(
 );
 
 
-/// Resolves `/muscle/:id` only once the corpus is loaded.
+/// Resolves a `/…/:id` muscle route only once the corpus is loaded.
 ///
-/// The route used to read the provider synchronously in its builder, so
-/// opening the app directly on a muscle — a deep link, a shared URL, a cold
-/// start on that route — raced the asynchronous load and rendered "Muscle not
-/// found" for a muscle that exists.
+/// These routes used to read the provider synchronously in their builders, so
+/// opening the app directly on one — a deep link, a shared URL, a cold start —
+/// raced the asynchronous load and rendered "Muscle not found" for a muscle
+/// that exists. Every muscle-keyed route goes through here so the fix cannot
+/// be applied to one and forgotten on the next.
 class _MuscleRoute extends StatelessWidget {
   final String id;
-  const _MuscleRoute({required this.id});
+  final Widget Function(Muscle muscle) builder;
+  const _MuscleRoute({required this.id, required this.builder});
 
   @override
   Widget build(BuildContext context) {
@@ -115,6 +124,17 @@ class _MuscleRoute extends StatelessWidget {
     if (muscle == null) {
       return const Scaffold(body: Center(child: Text('Muscle not found')));
     }
-    return MuscleDetailScreen(muscle: muscle);
+    return builder(muscle);
   }
+}
+
+/// Shown in place of an authoring tool when the build was made without
+/// `--dart-define=AUTHORING=true` — see lib/authoring.dart.
+class _NotInThisBuild extends StatelessWidget {
+  const _NotInThisBuild();
+
+  @override
+  Widget build(BuildContext context) => const Scaffold(
+        body: Center(child: Text('Authoring tools are not in this build.')),
+      );
 }

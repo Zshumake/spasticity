@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import '../../authoring.dart';
 import '../../data/muscle_provider.dart';
 import '../../data/session_planner.dart';
 import '../../models/clinical_photo.dart';
@@ -19,6 +20,7 @@ import '../../widgets/safety_callout.dart';
 import '../../widgets/safety_layers.dart';
 import '../../widgets/video_link_card.dart';
 import '../../widgets/print_cheat_sheet.dart';
+import '../../widgets/ios_ui.dart';
 
 class MuscleDetailScreen extends StatefulWidget {
   final Muscle muscle;
@@ -404,15 +406,6 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
             const SizedBox(height: 8),
             Text(muscle.name, style: GoogleFonts.sora(
               fontWeight: FontWeight.w800, fontSize: 20, color: isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight)),
-            if (muscle.dosage != null) ...[
-              const SizedBox(height: 6),
-              Text('Dosage: ${muscle.dosage!.displayFull}', style: GoogleFonts.ibmPlexMono(
-                fontSize: 12, fontWeight: FontWeight.w700, color: AppTheme.amber)),
-              if (muscle.dosage!.hasAny) ...[
-                const SizedBox(height: 8),
-                _calcLink(),
-              ],
-            ],
           ]),
         ),
         const SizedBox(height: 16),
@@ -672,24 +665,9 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
             fontSize: 15, height: 1.5,
             color: isDark ? AppTheme.textSecondary : AppTheme.textSecondaryLight)),
           const SizedBox(height: 18),
-          // Stat chips row — per-muscle dose shown per brand (Botox,
-          // Xeomin, Dysport are NOT interchangeable 1:1; Dysport ≈ 3× Botox).
+          // Stat chips row. Per-muscle dose chips used to lead this row and
+          // were withdrawn with the corpus's dosing data.
           Wrap(spacing: 10, runSpacing: 10, children: [
-            if (muscle.dosage?.botox != null)
-              _heroChip(Icons.medication_outlined, 'BOTOX',
-                  '${muscle.dosage!.botox!} U',
-                  const Color(0xFF3E8FE0), isDark, // brand-botox
-                  onTap: () => _openCalculator('Botox', muscle.dosage!.botox!)),
-            if (muscle.dosage?.xeomin != null)
-              _heroChip(Icons.medication_outlined, 'XEOMIN',
-                  '${muscle.dosage!.xeomin!} U',
-                  const Color(0xFFA05BC4), isDark, // brand-xeomin
-                  onTap: () => _openCalculator('Xeomin', muscle.dosage!.xeomin!)),
-            if (muscle.dosage?.dysport != null)
-              _heroChip(Icons.medication_outlined, 'DYSPORT',
-                  '${muscle.dosage!.dysport!} U',
-                  const Color(0xFFE59A2E), isDark, // brand-dysport
-                  onTap: () => _openCalculator('Dysport', muscle.dosage!.dysport!)),
             if (us != null)
               _heroChip(Icons.sensors, 'PROBE', _shortProbe(us.probe), _groupColor, isDark),
             if (us != null)
@@ -697,18 +675,6 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
             if (us?.depth != null)
               _heroChip(Icons.straighten, 'DEPTH', us!.depth!, _groupColor, isDark),
           ]),
-          // Dosage note (italic small text under the chips)
-          if (muscle.dosageNote != null) ...[
-            const SizedBox(height: 10),
-            Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Icon(Icons.info_outline_rounded, size: 12, color: AppTheme.amberText(isDark)),
-              const SizedBox(width: 6),
-              Expanded(child: Text(muscle.dosageNote!,
-                style: GoogleFonts.sourceSans3(
-                  fontSize: 11, fontStyle: FontStyle.italic,
-                  height: 1.4, color: AppTheme.amberText(isDark)))),
-            ]),
-          ],
         ],
       ),
     );
@@ -766,89 +732,19 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
     );
   }
 
-  /// Opens the dose calculator pre-seeded with [brand] and the midpoint of
-  /// the muscle's dose [range] (e.g. "100-200" -> 150), which the user can
-  /// then adjust. Closes the muscle -> dose -> calculator gap.
-  void _openCalculator(String brand, String range) {
-    final dose = _midpointDose(range);
-    final query = dose != null
-        ? '?brand=$brand&dose=${dose.toStringAsFixed(0)}'
-        : '?brand=$brand';
-    context.push('/calculator$query');
-  }
-
-  /// Adds this muscle to the session plan (seeded brand + midpoint dose), or
-  /// navigates to the plan if it is already there.
+  /// Adds this muscle to the session plan (default brand, no dose — the
+  /// injector enters it there), or navigates to the plan if it is already in.
   void _toggleSession(bool inSession) {
     if (inSession) {
       context.push('/session');
       return;
     }
     final item = defaultSessionItem(muscle);
-    if (item == null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('No dose data to add for this muscle.')),
-      );
-      return;
-    }
     context.read<SessionPlanner>().addOrUpdate(item);
     HapticFeedback.lightImpact();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('Added ${muscle.name} to session'),
+    showAppSnack(context, 'Added ${muscle.name} to session',
         action: SnackBarAction(
-            label: 'View', onPressed: () => context.push('/session')),
-        duration: const Duration(seconds: 3),
-      ),
-    );
-  }
-
-  /// Midpoint of a dose-range string: "100-200" -> 150, "100" -> 100.
-  double? _midpointDose(String range) {
-    final nums = RegExp(r'\d+(?:\.\d+)?')
-        .allMatches(range)
-        .map((m) => double.parse(m.group(0)!))
-        .toList();
-    if (nums.isEmpty) return null;
-    if (nums.length == 1) return nums.first;
-    return ((nums.first + nums[1]) / 2).roundToDouble();
-  }
-
-  /// Tappable link under the procedure-mode dose line that opens the
-  /// calculator pre-seeded with the muscle's preferred brand (Botox, then
-  /// Xeomin, then Dysport) and dose.
-  Widget _calcLink() {
-    final d = muscle.dosage!;
-    final String brand;
-    final String range;
-    if (d.botox != null) {
-      brand = 'Botox';
-      range = d.botox!;
-    } else if (d.xeomin != null) {
-      brand = 'Xeomin';
-      range = d.xeomin!;
-    } else if (d.dysport != null) {
-      brand = 'Dysport';
-      range = d.dysport!;
-    } else {
-      // hasAny was true but none of the known brands matched — nothing to seed.
-      return const SizedBox.shrink();
-    }
-    return InkWell(
-      onTap: () => _openCalculator(brand, range),
-      borderRadius: BorderRadius.circular(8),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 2),
-        child: Row(mainAxisSize: MainAxisSize.min, children: [
-          Icon(Icons.calculate_outlined, size: 14, color: AppTheme.success),
-          const SizedBox(width: 6),
-          Text('Calculate draw-up volume', style: GoogleFonts.ibmPlexMono(
-            fontSize: 11, fontWeight: FontWeight.w700, color: AppTheme.success)),
-          const SizedBox(width: 4),
-          Icon(Icons.arrow_forward_rounded, size: 12, color: AppTheme.success),
-        ]),
-      ),
-    );
+            label: 'View', onPressed: () => context.push('/session')));
   }
 
   Widget _section(String title, IconData icon, Color? color, Widget child) {
@@ -1259,7 +1155,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         // The highlighter has nothing to draw on until this muscle's US scan
         // is bundled, so the entry point only appears once it is; gating on
         // the asset means it turns itself on as scans are added.
-        if (_hasUltrasoundScan) ...[
+        if (kAuthoring && _hasUltrasoundScan) ...[
           const SizedBox(height: 12),
           _highlightCta(isDark),
         ],
@@ -1578,7 +1474,7 @@ class _MuscleDetailScreenState extends State<MuscleDetailScreen> {
         'architecture visualization. After negative aspiration, '
         'Botulinum Toxin was injected.';
     Clipboard.setData(ClipboardData(text: note));
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Procedure note copied'), duration: Duration(seconds: 2)));
+    showAppSnack(context, 'Procedure note copied',
+        duration: const Duration(seconds: 2));
   }
 }

@@ -42,17 +42,18 @@ void main() {
     expect(scm.sideEffects.single, contains('Dysphagia'));
   });
 
-  test('KNOWN CONTENT ISSUE: SCM states dysphagia in all three layers', () {
-    // Not an assertion that this is correct — it documents what the corpus
-    // currently says, so a future de-duplication has a test to flip rather
-    // than a silent change. Grouping the layers by phase made this visible:
-    // as three identical amber callouts nobody noticed the repetition.
+  test('SCM states dysphagia in the toxin layer and nowhere else', () {
+    // Dysphagia is a toxin effect (spread to the pharyngeal muscles), so it
+    // belongs to the consent layer. The needle layers used to repeat it; the
+    // one needle-technique clause they carried survives without the word.
     final scm = byId('scm');
     bool mentions(Iterable<String> xs) =>
         xs.any((x) => x.toLowerCase().contains('dysphagia'));
     expect(mentions(scm.sideEffects), isTrue);
-    expect(mentions(scm.dangerZones), isTrue);
-    expect(mentions(scm.ultrasound?.safetyNotes ?? const []), isTrue);
+    expect(mentions(scm.dangerZones), isFalse);
+    expect(mentions(scm.ultrasound?.safetyNotes ?? const []), isFalse);
+    expect(scm.dangerZones.any((z) => z.toLowerCase().contains('pharyngeal')),
+        isTrue, reason: 'the needle-technique point is kept');
   });
 
   test('the subclavian artery relationship is stated correctly everywhere', () {

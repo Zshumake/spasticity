@@ -9,6 +9,7 @@ import '../../models/segmentation.dart';
 import '../../theme/app_theme.dart';
 import '../../widgets/highlight/drawing_canvas.dart';
 import '../../widgets/highlight/structure_legend.dart';
+import '../../widgets/ios_ui.dart';
 
 /// v1 "draw → highlight" surface. The clinician lassos a muscle on its US image;
 /// a [MuscleSegmenter] refines the drawing into a mask; the overlay shows a slick
@@ -85,11 +86,8 @@ class _MuscleHighlighterScreenState extends State<MuscleHighlighterScreen> {
       canvasSize: _canvasSize,
       createdAtMillis: now.millisecondsSinceEpoch,
     ));
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      content: Text(
-          'Saved highlight #${store.countFor(muscle.id)} for ${muscle.name}'),
-      behavior: SnackBarBehavior.floating,
-    ));
+    showAppSnack(context,
+        'Saved highlight #${store.countFor(muscle.id)} for ${muscle.name}');
     setState(() => _mask = null);
   }
 

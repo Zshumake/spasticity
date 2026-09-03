@@ -40,15 +40,6 @@ Future<void> printCheatSheet(BuildContext context, Muscle muscle) async {
                   pw.Text('${muscle.group} — ${muscle.pattern}',
                       style: const pw.TextStyle(
                           fontSize: 10, color: PdfColors.grey300)),
-                  if (muscle.dosage != null)
-                    pw.Padding(
-                      padding: const pw.EdgeInsets.only(top: 4),
-                      child: pw.Text('Dosage: ${muscle.dosage!.displayFull}',
-                          style: pw.TextStyle(
-                              fontSize: 11,
-                              fontWeight: pw.FontWeight.bold,
-                              color: PdfColors.amber)),
-                    ),
                 ],
               ),
             ),

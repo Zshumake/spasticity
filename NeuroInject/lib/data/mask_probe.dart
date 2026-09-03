@@ -63,20 +63,4 @@ class MaskProbe {
     if (p == null) return false;
     return alphaAt(p.dx.round(), p.dy.round()) >= threshold;
   }
-
-  /// Distance in image pixels from [local] to the nearest masked pixel, or
-  /// null when the mask is empty. Used to say how near a miss was.
-  double? missDistance(Offset local, Size box, {int threshold = 40, int step = 4}) {
-    final p = toImage(local, box);
-    if (p == null) return null;
-    double best = double.infinity;
-    for (var y = 0; y < height; y += step) {
-      for (var x = 0; x < width; x += step) {
-        if (alphaAt(x, y) < threshold) continue;
-        final d = (Offset(x.toDouble(), y.toDouble()) - p).distance;
-        if (d < best) best = d;
-      }
-    }
-    return best.isFinite ? best : null;
-  }
 }

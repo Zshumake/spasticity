@@ -32,7 +32,8 @@ class _Round {
   const _Round(this.muscle, this.view);
 }
 
-class _IdentifyScreenState extends State<IdentifyScreen> {
+class _IdentifyScreenState extends State<IdentifyScreen>
+    with WidgetsBindingObserver {
   static const int roundCount = 10;
 
   List<_Round> _rounds = [];
@@ -50,6 +51,33 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
   /// Set once the pool has been assembled, so the corpus is read exactly once
   /// even though build() runs on every provider notification.
   bool _built = false;
+
+  /// True when the current round's mask could not be decoded. The tap is not
+  /// silently ignored in that case; the round says so and offers to move on.
+  bool _probeFailed = false;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  /// The round clock measures looking at the scan, not the time the phone
+  /// spent locked or the app backgrounded mid-round.
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (_correct != null) return;
+    if (state == AppLifecycleState.resumed) {
+      _clock.start();
+    } else {
+      _clock.stop();
+    }
+  }
+
+  Color _tertiary(bool isDark) =>
+      isDark ? AppTheme.textTertiary : AppTheme.textTertiaryLight;
+  Color _border(bool isDark) =>
+      isDark ? AppTheme.borderDark : AppTheme.borderLight;
 
   /// Burned-label rectangles per scan filename, in source-image pixels.
   /// Covering them is what stops the sonographer's own annotation from
@@ -115,6 +143,7 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
     if (!mounted) return;
     setState(() {
       _probe = probe;
+      _probeFailed = probe == null;
       _loading = false;
       _tap = null;
       _correct = null;
@@ -164,6 +193,7 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
     _clock.stop();
     super.dispose();
   }
@@ -254,7 +284,11 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
             child: LayoutBuilder(
               builder: (context, box) {
                 final size = Size(box.maxWidth, box.maxHeight);
-                return GestureDetector(
+                return Semantics(
+                  label: answered
+                      ? 'Ultrasound scan, answer revealed'
+                      : 'Ultrasound scan. Tap where ${round.muscle.name} is.',
+                  child: GestureDetector(
                   behavior: HitTestBehavior.opaque,
                   onTapUp: (d) => _answer(d.localPosition, size),
                   child: ClipRRect(
@@ -281,12 +315,18 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
                       ],
                     ),
                   ),
+                  ),
                 );
               },
             ),
           ),
         ),
-        if (answered) _verdict(isDark, round) else _hint(isDark),
+        if (_probeFailed)
+          _unscorable(isDark)
+        else if (answered)
+          _verdict(isDark, round)
+        else
+          _hint(isDark),
       ],
     );
   }
@@ -312,16 +352,70 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
     );
   }
 
+  /// The mask for this round did not decode, so there is no answer key. Say
+  /// so and move on rather than accepting taps that can never be marked.
+  Widget _unscorable(bool isDark) {
+    final last = _index + 1 >= _rounds.length;
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 22),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Row(children: [
+          Icon(Icons.error_outline_rounded, size: 15, color: AppTheme.amber),
+          const SizedBox(width: 8),
+          Expanded(
+            child: Text('This scan could not be scored — its highlight failed to load.',
+                style: GoogleFonts.sourceSans3(
+                    fontSize: 12.5,
+                    color: isDark
+                        ? AppTheme.textSecondary
+                        : AppTheme.textSecondaryLight)),
+          ),
+        ]),
+        const SizedBox(height: 10),
+        Semantics(
+          button: true,
+          label: last ? 'See results' : 'Skip to the next scan',
+          child: GestureDetector(
+            onTap: () {
+              // Not counted either way: no answer was possible.
+              _next();
+            },
+            behavior: HitTestBehavior.opaque,
+            child: Container(
+              constraints: const BoxConstraints(minHeight: 48),
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight,
+                borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+                border: Border.all(color: _border(isDark)),
+              ),
+              child: Text(last ? 'SEE RESULTS' : 'SKIP THIS SCAN',
+                  style: GoogleFonts.ibmPlexMono(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 1.2,
+                      color: isDark
+                          ? AppTheme.textSecondary
+                          : AppTheme.textSecondaryLight)),
+            ),
+          ),
+        ),
+      ]),
+    );
+  }
+
   Widget _hint(bool isDark) => Padding(
         padding: const EdgeInsets.fromLTRB(16, 14, 16, 22),
         child: Row(children: [
-          Icon(Icons.touch_app_outlined,
-              size: 15, color: AppTheme.textTertiary),
+          Icon(Icons.touch_app_outlined, size: 15, color: _tertiary(isDark)),
           const SizedBox(width: 8),
           Expanded(
             child: Text('Tap the muscle on the scan.',
                 style: GoogleFonts.sourceSans3(
-                    fontSize: 12.5, color: AppTheme.textSecondary)),
+                    fontSize: 12.5,
+                    color: isDark
+                        ? AppTheme.textSecondary
+                        : AppTheme.textSecondaryLight)),
           ),
         ]),
       );
@@ -376,7 +470,10 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
             ]),
           ),
           const SizedBox(height: 10),
-          GestureDetector(
+          Semantics(
+            button: true,
+            label: last ? 'See results' : 'Next scan',
+            child: GestureDetector(
             onTap: _next,
             behavior: HitTestBehavior.opaque,
             child: Container(
@@ -393,6 +490,7 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
                       letterSpacing: 1.2,
                       color: AppTheme.bgDark)),
             ),
+            ),
           ),
         ],
       ),
@@ -407,7 +505,10 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 0, 16, 14),
       child: Row(children: [
-        GestureDetector(
+        Semantics(
+          button: true,
+          label: 'Back',
+          child: GestureDetector(
           onTap: () => context.pop(),
           behavior: HitTestBehavior.opaque,
           child: Container(
@@ -423,6 +524,7 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
                 size: 20,
                 color: isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight),
           ),
+          ),
         ),
         const SizedBox(width: 12),
         Text('IDENTIFY',
@@ -430,9 +532,11 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
                 fontSize: 10,
                 fontWeight: FontWeight.w700,
                 letterSpacing: 2,
-                color: AppTheme.textTertiary)),
+                color: _tertiary(isDark))),
         const Spacer(),
-        Container(
+        Semantics(
+          label: '$right correct, $wrong wrong',
+          child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 5),
           decoration: BoxDecoration(
             color: isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight,
@@ -449,14 +553,15 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
                     fontWeight: FontWeight.w700,
                     color: AppTheme.success)),
             const SizedBox(width: 8),
-            Container(width: 1, height: 11, color: AppTheme.borderDark),
+            Container(width: 1, height: 11, color: _border(isDark)),
             const SizedBox(width: 8),
             Text('$wrong',
                 style: GoogleFonts.ibmPlexMono(
                     fontSize: 11,
                     fontWeight: FontWeight.w700,
-                    color: AppTheme.textTertiary)),
+                    color: _tertiary(isDark))),
           ]),
+          ),
         ),
       ]),
     );
@@ -467,7 +572,7 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
           padding: const EdgeInsets.all(32),
           child: Column(mainAxisSize: MainAxisSize.min, children: [
             Icon(Icons.image_not_supported_outlined,
-                size: 34, color: AppTheme.textTertiary),
+                size: 34, color: _tertiary(isDark)),
             const SizedBox(height: 14),
             Text('No scans with a highlight yet',
                 textAlign: TextAlign.center,
@@ -479,7 +584,7 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
             Text('Identify needs a baked mask to mark an answer.',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.sourceSans3(
-                    fontSize: 12.5, color: AppTheme.textTertiary)),
+                    fontSize: 12.5, color: _tertiary(isDark))),
           ]),
         ),
       );
@@ -523,7 +628,10 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
                 ],
               ),
               const SizedBox(height: 30),
-              GestureDetector(
+              Semantics(
+                button: true,
+                label: 'Go again',
+                child: GestureDetector(
                 onTap: _restart,
                 behavior: HitTestBehavior.opaque,
                 child: Container(
@@ -540,6 +648,7 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
                           fontWeight: FontWeight.w700,
                           letterSpacing: 1.2,
                           color: AppTheme.bgDark)),
+                ),
                 ),
               ),
             ]),

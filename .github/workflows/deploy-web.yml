@@ -33,6 +33,21 @@ jobs:
         working-directory: NeuroInject
         run: flutter pub get
 
+      # Nothing reaches the public site without passing these. They run only
+      # here, on a push to main, so they cost minutes only when a deploy
+      # already does.
+      - name: Analyze
+        working-directory: NeuroInject
+        run: flutter analyze --no-pub
+
+      - name: Test
+        working-directory: NeuroInject
+        run: flutter test
+
+      - name: Clinical corrections gate
+        working-directory: NeuroInject
+        run: python3 tools/apply_corrections.py --check
+
       - name: Build web
         working-directory: NeuroInject
         run: flutter build web --release --base-href /spasticity/
