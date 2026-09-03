@@ -1,0 +1,142 @@
+{
+  "$schema": "Jost-Hefter-Reißig-Kollewe-Wissel upper-limb spasticity pattern classification.",
+  "sourceNote": "Derived from the Jost Atlas of Botulinum Toxin Injection, Part 1 p4, which cites the German-Austrian Dysport study (Jost, Hefter, Reißig, Kollewe, Wissel). Paraphrased for the NeuroInject app. Pattern numbering (I-V) follows the original publication.",
+  "patterns": [
+    {
+      "id": "jost-pattern-1",
+      "classification": "I",
+      "name": "Pattern I",
+      "summary": "Classic UE flexor-synergy posture with supination",
+      "postureDescription": "Internally rotated and adducted shoulder; flexed elbow; supinated forearm; flexed wrist.",
+      "components": {
+        "shoulder": "internal rotation + adduction",
+        "elbow": "flexion",
+        "forearm": "supination",
+        "wrist": "flexion"
+      },
+      "relatedNeuroInjectPatternIds": [
+        "adducted-shoulder",
+        "flexed-elbow",
+        "flexed-wrist"
+      ],
+      "clinicalNotes": "One of the most common UE patterns after stroke. Supination (rather than pronation) distinguishes this from Pattern IV."
+    },
+    {
+      "id": "jost-pattern-2",
+      "classification": "II",
+      "name": "Pattern II",
+      "summary": "Flexor-synergy with extended wrist — uncommon",
+      "postureDescription": "Internally rotated and adducted shoulder; flexed elbow; supinated forearm; extended wrist.",
+      "components": {
+        "shoulder": "internal rotation + adduction",
+        "elbow": "flexion",
+        "forearm": "supination",
+        "wrist": "extension"
+      },
+      "relatedNeuroInjectPatternIds": [
+        "adducted-shoulder",
+        "flexed-elbow"
+      ],
+      "clinicalNotes": "Uncommon variant. The extended-wrist component may reflect extensor overactivity or a compensatory posture rather than a true spastic pattern."
+    },
+    {
+      "id": "jost-pattern-3",
+      "classification": "III",
+      "name": "Pattern III",
+      "summary": "Proximal-only UE spasticity",
+      "postureDescription": "Internally rotated and adducted shoulder; flexed elbow; neutral forearm; neutral wrist.",
+      "components": {
+        "shoulder": "internal rotation + adduction",
+        "elbow": "flexion",
+        "forearm": "neutral",
+        "wrist": "neutral"
+      },
+      "relatedNeuroInjectPatternIds": [
+        "adducted-shoulder",
+        "flexed-elbow"
+      ],
+      "clinicalNotes": "Distal joints are spared — treatment focuses on shoulder and elbow flexors. Common in milder presentations or after earlier distal recovery."
+    },
+    {
+      "id": "jost-pattern-4",
+      "classification": "IV",
+      "name": "Pattern IV",
+      "summary": "Classic UE flexor-synergy with pronation (most common)",
+      "postureDescription": "Internally rotated and adducted shoulder; flexed elbow; pronated forearm; flexed wrist.",
+      "components": {
+        "shoulder": "internal rotation + adduction",
+        "elbow": "flexion",
+        "forearm": "pronation",
+        "wrist": "flexion"
+      },
+      "relatedNeuroInjectPatternIds": [
+        "adducted-shoulder",
+        "flexed-elbow",
+        "pronated-forearm",
+        "flexed-wrist"
+      ],
+      "clinicalNotes": "The most common UE pattern after stroke. Pronation distinguishes it from Pattern I. Pronator teres is a primary treatment target in this pattern."
+    },
+    {
+      "id": "jost-pattern-5",
+      "classification": "V",
+      "name": "Pattern V",
+      "summary": "Extended elbow with shoulder retroversion",
+      "postureDescription": "Internally rotated shoulder with retroversion (pushed back); extended elbow; pronated forearm; flexed wrist.",
+      "components": {
+        "shoulder": "internal rotation + retroversion",
+        "elbow": "extension",
+        "forearm": "pronation",
+        "wrist": "flexion"
+      },
+      "relatedNeuroInjectPatternIds": [
+        "elbow-extension",
+        "pronated-forearm",
+        "flexed-wrist"
+      ],
+      "clinicalNotes": "The rarest pattern — the elbow is extended, not flexed. Usually indicates predominant triceps spasticity, which requires different treatment planning than the flexor-dominant Patterns I-IV."
+    }
+  ],
+  "handTypes": [
+    {
+      "id": "spastic-flexion-hand",
+      "name": "Spastic Flexion Hand",
+      "summary": "The classic closed-fist posture",
+      "description": "Fingers and wrist held in flexion — the fist is closed and often cannot be opened without force. Driven by overactivity of the long finger and wrist flexors (FDS, FDP, FCR, FCU).",
+      "relatedNeuroInjectPatternIds": [
+        "clenched-fist",
+        "flexed-wrist"
+      ],
+      "keyMuscleIds": [
+        "fds",
+        "fdp",
+        "fcr",
+        "fcu"
+      ]
+    },
+    {
+      "id": "claw-hand",
+      "name": "Claw Hand",
+      "summary": "Intrinsic-minus posture — MCP extension with IP flexion",
+      "description": "Metacarpophalangeal (MCP) joints are hyperextended while interphalangeal (IP) joints are flexed. Caused by relative weakness of the hand intrinsics (lumbricals, interossei) with preserved or overactive long flexors and extensors.",
+      "relatedNeuroInjectPatternIds": [
+        "clenched-fist"
+      ],
+      "keyMuscleIds": [
+        "fds",
+        "fdp"
+      ],
+      "_noteOnMissingMuscles": "Extensor digitorum is also a key contributor to claw hand but is not yet in NeuroInject's muscle library. Add this field once it is included."
+    },
+    {
+      "id": "lumbrical-spasticity-hand",
+      "name": "Lumbrical Spasticity Hand",
+      "summary": "Intrinsic-plus posture — MCP flexion with IP extension",
+      "description": "Opposite of claw hand. MCP joints are flexed while IP joints are extended. Driven by overactivity of the lumbricals and interossei. Uncommon but distinctive — reserve lumbrical-focused injection for this clear pattern.",
+      "relatedNeuroInjectPatternIds": [],
+      "keyMuscleIds": [
+        "hand-lumbricals"
+      ]
+    }
+  ]
+}

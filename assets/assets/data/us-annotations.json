@@ -1,0 +1,19 @@
+{
+  "$comment": [
+    "Structure letters and presentation crops, per ultrasound scan.",
+    "",
+    "Keyed by scan FILE NAME, not by muscle: one transverse view is shared by up to three",
+    "muscles (gastrocnemius and soleus; all three adductors), and the structures in the frame",
+    "are the same picture whichever muscle you arrived from.",
+    "",
+    "Coordinates are SOURCE IMAGE PIXELS, the same convention us-label-boxes.json uses. That is",
+    "what lets a letter stay on its structure through any display size, the peel seam, a crop and",
+    "the zoom view. `crop` is [x, y, w, h] and is PRESENTATION ONLY: no file is ever re-cut, the",
+    "scan and its mask are drawn through one transform so a crop cannot pull the highlight out of",
+    "registration, and removing the crop restores the full frame.",
+    "",
+    "Authored in the app (muscle page -> the scan's Label & crop action), exported from there, and",
+    "merged in with tools/pull_annotations.py, which validates bounds and letter uniqueness."
+  ],
+  "scans": {}
+}
