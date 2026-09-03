@@ -1,5 +1,6 @@
+import 'dart:ui' show CheckedState;
+
 import 'package:flutter/material.dart';
-import 'package:flutter/semantics.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -109,8 +110,8 @@ void main() {
 
     final row = tester.getSemantics(
         find.bySemanticsLabel(RegExp('Sternocleidomastoid')));
-    expect(row.hasFlag(SemanticsFlag.isButton), isTrue);
-    expect(row.hasFlag(SemanticsFlag.hasCheckedState), isTrue);
+    expect(row.flagsCollection.isButton, isTrue);
+    expect(row.flagsCollection.isChecked, isNot(CheckedState.none));
 
     expect(find.bySemanticsLabel(RegExp('Select muscles to plan')),
         findsOneWidget);
