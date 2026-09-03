@@ -32,9 +32,9 @@ void main() {
 
   test('parses the adjudicated side effects from the shipped corpus', () {
     final withEffects = muscles.where((m) => m.sideEffects.isNotEmpty).toList();
-    expect(withEffects, hasLength(7));
+    expect(withEffects, hasLength(12));
     expect(
-        withEffects.fold<int>(0, (n, m) => n + m.sideEffects.length), equals(8));
+        withEffects.fold<int>(0, (n, m) => n + m.sideEffects.length), equals(13));
   });
 
   test('SCM carries its dysphagia warning in the toxin layer', () {
