@@ -10,6 +10,7 @@ import '../../data/muscle_provider.dart';
 import '../../models/highlight_capture.dart';
 import '../../theme/app_theme.dart';
 import '../../widgets/highlight/capture_thumbnail.dart';
+import '../../widgets/ios_ui.dart';
 
 /// Reviews the self-generated training set: every accepted highlight, grouped
 /// by muscle, with per-capture delete and clear-all. Makes the "tool builds its
@@ -280,52 +281,26 @@ class CapturesReviewScreen extends StatelessWidget {
       (defaultTargetPlatform == TargetPlatform.iOS ||
           defaultTargetPlatform == TargetPlatform.android);
 
-  void _confirmDelete(BuildContext context, HighlightCapture c) {
+  Future<void> _confirmDelete(BuildContext context, HighlightCapture c) async {
     final store = context.read<HighlightCaptureStore>();
-    showDialog<void>(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: const Text('Delete highlight?'),
-        content: const Text('This removes one captured training example.'),
-        actions: [
-          TextButton(
-              onPressed: () => Navigator.of(ctx).pop(),
-              child: const Text('Cancel')),
-          FilledButton(
-            style: FilledButton.styleFrom(backgroundColor: AppTheme.danger),
-            onPressed: () {
-              store.remove(c.id);
-              Navigator.of(ctx).pop();
-            },
-            child: const Text('Delete'),
-          ),
-        ],
-      ),
-    );
+    if (await showConfirm(context,
+        title: 'Delete highlight?',
+        message: 'This removes one captured training example.',
+        confirmLabel: 'Delete',
+        isDestructive: true)) {
+      store.remove(c.id);
+    }
   }
 
-  void _confirmClear(BuildContext context) {
+  Future<void> _confirmClear(BuildContext context) async {
     final store = context.read<HighlightCaptureStore>();
-    showDialog<void>(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: const Text('Clear all highlights?'),
-        content: Text(
-            'This permanently removes all ${store.count} captured examples.'),
-        actions: [
-          TextButton(
-              onPressed: () => Navigator.of(ctx).pop(),
-              child: const Text('Cancel')),
-          FilledButton(
-            style: FilledButton.styleFrom(backgroundColor: AppTheme.danger),
-            onPressed: () {
-              store.clear();
-              Navigator.of(ctx).pop();
-            },
-            child: const Text('Clear all'),
-          ),
-        ],
-      ),
-    );
+    if (await showConfirm(context,
+        title: 'Clear all highlights?',
+        message:
+            'This permanently removes all ${store.count} captured examples.',
+        confirmLabel: 'Clear all',
+        isDestructive: true)) {
+      store.clear();
+    }
   }
 }

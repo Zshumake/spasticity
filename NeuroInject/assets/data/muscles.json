@@ -64,11 +64,6 @@
       "x": 51,
       "y": 21
     },
-    "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
-    },
     "referenceImages": [],
     "hasReferenceImage": false,
     "probePlacementHint": "Patient supine, arm at the side or minimally abducted. Place the probe angled ~45° toward the axilla along the midclavicular line, ~2 cm below the clavicle, to identify the clavicular head; slide/rotate to longitudinal ~5 cm below the clavicle for the sternocostal head. Identify the intramuscular fascia between the two heads and pectoralis minor deep to them; the axillary vessels and distal brachial plexus branches lie deep to pectoralis minor. Photo from the patient's right side showing the probe infraclavicular on the midclavicular line.",
@@ -99,7 +94,6 @@
       "subscapularis",
       "teres-major"
     ],
-    "dosageNote": "Total across both heads. Split dose between clavicular and sternal heads (e.g. 25-50U each).",
     "anatomyImages": {
       "anterior": "pec-major_anterior.webp",
       "posterior": "pec-major_posterior.webp",
@@ -198,12 +192,6 @@
       "subscapularis",
       "teres-major"
     ],
-    "dosage": {
-      "botox": "100-150",
-      "xeomin": "100-150",
-      "dysport": "300-450"
-    },
-    "dosageNote": "Large muscle — distribute across 2-3 sites along the posterior axillary fold.",
     "anatomyImages": {
       "anterior": "lat-dorsi_anterior.webp",
       "posterior": "lat-dorsi_posterior.webp",
@@ -313,12 +301,6 @@
       "pec-major",
       "teres-major"
     ],
-    "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
-    },
-    "dosageNote": "Distribute across multiple sites along the muscle belly. Deep injection — confirm tip placement before each.",
     "anatomyImages": {
       "anterior": "subscapularis_anterior.webp",
       "posterior": "subscapularis_posterior.webp",
@@ -520,12 +502,6 @@
       "pec-major",
       "subscapularis"
     ],
-    "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
-    },
-    "dosageNote": "Large rotator. Distribute across 1-2 sites.",
     "anatomyImages": {
       "anterior": "teres-major_anterior.webp",
       "posterior": "teres-major_posterior.webp",
@@ -629,12 +605,6 @@
       "pronator-teres",
       "fcr"
     ],
-    "dosage": {
-      "botox": "50-200",
-      "xeomin": "50-200",
-      "dysport": "150-600"
-    },
-    "dosageNote": "Large muscle with 2 heads. Split across short and long heads. FDA PI allows up to 200 U.",
     "anatomyImages": {
       "anterior": "biceps-brachii_anterior.webp",
       "posterior": "biceps-brachii_posterior.webp",
@@ -738,12 +708,6 @@
       "biceps-brachii",
       "brachioradialis"
     ],
-    "dosage": {
-      "botox": "25-75",
-      "xeomin": "25-75",
-      "dysport": "75-225"
-    },
-    "dosageNote": "Deep to biceps — often underdosed. Confirm placement on US before injecting.",
     "anatomyImages": {
       "anterior": "brachialis_anterior.webp",
       "posterior": "brachialis_posterior.webp",
@@ -852,12 +816,6 @@
       "biceps-brachii",
       "brachialis"
     ],
-    "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
-    },
-    "dosageNote": "Rarely injected for spasticity. Confirm genuine spasticity before treating.",
     "anatomyImages": {
       "anterior": "triceps_anterior.webp",
       "posterior": "triceps_posterior.webp",
@@ -964,12 +922,6 @@
       "brachialis",
       "pronator-teres"
     ],
-    "dosage": {
-      "botox": "25-75",
-      "xeomin": "25-75",
-      "dysport": "75-225"
-    },
-    "dosageNote": "Superficial forearm muscle. Stay lateral and superficial to avoid radial nerve.",
     "anatomyImages": {
       "anterior": "brachioradialis_anterior.webp",
       "posterior": "brachioradialis_posterior.webp",
@@ -1077,12 +1029,6 @@
       "fcr",
       "fcu"
     ],
-    "dosage": {
-      "botox": "25-75",
-      "xeomin": "25-75",
-      "dysport": "75-225"
-    },
-    "dosageNote": "Compact muscle. 1-2 sites in proximal belly.",
     "anatomyImages": {
       "anterior": "pronator-teres_anterior.webp",
       "posterior": "pronator-teres_posterior.webp",
@@ -1185,11 +1131,6 @@
       "fdp",
       "fds"
     ],
-    "dosage": {
-      "botox": "25-50",
-      "xeomin": "25-50",
-      "dysport": "75-150"
-    },
     "anatomyImages": {
       "anterior": "fcr_anterior.webp",
       "posterior": "fcr_posterior.webp",
@@ -1299,12 +1240,6 @@
       "fdp",
       "fds"
     ],
-    "dosage": {
-      "botox": "20-50",
-      "xeomin": "20-50",
-      "dysport": "60-150"
-    },
-    "dosageNote": "Inject proximal third only — ulnar nerve becomes superficial distally.",
     "anatomyImages": {
       "anterior": "fcu_anterior.webp",
       "posterior": "fcu_posterior.webp",
@@ -1424,12 +1359,6 @@
       "fpl",
       "hand-lumbricals"
     ],
-    "dosage": {
-      "botox": "25-50",
-      "xeomin": "25-50",
-      "dysport": "75-150"
-    },
-    "dosageNote": "Dose per head if targeting individual fingers.",
     "anatomyImages": {
       "anterior": "fds_anterior.webp",
       "posterior": "fds_posterior.webp",
@@ -1547,12 +1476,6 @@
       "fpl",
       "hand-lumbricals"
     ],
-    "dosage": {
-      "botox": "25-50",
-      "xeomin": "25-50",
-      "dysport": "75-150"
-    },
-    "dosageNote": "Deep muscle — confirm placement on US.",
     "anatomyImages": {
       "anterior": "fdp_anterior.webp",
       "posterior": "fdp_posterior.webp",
@@ -1662,12 +1585,6 @@
       "fdp",
       "fds"
     ],
-    "dosage": {
-      "botox": "10-25",
-      "xeomin": "10-25",
-      "dysport": "30-75"
-    },
-    "dosageNote": "Narrow therapeutic window — over-dosing weakens pinch grip. Start low.",
     "anatomyImages": {
       "anterior": "fpl_anterior.webp",
       "posterior": "fpl_posterior.webp",
@@ -1742,11 +1659,6 @@
         "angle": 0,
         "length": 10
       }
-    },
-    "dosage": {
-      "botox": "10-25",
-      "xeomin": "10-25",
-      "dysport": "30-75"
     },
     "marker": null,
     "referenceImages": [],
@@ -1864,12 +1776,6 @@
       "edc",
       "brachioradialis"
     ],
-    "dosage": {
-      "botox": "20-50",
-      "xeomin": "20-50",
-      "dysport": "60-150"
-    },
-    "dosageNote": "Draft entry — extensor data added for completeness (dystonia / mixed patterns). Verify every dose, US note, and hazard against current labeling and a primary source before clinical use.",
     "anatomyImages": {},
     "dangerZones": [
       "The posterior interosseous nerve passes deep, between the ECRB and the supinator — keep the needle superficial in the ECRL belly and do not advance toward the radial neck.",
@@ -1948,12 +1854,6 @@
       "ecu",
       "edc"
     ],
-    "dosage": {
-      "botox": "20-50",
-      "xeomin": "20-50",
-      "dysport": "60-150"
-    },
-    "dosageNote": "Draft entry — extensor data added for completeness (dystonia / mixed patterns). Verify every dose, US note, and hazard against current labeling and a primary source before clinical use.",
     "anatomyImages": {},
     "dangerZones": [
       "The posterior interosseous nerve enters the supinator immediately deep and proximal to the ECRB at the radial neck — keep the needle superficial-to-mid in the belly and never advance toward the radial neck.",
@@ -2031,12 +1931,6 @@
       "ecrb",
       "edc"
     ],
-    "dosage": {
-      "botox": "15-40",
-      "xeomin": "15-40",
-      "dysport": "45-120"
-    },
-    "dosageNote": "Draft entry — extensor data added for completeness (dystonia / mixed patterns). Verify every dose, US note, and hazard against current labeling and a primary source before clinical use.",
     "anatomyImages": {},
     "dangerZones": [
       "The posterior interosseous nerve and artery run deep on the interosseous membrane — keep the needle in the superficial ECU belly.",
@@ -2114,12 +2008,6 @@
       "ecrb",
       "ecu"
     ],
-    "dosage": {
-      "botox": "20-50",
-      "xeomin": "20-50",
-      "dysport": "60-150"
-    },
-    "dosageNote": "Draft entry — extensor data added for completeness (dystonia / mixed patterns). Verify every dose, US note, and hazard against current labeling and a primary source before clinical use.",
     "anatomyImages": {},
     "dangerZones": [
       "The posterior interosseous nerve and artery run deep on the interosseous membrane — do not advance the needle to this depth.",
@@ -2214,12 +2102,6 @@
     "relatedMuscles": [
       "fpl"
     ],
-    "dosage": {
-      "botox": "10-20",
-      "xeomin": "10-20",
-      "dysport": "30-60"
-    },
-    "dosageNote": "Very small muscle — low doses only. Dorsal approach preferred.",
     "anatomyImages": {
       "anterior": "adductor-pollicis_anterior.webp",
       "posterior": "adductor-pollicis_posterior.webp",
@@ -2295,12 +2177,6 @@
         "length": 5
       }
     },
-    "dosage": {
-      "botox": "5-10",
-      "xeomin": "5-10",
-      "dysport": "15-30"
-    },
-    "dosageNote": "Per individual lumbrical. Very small muscles — start at the low end. Total hand lumbrical dose typically 10-25 U Botox across affected digits.",
     "marker": null,
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -2404,11 +2280,6 @@
         "length": 8
       }
     },
-    "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
-    },
     "marker": {
       "body": "torso_posterior",
       "x": 50,
@@ -2446,7 +2317,6 @@
       "obliques",
       "quadratus-lumborum"
     ],
-    "dosageNote": "Dose is per spinal level. Typically inject 2-3 levels per session for a total of 100-300 U Botox. Use conservative initial dosing to avoid excessive trunk extensor weakness.",
     "anatomyImages": {
       "anterior": "paraspinals_anterior.webp",
       "posterior": "paraspinals_posterior.webp",
@@ -2541,12 +2411,6 @@
       "obliques",
       "paraspinals"
     ],
-    "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
-    },
-    "dosageNote": "Deep muscle requiring curvilinear probe. Distribute across 2-3 sites.",
     "anatomyImages": {
       "anterior": "quadratus-lumborum_anterior.webp",
       "posterior": "quadratus-lumborum_posterior.webp",
@@ -2612,11 +2476,6 @@
         "length": 8
       }
     },
-    "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
-    },
     "marker": {
       "body": "torso_anterior",
       "x": 48,
@@ -2651,7 +2510,6 @@
       "paraspinals",
       "quadratus-lumborum"
     ],
-    "dosageNote": "Total across all sites bilaterally. Use conservative dosing — respiratory compromise is a risk with excessive abdominal wall weakness.",
     "anatomyImages": {
       "anterior": "rectus-abdominis_anterior.webp",
       "posterior": "rectus-abdominis_posterior.webp",
@@ -2727,11 +2585,6 @@
         "length": 7
       }
     },
-    "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
-    },
     "marker": {
       "body": "torso_anterior",
       "x": 35,
@@ -2770,7 +2623,6 @@
       "paraspinals",
       "quadratus-lumborum"
     ],
-    "dosageNote": "Dose is per side. Combines external and internal oblique as a single injection target. Inject bilaterally only if clinically indicated — monitor for trunk weakness.",
     "anatomyImages": {
       "anterior": "obliques_anterior.webp",
       "posterior": "obliques_posterior.webp",
@@ -2835,11 +2687,6 @@
       "body": "torso_anterior",
       "x": 48,
       "y": 44
-    },
-    "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -2939,11 +2786,6 @@
       "x": 52,
       "y": 44
     },
-    "dosage": {
-      "botox": "100-200",
-      "xeomin": "100-200",
-      "dysport": "300-600"
-    },
     "referenceImages": [],
     "hasReferenceImage": false,
     "probePlacementHint": "Patient prone. Place curvilinear probe transversely on upper-outer quadrant of buttock. Photo from behind showing probe position on buttock.",
@@ -2974,7 +2816,6 @@
       "iliopsoas",
       "rectus-femoris"
     ],
-    "dosageNote": "One of the largest muscles in the body — distribute across 3-4 sites.",
     "anatomyImages": {
       "anterior": "gluteus-maximus_anterior.webp",
       "posterior": "gluteus-maximus_posterior.webp",
@@ -3048,11 +2889,6 @@
       "body": "torso_posterior",
       "x": 50,
       "y": 43
-    },
-    "dosage": {
-      "botox": "150",
-      "xeomin": "150",
-      "dysport": "450"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -3180,12 +3016,6 @@
       "iliopsoas",
       "rectus-femoris"
     ],
-    "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
-    },
-    "dosageNote": "Compact muscle at ASIS. 1-2 sites.",
     "anatomyImages": {
       "anterior": "tfl_anterior.webp",
       "posterior": "tfl_posterior.webp",
@@ -3271,12 +3101,6 @@
       "iliopsoas",
       "gracilis"
     ],
-    "dosage": {
-      "botox": "25-75",
-      "xeomin": "25-75",
-      "dysport": "75-225"
-    },
-    "dosageNote": "Draft entry — added for completeness; doses are illustrative starting references. Verify every dose, ultrasound note, and hazard against current labeling and a primary source before clinical use.",
     "anatomyImages": {},
     "dangerZones": [
       "The femoral vein, artery, and nerve lie immediately lateral in the femoral triangle — identify them with color Doppler, approach from medial to lateral, and aspirate before injecting.",
@@ -3343,11 +3167,6 @@
       "body": "leg_anterior",
       "x": 38,
       "y": 22
-    },
-    "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -3450,12 +3269,6 @@
         "length": 8
       }
     },
-    "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
-    },
-    "dosageNote": "Often co-injected with adductor longus and magnus for refractory scissoring.",
     "marker": null,
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -3562,11 +3375,6 @@
       "x": 55,
       "y": 28
     },
-    "dosage": {
-      "botox": "75-150",
-      "xeomin": "75-150",
-      "dysport": "225-450"
-    },
     "referenceImages": [],
     "hasReferenceImage": false,
     "probePlacementHint": "Patient prone, legs slightly apart. Place probe transversely on posteromedial thigh at junction of middle and distal thirds. Photo from behind showing probe on posteromedial distal thigh.",
@@ -3665,12 +3473,6 @@
         "length": 8
       }
     },
-    "dosage": {
-      "botox": "50-75",
-      "xeomin": "50-75",
-      "dysport": "150-225"
-    },
-    "dosageNote": "Thin muscle — conservative dosing to avoid spread to adjacent adductors.",
     "marker": null,
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -3808,12 +3610,6 @@
       "vastus-lateralis",
       "vastus-medialis"
     ],
-    "dosage": {
-      "botox": "100-150",
-      "xeomin": "100-150",
-      "dysport": "300-450"
-    },
-    "dosageNote": "Primary stiff-knee gait target. 1-2 sites in proximal-mid muscle belly.",
     "anatomyImages": {
       "anterior": "rectus-femoris_anterior.webp",
       "posterior": "rectus-femoris_posterior.webp",
@@ -3885,11 +3681,6 @@
       "body": "leg_lateral",
       "x": 45,
       "y": 30
-    },
-    "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -4028,12 +3819,6 @@
       "vastus-intermedius",
       "vastus-lateralis"
     ],
-    "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
-    },
-    "dosageNote": "Use cautiously — weakening VMO can destabilize the patella.",
     "anatomyImages": {
       "anterior": "vastus-medialis_anterior.webp",
       "posterior": "vastus-medialis_posterior.webp",
@@ -4108,11 +3893,6 @@
       "body": "leg_anterior",
       "x": 50,
       "y": 28
-    },
-    "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -4219,11 +3999,6 @@
       "x": 55,
       "y": 35
     },
-    "dosage": {
-      "botox": "50-150",
-      "xeomin": "50-150",
-      "dysport": "150-450"
-    },
     "referenceImages": [],
     "hasReferenceImage": false,
     "probePlacementHint": "Patient prone, knee flexed over pillow. Mark the ischial tuberosity and the knee joint line; place the probe transversely on the posterolateral thigh at the midpoint of that line (~40–50% down from the ischial tuberosity), shifting slightly toward the midline rather than far laterally. Identify biceps femoris long head and confirm the sciatic nerve position deep to it before advancing. Photo from behind showing probe on posterolateral thigh at mid-thigh.",
@@ -4324,11 +4099,6 @@
       "body": "leg_posterior",
       "x": 40,
       "y": 32
-    },
-    "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -4434,11 +4204,6 @@
       "x": 42,
       "y": 38
     },
-    "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
-    },
     "referenceImages": [],
     "hasReferenceImage": false,
     "probePlacementHint": "Patient prone, knee slightly flexed. Place probe transversely on posterior medial thigh at mid-to-distal level. Photo from behind showing probe on posteromedial thigh.",
@@ -4542,11 +4307,6 @@
       "body": "lower_leg_posterior",
       "x": 38,
       "y": 15
-    },
-    "dosage": {
-      "botox": "100",
-      "xeomin": "100",
-      "dysport": "300"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -4691,11 +4451,6 @@
       "soleus-medial",
       "tibialis-posterior"
     ],
-    "dosage": {
-      "botox": "50-75",
-      "xeomin": "50-75",
-      "dysport": "150-225"
-    },
     "anatomyImages": {
       "anterior": "gastrocnemius-lateral_anterior.webp",
       "posterior": "gastrocnemius-lateral_posterior.webp",
@@ -4805,11 +4560,6 @@
       "soleus-lateral",
       "tibialis-posterior"
     ],
-    "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
-    },
     "anatomyImages": {
       "anterior": "soleus-medial_anterior.webp",
       "posterior": "soleus-medial_posterior.webp",
@@ -4875,11 +4625,6 @@
       "body": "lower_leg_posterior",
       "x": 55,
       "y": 32
-    },
-    "dosage": {
-      "botox": "50-75",
-      "xeomin": "50-75",
-      "dysport": "150-225"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -4988,11 +4733,6 @@
       "body": "lower_leg_posterior",
       "x": 48,
       "y": 38
-    },
-    "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -5114,11 +4854,6 @@
       "x": 42,
       "y": 42
     },
-    "dosage": {
-      "botox": "25-50",
-      "xeomin": "25-50",
-      "dysport": "75-150"
-    },
     "referenceImages": [],
     "hasReferenceImage": false,
     "probePlacementHint": "Patient prone or supine with leg externally rotated. Place probe transversely on medial distal leg, just behind tibial border. Photo showing probe on posteromedial distal leg.",
@@ -5228,11 +4963,6 @@
       "body": "lower_leg_posterior",
       "x": 55,
       "y": 45
-    },
-    "dosage": {
-      "botox": "25-75",
-      "xeomin": "25-75",
-      "dysport": "75-225"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -5446,11 +5176,6 @@
       "x": 55,
       "y": 40
     },
-    "dosage": {
-      "botox": "25-50",
-      "xeomin": "25-50",
-      "dysport": "75-150"
-    },
     "referenceImages": [],
     "hasReferenceImage": false,
     "probePlacementHint": "Patient supine, leg extended. Place probe transversely on distal anterolateral leg, ~10 cm above ankle. Photo from front showing probe on anterior distal leg.",
@@ -5557,11 +5282,6 @@
       "x": 48,
       "y": 28
     },
-    "dosage": {
-      "botox": "25-50",
-      "xeomin": "25-50",
-      "dysport": "75-150"
-    },
     "referenceImages": [],
     "hasReferenceImage": false,
     "probePlacementHint": "Patient supine, leg neutral. Place probe transversely on anterolateral proximal leg at proximal-middle third junction. Photo from anterolateral view showing probe on outer upper shin.",
@@ -5666,11 +5386,6 @@
       "body": "lower_leg_lateral",
       "x": 55,
       "y": 22
-    },
-    "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -5801,12 +5516,6 @@
       "fhl",
       "foot-lumbricals"
     ],
-    "dosage": {
-      "botox": "25-50",
-      "xeomin": "25-50",
-      "dysport": "75-150"
-    },
-    "dosageNote": "Plantar injection — painful. Consider topical anesthetic.",
     "anatomyImages": {
       "anterior": "fdb_anterior.webp",
       "posterior": "fdb_posterior.webp",
@@ -5894,12 +5603,6 @@
       "fdl",
       "fhl"
     ],
-    "dosage": {
-      "botox": "10-25",
-      "xeomin": "10-25",
-      "dysport": "30-75"
-    },
-    "dosageNote": "Very small intrinsic foot muscle. Low doses only.",
     "anatomyImages": {
       "anterior": "add-hallucis_anterior.webp",
       "posterior": "add-hallucis_posterior.webp",
@@ -5962,12 +5665,6 @@
         "length": 5
       }
     },
-    "dosage": {
-      "botox": "5-10",
-      "xeomin": "5-10",
-      "dysport": "15-30"
-    },
-    "dosageNote": "Per individual lumbrical. Tiny muscles — start low. Usually only inject the clinically affected digits, not all four.",
     "marker": null,
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -6062,7 +5759,6 @@
       "safetyNotes": [
         "The carotid artery and internal jugular vein lie immediately deep to the SCM within the carotid sheath — always visualize these structures with color Doppler before injecting and keep the needle superficial within the muscle belly.",
         "The spinal accessory nerve (CN XI) enters the deep surface of the SCM at the junction of its upper third and middle third — excessive dosing or deep injection in this zone may cause accessory nerve palsy and shoulder weakness.",
-        "Bilateral injections significantly increase dysphagia risk due to weakening of neck flexion and proximity to pharyngeal muscles — use reduced doses (typically 25-50 units per side) when treating bilaterally.",
         "The external jugular vein crosses superficially over the SCM — use color Doppler to identify and avoid it.",
         "The transverse cervical nerve and the cervical plexus lie superficially at this level — a subcutaneous wheal or superficial spread can produce transient anterior neck numbness."
       ],
@@ -6078,11 +5774,6 @@
       "body": "neck_lateral",
       "x": 35,
       "y": 50
-    },
-    "dosage": {
-      "botox": "25-100",
-      "xeomin": "25-100",
-      "dysport": "75-300"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -6128,7 +5819,7 @@
     "dangerZones": [
       "Carotid artery and internal jugular vein are immediately deep — ALWAYS use US",
       "The spinal accessory nerve runs through the muscle — EMG can help avoid it",
-      "Bilateral SCM injection carries a real risk of dysphagia — reduce dose bilaterally and avoid deep or medial injection near the pharynx when treating both sides."
+      "Pharyngeal muscles lie deep and medial to the SCM — keep the needle superficial within the belly, especially when treating both sides."
     ],
     "positionGroup": "supine-head-neutral",
     "positionLabel": "Supine · head neutral or turned slightly",
@@ -6195,11 +5886,6 @@
       "body": "neck_lateral",
       "x": 25,
       "y": 55
-    },
-    "dosage": {
-      "botox": "15-50",
-      "xeomin": "15-50",
-      "dysport": "45-150"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -6303,11 +5989,6 @@
       "x": 42,
       "y": 72
     },
-    "dosage": {
-      "botox": "25-100",
-      "xeomin": "25-100",
-      "dysport": "75-300"
-    },
     "referenceImages": [],
     "hasReferenceImage": false,
     "probePlacementHint": "Patient seated, arms relaxed. Place probe transversely on upper trapezius ridge, midway between cervical spine and acromion. Photo from behind showing probe on upper trap between neck and shoulder.",
@@ -6409,11 +6090,6 @@
       "x": 55,
       "y": 52
     },
-    "dosage": {
-      "botox": "25-75",
-      "xeomin": "25-75",
-      "dysport": "75-225"
-    },
     "referenceImages": [],
     "hasReferenceImage": false,
     "probePlacementHint": "Patient seated, arms relaxed. Place probe transversely over superior angle of scapula, 2-3 cm lateral to C7-T2 spinous processes. Photo from behind showing probe on posterolateral neck/upper back.",
@@ -6514,11 +6190,6 @@
       "body": "neck_posterior",
       "x": 38,
       "y": 35
-    },
-    "dosage": {
-      "botox": "50-100",
-      "xeomin": "50-100",
-      "dysport": "150-300"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -6639,12 +6310,6 @@
       "levator-scapulae",
       "longissimus-capitis"
     ],
-    "dosage": {
-      "botox": "25-50",
-      "xeomin": "25-50",
-      "dysport": "75-150"
-    },
-    "dosageNote": "Draft entry — added for completeness; doses are illustrative starting references. Verify every dose, ultrasound note, and hazard against current labeling and a primary source before clinical use.",
     "anatomyImages": {},
     "dangerZones": [
       "The vertebral artery runs in the transverse foramina deep to the muscle — never advance the needle anteriorly toward the transverse processes without continuous ultrasound visualization.",
@@ -6721,12 +6386,6 @@
       "splenius-cervicis",
       "semispinalis-capitis"
     ],
-    "dosage": {
-      "botox": "15-40",
-      "xeomin": "15-40",
-      "dysport": "45-120"
-    },
-    "dosageNote": "Draft entry — added for completeness; doses are illustrative starting references. Verify every dose, ultrasound note, and hazard against current labeling and a primary source before clinical use. Vertebral artery is immediately deep — image guidance mandatory.",
     "anatomyImages": {},
     "dangerZones": [
       "The vertebral artery (V3 segment) crosses the suboccipital triangle over the posterior arch of C1, immediately deep and lateral to the OCI — never angle the needle anterolaterally; confirm with color Doppler and keep the needle superficial to bone.",
@@ -6793,11 +6452,6 @@
       "body": "neck_posterior",
       "x": 50,
       "y": 30
-    },
-    "dosage": {
-      "botox": "25-50",
-      "xeomin": "25-50",
-      "dysport": "75-150"
     },
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -6904,11 +6558,6 @@
       "x": 60,
       "y": 35
     },
-    "dosage": {
-      "botox": "25-50",
-      "xeomin": "25-50",
-      "dysport": "75-150"
-    },
     "referenceImages": [],
     "hasReferenceImage": false,
     "probePlacementHint": "Patient seated, neck slightly flexed. Place probe transversely on posterolateral neck at C4-C7 level, 2-4 cm lateral to midline. Photo from behind showing probe on posterolateral neck over the articular pillars.",
@@ -6986,12 +6635,6 @@
       "The frontalis has no bony insertion — it inserts into the skin of the brow and the galea aponeurotica. Injections are necessarily into soft tissue only."
     ],
     "ultrasound": null,
-    "dosage": {
-      "botox": "10-20",
-      "xeomin": "10-20",
-      "dysport": "30-60"
-    },
-    "dosageNote": "Total across all forehead sites (4-5 sites at 2-5 U each). For brow dystonia, use the minimum effective dose. For cosmetic treatment, 10-20 U total is standard. This is NOT a typical spasticity target.",
     "marker": null,
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -7060,12 +6703,6 @@
       "In blepharospasm treatment, the corrugator and procerus are often injected together with the orbicularis oculi as part of a comprehensive periorbital injection session (Allergan PI)."
     ],
     "ultrasound": null,
-    "dosage": {
-      "botox": "5-10",
-      "xeomin": "5-10",
-      "dysport": "15-30"
-    },
-    "dosageNote": "Per side. Per the Allergan PI for blepharospasm, inject 5 U at each corrugator site. For cosmetic use (glabellar lines), the standard FDA-approved dose is 4 U Botox per corrugator (bilateral total 20 U including procerus).",
     "marker": null,
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -7131,12 +6768,6 @@
       "Over-injection or diffusion can cause a 'flat' or 'frozen' appearance of the nasal root — start with lower doses in cosmetically conscious patients."
     ],
     "ultrasound": null,
-    "dosage": {
-      "botox": "5-10",
-      "xeomin": "5-10",
-      "dysport": "15-30"
-    },
-    "dosageNote": "Single midline injection. Per the Allergan PI for blepharospasm, 5 U at the procerus is standard. For cosmetic use (glabellar lines), 4 U Botox at the procerus is standard (part of the 20 U glabellar complex with corrugators).",
     "marker": null,
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -7206,12 +6837,6 @@
       "If treating hemifacial spasm (unilateral), inject only the affected side. If treating blepharospasm (bilateral), inject both eyes symmetrically."
     ],
     "ultrasound": null,
-    "dosage": {
-      "botox": "7.5-15",
-      "xeomin": "7.5-15",
-      "dysport": "24-48"
-    },
-    "dosageNote": "Shown as total per eye. Deliver as 1.25-2.5 U per site across 6 sites per eye (total 7.5-15 U Botox per eye; bilateral 15-30 U). Per the Allergan PI for blepharospasm, the initial recommended dose is 1.25-2.5 U per site; do not exceed 5 U per site or 200 U total over 30 days.",
     "marker": null,
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -7303,12 +6928,6 @@
       },
       "depth": "1.0-1.5 cm"
     },
-    "dosage": {
-      "botox": "25-50",
-      "xeomin": "25-50",
-      "dysport": "75-150"
-    },
-    "dosageNote": "Per side. Distribute across 2-3 sites within the temporal fossa. Prioritize the anterior fibers for jaw-closing dystonia.",
     "marker": null,
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -7404,12 +7023,6 @@
       },
       "depth": "2.0-3.0 cm"
     },
-    "dosage": {
-      "botox": "25-50",
-      "xeomin": "25-50",
-      "dysport": "75-150"
-    },
-    "dosageNote": "Per side. For bilateral bruxism, inject both sides. Reduce dose in smaller or elderly patients. Total bilateral session dose 50-100 U Botox.",
     "marker": null,
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -7482,12 +7095,6 @@
       "Warn the patient that temporary jaw weakness and difficulty with chewing may occur for 2-4 weeks after injection."
     ],
     "ultrasound": null,
-    "dosage": {
-      "botox": "15-30",
-      "xeomin": "15-30",
-      "dysport": "45-90"
-    },
-    "dosageNote": "Per side. Lower doses are used due to the small muscle volume and proximity to the medial pterygoid. Always use EMG guidance.",
     "marker": null,
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -7581,12 +7188,6 @@
       },
       "depth": "2.5-4.0 cm"
     },
-    "dosage": {
-      "botox": "15-30",
-      "xeomin": "15-30",
-      "dysport": "45-90"
-    },
-    "dosageNote": "Per side. The medial pterygoid is smaller than the masseter — use lower doses. Consider co-injection with the masseter for refractory jaw-closing dystonia.",
     "marker": null,
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -7657,12 +7258,6 @@
       "In patients with mentalis dystonia, the chin dimpling and puckering is typically involuntary and socially distressing — even small doses of botulinum toxin can provide significant relief."
     ],
     "ultrasound": null,
-    "dosage": {
-      "botox": "2.5-5",
-      "xeomin": "2.5-5",
-      "dysport": "7.5-15"
-    },
-    "dosageNote": "Per side. Bilateral total: 5-10 U Botox. Start at the lower end of the dosing range to minimize risk of oral incompetence. The mentalis is a small muscle — small doses are effective.",
     "marker": null,
     "referenceImages": [],
     "hasReferenceImage": false,
@@ -7731,12 +7326,6 @@
       "For bilateral injections, use reduced doses per side to minimize the risk of dysphagia."
     ],
     "ultrasound": null,
-    "dosage": {
-      "botox": "15-50",
-      "xeomin": "15-50",
-      "dysport": "45-150"
-    },
-    "dosageNote": "Total dose across all sites per side. For anterocollis, 25-50 U Botox per side distributed across 2-4 platysmal bands. For cosmetic neck banding, 2-5 U per site along each band (lower total dose). Use the minimum effective dose to avoid dysphagia.",
     "marker": null,
     "referenceImages": [],
     "hasReferenceImage": false,

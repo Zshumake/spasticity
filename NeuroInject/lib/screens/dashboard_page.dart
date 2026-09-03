@@ -8,12 +8,12 @@ import '../data/muscle_data.dart';
 import '../data/muscle_provider.dart';
 import '../data/session_planner.dart';
 import '../models/muscle.dart';
-import '../models/session_item.dart';
 import '../models/spasticity_pattern.dart';
 import '../theme/app_theme.dart';
 import '../theme/favorites_manager.dart';
 import '../theme/recently_viewed_manager.dart';
 import '../widgets/muscle_card.dart';
+import '../widgets/ios_ui.dart';
 
 class DashboardPage extends StatefulWidget {
   final String? initialCategory;
@@ -415,30 +415,16 @@ class _DashboardPageState extends State<DashboardPage> {
 
   void _addPatternToSession(List<Muscle> muscles) {
     final planner = context.read<SessionPlanner>();
-    final items = <SessionItem>[];
-    for (final m in muscles) {
-      final item = defaultSessionItem(m);
-      if (item != null) items.add(item);
-    }
-    if (items.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('No dose data to add for these muscles.')),
-      );
-      return;
-    }
+    final items = [for (final m in muscles) defaultSessionItem(m)];
+    if (items.isEmpty) return;
     planner.addAll(items);
     final skipped = muscles.length - items.length;
     final msg = skipped > 0
         ? 'Added ${items.length} to session · $skipped had no dose data'
         : 'Added ${items.length} muscles to session';
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(msg),
+    showAppSnack(context, msg,
         action: SnackBarAction(
-            label: 'View', onPressed: () => context.push('/session')),
-        duration: const Duration(seconds: 3),
-      ),
-    );
+            label: 'View', onPressed: () => context.push('/session')));
   }
 
   Widget _buildSearchBar(bool isDark) {

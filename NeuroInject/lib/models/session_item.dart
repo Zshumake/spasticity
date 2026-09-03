@@ -116,15 +116,3 @@ class SessionItem {
     );
   }
 }
-
-/// Midpoint of a dose-range string: "100-200" -> 150, "100" -> 100.
-/// Returns null when no number can be parsed.
-double? midpointOfDoseRange(String range) {
-  final nums = RegExp(r'\d+(?:\.\d+)?')
-      .allMatches(range)
-      .map((m) => double.parse(m.group(0)!))
-      .toList();
-  if (nums.isEmpty) return null;
-  if (nums.length == 1) return nums.first;
-  return ((nums.first + nums[1]) / 2).roundToDouble();
-}

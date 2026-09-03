@@ -32,7 +32,8 @@ class _Round {
   const _Round(this.muscle, this.view);
 }
 
-class _IdentifyScreenState extends State<IdentifyScreen> {
+class _IdentifyScreenState extends State<IdentifyScreen>
+    with WidgetsBindingObserver {
   static const int roundCount = 10;
 
   List<_Round> _rounds = [];
@@ -50,6 +51,28 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
   /// Set once the pool has been assembled, so the corpus is read exactly once
   /// even though build() runs on every provider notification.
   bool _built = false;
+
+  /// True when the current round's mask could not be decoded. The tap is not
+  /// silently ignored in that case; the round says so and offers to move on.
+  bool _probeFailed = false;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  /// The round clock measures looking at the scan, not the time the phone
+  /// spent locked or the app backgrounded mid-round.
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (_correct != null) return;
+    if (state == AppLifecycleState.resumed) {
+      _clock.start();
+    } else {
+      _clock.stop();
+    }
+  }
 
   Color _tertiary(bool isDark) =>
       isDark ? AppTheme.textTertiary : AppTheme.textTertiaryLight;
@@ -120,6 +143,7 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
     if (!mounted) return;
     setState(() {
       _probe = probe;
+      _probeFailed = probe == null;
       _loading = false;
       _tap = null;
       _correct = null;
@@ -169,6 +193,7 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
     _clock.stop();
     super.dispose();
   }
@@ -296,7 +321,12 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
             ),
           ),
         ),
-        if (answered) _verdict(isDark, round) else _hint(isDark),
+        if (_probeFailed)
+          _unscorable(isDark)
+        else if (answered)
+          _verdict(isDark, round)
+        else
+          _hint(isDark),
       ],
     );
   }
@@ -319,6 +349,58 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  /// The mask for this round did not decode, so there is no answer key. Say
+  /// so and move on rather than accepting taps that can never be marked.
+  Widget _unscorable(bool isDark) {
+    final last = _index + 1 >= _rounds.length;
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 22),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Row(children: [
+          Icon(Icons.error_outline_rounded, size: 15, color: AppTheme.amber),
+          const SizedBox(width: 8),
+          Expanded(
+            child: Text('This scan could not be scored — its highlight failed to load.',
+                style: GoogleFonts.sourceSans3(
+                    fontSize: 12.5,
+                    color: isDark
+                        ? AppTheme.textSecondary
+                        : AppTheme.textSecondaryLight)),
+          ),
+        ]),
+        const SizedBox(height: 10),
+        Semantics(
+          button: true,
+          label: last ? 'See results' : 'Skip to the next scan',
+          child: GestureDetector(
+            onTap: () {
+              // Not counted either way: no answer was possible.
+              _next();
+            },
+            behavior: HitTestBehavior.opaque,
+            child: Container(
+              constraints: const BoxConstraints(minHeight: 48),
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight,
+                borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+                border: Border.all(color: _border(isDark)),
+              ),
+              child: Text(last ? 'SEE RESULTS' : 'SKIP THIS SCAN',
+                  style: GoogleFonts.ibmPlexMono(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 1.2,
+                      color: isDark
+                          ? AppTheme.textSecondary
+                          : AppTheme.textSecondaryLight)),
+            ),
+          ),
+        ),
+      ]),
     );
   }
 

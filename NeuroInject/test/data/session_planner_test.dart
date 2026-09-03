@@ -97,7 +97,7 @@ void main() {
   });
 
   group('seeding helpers', () {
-    Muscle muscleWith(Map<String, dynamic> dosage) => Muscle(
+    Muscle muscleWith(Map<String, dynamic> _) => Muscle(
           id: 'x',
           name: 'X',
           group: 'Upper Extremity',
@@ -105,34 +105,16 @@ void main() {
           landmarks: const [],
           placement: const [],
           setup: const [],
-          dosage: Dosage.tryParse(dosage),
         );
 
-    test('availableBrandsFor lists only brands with a dose, in order', () {
-      expect(
-          availableBrandsFor(
-              muscleWith({'botox': '50-100', 'dysport': '150-300'})),
-          ['Botox', 'Dysport']);
-      expect(availableBrandsFor(muscleWith({'xeomin': '50-100'})), ['Xeomin']);
-      expect(availableBrandsFor(muscleWith({})), isEmpty);
-    });
 
-    test('doseForBrand returns the range midpoint', () {
-      final m = muscleWith({'botox': '100-200', 'dysport': '300'});
-      expect(doseForBrand(m, 'Botox'), 150);
-      expect(doseForBrand(m, 'Dysport'), 300);
-      expect(doseForBrand(m, 'Xeomin'), null);
-    });
-
-    test('defaultSessionItem seeds first brand at midpoint, right side', () {
-      final seeded = defaultSessionItem(muscleWith({'botox': '100-200'}))!;
+    test('defaultSessionItem seeds the default brand with NO dose', () {
+      // Dose recommendations were withdrawn from the corpus; a fresh line
+      // must not carry a number the app invented.
+      final seeded = defaultSessionItem(muscleWith({}));
       expect(seeded.brand, 'Botox');
-      expect(seeded.dose, 150);
+      expect(seeded.dose, 0);
       expect(seeded.side, InjectionSide.right);
-    });
-
-    test('defaultSessionItem is null when no dose exists', () {
-      expect(defaultSessionItem(muscleWith({})), null);
     });
   });
 

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart' show CupertinoPage;
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'authoring.dart';
 import 'data/muscle_provider.dart';
 import 'models/muscle.dart';
 import 'screens/dashboard_page.dart';
@@ -50,6 +51,7 @@ final router = GoRouter(
         final id = state.pathParameters['id'] ?? '';
         final view =
             int.tryParse(state.uri.queryParameters['view'] ?? '') ?? 0;
+        if (!kAuthoring) return const _NotInThisBuild();
         return _MuscleRoute(
           id: id,
           builder: (muscle) =>
@@ -72,7 +74,8 @@ final router = GoRouter(
     ),
     GoRoute(
       path: '/captures',
-      builder: (context, state) => const CapturesReviewScreen(),
+      builder: (context, state) =>
+          kAuthoring ? const CapturesReviewScreen() : const _NotInThisBuild(),
     ),
     GoRoute(
       path: '/calculator',
@@ -123,4 +126,15 @@ class _MuscleRoute extends StatelessWidget {
     }
     return builder(muscle);
   }
+}
+
+/// Shown in place of an authoring tool when the build was made without
+/// `--dart-define=AUTHORING=true` — see lib/authoring.dart.
+class _NotInThisBuild extends StatelessWidget {
+  const _NotInThisBuild();
+
+  @override
+  Widget build(BuildContext context) => const Scaffold(
+        body: Center(child: Text('Authoring tools are not in this build.')),
+      );
 }

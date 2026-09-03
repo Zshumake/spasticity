@@ -10,6 +10,7 @@ import '../../data/session_planner.dart';
 import '../../data/toxin_data.dart';
 import '../../models/session_item.dart';
 import '../../theme/app_theme.dart';
+import '../../widgets/ios_ui.dart';
 
 /// The plan, running, during the procedure.
 ///
@@ -102,36 +103,16 @@ class _LiveSessionScreenState extends State<LiveSessionScreen> {
   Future<void> _confirmEnd(SessionPlanner planner, _Tone t) async {
     final done = planner.completed.length;
     final total = planner.count;
-    final ok = await showDialog<bool>(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        backgroundColor: t.card,
-        title: Text('End session?',
-            style: GoogleFonts.sora(
-                fontSize: 16, fontWeight: FontWeight.w700, color: t.strong)),
-        content: Text(
-            done < total
-                ? '$done of $total muscles are marked done. Ending clears the '
-                    'progress and the clock; the plan itself is kept.'
-                : 'Ending clears the progress and the clock; the plan itself '
-                    'is kept.',
-            style: GoogleFonts.sourceSans3(
-                fontSize: 13, height: 1.45, color: t.secondary)),
-        actions: [
-          TextButton(
-              onPressed: () => Navigator.pop(ctx, false),
-              child: Text('Keep going',
-                  style: GoogleFonts.ibmPlexMono(
-                      fontSize: 12, color: t.secondary))),
-          TextButton(
-              onPressed: () => Navigator.pop(ctx, true),
-              child: Text('END',
-                  style: GoogleFonts.ibmPlexMono(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w700,
-                      color: AppTheme.danger))),
-        ],
-      ),
+    final ok = await showConfirm(
+      context,
+      title: 'End session?',
+      message: done < total
+          ? '$done of $total muscles are marked done. Ending clears the '
+              'progress and the clock; the plan itself is kept.'
+          : 'Ending clears the progress and the clock; the plan itself is kept.',
+      confirmLabel: 'End',
+      cancelLabel: 'Keep going',
+      isDestructive: true,
     );
     if (ok == true && mounted) {
       planner.endSession();

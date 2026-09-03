@@ -23,7 +23,7 @@ reference/highlight-captures.json  raw hand-drawn lasso polygons (provenance/reb
 
 Each record in `data/muscles.json` is the full NeuroInject clinical record
 (name, group, pattern, landmarks[], placement[], setup[], ultrasound{probe,
-orientation, viewSteps}, dosage, dosageNote, pearls[], dangerZones[],
+orientation, viewSteps}, pearls[], dangerZones[],
 spasticityPatterns[], relatedMuscles[], positionGroup/Label, …) plus a
 resolved `export` object so you never re-implement path logic. `export.anatomy`
 maps view name ('anterior' / 'lateral' / 'posterior') to a bundled render:

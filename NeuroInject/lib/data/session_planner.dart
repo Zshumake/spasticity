@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/muscle.dart';
 import '../models/session_item.dart';
+import 'toxin_data.dart';
 
 /// Holds the clinician's in-progress injection session: a list of muscles
 /// with chosen brand, per-side dose, and laterality. Persisted locally (no
@@ -289,41 +290,16 @@ class SessionPlanner extends ChangeNotifier {
   }
 }
 
-/// Brands (in display preference order) that [m] has a dose for.
-List<String> availableBrandsFor(Muscle m) {
-  final d = m.dosage;
-  if (d == null) return const [];
-  return [
-    if (d.botox != null) 'Botox',
-    if (d.xeomin != null) 'Xeomin',
-    if (d.dysport != null) 'Dysport',
-  ];
-}
-
-/// Midpoint dose for [brand] from a muscle's per-brand range, or null.
-double? doseForBrand(Muscle m, String brand) {
-  final d = m.dosage;
-  if (d == null) return null;
-  final range = switch (brand) {
-    'Botox' => d.botox,
-    'Xeomin' => d.xeomin,
-    'Dysport' => d.dysport,
-    _ => null,
-  };
-  return range == null ? null : midpointOfDoseRange(range);
-}
-
-/// A default session line for [m]: first available brand at its midpoint
-/// dose, right side. Returns null if the muscle has no brand dose.
-SessionItem? defaultSessionItem(Muscle m) {
-  final brands = availableBrandsFor(m);
-  if (brands.isEmpty) return null;
-  final brand = brands.first;
-  return SessionItem(
-    muscleId: m.id,
-    muscleName: m.name,
-    group: m.group,
-    brand: brand,
-    dose: doseForBrand(m, brand) ?? 0,
-  );
-}
+/// A fresh plan line for [m]: the default brand and NO dose.
+///
+/// Per-muscle dose recommendations were withdrawn from the corpus (the audit
+/// found the "Botox" column tracked the Xeomin label), so the app no longer
+/// seeds a number. The injector enters the dose in the session; until then
+/// the line shows 0 U and contributes nothing to the ceiling.
+SessionItem defaultSessionItem(Muscle m) => SessionItem(
+      muscleId: m.id,
+      muscleName: m.name,
+      group: m.group,
+      brand: toxinBrands.first.name,
+      dose: 0,
+    );
