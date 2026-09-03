@@ -29,6 +29,14 @@ Do not "fix" that by loosening their gate.
 
 --check is the durable form: it asserts the corrected wording is present and no
 forbidden phrase came back, which is what a later upstream edit could undo.
+
+ROUNDS. The corrections file now holds several batches (see its $comment). An
+entry marked `superseded` had its own replacement rewritten by a later round:
+it is skipped by `apply` and by the presence check, but its `forbid` phrases
+are still enforced. `apply` is idempotent: an entry is done when its replacement is present and
+its find is gone (or survives only inside that replacement), and a deletion is
+done when the text is gone and the entry carries `forbid` phrases (gate 2 then
+proves the claim is absent) - so the whole file can be re-applied safely.
 """
 import argparse
 import json
@@ -73,8 +81,19 @@ def apply_replace(rec, corr, errors):
     val = box[key]
     find, repl = corr["find"], corr.get("replace")
 
+    # Idempotency. An entry is DONE when its replacement is present and its
+    # find is gone - or when the find survives only as a substring of the
+    # applied replacement. A deletion is done when the text is gone and the
+    # entry carries forbid phrases (gate 2 then proves the claim is absent).
+    def done_str(s):
+        return repl is not None and repl in s and (find not in s or find in repl)
+
     if isinstance(val, str):
+        if done_str(val):
+            return True
         if find not in val:
+            if repl is None and corr.get("forbid"):
+                return True
             errors.append(f"{corr['muscle']}/{corr['field']}: find did not match")
             return False
         if repl is None:
@@ -84,8 +103,12 @@ def apply_replace(rec, corr, errors):
         return True
 
     if isinstance(val, list):
+        if any(isinstance(s, str) and done_str(s) for s in val):
+            return True
         hits = [i for i, s in enumerate(val) if isinstance(s, str) and find in s]
         if not hits:
+            if repl is None and corr.get("forbid"):
+                return True
             errors.append(f"{corr['muscle']}/{corr['field']}: find did not match")
             return False
         for i in reversed(hits):
@@ -164,7 +187,7 @@ def main():
         for c in corrections:
             rec = by[c["muscle"]]
             want = c["text"] if c.get("op") == "add" else c.get("replace")
-            if want is None:
+            if want is None or c.get("superseded"):
                 continue
             if not any(want in s for s in all_strings(rec)):
                 missing.append(f"{c['muscle']}/{c['field']}")
@@ -181,6 +204,8 @@ def main():
 
     errors, applied = [], 0
     for c in corrections:
+        if c.get("superseded"):
+            continue
         rec = by[c["muscle"]]
         ok = apply_add(rec, c, errors) if c.get("op") == "add" else apply_replace(rec, c, errors)
         applied += 1 if ok else 0

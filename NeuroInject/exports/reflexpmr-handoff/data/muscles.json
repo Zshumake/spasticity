@@ -14,14 +14,14 @@
   "placement": [
    "Position the patient supine with the arm abducted 30-45 degrees and externally rotated slightly to open the chest.",
    "Identify the lateral third of the clavicle by palpating from the sternoclavicular joint laterally.",
-   "For the clavicular head: insert the needle 2-3 cm inferior to the lateral clavicle, angled slightly caudally at about 30 degrees to the skin surface.",
-   "Advance the needle 1-2 cm into the muscle belly — you should feel the firm resistance of muscle tissue.",
-   "For the sternal head: palpate the bulk of the muscle mid-chest, approximately 3-4 cm lateral to the sternal border at the level of the 3rd-4th rib.",
-   "Insert the needle TANGENTIALLY to the chest wall (15-30° from the skin, NEVER perpendicular) and aim the needle path OVER a rib, never over an intercostal space. The rib acts as a hard backstop and protects against pleural puncture.",
-   "Under ultrasound, confirm the needle tip is in pec major and the rib's bright cortical line is directly deep to the needle path before injecting.",
-   "Aspirate before injecting to confirm you are not intravascular. Distribute the dose across 2-3 sites in the muscle belly.",
-   "Injection site: within the anterior axillary fold.",
-   "Direction: medially, along the fiber course."
+   "For the clavicular head: with the probe angled ~45 degrees toward the axilla on the midclavicular line ~2 cm below the clavicle, enter in-plane and place the tip at the point of maximum muscle thickness.",
+   "Advance tangentially — 15-30 degrees to the skin, NEVER perpendicular — and keep the tip in the pectoralis major belly, superficial to the fascia separating it from pectoralis minor.",
+   "For the sternocostal head: rotate the probe to longitudinal along the same midclavicular line ~5 cm below the clavicle and inject at the point of maximum thickness in that view.",
+   "Aim the needle path OVER a rib wherever rib cortex is the deep structure. The rib is a backstop only there; it is not a backstop where pectoralis minor and the axillary vessels lie between the muscle and the chest wall.",
+   "Before injecting, sweep with color Doppler: the axillary artery and vein and distal brachial plexus branches lie deep to pectoralis minor in this window.",
+   "Aspirate before injecting. Distribute the dose across 2-3 sites within the imaged plane.",
+   "Do NOT use a parasternal site 3-4 cm lateral to the sternal border at the 3rd-4th rib. The midclavicular line sits about 10 cm lateral to the sternal margin at that interspace, so a parasternal needle is roughly 6 cm outside the window you imaged, over the thinnest part of the muscle.",
+   "Do NOT inject at the anterior axillary fold — scanning toward the humeral insertion shows both heads thinning until they transform into tendons, so the fold is the muscle's tendinous end and not a belly target."
   ],
   "setup": [
    "Ultrasound (USG) is highly recommended for this injection.",
@@ -45,7 +45,7 @@
    ],
    "safetyNotes": [
     "PNEUMOTHORAX RISK: The lung lies deep to the pectoralis muscles, separated only by a thin layer of intercostal muscle in the spaces between ribs. NEVER use a perpendicular needle approach. Always angle the needle tangentially to the chest wall and aim the trajectory OVER a rib (which acts as a backstop), never over an intercostal space.",
-    "The brachial plexus and axillary vessels run in the axilla just lateral to pec major — do not let the needle drift laterally into the axillary fossa. Use color Doppler to map the axillary artery before injection.",
+    "The axillary artery and vein and the distal brachial plexus branches lie DEEP TO PECTORALIS MINOR — that is, directly beneath the target in this infraclavicular window, not merely lateral to it in the axilla. Map them with color Doppler before every pass and keep the tip superficial to the pectoralis minor fascia.",
     "The Lateral Pectoral Nerve runs between Pec Major and Minor — avoid the inter-fascial plane.",
     "Use real-time US guidance to keep the needle within the Pec Major muscle belly at all times.",
     "The thoracoacromial artery runs in the deltopectoral groove — use color Doppler laterally."
@@ -68,7 +68,6 @@
   "hasReferenceImage": false,
   "probePlacementHint": "Patient supine, arm at the side or minimally abducted. Place the probe angled ~45° toward the axilla along the midclavicular line, ~2 cm below the clavicle, to identify the clavicular head; slide/rotate to longitudinal ~5 cm below the clavicle for the sternocostal head. Identify the intramuscular fascia between the two heads and pectoralis minor deep to them; the axillary vessels and distal brachial plexus branches lie deep to pectoralis minor. Photo from the patient's right side showing the probe infraclavicular on the midclavicular line.",
   "pearls": [
-   "Use 25-50U Botox per injection site, distributed across 2-3 sites per head, for a total session dose as listed in the dosage field.",
    "A spastic pec major is the #1 cause of shoulder internal rotation/adduction posture",
    "The sternocostal fibers form the anterior border of the axilla; the clavicular fibers define the border of the infraclavicular fossa.",
    "Can function as an accessory muscle of inspiration; the sternocostal fibers are important when walking on crutches."
@@ -124,20 +123,20 @@
   "pattern": "Shoulder adduction, internal rotation, extension",
   "landmarks": [
    "Inferior Angle of Scapula (palpate the lowest bony point of the scapula with the patient's arm at the side — the lat dorsi wraps around just below here)",
-   "Posterior Axillary Fold (grasp the fold of skin/muscle behind the armpit — the latissimus dorsi forms this fold)",
+   "Posterior Axillary Fold (grasp the fold of skin/muscle behind the armpit — the latissimus dorsi forms this fold) (orientation landmark only — the injection window is on the lower posterolateral trunk, 7-9 cm below the inferior scapular angle)",
    "Iliac Crest (palpate the superior rim of the pelvis posterolaterally — the muscle originates broadly from this structure)",
    "Inferior angle of the scapula — the muscle wraps around and below this.",
    "Posterior axillary fold — latissimus forms its lower border."
   ],
   "placement": [
    "Position the patient in lateral decubitus with the affected side up, or prone with arm slightly abducted.",
-   "Grasp the posterior axillary fold between your thumb and fingers to identify the muscle bulk.",
-   "Palpate the Latissimus Dorsi — it is the lateral and superficial muscle forming the fold (Teres Major is deeper and more superior).",
-   "Identify the injection site approximately 4-5 cm inferior to the axillary crease along the mid-axillary line.",
-   "Insert the needle perpendicular to the skin into the mid-belly of the muscle.",
-   "Advance 1-2 cm into the muscle substance; you should feel firm muscular resistance.",
-   "Aspirate before injecting. Distribute the total dose across 2-3 sites along the muscle belly.",
-   "Target the muscle belly 7-8 cm lateral to the spine, at or below the scapular tip level."
+   "Position prone (or lateral decubitus with the affected side up if the patient cannot lie prone). Palpate the inferior angle of the scapula with the arm resting at the side.",
+   "Measure 7-9 cm distal to the inferior angle of the scapula on the lower posterolateral chest wall, lateral to the palpable erector spinae mass, and place the probe transversely.",
+   "Scan for the point of maximum LD thickness. LD is the most superficial muscle mass here; deep to it are intercostal muscle, rib cortex and pleura.",
+   "Insert the needle IN-PLANE with the probe and along a shallow trajectory — never perpendicular to the chest wall. Keep the needle tip visible for the whole advance.",
+   "Advance only to the mid-thickness of the LD belly; do not cross the fascia separating LD from intercostal muscle.",
+   "Aspirate before injecting. Distribute the total dose across 2-3 sites within the same imaged plane, moving the probe with the needle each time.",
+   "Do NOT use the mid-axillary line 4-5 cm below the axillary crease. That is a different, unimaged window where the muscle is thin and becoming tendinous and where rib and pleura sit immediately beneath it."
   ],
   "setup": [
    "USG is helpful to distinguish Latissimus Dorsi from Teres Major and Serratus Anterior.",
@@ -151,14 +150,16 @@
    "orientation": "Transverse on the posterior trunk, ~7–9 cm distal to the inferior angle of the scapula along the interscapulovertebral line (T7–L5 level), perpendicular to the long axis of the muscle fibers",
    "viewSteps": [
     "Identify subcutaneous tissue superficially as a hyperechoic layer.",
-    "The Latissimus Dorsi appears as a broad, flat hypoechoic muscle with a bright fascial envelope — it is the most superficial muscle in the posterior axillary fold.",
-    "Deep to the Latissimus Dorsi, identify the Teres Major as a separate hypoechoic muscle belly separated by a fascial plane.",
-    "Further deep and anteriorly, the Serratus Anterior may be seen as thin hypoechoic slips overlying the ribs."
+    "The Latissimus Dorsi appears as a broad, flat hypoechoic muscle with a bright fascial envelope — it is the most superficial muscle mass on the posterior trunk at this level. Its fascia against the subcutaneous plane is more pronounced than its fascia against the intercostal muscle beneath.",
+    "Deep to the LD, identify intercostal muscle, then the bright convex rib cortex with its acoustic shadow, and the pleural line with lung sliding between the ribs. There is no second muscle layer to aim past here.",
+    "Slide ~5 cm proximally and LD thins while serratus anterior appears and enlarges beneath it — use this as the dynamic confirmation that you are on LD. Teres major belongs to the posterior axillary fold window, not to this one.",
+    "Confirm by asking the patient to extend, adduct and medially rotate the humerus against resistance — LD will contract."
    ],
    "safetyNotes": [
     "The thoracodorsal nerve and artery run along the deep surface of the Latissimus Dorsi — use color Doppler to identify the vascular bundle.",
-    "Avoid the axillary neurovascular bundle by staying inferior and posterior to the axillary crease.",
-    "The long thoracic nerve runs along the Serratus Anterior — do not inject too deep."
+    "The axillary neurovascular bundle is not in this window; it becomes relevant only if you scan proximally toward the posterior axillary fold.",
+    "Serratus anterior is not in this window — it appears beneath a thinning LD only when you scan ~5 cm proximally. If you move proximally, it and the structures on it come into the field.",
+    "PNEUMOTHORAX RISK: at this window LD is the most superficial muscle mass and lies directly on intercostal muscle, rib cortex and pleura. Keep the needle in-plane and shallow, keep the tip visible throughout, and do not cross the fascia between LD and intercostal muscle. Ultrasound guidance here is used specifically to prevent pneumothorax."
    ],
    "probeDiagram": {
     "cx": 44,
@@ -212,8 +213,9 @@
   "defaultAnatomyView": "posterior",
   "dangerZones": [
    "The thoracodorsal nerve and artery run along the deep surface of the Latissimus Dorsi — use color Doppler to identify the vascular bundle.",
-   "Avoid the axillary neurovascular bundle by staying inferior and posterior to the axillary crease.",
-   "The long thoracic nerve runs along the Serratus Anterior — do not inject too deep."
+   "The axillary neurovascular bundle is not in this window; it becomes relevant only if you scan proximally toward the posterior axillary fold.",
+   "Serratus anterior is not in this window — it appears beneath a thinning LD only when you scan ~5 cm proximally. If you move proximally, it and the structures on it come into the field.",
+   "PNEUMOTHORAX RISK: at this window LD is the most superficial muscle mass and lies directly on intercostal muscle, rib cortex and pleura. Keep the needle in-plane and shallow, keep the tip visible throughout, and do not cross the fascia between LD and intercostal muscle. Ultrasound guidance here is used specifically to prevent pneumothorax."
   ],
   "positionGroup": "lateral-decub-arm-abducted",
   "positionLabel": "Prone or lateral decubitus · arm resting at the side",
@@ -247,7 +249,7 @@
    "Palpate the teres major — ask the patient to internally rotate and adduct the arm against resistance; the teres major contracts in the posterior axillary fold, superior and lateral to the latissimus dorsi.",
    "The teres major lies along the lateral border of the scapula, running from the inferior angle to the humerus.",
    "Insert the needle into the bulk of the muscle belly at the level of the inferior scapular angle, approximately 2-3 cm lateral to the lateral border of the scapula.",
-   "Advance 1.5-2 cm perpendicular to the skin.",
+   "Advance in-plane along a shallow trajectory to the point of maximum teres major thickness. Do not advance perpendicular to the chest wall, and do not advance beyond the fascia separating teres major from the intercostal muscle beneath it.",
    "Distinguish from the latissimus dorsi, which wraps around the teres major inferiorly — the teres major has a rounder, shorter belly.",
    "Aspirate before injecting.",
    "Injection site: into the muscle belly along the lateral border of the scapula, below the level of the infraspinatus."
@@ -263,17 +265,18 @@
    "probe": "High-frequency linear (10-15 MHz) or curvilinear for deeper patients",
    "orientation": "Transverse (short-axis) on the posterior thoracic wall ~2–3 cm distal to the posterior axillary fold, with the shoulder held in adduction and internal rotation",
    "viewSteps": [
-    "Position the patient seated or prone with the arm slightly abducted. Place the probe on the posterior axillary fold.",
+    "Position the patient seated or prone with the shoulder adducted and internally rotated. Place the probe transversely on the posterior thoracic wall ~2-3 cm distal to the posterior axillary fold.",
     "The Teres Major appears as a flat, broad hypoechoic muscle at the inferior aspect of the posterior axillary fold — in Dr. Bursuc's video it is highlighted with a purple overlay.",
-    "The Latissimus Dorsi tendon wraps around and interdigitates with the Teres Major at this level — they may appear as adjacent muscle layers.",
-    "Deep to these muscles, the scapular bone and infraspinous fossa may be partially visible.",
+    "At this window latissimus dorsi lies LATERAL and DEEP to teres major, with subscapularis medial and deep and teres minor medial and superficial. (Scan back proximally onto the fold itself and the relationship changes: there LD becomes tendon and lies superficial to TM.)",
+    "Deep landmarks differ across the image: scapular cortex and subscapularis appear deep and MEDIAL, while deep to teres major itself and laterally there is rib cortex, intercostal muscle and pleura. Do not read the deep bright line as bone across the whole image.",
     "To confirm: ask the patient to internally rotate and adduct the arm against resistance — the Teres Major will contract.",
     "Note: the video annotation labels 'LAT D' (Latissimus Dorsi) adjacent to the Teres Major."
    ],
    "safetyNotes": [
     "The circumflex scapular artery and thoracodorsal neurovascular bundle run near the Teres Major — use color Doppler.",
     "The axillary nerve is superior to the Teres Major — avoid angling the needle superiorly.",
-    "The long head of the triceps is adjacent inferiorly — confirm your target with dynamic scanning."
+    "The long head of the triceps is adjacent inferiorly — confirm your target with dynamic scanning.",
+    "PNEUMOTHORAX RISK: rib cortex, intercostal muscle and pleura lie deep to teres major at this window. Keep the needle in-plane and shallow, and keep the tip visible for the whole advance. Ultrasound guidance at this posterior window is used specifically to prevent pneumothorax."
    ],
    "probeDiagram": {
     "cx": 43,
@@ -329,7 +332,8 @@
   "defaultAnatomyView": "posterior",
   "dangerZones": [
    "The circumflex scapular artery and thoracodorsal neurovascular bundle run near the Teres Major — use color Doppler.",
-   "The axillary nerve is superior to the Teres Major — avoid angling the needle superiorly."
+   "The axillary nerve is superior to the Teres Major — avoid angling the needle superiorly.",
+   "PNEUMOTHORAX RISK: rib cortex, intercostal muscle and pleura lie deep to teres major at this window. Keep the needle in-plane and shallow, and keep the tip visible for the whole advance. Ultrasound guidance at this posterior window is used specifically to prevent pneumothorax."
   ],
   "positionGroup": "seated-or-prone-arm-at-side",
   "positionLabel": "Seated or prone · arm adducted at the side",
@@ -468,19 +472,19 @@
    "Distal Humerus (palpate the anterior arm distally — feel the bony shaft of the humerus just proximal to the elbow)",
    "Biceps Tendon (palpate the firm cord in the antecubital fossa during resisted flexion — the brachialis lies deep to this)",
    "Lateral Epicondyle (palpate the bony prominence on the lateral elbow — the brachialis inserts on the coronoid process just proximal to this level)",
-   "Elbow fold — measure 3-4 cm proximal to it for the injection site.",
+   "Lateral epicondyle — measure 4-6 cm proximal to it for the injection site.",
    "Biceps tendon — the brachialis lies lateral and deep to it."
   ],
   "placement": [
    "Position the patient supine or seated with the elbow slightly flexed (about 30 degrees) and the forearm supinated.",
    "Use an ANTERIOR approach through the biceps muscle belly in the distal third of the arm — this avoids both the medial neurovascular bundle and the radial nerve, which dives around the lateral humerus into the spiral groove.",
-   "Palpate the biceps muscle belly in the distal third of the arm (about 4-6 cm proximal to the elbow crease).",
+   "Palpate the biceps muscle belly in the distal third of the arm, about 4-6 cm proximal to the lateral epicondyle.",
    "Under ultrasound, identify biceps as the superficial muscle and brachialis as the deeper hypoechoic muscle directly on the humeral cortex.",
    "Insert the needle perpendicular to the skin through the biceps belly, advancing into the brachialis below it.",
    "Confirm the needle tip is in brachialis (deep) and not biceps (superficial) before injecting.",
    "Stop advancing just before contacting bone — the target is the muscle belly, not the periosteum.",
    "Aspirate before injecting to rule out intravascular placement.",
-   "Injection site: approximately 3-4 cm proximal to the elbow fold, lateral to the biceps tendon, into the belly of brachialis deep to the biceps.",
+   "Injection site: about 4-6 cm proximal to the lateral epicondyle, lateral to the biceps tendon, into the belly of brachialis deep to the biceps.",
    "Sites: 1-2 per treatment."
   ],
   "setup": [
@@ -492,9 +496,9 @@
   ],
   "ultrasound": {
    "probe": "High-frequency linear (10-15 MHz)",
-   "orientation": "Transverse across the anterior distal third of the arm, ~6-9 cm proximal to the elbow crease (matching the anterior-through-biceps approach)",
+   "orientation": "Transverse across the anterior distal third of the arm, about 4-6 cm proximal to the lateral epicondyle — the zone of highest intramuscular nerve-branch density and of maximum brachialis thickness",
    "viewSteps": [
-    "Place the probe transversely across the anterior distal third of the arm, ~4-6 cm proximal to the elbow crease.",
+    "Place the probe transversely across the anterior distal third of the arm, about 4-6 cm proximal to the lateral epicondyle.",
     "Identify subcutaneous tissue and the superficial hyperechoic fascia.",
     "The Biceps Brachii is visible as a superficial oval hypoechoic muscle belly with a central tendon distally.",
     "Deep to the Biceps, the Brachialis appears as a flattened hypoechoic muscle directly against the hyperechoic cortex of the distal humerus.",
@@ -520,7 +524,7 @@
   },
   "referenceImages": [],
   "hasReferenceImage": false,
-  "probePlacementHint": "Patient supine, elbow slightly flexed. Place probe transversely on the anterior distal arm, 6-9 cm above the elbow crease. Brachialis occupies the deep third of the arm's thickness here, hugging the humerus beneath biceps. Photo showing probe on anterior distal arm.",
+  "probePlacementHint": "Patient supine, elbow slightly flexed. Place probe transversely on the anterior distal arm, about 4-6 cm proximal to the lateral epicondyle. Brachialis lies directly on the humeral cortex with biceps superficial to it; the radial nerve sits laterally against the humerus, so identify it first and work medial to it. Photo showing probe on anterior distal arm.",
   "pearls": [
    "Often the primary elbow flexor in spasticity — don't skip it just because biceps is more famous",
    "Lies deep to the biceps — must see both muscles on US to inject the correct one",
@@ -588,7 +592,7 @@
    "Position the patient seated or prone with the arm resting on a support, elbow flexed to approximately 90 degrees.",
    "Identify the posterior midpoint of the humerus (halfway between the acromion and the olecranon).",
    "Palpate the triceps muscle belly — ask the patient to extend the elbow against resistance to confirm the bulk of the long and lateral heads.",
-   "For the long head: insert the needle into the medial portion of the posterior arm at mid-humeral level, perpendicular to the skin.",
+   "For the long head: under ultrasound, insert the needle into the mid-substance of the long head at mid-humeral level, perpendicular to the skin. The long head is the superficial, medially-placed head — but stop short of the medial portion of the compartment, where the brachial neurovascular bundle lies.",
    "For the lateral head: insert the needle into the lateral portion of the posterior arm, slightly more proximal, perpendicular to the skin.",
    "Advance 1.5-2 cm into the muscle belly — the triceps is a large, superficial muscle on the posterior arm.",
    "Avoid the medial aspect of the distal arm where the ulnar nerve courses in the ulnar groove behind the medial epicondyle.",
@@ -602,7 +606,7 @@
    "Surface anatomy is usually adequate given the large, easily palpable muscle belly.",
    "USG can help distinguish the long head from the lateral head and confirm depth.",
    "Have the patient extend the elbow against resistance to identify and mark the muscle belly before injection.",
-   "The radial nerve courses in the spiral groove of the humerus on the posterolateral aspect — stay in the central or medial muscle belly at the mid-humeral level to avoid it.",
+   "The radial nerve runs in the spiral groove against the posterior humerus, and the brachial neurovascular bundle — median, radial and ulnar nerves with the brachial artery and vein — occupies the MEDIAL portion of the triceps at this level. Medial is not the safe direction. Identify both on the image, screen with colour Doppler, and keep the needle in the mid-substance of the head you are targeting.",
    "Patient position: sitting or prone, with the shoulder slightly abducted."
   ],
   "ultrasound": {
@@ -731,14 +735,15 @@
     "Place the probe transversely on the lateral forearm with the patient's elbow slightly flexed and forearm in neutral (thumb-up) position.",
     "Identify the Brachioradialis as the most superficial muscle on the lateral side — it appears as a crescent-shaped hypoechoic structure directly under the subcutaneous tissue.",
     "Deep and lateral to the Brachioradialis, identify the ECRL (Extensor Carpi Radialis Longus) — it sits adjacent to and partially beneath the BR.",
-    "Deep to both BR and ECRL, the large Brachialis muscle fills the deeper compartment wrapping around the lateral humerus.",
-    "CRITICAL LANDMARK: The Radial Nerve appears as a small hyperechoic oval structure in the fascial plane between the Brachioradialis and Brachialis — typically at the lateral-deep border of the BR.",
+    "Deep to BR and ECRL, identify the supinator muscle wrapped around the bright cortical line of the radius — at this forearm level the deep bone is the radius, not the humerus, and brachialis is no longer in the window.",
+    "CRITICAL LANDMARK: at this forearm level the radial nerve has already divided. The posterior interosseous nerve lies deep, between the two heads of the supinator; the superficial branch runs beneath the BR. The BR/brachialis interval that carries the undivided radial nerve is a landmark of the arm window, 2-3 cm proximal to the lateral epicondyle — scan proximally if you want to see it. Keep the needle in the superficial BR belly and do not cross into supinator.",
     "To confirm identification: ask the patient to flex the elbow with the forearm in neutral — the BR will contract and thicken while the ECRL performs wrist extension."
    ],
    "safetyNotes": [
     "The Radial Nerve runs in the intermuscular septum between the Brachioradialis and Brachialis — always identify it before injecting.",
     "Keep the needle tip superficial and within the BR muscle belly — do not advance past the fascial plane toward the radial nerve.",
-    "The radial recurrent artery may run near the radial nerve — use color Doppler if uncertain."
+    "The radial recurrent artery may run near the radial nerve — use color Doppler if uncertain.",
+    "At the proximal-forearm window the posterior interosseous nerve runs between the heads of the supinator, deep to BR and ECRL. Do not advance the needle to the radial cortex."
    ],
    "probeDiagram": {
     "cx": 45,
@@ -793,7 +798,8 @@
   "dangerZones": [
    "The Radial Nerve runs in the intermuscular septum between the Brachioradialis and Brachialis — always identify it before injecting.",
    "Keep the needle tip superficial and within the BR muscle belly — do not advance past the fascial plane toward the radial nerve.",
-   "The radial recurrent artery may run near the radial nerve — use color Doppler if uncertain."
+   "The radial recurrent artery may run near the radial nerve — use color Doppler if uncertain.",
+   "At the proximal-forearm window the posterior interosseous nerve runs between the heads of the supinator, deep to BR and ECRL. Do not advance the needle to the radial cortex."
   ],
   "positionGroup": "seated-forearm-neutral",
   "positionLabel": "Seated · forearm neutral, thumb up",
@@ -854,7 +860,7 @@
     "The median nerve passes between the two heads of the pronator teres — inject into the superficial muscle belly only.",
     "The ulnar artery courses deep to the PT — use Doppler if injecting near the deep border.",
     "Avoid the medial epicondyle region where the common flexor tendon origin is located.",
-    "A superficial ulnar artery lying above the flexor-pronator mass is present in roughly 2.5% of limbs on Doppler screening — screen before inserting rather than assuming the artery is deep."
+    "A superficial ulnar artery lying above the flexor-pronator mass is present in roughly 2.5% of participants on Doppler screening — screen before inserting rather than assuming the artery is deep."
    ],
    "probeDiagram": {
     "cx": 38,
@@ -1205,7 +1211,7 @@
     "Place the probe transversely on the central volar forearm.",
     "The FDS is the broad, flat muscle layer in the superficial volar compartment — it appears as a wide hypoechoic band directly under the subcutaneous tissue and fascia.",
     "Deep to the FDS, the FDP occupies the deeper compartment — a clear fascial plane separates the two.",
-    "CRITICAL: The Median Nerve appears as a honeycomb-pattern hyperechoic oval at the border between FDS and FDP, typically on the radial (lateral) side.",
+    "CRITICAL: The Median Nerve appears as a honeycomb-pattern hyperechoic oval in the fascial plane between FDS and FDP, adhered to the deep surface of the FDS and running near the axis of the forearm rather than off to the radial side. Follow that plane across the whole image before inserting — it is the plane you must not enter.",
     "The Ulnar Nerve appears at the medial edge of the field, between the FDS/FCU and the deeper FDP.",
     "To confirm identification: ask the patient to flex the PIP joints of the fingers with the DIP joints held straight — the FDS will contract independently of FDP.",
     "Note the video annotation: 'VIEW OF FDS ON TOP OF FDP WITH MEDIAN NERVE AND ULNAR NERVE DELIMITATION'"
@@ -1335,7 +1341,7 @@
     "Identify the superficial flexor layer first: the Palmaris Longus (PL) as a small superficial structure, and the FCU on the ulnar border.",
     "The FDS appears as the broad superficial muscle layer just deep to the PL and FCU.",
     "Deep to FDS, the FDP is a large muscle occupying the deep volar compartment — it extends from the ulnar side across toward the radius.",
-    "CRITICAL: The Median Nerve appears as a hyperechoic oval structure between the FDS and FDP — typically on the radial (lateral) side of the image.",
+    "CRITICAL: The Median Nerve appears as a hyperechoic oval structure in the fascial plane between the FDS and FDP, adhered to the deep surface of the FDS and running near the axis of the forearm rather than off to the radial side. That plane also carries the ulnar nerve and ulnar artery — follow it across the whole image before inserting.",
     "The Ulnar Nerve appears as a small hyperechoic oval between the FCU and FDP on the ulnar (medial) side.",
     "The Anterior Interosseous Nerve (AIN) may be visible as a tiny hyperechoic dot on the deep surface of the FDP, near the interosseous membrane."
    ],
@@ -1432,25 +1438,25 @@
    "Radial Artery at the Wrist (palpate the radial pulse at the radial-volar wrist, just lateral to the FCR tendon — the FPL tendon lies deep and slightly ulnar to the radial artery at this level)",
    "Middle of the anterior shaft of the radius (origin).",
    "Interosseous membrane — FPL lies along it, deep in the anterior forearm.",
-   "Radial artery runs in the lateral forearm — stay medial to avoid it."
+   "Radial artery — lies superficial to the FPL on the radial side; it is in the approach path, not merely lateral to it, so find it on Doppler rather than relying on staying medial."
   ],
   "placement": [
    "Position the patient seated with the forearm supinated and resting flat on a support surface.",
-   "Identify the mid-forearm on the anterior (volar) and slightly radial surface.",
+   "Identify the distal third of the anterior (volar) forearm, on its radial side.",
    "Palpate the FPL — ask the patient to flex the thumb at the interphalangeal (IP) joint against resistance; the FPL is the only muscle that flexes the thumb IP joint. Feel for contraction in the mid-radial forearm.",
    "The FPL lies deep in the forearm, lateral to the FDP, directly on the anterior surface of the radius and the interosseous membrane.",
-   "Insert the needle at the mid-forearm level, on the radial side, between the brachioradialis (laterally) and the FCR (medially).",
+   "Insert on the radial side of the volar forearm in the distal third, in the plane of the probe. Identify the radial artery with color Doppler first: it lies superficial to the FPL, in the interval between brachioradialis and FCR. Plan the track to pass clear of it — do not use the interval blind.",
    "Advance the needle 2-2.5 cm, directing it posteriorly toward the radius to reach the deep compartment where the FPL lies.",
    "Use ultrasound to confirm the needle tip is in the FPL and not in the superficial flexor muscles (FCR, FDS) or the pronator teres.",
    "Aspirate before injecting.",
-   "Injection site: proximal-to-middle anterior forearm.",
+   "Injection site: radial aspect of the distal third of the volar forearm.",
    "Sites: 1-2.",
    "Injection depth: approximately 10-20 mm."
   ],
   "setup": [
    "USG is strongly recommended — the FPL is a deep muscle that requires passing through superficial flexor layers.",
    "Have the patient repeatedly flex the thumb IP joint while you confirm the muscle belly location with ultrasound.",
-   "Approach from the radial side between the brachioradialis and FCR to minimize traversal of other muscle layers.",
+   "Approach from the radial side, but map the radial artery with color Doppler before choosing the track — it lies superficial to the FPL between brachioradialis and FCR, directly in the naive path.",
    "The anterior interosseous nerve provides motor innervation to the FPL and runs along the interosseous membrane — identify it and avoid injecting near it.",
    "Patient position: elbow extended, forearm supinated, wrist in neutral.",
    "US guidance recommended given radial artery proximity and depth."
@@ -1463,8 +1469,8 @@
     "Identify the Radius as the large hyperechoic curved bony surface on the lateral (thumb) side.",
     "The FPL is the muscle directly overlying the anterior surface of the radius — it appears as a large, red-coded (in Dr. Bursuc's overlay) hypoechoic muscle draping over the radial shaft.",
     "Superficial to the FPL on the radial side, identify the FCR tendon/muscle as a smaller oval structure.",
-    "Lateral (ulnar side), the FDS appears superficial, with the FDP deep between FDS and the interosseous membrane.",
-    "CRITICAL: The Radial Nerve/Anterior Interosseous Nerve (AIN) may appear as a small hyperechoic dot superficial to the FPL near the radial border.",
+    "Ulnar to the FPL, the FDS appears superficial, with the FDP deep between FDS and the interosseous membrane.",
+    "CRITICAL: the structure superficial to the FPL at the radial border is the radial artery, not a nerve — confirm it with color Doppler before you cross that border. The anterior interosseous nerve is not visible here: it runs deep, on the interosseous membrane beneath the FPL.",
     "The Median Nerve appears as a honeycomb-pattern oval between the FDS and FDP on the ulnar side of the image."
    ],
    "safetyNotes": [
@@ -1593,8 +1599,7 @@
    "safetyNotes": [
     "The median nerve and anterior interosseous nerve lie in this plane — always identify the median nerve on US before needle insertion.",
     "The radial and ulnar arteries lie on the volar surface of the forearm — use color Doppler to map them. A dorsal approach avoids both.",
-    "The pronator quadratus is thin — minor needle over-advancement can exit the muscle. Use in-plane technique with continuous needle tip visualization.",
-    "Very low doses are appropriate given the small muscle volume — start at 10-20 U Botox per site."
+    "The pronator quadratus is thin — minor needle over-advancement can exit the muscle. Use in-plane technique with continuous needle tip visualization."
    ],
    "probeDiagram": {
     "cx": 50,
@@ -1610,7 +1615,6 @@
   "pearls": [
    "The TRUE distal pronator — often missed because pronator teres gets all the attention",
    "Thin, deep muscle — USG mandatory; a dorsal approach through the interosseous membrane is safest",
-   "Low doses only (10-25 U Botox) given the small muscle volume",
    "Co-inject with pronator teres for refractory forearm pronation pattern",
    "Works in synergy with pronator teres; injecting both muscles is uncommon — consider pronator teres alone first for most pronation patterns.",
    "The ventral (medial/ulnar) approach is preferred; the dorsal approach is difficult due to extensor tendons + interosseous membrane."
@@ -1850,16 +1854,17 @@
    "Position the patient with the hand resting on a flat surface, palm down (pronated), with the thumb abducted away from the palm.",
    "Identify the first web space between the thumb and index finger metacarpals.",
    "Palpate the adductor pollicis — ask the patient to adduct the thumb firmly against the index finger; feel the muscle contract and bulk in the web space.",
-   "The muscle has two heads: the oblique head (deeper, originating from the carpals and metacarpals) and the transverse head (more superficial, originating from the third metacarpal shaft).",
-   "Insert the needle from the dorsal aspect of the first web space, perpendicular to the plane of the hand.",
-   "Advance 0.5-1 cm — this is a thin muscle in a confined space.",
-   "Stay within the web space and do not advance toward the palmar surface where the digital neurovascular bundles run.",
-   "Aspirate before injecting. A single injection into the bulk of the web space is usually sufficient. Use a small-gauge needle (25-27G).",
+   "The muscle has two heads, and on the dorsal window they are separated ACROSS the hand, not by depth. The oblique head (from the capitate, the bases of the 2nd and 3rd metacarpals and the flexor carpi radialis tendon sheath) is the belly reached first, off the 2nd metacarpal. The transverse head (from the shaft of the 3rd metacarpal) is reached by redirecting ulnarward toward the 3rd metacarpal — not by withdrawing toward the skin.",
+   "Insert the needle from the dorsal aspect of the first intermetacarpal space, out-of-plane, dorsal-to-palmar, using the SECOND metacarpal as the landmark for the first pass.",
+   "Advance until the tip is seen to have CROSSED the first dorsal interosseous and to sit within the adductor pollicis — do not stop at a fixed depth. Depth is set by the image, not by a number: skin-to-adductor distance varies with the patient and with the degree of spastic distortion. A small hypoechoic droplet of toxin held at the tip makes the out-of-plane tip position readable.",
+   "Bracket the target on both sides: too shallow is the first dorsal interosseous, too deep is the deep head of flexor pollicis brevis, which lies immediately palmar to the adductor pollicis between it and the flexor pollicis longus tendon. Do not run the needle out through the palmar surface.",
+   "Aspirate before injecting, but treat the pre-procedural color Doppler sweep as the real vascular safeguard — the source makes it a requirement, not an option. After the first inoculation into the oblique belly, a second into the transverse belly after ulnar redirection is suggested to spread the toxin across both heads; the source offers it as a refinement rather than a requirement, so judge it on the dose and the pattern. A 25G needle balances maneuverability against sonographic visibility.",
    "Injection site: into the first web space, toward the 3rd metacarpal.",
-   "Sites: 1-2."
+   "Sites: 1-2 — the oblique belly, optionally a second into the transverse belly after redirecting ulnarward.",
+   "Reaching the second head: after the first inoculation into the oblique belly, run color Doppler over the region between the first dorsal interosseous, the adductor pollicis and the second metacarpal — a small vascular bundle sits there. The source suggests tilting the needle slightly ULNARWARD toward the third metacarpal and placing a second inoculation for the transverse belly; it is offered as a refinement, not a requirement."
   ],
   "setup": [
-   "USG is helpful but the muscle can be injected reliably using surface anatomy in the first web space.",
+   "Use ultrasound. Surface landmarks are unreliable for the intrinsic hand muscles in spastic patients — postural distortion and interindividual variability both degrade them, and blind needling cannot separate the adductor pollicis from the first dorsal interosseous lying over it.",
    "Use a dorsal approach to avoid the palmar digital nerves and arteries.",
    "Have the patient adduct the thumb to confirm the muscle belly before marking.",
    "Differentiate from the first dorsal interosseous, which lies dorsal and lateral in the web space — the adductor pollicis is deeper and more palmar.",
@@ -1873,11 +1878,11 @@
     "The first dorsal interosseous appears as a superficial hypoechoic muscle on the dorsal-radial aspect of the web space.",
     "Deep to the first dorsal interosseous, the adductor pollicis appears as a hypoechoic muscle filling the space between the first and second metacarpals on the palmar side.",
     "The first and second metacarpals appear as two bright hyperechoic cortical lines on either side of the web space.",
-    "The deep palmar arch and digital arteries may be seen with color Doppler on the palmar surface of the adductor pollicis."
+    "Run color Doppler BEFORE needling, over the corridor itself: a small vascular bundle sits between the first dorsal interosseous, the adductor pollicis and the second metacarpal — on the near side of the target, in the path of the ulnar tilt toward the third metacarpal. Set a low pulse repetition frequency (0.6-0.8 kHz) to pick up the low-velocity hand microvasculature. Deeper vessels on the palmar surface of the muscle are a separate, far-side limit."
    ],
    "safetyNotes": [
     "The deep branch of the ulnar nerve passes between the two heads of the adductor pollicis. On the dorsal approach the needle must first cross the first dorsal interosseous — do not stop short in it. Reach the transverse head by angling ulnarward toward the third metacarpal rather than by staying shallow.",
-    "The radialis indicis artery and princeps pollicis artery run along the borders of the web space — stay in the central bulk of the muscle.",
+    "The radialis indicis artery descends BETWEEN the first dorsal interosseous and the transverse head of the adductor pollicis — that is inside the corridor a dorsal needle crosses, not along the edge of it. The princeps pollicis arises from the deep palmar arch to supply the thumb, and both vessels are duplicated in some hands. Run colour Doppler over the intended track before inserting rather than relying on staying central.",
     "The palmar digital nerves run on the palmar aspect — use a dorsal approach and do not advance through the full depth of the web space."
    ],
    "probeDiagram": {
@@ -1897,7 +1902,6 @@
   "probePlacementHint": "Patient hand pronated on table. Place small linear or hockey-stick probe transversely across first web space from dorsal approach. Photo from above showing probe on dorsal thumb web space.",
   "pearls": [
    "Key target for thumb-in-palm deformity (thumb adduction component)",
-   "Very small — use hockey-stick probe and minimal doses (10-20U Botox)",
    "Key for thumb-in-palm deformity along with FPL and FPB."
   ],
   "supplies": [
@@ -2013,7 +2017,6 @@
   "pearls": [
    "The 'hidden' cause of intrinsic-plus hand — if MCP flexion persists despite treating FDS/FDP, the lumbricals may be the culprit",
    "1st and 2nd lumbricals (median nerve) are more commonly spastic than 3rd and 4th (ulnar nerve)",
-   "Tiny muscles requiring tiny doses — 5-10 U Botox per lumbrical is usually sufficient; overdosing weakens grip",
    "EMG confirmation is especially valuable here since the muscles are so small and surrounded by tendons",
    "Many physiatrists suspect only a minor effect and refrain from injecting the lumbricals — consider with caution and reserve for clear intrinsic-plus deformity.",
    "The lumbricals cannot be palpated; injection errors and toxin diffusion into adjacent muscles occur easily without US.",
@@ -2381,16 +2384,16 @@
    "Adductor Longus Tendon (with the hip slightly abducted and flexed, palpate the most prominent tendon in the proximal medial thigh originating from the pubic tubercle — this is the superficial border of the muscle)",
    "Pubic tubercle — palpate the adductor longus tendon at its origin.",
    "Medial condyle of the tibia — adductor longus inserts along the middle third of the linea aspera.",
-   "Anchor: 4 fingers (approximately 7-8 cm) distal to the pubic tubercle, along the adductor group."
+   "Anchor: 30-50% of the way from the anterior superior iliac spine along the long axis of the femur, with 35-50% the preferred window."
   ],
   "placement": [
    "Position the patient supine with the hip slightly abducted and externally rotated, and the knee flexed with the sole of the foot resting against the opposite knee (frog-leg position).",
    "Identify the adductor longus tendon — it is the most prominent and superficial tendon in the proximal medial thigh, easily palpable as a taut cord originating from the pubic tubercle.",
-   "The injection site is approximately 3-5 cm distal to the pubic tubercle along the muscle belly, in the medial thigh.",
+   "The injection site is in the dense innervation band, 30-50% of the way from the ASIS along the long axis of the femur — the effective and safe window is 35-50%. Measure it on the patient rather than stepping a fixed distance off the pubic tubercle.",
    "Insert the needle perpendicular to the skin into the muscle belly just lateral to the palpable tendon.",
    "Advance approximately 1.5-2.5 cm — the adductor longus is the most superficial muscle in the medial compartment at this level.",
    "Aspirate before injecting. Distribute the dose across 2 sites along the proximal muscle belly.",
-   "Injection site: palpate the adductor longus tendon at the pubic tubercle, then move approximately 4 fingers (7-8 cm) distal, into the muscle belly."
+   "Injection site: palpate the adductor longus tendon at the pubic tubercle to identify the muscle, then inject into the belly within the 35-50%-from-ASIS band rather than at a fixed distance from the tendon."
   ],
   "setup": [
    "USG is strongly recommended to avoid the femoral neurovascular bundle, which lies lateral to the adductor longus in the femoral triangle.",
@@ -2401,7 +2404,7 @@
   ],
   "ultrasound": {
    "probe": "High-frequency linear (10-15 MHz)",
-   "orientation": "Transverse across the proximal medial thigh, 3-5 cm distal to the pubic tubercle",
+   "orientation": "Transverse across the proximal third of the medial thigh, over the dense innervation band at 30-50% of the way from the anterior superior iliac spine along the long axis of the femur",
    "viewSteps": [
     "Identify subcutaneous fat and the fascia lata as the superficial layers.",
     "The Adductor Longus appears as a triangular or oval hypoechoic muscle belly immediately deep to the fascia — it is the most superficial adductor at this level.",
@@ -2430,7 +2433,7 @@
   },
   "referenceImages": [],
   "hasReferenceImage": false,
-  "probePlacementHint": "Patient supine, hip slightly abducted and externally rotated. Place probe transversely on proximal medial thigh, 3-5 cm below pubic tubercle. Photo showing probe on inner proximal thigh.",
+  "probePlacementHint": "Patient supine, hip slightly abducted and externally rotated. Place the probe transversely on the proximal third of the medial thigh, over the band 30-50% of the way from the ASIS along the femoral axis. Adductor longus is the most superficial muscle of the group here, with brevis and magnus deep to it. Photo showing probe on inner proximal thigh.",
   "pearls": [
    "Most superficial adductor — the 'go-to' for adductor spasticity injection",
    "Palpable as the prominent tendon in the proximal medial thigh with hip abduction",
@@ -2495,7 +2498,7 @@
    "Pubic Tubercle (palpate the bony prominence on the superior pubic ramus medially — the adductor brevis originates from the body and inferior ramus of the pubis, just lateral to gracilis)",
    "Adductor Longus Tendon (palpate the prominent cord in the proximal medial thigh with the hip slightly abducted — the adductor brevis lies immediately deep to adductor longus)",
    "Pubic tubercle — palpate the adductor longus tendon at its origin (brevis lies deep and behind it).",
-   "Anchor: 4 fingers (approximately 7-8 cm) distal from the pubic tubercle, 3-5 cm deep through the overlying adductor longus."
+   "Anchor: about 22-25% of the line from the pubic symphysis to the medial knee joint line — the nerve-dense zone of the muscle belly. Reached deep to the overlying adductor longus; read the depth off the image rather than using a fixed figure."
   ],
   "placement": [
    "Position the patient supine with the hip abducted 30-45 degrees, knee flexed, and the leg externally rotated (frog-leg position).",
@@ -2506,9 +2509,9 @@
    "Confirm depth — adductor brevis lies between adductor longus (superficial) and adductor magnus/obturator externus (deep).",
    "Aspirate before injecting. A single injection into the mid-belly is usually sufficient.",
    "Avoid advancing too deeply past adductor brevis into the obturator externus or adductor magnus unless those are also targets.",
-   "Injection site: palpate the tendon at the pubic tubercle origin; inject 4 fingers (7-8 cm) distal and 3-5 cm deep through the skin.",
+   "Injection site: about 22-25% of the line from the pubic symphysis to the medial knee joint line, reached deep to adductor longus. Read the depth off the image rather than using a fixed figure.",
    "Sites: 1-2, usually one site.",
-   "Injection depth: 3-5 cm depending on muscle thickness."
+   "Injection depth: measured on the image, not assumed — the needle passes adductor longus to reach brevis, and the distance varies with habitus."
   ],
   "setup": [
    "USG guidance is strongly recommended — adductor brevis is deep to adductor longus and cannot be reliably injected by landmark alone.",
@@ -2533,7 +2536,7 @@
     "The anterior branch of the obturator nerve runs between adductor longus and brevis — identify it and keep the needle tip within the muscle belly, not in the inter-fascial plane.",
     "The profunda femoris artery and perforating branches course through the adductor compartment — use Doppler before each needle insertion.",
     "Do not advance past adductor brevis into the deeper compartment unless targeting adductor magnus.",
-    "The posterior branch of the obturator nerve lies in the fascial plane between adductor brevis and adductor magnus, supplying both — it is the deep-side mirror of the anterior branch and is not on the superficial side where the needle enters.",
+    "The posterior branch of the obturator nerve runs in the fascial plane between adductor brevis and adductor magnus. It supplies obturator externus and the pubic part of adductor magnus; adductor brevis itself is supplied by the anterior branch. Because this needle is advanced through adductor longus into brevis, that plane is the FAR WALL of the target rather than a distant structure — stop inside the brevis belly and do not cross its deep fascia.",
     "The great saphenous vein and its tributaries run subcutaneously over the medial thigh — identify them before the needle crosses the subcutaneous plane."
    ],
    "probeDiagram": {
@@ -2614,14 +2617,14 @@
    "Adductor Tubercle (palpate the small bony prominence on the medial supracondylar ridge of the distal femur just above the medial epicondyle — the hamstring portion of the adductor magnus inserts here)",
    "Pubic tubercle and ischial tuberosity (combined origin).",
    "Linea aspera of the femur (insertion).",
-   "Anchor: 10-13 cm distal to the pubic tubercle for proximal injection; additional sites at 4 fingers (7-8 cm) intervals along the adductor line."
+   "Anchor: about 40% of the line from the pubic symphysis to the medial knee joint line. Additional sites run along that line, not across it."
   ],
   "placement": [
    "Position the patient prone with the legs slightly apart, or supine with the hip abducted and externally rotated.",
-   "Identify the adductor magnus — it is the deepest and largest muscle of the medial thigh compartment, best accessed from the posterior-medial approach.",
-   "The injection site is at the junction of the middle and distal thirds of the medial thigh, posterior to the gracilis and adductor longus.",
-   "Insert the needle from the posteromedial aspect of the thigh, angling slightly anteriorly.",
-   "Advance approximately 2.5-4 cm — the adductor magnus is a deep muscle and the needle must traverse the more superficial adductors or approach from the posterior aspect.",
+   "Identify the adductor magnus — it is the deepest and largest muscle of the medial thigh compartment, reached from the medial side with the hip abducted and externally rotated.",
+   "The injection site is at about 40% of the line from the pubic symphysis to the medial knee joint line, deep to gracilis, adductor longus and adductor brevis.",
+   "Insert the needle from the medial aspect of the thigh, in the plane of the probe, and advance through the superficial adductors under continuous ultrasound.",
+   "Advance until the tip is seen within adductor magnus and short of the femoral cortex — typically 2.5-4 cm, but read the depth off the image rather than assuming it. Magnus is the last muscle before bone in this window.",
    "Aspirate before injecting. Distribute the dose across 2-3 sites within the muscle belly due to its large size.",
    "Injection site: multiple sites along the medial thigh, on a line from origin toward the linea aspera.",
    "Sites: 1-3.",
@@ -2630,13 +2633,13 @@
   "setup": [
    "USG guidance is strongly recommended due to the depth of this muscle and the proximity of the sciatic nerve and profunda femoris vessels.",
    "Have the patient adduct the hip forcefully against resistance to help identify the muscle bulk.",
-   "The sciatic nerve runs lateral and posterior to the adductor magnus in the posterior thigh — confirm its location with ultrasound.",
+   "The sciatic nerve lies posterior to adductor magnus and is not in this medial window — it becomes relevant only if the needle is angled posteriorly. The structures to identify here are the profunda femoris vessels between adductor longus and magnus, and the femoral cortex as the deep stop.",
    "The adductor hiatus (gap in the distal adductor magnus) transmits the femoral vessels into the popliteal fossa — avoid injecting near the distal muscle.",
    "Patient position: supine, leg slightly flexed and abducted."
   ],
   "ultrasound": {
    "probe": "Low-frequency curvilinear (5-8 MHz) or high-frequency linear (10-15 MHz) for thinner patients",
-   "orientation": "Transverse across the posteromedial thigh at the junction of the middle and distal thirds",
+   "orientation": "Transverse across the proximal third of the medial thigh, with the hip abducted, externally rotated and semi-flexed. Target the motor-point band at about 40% of a line from the pubic symphysis to the medial knee joint line — the middle third of the thigh. Adductor magnus is the deepest muscle in this window, lying directly on the femoral cortex.",
    "viewSteps": [
     "Identify subcutaneous fat and the deep fascia as the superficial layers.",
     "The Gracilis and Adductor Longus appear as superficial hypoechoic muscles in the medial compartment.",
@@ -2649,7 +2652,8 @@
     "The profunda femoris artery and vein run between the adductor longus and adductor magnus — use color Doppler to identify and avoid these vessels.",
     "The sciatic nerve lies posterolateral to the adductor magnus in the posterior compartment — do not direct the needle too far laterally or posteriorly.",
     "The femoral artery transitions to the popliteal artery through the adductor hiatus distally — avoid injecting in the distal third of the muscle.",
-    "The posterior branch of the obturator nerve runs on the anterior surface of the adductor magnus — ultrasound helps minimize nerve injury."
+    "The posterior branch of the obturator nerve runs on the anterior surface of the adductor magnus — ultrasound helps minimize nerve injury.",
+    "Confirm the needle tip is inside the adductor magnus muscle belly — past adductor brevis and short of the femoral cortex. Do not leave the tip sitting in an intermuscular fascial plane: those planes carry the obturator branches and the perforating vessels, so injecting into one spreads the dose rather than delivering it."
    ],
    "probeDiagram": {
     "cx": 55,
@@ -2665,7 +2669,7 @@
   },
   "referenceImages": [],
   "hasReferenceImage": false,
-  "probePlacementHint": "Patient prone, legs slightly apart. Place probe transversely on posteromedial thigh at junction of middle and distal thirds. Photo from behind showing probe on posteromedial distal thigh.",
+  "probePlacementHint": "Patient supine, hip abducted, externally rotated and semi-flexed with the knee semi-flexed. Place the probe transversely on the proximal third of the medial thigh, then slide distally to about 40% of the pubic-symphysis-to-medial-knee line. Work down through gracilis and adductor longus, then adductor brevis, to adductor magnus lying on the femur. Photo from the medial side showing the probe on the proximal medial thigh.",
   "pearls": [
    "Largest adductor — requires higher doses and multiple injection sites",
    "Deep position makes US guidance essential",
@@ -2702,11 +2706,11 @@
   "dangerZones": [
    "Sciatic nerve runs posterior — inject from medial approach to stay safe"
   ],
-  "positionGroup": "prone-legs-apart",
-  "positionLabel": "Prone, legs apart (or supine, hip abducted & ER)",
+  "positionGroup": "supine-frog-leg",
+  "positionLabel": "Supine · hip abducted, externally rotated and semi-flexed, knee semi-flexed",
   "ultrasoundGroup": "adductor-longus-brevis-magnus",
   "sideEffects": [
-   "Spread into gracilis superficially or semimembranosus medially is the main dosing risk at this window. The well-defined fascia separating adductor magnus from both is what makes the injection safe, so confirm the needle tip is inside it before injecting."
+   "At this supine proximal window the needle passes gracilis and adductor longus, then adductor brevis, before reaching magnus on the femur — those are where unintended spread shows up, as further loss of adduction. Semimembranosus lies medial and is the other neighbour to account for. Adductor magnus also crosses the hip: it runs from the ischial and pubic rami to the linea aspera and adductor tubercle, so an effective dose costs hip extension and stance-phase stability as well as scissoring. Account for that in a patient who stands or transfers."
   ],
   "export": {
    "scan": "assets/scans/us-adductor-longus-brevis-magnus.jpg",
@@ -2733,7 +2737,7 @@
    "Pes Anserinus (palpate the medial tibial flare below the knee — gracilis inserts here along with semitendinosus and sartorius; it is the middle tendon of the three)",
    "Pubic tubercle (origin).",
    "Medial condyle of the tibia (insertion).",
-   "Anchor: middle of a line between the pubic tubercle and the medial tibial condyle."
+   "Anchor: 25-35% of the way down a line from the pubic tubercle (0%) to the medial knee, measured from the proximal end."
   ],
   "placement": [
    "Position the patient supine with the hip abducted 30-45 degrees and knee slightly flexed.",
@@ -2744,13 +2748,13 @@
    "Advance only 1-1.5 cm — gracilis is thin and superficial.",
    "Aspirate before injecting. A single injection into the proximal belly is usually sufficient.",
    "Stay superficial — adductor magnus lies directly deep to gracilis. Adductor longus is a same-layer neighbour sitting anterolateral to it, not beneath it.",
-   "Injection site: middle of the line between the pubic tubercle and the medial tibial condyle, into the long thin muscle belly.",
+   "Injection site: 25-35% of the way down a line from the pubic tubercle (proximal end = 0%) to the line joining the centre of the patella and the medial femoral condyle — i.e. the proximal third, not the midpoint.",
    "Sites: 1-3."
   ],
   "setup": [
    "Gracilis is superficial and thin — landmark-guided injection is often adequate, but USG can confirm you are in gracilis and not the deeper adductor magnus.",
    "The muscle is a thin strap — use low volume to avoid diffusion into adjacent adductors.",
-   "The saphenous nerve and great saphenous vein run in the medial thigh — they are anterior to gracilis but should be identified if using US.",
+   "Scan the subcutaneous plane over the entry point for the great saphenous vein before puncturing. The saphenous nerve lies deeper and more lateral, in the adductor canal beneath sartorius, and is a middle-third structure — not in the field at this proximal-third window.",
    "Patient position: supine with the leg slightly abducted."
   ],
   "ultrasound": {
@@ -2764,7 +2768,7 @@
     "To confirm: ask the patient to adduct the hip — gracilis will contract and thicken on real-time US."
    ],
    "safetyNotes": [
-    "The saphenous nerve and great saphenous vein run in the subsartorial canal anterior to gracilis — identify them if visible and avoid.",
+    "The great saphenous vein is subcutaneous over the medial thigh — it is in the first plane this needle crosses, so scan the entry point before puncturing. The saphenous nerve is a different structure in a different plane: it runs in the adductor canal, deep to sartorius and lateral to gracilis, and the canal does not begin until roughly the upper limit of the middle third of the thigh — distal to this record's proximal-third window.",
     "Stay within the thin gracilis belly — deep penetration enters adductor magnus.",
     "The obturator nerve branches are deep to gracilis in the adductor compartment."
    ],
@@ -2784,7 +2788,7 @@
    "The only adductor that crosses both hip and knee — contributes to both scissoring AND knee flexion",
    "Standard target in adductor injection sets alongside longus and magnus — don't forget it",
    "Very thin and superficial — easy to over-penetrate into deeper adductors; use short needle and minimal depth",
-   "Flexes both at the hip and knee; primarily active in initial hip flexion.",
+   "Crosses both the hip and the knee, so weakening it costs adduction and contributes to knee flexion — which is why it is treated as part of the adductor group rather than in isolation.",
    "Rarely treated individually — must be considered when treating adductor-group spasm since gracilis contributes to the adduction pattern."
   ],
   "supplies": [
@@ -2801,7 +2805,8 @@
    "Sharps container"
   ],
   "spasticityPatterns": [
-   "adducted-hip"
+   "adducted-hip",
+   "flexed-knee"
   ],
   "relatedMuscles": [
    "adductor-longus",
@@ -3051,7 +3056,7 @@
   "positionLabel": "Supine or lateral decubitus · affected side up",
   "sideEffects": [
    "Quadriceps weakness with knee buckling and gait disturbance is the expected cost of weakening this muscle, not an accident. It is a knee extensor and one of the largest muscles in the body; in a patient who stands or transfers on extensor tone, weakening it can remove stance stability.",
-   "Unintended spread into vastus intermedius, rectus femoris or tensor fasciae latae compounds that weakness. Accuracy against exactly these neighbours is what ultrasound guidance is for here."
+   "Unintended spread into vastus intermedius or rectus femoris compounds that weakness. Accuracy against exactly these neighbours is what ultrasound guidance is for here."
   ],
   "export": {
    "scan": "assets/scans/vastus-lateralis-us.jpg",
@@ -3100,7 +3105,7 @@
   ],
   "ultrasound": {
    "probe": "High-frequency linear (10-15 MHz)",
-   "orientation": "Transverse across the distal medial thigh, approximately 7-8 cm proximal to the superior pole of the patella (VMO)\" |",
+   "orientation": "Transverse across the distal medial thigh, approximately 7-8 cm proximal to the superior pole of the patella (VMO) — within the nerve-dense zone, which sits at 60-90% of the line from the anterior superior iliac spine to the base of the patella",
    "viewSteps": [
     "Identify subcutaneous tissue and the superficial fascia as hyperechoic layers.",
     "The Sartorius appears as a thin, strap-like hypoechoic muscle superficially on the medial side.",
@@ -3310,7 +3315,7 @@
    "Fibular Head (palpate the small bony prominence on the lateral aspect of the proximal leg just below the knee — the biceps femoris tendon inserts here and is easily palpable as a taut cord)",
    "Lateral Hamstring Tendon (with the knee flexed to 90 degrees, palpate the prominent tendon on the posterolateral aspect of the knee running toward the fibular head — this defines the lateral border of the popliteal fossa)",
    "Long head: ischial tuberosity (origin). Anchor the injection at the middle of a line between the ischial tuberosity and the popliteal fossa (approximately 4 fingers).",
-   "Short head: linea aspera (origin). Anchor approximately 2 cm above the popliteal cavity, superficial to the head of the fibula.",
+   "Short head: linea aspera (origin). Anchor in the distal third of the posterolateral thigh, at 70-85% of the distance measured down from the ischial tuberosity to the knee joint line — well proximal to the tendon's convergence on the fibular head.",
    "Head of the fibula (insertion) — palpable lateral bony prominence behind the knee."
   ],
   "placement": [
@@ -3321,7 +3326,7 @@
    "Advance approximately 1.5-3 cm depending on subcutaneous tissue thickness — the biceps femoris long head is relatively superficial in the lateral posterior thigh.",
    "Aspirate before injecting. Distribute the dose across 2 sites within the long head muscle belly. If the short head is also targeted, inject separately at the distal third of the lateral posterior thigh.",
    "Long head injection: middle of the line between ischial tuberosity and popliteal cavity, approximately 4 fingers distal to the ischial tuberosity. Sites: 1-3.",
-   "Short head injection: 2 cm above the popliteal cavity, superficial to the fibular head, medial or lateral to the short-head belly. Sites: 1-2."
+   "Short head injection: distal third of the posterolateral thigh, 70-85% of the distance measured down from the ischial tuberosity to the knee joint line. Enter from the lateral side and stay lateral within the muscle — the sciatic nerve, and distally the common peroneal nerve, lie medial to the short head at this level. Do not inject superficial to the fibular head or within about 5 cm of it: the common peroneal nerve crosses the posterior border of biceps femoris a mean 53.1 mm (SD 4.1) from the tip of the fibular head, and that distance shortens with knee flexion — 48.1 mm at 90 degrees, 37.8 mm at 120 degrees. Sites: 1-2."
   ],
   "setup": [
    "USG is recommended to differentiate the long head from the short head and to identify the sciatic nerve.",
@@ -3336,7 +3341,7 @@
    "viewSteps": [
     "Identify subcutaneous fat and the deep fascia (fascia lata) as the superficial layers.",
     "The Biceps Femoris Long Head appears as a large hypoechoic muscle belly in the lateral posterior thigh, superficial to the short head.",
-    "Deep and slightly medial, identify the Biceps Femoris Short Head as a smaller hypoechoic muscle arising from the linea aspera of the femur.",
+    "Deep and slightly lateral, between the long head and vastus lateralis, identify the Biceps Femoris Short Head as a smaller hypoechoic muscle arising from the linea aspera of the femur. It first appears around the middle third of the thigh and is fusiform there, becoming quadrilateral more distally.",
     "Medial to the biceps femoris, identify the Semitendinosus (with its characteristic round tendon) and the Semimembranosus (broader and deeper).",
     "Between the medial and lateral hamstrings, identify the sciatic nerve as a hyperechoic oval or honeycomb structure — it lies deep in the fascial plane.",
     "The femur appears as a hyperechoic line with acoustic shadowing in the deep field."
@@ -3346,7 +3351,7 @@
     "The common peroneal nerve separates from the tibial nerve in the distal thigh and runs along the medial border of the biceps femoris tendon — avoid the distal tendon region.",
     "The popliteal artery and vein lie deep in the popliteal fossa medially — do not inject too medially or too deeply in the distal thigh.",
     "Differentiate the long head (superficial, originates from ischial tuberosity) from the short head (deep, originates from the femur) as they may require separate targeting.",
-    "The dominant arterial pedicle to the long head enters close to the level this record injects — aspirate and use colour Doppler before injecting."
+    "The dominant arterial pedicle to the long head enters at a mean of 12 cm from the muscle's origin (SD 3.3 cm), which is about a third of the way down it in 95% of specimens — the same region this record injects. Aspirate and use colour Doppler before injecting."
    ],
    "probeDiagram": {
     "cx": 55,
@@ -3362,7 +3367,7 @@
   },
   "referenceImages": [],
   "hasReferenceImage": false,
-  "probePlacementHint": "Patient prone, knee flexed over pillow. Mark the ischial tuberosity and the knee joint line; place the probe transversely on the posterolateral thigh at the midpoint of that line (~40–50% down from the ischial tuberosity), shifting slightly toward the midline rather than far laterally. Identify biceps femoris long head and confirm the sciatic nerve position deep to it before advancing. Photo from behind showing probe on posterolateral thigh at mid-thigh.",
+  "probePlacementHint": "Patient prone, knee flexed over pillow. Mark the ischial tuberosity and the knee joint line; place the probe transversely on the posterolateral thigh at 40-50% of that distance measured DOWN FROM THE ISCHIAL TUBEROSITY — the long-head motor-point band. Keep the window posterolateral; do not shift medially in order to inject. Locate the sciatic nerve first: slide proximally to the junction of the proximal and middle thirds, where it appears as an oval, fascicular, hyperechoic structure surrounded by fat at the centre of the \"Mercedes-Benz\" fascial star, with semitendinosus medial and the biceps femoris long head lateral to it. Having fixed the nerve's position, return to the posterolateral window and inject the long head lateral and superficial to it. In a contracted, internally rotated hemiparetic limb the muscles sit off their surface landmarks, so re-identify them on the image rather than trusting the marks. Photo from behind showing probe on posterolateral thigh at mid-thigh.",
   "pearls": [
    "Lateral hamstring — key target for lateral knee flexion patterns",
    "Common peroneal nerve branches from sciatic near the biceps femoris tendon — identify on US",
@@ -3562,7 +3567,7 @@
   ],
   "ultrasound": {
    "probe": "High-frequency linear (10-15 MHz)",
-   "orientation": "Transverse across the posterior medial thigh at mid-to-distal level",
+   "orientation": "Transverse across the distal third of the posterior thigh, in the medial portion — the motor-point band sits at 20-40% of the line from the femoral condyles up to the ischial tuberosity, i.e. the distal fifth to distal two-fifths of the thigh",
    "viewSteps": [
     "Identify subcutaneous tissue and the deep fascia as superficial hyperechoic layers.",
     "The Semitendinosus appears as a round or oval hypoechoic muscle belly superficially (or its hyperechoic tendon distally).",
@@ -3589,7 +3594,7 @@
   },
   "referenceImages": [],
   "hasReferenceImage": false,
-  "probePlacementHint": "Patient prone, knee slightly flexed. Place probe transversely on posterior medial thigh at mid-to-distal level. Photo from behind showing probe on posteromedial thigh.",
+  "probePlacementHint": "Patient prone, knee slightly flexed. Place probe transversely on the distal third of the posterior thigh, in the medial portion — the motor-point band is 20-40% of the way up from the femoral condyles toward the ischial tuberosity. Photo from behind showing probe on the posteromedial thigh.",
   "pearls": [
    "Broader, flatter muscle — differentiate from semitendinosus by its deeper position and membranous aponeurosis on ultrasound.",
    "Key hamstring for medial knee flexion contracture patterns",
@@ -3653,17 +3658,17 @@
    "Popliteal Fossa (palpate the diamond-shaped depression behind the knee — the gastrocnemius heads form the distal borders of this fossa)",
    "Popliteal crease — palpable behind the knee, forms the proximal boundary of the gastroc.",
    "Medial femoral condyle (medial head origin).",
-   "Anchor: approximately 4 fingers (8-10 cm) distal to the popliteal crease, in the muscle belly of the medial head."
+   "Anchor: about 8-9 cm distal to the popliteal crease, over the fullest part of the medial belly."
   ],
   "placement": [
    "Position the patient prone with the feet hanging off the edge of the bed.",
    "Identify the proximal third of the posterior calf — this is where the medial gastrocnemius belly is largest.",
    "Palpate the large medial muscle belly — ask the patient to plantarflex the ankle against resistance to confirm.",
-   "The injection site is 2-3 cm distal to the popliteal crease, on the medial side of the calf midline.",
+   "The injection site is about 8-9 cm distal to the popliteal crease, on the medial side of the calf, over the fullest part of the belly. Do not inject just below the crease — that is proximal to the muscle's motor-point zone and it is the level of the popliteal vessels and tibial nerve.",
    "Insert the needle perpendicular to the skin into the bulk of the medial gastrocnemius belly.",
    "Advance 1-2 cm into the muscle — the gastrocnemius is superficial.",
    "Aspirate before injecting. Distribute the dose across 2 sites within the medial belly if using higher doses.",
-   "Injection site: muscle belly of both medial and lateral heads, approximately 4 fingers (8-10 cm) distal to the popliteal crease.",
+   "Injection site: the medial gastrocnemius belly, about 8-9 cm distal to the popliteal crease.",
    "Sites: 1-3 per head (medial and lateral), usually 2 sites.",
    "Injection depth: about 0.5-1.5 cm from the skin. The medial belly averages only ~1.3 cm thick at the injection site under ~2-3 mm of fat — set depth on the ultrasound image and stop short of the deep fascia."
   ],
@@ -3686,7 +3691,7 @@
    ],
    "safetyNotes": [
     "The sural nerve and small saphenous vein run in the midline between the two gastrocnemius heads — avoid the midline.",
-    "The popliteal artery and tibial nerve lie deep in the proximal popliteal fossa — do not inject too proximally or deeply.",
+    "The tibial nerve runs with the popliteal vessels through the fossa, then passes deep to the soleal sling between the tibial and fibular origins of the soleus — usually 5-9 cm distal to the knee joint, which is this window. It is the floor of this injection: the soleus is not the deepest thing under the needle. Do not advance past the gastrocnemius-soleus fascia.",
     "The medial sural cutaneous nerve branches from the tibial nerve — it is superficial to the gastrocnemius fascia."
    ],
    "probeDiagram": {
@@ -3708,7 +3713,7 @@
   "pearls": [
    "Most commonly injected muscle for equinovarus foot — start here",
    "The medial head is larger and usually more spastic than the lateral head",
-   "Inject proximal — the muscle belly is short and becomes tendinous quickly",
+   "Inject over the belly's thickest part, about a quarter of the way down the leg — not immediately below the crease, and not so distal that you are into the aponeurosis",
    "Gastroc + soleus + plantaris form the triceps surae — full calf plantarflexion is only treatable if all three are addressed (or the soleus if gastroc alone is insufficient).",
    "The medial head is typically the dominant contributor to spastic equinus."
   ],
@@ -3727,7 +3732,8 @@
   ],
   "spasticityPatterns": [
    "equinus",
-   "equinovarus"
+   "equinovarus",
+   "flexed-knee"
   ],
   "relatedMuscles": [
    "fdl",
@@ -3745,12 +3751,15 @@
   "anatomyCaption": "Posterior leg · gastrocnemius highlighted",
   "defaultAnatomyView": "posterior",
   "dangerZones": [
-   "Going too deep risks infiltrating the soleus (deep to gastroc).",
+   "Going deep past the gastrocnemius fascia enters the soleus; deeper again, at 5-9 cm below the knee, is the tibial nerve under the soleal sling.",
    "Going too deep into the medial head risks hitting flexor digitorum longus."
   ],
   "positionGroup": "prone-feet-off-bed",
   "positionLabel": "Prone · feet hanging off the edge of the bed",
   "ultrasoundGroup": "gastrocnemius-medial-soleus",
+  "sideEffects": [
+   "Weakening the gastrocnemius costs push-off. The triceps surae drives propulsion and ankle stability in stance, so an effective dose trades equinus for reduced plantarflexor torque — reported adverse effects in this group are leg weakness, calf atrophy and increased stumbling, in roughly 1-11% of patients, and fine balance control during walking can be affected even where basic gait is preserved. Gastrocnemius also crosses the knee, so the loss shows with the knee extended in particular. Weigh it in a patient who walks or transfers unaided."
+  ],
   "export": {
    "scan": "assets/scans/us-gastrocnemius-medial-soleus.jpg",
    "scanSharedWith": [
@@ -3772,30 +3781,29 @@
   "pattern": "Equinus deformity, Plantarflexion",
   "landmarks": [
    "Lateral Femoral Condyle (palpate the bony prominence on the lateral knee — the lateral gastrocnemius head originates from its posterior surface)",
-   "Fibular Head (palpate the small bony knob on the proximal lateral leg, just distal to the knee — the common peroneal nerve wraps around it)",
+   "Fibular head — palpate the bony knob on the proximal lateral leg. The common peroneal nerve wraps the NECK, roughly 2 cm below the head; use the head to locate the nerve, never as a clearance margin.",
    "Popliteal crease — palpable behind the knee.",
    "Lateral femoral condyle (lateral head origin).",
-   "Anchor: approximately 4 fingers (8-10 cm) distal to the popliteal crease, in the muscle belly of the lateral head."
+   "Anchor: about 9-10 cm distal to the popliteal crease, over the fullest part of the lateral belly."
   ],
   "placement": [
    "Position the patient prone with the feet hanging off the edge of the bed.",
    "Identify the proximal third of the posterior calf on the lateral side.",
    "Palpate the lateral gastrocnemius belly — it is smaller than the medial head.",
-   "The injection site is in the center of the lateral gastrocnemius belly, well medial to the fibula. Do NOT rely on a fixed distance from the fibular head — the nerve crosses the fibular neck and has been found as close as 14 mm to the head. Identify the nerve on the image and keep the needle medial to it.",
+   "The injection site is in the center of the lateral gastrocnemius belly at this level, posterior and medial to the fibula. Do NOT use a set distance from the fibular head as your safety margin — the common peroneal nerve crosses the fibular neck about 20.7 mm (95% CI 19.7-21.7) DISTAL to the tip of the fibular head, so distance from the head measures where the nerve is, not how far you are from it. At this 9-10 cm window the nerve is well proximal to the image; the safety rule here is to stay in the muscle belly and out of the lateral compartment.",
    "Insert the needle perpendicular to the skin into the lateral muscle belly.",
-   "Advance 1-1.5 cm into the muscle substance.",
+   "Advance under ultrasound until the tip sits within the lateral gastrocnemius and short of the fascial plane against soleus — typically well under 1 cm, since the belly measures about 1.1 cm here. Do not advance to a fixed 1.5 cm: that exits the muscle in most patients.",
    "Aspirate before injecting.",
-   "Injection site: muscle belly of the lateral head, approximately 4 fingers (8-10 cm) distal to the popliteal crease.",
+   "Injection site: the lateral gastrocnemius belly, about 9-10 cm distal to the popliteal crease.",
    "Sites: 1-3 per head.",
    "Injection depth: about 0.5-1.2 cm from the skin. The lateral belly is the thinner head, ~1.1 cm at the injection site — measure it on ultrasound before advancing."
   ],
   "setup": [
    "The lateral head is usually smaller in bulk than the medial head.",
-   "Avoid the Common Peroneal Nerve, which wraps around the fibular head — stay medial to the fibular head.",
+   "The common peroneal nerve is a proximal hazard at the fibular neck, not at this injection level. At 9-10 cm below the crease the rule is to stay in the muscle belly and not to angle laterally or anteriorly past the fibula into the lateral compartment.",
    "This injection is often combined with the medial gastrocnemius injection for equinus management.",
    "USG can help distinguish the lateral gastrocnemius from the underlying soleus and plantaris.",
-   "Patient position: prone, feet hanging over the edge of the table.",
-   "Common peroneal nerve runs lateral to the gastroc at the fibular head — stay in the muscle belly, do not go too lateral."
+   "Patient position: prone, feet hanging over the edge of the table."
   ],
   "ultrasound": {
    "probe": "High-frequency linear (10-15 MHz)",
@@ -3804,11 +3812,10 @@
     "Identify subcutaneous fat and superficial fascia.",
     "The lateral Gastrocnemius appears as a hypoechoic muscle belly — it is typically thinner and narrower than the medial head.",
     "Deep to the lateral Gastrocnemius, the Soleus is visible separated by a hyperechoic fascial plane.",
-    "Laterally, the fibular head appears as a bright hyperechoic bony structure with posterior shadowing.",
-    "The common peroneal nerve may be visible as a small hyperechoic honeycomb structure wrapping around the fibular neck."
+    "Laterally, the fibular shaft appears as a bright hyperechoic cortical line with posterior shadowing; the fibular head and the common peroneal nerve are proximal to this window and are not expected in the image. If you see the fibular head, you are too high — move back down."
    ],
    "safetyNotes": [
-    "The common peroneal nerve wraps around the fibular head — always identify its position and stay medial to the fibular head.",
+    "The common peroneal nerve wraps the fibular NECK, about 2 cm distal to the fibular head, and divides there into deep and superficial branches. That is proximal to this window — do not expect to see it here, and do not slide the probe up to look for it with the needle in.",
     "The sural nerve runs between the gastrocnemius heads — avoid the midline between the two heads.",
     "The popliteal vessels are deep and proximal — do not inject too deeply in the proximal calf."
    ],
@@ -3848,7 +3855,8 @@
   ],
   "spasticityPatterns": [
    "equinus",
-   "equinovarus"
+   "equinovarus",
+   "flexed-knee"
   ],
   "relatedMuscles": [
    "fdl",
@@ -3866,12 +3874,15 @@
   "anatomyCaption": "Posterior leg · gastrocnemius highlighted",
   "defaultAnatomyView": "posterior",
   "dangerZones": [
-   "Common peroneal nerve runs nearby at the fibular neck — stay distal and medial",
-   "Going too deep risks the soleus."
+   "Common peroneal nerve at the fibular neck, about 2 cm distal to the fibular head — proximal to this injection window. It is a hazard if you scan or inject up toward the knee, not at 9-10 cm. Staying distal to the fibular head is not a safe rule: distal to the head is the neck.",
+   "Going deep past the gastrocnemius fascia enters the soleus, and deeper still, at 5-9 cm below the knee, lies the tibial nerve at the soleal sling. Stop at the mid-substance of the belly."
   ],
   "positionGroup": "prone-feet-off-bed",
   "positionLabel": "Prone · feet hanging off the edge of the bed",
   "ultrasoundGroup": "gastrocnemius-lateral-soleus",
+  "sideEffects": [
+   "Weakening the gastrocnemius costs push-off. The triceps surae drives propulsion and ankle stability in stance, so an effective dose trades equinus for reduced plantarflexor torque — reported adverse effects in this group are leg weakness, calf atrophy and increased stumbling, in roughly 1-11% of patients, and fine balance control during walking can be affected even where basic gait is preserved. Gastrocnemius also crosses the knee, so the loss shows with the knee extended in particular. Weigh it in a patient who walks or transfers unaided."
+  ],
   "export": {
    "scan": "assets/scans/us-gastrocnemius-lateral-soleus.jpg",
    "scanSharedWith": [
@@ -3995,6 +4006,9 @@
   "positionGroup": "prone-feet-off-bed",
   "positionLabel": "Prone or supine · leg externally rotated (expose medial calf)",
   "ultrasoundGroup": "gastrocnemius-medial-soleus",
+  "sideEffects": [
+   "Weakening the soleus costs stance-phase ankle stability and push-off. Soleus is the monoarticular half of the triceps surae and does not cross the knee, so unlike gastrocnemius its loss shows through the whole of stance rather than mainly with the knee extended. Reported adverse effects for this group are leg weakness, calf atrophy and increased stumbling, in roughly 1-11% of patients, with reduced peak plantarflexor torque after treatment."
+  ],
   "export": {
    "scan": "assets/scans/us-gastrocnemius-medial-soleus.jpg",
    "scanSharedWith": [
@@ -4042,7 +4056,7 @@
     "The fibula appears as a bright hyperechoic cortical line laterally with posterior acoustic shadowing."
    ],
    "safetyNotes": [
-    "The peroneal artery runs between the soleus and tibialis posterior in the deep compartment — use color Doppler.",
+    "The peroneal artery runs between the tibialis posterior and flexor hallucis longus, deep to soleus rather than in the plane against it — it is a hazard of advancing PAST soleus into the deep compartment, not of the soleus injection itself. Use colour Doppler before crossing the deep fascia.",
     "The sural nerve runs superficially in the subcutaneous tissue of the posterior calf — avoid very superficial injection.",
     "The common peroneal nerve wraps the fibular NECK, about 2 cm distal to the fibular head — so \"distal to the head\" is where the nerve is, not a safe zone. Stay medial to the fibula and identify the nerve on the image before advancing.",
     "The plantaris tendon lies between gastrocnemius and soleus at this level and is a common source of error — do not mistake it for the intermuscular septum."
@@ -4104,6 +4118,9 @@
   "positionGroup": "prone-feet-off-bed",
   "positionLabel": "Prone · feet hanging off the edge of the bed",
   "ultrasoundGroup": "gastrocnemius-lateral-soleus",
+  "sideEffects": [
+   "Weakening the soleus costs stance-phase ankle stability and push-off. Soleus is the monoarticular half of the triceps surae and does not cross the knee, so unlike gastrocnemius its loss shows through the whole of stance rather than mainly with the knee extended. Reported adverse effects for this group are leg weakness, calf atrophy and increased stumbling, in roughly 1-11% of patients, with reduced peak plantarflexor torque after treatment."
+  ],
   "export": {
    "scan": "assets/scans/us-gastrocnemius-lateral-soleus.jpg",
    "scanSharedWith": [
@@ -4133,14 +4150,14 @@
   ],
   "placement": [
    "Position the patient prone or supine with the leg externally rotated.",
-   "Identify the midpoint between the fibular head and the intermalleolar line on the medial leg.",
+   "Identify the midpoint of a line from the medial proximal tibial articular margin to the distal medial malleolus — the same medial reference line the depth and motor-point figures below are measured on.",
    "Approach from the medial side of the leg, posterior to the medial tibial border.",
    "Insert the needle directed posterolaterally, sliding along the posterior aspect of the tibia.",
    "Advance through the superficial posterior compartment muscles (Gastrocnemius/Soleus) toward the interosseous membrane.",
    "The tibialis posterior lies directly on the interosseous membrane — it is the deepest muscle in this compartment.",
-   "Typical depth is 3-5 cm depending on body habitus — USG confirms placement.",
+   "Depth is habitus-dependent and must be read off the image, not assumed: a chronic-stroke series gave a mean of 2.65 cm to the near border and 1.0 cm of muscle beyond it, and a cadaveric series found 3.5 cm from the skin effective. Identify the deep aponeurosis and the interosseous membrane before advancing — past them is the anterior compartment.",
    "Aspirate before injecting. Confirm the needle is in the tibialis posterior and not in overlying muscles.",
-   "Injection site: middle-to-distal posterior leg, deep to soleus and flexor digitorum longus.",
+   "Injection site: medial mid-leg, deep to soleus and flexor digitorum longus.",
    "Sites: 1-3."
   ],
   "setup": [
@@ -4152,8 +4169,8 @@
    "US guidance strongly recommended — tibialis posterior is deep; needle must pass through overlying muscles."
   ],
   "ultrasound": {
-   "probe": "High-frequency linear (10-15 MHz). Published series image TP with linear arrays (3-13 MHz, 5-12 MHz, 5-10 MHz); a curvilinear probe is not required. From the medial window the near border of TP sits at roughly 2.2-2.7 cm with about 1 cm of muscle thickness, so a standard 30 mm needle reaches it.",
-   "orientation": "Transverse across the medial mid-leg, posterior to the tibial border, at about 50% of the line from the medial femoral condyle to the medial malleolus. TP lies deep to a thin layer of soleus and FDL, with its near border at roughly 2.2-2.7 cm; the far border is at about 3.2 cm, so advancing beyond that leaves the muscle.",
+   "probe": "Linear array, high frequency (10-15 MHz) where the target resolves; drop to a lower-frequency linear or curvilinear probe whenever the deep aponeurosis and the posterior tibial vessels are not crisply resolved, because this target lies directly deep to the posterior tibial artery and tibial nerve and must not be approached on a poor image. Do not work from a remembered depth: read the near and far borders off the screen. In a 46-patient chronic-stroke series the medial-window mean depth to the near border was 26.5 mm with a mean muscle thickness of 10.1 mm, and depth and thickness vary inversely — the deeper the muscle, the thinner it is. Plan a needle that reaches at least 3.5 cm.",
+   "orientation": "Transverse across the medial mid-leg, posterior to the tibial border, at about 50% of the line from the medial femoral condyle to the medial malleolus. TP is the deepest muscle here — the needle passes soleus, then flexor digitorum longus, then the posterior tibial vessels and tibial nerve, before reaching TP on the interosseous membrane. Measure the near and far borders on the image every time: a chronic-stroke series gave a mean near border of 26.5 mm and a mean thickness of 10.1 mm on this window, but depth and thickness vary inversely between patients. Deep to TP is the interosseous membrane and, beyond it, the anterior compartment with the anterior tibial artery and deep peroneal nerve — do not advance past the deep aponeurosis you have identified on screen.",
    "viewSteps": [
     "Identify subcutaneous tissue and the crural fascia superficially.",
     "The Gastrocnemius and Soleus form the superficial posterior compartment — they appear as hypoechoic muscle layers with a fascial septum between them.",
@@ -4165,8 +4182,9 @@
     "The posterior tibial artery and tibial nerve run in the deep posterior compartment directly superficial to the tibialis posterior — always identify them with color Doppler.",
     "The peroneal artery runs between the tibialis posterior and flexor hallucis longus laterally — use color Doppler.",
     "This is a high-risk injection — do not attempt without real-time ultrasound guidance and confident identification of all neurovascular structures.",
-    "Needle length is the silent failure at this target: depth to the centre of the muscle on the medial approach is about 3.5 cm, so a standard short needle will stop short of it in many adults.",
-    "There is no fascial barrier between tibialis posterior and the long toe flexors on this window — confirm the target by dynamic movement rather than by feel."
+    "Needle length is the silent failure at this target: a cadaveric series found 3.5 cm from the skin effective on the medial approach, and an in vivo stroke series put the near border of the muscle at a mean of 2.65 cm with only 1 cm of thickness beyond it. A standard short needle stops short in many adults — confirm the depth on the image before choosing the needle.",
+    "There is no fascial barrier between tibialis posterior and the long toe flexors on this window — confirm the target by dynamic movement rather than by feel.",
+    "Motor-point trade-off at this window: published intramuscular arborization for tibialis posterior is densest at 10-40% and again at 70-80% of the medial proximal tibial margin to medial malleolus line, so the mid-leg window at about 50% sits BETWEEN the two bands. It is the window with the best in vivo depth data in spastic patients and the one most commonly used, but if response is poor at an adequate dose, shifting proximally toward the 10-40% band is the sourced adjustment rather than increasing the dose at 50%."
    ],
    "probeDiagram": {
     "cx": 48,
@@ -4190,7 +4208,7 @@
    "Must be addressed alongside gastroc/soleus for comprehensive equinovarus treatment."
   ],
   "supplies": [
-   "Ultrasound machine with linear probe (high-frequency for thin patients; lower-frequency or curvilinear for deeper anatomy)",
+   "Ultrasound machine with a linear probe; have a lower-frequency linear or curvilinear probe available for deep or larger legs",
    "Sterile ultrasound gel",
    "Tegaderm or probe cover",
    "Alcohol swabs / ChloraPrep",
@@ -4203,7 +4221,8 @@
    "Sharps container"
   ],
   "spasticityPatterns": [
-   "equinovarus"
+   "equinovarus",
+   "equinus"
   ],
   "relatedMuscles": [
    "fdl",
@@ -4333,7 +4352,6 @@
   "pearls": [
    "Key target for toe curling/clawing in combination with FDB",
    "Runs behind the medial malleolus — a tight FDL will pull toes into flexion during stance",
-   "Small muscle — conservative dosing (25-50U Botox per muscle)",
    "Flexes toes 2-5 at the DIP joints.",
    "Must be considered with FHL and tibialis posterior in curling-toe + inversion patterns."
   ],
@@ -4352,7 +4370,8 @@
   ],
   "spasticityPatterns": [
    "equinovarus",
-   "claw-toes"
+   "claw-toes",
+   "equinus"
   ],
   "relatedMuscles": [
    "add-hallucis",
@@ -4423,7 +4442,7 @@
   ],
   "ultrasound": {
    "probe": "High-frequency linear (10-15 MHz)",
-   "orientation": "Transverse across the distal posteromedial calf, entering medially adjacent to the tibia; FHL is identified in the lateral part of the deep posterior compartment, deep to soleus",
+   "orientation": "Transverse across the distal posterolateral calf, adjacent to the fibula",
    "viewSteps": [
     "Identify subcutaneous tissue and the Soleus muscle/aponeurosis superficially.",
     "The fibula appears as a bright hyperechoic cortical line laterally with posterior acoustic shadowing.",
@@ -4450,7 +4469,7 @@
   },
   "referenceImages": [],
   "hasReferenceImage": false,
-  "probePlacementHint": "hint \"Patient prone or supine with the leg externally rotated. Place probe transversely on the distal posteromedial leg; identify tibia and fibula as the floor and soleus as the ceiling, with FHL lying laterally in that corridor. Photo from the medial side showing probe on the distal posteromedial leg.\"; position \"Prone or supine · leg externally rotated (expose medial calf)",
+  "probePlacementHint": "Patient prone, feet off edge. Place probe transversely on the distal posterolateral calf, adjacent to the fibula. Photo from behind showing probe on the distal lateral calf.",
   "pearls": [
    "Key target for great toe hyperflexion (claw hallux) pattern — do NOT confuse with hitchhiker's toe (striatal toe), which is caused by EHL spasticity.",
    "Located lateral to FDL in the deep posterior compartment",
@@ -4473,7 +4492,8 @@
   ],
   "spasticityPatterns": [
    "equinovarus",
-   "claw-toes"
+   "claw-toes",
+   "equinus"
   ],
   "relatedMuscles": [
    "add-hallucis",
@@ -4689,7 +4709,6 @@
   "probePlacementHint": "Patient supine, leg extended. Place probe transversely on distal anterolateral leg, ~10 cm above ankle. Photo from front showing probe on anterior distal leg.",
   "pearls": [
    "Causes great toe hyperextension (hitchhiker's toe/striatal toe)",
-   "Thin muscle — easy to over-inject. Start with very low doses (10-25U Botox)",
    "Runs between tibialis anterior and EDL — identify all three on US",
    "Treated in cases of striatal toe deformity (great toe extension) or rigid hallux valgus.",
    "EDL and EHL often examined together — both extend the toes."
@@ -4846,7 +4865,7 @@
   "positionLabel": "Supine · leg extended, ankle neutral",
   "ultrasoundGroup": "ehl-edl-tibialis-anterior",
   "sideEffects": [
-   "Toxin spread to tibialis anterior is the consequential adverse effect here: the deep peroneal nerve's muscular branches to tibialis anterior, EDL and peroneus tertius arise from a common short segment, so spread within that zone weakens ankle dorsiflexion rather than just toe extension."
+   "Weakening EDL costs some ankle dorsiflexion as well as toe extension — EDL is itself one of the deep-peroneal-innervated dorsiflexors. The effect to plan against is spread within the anterior compartment to tibialis anterior, which lies immediately medial at this level and supplies most dorsiflexion power; unintended TA weakening produces foot drop. Extensor hallucis longus lies deeper and more distal and is the other muscle at risk. Compartment spread between these three has been shown, so use the smallest effective volume and keep the injectate inside the EDL belly."
   ],
   "export": {
    "scan": "assets/scans/us-ehl-edl-tibialis-anterior.jpg",
@@ -4893,7 +4912,7 @@
    "Visualize the SCM as the superficial strap-like muscle overlying the carotid sheath and scalene muscles.",
    "Use a high-frequency linear probe placed transversely across the neck at the mid-cervical level.",
    "WARNING: Bilateral SCM injections carry a significant risk of dysphagia and neck weakness — use the minimum effective dose and consider staggering bilateral injections by 2 weeks.",
-   "When bilateral injection is necessary, preferentially dose the clavicular head over the sternal head — the sternal head is deeper and closer to pharyngeal muscles, carrying higher dysphagia risk.",
+   "When bilateral injection is necessary, preferentially dose the clavicular head over the sternal head — the sternal head is the more MEDIAL of the two and therefore the closer to the pharyngeal muscles, carrying higher dysphagia risk. It is not the deeper head: the sternal head is superficial and medial, and the clavicular head passes deep to it, laterally.",
    "Patient position: supine with the head rotated to the opposite side to make SCM prominent.",
    "Needle length: 20-40 mm / 27 gauge (use the shorter length to avoid excessive depth)."
   ],
@@ -4911,7 +4930,7 @@
     "The carotid artery and internal jugular vein lie immediately deep to the SCM within the carotid sheath — always visualize these structures with color Doppler before injecting and keep the needle superficial within the muscle belly.",
     "The spinal accessory nerve (CN XI) enters the deep surface of the SCM at the junction of its upper third and middle third — excessive dosing or deep injection in this zone may cause accessory nerve palsy and shoulder weakness.",
     "The external jugular vein crosses superficially over the SCM — use color Doppler to identify and avoid it.",
-    "The transverse cervical nerve and the cervical plexus lie superficially at this level — a subcutaneous wheal or superficial spread can produce transient anterior neck numbness."
+    "The transverse cervical nerve (C2-C3) is purely sensory. It curves around the posterior border of the SCM, pierces the cervical fascia and crosses the muscle at about the level of this window, running deep to the external jugular vein — so the vein you Dopplered in the step above is your marker for it. This is a needle-contact hazard only: catching the nerve can cause transient dysaesthesia or numbness over the anterior neck. The toxin itself has no sensory action and does not cause numbness."
    ],
    "probeDiagram": {
     "cx": 35,
@@ -4975,7 +4994,7 @@
   "positionGroup": "supine-head-neutral",
   "positionLabel": "Supine · head neutral or turned slightly",
   "sideEffects": [
-   "Dysphagia is the primary adverse effect of this injection, reported in 10-40% of series and 34.7% across 98 EMG-guided sessions. Risk rises with bilateral injection and with dose into the sternal head; both product labels carry an SCM-specific caution."
+   "Dysphagia is the primary adverse effect of this injection, reported in 10-40% of series and 34.7% across 98 EMG-guided sessions. Risk rises with bilateral injection. Reduce the dose when injecting both sides."
   ],
   "export": {
    "scan": "assets/scans/scm-us.jpg",
@@ -5004,7 +5023,7 @@
    "Identify the posterior border of the SCM — the scalenes lie in the posterolateral neck between the SCM anteriorly and the upper trapezius posteriorly.",
    "CRITICAL: Ultrasound guidance is MANDATORY for scalene injection — the brachial plexus roots pass between the anterior and middle scalenes (interscalene groove), and the subclavian ARTERY passes POSTERIOR to the anterior scalene, through the scalene triangle with the plexus. The subclavian VEIN is the vessel anterior to it. The phrenic nerve runs on the anterior surface of the anterior scalene.",
    "Under ultrasound, identify the target scalene muscle and confirm the location of the brachial plexus, subclavian/vertebral vessels, and phrenic nerve before inserting the needle.",
-   "Insert the needle using an in-plane technique under continuous ultrasound visualization, directing it laterally to medially into the muscle belly while avoiding the interscalene groove and its neurovascular contents.",
+   "Insert the needle using an in-plane technique under continuous ultrasound visualization. The approach direction depends on which scalene is targeted: enter the ANTERIOR scalene from medial to lateral, and the MIDDLE scalene from lateral to medial, so that in each case the needle travels AWAY from the interscalene groove rather than across it. Never angle the needle inferiorly toward the lung apex.",
    "Aspirate before injecting to confirm you are not intravascular.",
    "Use LOW doses — the scalenes are small muscles adjacent to critical neurovascular structures. Start at the low end of the dosing range.",
    "Distribute the dose across 1-2 sites within the targeted scalene muscle belly. Avoid injecting near the interscalene groove or the muscle origins/insertions where nerves are concentrated."
@@ -5025,16 +5044,16 @@
     "The brachial plexus nerve roots appear as a cluster of small, round, hypoechoic structures (with hyperechoic rims) in the interscalene groove between the anterior and middle scalenes — this is your critical landmark. The roots typically appear as a 'traffic light' or 'bunch of grapes' pattern at the C5-C7 level.",
     "Posterior to the brachial plexus, the middle scalene appears as a larger hypoechoic muscle — it is typically the thickest of the three scalenes at this level.",
     "The posterior scalene lies posterior and slightly inferior to the middle scalene, often best visualized at the C7-T1 level just above the first rib.",
-    "Deep to the scalenes, identify the hyperechoic transverse processes of the cervical vertebrae with posterior acoustic shadowing. The vertebral artery may be visible within the transverse foramina.",
+    "Deep to the scalenes, identify the hyperechoic transverse processes of the cervical vertebrae with posterior acoustic shadowing. Look for the vertebral artery with colour Doppler rather than expecting it inside a foramen: it enters the C6 transverse foramen in about 92% of people, so at this lower window it is usually ascending unprotected between the anterior scalene and longus colli.",
     "Use color Doppler to identify the vertebral artery (within the transverse foramen), the subclavian artery (inferior, deep to the anterior scalene), and the transverse cervical artery."
    ],
    "safetyNotes": [
     "The brachial plexus roots (C5-T1) pass through the interscalene groove between the anterior and middle scalenes — injection into or near the interscalene groove can cause brachial plexopathy with arm weakness and numbness. ALWAYS identify the plexus before injecting and keep the needle tip within the muscle belly, away from the groove.",
     "The phrenic nerve (C3-C5) runs on the ANTERIOR surface of the anterior scalene — injection of the anterior scalene carries the highest risk of phrenic nerve paralysis and hemidiaphragm weakness. Use the minimum effective dose and NEVER inject the anterior scalene bilaterally in the same session.",
-    "The subclavian ARTERY passes POSTERIOR to the anterior scalene, through the scalene triangle with the brachial plexus — the plane deep to the anterior scalene is not a safe plane. The subclavian VEIN is the vessel that passes anterior to it. The vertebral artery lies within the transverse foramina, deep and medial. Use color Doppler to identify all three before injecting.",
-    "The lung apex lies immediately inferior to the scalenes behind the first rib — keep the needle directed medially to laterally (not inferiorly) to avoid pneumothorax, and always visualize the pleural line.",
+    "The subclavian ARTERY passes POSTERIOR to the anterior scalene, through the scalene triangle with the brachial plexus — the plane deep to the anterior scalene is not a safe plane. The subclavian VEIN is the vessel that passes anterior to it. The vertebral artery is NOT protected by bone at this level: it enters the transverse foramen at C6 in about 92% of people, so below C6 — which is where this record scans — it runs unprotected between the anterior scalene and longus colli, and in a minority it does not enter until C7. Doppler it as an open vessel rather than assuming the foramen shields it, along with the subclavian artery and vein.",
+    "The lung apex lies immediately inferior to the scalenes behind the first rib — keep the needle path in the axial plane and never angle it inferiorly, and always visualize the pleural line before and during the injection. The mediolateral direction is set by which scalene you are targeting, not by the pleura: see the placement steps.",
     "The dorsal scapular nerve pierces the middle scalene in about 74% of specimens, arising from C5 in roughly 70% — it is inside the muscle you are injecting, not beside it.",
-    "The long thoracic nerve's C5 and C6 contributions travel through the middle and posterior scalenes — injury causes scapular winging."
+    "The long thoracic nerve's C5 and C6 contributions run beneath the middle scalene with a variable course — most often BETWEEN the middle and posterior scalene, sometimes piercing the middle scalene, sometimes anterior to it; the C7 contribution is always anterior to the middle scalene. The nerve therefore cannot be excluded by position alone when needling the middle or posterior scalene. Needle trauma causes serratus anterior palsy with MEDIAL scapular winging."
    ],
    "probeDiagram": {
     "cx": 25,
@@ -5054,7 +5073,6 @@
   "probePlacementHint": "Patient supine, head neutral or slightly turned contralateral. Place probe transversely on lateral neck at C5-C7 level, posterior to SCM. Photo from front/lateral showing probe on lateral neck behind the SCM.",
   "pearls": [
    "The primary target for laterocollis — ipsilateral lateral flexion is the chief action",
-   "Start with low doses (15-25 U Botox per muscle) and titrate up — overcorrection or nerve spread can be disabling",
    "The middle scalene is often the safest and largest target for injection"
   ],
   "supplies": [
@@ -5125,7 +5143,7 @@
    "Insert the needle perpendicular to the skin surface into the midpoint of the palpated muscle bulk, advancing 1-2 cm into the muscle belly.",
    "Stay within the superficial muscle bulk — do not advance beyond 2 cm to avoid penetrating into the supraspinous fossa or toward the lung apex medially.",
    "Aspirate before injecting to confirm you are not intravascular.",
-   "Distribute the total dose across 2-3 sites along the muscle belly, spacing injections approximately 2-3 cm apart along the line from the occiput to the acromion."
+   "Distribute the total dose across 2-3 sites along the palpable muscle-belly ridge, spacing injections approximately 2-3 cm apart. Keep every site on the belly: do not carry the lateral-most site forward onto the ANTERIOR border of the trapezius, where the spinal accessory nerve pierces the muscle and lies only about 3 mm below the skin just beyond it; and do not carry the medial-most site within 2 cm of the superior nuchal line (greater occipital nerve) or onto the thinned muscle over the cervicothoracic junction."
   ],
   "setup": [
    "Ultrasound (USG) guidance is recommended, particularly for medial injections near the cervical spine where the muscle thins and the lung apex may be at risk.",
@@ -5144,7 +5162,7 @@
     "Deep to the muscular layers, identify the hyperechoic bony cortex of the scapular spine or, if scanning medially, the posterior ribs and pleural line."
    ],
    "safetyNotes": [
-    "The spinal accessory nerve runs on the deep surface of the upper trapezius, entering the muscle a mean of about 5 cm above the clavicle, referenced to the posterior border of sternocleidomastoid rather than to the scapular spine. In the posterior triangle it lies only about 3 mm below the skin, so depth does not protect it — position does. Stay in the medial half of the upper trapezius and use the minimum effective dose to preserve voluntary shoulder elevation.",
+    "The spinal accessory nerve reaches the trapezius by piercing its ANTERIOR border, a mean of 5.4 cm above the clavicle (measured upward from the clavicle; reported range 2.1-9.2 cm), and in 58% of cases it has already divided into 2-4 branches before it enters — so surface landmarks do not locate it and must not be relied on. Anterior to that border, in the posterior triangle, the nerve lies only about 3 mm below the skin. Within the upper trapezius belly targeted here it runs on the muscle's DEEP surface, in the plane between trapezius and levator scapulae. At this injection site, therefore, depth control is the protection: stay within the superficial muscle bulk and do not pass the deep trapezial fascia. Do not shift the injection medially toward the cervicothoracic junction, where the muscle thins over the pleural dome.",
     "The transverse cervical artery and suprascapular artery run deep to the trapezius — use color Doppler when injecting near the base of the neck or the scapular notch.",
     "Medial injections near the cervicothoracic junction risk pneumothorax if the needle is advanced too deeply — always confirm the pleural line on ultrasound and stay superficial within the muscle belly.",
     "The greater occipital nerve emerges through the upper trapezius near its occipital attachment — avoid injecting within 2 cm of the superior nuchal line to prevent occipital neuralgia."
@@ -5206,6 +5224,9 @@
   ],
   "positionGroup": "seated-or-prone-forehead",
   "positionLabel": "Seated upright, arms relaxed (or prone, forehead on hands)",
+  "sideEffects": [
+   "Weakening the upper trapezius costs voluntary shoulder elevation — use the minimum effective dose. This is what the toxin does when it works, not a needle complication."
+  ],
   "export": {
    "scan": "assets/scans/upper-trapezius-us.jpg",
    "scanSharedWith": [],
@@ -5258,7 +5279,7 @@
     "The dorsal scapular nerve runs on or through the levator scapulae along its deep surface, often accompanied by the dorsal scapular artery — use color Doppler to identify vascular structures and inject with care to minimize nerve injury.",
     "The vertebral artery lies anterior to the cervical transverse processes — never direct the needle anteriorly or medially toward the transverse processes without ultrasound visualization.",
     "The lung apex extends above the first rib medially — when injecting near the medial scapular border at the T1-T2 level, always confirm the pleural line on ultrasound and maintain a safe distance.",
-    "The spinal accessory nerve runs in the plane BETWEEN trapezius and levator scapulae, so a needle driven deep through trapezius passes through the nerve's plane rather than avoiding it. Identify the nerve on the image and approach outside it; depth through trapezius is not protective.",
+    "The spinal accessory nerve runs in the plane BETWEEN trapezius and levator scapulae, so a needle driven deep through trapezius passes through the nerve's plane rather than avoiding it. Identify the nerve on the image and approach outside it; depth through trapezius is not protective. Note on the evidence: the sonographic studies establishing this plane traced the nerve in the posterior triangle, above the clavicle, while this record injects at the T1-T2 level — the plane relationship is well established, its exact course at this lower level is not, which is a further reason to find the nerve on the image rather than infer it from a landmark.",
     "The superficial branch of the transverse cervical artery runs with the spinal accessory nerve at this injection level — use colour Doppler alongside nerve identification."
    ],
    "probeDiagram": {
@@ -5343,9 +5364,9 @@
   "placement": [
    "Position the patient seated upright with the neck slightly flexed to open the posterior cervical space, or prone with the forehead resting on hands.",
    "Identify the posterior cervical triangle between the upper trapezius and the SCM — the splenius capitis lies deep to the upper trapezius in this region.",
-   "Palpate the posterolateral neck approximately 2-3 cm lateral to the cervical midline at the C2-C4 level — the splenius capitis forms a thick muscular band running obliquely from the lower cervical/upper thoracic spinous processes to the mastoid process.",
+   "Palpate the posterolateral neck at the C1-C3 level, lateral to the semispinalis capitis — the splenius capitis forms a thick muscular band running obliquely from the lower cervical/upper thoracic spinous processes to the mastoid process. Identify it as the layer between trapezius and semispinalis rather than by a fixed distance from the midline.",
    "Ask the patient to rotate the head ipsilaterally against resistance — the splenius capitis will contract and become more palpable beneath the trapezius.",
-   "The primary injection target is at the C2-C4 level, approximately 2-3 cm lateral to the midline, where the muscle belly is thickest and most accessible beneath the trapezius.",
+   "The primary injection target is at the C1-C3 level, at roughly 40% of the distance from the external occipital protuberance to the mastoid process, where the muscle belly is thickest beneath the trapezius. Confirm the layer on the image — a fixed centimetre offset from the midline falls too medial in larger patients, onto semispinalis capitis.",
    "Insert the needle perpendicular to the skin, advancing through the trapezius (1-1.5 cm) and into the splenius capitis beneath it (an additional 0.5-1.5 cm). Total depth is typically 2-3.5 cm depending on body habitus.",
    "Aspirate before injecting to confirm you are not intravascular — the vertebral artery lies deep and medial, and the occipital artery may cross the superficial surface.",
    "Distribute the total dose across 2-3 sites along the muscle belly, spacing injections approximately 2-3 cm apart along its course from the upper cervical spine toward the mastoid."
@@ -5353,7 +5374,7 @@
   "setup": [
    "Ultrasound (USG) guidance is strongly recommended — splenius capitis lies deep to the trapezius and cannot be reliably distinguished from the underlying semispinalis capitis by palpation alone.",
    "Visualize the splenius capitis as the intermediate muscle layer between the superficial trapezius and the deep semispinalis capitis.",
-   "Use a high-frequency linear probe placed transversely across the posterolateral neck at the C2-C4 level, 2-3 cm lateral to the spinous processes.",
+   "Use a high-frequency linear probe placed transversely across the posterolateral neck at the C1-C3 level, lateral to the semispinalis capitis window, and identify splenius as the layer between trapezius and semispinalis rather than measuring a fixed offset from the spinous processes.",
    "EMG confirmation is a useful adjunct — ask the patient to rotate the head to the ipsilateral side to selectively activate splenius capitis and confirm needle placement within the correct muscle layer."
   ],
   "ultrasound": {
@@ -5392,7 +5413,6 @@
   "pearls": [
    "The #1 target in rotational cervical dystonia — ipsilateral head rotation is its primary action",
    "Lies deep to trapezius but superficial to semispinalis capitis — US is critical to distinguish the correct layer",
-   "Often the highest-dose muscle in cervical dystonia treatment — 50-100 U Botox per side",
    "Combined splenius capitis + contralateral SCM injection is the classic rotational torticollis pair"
   ],
   "supplies": [
@@ -5465,7 +5485,7 @@
    "Identify the posterior midline of the neck — the semispinalis capitis is a bilateral paramedian muscle lying on either side of the midline, deep to both the trapezius and splenius capitis.",
    "The primary injection target is at the C2-C5 level, approximately 1-2 cm lateral to the midline, where the muscle belly is thickest.",
    "This is a DEEP muscle — the needle must traverse the trapezius and splenius capitis to reach it. USG guidance is essential to confirm correct depth and avoid injecting into the more superficial splenius capitis.",
-   "Insert the needle perpendicular to the skin, advancing through the trapezius, then the splenius capitis, and into the semispinalis capitis beneath. Total depth is typically 3-5 cm depending on body habitus.",
+   "Insert the needle perpendicular to the skin, advancing through the trapezius, then the splenius capitis, and into the semispinalis capitis beneath — that layer order is the thing to confirm on the image. Do not work to a fixed depth: count the layers on screen and stop in the third, then confirm at the laminar cortex. Depth from skin varies with habitus and neck posture and has not been established in a series for this window.",
    "Aspirate before injecting to confirm you are not intravascular — the vertebral artery lies anterior to this muscle, separated by the cervical laminae.",
    "Use CONSERVATIVE doses — the semispinalis capitis is a deep bilateral extensor, and excessive weakening can cause debilitating anterocollis (dropped head syndrome).",
    "Distribute the dose across 1-2 sites per side, staying close to the midline at the C2-C5 level."
@@ -5491,7 +5511,6 @@
    "safetyNotes": [
     "The vertebral artery lies anterior to the cervical laminae within the transverse foramina — the laminae serve as a protective bony barrier, but lateral needle angulation toward the transverse processes could risk vertebral artery injury. Always keep the needle directed perpendicular to the skin and stop at the laminar cortex.",
     "The greater occipital nerve (dorsal ramus of C2) pierces the semispinalis capitis near the C1-C2 level — injection at this level may cause temporary occipital numbness or neuralgia.",
-    "Excessive dosing or bilateral injection can cause severe neck extensor weakness and anterocollis (dropped head syndrome) — use the minimum effective dose (25-50 U Botox per side) and monitor for neck weakness at follow-up.",
     "The deep cervical artery (branch of the costocervical trunk) runs on the deep surface of the semispinalis capitis — use color Doppler to identify and avoid vascular structures before injecting.",
     "The third occipital nerve (C3 dorsal ramus) pierces semispinalis capitis a short distance lateral to the midline — injection at this level may cause transient occipital numbness."
    ],
@@ -5513,8 +5532,7 @@
   "probePlacementHint": "Patient seated, neck flexed. Place probe transversely on posterior neck at C2-C5 level, 1-2 cm lateral to midline. Photo from behind showing probe on posterior midline neck just below the occiput.",
   "pearls": [
    "The primary target for retrocollis — bilateral neck extension is its chief action",
-   "Deepest of the three posterior cervical layers (trapezius > splenius capitis > semispinalis capitis) — USG is essential to reach the correct layer",
-   "Use conservative doses (25-50 U per side) — excessive weakening causes dropped head syndrome (anterocollis)"
+   "Deepest of the three posterior cervical layers (trapezius > splenius capitis > semispinalis capitis) — USG is essential to reach the correct layer"
   ],
   "supplies": [
    "Ultrasound machine with linear probe",

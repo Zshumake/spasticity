@@ -2,7 +2,8 @@
  "$comment": [
   "Per-muscle dose ranges and dose notes removed from assets/data/muscles.json on 2026-09-02.",
   "Withdrawn on the owner's decision after the reflexpmr audit found the 'Botox' column tracked the Xeomin label.",
-  "Kept here for provenance only. Not loaded by the app. Do not restore without re-verifying every value against current labeling."
+  "Kept here for provenance only. Not loaded by the app. Do not restore without re-verifying every value against current labeling.",
+  "2026-09-03: 29 dose figures that lived in PROSE (pearls, placement, setup, safetyNotes) removed as well - see `prose`. This is the class a field-level withdrawal misses (reflexpmr RETURN-HANDOFF s.1); reflexpmr strips such items at import. 11 items shared with the reflexpmr import were dropped whole to match it; 18 in muscles reflexpmr never imported had only the figure removed, the rest of the sentence kept verbatim. Originals are recorded here so any can be restored after re-verification against current labeling."
  ],
  "records": {
   "pec-major": {
@@ -561,5 +562,181 @@
    },
    "dosageNote": "Total dose across all sites per side. For anterocollis, 25-50 U Botox per side distributed across 2-4 platysmal bands. For cosmetic neck banding, 2-5 U per site along each band (lower total dose). Use the minimum effective dose to avoid dysphagia."
   }
- }
+ },
+ "prose": [
+  {
+   "muscle": "pec-major",
+   "field": "pearls",
+   "original": "Use 25-50U Botox per injection site, distributed across 2-3 sites per head, for a total session dose as listed in the dosage field.",
+   "replacement": null
+  },
+  {
+   "muscle": "pronator-quadratus",
+   "field": "ultrasound.safetyNotes",
+   "original": "Very low doses are appropriate given the small muscle volume — start at 10-20 U Botox per site.",
+   "replacement": null
+  },
+  {
+   "muscle": "pronator-quadratus",
+   "field": "pearls",
+   "original": "Low doses only (10-25 U Botox) given the small muscle volume",
+   "replacement": null
+  },
+  {
+   "muscle": "adductor-pollicis",
+   "field": "pearls",
+   "original": "Very small — use hockey-stick probe and minimal doses (10-20U Botox)",
+   "replacement": null
+  },
+  {
+   "muscle": "hand-lumbricals",
+   "field": "pearls",
+   "original": "Tiny muscles requiring tiny doses — 5-10 U Botox per lumbrical is usually sufficient; overdosing weakens grip",
+   "replacement": null
+  },
+  {
+   "muscle": "fdl",
+   "field": "pearls",
+   "original": "Small muscle — conservative dosing (25-50U Botox per muscle)",
+   "replacement": null
+  },
+  {
+   "muscle": "ehl",
+   "field": "pearls",
+   "original": "Thin muscle — easy to over-inject. Start with very low doses (10-25U Botox)",
+   "replacement": null
+  },
+  {
+   "muscle": "scalenes",
+   "field": "pearls",
+   "original": "Start with low doses (15-25 U Botox per muscle) and titrate up — overcorrection or nerve spread can be disabling",
+   "replacement": null
+  },
+  {
+   "muscle": "splenius-capitis",
+   "field": "pearls",
+   "original": "Often the highest-dose muscle in cervical dystonia treatment — 50-100 U Botox per side",
+   "replacement": null
+  },
+  {
+   "muscle": "semispinalis-capitis",
+   "field": "ultrasound.safetyNotes",
+   "original": "Excessive dosing or bilateral injection can cause severe neck extensor weakness and anterocollis (dropped head syndrome) — use the minimum effective dose (25-50 U Botox per side) and monitor for neck weakness at follow-up.",
+   "replacement": null
+  },
+  {
+   "muscle": "semispinalis-capitis",
+   "field": "pearls",
+   "original": "Use conservative doses (25-50 U per side) — excessive weakening causes dropped head syndrome (anterocollis)",
+   "replacement": null
+  },
+  {
+   "muscle": "paraspinals",
+   "field": "pearls",
+   "original": "Inject at 2-3 vertebral levels per session; dose listed is per level — total session dose may be 100-300 U Botox across all levels",
+   "replacement": "Inject at 2-3 vertebral levels per session."
+  },
+  {
+   "muscle": "rectus-abdominis",
+   "field": "placement",
+   "original": "Aspirate before injecting. Distribute the total dose across 2-4 sites (25-50 U Botox per site).",
+   "replacement": "Aspirate before injecting. Distribute the total dose across 2-4 sites."
+  },
+  {
+   "muscle": "rectus-abdominis",
+   "field": "pearls",
+   "original": "Start with conservative doses (50 U Botox total) — excessive weakening can impair cough and respiratory function",
+   "replacement": "Excessive weakening can impair cough and respiratory function"
+  },
+  {
+   "muscle": "tfl",
+   "field": "pearls",
+   "original": "Small muscle — use conservative doses (25-50U Botox)",
+   "replacement": "Small muscle — use conservative doses"
+  },
+  {
+   "muscle": "add-hallucis",
+   "field": "pearls",
+   "original": "Low doses only — 10-25U Botox typically sufficient",
+   "replacement": "Low doses only"
+  },
+  {
+   "muscle": "foot-lumbricals",
+   "field": "pearls",
+   "original": "Extremely small muscles — 5-10 U Botox per lumbrical is typical; most patients need only 1-2 lumbricals treated",
+   "replacement": "Extremely small muscles — most patients need only 1-2 lumbricals treated"
+  },
+  {
+   "muscle": "longissimus-capitis",
+   "field": "ultrasound.safetyNotes",
+   "original": "Excessive dosing risks weakening adjacent deep extensors (semispinalis capitis, multifidus) due to toxin spread, potentially causing or worsening anterocollis — use the minimum effective dose (25-50 U Botox per side).",
+   "replacement": "Excessive dosing risks weakening adjacent deep extensors (semispinalis capitis, multifidus) due to toxin spread, potentially causing or worsening anterocollis — use the minimum effective dose."
+  },
+  {
+   "muscle": "longissimus-capitis",
+   "field": "pearls",
+   "original": "Conservative dosing (25-50 U per side) — toxin spread to adjacent deep extensors can cause dropped head",
+   "replacement": "Conservative dosing — toxin spread to adjacent deep extensors can cause dropped head"
+  },
+  {
+   "muscle": "frontalis",
+   "field": "placement",
+   "original": "Inject 2-5 U Botox per site. The total dose is typically 10-20 U distributed across all sites.",
+   "replacement": null
+  },
+  {
+   "muscle": "frontalis",
+   "field": "pearls",
+   "original": "NOT a spasticity target — it is injected for cosmetic forehead lines, rare brow dystonia, or as part of migraine PREEMPT protocol (20 U total, 5 U per site x 4 sites)",
+   "replacement": "NOT a spasticity target — it is injected for cosmetic forehead lines, rare brow dystonia, or as part of migraine PREEMPT protocol"
+  },
+  {
+   "muscle": "corrugator-supercilii",
+   "field": "placement",
+   "original": "Inject 5-10 U Botox per side (per the Allergan PI). A single site per side is typically sufficient, though some practitioners split across 2 sites for broader coverage.",
+   "replacement": "A single site per side is typically sufficient, though some practitioners split across 2 sites for broader coverage."
+  },
+  {
+   "muscle": "procerus",
+   "field": "placement",
+   "original": "Inject 5-10 U Botox as a single midline injection.",
+   "replacement": "A single midline injection."
+  },
+  {
+   "muscle": "orbicularis-oculi",
+   "field": "placement",
+   "original": "Inject 1.25-2.5 U Botox (or equivalent) per site. Use a tuberculin syringe for precise dosing at these low volumes.",
+   "replacement": "Use a tuberculin syringe for precise dosing at these low volumes."
+  },
+  {
+   "muscle": "orbicularis-oculi",
+   "field": "setup",
+   "original": "Reconstitute Botox at a concentration that allows injection of small volumes per site (e.g., 2.5 U per 0.1 mL = 100 U / 4 mL dilution, or 5 U per 0.1 mL = 100 U / 2 mL dilution). The Allergan PI recommends 1.25-2.5 U per site.",
+   "replacement": "Reconstitute at a concentration that allows injection of small volumes per site."
+  },
+  {
+   "muscle": "temporalis",
+   "field": "pearls",
+   "original": "In migraine patients, temporalis injection sites overlap with PREEMPT protocol sites — 20 U per side (5 U x 4 sites) per the Allergan PREEMPT paradigm",
+   "replacement": "In migraine patients, temporalis injection sites overlap with PREEMPT protocol sites"
+  },
+  {
+   "muscle": "mentalis",
+   "field": "placement",
+   "original": "Inject 2.5-5 U Botox per side as a single midline injection per side (2 injection sites total for bilateral treatment).",
+   "replacement": "A single injection per side (2 injection sites total for bilateral treatment)."
+  },
+  {
+   "muscle": "mentalis",
+   "field": "pearls",
+   "original": "Very low doses are effective for this small muscle — start with 2.5 U Botox per side and titrate up only if needed",
+   "replacement": "Very low doses are effective for this small muscle — titrate up only if needed"
+  },
+  {
+   "muscle": "platysma",
+   "field": "placement",
+   "original": "For NECK BANDING (cosmetic): Inject along the visible platysmal bands with smaller doses per site (2-5 U Botox per site).",
+   "replacement": "For NECK BANDING (cosmetic): Inject along the visible platysmal bands with smaller doses per site."
+  }
+ ]
 }
